@@ -1,0 +1,39 @@
+INFO:kolla.common.utils.ovn-base:Building started at 2020-03-02 21:23:18.023545
+INFO:kolla.common.utils.ovn-base:Step 1/5 : FROM s390x/debian-binary-openvswitch-base:9.1.0
+INFO:kolla.common.utils.ovn-base: ---> 61ae59c0c5e2
+INFO:kolla.common.utils.ovn-base:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="ovn-base" build-date="20200302"
+INFO:kolla.common.utils.ovn-base: ---> Running in bb1798ce5855
+INFO:kolla.common.utils.ovn-base:Removing intermediate container bb1798ce5855
+INFO:kolla.common.utils.ovn-base: ---> e8484509e1cf
+INFO:kolla.common.utils.ovn-base:Step 3/5 : RUN apt-get update && apt-get -y install --no-install-recommends openvswitch-common && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.ovn-base: ---> Running in 61583b44a063
+INFO:kolla.common.utils.ovn-base:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.ovn-base:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.ovn-base:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.ovn-base:Get:4 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.ovn-base:Get:5 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.ovn-base:Get:6 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.ovn-base:Get:7 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.ovn-base:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.ovn-base:Fetched 8,235 kB in 2s (5,375 kB/s)
+INFO:kolla.common.utils.ovn-base:Reading package lists...
+INFO:kolla.common.utils.ovn-base:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.ovn-base:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.ovn-base:[0m
+INFO:kolla.common.utils.ovn-base:Reading package lists...
+INFO:kolla.common.utils.ovn-base:Building dependency tree...
+INFO:kolla.common.utils.ovn-base:Reading state information...
+INFO:kolla.common.utils.ovn-base:openvswitch-common is already the newest version (2.10.0+2018.08.28+git.8ca7c82b7d+ds1-12+deb10u1).
+INFO:kolla.common.utils.ovn-base:openvswitch-common set to manually installed.
+INFO:kolla.common.utils.ovn-base:0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.ovn-base:Removing intermediate container 61583b44a063
+INFO:kolla.common.utils.ovn-base: ---> 5803f31bcc3f
+INFO:kolla.common.utils.ovn-base:Step 4/5 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.ovn-base: ---> ca12e6fff615
+INFO:kolla.common.utils.ovn-base:Step 5/5 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.ovn-base: ---> Running in 6586aa2ce3e7
+INFO:kolla.common.utils.ovn-base:Removing intermediate container 6586aa2ce3e7
+INFO:kolla.common.utils.ovn-base: ---> 6731f54caeb0
+INFO:kolla.common.utils.ovn-base:Successfully built 6731f54caeb0
+INFO:kolla.common.utils.ovn-base:Successfully tagged s390x/debian-binary-ovn-base:9.1.0
+INFO:kolla.common.utils.ovn-base:Built at 2020-03-02 21:23:26.273604 (took 0:00:08.250059)

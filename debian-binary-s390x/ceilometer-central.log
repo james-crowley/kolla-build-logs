@@ -1,0 +1,56 @@
+INFO:kolla.common.utils.ceilometer-central:Building started at 2020-03-02 21:28:23.673503
+INFO:kolla.common.utils.ceilometer-central:Step 1/4 : FROM s390x/debian-binary-ceilometer-base:9.1.0
+INFO:kolla.common.utils.ceilometer-central: ---> 6fec932beab9
+INFO:kolla.common.utils.ceilometer-central:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="ceilometer-central" build-date="20200302"
+INFO:kolla.common.utils.ceilometer-central: ---> Running in 37e61755683f
+INFO:kolla.common.utils.ceilometer-central:Removing intermediate container 37e61755683f
+INFO:kolla.common.utils.ceilometer-central: ---> ef90caeb0d6c
+INFO:kolla.common.utils.ceilometer-central:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends ceilometer-agent-central && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.ceilometer-central: ---> Running in 2a4c280c0f30
+INFO:kolla.common.utils.ceilometer-central:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.ceilometer-central:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.ceilometer-central:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.ceilometer-central:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.ceilometer-central:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.ceilometer-central:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.ceilometer-central:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.ceilometer-central:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.ceilometer-central:Fetched 8,235 kB in 1s (5,526 kB/s)
+INFO:kolla.common.utils.ceilometer-central:Reading package lists...
+INFO:kolla.common.utils.ceilometer-central:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.ceilometer-central:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.ceilometer-central:[0m
+INFO:kolla.common.utils.ceilometer-central:Reading package lists...
+INFO:kolla.common.utils.ceilometer-central:Building dependency tree...
+INFO:kolla.common.utils.ceilometer-central:Reading state information...
+INFO:kolla.common.utils.ceilometer-central:The following NEW packages will be installed:
+INFO:kolla.common.utils.ceilometer-central:  ceilometer-agent-central
+INFO:kolla.common.utils.ceilometer-central:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.ceilometer-central:Need to get 11.9 kB of archives.
+INFO:kolla.common.utils.ceilometer-central:After this operation, 36.9 kB of additional disk space will be used.
+INFO:kolla.common.utils.ceilometer-central:Get:1 http://deb.debian.org/debian buster/main s390x ceilometer-agent-central all 1:11.0.1-5 [11.9 kB]
+INFO:kolla.common.utils.ceilometer-central:Fetched 11.9 kB in 0s (166 kB/s)
+INFO:kolla.common.utils.ceilometer-central:Selecting previously unselected package ceilometer-agent-central.
+INFO:kolla.common.utils.ceilometer-central:(Reading database ... 
+INFO:kolla.common.utils.ceilometer-central:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.ceilometer-central:(Reading database ... 70%
+INFO:kolla.common.utils.ceilometer-central:(Reading database ... 75%
+INFO:kolla.common.utils.ceilometer-central:(Reading database ... 80%
+INFO:kolla.common.utils.ceilometer-central:(Reading database ... 85%
+INFO:kolla.common.utils.ceilometer-central:(Reading database ... 90%
+INFO:kolla.common.utils.ceilometer-central:(Reading database ... 95%
+INFO:kolla.common.utils.ceilometer-central:(Reading database ... 100%(Reading database ... 27704 files and directories currently installed.)
+INFO:kolla.common.utils.ceilometer-central:Preparing to unpack .../ceilometer-agent-central_1%3a11.0.1-5_all.deb ...
+INFO:kolla.common.utils.ceilometer-central:Unpacking ceilometer-agent-central (1:11.0.1-5) ...
+INFO:kolla.common.utils.ceilometer-central:Setting up ceilometer-agent-central (1:11.0.1-5) ...
+INFO:kolla.common.utils.ceilometer-central:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.ceilometer-central:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.ceilometer-central:Removing intermediate container 2a4c280c0f30
+INFO:kolla.common.utils.ceilometer-central: ---> a2db306cd359
+INFO:kolla.common.utils.ceilometer-central:Step 4/4 : USER ceilometer
+INFO:kolla.common.utils.ceilometer-central: ---> Running in 03ed58ac5966
+INFO:kolla.common.utils.ceilometer-central:Removing intermediate container 03ed58ac5966
+INFO:kolla.common.utils.ceilometer-central: ---> 41a8ab9fd039
+INFO:kolla.common.utils.ceilometer-central:Successfully built 41a8ab9fd039
+INFO:kolla.common.utils.ceilometer-central:Successfully tagged s390x/debian-binary-ceilometer-central:9.1.0
+INFO:kolla.common.utils.ceilometer-central:Built at 2020-03-02 21:28:30.754997 (took 0:00:07.081494)

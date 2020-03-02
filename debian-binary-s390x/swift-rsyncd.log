@@ -1,0 +1,42 @@
+INFO:kolla.common.utils.swift-rsyncd:Building started at 2020-03-02 21:28:29.482559
+INFO:kolla.common.utils.swift-rsyncd:Step 1/6 : FROM s390x/debian-binary-swift-base:9.1.0
+INFO:kolla.common.utils.swift-rsyncd: ---> f51af6288789
+INFO:kolla.common.utils.swift-rsyncd:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="swift-rsyncd" build-date="20200302"
+INFO:kolla.common.utils.swift-rsyncd: ---> Running in 328a54656277
+INFO:kolla.common.utils.swift-rsyncd:Removing intermediate container 328a54656277
+INFO:kolla.common.utils.swift-rsyncd: ---> 8769b70cf12e
+INFO:kolla.common.utils.swift-rsyncd:Step 3/6 : RUN apt-get update && apt-get -y install --no-install-recommends rsync && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.swift-rsyncd: ---> Running in 190a33727a5c
+INFO:kolla.common.utils.swift-rsyncd:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.swift-rsyncd:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.swift-rsyncd:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.swift-rsyncd:Fetched 8,235 kB in 2s (5,373 kB/s)
+INFO:kolla.common.utils.swift-rsyncd:Reading package lists...
+INFO:kolla.common.utils.swift-rsyncd:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.swift-rsyncd:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.swift-rsyncd:[0m
+INFO:kolla.common.utils.swift-rsyncd:Reading package lists...
+INFO:kolla.common.utils.swift-rsyncd:Building dependency tree...
+INFO:kolla.common.utils.swift-rsyncd:Reading state information...
+INFO:kolla.common.utils.swift-rsyncd:rsync is already the newest version (3.1.3-6).
+INFO:kolla.common.utils.swift-rsyncd:0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.swift-rsyncd:Removing intermediate container 190a33727a5c
+INFO:kolla.common.utils.swift-rsyncd: ---> e0d954e4839d
+INFO:kolla.common.utils.swift-rsyncd:Step 4/6 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.swift-rsyncd: ---> 4b33a02774ab
+INFO:kolla.common.utils.swift-rsyncd:Step 5/6 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.swift-rsyncd: ---> Running in fb8af51771a8
+INFO:kolla.common.utils.swift-rsyncd:Removing intermediate container fb8af51771a8
+INFO:kolla.common.utils.swift-rsyncd: ---> a00d3b9a34eb
+INFO:kolla.common.utils.swift-rsyncd:Step 6/6 : USER swift
+INFO:kolla.common.utils.swift-rsyncd: ---> Running in 0a8f1a9d0c9a
+INFO:kolla.common.utils.swift-rsyncd:Removing intermediate container 0a8f1a9d0c9a
+INFO:kolla.common.utils.swift-rsyncd: ---> 61c06f21db9b
+INFO:kolla.common.utils.swift-rsyncd:Successfully built 61c06f21db9b
+INFO:kolla.common.utils.swift-rsyncd:Successfully tagged s390x/debian-binary-swift-rsyncd:9.1.0
+INFO:kolla.common.utils.swift-rsyncd:Built at 2020-03-02 21:28:37.310859 (took 0:00:07.828300)

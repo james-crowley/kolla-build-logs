@@ -1,0 +1,1095 @@
+INFO:kolla.common.utils.base:Building started at 2020-03-02 21:20:33.494378
+INFO:kolla.common.utils.base:Step 1/35 : FROM debian:10
+INFO:kolla.common.utils.base: ---> c9c43dbd0a93
+INFO:kolla.common.utils.base:Step 2/35 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="base" build-date="20200302"
+INFO:kolla.common.utils.base: ---> Running in 7a54dc23c67a
+INFO:kolla.common.utils.base:Removing intermediate container 7a54dc23c67a
+INFO:kolla.common.utils.base: ---> 2d1ee11fa201
+INFO:kolla.common.utils.base:Step 3/35 : ENV LANG en_US.UTF-8
+INFO:kolla.common.utils.base: ---> Running in dbd458671b7a
+INFO:kolla.common.utils.base:Removing intermediate container dbd458671b7a
+INFO:kolla.common.utils.base: ---> f49eb80db3c2
+INFO:kolla.common.utils.base:Step 4/35 : RUN groupadd --force --gid 42475 almanach     && useradd -l -M --shell /usr/sbin/nologin --uid 42475 --gid 42475 almanach     && groupadd --force --gid 42401 ansible     && useradd -l -M --shell /usr/sbin/nologin --uid 42401 --gid 42401 ansible     && groupadd --force --gid 42402 aodh     && useradd -l -M --shell /usr/sbin/nologin --uid 42402 --gid 42402 aodh     && groupadd --force --gid 42403 barbican     && useradd -l -M --shell /usr/sbin/nologin --uid 42403 --gid 42403 barbican     && groupadd --force --gid 42404 bifrost     && useradd -l -M --shell /usr/sbin/nologin --uid 42404 --gid 42404 bifrost     && groupadd --force --gid 42471 blazar     && useradd -l -M --shell /usr/sbin/nologin --uid 42471 --gid 42471 blazar     && groupadd --force --gid 42405 ceilometer     && useradd -l -M --shell /usr/sbin/nologin --uid 42405 --gid 42405 ceilometer     && groupadd --force --gid 42406 chrony     && useradd -l -M --shell /usr/sbin/nologin --uid 42406 --gid 42406 chrony     && groupadd --force --gid 42407 cinder     && useradd -l -M --shell /usr/sbin/nologin --uid 42407 --gid 42407 cinder     && groupadd --force --gid 42408 cloudkitty     && useradd -l -M --shell /usr/sbin/nologin --uid 42408 --gid 42408 cloudkitty     && groupadd --force --gid 42409 collectd     && useradd -l -M --shell /usr/sbin/nologin --uid 42409 --gid 42409 collectd     && groupadd --force --gid 42410 congress     && useradd -l -M --shell /usr/sbin/nologin --uid 42410 --gid 42410 congress     && groupadd --force --gid 42483 cyborg     && useradd -l -M --shell /usr/sbin/nologin --uid 42483 --gid 42483 cyborg     && groupadd --force --gid 42411 designate     && useradd -l -M --shell /usr/sbin/nologin --uid 42411 --gid 42411 designate     && groupadd --force --gid 42464 dragonflow     && useradd -l -M --shell /usr/sbin/nologin --uid 42464 --gid 42464 dragonflow     && groupadd --force --gid 42466 ec2api     && useradd -l -M --shell /usr/sbin/nologin --uid 42466 --gid 42466 ec2api     && groupadd --force --gid 42412 elasticsearch     && useradd -l -M --shell /usr/sbin/nologin --uid 42412 --gid 42412 elasticsearch     && groupadd --force --gid 42413 etcd     && useradd -l -M --shell /usr/sbin/nologin --uid 42413 --gid 42413 etcd     && groupadd --force --gid 42474 fluentd     && useradd -l -M --shell /usr/sbin/nologin --uid 42474 --gid 42474 fluentd     && groupadd --force --gid 42414 freezer     && useradd -l -M --shell /usr/sbin/nologin --uid 42414 --gid 42414 freezer     && groupadd --force --gid 42415 glance     && useradd -l -M --shell /usr/sbin/nologin --uid 42415 --gid 42415 glance     && groupadd --force --gid 42416 gnocchi     && useradd -l -M --shell /usr/sbin/nologin --uid 42416 --gid 42416 gnocchi     && groupadd --force --gid 42417 grafana     && useradd -l -M --shell /usr/sbin/nologin --uid 42417 --gid 42417 grafana     && groupadd --force --gid 42454 haproxy     && useradd -l -M --shell /usr/sbin/nologin --uid 42454 --gid 42454 haproxy     && groupadd --force --gid 42418 heat     && useradd -l -M --shell /usr/sbin/nologin --uid 42418 --gid 42418 heat     && groupadd --force --gid 42420 horizon     && useradd -l -M --shell /usr/sbin/nologin --uid 42420 --gid 42420 horizon     && groupadd --force --gid 42477 hugetlbfs     && useradd -l -M --shell /usr/sbin/nologin --uid 42477 --gid 42477 hugetlbfs     && groupadd --force --gid 42421 influxdb     && useradd -l -M --shell /usr/sbin/nologin --uid 42421 --gid 42421 influxdb     && groupadd --force --gid 42422 ironic     && useradd -l -M --shell /usr/sbin/nologin --uid 42422 --gid 42422 ironic     && groupadd --force --gid 42461 ironic-inspector     && useradd -l -M --shell /usr/sbin/nologin --uid 42461 --gid 42461 ironic-inspector     && groupadd --force --gid 42423 kafka     && useradd -l -M --shell /usr/sbin/nologin --uid 42423 --gid 42423 kafka     && groupadd --force --gid 42458 karbor     && useradd -l -M --shell /usr/sbin/nologin --uid 42458 --gid 42458 karbor     && groupadd --force --gid 42425 keystone     && useradd -l -M --shell /usr/sbin/nologin --uid 42425 --gid 42425 keystone     && groupadd --force --gid 42426 kibana     && useradd -l -M --shell /usr/sbin/nologin --uid 42426 --gid 42426 kibana     && groupadd --force --gid 42400 kolla     && useradd -l -M --shell /usr/sbin/nologin --uid 42400 --gid 42400 kolla     && groupadd --force --gid 42469 kuryr     && useradd -l -M --shell /usr/sbin/nologin --uid 42469 --gid 42469 kuryr     && groupadd --force --gid 42473 libvirt     && useradd -l -M --shell /usr/sbin/nologin --uid 42473 --gid 42473 libvirt     && groupadd --force --gid 42478 logstash     && useradd -l -M --shell /usr/sbin/nologin --uid 42478 --gid 42478 logstash     && groupadd --force --gid 42428 magnum     && useradd -l -M --shell /usr/sbin/nologin --uid 42428 --gid 42428 magnum     && groupadd --force --gid 42429 manila     && useradd -l -M --shell /usr/sbin/nologin --uid 42429 --gid 42429 manila     && groupadd --force --gid 42485 masakari     && useradd -l -M --shell /usr/sbin/nologin --uid 42485 --gid 42485 masakari     && groupadd --force --gid 42457 memcached     && useradd -l -M --shell /usr/sbin/nologin --uid 42457 --gid 42457 memcached     && groupadd --force --gid 42430 mistral     && useradd -l -M --shell /usr/sbin/nologin --uid 42430 --gid 42430 mistral     && groupadd --force --gid 42431 monasca     && useradd -l -M --shell /usr/sbin/nologin --uid 42431 --gid 42431 monasca     && groupadd --force --gid 65534 mongodb     && useradd -l -M --shell /usr/sbin/nologin --uid 42432 --gid 65534 mongodb     && groupadd --force --gid 42433 murano     && useradd -l -M --shell /usr/sbin/nologin --uid 42433 --gid 42433 murano     && groupadd --force --gid 42434 mysql     && useradd -l -M --shell /usr/sbin/nologin --uid 42434 --gid 42434 mysql     && groupadd --force --gid 42435 neutron     && useradd -l -M --shell /usr/sbin/nologin --uid 42435 --gid 42435 neutron     && groupadd --force --gid 42481 nfast     && useradd -l -M --shell /usr/sbin/nologin --uid 42481 --gid 42481 nfast     && groupadd --force --gid 42436 nova     && useradd -l -M --shell /usr/sbin/nologin --uid 42436 --gid 42436 nova     && groupadd --force --gid 42470 novajoin     && useradd -l -M --shell /usr/sbin/nologin --uid 42470 --gid 42470 novajoin     && groupadd --force --gid 42437 octavia     && useradd -l -M --shell /usr/sbin/nologin --uid 42437 --gid 42437 octavia     && groupadd --force --gid 42462 odl     && useradd -l -M --shell /usr/sbin/nologin --uid 42462 --gid 42462 odl     && groupadd --force --gid 42476 openvswitch     && useradd -l -M --shell /usr/sbin/nologin --uid 42476 --gid 42476 openvswitch     && groupadd --force --gid 42438 panko     && useradd -l -M --shell /usr/sbin/nologin --uid 42438 --gid 42438 panko     && groupadd --force --gid 42482 placement     && useradd -l -M --shell /usr/sbin/nologin --uid 42482 --gid 42482 placement     && groupadd --force --gid 42472 prometheus     && useradd -l -M --shell /usr/sbin/nologin --uid 42472 --gid 42472 prometheus     && groupadd --force --gid 42465 qdrouterd     && useradd -l -M --shell /usr/sbin/nologin --uid 42465 --gid 42465 qdrouterd     && groupadd --force --gid 42427 qemu     && useradd -l -M --shell /usr/sbin/nologin --uid 42427 --gid 42427 qemu     && groupadd --force --gid 42484 qinling     && useradd -l -M --shell /usr/sbin/nologin --uid 42484 --gid 42484 qinling     && groupadd --force --gid 42439 rabbitmq     && useradd -l -M --shell /usr/sbin/nologin --uid 42439 --gid 42439 rabbitmq     && groupadd --force --gid 42440 rally     && useradd -l -M --shell /usr/sbin/nologin --uid 42440 --gid 42440 rally     && groupadd --force --gid 42460 redis     && useradd -l -M --shell /usr/sbin/nologin --uid 42460 --gid 42460 redis     && groupadd --force --gid 42441 sahara     && useradd -l -M --shell /usr/sbin/nologin --uid 42441 --gid 42441 sahara     && groupadd --force --gid 42442 searchlight     && useradd -l -M --shell /usr/sbin/nologin --uid 42442 --gid 42442 searchlight     && groupadd --force --gid 42443 senlin     && useradd -l -M --shell /usr/sbin/nologin --uid 42443 --gid 42443 senlin     && groupadd --force --gid 42467 sensu     && useradd -l -M --shell /usr/sbin/nologin --uid 42467 --gid 42467 sensu     && groupadd --force --gid 42468 skydive     && useradd -l -M --shell /usr/sbin/nologin --uid 42468 --gid 42468 skydive     && groupadd --force --gid 42444 solum     && useradd -l -M --shell /usr/sbin/nologin --uid 42444 --gid 42444 solum     && groupadd --force --gid 42479 storm     && useradd -l -M --shell /usr/sbin/nologin --uid 42479 --gid 42479 storm     && groupadd --force --gid 42445 swift     && useradd -l -M --shell /usr/sbin/nologin --uid 42445 --gid 42445 swift     && groupadd --force --gid 42446 tacker     && useradd -l -M --shell /usr/sbin/nologin --uid 42446 --gid 42446 tacker     && groupadd --force --gid 42447 td-agent     && useradd -l -M --shell /usr/sbin/nologin --uid 42447 --gid 42447 td-agent     && groupadd --force --gid 42448 telegraf     && useradd -l -M --shell /usr/sbin/nologin --uid 42448 --gid 42448 telegraf     && groupadd --force --gid 42480 tempest     && useradd -l -M --shell /usr/sbin/nologin --uid 42480 --gid 42480 tempest     && groupadd --force --gid 42449 trove     && useradd -l -M --shell /usr/sbin/nologin --uid 42449 --gid 42449 trove     && groupadd --force --gid 42459 vitrage     && useradd -l -M --shell /usr/sbin/nologin --uid 42459 --gid 42459 vitrage     && groupadd --force --gid 42450 vmtp     && useradd -l -M --shell /usr/sbin/nologin --uid 42450 --gid 42450 vmtp     && groupadd --force --gid 42451 watcher     && useradd -l -M --shell /usr/sbin/nologin --uid 42451 --gid 42451 watcher     && groupadd --force --gid 42452 zaqar     && useradd -l -M --shell /usr/sbin/nologin --uid 42452 --gid 42452 zaqar     && groupadd --force --gid 42453 zookeeper     && useradd -l -M --shell /usr/sbin/nologin --uid 42453 --gid 42453 zookeeper     && groupadd --force --gid 42463 zun     && useradd -l -M --shell /usr/sbin/nologin --uid 42463 --gid 42463 zun
+INFO:kolla.common.utils.base: ---> Running in 26b523f7913d
+INFO:kolla.common.utils.base:Removing intermediate container 26b523f7913d
+INFO:kolla.common.utils.base: ---> c2431123c5b6
+INFO:kolla.common.utils.base:Step 5/35 : LABEL kolla_version="9.1.0"
+INFO:kolla.common.utils.base: ---> Running in f886815f7133
+INFO:kolla.common.utils.base:Removing intermediate container f886815f7133
+INFO:kolla.common.utils.base: ---> bf8ec9a238e9
+INFO:kolla.common.utils.base:Step 6/35 : ENV KOLLA_BASE_DISTRO=debian     KOLLA_INSTALL_TYPE=binary     KOLLA_INSTALL_METATYPE=rdo     KOLLA_DISTRO_PYTHON_VERSION=3.7     KOLLA_BASE_ARCH=s390x
+INFO:kolla.common.utils.base: ---> Running in 3416c224d436
+INFO:kolla.common.utils.base:Removing intermediate container 3416c224d436
+INFO:kolla.common.utils.base: ---> 3168ac32f6f4
+INFO:kolla.common.utils.base:Step 7/35 : COPY kolla_bashrc /tmp/
+INFO:kolla.common.utils.base: ---> 781281090256
+INFO:kolla.common.utils.base:Step 8/35 : RUN cat /tmp/kolla_bashrc >> /etc/skel/.bashrc     && cat /tmp/kolla_bashrc >> /root/.bashrc
+INFO:kolla.common.utils.base: ---> Running in 7b7bc0ba8f82
+INFO:kolla.common.utils.base:Removing intermediate container 7b7bc0ba8f82
+INFO:kolla.common.utils.base: ---> 1c28ef32eff6
+INFO:kolla.common.utils.base:Step 9/35 : ENV PS1="$(tput bold)($(printenv KOLLA_SERVICE_NAME))$(tput sgr0)[$(id -un)@$(hostname -s) $(pwd)]$ "
+INFO:kolla.common.utils.base: ---> Running in 78808398f0b1
+INFO:kolla.common.utils.base:Removing intermediate container 78808398f0b1
+INFO:kolla.common.utils.base: ---> 6c5011452ed3
+INFO:kolla.common.utils.base:Step 10/35 : RUN apt-get update && apt-get -y install --no-install-recommends lsb-release && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.base: ---> Running in 58c2d69ecc8a
+INFO:kolla.common.utils.base:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.base:Get:2 http://deb.debian.org/debian buster-updates InRelease [49.3 kB]
+INFO:kolla.common.utils.base:Get:3 http://deb.debian.org/debian buster/main s390x Packages [7624 kB]
+INFO:kolla.common.utils.base:Get:4 http://deb.debian.org/debian buster-updates/main s390x Packages [7380 B]
+INFO:kolla.common.utils.base:Get:5 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.base:Get:6 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.base:Fetched 8028 kB in 1s (6569 kB/s)
+INFO:kolla.common.utils.base:Reading package lists...
+INFO:kolla.common.utils.base:Reading package lists...
+INFO:kolla.common.utils.base:Building dependency tree...
+INFO:kolla.common.utils.base:Reading state information...
+INFO:kolla.common.utils.base:The following additional packages will be installed:
+INFO:kolla.common.utils.base:  distro-info-data libexpat1 libmpdec2 libpython3-stdlib libpython3.7-minimal
+INFO:kolla.common.utils.base:  libpython3.7-stdlib libreadline7 libsqlite3-0 libssl1.1 mime-support python3
+INFO:kolla.common.utils.base:  python3-minimal python3.7 python3.7-minimal readline-common
+INFO:kolla.common.utils.base:Suggested packages:
+INFO:kolla.common.utils.base:  lsb python3-doc python3-tk python3-venv python3.7-venv python3.7-doc
+INFO:kolla.common.utils.base:  binutils binfmt-support readline-doc
+INFO:kolla.common.utils.base:Recommended packages:
+INFO:kolla.common.utils.base:  bzip2 file xz-utils
+INFO:kolla.common.utils.base:The following NEW packages will be installed:
+INFO:kolla.common.utils.base:  distro-info-data libexpat1 libmpdec2 libpython3-stdlib libpython3.7-minimal
+INFO:kolla.common.utils.base:  libpython3.7-stdlib libreadline7 libsqlite3-0 libssl1.1 lsb-release
+INFO:kolla.common.utils.base:  mime-support python3 python3-minimal python3.7 python3.7-minimal
+INFO:kolla.common.utils.base:  readline-common
+INFO:kolla.common.utils.base:0 upgraded, 16 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.base:Need to get 6578 kB of archives.
+INFO:kolla.common.utils.base:After this operation, 30.2 MB of additional disk space will be used.
+INFO:kolla.common.utils.base:Get:1 http://deb.debian.org/debian buster/main s390x libssl1.1 s390x 1.1.1d-0+deb10u2 [1201 kB]
+INFO:kolla.common.utils.base:Get:2 http://deb.debian.org/debian buster/main s390x libpython3.7-minimal s390x 3.7.3-2+deb10u1 [586 kB]
+INFO:kolla.common.utils.base:Get:3 http://deb.debian.org/debian buster/main s390x libexpat1 s390x 2.2.6-2+deb10u1 [101 kB]
+INFO:kolla.common.utils.base:Get:4 http://deb.debian.org/debian buster/main s390x python3.7-minimal s390x 3.7.3-2+deb10u1 [1590 kB]
+INFO:kolla.common.utils.base:Get:5 http://deb.debian.org/debian buster/main s390x python3-minimal s390x 3.7.3-1 [36.6 kB]
+INFO:kolla.common.utils.base:Get:6 http://deb.debian.org/debian buster/main s390x mime-support all 3.62 [37.2 kB]
+INFO:kolla.common.utils.base:Get:7 http://deb.debian.org/debian buster/main s390x libmpdec2 s390x 2.4.2-2 [83.3 kB]
+INFO:kolla.common.utils.base:Get:8 http://deb.debian.org/debian buster/main s390x readline-common all 7.0-5 [70.6 kB]
+INFO:kolla.common.utils.base:Get:9 http://deb.debian.org/debian buster/main s390x libreadline7 s390x 7.0-5 [144 kB]
+INFO:kolla.common.utils.base:Get:10 http://deb.debian.org/debian buster/main s390x libsqlite3-0 s390x 3.27.2-3 [600 kB]
+INFO:kolla.common.utils.base:Get:11 http://deb.debian.org/debian buster/main s390x libpython3.7-stdlib s390x 3.7.3-2+deb10u1 [1683 kB]
+INFO:kolla.common.utils.base:Get:12 http://deb.debian.org/debian buster/main s390x python3.7 s390x 3.7.3-2+deb10u1 [330 kB]
+INFO:kolla.common.utils.base:Get:13 http://deb.debian.org/debian buster/main s390x libpython3-stdlib s390x 3.7.3-1 [20.0 kB]
+INFO:kolla.common.utils.base:Get:14 http://deb.debian.org/debian buster/main s390x python3 s390x 3.7.3-1 [61.5 kB]
+INFO:kolla.common.utils.base:Get:15 http://deb.debian.org/debian buster/main s390x distro-info-data all 0.41+deb10u1 [6500 B]
+INFO:kolla.common.utils.base:Get:16 http://deb.debian.org/debian buster/main s390x lsb-release all 10.2019051400 [27.5 kB]
+INFO:kolla.common.utils.base:[91mperl: warning: Setting locale failed.
+INFO:kolla.common.utils.base:perl: warning: Please check that your locale settings:
+INFO:kolla.common.utils.base:	LANGUAGE = (unset),
+INFO:kolla.common.utils.base:	LC_ALL = (unset),
+INFO:kolla.common.utils.base:	LANG = "en_US.UTF-8"
+INFO:kolla.common.utils.base:    are supported and installed on your system.
+INFO:kolla.common.utils.base:perl: warning: Falling back to the standard locale ("C").
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91mdebconf: delaying package configuration, since apt-utils is not installed
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:Fetched 6578 kB in 0s (40.6 MB/s)
+INFO:kolla.common.utils.base:Selecting previously unselected package libssl1.1:s390x.
+INFO:kolla.common.utils.base:(Reading database ... 
+INFO:kolla.common.utils.base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.base:(Reading database ... 80%
+INFO:kolla.common.utils.base:(Reading database ... 85%
+INFO:kolla.common.utils.base:(Reading database ... 90%
+INFO:kolla.common.utils.base:(Reading database ... 95%
+INFO:kolla.common.utils.base:(Reading database ... 100%(Reading database ... 6672 files and directories currently installed.)
+INFO:kolla.common.utils.base:Preparing to unpack .../libssl1.1_1.1.1d-0+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libssl1.1:s390x (1.1.1d-0+deb10u2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libpython3.7-minimal:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../libpython3.7-minimal_3.7.3-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libpython3.7-minimal:s390x (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libexpat1:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../libexpat1_2.2.6-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libexpat1:s390x (2.2.6-2+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package python3.7-minimal.
+INFO:kolla.common.utils.base:Preparing to unpack .../python3.7-minimal_3.7.3-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking python3.7-minimal (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up libssl1.1:s390x (1.1.1d-0+deb10u2) ...
+INFO:kolla.common.utils.base:debconf: unable to initialize frontend: Dialog
+INFO:kolla.common.utils.base:debconf: (TERM is not set, so the dialog frontend is not usable.)
+INFO:kolla.common.utils.base:debconf: falling back to frontend: Readline
+INFO:kolla.common.utils.base:debconf: unable to initialize frontend: Readline
+INFO:kolla.common.utils.base:debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/s390x-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/s390x-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/s390x-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/s390x-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+INFO:kolla.common.utils.base:debconf: falling back to frontend: Teletype
+INFO:kolla.common.utils.base:Setting up libpython3.7-minimal:s390x (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up libexpat1:s390x (2.2.6-2+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up python3.7-minimal (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package python3-minimal.
+INFO:kolla.common.utils.base:(Reading database ... 
+INFO:kolla.common.utils.base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.base:(Reading database ... 80%
+INFO:kolla.common.utils.base:(Reading database ... 85%
+INFO:kolla.common.utils.base:(Reading database ... 90%
+INFO:kolla.common.utils.base:(Reading database ... 95%
+INFO:kolla.common.utils.base:(Reading database ... 100%(Reading database ... 6933 files and directories currently installed.)
+INFO:kolla.common.utils.base:Preparing to unpack .../0-python3-minimal_3.7.3-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking python3-minimal (3.7.3-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package mime-support.
+INFO:kolla.common.utils.base:Preparing to unpack .../1-mime-support_3.62_all.deb ...
+INFO:kolla.common.utils.base:Unpacking mime-support (3.62) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libmpdec2:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../2-libmpdec2_2.4.2-2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libmpdec2:s390x (2.4.2-2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package readline-common.
+INFO:kolla.common.utils.base:Preparing to unpack .../3-readline-common_7.0-5_all.deb ...
+INFO:kolla.common.utils.base:Unpacking readline-common (7.0-5) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libreadline7:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../4-libreadline7_7.0-5_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libreadline7:s390x (7.0-5) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libsqlite3-0:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../5-libsqlite3-0_3.27.2-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libsqlite3-0:s390x (3.27.2-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libpython3.7-stdlib:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../6-libpython3.7-stdlib_3.7.3-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libpython3.7-stdlib:s390x (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package python3.7.
+INFO:kolla.common.utils.base:Preparing to unpack .../7-python3.7_3.7.3-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking python3.7 (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libpython3-stdlib:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../8-libpython3-stdlib_3.7.3-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libpython3-stdlib:s390x (3.7.3-1) ...
+INFO:kolla.common.utils.base:Setting up python3-minimal (3.7.3-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package python3.
+INFO:kolla.common.utils.base:(Reading database ... 
+INFO:kolla.common.utils.base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.base:(Reading database ... 80%
+INFO:kolla.common.utils.base:(Reading database ... 85%
+INFO:kolla.common.utils.base:(Reading database ... 90%
+INFO:kolla.common.utils.base:(Reading database ... 95%
+INFO:kolla.common.utils.base:(Reading database ... 100%(Reading database ... 7402 files and directories currently installed.)
+INFO:kolla.common.utils.base:Preparing to unpack .../python3_3.7.3-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking python3 (3.7.3-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package distro-info-data.
+INFO:kolla.common.utils.base:Preparing to unpack .../distro-info-data_0.41+deb10u1_all.deb ...
+INFO:kolla.common.utils.base:Unpacking distro-info-data (0.41+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package lsb-release.
+INFO:kolla.common.utils.base:Preparing to unpack .../lsb-release_10.2019051400_all.deb ...
+INFO:kolla.common.utils.base:Unpacking lsb-release (10.2019051400) ...
+INFO:kolla.common.utils.base:Setting up mime-support (3.62) ...
+INFO:kolla.common.utils.base:Setting up distro-info-data (0.41+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up libsqlite3-0:s390x (3.27.2-3) ...
+INFO:kolla.common.utils.base:Setting up libmpdec2:s390x (2.4.2-2) ...
+INFO:kolla.common.utils.base:Setting up readline-common (7.0-5) ...
+INFO:kolla.common.utils.base:Setting up libreadline7:s390x (7.0-5) ...
+INFO:kolla.common.utils.base:Setting up libpython3.7-stdlib:s390x (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up libpython3-stdlib:s390x (3.7.3-1) ...
+INFO:kolla.common.utils.base:Setting up python3.7 (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up python3 (3.7.3-1) ...
+INFO:kolla.common.utils.base:running python rtupdate hooks for python3.7...
+INFO:kolla.common.utils.base:running python post-rtupdate hooks for python3.7...
+INFO:kolla.common.utils.base:Setting up lsb-release (10.2019051400) ...
+INFO:kolla.common.utils.base:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.base:Removing intermediate container 58c2d69ecc8a
+INFO:kolla.common.utils.base: ---> 60919e57e448
+INFO:kolla.common.utils.base:Step 11/35 : RUN if [ $(lsb_release -r -s) != "10" ]; then         echo "Only release '10' is supported on debian"; false; fi
+INFO:kolla.common.utils.base: ---> Running in 856aa5bbde0e
+INFO:kolla.common.utils.base:Removing intermediate container 856aa5bbde0e
+INFO:kolla.common.utils.base: ---> e038e757e7ac
+INFO:kolla.common.utils.base:Step 12/35 : RUN cat /tmp/kolla_bashrc >> /etc/bash.bashrc     && sed -i -e s/LAST_SYSTEM_UID=999/LAST_SYSTEM_UID=59999/g /etc/adduser.conf
+INFO:kolla.common.utils.base: ---> Running in cc63171352f2
+INFO:kolla.common.utils.base:Removing intermediate container cc63171352f2
+INFO:kolla.common.utils.base: ---> a0f096cb25fa
+INFO:kolla.common.utils.base:Step 13/35 : ENV DEBIAN_FRONTEND noninteractive
+INFO:kolla.common.utils.base: ---> Running in 2f188a3d3186
+INFO:kolla.common.utils.base:Removing intermediate container 2f188a3d3186
+INFO:kolla.common.utils.base: ---> 4be0906e5343
+INFO:kolla.common.utils.base:Step 14/35 : COPY dpkg_reducing_disk_footprint /etc/dpkg/dpkg.cfg.d/dpkg_reducing_disk_footprint
+INFO:kolla.common.utils.base: ---> a83cd224420c
+INFO:kolla.common.utils.base:Step 15/35 : RUN apt-get update && apt-get -y install --no-install-recommends apt-transport-https ca-certificates curl dirmngr gnupg && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.base: ---> Running in ab36eb6856d1
+INFO:kolla.common.utils.base:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.base:Get:2 http://deb.debian.org/debian buster-updates InRelease [49.3 kB]
+INFO:kolla.common.utils.base:Get:3 http://deb.debian.org/debian buster/main s390x Packages [7624 kB]
+INFO:kolla.common.utils.base:Get:4 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.base:Get:5 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.base:Get:6 http://deb.debian.org/debian buster-updates/main s390x Packages [7380 B]
+INFO:kolla.common.utils.base:Fetched 8028 kB in 1s (6478 kB/s)
+INFO:kolla.common.utils.base:Reading package lists...
+INFO:kolla.common.utils.base:Reading package lists...
+INFO:kolla.common.utils.base:Building dependency tree...
+INFO:kolla.common.utils.base:Reading state information...
+INFO:kolla.common.utils.base:The following additional packages will be installed:
+INFO:kolla.common.utils.base:  gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf
+INFO:kolla.common.utils.base:  gpgsm libassuan0 libcurl4 libgssapi-krb5-2 libk5crypto3 libkeyutils1
+INFO:kolla.common.utils.base:  libkrb5-3 libkrb5support0 libksba8 libldap-2.4-2 libldap-common
+INFO:kolla.common.utils.base:  libnghttp2-14 libnpth0 libpsl5 librtmp1 libsasl2-2 libsasl2-modules-db
+INFO:kolla.common.utils.base:  libssh2-1 lsb-base openssl pinentry-curses
+INFO:kolla.common.utils.base:Suggested packages:
+INFO:kolla.common.utils.base:  dbus-user-session libpam-systemd pinentry-gnome3 tor parcimonie xloadimage
+INFO:kolla.common.utils.base:  scdaemon krb5-doc krb5-user pinentry-doc
+INFO:kolla.common.utils.base:Recommended packages:
+INFO:kolla.common.utils.base:  krb5-locales publicsuffix libsasl2-modules
+INFO:kolla.common.utils.base:The following NEW packages will be installed:
+INFO:kolla.common.utils.base:  apt-transport-https ca-certificates curl dirmngr gnupg gnupg-l10n
+INFO:kolla.common.utils.base:  gnupg-utils gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm
+INFO:kolla.common.utils.base:  libassuan0 libcurl4 libgssapi-krb5-2 libk5crypto3 libkeyutils1 libkrb5-3
+INFO:kolla.common.utils.base:  libkrb5support0 libksba8 libldap-2.4-2 libldap-common libnghttp2-14 libnpth0
+INFO:kolla.common.utils.base:  libpsl5 librtmp1 libsasl2-2 libsasl2-modules-db libssh2-1 lsb-base openssl
+INFO:kolla.common.utils.base:  pinentry-curses
+INFO:kolla.common.utils.base:0 upgraded, 33 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.base:Need to get 10.1 MB of archives.
+INFO:kolla.common.utils.base:After this operation, 22.3 MB of additional disk space will be used.
+INFO:kolla.common.utils.base:Get:1 http://deb.debian.org/debian buster/main s390x apt-transport-https all 1.8.2 [149 kB]
+INFO:kolla.common.utils.base:Get:2 http://deb.debian.org/debian buster/main s390x openssl s390x 1.1.1d-0+deb10u2 [826 kB]
+INFO:kolla.common.utils.base:Get:3 http://deb.debian.org/debian buster/main s390x ca-certificates all 20190110 [157 kB]
+INFO:kolla.common.utils.base:Get:4 http://deb.debian.org/debian buster/main s390x libkeyutils1 s390x 1.6-6 [14.7 kB]
+INFO:kolla.common.utils.base:Get:5 http://deb.debian.org/debian buster/main s390x libkrb5support0 s390x 1.17-3 [64.6 kB]
+INFO:kolla.common.utils.base:Get:6 http://deb.debian.org/debian buster/main s390x libk5crypto3 s390x 1.17-3 [120 kB]
+INFO:kolla.common.utils.base:Get:7 http://deb.debian.org/debian buster/main s390x libkrb5-3 s390x 1.17-3 [346 kB]
+INFO:kolla.common.utils.base:Get:8 http://deb.debian.org/debian buster/main s390x libgssapi-krb5-2 s390x 1.17-3 [146 kB]
+INFO:kolla.common.utils.base:Get:9 http://deb.debian.org/debian buster/main s390x libsasl2-modules-db s390x 2.1.27+dfsg-1+deb10u1 [68.2 kB]
+INFO:kolla.common.utils.base:Get:10 http://deb.debian.org/debian buster/main s390x libsasl2-2 s390x 2.1.27+dfsg-1+deb10u1 [103 kB]
+INFO:kolla.common.utils.base:Get:11 http://deb.debian.org/debian buster/main s390x libldap-common all 2.4.47+dfsg-3+deb10u1 [89.6 kB]
+INFO:kolla.common.utils.base:Get:12 http://deb.debian.org/debian buster/main s390x libldap-2.4-2 s390x 2.4.47+dfsg-3+deb10u1 [213 kB]
+INFO:kolla.common.utils.base:Get:13 http://deb.debian.org/debian buster/main s390x libnghttp2-14 s390x 1.36.0-2+deb10u1 [80.8 kB]
+INFO:kolla.common.utils.base:Get:14 http://deb.debian.org/debian buster/main s390x libpsl5 s390x 0.20.2-2 [53.5 kB]
+INFO:kolla.common.utils.base:Get:15 http://deb.debian.org/debian buster/main s390x librtmp1 s390x 2.4+20151223.gitfa8646d.1-2 [56.6 kB]
+INFO:kolla.common.utils.base:Get:16 http://deb.debian.org/debian buster/main s390x libssh2-1 s390x 1.8.0-2.1 [132 kB]
+INFO:kolla.common.utils.base:Get:17 http://deb.debian.org/debian buster/main s390x libassuan0 s390x 2.5.2-1 [46.1 kB]
+INFO:kolla.common.utils.base:Get:18 http://deb.debian.org/debian buster/main s390x gpgconf s390x 2.2.12-1+deb10u1 [502 kB]
+INFO:kolla.common.utils.base:Get:19 http://deb.debian.org/debian buster/main s390x lsb-base all 10.2019051400 [28.4 kB]
+INFO:kolla.common.utils.base:Get:20 http://deb.debian.org/debian buster/main s390x libksba8 s390x 1.3.5-2 [94.4 kB]
+INFO:kolla.common.utils.base:Get:21 http://deb.debian.org/debian buster/main s390x libnpth0 s390x 1.6-1 [18.2 kB]
+INFO:kolla.common.utils.base:Get:22 http://deb.debian.org/debian buster/main s390x dirmngr s390x 2.2.12-1+deb10u1 [689 kB]
+INFO:kolla.common.utils.base:Get:23 http://deb.debian.org/debian buster/main s390x gnupg-l10n all 2.2.12-1+deb10u1 [1010 kB]
+INFO:kolla.common.utils.base:Get:24 http://deb.debian.org/debian buster/main s390x gnupg-utils s390x 2.2.12-1+deb10u1 [811 kB]
+INFO:kolla.common.utils.base:Get:25 http://deb.debian.org/debian buster/main s390x gpg s390x 2.2.12-1+deb10u1 [817 kB]
+INFO:kolla.common.utils.base:Get:26 http://deb.debian.org/debian buster/main s390x pinentry-curses s390x 1.1.0-2 [62.7 kB]
+INFO:kolla.common.utils.base:Get:27 http://deb.debian.org/debian buster/main s390x gpg-agent s390x 2.2.12-1+deb10u1 [596 kB]
+INFO:kolla.common.utils.base:Get:28 http://deb.debian.org/debian buster/main s390x gpg-wks-client s390x 2.2.12-1+deb10u1 [477 kB]
+INFO:kolla.common.utils.base:Get:29 http://deb.debian.org/debian buster/main s390x gpg-wks-server s390x 2.2.12-1+deb10u1 [471 kB]
+INFO:kolla.common.utils.base:Get:30 http://deb.debian.org/debian buster/main s390x gpgsm s390x 2.2.12-1+deb10u1 [583 kB]
+INFO:kolla.common.utils.base:Get:32 http://deb.debian.org/debian buster/main s390x gnupg all 2.2.12-1+deb10u1 [715 kB]
+INFO:kolla.common.utils.base:Get:31 http://security-cdn.debian.org/debian-security buster/updates/main s390x libcurl4 s390x 7.64.0-4+deb10u1 [309 kB]
+INFO:kolla.common.utils.base:Get:33 http://security-cdn.debian.org/debian-security buster/updates/main s390x curl s390x 7.64.0-4+deb10u1 [260 kB]
+INFO:kolla.common.utils.base:[91mperl: warning: Setting locale failed.
+INFO:kolla.common.utils.base:perl: warning: Please check that your locale settings:
+INFO:kolla.common.utils.base:	LANGUAGE = (unset),
+INFO:kolla.common.utils.base:	LC_ALL = (unset),
+INFO:kolla.common.utils.base:	LANG = "en_US.UTF-8"
+INFO:kolla.common.utils.base:    are supported and installed on your system.
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91mperl: warning: Falling back to the standard locale ("C").
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91mdebconf: delaying package configuration, since apt-utils is not installed
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:Fetched 10.1 MB in 0s (44.4 MB/s)
+INFO:kolla.common.utils.base:Selecting previously unselected package apt-transport-https.
+INFO:kolla.common.utils.base:(Reading database ... 
+INFO:kolla.common.utils.base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.base:(Reading database ... 80%
+INFO:kolla.common.utils.base:(Reading database ... 85%
+INFO:kolla.common.utils.base:(Reading database ... 90%
+INFO:kolla.common.utils.base:(Reading database ... 95%
+INFO:kolla.common.utils.base:(Reading database ... 100%(Reading database ... 7456 files and directories currently installed.)
+INFO:kolla.common.utils.base:Preparing to unpack .../00-apt-transport-https_1.8.2_all.deb ...
+INFO:kolla.common.utils.base:Unpacking apt-transport-https (1.8.2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package openssl.
+INFO:kolla.common.utils.base:Preparing to unpack .../01-openssl_1.1.1d-0+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking openssl (1.1.1d-0+deb10u2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package ca-certificates.
+INFO:kolla.common.utils.base:Preparing to unpack .../02-ca-certificates_20190110_all.deb ...
+INFO:kolla.common.utils.base:Unpacking ca-certificates (20190110) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libkeyutils1:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../03-libkeyutils1_1.6-6_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libkeyutils1:s390x (1.6-6) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libkrb5support0:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../04-libkrb5support0_1.17-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libkrb5support0:s390x (1.17-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libk5crypto3:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../05-libk5crypto3_1.17-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libk5crypto3:s390x (1.17-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libkrb5-3:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../06-libkrb5-3_1.17-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libkrb5-3:s390x (1.17-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libgssapi-krb5-2:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../07-libgssapi-krb5-2_1.17-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libgssapi-krb5-2:s390x (1.17-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libsasl2-modules-db:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../08-libsasl2-modules-db_2.1.27+dfsg-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libsasl2-modules-db:s390x (2.1.27+dfsg-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libsasl2-2:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../09-libsasl2-2_2.1.27+dfsg-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libsasl2-2:s390x (2.1.27+dfsg-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libldap-common.
+INFO:kolla.common.utils.base:Preparing to unpack .../10-libldap-common_2.4.47+dfsg-3+deb10u1_all.deb ...
+INFO:kolla.common.utils.base:Unpacking libldap-common (2.4.47+dfsg-3+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libldap-2.4-2:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../11-libldap-2.4-2_2.4.47+dfsg-3+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libldap-2.4-2:s390x (2.4.47+dfsg-3+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libnghttp2-14:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../12-libnghttp2-14_1.36.0-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libnghttp2-14:s390x (1.36.0-2+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libpsl5:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../13-libpsl5_0.20.2-2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libpsl5:s390x (0.20.2-2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package librtmp1:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../14-librtmp1_2.4+20151223.gitfa8646d.1-2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking librtmp1:s390x (2.4+20151223.gitfa8646d.1-2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libssh2-1:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../15-libssh2-1_1.8.0-2.1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libssh2-1:s390x (1.8.0-2.1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libcurl4:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../16-libcurl4_7.64.0-4+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libcurl4:s390x (7.64.0-4+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package curl.
+INFO:kolla.common.utils.base:Preparing to unpack .../17-curl_7.64.0-4+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking curl (7.64.0-4+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libassuan0:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../18-libassuan0_2.5.2-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libassuan0:s390x (2.5.2-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package gpgconf.
+INFO:kolla.common.utils.base:Preparing to unpack .../19-gpgconf_2.2.12-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking gpgconf (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package lsb-base.
+INFO:kolla.common.utils.base:Preparing to unpack .../20-lsb-base_10.2019051400_all.deb ...
+INFO:kolla.common.utils.base:Unpacking lsb-base (10.2019051400) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libksba8:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../21-libksba8_1.3.5-2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libksba8:s390x (1.3.5-2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libnpth0:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../22-libnpth0_1.6-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libnpth0:s390x (1.6-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package dirmngr.
+INFO:kolla.common.utils.base:Preparing to unpack .../23-dirmngr_2.2.12-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking dirmngr (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package gnupg-l10n.
+INFO:kolla.common.utils.base:Preparing to unpack .../24-gnupg-l10n_2.2.12-1+deb10u1_all.deb ...
+INFO:kolla.common.utils.base:Unpacking gnupg-l10n (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package gnupg-utils.
+INFO:kolla.common.utils.base:Preparing to unpack .../25-gnupg-utils_2.2.12-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking gnupg-utils (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package gpg.
+INFO:kolla.common.utils.base:Preparing to unpack .../26-gpg_2.2.12-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking gpg (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package pinentry-curses.
+INFO:kolla.common.utils.base:Preparing to unpack .../27-pinentry-curses_1.1.0-2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking pinentry-curses (1.1.0-2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package gpg-agent.
+INFO:kolla.common.utils.base:Preparing to unpack .../28-gpg-agent_2.2.12-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking gpg-agent (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package gpg-wks-client.
+INFO:kolla.common.utils.base:Preparing to unpack .../29-gpg-wks-client_2.2.12-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking gpg-wks-client (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package gpg-wks-server.
+INFO:kolla.common.utils.base:Preparing to unpack .../30-gpg-wks-server_2.2.12-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking gpg-wks-server (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package gpgsm.
+INFO:kolla.common.utils.base:Preparing to unpack .../31-gpgsm_2.2.12-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking gpgsm (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package gnupg.
+INFO:kolla.common.utils.base:Preparing to unpack .../32-gnupg_2.2.12-1+deb10u1_all.deb ...
+INFO:kolla.common.utils.base:Unpacking gnupg (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up libksba8:s390x (1.3.5-2) ...
+INFO:kolla.common.utils.base:Setting up lsb-base (10.2019051400) ...
+INFO:kolla.common.utils.base:Setting up libkeyutils1:s390x (1.6-6) ...
+INFO:kolla.common.utils.base:Setting up libpsl5:s390x (0.20.2-2) ...
+INFO:kolla.common.utils.base:Setting up apt-transport-https (1.8.2) ...
+INFO:kolla.common.utils.base:Setting up libnghttp2-14:s390x (1.36.0-2+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up libnpth0:s390x (1.6-1) ...
+INFO:kolla.common.utils.base:Setting up libassuan0:s390x (2.5.2-1) ...
+INFO:kolla.common.utils.base:Setting up libldap-common (2.4.47+dfsg-3+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up libkrb5support0:s390x (1.17-3) ...
+INFO:kolla.common.utils.base:Setting up libsasl2-modules-db:s390x (2.1.27+dfsg-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up gnupg-l10n (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up librtmp1:s390x (2.4+20151223.gitfa8646d.1-2) ...
+INFO:kolla.common.utils.base:Setting up libk5crypto3:s390x (1.17-3) ...
+INFO:kolla.common.utils.base:Setting up libsasl2-2:s390x (2.1.27+dfsg-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up gpgconf (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up libssh2-1:s390x (1.8.0-2.1) ...
+INFO:kolla.common.utils.base:Setting up libkrb5-3:s390x (1.17-3) ...
+INFO:kolla.common.utils.base:Setting up openssl (1.1.1d-0+deb10u2) ...
+INFO:kolla.common.utils.base:Setting up gpg (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up gnupg-utils (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up pinentry-curses (1.1.0-2) ...
+INFO:kolla.common.utils.base:Setting up gpg-agent (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up gpgsm (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up libldap-2.4-2:s390x (2.4.47+dfsg-3+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up dirmngr (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up ca-certificates (20190110) ...
+INFO:kolla.common.utils.base:Updating certificates in /etc/ssl/certs...
+INFO:kolla.common.utils.base:128 added, 0 removed; done.
+INFO:kolla.common.utils.base:Setting up libgssapi-krb5-2:s390x (1.17-3) ...
+INFO:kolla.common.utils.base:Setting up gpg-wks-server (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up libcurl4:s390x (7.64.0-4+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up curl (7.64.0-4+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up gpg-wks-client (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Setting up gnupg (2.2.12-1+deb10u1) ...
+INFO:kolla.common.utils.base:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.base:Processing triggers for ca-certificates (20190110) ...
+INFO:kolla.common.utils.base:Updating certificates in /etc/ssl/certs...
+INFO:kolla.common.utils.base:0 added, 0 removed; done.
+INFO:kolla.common.utils.base:Running hooks in /etc/ca-certificates/update.d...
+INFO:kolla.common.utils.base:done.
+INFO:kolla.common.utils.base:Removing intermediate container ab36eb6856d1
+INFO:kolla.common.utils.base: ---> d25bb6730f33
+INFO:kolla.common.utils.base:Step 16/35 : COPY sources.list.debian /etc/apt/sources.list
+INFO:kolla.common.utils.base: ---> 927695b4ed10
+INFO:kolla.common.utils.base:Step 17/35 : COPY sources.list /etc/apt/sources.list.d/kolla-custom.list
+INFO:kolla.common.utils.base: ---> 53e6082b3288
+INFO:kolla.common.utils.base:Step 18/35 : COPY apt_preferences.debian /etc/apt/preferences
+INFO:kolla.common.utils.base: ---> e754db4eae3c
+INFO:kolla.common.utils.base:Step 19/35 : COPY apt_preferences /etc/apt/preferences.d/kolla-custom
+INFO:kolla.common.utils.base: ---> 833d7007b9a0
+INFO:kolla.common.utils.base:Step 20/35 : RUN apt-key adv --no-tty --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 46095ACC8548582C1A2699A9D27D666CD88E42B4
+INFO:kolla.common.utils.base: ---> Running in 4f95855e7f78
+INFO:kolla.common.utils.base:[91mWarning: apt-key output should not be parsed (stdout is not a terminal)
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:Executing: /tmp/apt-key-gpghome.g3i9dJwCma/gpg.1.sh --no-tty --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 46095ACC8548582C1A2699A9D27D666CD88E42B4
+INFO:kolla.common.utils.base:[91mgpg: key D27D666CD88E42B4: public key "Elasticsearch (Elasticsearch Signing Key) <dev_ops@elasticsearch.org>[0m
+INFO:kolla.common.utils.base:[91m" imported
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91mgpg: Total number processed: 1
+INFO:kolla.common.utils.base:gpg:               imported: 1
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:Removing intermediate container 4f95855e7f78
+INFO:kolla.common.utils.base: ---> a61e548c5621
+INFO:kolla.common.utils.base:Step 21/35 : RUN curl -L https://download.docker.com/linux/debian/gpg | apt-key add -              && curl -L https://packages.grafana.com/gpg.key | apt-key add -              && curl -L http://buster-train.debian.net/debian/dists/pubkey.gpg | apt-key add -              && curl -L https://packages.treasuredata.com/GPG-KEY-td-agent | apt-key add -              && curl -L https://repos.influxdata.com/influxdb.key | apt-key add -
+INFO:kolla.common.utils.base: ---> Running in 8ec7ff496926
+INFO:kolla.common.utils.base:[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+INFO:kolla.common.utils.base:                                 Dload  Upload   Total   Spent    Left  Speed
+INFO:kolla.common.utils.base:  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m
+INFO:kolla.common.utils.base:[91mWarning: apt-key output should not be parsed (stdout is not a terminal)
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91m100  3817  100  3817    0     0  43873      0 --:--:-- --:--:-- --:--:-- 43873
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:OK
+INFO:kolla.common.utils.base:[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+INFO:kolla.common.utils.base:                                 Dload  Upload   Total   Spent    Left  Speed
+INFO:kolla.common.utils.base:  0     0[0m
+INFO:kolla.common.utils.base:[91m    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m
+INFO:kolla.common.utils.base:[91mWarning: apt-key output should not be parsed (stdout is not a terminal)
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91m100  1694  100  1694    0     0  21717      0 --:--:-- --:--:-- --:--:-- 21717
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:OK
+INFO:kolla.common.utils.base:[91m  % T[0m
+INFO:kolla.common.utils.base:[91mo[0m
+INFO:kolla.common.utils.base:[91mt[0m
+INFO:kolla.common.utils.base:[91mal[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m%[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91mRece[0m
+INFO:kolla.common.utils.base:[91mi[0m
+INFO:kolla.common.utils.base:[91mv[0m
+INFO:kolla.common.utils.base:[91me[0m
+INFO:kolla.common.utils.base:[91md % [0m
+INFO:kolla.common.utils.base:[91mX[0m
+INFO:kolla.common.utils.base:[91mf[0m
+INFO:kolla.common.utils.base:[91mer[0m
+INFO:kolla.common.utils.base:[91md[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m A[0m
+INFO:kolla.common.utils.base:[91mv[0m
+INFO:kolla.common.utils.base:[91merag[0m
+INFO:kolla.common.utils.base:[91me[0m
+INFO:kolla.common.utils.base:[91m S[0m
+INFO:kolla.common.utils.base:[91mp[0m
+INFO:kolla.common.utils.base:[91me[0m
+INFO:kolla.common.utils.base:[91me[0m
+INFO:kolla.common.utils.base:[91md[0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91mT[0m
+INFO:kolla.common.utils.base:[91mi[0m
+INFO:kolla.common.utils.base:[91mme [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91mT[0m
+INFO:kolla.common.utils.base:[91mi[0m
+INFO:kolla.common.utils.base:[91mm[0m
+INFO:kolla.common.utils.base:[91me [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m   [0m
+INFO:kolla.common.utils.base:[91mT[0m
+INFO:kolla.common.utils.base:[91mi[0m
+INFO:kolla.common.utils.base:[91mm[0m
+INFO:kolla.common.utils.base:[91me[0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91mC[0m
+INFO:kolla.common.utils.base:[91murr[0m
+INFO:kolla.common.utils.base:[91me[0m
+INFO:kolla.common.utils.base:[91mn[0m
+INFO:kolla.common.utils.base:[91mt[0m
+INFO:kolla.common.utils.base:[91m
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91m   [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m        Dload  Upload[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91mT[0m
+INFO:kolla.common.utils.base:[91mo[0m
+INFO:kolla.common.utils.base:[91mt[0m
+INFO:kolla.common.utils.base:[91mal [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91mS[0m
+INFO:kolla.common.utils.base:[91mpe[0m
+INFO:kolla.common.utils.base:[91mn[0m
+INFO:kolla.common.utils.base:[91mt    Left  [0m
+INFO:kolla.common.utils.base:[91mSp[0m
+INFO:kolla.common.utils.base:[91me[0m
+INFO:kolla.common.utils.base:[91me[0m
+INFO:kolla.common.utils.base:[91md
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91m[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m 0 [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m 0  [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m  [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m0 --:[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m:[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m--:--:-- --[0m
+INFO:kolla.common.utils.base:[91m:[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m:[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m   0[0m
+INFO:kolla.common.utils.base:[91mWarning: apt-key output should not be parsed (stdout is not a terminal)
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91m[0m
+INFO:kolla.common.utils.base:[91m1[0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m1[0m
+INFO:kolla.common.utils.base:[91m6[0m
+INFO:kolla.common.utils.base:[91m7[0m
+INFO:kolla.common.utils.base:[91m2[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m1[0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m1[0m
+INFO:kolla.common.utils.base:[91m6[0m
+INFO:kolla.common.utils.base:[91m7[0m
+INFO:kolla.common.utils.base:[91m2[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m2[0m
+INFO:kolla.common.utils.base:[91m8[0m
+INFO:kolla.common.utils.base:[91m2[0m
+INFO:kolla.common.utils.base:[91m9[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m0[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m:[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m:[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m:[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m:[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m:[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m:[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m-[0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m [0m
+INFO:kolla.common.utils.base:[91m2[0m
+INFO:kolla.common.utils.base:[91m8[0m
+INFO:kolla.common.utils.base:[91m2[0m
+INFO:kolla.common.utils.base:[91m9[0m
+INFO:kolla.common.utils.base:[91m
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:OK
+INFO:kolla.common.utils.base:[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+INFO:kolla.common.utils.base:                                 Dload  Upload   Total   Spent    Left  Speed
+INFO:kolla.common.utils.base:  0     0    0     0    0  [0m
+INFO:kolla.common.utils.base:[91m   0      0      0 --:--:-- --:--:-- --:--:--     0[0m
+INFO:kolla.common.utils.base:[91mWarning: apt-key output should not be parsed (stdout is not a terminal)
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91m100  3157  100  3157    0     0  64428      0 --:--:-- --:--:-- --:--:-- 64428
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:OK
+INFO:kolla.common.utils.base:[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+INFO:kolla.common.utils.base:                                 Dload  Upload   Total   Spent    Left  Speed
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91m  0     0    0     0    0     0      0      0 --:--:-- --:[0m
+INFO:kolla.common.utils.base:[91m--:-- --:--:--     0[0m
+INFO:kolla.common.utils.base:[91mWarning: apt-key output should not be parsed (stdout is not a terminal)
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91m100  3108  100  3108    0     0  36564      0 --:--:-- --:--:-- --:--:-- 36564
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:OK
+INFO:kolla.common.utils.base:Removing intermediate container 8ec7ff496926
+INFO:kolla.common.utils.base: ---> 37857ebb7c38
+INFO:kolla.common.utils.base:Step 22/35 : RUN apt-get update     && apt-get -y install locales     && sed -e "s/# $LANG UTF-8/$LANG UTF-8/g" /etc/locale.gen -i     && locale-gen "$LANG"     && apt-get -y upgrade     && apt-get -y dist-upgrade     && apt-get update && apt-get -y install --no-install-recommends apt-utils curl gawk iproute2 kmod lvm2 netbase open-iscsi procps python3 socat sudo tgt sudo && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.base: ---> Running in baf936dea195
+INFO:kolla.common.utils.base:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.base:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.base:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.base:Get:4 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.base:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7624 kB]
+INFO:kolla.common.utils.base:Get:6 http://buster-train.debian.net/debian buster-train-backports InRelease [3660 B]
+INFO:kolla.common.utils.base:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.base:Get:8 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3669 B]
+INFO:kolla.common.utils.base:Fetched 8235 kB in 1s (6344 kB/s)
+INFO:kolla.common.utils.base:Reading package lists...
+INFO:kolla.common.utils.base:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.base:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:Reading package lists...
+INFO:kolla.common.utils.base:Building dependency tree...
+INFO:kolla.common.utils.base:Reading state information...
+INFO:kolla.common.utils.base:The following additional packages will be installed:
+INFO:kolla.common.utils.base:  libc-l10n
+INFO:kolla.common.utils.base:The following NEW packages will be installed:
+INFO:kolla.common.utils.base:  libc-l10n locales
+INFO:kolla.common.utils.base:0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.base:Need to get 4907 kB of archives.
+INFO:kolla.common.utils.base:After this operation, 20.8 MB of additional disk space will be used.
+INFO:kolla.common.utils.base:Get:1 http://deb.debian.org/debian buster/main s390x libc-l10n all 2.28-10 [847 kB]
+INFO:kolla.common.utils.base:Get:2 http://deb.debian.org/debian buster/main s390x locales all 2.28-10 [4060 kB]
+INFO:kolla.common.utils.base:[91mperl: warning: Setting locale failed.
+INFO:kolla.common.utils.base:perl: warning: Please check that your locale settings:
+INFO:kolla.common.utils.base:	LANGUAGE = (unset),
+INFO:kolla.common.utils.base:	LC_ALL = (unset),
+INFO:kolla.common.utils.base:	LANG = "en_US.UTF-8"
+INFO:kolla.common.utils.base:    are supported and installed on your system.
+INFO:kolla.common.utils.base:perl: warning: Falling back to the standard locale ("C").
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:[91mdebconf: delaying package configuration, since apt-utils is not installed
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:Fetched 4907 kB in 0s (58.5 MB/s)
+INFO:kolla.common.utils.base:Selecting previously unselected package libc-l10n.
+INFO:kolla.common.utils.base:(Reading database ... 
+INFO:kolla.common.utils.base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.base:(Reading database ... 80%
+INFO:kolla.common.utils.base:(Reading database ... 85%
+INFO:kolla.common.utils.base:(Reading database ... 90%
+INFO:kolla.common.utils.base:(Reading database ... 95%
+INFO:kolla.common.utils.base:(Reading database ... 100%(Reading database ... 8136 files and directories currently installed.)
+INFO:kolla.common.utils.base:Preparing to unpack .../libc-l10n_2.28-10_all.deb ...
+INFO:kolla.common.utils.base:Unpacking libc-l10n (2.28-10) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package locales.
+INFO:kolla.common.utils.base:Preparing to unpack .../locales_2.28-10_all.deb ...
+INFO:kolla.common.utils.base:Unpacking locales (2.28-10) ...
+INFO:kolla.common.utils.base:Setting up libc-l10n (2.28-10) ...
+INFO:kolla.common.utils.base:Setting up locales (2.28-10) ...
+INFO:kolla.common.utils.base:Generating locales (this might take a while)...
+INFO:kolla.common.utils.base:Generation complete.
+INFO:kolla.common.utils.base:Generating locales (this might take a while)...
+INFO:kolla.common.utils.base:  en_US.UTF-8
+INFO:kolla.common.utils.base:...
+INFO:kolla.common.utils.base:[91mlocale alias file `/usr/share/locale/locale.alias' not found: No such file or directory
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base: done
+INFO:kolla.common.utils.base:Generation complete.
+INFO:kolla.common.utils.base:Reading package lists...
+INFO:kolla.common.utils.base:Building dependency tree...
+INFO:kolla.common.utils.base:Reading state information...
+INFO:kolla.common.utils.base:Calculating upgrade...
+INFO:kolla.common.utils.base:0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.base:Reading package lists...
+INFO:kolla.common.utils.base:Building dependency tree...
+INFO:kolla.common.utils.base:Reading state information...
+INFO:kolla.common.utils.base:Calculating upgrade...
+INFO:kolla.common.utils.base:0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.base:Hit:1 http://deb.debian.org/debian buster InRelease
+INFO:kolla.common.utils.base:Hit:2 http://deb.debian.org/debian buster-backports InRelease
+INFO:kolla.common.utils.base:Hit:3 http://security-cdn.debian.org/debian-security buster/updates InRelease
+INFO:kolla.common.utils.base:Hit:4 http://buster-train.debian.net/debian buster-train-backports InRelease
+INFO:kolla.common.utils.base:Hit:5 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease
+INFO:kolla.common.utils.base:Reading package lists...
+INFO:kolla.common.utils.base:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.base:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:Reading package lists...
+INFO:kolla.common.utils.base:Building dependency tree...
+INFO:kolla.common.utils.base:Reading state information...
+INFO:kolla.common.utils.base:iproute2 is already the newest version (4.20.0-2).
+INFO:kolla.common.utils.base:python3 is already the newest version (3.7.3-1).
+INFO:kolla.common.utils.base:python3 set to manually installed.
+INFO:kolla.common.utils.base:curl is already the newest version (7.64.0-4+deb10u1).
+INFO:kolla.common.utils.base:The following additional packages will be installed:
+INFO:kolla.common.utils.base:  dmeventd dmsetup libaio1 libapt-inst2.0 libconfig-general-perl
+INFO:kolla.common.utils.base:  libdevmapper-event1.02.1 libdevmapper1.02.1 libgdbm-compat4 libgdbm6
+INFO:kolla.common.utils.base:  libibverbs1 libisns0 libkmod2 liblvm2cmd2.03 libmpfr6 libncurses6
+INFO:kolla.common.utils.base:  libnl-3-200 libnl-route-3-200 libperl5.28 libprocps7 librdmacm1 libreadline5
+INFO:kolla.common.utils.base:  libsgutils2-2 libsigsegv2 libwrap0 perl perl-modules-5.28 sg3-utils udev
+INFO:kolla.common.utils.base:Suggested packages:
+INFO:kolla.common.utils.base:  gawk-doc gdbm-l10n sensible-utils perl-doc libterm-readline-gnu-perl
+INFO:kolla.common.utils.base:  | libterm-readline-perl-perl make libb-debug-perl liblocale-codes-perl
+INFO:kolla.common.utils.base:  tgt-glusterfs tgt-rbd
+INFO:kolla.common.utils.base:Recommended packages:
+INFO:kolla.common.utils.base:  ibverbs-providers libgpm2 thin-provisioning-tools busybox | busybox-static
+INFO:kolla.common.utils.base:  psmisc
+INFO:kolla.common.utils.base:The following NEW packages will be installed:
+INFO:kolla.common.utils.base:  apt-utils dmeventd dmsetup gawk kmod libaio1 libapt-inst2.0
+INFO:kolla.common.utils.base:  libconfig-general-perl libdevmapper-event1.02.1 libdevmapper1.02.1
+INFO:kolla.common.utils.base:  libgdbm-compat4 libgdbm6 libibverbs1 libisns0 libkmod2 liblvm2cmd2.03
+INFO:kolla.common.utils.base:  libmpfr6 libncurses6 libnl-3-200 libnl-route-3-200 libperl5.28 libprocps7
+INFO:kolla.common.utils.base:  librdmacm1 libreadline5 libsgutils2-2 libsigsegv2 libwrap0 lvm2 netbase
+INFO:kolla.common.utils.base:  open-iscsi perl perl-modules-5.28 procps sg3-utils socat sudo tgt udev
+INFO:kolla.common.utils.base:0 upgraded, 38 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.base:Need to get 16.3 MB of archives.
+INFO:kolla.common.utils.base:After this operation, 83.3 MB of additional disk space will be used.
+INFO:kolla.common.utils.base:Get:1 http://deb.debian.org/debian buster/main s390x perl-modules-5.28 all 5.28.1-6 [2,873 kB]
+INFO:kolla.common.utils.base:Get:2 http://deb.debian.org/debian buster/main s390x libgdbm6 s390x 1.18.1-4 [63.8 kB]
+INFO:kolla.common.utils.base:Get:3 http://deb.debian.org/debian buster/main s390x libgdbm-compat4 s390x 1.18.1-4 [44.2 kB]
+INFO:kolla.common.utils.base:Get:4 http://deb.debian.org/debian buster/main s390x libperl5.28 s390x 5.28.1-6 [3,698 kB]
+INFO:kolla.common.utils.base:Get:5 http://deb.debian.org/debian buster/main s390x perl s390x 5.28.1-6 [204 kB]
+INFO:kolla.common.utils.base:Get:6 http://deb.debian.org/debian buster/main s390x libmpfr6 s390x 4.0.2-1 [761 kB]
+INFO:kolla.common.utils.base:Get:7 http://deb.debian.org/debian buster/main s390x libsigsegv2 s390x 2.12-2 [32.7 kB]
+INFO:kolla.common.utils.base:Get:8 http://deb.debian.org/debian buster/main s390x gawk s390x 1:4.2.1+dfsg-1 [630 kB]
+INFO:kolla.common.utils.base:Get:9 http://deb.debian.org/debian buster/main s390x libkmod2 s390x 26-1 [48.6 kB]
+INFO:kolla.common.utils.base:Get:10 http://deb.debian.org/debian buster/main s390x udev s390x 241-7~deb10u3 [1,225 kB]
+INFO:kolla.common.utils.base:Get:11 http://deb.debian.org/debian buster/main s390x libisns0 s390x 0.97-3 [105 kB]
+INFO:kolla.common.utils.base:Get:12 http://deb.debian.org/debian buster/main s390x open-iscsi s390x 2.0.874-7.1 [271 kB]
+INFO:kolla.common.utils.base:Get:13 http://deb.debian.org/debian buster/main s390x libapt-inst2.0 s390x 1.8.2 [202 kB]
+INFO:kolla.common.utils.base:Get:14 http://deb.debian.org/debian buster/main s390x apt-utils s390x 1.8.2 [409 kB]
+INFO:kolla.common.utils.base:Get:15 http://deb.debian.org/debian buster/main s390x kmod s390x 26-1 [84.0 kB]
+INFO:kolla.common.utils.base:Get:16 http://deb.debian.org/debian buster/main s390x netbase all 5.6 [19.4 kB]
+INFO:kolla.common.utils.base:Get:17 http://deb.debian.org/debian buster/main s390x libncurses6 s390x 6.1+20181013-2+deb10u2 [94.6 kB]
+INFO:kolla.common.utils.base:Get:18 http://deb.debian.org/debian buster/main s390x libprocps7 s390x 2:3.3.15-2 [60.0 kB]
+INFO:kolla.common.utils.base:Get:19 http://deb.debian.org/debian buster/main s390x procps s390x 2:3.3.15-2 [249 kB]
+INFO:kolla.common.utils.base:Get:20 http://deb.debian.org/debian buster/main s390x dmsetup s390x 2:1.02.155-3 [89.2 kB]
+INFO:kolla.common.utils.base:Get:21 http://deb.debian.org/debian buster/main s390x libdevmapper1.02.1 s390x 2:1.02.155-3 [135 kB]
+INFO:kolla.common.utils.base:Get:22 http://deb.debian.org/debian buster/main s390x libdevmapper-event1.02.1 s390x 2:1.02.155-3 [22.3 kB]
+INFO:kolla.common.utils.base:Get:23 http://deb.debian.org/debian buster/main s390x libaio1 s390x 0.3.112-3 [11.1 kB]
+INFO:kolla.common.utils.base:Get:24 http://deb.debian.org/debian buster/main s390x liblvm2cmd2.03 s390x 2.03.02-3 [598 kB]
+INFO:kolla.common.utils.base:Get:25 http://deb.debian.org/debian buster/main s390x dmeventd s390x 2:1.02.155-3 [64.9 kB]
+INFO:kolla.common.utils.base:Get:26 http://deb.debian.org/debian buster/main s390x libconfig-general-perl all 2.63-1 [70.5 kB]
+INFO:kolla.common.utils.base:Get:27 http://deb.debian.org/debian buster/main s390x libnl-3-200 s390x 3.4.0-1 [59.8 kB]
+INFO:kolla.common.utils.base:Get:28 http://deb.debian.org/debian buster/main s390x libnl-route-3-200 s390x 3.4.0-1 [150 kB]
+INFO:kolla.common.utils.base:Get:29 http://deb.debian.org/debian buster/main s390x libibverbs1 s390x 22.1-1 [47.3 kB]
+INFO:kolla.common.utils.base:Get:30 http://deb.debian.org/debian buster/main s390x librdmacm1 s390x 22.1-1 [58.0 kB]
+INFO:kolla.common.utils.base:Get:31 http://deb.debian.org/debian buster/main s390x libreadline5 s390x 5.2+dfsg-3+b13 [114 kB]
+INFO:kolla.common.utils.base:Get:32 http://deb.debian.org/debian buster/main s390x libsgutils2-2 s390x 1.44-1 [103 kB]
+INFO:kolla.common.utils.base:Get:33 http://deb.debian.org/debian buster/main s390x libwrap0 s390x 7.6.q-28 [57.7 kB]
+INFO:kolla.common.utils.base:Get:34 http://deb.debian.org/debian buster/main s390x lvm2 s390x 2.03.02-3 [1,061 kB]
+INFO:kolla.common.utils.base:Get:35 http://deb.debian.org/debian buster/main s390x sg3-utils s390x 1.44-1 [795 kB]
+INFO:kolla.common.utils.base:Get:36 http://deb.debian.org/debian buster/main s390x socat s390x 1.7.3.2-2 [346 kB]
+INFO:kolla.common.utils.base:Get:37 http://deb.debian.org/debian buster/main s390x sudo s390x 1.8.27-1+deb10u2 [1,199 kB]
+INFO:kolla.common.utils.base:Get:38 http://deb.debian.org/debian buster/main s390x tgt s390x 1:1.0.74-1 [201 kB]
+INFO:kolla.common.utils.base:[91mdebconf: delaying package configuration, since apt-utils is not installed
+INFO:kolla.common.utils.base:[0m
+INFO:kolla.common.utils.base:Fetched 16.3 MB in 0s (55.3 MB/s)
+INFO:kolla.common.utils.base:Selecting previously unselected package perl-modules-5.28.
+INFO:kolla.common.utils.base:(Reading database ... 
+INFO:kolla.common.utils.base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.base:(Reading database ... 80%
+INFO:kolla.common.utils.base:(Reading database ... 85%
+INFO:kolla.common.utils.base:(Reading database ... 90%
+INFO:kolla.common.utils.base:(Reading database ... 95%
+INFO:kolla.common.utils.base:(Reading database ... 100%(Reading database ... 8789 files and directories currently installed.)
+INFO:kolla.common.utils.base:Preparing to unpack .../0-perl-modules-5.28_5.28.1-6_all.deb ...
+INFO:kolla.common.utils.base:Unpacking perl-modules-5.28 (5.28.1-6) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libgdbm6:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../1-libgdbm6_1.18.1-4_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libgdbm6:s390x (1.18.1-4) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libgdbm-compat4:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../2-libgdbm-compat4_1.18.1-4_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libgdbm-compat4:s390x (1.18.1-4) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libperl5.28:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../3-libperl5.28_5.28.1-6_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libperl5.28:s390x (5.28.1-6) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package perl.
+INFO:kolla.common.utils.base:Preparing to unpack .../4-perl_5.28.1-6_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking perl (5.28.1-6) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libmpfr6:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../5-libmpfr6_4.0.2-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libmpfr6:s390x (4.0.2-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libsigsegv2:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../6-libsigsegv2_2.12-2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libsigsegv2:s390x (2.12-2) ...
+INFO:kolla.common.utils.base:Setting up libmpfr6:s390x (4.0.2-1) ...
+INFO:kolla.common.utils.base:Setting up libsigsegv2:s390x (2.12-2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package gawk.
+INFO:kolla.common.utils.base:(Reading database ... 
+INFO:kolla.common.utils.base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.base:(Reading database ... 80%
+INFO:kolla.common.utils.base:(Reading database ... 85%
+INFO:kolla.common.utils.base:(Reading database ... 90%
+INFO:kolla.common.utils.base:(Reading database ... 95%
+INFO:kolla.common.utils.base:(Reading database ... 100%(Reading database ... 10753 files and directories currently installed.)
+INFO:kolla.common.utils.base:Preparing to unpack .../00-gawk_1%3a4.2.1+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking gawk (1:4.2.1+dfsg-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libkmod2:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../01-libkmod2_26-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libkmod2:s390x (26-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package udev.
+INFO:kolla.common.utils.base:Preparing to unpack .../02-udev_241-7~deb10u3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking udev (241-7~deb10u3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libisns0:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../03-libisns0_0.97-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libisns0:s390x (0.97-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package open-iscsi.
+INFO:kolla.common.utils.base:Preparing to unpack .../04-open-iscsi_2.0.874-7.1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking open-iscsi (2.0.874-7.1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libapt-inst2.0:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../05-libapt-inst2.0_1.8.2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libapt-inst2.0:s390x (1.8.2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package apt-utils.
+INFO:kolla.common.utils.base:Preparing to unpack .../06-apt-utils_1.8.2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking apt-utils (1.8.2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package kmod.
+INFO:kolla.common.utils.base:Preparing to unpack .../07-kmod_26-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking kmod (26-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package netbase.
+INFO:kolla.common.utils.base:Preparing to unpack .../08-netbase_5.6_all.deb ...
+INFO:kolla.common.utils.base:Unpacking netbase (5.6) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libncurses6:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../09-libncurses6_6.1+20181013-2+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libncurses6:s390x (6.1+20181013-2+deb10u2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libprocps7:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../10-libprocps7_2%3a3.3.15-2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libprocps7:s390x (2:3.3.15-2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package procps.
+INFO:kolla.common.utils.base:Preparing to unpack .../11-procps_2%3a3.3.15-2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking procps (2:3.3.15-2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package dmsetup.
+INFO:kolla.common.utils.base:Preparing to unpack .../12-dmsetup_2%3a1.02.155-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking dmsetup (2:1.02.155-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libdevmapper1.02.1:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../13-libdevmapper1.02.1_2%3a1.02.155-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libdevmapper1.02.1:s390x (2:1.02.155-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libdevmapper-event1.02.1:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../14-libdevmapper-event1.02.1_2%3a1.02.155-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libdevmapper-event1.02.1:s390x (2:1.02.155-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libaio1:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../15-libaio1_0.3.112-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libaio1:s390x (0.3.112-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package liblvm2cmd2.03:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../16-liblvm2cmd2.03_2.03.02-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking liblvm2cmd2.03:s390x (2.03.02-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package dmeventd.
+INFO:kolla.common.utils.base:Preparing to unpack .../17-dmeventd_2%3a1.02.155-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking dmeventd (2:1.02.155-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libconfig-general-perl.
+INFO:kolla.common.utils.base:Preparing to unpack .../18-libconfig-general-perl_2.63-1_all.deb ...
+INFO:kolla.common.utils.base:Unpacking libconfig-general-perl (2.63-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libnl-3-200:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../19-libnl-3-200_3.4.0-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libnl-3-200:s390x (3.4.0-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libnl-route-3-200:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../20-libnl-route-3-200_3.4.0-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libnl-route-3-200:s390x (3.4.0-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libibverbs1:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../21-libibverbs1_22.1-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libibverbs1:s390x (22.1-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package librdmacm1:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../22-librdmacm1_22.1-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking librdmacm1:s390x (22.1-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libreadline5:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../23-libreadline5_5.2+dfsg-3+b13_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libreadline5:s390x (5.2+dfsg-3+b13) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libsgutils2-2.
+INFO:kolla.common.utils.base:Preparing to unpack .../24-libsgutils2-2_1.44-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libsgutils2-2 (1.44-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package libwrap0:s390x.
+INFO:kolla.common.utils.base:Preparing to unpack .../25-libwrap0_7.6.q-28_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking libwrap0:s390x (7.6.q-28) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package lvm2.
+INFO:kolla.common.utils.base:Preparing to unpack .../26-lvm2_2.03.02-3_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking lvm2 (2.03.02-3) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package sg3-utils.
+INFO:kolla.common.utils.base:Preparing to unpack .../27-sg3-utils_1.44-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking sg3-utils (1.44-1) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package socat.
+INFO:kolla.common.utils.base:Preparing to unpack .../28-socat_1.7.3.2-2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking socat (1.7.3.2-2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package sudo.
+INFO:kolla.common.utils.base:Preparing to unpack .../29-sudo_1.8.27-1+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking sudo (1.8.27-1+deb10u2) ...
+INFO:kolla.common.utils.base:Selecting previously unselected package tgt.
+INFO:kolla.common.utils.base:Preparing to unpack .../30-tgt_1%3a1.0.74-1_s390x.deb ...
+INFO:kolla.common.utils.base:Unpacking tgt (1:1.0.74-1) ...
+INFO:kolla.common.utils.base:Setting up perl-modules-5.28 (5.28.1-6) ...
+INFO:kolla.common.utils.base:Setting up libreadline5:s390x (5.2+dfsg-3+b13) ...
+INFO:kolla.common.utils.base:Setting up libsgutils2-2 (1.44-1) ...
+INFO:kolla.common.utils.base:Setting up gawk (1:4.2.1+dfsg-1) ...
+INFO:kolla.common.utils.base:Setting up libprocps7:s390x (2:3.3.15-2) ...
+INFO:kolla.common.utils.base:Setting up libapt-inst2.0:s390x (1.8.2) ...
+INFO:kolla.common.utils.base:Setting up libwrap0:s390x (7.6.q-28) ...
+INFO:kolla.common.utils.base:Setting up socat (1.7.3.2-2) ...
+INFO:kolla.common.utils.base:Setting up libncurses6:s390x (6.1+20181013-2+deb10u2) ...
+INFO:kolla.common.utils.base:Setting up sudo (1.8.27-1+deb10u2) ...
+INFO:kolla.common.utils.base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.base:Setting up libisns0:s390x (0.97-3) ...
+INFO:kolla.common.utils.base:Setting up procps (2:3.3.15-2) ...
+INFO:kolla.common.utils.base:update-alternatives: using /usr/bin/w.procps to provide /usr/bin/w (w) in auto mode
+INFO:kolla.common.utils.base:update-alternatives: warning: skip creation of /usr/share/man/man1/w.1.gz because associated file /usr/share/man/man1/w.procps.1.gz (of link group w) doesn't exist
+INFO:kolla.common.utils.base:Setting up libnl-3-200:s390x (3.4.0-1) ...
+INFO:kolla.common.utils.base:Setting up netbase (5.6) ...
+INFO:kolla.common.utils.base:Setting up libaio1:s390x (0.3.112-3) ...
+INFO:kolla.common.utils.base:Setting up libkmod2:s390x (26-1) ...
+INFO:kolla.common.utils.base:Setting up libgdbm6:s390x (1.18.1-4) ...
+INFO:kolla.common.utils.base:Setting up sg3-utils (1.44-1) ...
+INFO:kolla.common.utils.base:Setting up apt-utils (1.8.2) ...
+INFO:kolla.common.utils.base:Setting up kmod (26-1) ...
+INFO:kolla.common.utils.base:Setting up libnl-route-3-200:s390x (3.4.0-1) ...
+INFO:kolla.common.utils.base:Setting up udev (241-7~deb10u3) ...
+INFO:kolla.common.utils.base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.base:Setting up libgdbm-compat4:s390x (1.18.1-4) ...
+INFO:kolla.common.utils.base:Setting up libperl5.28:s390x (5.28.1-6) ...
+INFO:kolla.common.utils.base:Setting up libibverbs1:s390x (22.1-1) ...
+INFO:kolla.common.utils.base:Setting up open-iscsi (2.0.874-7.1) ...
+INFO:kolla.common.utils.base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.base:Setting up perl (5.28.1-6) ...
+INFO:kolla.common.utils.base:Setting up librdmacm1:s390x (22.1-1) ...
+INFO:kolla.common.utils.base:Setting up libconfig-general-perl (2.63-1) ...
+INFO:kolla.common.utils.base:Setting up tgt (1:1.0.74-1) ...
+INFO:kolla.common.utils.base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.base:Setting up libdevmapper1.02.1:s390x (2:1.02.155-3) ...
+INFO:kolla.common.utils.base:Setting up dmsetup (2:1.02.155-3) ...
+INFO:kolla.common.utils.base:Setting up libdevmapper-event1.02.1:s390x (2:1.02.155-3) ...
+INFO:kolla.common.utils.base:Setting up liblvm2cmd2.03:s390x (2.03.02-3) ...
+INFO:kolla.common.utils.base:Setting up dmeventd (2:1.02.155-3) ...
+INFO:kolla.common.utils.base:Setting up lvm2 (2.03.02-3) ...
+INFO:kolla.common.utils.base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.base:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.base:Removing intermediate container baf936dea195
+INFO:kolla.common.utils.base: ---> a557ed5db35d
+INFO:kolla.common.utils.base:Step 23/35 : COPY set_configs.py /usr/local/bin/kolla_set_configs
+INFO:kolla.common.utils.base: ---> c851ebb7e7c1
+INFO:kolla.common.utils.base:Step 24/35 : RUN sed -i -e "s+#\!/usr/bin/env python+#\!/usr/bin/env python3+g" /usr/local/bin/kolla_set_configs
+INFO:kolla.common.utils.base: ---> Running in c0ab90fad5ba
+INFO:kolla.common.utils.base:Removing intermediate container c0ab90fad5ba
+INFO:kolla.common.utils.base: ---> ec9e31628efb
+INFO:kolla.common.utils.base:Step 25/35 : COPY start.sh /usr/local/bin/kolla_start
+INFO:kolla.common.utils.base: ---> fb95591c523a
+INFO:kolla.common.utils.base:Step 26/35 : COPY copy_cacerts.sh /usr/local/bin/kolla_copy_cacerts
+INFO:kolla.common.utils.base: ---> 47df07b032b0
+INFO:kolla.common.utils.base:Step 27/35 : COPY httpd_setup.sh /usr/local/bin/kolla_httpd_setup
+INFO:kolla.common.utils.base: ---> 2a5a9032f429
+INFO:kolla.common.utils.base:Step 28/35 : COPY sudoers /etc/sudoers
+INFO:kolla.common.utils.base: ---> 5b40f83e74e4
+INFO:kolla.common.utils.base:Step 29/35 : COPY curlrc /root/.curlrc
+INFO:kolla.common.utils.base: ---> 9e68d301503c
+INFO:kolla.common.utils.base:Step 30/35 : RUN curl -sSL https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_s390x -o /usr/local/bin/dumb-init     && chmod +x /usr/local/bin/dumb-init
+INFO:kolla.common.utils.base: ---> Running in 01f7c1359246
+INFO:kolla.common.utils.base:curl (https://github-production-release-asset-2e65be.s3.amazonaws.com/40563188/78040b80-b45d-11e9-8b26-0c0d2994499e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200302T212125Z&X-Amz-Expires=300&X-Amz-Signature=0eedd0f791b57a816a3b7ebefa23fe59442f56698acec407734855ab87f41528&X-Amz-SignedHeaders=host&actor_id=0&response-content-disposition=attachment%3B%20filename%3Ddumb-init_1.2.2_s390x&response-content-type=application%2Foctet-stream): response: 200, time: 0.281858, size: 63184
+INFO:kolla.common.utils.base:Removing intermediate container 01f7c1359246
+INFO:kolla.common.utils.base: ---> e630dcfeb013
+INFO:kolla.common.utils.base:Step 31/35 : ENTRYPOINT ["dumb-init", "--single-child", "--"]
+INFO:kolla.common.utils.base: ---> Running in 3eeb3a86e2ea
+INFO:kolla.common.utils.base:Removing intermediate container 3eeb3a86e2ea
+INFO:kolla.common.utils.base: ---> 58544a29374f
+INFO:kolla.common.utils.base:Step 32/35 : COPY healthcheck_curl healthcheck_filemod healthcheck_listen healthcheck_port healthcheck_socket /usr/local/bin/
+INFO:kolla.common.utils.base: ---> bb936e40292c
+INFO:kolla.common.utils.base:Step 33/35 : RUN chmod 755 /usr/local/bin/healthcheck_*
+INFO:kolla.common.utils.base: ---> Running in f48c4b33b000
+INFO:kolla.common.utils.base:Removing intermediate container f48c4b33b000
+INFO:kolla.common.utils.base: ---> 6b9a0bec3fb1
+INFO:kolla.common.utils.base:Step 34/35 : RUN touch /usr/local/bin/kolla_extend_start     && chmod 755 /usr/local/bin/kolla_start /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_set_configs /usr/local/bin/kolla_copy_cacerts /usr/local/bin/kolla_httpd_setup     && chmod 440 /etc/sudoers     && mkdir -p /var/log/kolla     && chown :kolla /var/log/kolla     && chmod 2775 /var/log/kolla     && rm -f /tmp/kolla_bashrc
+INFO:kolla.common.utils.base: ---> Running in bb195c0f26f0
+INFO:kolla.common.utils.base:Removing intermediate container bb195c0f26f0
+INFO:kolla.common.utils.base: ---> bf09c8cac797
+INFO:kolla.common.utils.base:Step 35/35 : CMD ["kolla_start"]
+INFO:kolla.common.utils.base: ---> Running in 5e437f288bc7
+INFO:kolla.common.utils.base:Removing intermediate container 5e437f288bc7
+INFO:kolla.common.utils.base: ---> 4244142526cc
+INFO:kolla.common.utils.base:Successfully built 4244142526cc
+INFO:kolla.common.utils.base:Successfully tagged s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.base:Built at 2020-03-02 21:21:30.411309 (took 0:00:56.916931)

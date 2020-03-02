@@ -1,0 +1,172 @@
+INFO:kolla.common.utils.mistral-api:Building started at 2020-03-02 21:46:25.391749
+INFO:kolla.common.utils.mistral-api:Step 1/7 : FROM s390x/ubuntu-binary-mistral-base:9.1.0
+INFO:kolla.common.utils.mistral-api: ---> fcb69739f1ec
+INFO:kolla.common.utils.mistral-api:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="mistral-api" build-date="20200302"
+INFO:kolla.common.utils.mistral-api: ---> Running in 6fbd7897021e
+INFO:kolla.common.utils.mistral-api:Removing intermediate container 6fbd7897021e
+INFO:kolla.common.utils.mistral-api: ---> 943577894e89
+INFO:kolla.common.utils.mistral-api:Step 3/7 : RUN apt-get update && apt-get -y install --no-install-recommends apache2 libapache2-mod-wsgi-py3 mistral-api && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.mistral-api: ---> Running in 1d2d2ded1cb0
+INFO:kolla.common.utils.mistral-api:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.mistral-api:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.mistral-api:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.mistral-api:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.mistral-api:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.mistral-api:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.mistral-api:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.mistral-api:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.mistral-api:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.mistral-api:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.mistral-api:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.mistral-api:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.mistral-api:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.mistral-api:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.mistral-api:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.mistral-api:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.mistral-api:Fetched 15.6 MB in 2s (6,306 kB/s)
+INFO:kolla.common.utils.mistral-api:Reading package lists...
+INFO:kolla.common.utils.mistral-api:Reading package lists...
+INFO:kolla.common.utils.mistral-api:Building dependency tree...
+INFO:kolla.common.utils.mistral-api:Reading state information...
+INFO:kolla.common.utils.mistral-api:The following additional packages will be installed:
+INFO:kolla.common.utils.mistral-api:  apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+INFO:kolla.common.utils.mistral-api:  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.2-0 libpython3.6
+INFO:kolla.common.utils.mistral-api:  python-q-text-as-data
+INFO:kolla.common.utils.mistral-api:Suggested packages:
+INFO:kolla.common.utils.mistral-api:  www-browser apache2-doc apache2-suexec-pristine | apache2-suexec-custom ufw
+INFO:kolla.common.utils.mistral-api:Recommended packages:
+INFO:kolla.common.utils.mistral-api:  ssl-cert
+INFO:kolla.common.utils.mistral-api:The following NEW packages will be installed:
+INFO:kolla.common.utils.mistral-api:  apache2 apache2-bin apache2-data apache2-utils libapache2-mod-wsgi-py3
+INFO:kolla.common.utils.mistral-api:  libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.2-0
+INFO:kolla.common.utils.mistral-api:  libpython3.6 mistral-api python-q-text-as-data
+INFO:kolla.common.utils.mistral-api:0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.mistral-api:Need to get 3,011 kB of archives.
+INFO:kolla.common.utils.mistral-api:After this operation, 12.6 MB of additional disk space will be used.
+INFO:kolla.common.utils.mistral-api:Get:1 http://ports.ubuntu.com bionic/main s390x libapr1 s390x 1.6.3-2 [87.4 kB]
+INFO:kolla.common.utils.mistral-api:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x mistral-api all 9.0.0-0ubuntu1~cloud0 [24.0 kB]
+INFO:kolla.common.utils.mistral-api:Get:3 http://ports.ubuntu.com bionic/main s390x libaprutil1 s390x 1.6.1-2 [81.8 kB]
+INFO:kolla.common.utils.mistral-api:Get:4 http://ports.ubuntu.com bionic/main s390x libaprutil1-dbd-sqlite3 s390x 1.6.1-2 [10.4 kB]
+INFO:kolla.common.utils.mistral-api:Get:5 http://ports.ubuntu.com bionic/main s390x libaprutil1-ldap s390x 1.6.1-2 [8,652 B]
+INFO:kolla.common.utils.mistral-api:Get:6 http://ports.ubuntu.com bionic/main s390x liblua5.2-0 s390x 5.2.4-1.1build1 [99.9 kB]
+INFO:kolla.common.utils.mistral-api:Get:7 http://ports.ubuntu.com bionic-updates/main s390x apache2-bin s390x 2.4.29-1ubuntu4.12 [978 kB]
+INFO:kolla.common.utils.mistral-api:Get:8 http://ports.ubuntu.com bionic-updates/main s390x apache2-utils s390x 2.4.29-1ubuntu4.12 [81.3 kB]
+INFO:kolla.common.utils.mistral-api:Get:9 http://ports.ubuntu.com bionic-updates/main s390x apache2-data all 2.4.29-1ubuntu4.12 [160 kB]
+INFO:kolla.common.utils.mistral-api:Get:10 http://ports.ubuntu.com bionic-updates/main s390x apache2 s390x 2.4.29-1ubuntu4.12 [95.1 kB]
+INFO:kolla.common.utils.mistral-api:Get:11 http://ports.ubuntu.com bionic-updates/main s390x libpython3.6 s390x 3.6.9-1~18.04 [1,284 kB]
+INFO:kolla.common.utils.mistral-api:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x libapache2-mod-wsgi-py3 s390x 4.5.17-1ubuntu1 [81.9 kB]
+INFO:kolla.common.utils.mistral-api:Get:13 http://ports.ubuntu.com bionic/universe s390x python-q-text-as-data all 1.4.0-2 [18.9 kB]
+INFO:kolla.common.utils.mistral-api:Preconfiguring packages ...
+INFO:kolla.common.utils.mistral-api:Fetched 3,011 kB in 0s (23.9 MB/s)
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package libapr1:s390x.
+INFO:kolla.common.utils.mistral-api:(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%
+INFO:kolla.common.utils.mistral-api:(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.mistral-api:(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.mistral-api:(Reading database ... 80%(Reading database ... 85%
+INFO:kolla.common.utils.mistral-api:(Reading database ... 90%(Reading database ... 95%
+INFO:kolla.common.utils.mistral-api:(Reading database ... 100%(Reading database ... 26845 files and directories currently installed.)
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../00-libapr1_1.6.3-2_s390x.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking libapr1:s390x (1.6.3-2) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package libaprutil1:s390x.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../01-libaprutil1_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking libaprutil1:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package libaprutil1-dbd-sqlite3:s390x.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking libaprutil1-dbd-sqlite3:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package libaprutil1-ldap:s390x.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../03-libaprutil1-ldap_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking libaprutil1-ldap:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package liblua5.2-0:s390x.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../04-liblua5.2-0_5.2.4-1.1build1_s390x.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking liblua5.2-0:s390x (5.2.4-1.1build1) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package apache2-bin.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../05-apache2-bin_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking apache2-bin (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package apache2-utils.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../06-apache2-utils_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking apache2-utils (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package apache2-data.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../07-apache2-data_2.4.29-1ubuntu4.12_all.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking apache2-data (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package apache2.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../08-apache2_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking apache2 (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package libpython3.6:s390x.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../09-libpython3.6_3.6.9-1~18.04_s390x.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking libpython3.6:s390x (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package libapache2-mod-wsgi-py3.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../10-libapache2-mod-wsgi-py3_4.5.17-1ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking libapache2-mod-wsgi-py3 (4.5.17-1ubuntu1) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package python-q-text-as-data.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../11-python-q-text-as-data_1.4.0-2_all.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking python-q-text-as-data (1.4.0-2) ...
+INFO:kolla.common.utils.mistral-api:Selecting previously unselected package mistral-api.
+INFO:kolla.common.utils.mistral-api:Preparing to unpack .../12-mistral-api_9.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.mistral-api:Unpacking mistral-api (9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.mistral-api:Setting up libapr1:s390x (1.6.3-2) ...
+INFO:kolla.common.utils.mistral-api:Setting up python-q-text-as-data (1.4.0-2) ...
+INFO:kolla.common.utils.mistral-api:update-alternatives: using /usr/bin/python2-q-text-as-data to provide /usr/bin/q (q) in auto mode
+INFO:kolla.common.utils.mistral-api:Setting up apache2-data (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.mistral-api:Setting up libaprutil1:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.mistral-api:Setting up mistral-api (9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.mistral-api:Will not register mistral endpoint this time (no user request for it).
+INFO:kolla.common.utils.mistral-api:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.mistral-api:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.mistral-api:Setting up liblua5.2-0:s390x (5.2.4-1.1build1) ...
+INFO:kolla.common.utils.mistral-api:Setting up libpython3.6:s390x (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.mistral-api:Setting up libaprutil1-ldap:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.mistral-api:Setting up libaprutil1-dbd-sqlite3:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.mistral-api:Setting up apache2-utils (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.mistral-api:Setting up apache2-bin (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.mistral-api:Setting up libapache2-mod-wsgi-py3 (4.5.17-1ubuntu1) ...
+INFO:kolla.common.utils.mistral-api:Package apache2 is not configured yet. Will defer actions by package libapache2-mod-wsgi-py3.
+INFO:kolla.common.utils.mistral-api:Setting up apache2 (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.mistral-api:Enabling module mpm_event.
+INFO:kolla.common.utils.mistral-api:Enabling module authz_core.
+INFO:kolla.common.utils.mistral-api:Enabling module authz_host.
+INFO:kolla.common.utils.mistral-api:Enabling module authn_core.
+INFO:kolla.common.utils.mistral-api:Enabling module auth_basic.
+INFO:kolla.common.utils.mistral-api:Enabling module access_compat.
+INFO:kolla.common.utils.mistral-api:Enabling module authn_file.
+INFO:kolla.common.utils.mistral-api:Enabling module authz_user.
+INFO:kolla.common.utils.mistral-api:Enabling module alias.
+INFO:kolla.common.utils.mistral-api:Enabling module dir.
+INFO:kolla.common.utils.mistral-api:Enabling module autoindex.
+INFO:kolla.common.utils.mistral-api:Enabling module env.
+INFO:kolla.common.utils.mistral-api:Enabling module mime.
+INFO:kolla.common.utils.mistral-api:Enabling module negotiation.
+INFO:kolla.common.utils.mistral-api:Enabling module setenvif.
+INFO:kolla.common.utils.mistral-api:Enabling module filter.
+INFO:kolla.common.utils.mistral-api:Enabling module deflate.
+INFO:kolla.common.utils.mistral-api:Enabling module status.
+INFO:kolla.common.utils.mistral-api:Enabling module reqtimeout.
+INFO:kolla.common.utils.mistral-api:Enabling conf charset.
+INFO:kolla.common.utils.mistral-api:Enabling conf localized-error-pages.
+INFO:kolla.common.utils.mistral-api:Enabling conf other-vhosts-access-log.
+INFO:kolla.common.utils.mistral-api:Enabling conf security.
+INFO:kolla.common.utils.mistral-api:Enabling conf serve-cgi-bin.
+INFO:kolla.common.utils.mistral-api:Enabling site 000-default.
+INFO:kolla.common.utils.mistral-api:info: Executing deferred 'a2enmod wsgi' for package libapache2-mod-wsgi-py3
+INFO:kolla.common.utils.mistral-api:Enabling module wsgi.
+INFO:kolla.common.utils.mistral-api:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.mistral-api:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.mistral-api:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.mistral-api:Removing intermediate container 1d2d2ded1cb0
+INFO:kolla.common.utils.mistral-api: ---> e6b230e4a22d
+INFO:kolla.common.utils.mistral-api:Step 4/7 : RUN echo > /etc/apache2/ports.conf
+INFO:kolla.common.utils.mistral-api: ---> Running in 389cf3227113
+INFO:kolla.common.utils.mistral-api:Removing intermediate container 389cf3227113
+INFO:kolla.common.utils.mistral-api: ---> 7d9c69fedbdc
+INFO:kolla.common.utils.mistral-api:Step 5/7 : COPY extend_start.sh /usr/local/bin/kolla_mistral_extend_start
+INFO:kolla.common.utils.mistral-api: ---> 446eb16be489
+INFO:kolla.common.utils.mistral-api:Step 6/7 : RUN chmod 755 /usr/local/bin/kolla_mistral_extend_start
+INFO:kolla.common.utils.mistral-api: ---> Running in abe14b0cc457
+INFO:kolla.common.utils.mistral-api:Removing intermediate container abe14b0cc457
+INFO:kolla.common.utils.mistral-api: ---> d2195f5e55b1
+INFO:kolla.common.utils.mistral-api:Step 7/7 : USER mistral
+INFO:kolla.common.utils.mistral-api: ---> Running in f9b9b5545126
+INFO:kolla.common.utils.mistral-api:Removing intermediate container f9b9b5545126
+INFO:kolla.common.utils.mistral-api: ---> 574551b3f75e
+INFO:kolla.common.utils.mistral-api:Successfully built 574551b3f75e
+INFO:kolla.common.utils.mistral-api:Successfully tagged s390x/ubuntu-binary-mistral-api:9.1.0
+INFO:kolla.common.utils.mistral-api:Built at 2020-03-02 21:46:41.670131 (took 0:00:16.278382)

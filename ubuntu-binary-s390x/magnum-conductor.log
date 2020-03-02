@@ -1,0 +1,55 @@
+INFO:kolla.common.utils.magnum-conductor:Building started at 2020-03-02 21:45:38.632497
+INFO:kolla.common.utils.magnum-conductor:Step 1/4 : FROM s390x/ubuntu-binary-magnum-base:9.1.0
+INFO:kolla.common.utils.magnum-conductor: ---> a7eeadfe2542
+INFO:kolla.common.utils.magnum-conductor:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="magnum-conductor" build-date="20200302"
+INFO:kolla.common.utils.magnum-conductor: ---> Running in 0942d64de044
+INFO:kolla.common.utils.magnum-conductor:Removing intermediate container 0942d64de044
+INFO:kolla.common.utils.magnum-conductor: ---> 22534bb9ea33
+INFO:kolla.common.utils.magnum-conductor:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends magnum-conductor && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.magnum-conductor: ---> Running in b451688efebd
+INFO:kolla.common.utils.magnum-conductor:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.magnum-conductor:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.magnum-conductor:Get:3 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.magnum-conductor:Get:5 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:9 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.magnum-conductor:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.magnum-conductor:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.magnum-conductor:Fetched 15.6 MB in 3s (5,314 kB/s)
+INFO:kolla.common.utils.magnum-conductor:Reading package lists...
+INFO:kolla.common.utils.magnum-conductor:Reading package lists...
+INFO:kolla.common.utils.magnum-conductor:Building dependency tree...
+INFO:kolla.common.utils.magnum-conductor:Reading state information...
+INFO:kolla.common.utils.magnum-conductor:The following NEW packages will be installed:
+INFO:kolla.common.utils.magnum-conductor:  magnum-conductor
+INFO:kolla.common.utils.magnum-conductor:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.magnum-conductor:Need to get 9,120 B of archives.
+INFO:kolla.common.utils.magnum-conductor:After this operation, 30.7 kB of additional disk space will be used.
+INFO:kolla.common.utils.magnum-conductor:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x magnum-conductor all 9.0.0-0ubuntu1~cloud0 [9,120 B]
+INFO:kolla.common.utils.magnum-conductor:Fetched 9,120 B in 0s (126 kB/s)
+INFO:kolla.common.utils.magnum-conductor:Selecting previously unselected package magnum-conductor.
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 27164 files and directories currently installed.)
+INFO:kolla.common.utils.magnum-conductor:Preparing to unpack .../magnum-conductor_9.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.magnum-conductor:Unpacking magnum-conductor (9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.magnum-conductor:Setting up magnum-conductor (9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.magnum-conductor:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.magnum-conductor:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.magnum-conductor:Removing intermediate container b451688efebd
+INFO:kolla.common.utils.magnum-conductor: ---> 61db54edff10
+INFO:kolla.common.utils.magnum-conductor:Step 4/4 : USER magnum
+INFO:kolla.common.utils.magnum-conductor: ---> Running in 6941e188d076
+INFO:kolla.common.utils.magnum-conductor:Removing intermediate container 6941e188d076
+INFO:kolla.common.utils.magnum-conductor: ---> 231b76f4e1d0
+INFO:kolla.common.utils.magnum-conductor:Successfully built 231b76f4e1d0
+INFO:kolla.common.utils.magnum-conductor:Successfully tagged s390x/ubuntu-binary-magnum-conductor:9.1.0
+INFO:kolla.common.utils.magnum-conductor:Built at 2020-03-02 21:45:48.459956 (took 0:00:09.827459)

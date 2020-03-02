@@ -1,0 +1,35 @@
+INFO:kolla.common.utils.senlin-conductor:Building started at 2020-03-02 21:43:22.108380
+INFO:kolla.common.utils.senlin-conductor:Step 1/4 : FROM s390x/ubuntu-binary-senlin-base:9.1.0
+INFO:kolla.common.utils.senlin-conductor: ---> 4fd2c3ebebf0
+INFO:kolla.common.utils.senlin-conductor:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="senlin-conductor" build-date="20200302"
+INFO:kolla.common.utils.senlin-conductor: ---> Running in 14f920fe2e35
+INFO:kolla.common.utils.senlin-conductor:Removing intermediate container 14f920fe2e35
+INFO:kolla.common.utils.senlin-conductor: ---> 366cea3c760f
+INFO:kolla.common.utils.senlin-conductor:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends senlin-conductor && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.senlin-conductor: ---> Running in be6acd527650
+INFO:kolla.common.utils.senlin-conductor:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.senlin-conductor:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.senlin-conductor:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.senlin-conductor:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.senlin-conductor:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:8 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.senlin-conductor:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.senlin-conductor:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.senlin-conductor:Fetched 15.6 MB in 2s (6,660 kB/s)
+INFO:kolla.common.utils.senlin-conductor:Reading package lists...
+INFO:kolla.common.utils.senlin-conductor:Reading package lists...
+INFO:kolla.common.utils.senlin-conductor:Building dependency tree...
+INFO:kolla.common.utils.senlin-conductor:Reading state information...
+INFO:kolla.common.utils.senlin-conductor:[91mE: Unable to locate package senlin-conductor
+INFO:kolla.common.utils.senlin-conductor:[0m
+INFO:kolla.common.utils.senlin-conductor:Removing intermediate container be6acd527650
+ERROR:kolla.common.utils.senlin-conductor:Error'd with the following message
+ERROR:kolla.common.utils.senlin-conductor:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends senlin-conductor && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

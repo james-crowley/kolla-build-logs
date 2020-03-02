@@ -1,0 +1,47 @@
+INFO:kolla.common.utils.swift-rsyncd:Building started at 2020-03-02 21:45:38.294442
+INFO:kolla.common.utils.swift-rsyncd:Step 1/6 : FROM s390x/ubuntu-binary-swift-base:9.1.0
+INFO:kolla.common.utils.swift-rsyncd: ---> 983b5500ecf1
+INFO:kolla.common.utils.swift-rsyncd:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="swift-rsyncd" build-date="20200302"
+INFO:kolla.common.utils.swift-rsyncd: ---> Running in e48d053dabb3
+INFO:kolla.common.utils.swift-rsyncd:Removing intermediate container e48d053dabb3
+INFO:kolla.common.utils.swift-rsyncd: ---> b6382b1f325d
+INFO:kolla.common.utils.swift-rsyncd:Step 3/6 : RUN apt-get update && apt-get -y install --no-install-recommends rsync && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.swift-rsyncd: ---> Running in 7478639c7934
+INFO:kolla.common.utils.swift-rsyncd:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.swift-rsyncd:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.swift-rsyncd:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.swift-rsyncd:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.swift-rsyncd:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.swift-rsyncd:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.swift-rsyncd:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.swift-rsyncd:Fetched 15.6 MB in 3s (6,043 kB/s)
+INFO:kolla.common.utils.swift-rsyncd:Reading package lists...
+INFO:kolla.common.utils.swift-rsyncd:Reading package lists...
+INFO:kolla.common.utils.swift-rsyncd:Building dependency tree...
+INFO:kolla.common.utils.swift-rsyncd:Reading state information...
+INFO:kolla.common.utils.swift-rsyncd:rsync is already the newest version (3.1.2-2.1ubuntu1.1).
+INFO:kolla.common.utils.swift-rsyncd:0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.swift-rsyncd:Removing intermediate container 7478639c7934
+INFO:kolla.common.utils.swift-rsyncd: ---> 34e0c0bc60a8
+INFO:kolla.common.utils.swift-rsyncd:Step 4/6 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.swift-rsyncd: ---> 547b18bf7cf5
+INFO:kolla.common.utils.swift-rsyncd:Step 5/6 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.swift-rsyncd: ---> Running in 2590ff014124
+INFO:kolla.common.utils.swift-rsyncd:Removing intermediate container 2590ff014124
+INFO:kolla.common.utils.swift-rsyncd: ---> dfe6b4cafb7d
+INFO:kolla.common.utils.swift-rsyncd:Step 6/6 : USER swift
+INFO:kolla.common.utils.swift-rsyncd: ---> Running in 719e605c6cbe
+INFO:kolla.common.utils.swift-rsyncd:Removing intermediate container 719e605c6cbe
+INFO:kolla.common.utils.swift-rsyncd: ---> 890925282bb3
+INFO:kolla.common.utils.swift-rsyncd:Successfully built 890925282bb3
+INFO:kolla.common.utils.swift-rsyncd:Successfully tagged s390x/ubuntu-binary-swift-rsyncd:9.1.0
+INFO:kolla.common.utils.swift-rsyncd:Built at 2020-03-02 21:45:48.734647 (took 0:00:10.440205)

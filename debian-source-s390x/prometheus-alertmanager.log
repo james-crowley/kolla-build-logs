@@ -1,0 +1,25 @@
+INFO:kolla.common.utils.prometheus-alertmanager:Building started at 2020-03-02 21:33:11.324102
+INFO:kolla.common.utils.prometheus-alertmanager:Step 1/5 : FROM s390x/debian-source-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-alertmanager: ---> 6893629ec147
+INFO:kolla.common.utils.prometheus-alertmanager:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-alertmanager" build-date="20200302"
+INFO:kolla.common.utils.prometheus-alertmanager: ---> Running in 9306d477b4e3
+INFO:kolla.common.utils.prometheus-alertmanager:Removing intermediate container 9306d477b4e3
+INFO:kolla.common.utils.prometheus-alertmanager: ---> f99a3fe097bd
+INFO:kolla.common.utils.prometheus-alertmanager:Step 3/5 : ENV prometheus_alertmanager_version=0.16.1
+INFO:kolla.common.utils.prometheus-alertmanager: ---> Running in bada2fb3cd0c
+INFO:kolla.common.utils.prometheus-alertmanager:Removing intermediate container bada2fb3cd0c
+INFO:kolla.common.utils.prometheus-alertmanager: ---> ca2e328a4867
+INFO:kolla.common.utils.prometheus-alertmanager:Step 4/5 : RUN curl -sSL -o /tmp/prometheus_alertmanager.tar.gz https://github.com/prometheus/alertmanager/releases/download/v${prometheus_alertmanager_version}/alertmanager-${prometheus_alertmanager_version}.linux-s390x.tar.gz     && tar xvf /tmp/prometheus_alertmanager.tar.gz -C /opt/     && rm -f /tmp/prometheus_alertmanager.tar.gz     && ln -s /opt/alertmanager* /opt/prometheus_alertmanager
+INFO:kolla.common.utils.prometheus-alertmanager: ---> Running in 4efaae88a568
+INFO:kolla.common.utils.prometheus-alertmanager:curl (https://github.com/prometheus/alertmanager/releases/download/v0.16.1/alertmanager-0.16.1.linux-s390x.tar.gz): response: 404, time: 0.148443, size: 9
+INFO:kolla.common.utils.prometheus-alertmanager:[91mtar: This does not look like a tar archive
+INFO:kolla.common.utils.prometheus-alertmanager:[0m
+INFO:kolla.common.utils.prometheus-alertmanager:[91m
+INFO:kolla.common.utils.prometheus-alertmanager:gzip: stdin: not in gzip format
+INFO:kolla.common.utils.prometheus-alertmanager:[0m
+INFO:kolla.common.utils.prometheus-alertmanager:[91mtar: Child returned status 1
+INFO:kolla.common.utils.prometheus-alertmanager:tar: Error is not recoverable: exiting now
+INFO:kolla.common.utils.prometheus-alertmanager:[0m
+INFO:kolla.common.utils.prometheus-alertmanager:Removing intermediate container 4efaae88a568
+ERROR:kolla.common.utils.prometheus-alertmanager:Error'd with the following message
+ERROR:kolla.common.utils.prometheus-alertmanager:The command '/bin/sh -c curl -sSL -o /tmp/prometheus_alertmanager.tar.gz https://github.com/prometheus/alertmanager/releases/download/v${prometheus_alertmanager_version}/alertmanager-${prometheus_alertmanager_version}.linux-s390x.tar.gz     && tar xvf /tmp/prometheus_alertmanager.tar.gz -C /opt/     && rm -f /tmp/prometheus_alertmanager.tar.gz     && ln -s /opt/alertmanager* /opt/prometheus_alertmanager' returned a non-zero code: 2

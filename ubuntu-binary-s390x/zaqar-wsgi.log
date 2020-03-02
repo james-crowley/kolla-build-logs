@@ -1,0 +1,16 @@
+INFO:kolla.common.utils.zaqar-wsgi:Building started at 2020-03-02 21:44:25.657070
+INFO:kolla.common.utils.zaqar-wsgi:Step 1/4 : FROM s390x/ubuntu-binary-zaqar-base:9.1.0
+INFO:kolla.common.utils.zaqar-wsgi: ---> ad178fa6b8be
+INFO:kolla.common.utils.zaqar-wsgi:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="zaqar-wsgi" build-date="20200302"
+INFO:kolla.common.utils.zaqar-wsgi: ---> Running in f6eb9699b724
+INFO:kolla.common.utils.zaqar-wsgi:Removing intermediate container f6eb9699b724
+INFO:kolla.common.utils.zaqar-wsgi: ---> 82dee5f8bd17
+INFO:kolla.common.utils.zaqar-wsgi:Step 3/4 : COPY extend_start.sh /usr/local/bin/kolla_zaqar_extend_start
+INFO:kolla.common.utils.zaqar-wsgi: ---> f69e1b210316
+INFO:kolla.common.utils.zaqar-wsgi:Step 4/4 : RUN chmod 755 /usr/local/bin/kolla_zaqar_extend_start
+INFO:kolla.common.utils.zaqar-wsgi: ---> Running in 4d3522f16736
+INFO:kolla.common.utils.zaqar-wsgi:Removing intermediate container 4d3522f16736
+INFO:kolla.common.utils.zaqar-wsgi: ---> cca2739939bf
+INFO:kolla.common.utils.zaqar-wsgi:Successfully built cca2739939bf
+INFO:kolla.common.utils.zaqar-wsgi:Successfully tagged s390x/ubuntu-binary-zaqar-wsgi:9.1.0
+INFO:kolla.common.utils.zaqar-wsgi:Built at 2020-03-02 21:44:28.766963 (took 0:00:03.109893)

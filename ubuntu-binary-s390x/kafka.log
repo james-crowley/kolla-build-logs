@@ -1,0 +1,670 @@
+INFO:kolla.common.utils.kafka:Building started at 2020-03-02 21:37:48.862225
+INFO:kolla.common.utils.kafka:Step 1/12 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.kafka: ---> 682558ff6b31
+INFO:kolla.common.utils.kafka:Step 2/12 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="kafka" build-date="20200302"
+INFO:kolla.common.utils.kafka: ---> Running in 8fad09915712
+INFO:kolla.common.utils.kafka:Removing intermediate container 8fad09915712
+INFO:kolla.common.utils.kafka: ---> ae0cd0c8c1c1
+INFO:kolla.common.utils.kafka:Step 3/12 : RUN usermod --append --home /opt/kafka --groups kolla kafka     && mkdir -p /opt/kafka     && chown -R 42423:42423 /opt/kafka
+INFO:kolla.common.utils.kafka: ---> Running in a907d24c92d9
+INFO:kolla.common.utils.kafka:Removing intermediate container a907d24c92d9
+INFO:kolla.common.utils.kafka: ---> 1772ebf7e09a
+INFO:kolla.common.utils.kafka:Step 4/12 : RUN apt-get update && apt-get -y install --no-install-recommends openjdk-8-jre-headless && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.kafka: ---> Running in 170ba4fcc619
+INFO:kolla.common.utils.kafka:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.kafka:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.kafka:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.kafka:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.kafka:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.kafka:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.kafka:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.kafka:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.kafka:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.kafka:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.kafka:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.kafka:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.kafka:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.kafka:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.kafka:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.kafka:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.kafka:Fetched 15.6 MB in 2s (6,571 kB/s)
+INFO:kolla.common.utils.kafka:Reading package lists...
+INFO:kolla.common.utils.kafka:Reading package lists...
+INFO:kolla.common.utils.kafka:Building dependency tree...
+INFO:kolla.common.utils.kafka:Reading state information...
+INFO:kolla.common.utils.kafka:The following additional packages will be installed:
+INFO:kolla.common.utils.kafka:  ca-certificates-java fontconfig-config fonts-dejavu-core java-common
+INFO:kolla.common.utils.kafka:  libavahi-client3 libavahi-common-data libavahi-common3 libbsd0 libcups2
+INFO:kolla.common.utils.kafka:  libdbus-1-3 libfontconfig1 libfreetype6 libjpeg-turbo8 libjpeg8 liblcms2-2
+INFO:kolla.common.utils.kafka:  libnspr4 libnss3 libpcsclite1 libpng16-16 libx11-6 libx11-data libxau6
+INFO:kolla.common.utils.kafka:  libxcb1 libxdmcp6 libxext6 libxi6 libxrender1 libxtst6 multiarch-support ucf
+INFO:kolla.common.utils.kafka:  x11-common
+INFO:kolla.common.utils.kafka:Suggested packages:
+INFO:kolla.common.utils.kafka:  default-jre cups-common liblcms2-utils pcscd libnss-mdns fonts-dejavu-extra
+INFO:kolla.common.utils.kafka:  fonts-ipafont-gothic fonts-ipafont-mincho fonts-wqy-microhei
+INFO:kolla.common.utils.kafka:  fonts-wqy-zenhei fonts-indic
+INFO:kolla.common.utils.kafka:Recommended packages:
+INFO:kolla.common.utils.kafka:  dbus
+INFO:kolla.common.utils.kafka:The following NEW packages will be installed:
+INFO:kolla.common.utils.kafka:  ca-certificates-java fontconfig-config fonts-dejavu-core java-common
+INFO:kolla.common.utils.kafka:  libavahi-client3 libavahi-common-data libavahi-common3 libbsd0 libcups2
+INFO:kolla.common.utils.kafka:  libdbus-1-3 libfontconfig1 libfreetype6 libjpeg-turbo8 libjpeg8 liblcms2-2
+INFO:kolla.common.utils.kafka:  libnspr4 libnss3 libpcsclite1 libpng16-16 libx11-6 libx11-data libxau6
+INFO:kolla.common.utils.kafka:  libxcb1 libxdmcp6 libxext6 libxi6 libxrender1 libxtst6 multiarch-support
+INFO:kolla.common.utils.kafka:  openjdk-8-jre-headless ucf x11-common
+INFO:kolla.common.utils.kafka:0 upgraded, 32 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.kafka:Need to get 30.1 MB of archives.
+INFO:kolla.common.utils.kafka:After this operation, 111 MB of additional disk space will be used.
+INFO:kolla.common.utils.kafka:Get:1 http://ports.ubuntu.com bionic/main s390x multiarch-support s390x 2.27-3ubuntu1 [6,916 B]
+INFO:kolla.common.utils.kafka:Get:2 http://ports.ubuntu.com bionic-updates/main s390x libjpeg-turbo8 s390x 1.5.2-0ubuntu5.18.04.3 [101 kB]
+INFO:kolla.common.utils.kafka:Get:3 http://ports.ubuntu.com bionic-updates/main s390x libbsd0 s390x 0.8.7-1ubuntu0.1 [40.1 kB]
+INFO:kolla.common.utils.kafka:Get:4 http://ports.ubuntu.com bionic-updates/main s390x libdbus-1-3 s390x 1.12.2-1ubuntu1.1 [168 kB]
+INFO:kolla.common.utils.kafka:Get:5 http://ports.ubuntu.com bionic/main s390x ucf all 3.0038 [50.5 kB]
+INFO:kolla.common.utils.kafka:Get:6 http://ports.ubuntu.com bionic-updates/main s390x libpng16-16 s390x 1.6.34-1ubuntu0.18.04.2 [171 kB]
+INFO:kolla.common.utils.kafka:Get:7 http://ports.ubuntu.com bionic/main s390x libxau6 s390x 1:1.0.8-1 [7,420 B]
+INFO:kolla.common.utils.kafka:Get:8 http://ports.ubuntu.com bionic/main s390x libxdmcp6 s390x 1:1.1.2-3 [10.7 kB]
+INFO:kolla.common.utils.kafka:Get:9 http://ports.ubuntu.com bionic-updates/main s390x libxcb1 s390x 1.13-2~ubuntu18.04 [43.5 kB]
+INFO:kolla.common.utils.kafka:Get:10 http://ports.ubuntu.com bionic-updates/main s390x libx11-data all 2:1.6.4-3ubuntu0.2 [113 kB]
+INFO:kolla.common.utils.kafka:Get:11 http://ports.ubuntu.com bionic-updates/main s390x libx11-6 s390x 2:1.6.4-3ubuntu0.2 [542 kB]
+INFO:kolla.common.utils.kafka:Get:12 http://ports.ubuntu.com bionic/main s390x libxext6 s390x 2:1.3.3-1 [27.8 kB]
+INFO:kolla.common.utils.kafka:Get:13 http://ports.ubuntu.com bionic-updates/main s390x java-common all 0.68ubuntu1~18.04.1 [14.5 kB]
+INFO:kolla.common.utils.kafka:Get:14 http://ports.ubuntu.com bionic-updates/main s390x libavahi-common-data s390x 0.7-3.1ubuntu1.2 [22.1 kB]
+INFO:kolla.common.utils.kafka:Get:15 http://ports.ubuntu.com bionic-updates/main s390x libavahi-common3 s390x 0.7-3.1ubuntu1.2 [20.0 kB]
+INFO:kolla.common.utils.kafka:Get:16 http://ports.ubuntu.com bionic-updates/main s390x libavahi-client3 s390x 0.7-3.1ubuntu1.2 [22.5 kB]
+INFO:kolla.common.utils.kafka:Get:17 http://ports.ubuntu.com bionic-updates/main s390x libcups2 s390x 2.2.7-1ubuntu2.7 [193 kB]
+INFO:kolla.common.utils.kafka:Get:18 http://ports.ubuntu.com bionic-updates/main s390x liblcms2-2 s390x 2.9-1ubuntu0.1 [127 kB]
+INFO:kolla.common.utils.kafka:Get:19 http://ports.ubuntu.com bionic/main s390x libjpeg8 s390x 8c-2ubuntu8 [2,142 B]
+INFO:kolla.common.utils.kafka:Get:20 http://ports.ubuntu.com bionic/main s390x libfreetype6 s390x 2.8.1-2ubuntu2 [314 kB]
+INFO:kolla.common.utils.kafka:Get:21 http://ports.ubuntu.com bionic/main s390x fonts-dejavu-core all 2.37-1 [1,041 kB]
+INFO:kolla.common.utils.kafka:Get:22 http://ports.ubuntu.com bionic/main s390x fontconfig-config all 2.12.6-0ubuntu2 [55.8 kB]
+INFO:kolla.common.utils.kafka:Get:23 http://ports.ubuntu.com bionic/main s390x libfontconfig1 s390x 2.12.6-0ubuntu2 [132 kB]
+INFO:kolla.common.utils.kafka:Get:24 http://ports.ubuntu.com bionic/main s390x libnspr4 s390x 2:4.18-1ubuntu1 [107 kB]
+INFO:kolla.common.utils.kafka:Get:25 http://ports.ubuntu.com bionic-updates/main s390x libnss3 s390x 2:3.35-2ubuntu2.7 [1,034 kB]
+INFO:kolla.common.utils.kafka:Get:26 http://ports.ubuntu.com bionic/main s390x libpcsclite1 s390x 1.8.23-1 [19.9 kB]
+INFO:kolla.common.utils.kafka:Get:27 http://ports.ubuntu.com bionic/main s390x libxi6 s390x 2:1.7.9-1 [27.5 kB]
+INFO:kolla.common.utils.kafka:Get:28 http://ports.ubuntu.com bionic/main s390x libxrender1 s390x 1:0.9.10-1 [17.8 kB]
+INFO:kolla.common.utils.kafka:Get:29 http://ports.ubuntu.com bionic-updates/main s390x x11-common all 1:7.7+19ubuntu7.1 [22.5 kB]
+INFO:kolla.common.utils.kafka:Get:30 http://ports.ubuntu.com bionic/main s390x libxtst6 s390x 2:1.2.3-1 [12.7 kB]
+INFO:kolla.common.utils.kafka:Get:31 http://ports.ubuntu.com bionic-updates/universe s390x openjdk-8-jre-headless s390x 8u242-b08-0ubuntu3~18.04 [25.7 MB]
+INFO:kolla.common.utils.kafka:Get:32 http://ports.ubuntu.com bionic-updates/main s390x ca-certificates-java all 20180516ubuntu1~18.04.1 [12.2 kB]
+INFO:kolla.common.utils.kafka:Preconfiguring packages ...
+INFO:kolla.common.utils.kafka:Fetched 30.1 MB in 1s (45.5 MB/s)
+INFO:kolla.common.utils.kafka:Selecting previously unselected package multiarch-support.
+INFO:kolla.common.utils.kafka:(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.kafka:(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.kafka:Preparing to unpack .../multiarch-support_2.27-3ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking multiarch-support (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.kafka:Setting up multiarch-support (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libjpeg-turbo8:s390x.
+INFO:kolla.common.utils.kafka:(Reading database ... 
+INFO:kolla.common.utils.kafka:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.kafka:(Reading database ... 75%
+INFO:kolla.common.utils.kafka:(Reading database ... 80%
+INFO:kolla.common.utils.kafka:(Reading database ... 85%
+INFO:kolla.common.utils.kafka:(Reading database ... 90%
+INFO:kolla.common.utils.kafka:(Reading database ... 95%
+INFO:kolla.common.utils.kafka:(Reading database ... 100%(Reading database ... 9247 files and directories currently installed.)
+INFO:kolla.common.utils.kafka:Preparing to unpack .../00-libjpeg-turbo8_1.5.2-0ubuntu5.18.04.3_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libjpeg-turbo8:s390x (1.5.2-0ubuntu5.18.04.3) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libbsd0:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../01-libbsd0_0.8.7-1ubuntu0.1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libbsd0:s390x (0.8.7-1ubuntu0.1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libdbus-1-3:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../02-libdbus-1-3_1.12.2-1ubuntu1.1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libdbus-1-3:s390x (1.12.2-1ubuntu1.1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package ucf.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../03-ucf_3.0038_all.deb ...
+INFO:kolla.common.utils.kafka:Moving old data out of the way
+INFO:kolla.common.utils.kafka:Unpacking ucf (3.0038) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libpng16-16:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../04-libpng16-16_1.6.34-1ubuntu0.18.04.2_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libpng16-16:s390x (1.6.34-1ubuntu0.18.04.2) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libxau6:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../05-libxau6_1%3a1.0.8-1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libxau6:s390x (1:1.0.8-1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libxdmcp6:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../06-libxdmcp6_1%3a1.1.2-3_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libxdmcp6:s390x (1:1.1.2-3) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libxcb1:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../07-libxcb1_1.13-2~ubuntu18.04_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libxcb1:s390x (1.13-2~ubuntu18.04) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libx11-data.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../08-libx11-data_2%3a1.6.4-3ubuntu0.2_all.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libx11-data (2:1.6.4-3ubuntu0.2) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libx11-6:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../09-libx11-6_2%3a1.6.4-3ubuntu0.2_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libx11-6:s390x (2:1.6.4-3ubuntu0.2) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libxext6:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../10-libxext6_2%3a1.3.3-1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libxext6:s390x (2:1.3.3-1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package java-common.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../11-java-common_0.68ubuntu1~18.04.1_all.deb ...
+INFO:kolla.common.utils.kafka:Unpacking java-common (0.68ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libavahi-common-data:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../12-libavahi-common-data_0.7-3.1ubuntu1.2_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libavahi-common-data:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libavahi-common3:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../13-libavahi-common3_0.7-3.1ubuntu1.2_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libavahi-common3:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libavahi-client3:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../14-libavahi-client3_0.7-3.1ubuntu1.2_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libavahi-client3:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libcups2:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../15-libcups2_2.2.7-1ubuntu2.7_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libcups2:s390x (2.2.7-1ubuntu2.7) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package liblcms2-2:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../16-liblcms2-2_2.9-1ubuntu0.1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking liblcms2-2:s390x (2.9-1ubuntu0.1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libjpeg8:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../17-libjpeg8_8c-2ubuntu8_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libjpeg8:s390x (8c-2ubuntu8) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libfreetype6:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../18-libfreetype6_2.8.1-2ubuntu2_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libfreetype6:s390x (2.8.1-2ubuntu2) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package fonts-dejavu-core.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../19-fonts-dejavu-core_2.37-1_all.deb ...
+INFO:kolla.common.utils.kafka:Unpacking fonts-dejavu-core (2.37-1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package fontconfig-config.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../20-fontconfig-config_2.12.6-0ubuntu2_all.deb ...
+INFO:kolla.common.utils.kafka:Unpacking fontconfig-config (2.12.6-0ubuntu2) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libfontconfig1:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../21-libfontconfig1_2.12.6-0ubuntu2_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libfontconfig1:s390x (2.12.6-0ubuntu2) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libnspr4:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../22-libnspr4_2%3a4.18-1ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libnspr4:s390x (2:4.18-1ubuntu1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libnss3:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../23-libnss3_2%3a3.35-2ubuntu2.7_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libnss3:s390x (2:3.35-2ubuntu2.7) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libpcsclite1:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../24-libpcsclite1_1.8.23-1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libpcsclite1:s390x (1.8.23-1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libxi6:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../25-libxi6_2%3a1.7.9-1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libxi6:s390x (2:1.7.9-1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libxrender1:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../26-libxrender1_1%3a0.9.10-1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libxrender1:s390x (1:0.9.10-1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package x11-common.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../27-x11-common_1%3a7.7+19ubuntu7.1_all.deb ...
+INFO:kolla.common.utils.kafka:dpkg-query: no packages found matching nux-tools
+INFO:kolla.common.utils.kafka:Unpacking x11-common (1:7.7+19ubuntu7.1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package libxtst6:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../28-libxtst6_2%3a1.2.3-1_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking libxtst6:s390x (2:1.2.3-1) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package openjdk-8-jre-headless:s390x.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../29-openjdk-8-jre-headless_8u242-b08-0ubuntu3~18.04_s390x.deb ...
+INFO:kolla.common.utils.kafka:Unpacking openjdk-8-jre-headless:s390x (8u242-b08-0ubuntu3~18.04) ...
+INFO:kolla.common.utils.kafka:Selecting previously unselected package ca-certificates-java.
+INFO:kolla.common.utils.kafka:Preparing to unpack .../30-ca-certificates-java_20180516ubuntu1~18.04.1_all.deb ...
+INFO:kolla.common.utils.kafka:Unpacking ca-certificates-java (20180516ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.kafka:Setting up libpng16-16:s390x (1.6.34-1ubuntu0.18.04.2) ...
+INFO:kolla.common.utils.kafka:Setting up liblcms2-2:s390x (2.9-1ubuntu0.1) ...
+INFO:kolla.common.utils.kafka:Setting up libpcsclite1:s390x (1.8.23-1) ...
+INFO:kolla.common.utils.kafka:Setting up fonts-dejavu-core (2.37-1) ...
+INFO:kolla.common.utils.kafka:Setting up java-common (0.68ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.kafka:Setting up libjpeg-turbo8:s390x (1.5.2-0ubuntu5.18.04.3) ...
+INFO:kolla.common.utils.kafka:Setting up libbsd0:s390x (0.8.7-1ubuntu0.1) ...
+INFO:kolla.common.utils.kafka:Setting up libnspr4:s390x (2:4.18-1ubuntu1) ...
+INFO:kolla.common.utils.kafka:Setting up ucf (3.0038) ...
+INFO:kolla.common.utils.kafka:Setting up libfreetype6:s390x (2.8.1-2ubuntu2) ...
+INFO:kolla.common.utils.kafka:Setting up libxdmcp6:s390x (1:1.1.2-3) ...
+INFO:kolla.common.utils.kafka:Setting up x11-common (1:7.7+19ubuntu7.1) ...
+INFO:kolla.common.utils.kafka:update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+INFO:kolla.common.utils.kafka:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.kafka:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.kafka:Setting up libx11-data (2:1.6.4-3ubuntu0.2) ...
+INFO:kolla.common.utils.kafka:Setting up libxau6:s390x (1:1.0.8-1) ...
+INFO:kolla.common.utils.kafka:Setting up libdbus-1-3:s390x (1.12.2-1ubuntu1.1) ...
+INFO:kolla.common.utils.kafka:Setting up libavahi-common-data:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.kafka:Setting up libjpeg8:s390x (8c-2ubuntu8) ...
+INFO:kolla.common.utils.kafka:Setting up fontconfig-config (2.12.6-0ubuntu2) ...
+INFO:kolla.common.utils.kafka:Setting up libnss3:s390x (2:3.35-2ubuntu2.7) ...
+INFO:kolla.common.utils.kafka:Setting up libavahi-common3:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.kafka:Setting up libxcb1:s390x (1.13-2~ubuntu18.04) ...
+INFO:kolla.common.utils.kafka:Setting up libfontconfig1:s390x (2.12.6-0ubuntu2) ...
+INFO:kolla.common.utils.kafka:Setting up libx11-6:s390x (2:1.6.4-3ubuntu0.2) ...
+INFO:kolla.common.utils.kafka:Setting up libxrender1:s390x (1:0.9.10-1) ...
+INFO:kolla.common.utils.kafka:Setting up libavahi-client3:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.kafka:Setting up libcups2:s390x (2.2.7-1ubuntu2.7) ...
+INFO:kolla.common.utils.kafka:Setting up libxext6:s390x (2:1.3.3-1) ...
+INFO:kolla.common.utils.kafka:Setting up libxtst6:s390x (2:1.2.3-1) ...
+INFO:kolla.common.utils.kafka:Setting up libxi6:s390x (2:1.7.9-1) ...
+INFO:kolla.common.utils.kafka:Setting up openjdk-8-jre-headless:s390x (8u242-b08-0ubuntu3~18.04) ...
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/java to provide /usr/bin/java (java) in auto mode
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/jjs to provide /usr/bin/jjs (jjs) in auto mode
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/pack200 to provide /usr/bin/pack200 (pack200) in auto mode
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/unpack200 to provide /usr/bin/unpack200 (unpack200) in auto mode
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/orbd to provide /usr/bin/orbd (orbd) in auto mode
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/servertool to provide /usr/bin/servertool (servertool) in auto mode
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/tnameserv to provide /usr/bin/tnameserv (tnameserv) in auto mode
+INFO:kolla.common.utils.kafka:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+INFO:kolla.common.utils.kafka:Setting up ca-certificates-java (20180516ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.kafka:head: cannot open '/etc/ssl/certs/java/cacerts' for reading
+INFO:kolla.common.utils.kafka:: No such file or directory
+INFO:kolla.common.utils.kafka:Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:TeliaSonera_Root_CA_v1.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+INFO:kolla.common.utils.kafka:Adding debian:ISRG_Root_X1.pem
+INFO:kolla.common.utils.kafka:Adding debian:EE_Certification_Centre_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:TrustCor_RootCert_CA-1.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Security_Communication_RootCA2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+INFO:kolla.common.utils.kafka:Adding debian:SZAFIR_ROOT_CA2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Certum_Trusted_Network_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:OpenTrust_Root_CA_G1.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Certplus_Root_CA_G2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:XRamp_Global_CA_Root.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Certigna.pem
+INFO:kolla.common.utils.kafka:Adding debian:Amazon_Root_CA_2.pem
+INFO:kolla.common.utils.kafka:Adding debian:LuxTrust_Global_Root_2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Go_Daddy_Class_2_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+INFO:kolla.common.utils.kafka:Adding debian:Deutsche_Telekom_Root_CA_2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:TrustCor_ECA-1.pem
+INFO:kolla.common.utils.kafka:Adding debian:GeoTrust_Universal_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:Visa_eCommerce_Root.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:COMODO_ECC_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Certplus_Class_2_Primary_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+INFO:kolla.common.utils.kafka:Adding debian:SwissSign_Silver_CA_-_G2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:OISTE_WISeKey_Global_Root_GA_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:Hongkong_Post_Root_CA_1.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:DigiCert_Global_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Staat_der_Nederlanden_EV_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:CA_Disig_Root_R2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:DigiCert_Global_Root_G3.pem
+INFO:kolla.common.utils.kafka:Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+INFO:kolla.common.utils.kafka:Adding debian:Amazon_Root_CA_3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:GlobalSign_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:OpenTrust_Root_CA_G3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Sonera_Class_2_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:QuoVadis_Root_CA_3_G3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:SecureTrust_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Cybertrust_Global_Root.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:GeoTrust_Global_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Trustis_FPS_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:OpenTrust_Root_CA_G2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:ePKI_Root_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:thawte_Primary_Root_CA_-_G3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:QuoVadis_Root_CA_3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:AffirmTrust_Commercial.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:DigiCert_Assured_ID_Root_G3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Actalis_Authentication_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:GlobalSign_Root_CA_-_R2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:ACCVRAIZ1.pem
+INFO:kolla.common.utils.kafka:Adding debian:E-Tugra_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Certplus_Root_CA_G1.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Comodo_AAA_Services_root.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Staat_der_Nederlanden_Root_CA_-_G2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Staat_der_Nederlanden_Root_CA_-_G3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Certinomis_-_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:TrustCor_RootCert_CA-2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Amazon_Root_CA_1.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+INFO:kolla.common.utils.kafka:Adding debian:DigiCert_Trusted_Root_G4.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Baltimore_CyberTrust_Root.pem
+INFO:kolla.common.utils.kafka:Adding debian:AddTrust_External_Root.pem
+INFO:kolla.common.utils.kafka:Adding debian:TWCA_Global_Root_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:thawte_Primary_Root_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:TÜRKTRUST_Elektronik_Sertifika_Hizmet_Sağlayıcısı_H5.pem
+INFO:kolla.common.utils.kafka:Adding debian:COMODO_RSA_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+INFO:kolla.common.utils.kafka:Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+INFO:kolla.common.utils.kafka:Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Izenpe.com.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:DigiCert_Global_Root_G2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:USERTrust_RSA_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:Adding debian:SecureSign_RootCA11.pem
+INFO:kolla.common.utils.kafka:Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+INFO:kolla.common.utils.kafka:Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+INFO:kolla.common.utils.kafka:Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+INFO:kolla.common.utils.kafka:Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+INFO:kolla.common.utils.kafka:Adding debian:CFCA_EV_ROOT.pem
+INFO:kolla.common.utils.kafka:Adding debian:Buypass_Class_2_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:GeoTrust_Primary_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:SwissSign_Gold_CA_-_G2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Global_Chambersign_Root_-_2008.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Amazon_Root_CA_4.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Taiwan_GRCA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:USERTrust_ECC_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:QuoVadis_Root_CA_2_G3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:TWCA_Root_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:DigiCert_Assured_ID_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:GeoTrust_Primary_Certification_Authority_-_G3.pem
+INFO:kolla.common.utils.kafka:Adding debian:Entrust_Root_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:GlobalSign_Root_CA_-_R3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+INFO:kolla.common.utils.kafka:Adding debian:GeoTrust_Universal_CA_2.pem
+INFO:kolla.common.utils.kafka:Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+INFO:kolla.common.utils.kafka:Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+INFO:kolla.common.utils.kafka:Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Starfield_Class_2_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:AffirmTrust_Premium.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:thawte_Primary_Root_CA_-_G2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:DST_Root_CA_X3.pem
+INFO:kolla.common.utils.kafka:Adding debian:Secure_Global_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Network_Solutions_Certificate_Authority.pem
+INFO:kolla.common.utils.kafka:Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:QuoVadis_Root_CA_1_G3.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:DigiCert_Assured_ID_Root_G2.pem
+INFO:kolla.common.utils.kafka:Adding debian:certSIGN_ROOT_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:COMODO_Certification_Authority.pem
+INFO:kolla.common.utils.kafka:Adding debian:Security_Communication_Root_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:QuoVadis_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+INFO:kolla.common.utils.kafka:Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:QuoVadis_Root_CA_2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Certum_Trusted_Network_CA_2.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:EC-ACC.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Buypass_Class_3_Root_CA.pem
+INFO:kolla.common.utils.kafka:Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:AffirmTrust_Premium_ECC.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:Atos_TrustedRoot_2011.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:AC_RAIZ_FNMT-RCM.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:Adding debian:AffirmTrust_Networking.pem
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:done.
+INFO:kolla.common.utils.kafka:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.kafka:Processing triggers for ca-certificates (20180409) ...
+INFO:kolla.common.utils.kafka:Updating certificates in /etc/ssl/certs...
+INFO:kolla.common.utils.kafka:0 added, 0 removed; done.
+INFO:kolla.common.utils.kafka:Running hooks in /etc/ca-certificates/update.d...
+INFO:kolla.common.utils.kafka:
+INFO:kolla.common.utils.kafka:done.
+INFO:kolla.common.utils.kafka:done.
+INFO:kolla.common.utils.kafka:Removing intermediate container 170ba4fcc619
+INFO:kolla.common.utils.kafka: ---> f50fd9abb71e
+INFO:kolla.common.utils.kafka:Step 5/12 : ENV kafka_version=2.0.1
+INFO:kolla.common.utils.kafka: ---> Running in 56b6060fd4a7
+INFO:kolla.common.utils.kafka:Removing intermediate container 56b6060fd4a7
+INFO:kolla.common.utils.kafka: ---> 01b26e052ff8
+INFO:kolla.common.utils.kafka:Step 6/12 : ENV kafka_scala_version=2.12
+INFO:kolla.common.utils.kafka: ---> Running in 1b2f58d7c184
+INFO:kolla.common.utils.kafka:Removing intermediate container 1b2f58d7c184
+INFO:kolla.common.utils.kafka: ---> 1267e13fa442
+INFO:kolla.common.utils.kafka:Step 7/12 : ENV kafka_url=https://archive.apache.org/dist/kafka/${kafka_version}/kafka_${kafka_scala_version}-${kafka_version}.tgz
+INFO:kolla.common.utils.kafka: ---> Running in 4e733e44b188
+INFO:kolla.common.utils.kafka:Removing intermediate container 4e733e44b188
+INFO:kolla.common.utils.kafka: ---> 8f0c42c5cdcb
+INFO:kolla.common.utils.kafka:Step 8/12 : ENV kafka_pkg_sha512sum=9773a85ef2898b4bae20481df4cfd5488bd195fffd700fcc874a9fa55065f6873f2ee12f46d2f6a6ccb5d5a93ddb7dec19227aef5d39d4f72b545ec63b24bb2f
+INFO:kolla.common.utils.kafka: ---> Running in 0cf023340585
+INFO:kolla.common.utils.kafka:Removing intermediate container 0cf023340585
+INFO:kolla.common.utils.kafka: ---> cdd4c341824d
+INFO:kolla.common.utils.kafka:Step 9/12 : RUN curl -sSL -o /tmp/kafka.tgz ${kafka_url}     && echo "${kafka_pkg_sha512sum} /tmp/kafka.tgz" | sha512sum -c     && tar --strip 1 -xvf /tmp/kafka.tgz -C /opt/kafka     && rm -f /tmp/kafka.tgz
+INFO:kolla.common.utils.kafka: ---> Running in a0eccfc5150f
+INFO:kolla.common.utils.kafka:curl (https://archive.apache.org/dist/kafka/2.0.1/kafka_2.12-2.0.1.tgz): response: 200, time: 2.547567, size: 49446678
+INFO:kolla.common.utils.kafka:/tmp/kafka.tgz: OK
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/LICENSE
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/NOTICE
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/connect-distributed.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/connect-standalone.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-acls.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-broker-api-versions.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-configs.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-console-consumer.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-console-producer.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-consumer-groups.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-consumer-perf-test.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-delegation-tokens.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-delete-records.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-dump-log.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-log-dirs.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-mirror-maker.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-preferred-replica-election.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-producer-perf-test.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-reassign-partitions.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-replica-verification.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-run-class.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-server-start.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-server-stop.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-streams-application-reset.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-topics.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-verifiable-consumer.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/kafka-verifiable-producer.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/trogdor.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/connect-distributed.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/connect-standalone.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-acls.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-broker-api-versions.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-configs.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-console-consumer.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-console-producer.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-consumer-groups.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-consumer-perf-test.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-delegation-tokens.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-dump-log.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-mirror-maker.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-preferred-replica-election.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-producer-perf-test.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-reassign-partitions.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-replica-verification.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-run-class.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-server-start.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-server-stop.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/kafka-topics.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/zookeeper-server-start.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/zookeeper-server-stop.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/windows/zookeeper-shell.bat
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/zookeeper-security-migration.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/zookeeper-server-start.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/zookeeper-server-stop.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/bin/zookeeper-shell.sh
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/connect-console-sink.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/connect-console-source.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/connect-distributed.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/connect-file-sink.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/connect-file-source.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/connect-log4j.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/connect-standalone.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/consumer.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/log4j.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/producer.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/server.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/tools-log4j.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/trogdor.conf
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/config/zookeeper.properties
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka-clients-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jackson-databind-2.9.7.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jopt-simple-5.0.4.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/metrics-core-2.2.0.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/scala-logging_2.12-3.9.0.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/scala-reflect-2.12.6.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/scala-library-2.12.6.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/zkclient-0.10.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/zookeeper-3.4.13.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/slf4j-api-1.7.25.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/lz4-java-1.4.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/snappy-java-1.1.7.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jackson-annotations-2.9.7.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jackson-core-2.9.7.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/audience-annotations-0.5.0.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1.jar.asc
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1-sources.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1-sources.jar.asc
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1-javadoc.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1-javadoc.jar.asc
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1-test.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1-test.jar.asc
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1-test-sources.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1-test-sources.jar.asc
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1-scaladoc.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka_2.12-2.0.1-scaladoc.jar.asc
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/site-docs/
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/site-docs/kafka_2.12-2.0.1-site-docs.tgz
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka-tools-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka-log4j-appender-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/argparse4j-0.7.0.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jackson-jaxrs-json-provider-2.9.7.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jackson-jaxrs-base-2.9.7.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jackson-module-jaxb-annotations-2.9.7.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/slf4j-log4j12-1.7.25.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jersey-container-servlet-2.27.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jersey-hk2-2.27.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jaxb-api-2.3.0.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/activation-1.1.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jetty-servlet-9.4.11.v20180605.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jetty-security-9.4.11.v20180605.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jetty-server-9.4.11.v20180605.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jetty-servlets-9.4.11.v20180605.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jersey-container-servlet-core-2.27.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jersey-server-2.27.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jersey-client-2.27.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jersey-media-jaxb-2.27.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jersey-common-2.27.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/javax.ws.rs-api-2.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/hk2-locator-2.5.0-b42.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/javax.servlet-api-3.1.0.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jetty-http-9.4.11.v20180605.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jetty-io-9.4.11.v20180605.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jetty-continuation-9.4.11.v20180605.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jetty-util-9.4.11.v20180605.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/log4j-1.2.17.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/javax.inject-2.5.0-b42.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/hk2-api-2.5.0-b42.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/hk2-utils-2.5.0-b42.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/javax.annotation-api-1.2.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/osgi-resource-locator-1.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/validation-api-1.1.0.Final.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/aopalliance-repackaged-2.5.0-b42.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/javassist-3.22.0-CR2.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/javax.inject-1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/connect-api-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/connect-runtime-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/connect-json-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/connect-transforms-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/jetty-client-9.4.11.v20180605.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/reflections-0.9.11.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/maven-artifact-3.5.3.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/guava-20.0.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/plexus-utils-3.1.0.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/commons-lang3-3.5.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/connect-file-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/connect-basic-auth-extension-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka-streams-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/rocksdbjni-5.7.3.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka-streams-scala_2.12-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka-streams-test-utils-2.0.1.jar
+INFO:kolla.common.utils.kafka:kafka_2.12-2.0.1/libs/kafka-streams-examples-2.0.1.jar
+INFO:kolla.common.utils.kafka:Removing intermediate container a0eccfc5150f
+INFO:kolla.common.utils.kafka: ---> 7d1820ceec59
+INFO:kolla.common.utils.kafka:Step 10/12 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.kafka: ---> 973b3ae30d7a
+INFO:kolla.common.utils.kafka:Step 11/12 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.kafka: ---> Running in 2bbca61eda00
+INFO:kolla.common.utils.kafka:Removing intermediate container 2bbca61eda00
+INFO:kolla.common.utils.kafka: ---> 01b6ef87c3d3
+INFO:kolla.common.utils.kafka:Step 12/12 : USER kafka
+INFO:kolla.common.utils.kafka: ---> Running in 0f7a87a5e977
+INFO:kolla.common.utils.kafka:Removing intermediate container 0f7a87a5e977
+INFO:kolla.common.utils.kafka: ---> 3f0463a3714b
+INFO:kolla.common.utils.kafka:Successfully built 3f0463a3714b
+INFO:kolla.common.utils.kafka:Successfully tagged s390x/ubuntu-binary-kafka:9.1.0
+INFO:kolla.common.utils.kafka:Built at 2020-03-02 21:38:24.006396 (took 0:00:35.144171)

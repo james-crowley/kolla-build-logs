@@ -1,0 +1,35 @@
+INFO:kolla.common.utils.ovsdpdk:Building started at 2020-03-02 21:39:19.149598
+INFO:kolla.common.utils.ovsdpdk:Step 1/6 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.ovsdpdk: ---> 682558ff6b31
+INFO:kolla.common.utils.ovsdpdk:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="ovsdpdk" build-date="20200302"
+INFO:kolla.common.utils.ovsdpdk: ---> Running in 73d506c907c4
+INFO:kolla.common.utils.ovsdpdk:Removing intermediate container 73d506c907c4
+INFO:kolla.common.utils.ovsdpdk: ---> ea0e97422228
+INFO:kolla.common.utils.ovsdpdk:Step 3/6 : RUN apt-get update && apt-get -y install --no-install-recommends openvswitch-switch-dpdk && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.ovsdpdk: ---> Running in 2215eb2c21ca
+INFO:kolla.common.utils.ovsdpdk:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.ovsdpdk:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.ovsdpdk:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.ovsdpdk:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.ovsdpdk:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.ovsdpdk:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.ovsdpdk:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.ovsdpdk:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.ovsdpdk:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.ovsdpdk:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.ovsdpdk:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.ovsdpdk:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.ovsdpdk:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.ovsdpdk:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.ovsdpdk:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.ovsdpdk:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.ovsdpdk:Fetched 15.6 MB in 3s (5,757 kB/s)
+INFO:kolla.common.utils.ovsdpdk:Reading package lists...
+INFO:kolla.common.utils.ovsdpdk:Reading package lists...
+INFO:kolla.common.utils.ovsdpdk:Building dependency tree...
+INFO:kolla.common.utils.ovsdpdk:Reading state information...
+INFO:kolla.common.utils.ovsdpdk:[91mE: Unable to locate package openvswitch-switch-dpdk
+INFO:kolla.common.utils.ovsdpdk:[0m
+INFO:kolla.common.utils.ovsdpdk:Removing intermediate container 2215eb2c21ca
+ERROR:kolla.common.utils.ovsdpdk:Error'd with the following message
+ERROR:kolla.common.utils.ovsdpdk:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends openvswitch-switch-dpdk && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

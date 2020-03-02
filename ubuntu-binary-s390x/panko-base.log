@@ -1,0 +1,161 @@
+INFO:kolla.common.utils.panko-base:Building started at 2020-03-02 21:40:41.187346
+INFO:kolla.common.utils.panko-base:Step 1/7 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.panko-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.panko-base:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="panko-base" build-date="20200302"
+INFO:kolla.common.utils.panko-base: ---> Running in 18d95a3a11c2
+INFO:kolla.common.utils.panko-base:Removing intermediate container 18d95a3a11c2
+INFO:kolla.common.utils.panko-base: ---> 54ab3678e1f8
+INFO:kolla.common.utils.panko-base:Step 3/7 : RUN usermod --append --home /var/lib/panko --groups kolla panko     && mkdir -p /var/lib/panko     && chown -R 42438:42438 /var/lib/panko
+INFO:kolla.common.utils.panko-base: ---> Running in 42ca6fda9ace
+INFO:kolla.common.utils.panko-base:Removing intermediate container 42ca6fda9ace
+INFO:kolla.common.utils.panko-base: ---> 6e6af774cfe6
+INFO:kolla.common.utils.panko-base:Step 4/7 : RUN apt-get update && apt-get -y install --no-install-recommends apache2 libapache2-mod-wsgi-py3 && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.panko-base: ---> Running in b74e5cb4fbd2
+INFO:kolla.common.utils.panko-base:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.panko-base:Get:2 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.panko-base:Ign:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.panko-base:Get:4 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.panko-base:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.panko-base:Get:6 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.panko-base:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.panko-base:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.panko-base:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.panko-base:Get:10 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.panko-base:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.panko-base:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.panko-base:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.panko-base:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.panko-base:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.panko-base:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.panko-base:Fetched 15.6 MB in 3s (5,520 kB/s)
+INFO:kolla.common.utils.panko-base:Reading package lists...
+INFO:kolla.common.utils.panko-base:Reading package lists...
+INFO:kolla.common.utils.panko-base:Building dependency tree...
+INFO:kolla.common.utils.panko-base:Reading state information...
+INFO:kolla.common.utils.panko-base:The following additional packages will be installed:
+INFO:kolla.common.utils.panko-base:  apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+INFO:kolla.common.utils.panko-base:  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.2-0 libpython3.6
+INFO:kolla.common.utils.panko-base:Suggested packages:
+INFO:kolla.common.utils.panko-base:  www-browser apache2-doc apache2-suexec-pristine | apache2-suexec-custom ufw
+INFO:kolla.common.utils.panko-base:Recommended packages:
+INFO:kolla.common.utils.panko-base:  ssl-cert
+INFO:kolla.common.utils.panko-base:The following NEW packages will be installed:
+INFO:kolla.common.utils.panko-base:  apache2 apache2-bin apache2-data apache2-utils libapache2-mod-wsgi-py3
+INFO:kolla.common.utils.panko-base:  libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.2-0
+INFO:kolla.common.utils.panko-base:  libpython3.6
+INFO:kolla.common.utils.panko-base:0 upgraded, 11 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.panko-base:Need to get 2,969 kB of archives.
+INFO:kolla.common.utils.panko-base:After this operation, 12.4 MB of additional disk space will be used.
+INFO:kolla.common.utils.panko-base:Get:1 http://ports.ubuntu.com bionic/main s390x libapr1 s390x 1.6.3-2 [87.4 kB]
+INFO:kolla.common.utils.panko-base:Get:2 http://ports.ubuntu.com bionic/main s390x libaprutil1 s390x 1.6.1-2 [81.8 kB]
+INFO:kolla.common.utils.panko-base:Get:3 http://ports.ubuntu.com bionic/main s390x libaprutil1-dbd-sqlite3 s390x 1.6.1-2 [10.4 kB]
+INFO:kolla.common.utils.panko-base:Get:4 http://ports.ubuntu.com bionic/main s390x libaprutil1-ldap s390x 1.6.1-2 [8,652 B]
+INFO:kolla.common.utils.panko-base:Get:5 http://ports.ubuntu.com bionic/main s390x liblua5.2-0 s390x 5.2.4-1.1build1 [99.9 kB]
+INFO:kolla.common.utils.panko-base:Get:6 http://ports.ubuntu.com bionic-updates/main s390x apache2-bin s390x 2.4.29-1ubuntu4.12 [978 kB]
+INFO:kolla.common.utils.panko-base:Get:7 http://ports.ubuntu.com bionic-updates/main s390x apache2-utils s390x 2.4.29-1ubuntu4.12 [81.3 kB]
+INFO:kolla.common.utils.panko-base:Get:8 http://ports.ubuntu.com bionic-updates/main s390x apache2-data all 2.4.29-1ubuntu4.12 [160 kB]
+INFO:kolla.common.utils.panko-base:Get:9 http://ports.ubuntu.com bionic-updates/main s390x apache2 s390x 2.4.29-1ubuntu4.12 [95.1 kB]
+INFO:kolla.common.utils.panko-base:Get:10 http://ports.ubuntu.com bionic-updates/main s390x libpython3.6 s390x 3.6.9-1~18.04 [1,284 kB]
+INFO:kolla.common.utils.panko-base:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x libapache2-mod-wsgi-py3 s390x 4.5.17-1ubuntu1 [81.9 kB]
+INFO:kolla.common.utils.panko-base:Fetched 2,969 kB in 1s (2,347 kB/s)
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package libapr1:s390x.
+INFO:kolla.common.utils.panko-base:(Reading database ... 
+INFO:kolla.common.utils.panko-base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%
+INFO:kolla.common.utils.panko-base:(Reading database ... 60%
+INFO:kolla.common.utils.panko-base:(Reading database ... 65%
+INFO:kolla.common.utils.panko-base:(Reading database ... 70%
+INFO:kolla.common.utils.panko-base:(Reading database ... 75%
+INFO:kolla.common.utils.panko-base:(Reading database ... 80%
+INFO:kolla.common.utils.panko-base:(Reading database ... 85%
+INFO:kolla.common.utils.panko-base:(Reading database ... 90%
+INFO:kolla.common.utils.panko-base:(Reading database ... 95%
+INFO:kolla.common.utils.panko-base:(Reading database ... 100%(Reading database ... 22243 files and directories currently installed.)
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../00-libapr1_1.6.3-2_s390x.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking libapr1:s390x (1.6.3-2) ...
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package libaprutil1:s390x.
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../01-libaprutil1_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking libaprutil1:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package libaprutil1-dbd-sqlite3:s390x.
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking libaprutil1-dbd-sqlite3:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package libaprutil1-ldap:s390x.
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../03-libaprutil1-ldap_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking libaprutil1-ldap:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package liblua5.2-0:s390x.
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../04-liblua5.2-0_5.2.4-1.1build1_s390x.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking liblua5.2-0:s390x (5.2.4-1.1build1) ...
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package apache2-bin.
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../05-apache2-bin_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking apache2-bin (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package apache2-utils.
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../06-apache2-utils_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking apache2-utils (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package apache2-data.
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../07-apache2-data_2.4.29-1ubuntu4.12_all.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking apache2-data (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package apache2.
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../08-apache2_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking apache2 (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package libpython3.6:s390x.
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../09-libpython3.6_3.6.9-1~18.04_s390x.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking libpython3.6:s390x (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.panko-base:Selecting previously unselected package libapache2-mod-wsgi-py3.
+INFO:kolla.common.utils.panko-base:Preparing to unpack .../10-libapache2-mod-wsgi-py3_4.5.17-1ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.panko-base:Unpacking libapache2-mod-wsgi-py3 (4.5.17-1ubuntu1) ...
+INFO:kolla.common.utils.panko-base:Setting up libapr1:s390x (1.6.3-2) ...
+INFO:kolla.common.utils.panko-base:Setting up apache2-data (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.panko-base:Setting up libaprutil1:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.panko-base:Setting up liblua5.2-0:s390x (5.2.4-1.1build1) ...
+INFO:kolla.common.utils.panko-base:Setting up libpython3.6:s390x (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.panko-base:Setting up libaprutil1-ldap:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.panko-base:Setting up libaprutil1-dbd-sqlite3:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.panko-base:Setting up apache2-utils (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.panko-base:Setting up apache2-bin (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.panko-base:Setting up libapache2-mod-wsgi-py3 (4.5.17-1ubuntu1) ...
+INFO:kolla.common.utils.panko-base:Package apache2 is not configured yet. Will defer actions by package libapache2-mod-wsgi-py3.
+INFO:kolla.common.utils.panko-base:Setting up apache2 (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.panko-base:Enabling module mpm_event.
+INFO:kolla.common.utils.panko-base:Enabling module authz_core.
+INFO:kolla.common.utils.panko-base:Enabling module authz_host.
+INFO:kolla.common.utils.panko-base:Enabling module authn_core.
+INFO:kolla.common.utils.panko-base:Enabling module auth_basic.
+INFO:kolla.common.utils.panko-base:Enabling module access_compat.
+INFO:kolla.common.utils.panko-base:Enabling module authn_file.
+INFO:kolla.common.utils.panko-base:Enabling module authz_user.
+INFO:kolla.common.utils.panko-base:Enabling module alias.
+INFO:kolla.common.utils.panko-base:Enabling module dir.
+INFO:kolla.common.utils.panko-base:Enabling module autoindex.
+INFO:kolla.common.utils.panko-base:Enabling module env.
+INFO:kolla.common.utils.panko-base:Enabling module mime.
+INFO:kolla.common.utils.panko-base:Enabling module negotiation.
+INFO:kolla.common.utils.panko-base:Enabling module setenvif.
+INFO:kolla.common.utils.panko-base:Enabling module filter.
+INFO:kolla.common.utils.panko-base:Enabling module deflate.
+INFO:kolla.common.utils.panko-base:Enabling module status.
+INFO:kolla.common.utils.panko-base:Enabling module reqtimeout.
+INFO:kolla.common.utils.panko-base:Enabling conf charset.
+INFO:kolla.common.utils.panko-base:Enabling conf localized-error-pages.
+INFO:kolla.common.utils.panko-base:Enabling conf other-vhosts-access-log.
+INFO:kolla.common.utils.panko-base:Enabling conf security.
+INFO:kolla.common.utils.panko-base:Enabling conf serve-cgi-bin.
+INFO:kolla.common.utils.panko-base:Enabling site 000-default.
+INFO:kolla.common.utils.panko-base:info: Executing deferred 'a2enmod wsgi' for package libapache2-mod-wsgi-py3
+INFO:kolla.common.utils.panko-base:Enabling module wsgi.
+INFO:kolla.common.utils.panko-base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.panko-base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.panko-base:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.panko-base:Removing intermediate container b74e5cb4fbd2
+INFO:kolla.common.utils.panko-base: ---> d626845efd93
+INFO:kolla.common.utils.panko-base:Step 5/7 : RUN echo > /etc/apache2/ports.conf
+INFO:kolla.common.utils.panko-base: ---> Running in 371ba93f75b7
+INFO:kolla.common.utils.panko-base:Removing intermediate container 371ba93f75b7
+INFO:kolla.common.utils.panko-base: ---> 9203af774dab
+INFO:kolla.common.utils.panko-base:Step 6/7 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.panko-base: ---> 766bb009372c
+INFO:kolla.common.utils.panko-base:Step 7/7 : RUN touch /usr/local/bin/kolla_panko_extend_start     && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_panko_extend_start
+INFO:kolla.common.utils.panko-base: ---> Running in 3b56245c4332
+INFO:kolla.common.utils.panko-base:Removing intermediate container 3b56245c4332
+INFO:kolla.common.utils.panko-base: ---> 8d95e3fe679c
+INFO:kolla.common.utils.panko-base:Successfully built 8d95e3fe679c
+INFO:kolla.common.utils.panko-base:Successfully tagged s390x/ubuntu-binary-panko-base:9.1.0
+INFO:kolla.common.utils.panko-base:Built at 2020-03-02 21:41:02.805581 (took 0:00:21.618235)

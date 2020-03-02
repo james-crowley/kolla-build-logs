@@ -1,0 +1,45 @@
+INFO:kolla.common.utils.rabbitmq:Building started at 2020-03-02 21:23:01.610667
+INFO:kolla.common.utils.rabbitmq:Step 1/15 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.rabbitmq: ---> 4244142526cc
+INFO:kolla.common.utils.rabbitmq:Step 2/15 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="rabbitmq" build-date="20200302"
+INFO:kolla.common.utils.rabbitmq: ---> Running in abca749f0add
+INFO:kolla.common.utils.rabbitmq:Removing intermediate container abca749f0add
+INFO:kolla.common.utils.rabbitmq: ---> 2d4b739feeb6
+INFO:kolla.common.utils.rabbitmq:Step 3/15 : RUN usermod --append --home /var/lib/rabbitmq --groups kolla rabbitmq     && mkdir -p /var/lib/rabbitmq     && chown -R 42439:42439 /var/lib/rabbitmq
+INFO:kolla.common.utils.rabbitmq: ---> Running in 8bc92cdc6e3f
+INFO:kolla.common.utils.rabbitmq:Removing intermediate container 8bc92cdc6e3f
+INFO:kolla.common.utils.rabbitmq: ---> d3ff262260ea
+INFO:kolla.common.utils.rabbitmq:Step 4/15 : RUN apt-get update && apt-get -y install --no-install-recommends erlang-nox logrotate rabbitmq-server erlang-base-hipe && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.rabbitmq: ---> Running in eff809c2a7e0
+INFO:kolla.common.utils.rabbitmq:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.rabbitmq:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.rabbitmq:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.rabbitmq:Get:4 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.rabbitmq:Get:5 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.rabbitmq:Get:6 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.rabbitmq:Get:7 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.rabbitmq:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.rabbitmq:Fetched 8,235 kB in 2s (5,003 kB/s)
+INFO:kolla.common.utils.rabbitmq:Reading package lists...
+INFO:kolla.common.utils.rabbitmq:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.rabbitmq:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.rabbitmq:[0m
+INFO:kolla.common.utils.rabbitmq:Reading package lists...
+INFO:kolla.common.utils.rabbitmq:Building dependency tree...
+INFO:kolla.common.utils.rabbitmq:Reading state information...
+INFO:kolla.common.utils.rabbitmq:Package erlang-base-hipe is not available, but is referred to by another package.
+INFO:kolla.common.utils.rabbitmq:This may mean that the package is missing, has been obsoleted, or
+INFO:kolla.common.utils.rabbitmq:is only available from another source
+INFO:kolla.common.utils.rabbitmq:However the following packages replace it:
+INFO:kolla.common.utils.rabbitmq:  erlang-xmerl erlang-wx erlang-tools erlang-tftp erlang-syntax-tools
+INFO:kolla.common.utils.rabbitmq:  erlang-ssl erlang-ssh erlang-src erlang-snmp erlang-runtime-tools
+INFO:kolla.common.utils.rabbitmq:  erlang-reltool erlang-public-key erlang-parsetools erlang-os-mon erlang-odbc
+INFO:kolla.common.utils.rabbitmq:  erlang-observer erlang-mode erlang-mnesia erlang-megaco erlang-inets
+INFO:kolla.common.utils.rabbitmq:  erlang-ftp erlang-examples erlang-eunit erlang-et erlang-erl-docgen
+INFO:kolla.common.utils.rabbitmq:  erlang-eldap erlang-edoc erlang-asn1 erlang-diameter erlang-dialyzer
+INFO:kolla.common.utils.rabbitmq:  erlang-dev erlang-debugger erlang-crypto erlang-common-test erlang-base
+INFO:kolla.common.utils.rabbitmq:[91mE: Package 'erlang-base-hipe' has no installation candidate
+INFO:kolla.common.utils.rabbitmq:[0m
+INFO:kolla.common.utils.rabbitmq:Removing intermediate container eff809c2a7e0
+ERROR:kolla.common.utils.rabbitmq:Error'd with the following message
+ERROR:kolla.common.utils.rabbitmq:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends erlang-nox logrotate rabbitmq-server erlang-base-hipe && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

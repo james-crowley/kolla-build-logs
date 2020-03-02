@@ -1,0 +1,41 @@
+INFO:kolla.common.utils.nova-libvirt:Building started at 2020-03-02 21:21:30.413141
+INFO:kolla.common.utils.nova-libvirt:Step 1/7 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.nova-libvirt: ---> 4244142526cc
+INFO:kolla.common.utils.nova-libvirt:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="nova-libvirt" build-date="20200302"
+INFO:kolla.common.utils.nova-libvirt: ---> Running in 7cb2cfdfaa64
+INFO:kolla.common.utils.nova-libvirt:Removing intermediate container 7cb2cfdfaa64
+INFO:kolla.common.utils.nova-libvirt: ---> ad3bcb8b8f48
+INFO:kolla.common.utils.nova-libvirt:Step 3/7 : RUN usermod --append --home /var/lib/nova --groups kolla nova     && usermod --append --groups qemu nova     && mkdir -p /var/lib/nova     && chown -R 42436:42436 /var/lib/nova
+INFO:kolla.common.utils.nova-libvirt: ---> Running in 5a6e283ca0c9
+INFO:kolla.common.utils.nova-libvirt:Removing intermediate container 5a6e283ca0c9
+INFO:kolla.common.utils.nova-libvirt: ---> 848bd556fa93
+INFO:kolla.common.utils.nova-libvirt:Step 4/7 : RUN apt-get update && apt-get -y install --no-install-recommends ceph-common ebtables libvirt-clients libvirt-daemon-system openvswitch-switch pm-utils python3-cephfs python3-rados python3-rbd qemu-block-extra qemu-system trousers dmidecode xen-utils usermode && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.nova-libvirt: ---> Running in d9622e2306f6
+INFO:kolla.common.utils.nova-libvirt:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.nova-libvirt:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.nova-libvirt:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.nova-libvirt:Get:5 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.nova-libvirt:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.nova-libvirt:Get:6 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.nova-libvirt:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.nova-libvirt:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.nova-libvirt:Fetched 8,235 kB in 2s (4,949 kB/s)
+INFO:kolla.common.utils.nova-libvirt:Reading package lists...
+INFO:kolla.common.utils.nova-libvirt:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.nova-libvirt:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.nova-libvirt:[0m
+INFO:kolla.common.utils.nova-libvirt:Reading package lists...
+INFO:kolla.common.utils.nova-libvirt:Building dependency tree...
+INFO:kolla.common.utils.nova-libvirt:Reading state information...
+INFO:kolla.common.utils.nova-libvirt:Package dmidecode is not available, but is referred to by another package.
+INFO:kolla.common.utils.nova-libvirt:This may mean that the package is missing, has been obsoleted, or
+INFO:kolla.common.utils.nova-libvirt:is only available from another source
+INFO:kolla.common.utils.nova-libvirt:Package xen-utils is not available, but is referred to by another package.
+INFO:kolla.common.utils.nova-libvirt:This may mean that the package is missing, has been obsoleted, or
+INFO:kolla.common.utils.nova-libvirt:is only available from another source
+INFO:kolla.common.utils.nova-libvirt:[91mE: Package 'dmidecode' has no installation candidate
+INFO:kolla.common.utils.nova-libvirt:E: Package 'xen-utils' has no installation candidate
+INFO:kolla.common.utils.nova-libvirt:[0m
+INFO:kolla.common.utils.nova-libvirt:Removing intermediate container d9622e2306f6
+ERROR:kolla.common.utils.nova-libvirt:Error'd with the following message
+ERROR:kolla.common.utils.nova-libvirt:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends ceph-common ebtables libvirt-clients libvirt-daemon-system openvswitch-switch pm-utils python3-cephfs python3-rados python3-rbd qemu-block-extra qemu-system trousers dmidecode xen-utils usermode && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.qinling-base:Building started at 2020-03-02 21:41:59.892621
+INFO:kolla.common.utils.qinling-base:Step 1/6 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.qinling-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.qinling-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="qinling-base" build-date="20200302"
+INFO:kolla.common.utils.qinling-base: ---> Running in b57b35b21a01
+INFO:kolla.common.utils.qinling-base:Removing intermediate container b57b35b21a01
+INFO:kolla.common.utils.qinling-base: ---> 70e5be080402
+INFO:kolla.common.utils.qinling-base:Step 3/6 : RUN usermod --append --home /var/lib/qinling --groups kolla qinling     && mkdir -p /var/lib/qinling     && chown -R 42484:42484 /var/lib/qinling
+INFO:kolla.common.utils.qinling-base: ---> Running in f570e2af8a0d
+INFO:kolla.common.utils.qinling-base:Removing intermediate container f570e2af8a0d
+INFO:kolla.common.utils.qinling-base: ---> 46a0e86b2d11
+INFO:kolla.common.utils.qinling-base:Step 4/6 : RUN echo 'binary not yet available for ubuntu'     && /bin/false
+INFO:kolla.common.utils.qinling-base: ---> Running in de5591657452
+INFO:kolla.common.utils.qinling-base:binary not yet available for ubuntu
+INFO:kolla.common.utils.qinling-base:Removing intermediate container de5591657452
+ERROR:kolla.common.utils.qinling-base:Error'd with the following message
+ERROR:kolla.common.utils.qinling-base:The command '/bin/sh -c echo 'binary not yet available for ubuntu'     && /bin/false' returned a non-zero code: 1

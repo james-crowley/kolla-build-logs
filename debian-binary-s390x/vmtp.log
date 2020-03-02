@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.vmtp:Building started at 2020-03-02 21:26:56.262190
+INFO:kolla.common.utils.vmtp:Step 1/7 : FROM s390x/debian-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.vmtp: ---> d0f37d4345b6
+INFO:kolla.common.utils.vmtp:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="vmtp" build-date="20200302"
+INFO:kolla.common.utils.vmtp: ---> Running in 02a38358f113
+INFO:kolla.common.utils.vmtp:Removing intermediate container 02a38358f113
+INFO:kolla.common.utils.vmtp: ---> 996e2c4d2b84
+INFO:kolla.common.utils.vmtp:Step 3/7 : RUN usermod --append --home /var/lib/vmtp --groups kolla vmtp     && mkdir -p /var/lib/vmtp     && chown -R 42450:42450 /var/lib/vmtp
+INFO:kolla.common.utils.vmtp: ---> Running in 2b12b0897ef1
+INFO:kolla.common.utils.vmtp:Removing intermediate container 2b12b0897ef1
+INFO:kolla.common.utils.vmtp: ---> d5f3a16ca9a1
+INFO:kolla.common.utils.vmtp:Step 4/7 : RUN echo 'binary not yet available for debian'     && /bin/false
+INFO:kolla.common.utils.vmtp: ---> Running in 1dfad31bae15
+INFO:kolla.common.utils.vmtp:binary not yet available for debian
+INFO:kolla.common.utils.vmtp:Removing intermediate container 1dfad31bae15
+ERROR:kolla.common.utils.vmtp:Error'd with the following message
+ERROR:kolla.common.utils.vmtp:The command '/bin/sh -c echo 'binary not yet available for debian'     && /bin/false' returned a non-zero code: 1

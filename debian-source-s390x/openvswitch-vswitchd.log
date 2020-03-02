@@ -1,0 +1,16 @@
+INFO:kolla.common.utils.openvswitch-vswitchd:Building started at 2020-03-02 21:32:56.137853
+INFO:kolla.common.utils.openvswitch-vswitchd:Step 1/4 : FROM s390x/debian-source-openvswitch-base:9.1.0
+INFO:kolla.common.utils.openvswitch-vswitchd: ---> 4661ba0c4fbd
+INFO:kolla.common.utils.openvswitch-vswitchd:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="openvswitch-vswitchd" build-date="20200302"
+INFO:kolla.common.utils.openvswitch-vswitchd: ---> Running in 06701dcd08f5
+INFO:kolla.common.utils.openvswitch-vswitchd:Removing intermediate container 06701dcd08f5
+INFO:kolla.common.utils.openvswitch-vswitchd: ---> a473dab309a1
+INFO:kolla.common.utils.openvswitch-vswitchd:Step 3/4 : COPY extend_start.sh /usr/local/bin/kolla_openvswitch_extend_start
+INFO:kolla.common.utils.openvswitch-vswitchd: ---> 6f2a22913c52
+INFO:kolla.common.utils.openvswitch-vswitchd:Step 4/4 : RUN chmod 755 /usr/local/bin/kolla_openvswitch_extend_start
+INFO:kolla.common.utils.openvswitch-vswitchd: ---> Running in e450c315a723
+INFO:kolla.common.utils.openvswitch-vswitchd:Removing intermediate container e450c315a723
+INFO:kolla.common.utils.openvswitch-vswitchd: ---> a6a2712914c4
+INFO:kolla.common.utils.openvswitch-vswitchd:Successfully built a6a2712914c4
+INFO:kolla.common.utils.openvswitch-vswitchd:Successfully tagged s390x/debian-source-openvswitch-vswitchd:9.1.0
+INFO:kolla.common.utils.openvswitch-vswitchd:Built at 2020-03-02 21:32:59.020558 (took 0:00:02.882705)

@@ -1,0 +1,429 @@
+INFO:kolla.common.utils.elasticsearch:Building started at 2020-03-02 21:22:28.278280
+INFO:kolla.common.utils.elasticsearch:Step 1/10 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.elasticsearch: ---> 4244142526cc
+INFO:kolla.common.utils.elasticsearch:Step 2/10 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="elasticsearch" build-date="20200302"
+INFO:kolla.common.utils.elasticsearch: ---> Running in 1bc56eb2926e
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container 1bc56eb2926e
+INFO:kolla.common.utils.elasticsearch: ---> 7a1fcf972fe5
+INFO:kolla.common.utils.elasticsearch:Step 3/10 : RUN usermod --append --home /usr/share/elasticsearch --groups kolla elasticsearch     && chsh --shell /bin/bash elasticsearch     && mkdir -p /usr/share/elasticsearch     && chown -R 42412:42412 /usr/share/elasticsearch
+INFO:kolla.common.utils.elasticsearch: ---> Running in ad612ed7de63
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container ad612ed7de63
+INFO:kolla.common.utils.elasticsearch: ---> 245afc43ecaf
+INFO:kolla.common.utils.elasticsearch:Step 4/10 : RUN echo "deb [arch=amd64] https://artifacts.elastic.co/packages/5.x/apt stable main" >/etc/apt/sources.list.d/elasticsearch.list
+INFO:kolla.common.utils.elasticsearch: ---> Running in 7dbaa1d7ffa3
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container 7dbaa1d7ffa3
+INFO:kolla.common.utils.elasticsearch: ---> a8014552b0a6
+INFO:kolla.common.utils.elasticsearch:Step 5/10 : ENV JAVA_HOME /usr/lib/jvm/java--openjdk-s390x/
+INFO:kolla.common.utils.elasticsearch: ---> Running in 970d7d30ec79
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container 970d7d30ec79
+INFO:kolla.common.utils.elasticsearch: ---> ed83b7fd028c
+INFO:kolla.common.utils.elasticsearch:Step 6/10 : ENV ES_SKIP_SET_KERNEL_PARAMETERS true
+INFO:kolla.common.utils.elasticsearch: ---> Running in 7ab465c0ad0a
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container 7ab465c0ad0a
+INFO:kolla.common.utils.elasticsearch: ---> a6c70be6fb04
+INFO:kolla.common.utils.elasticsearch:Step 7/10 : RUN apt-get update && apt-get -y install --no-install-recommends default-jre-headless elasticsearch && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.elasticsearch: ---> Running in 313358944ca4
+INFO:kolla.common.utils.elasticsearch:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.elasticsearch:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.elasticsearch:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.elasticsearch:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.elasticsearch:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.elasticsearch:Ign:6 https://artifacts.elastic.co/packages/5.x/apt stable InRelease
+INFO:kolla.common.utils.elasticsearch:Get:7 https://artifacts.elastic.co/packages/5.x/apt stable Release [5,116 B]
+INFO:kolla.common.utils.elasticsearch:Get:8 https://artifacts.elastic.co/packages/5.x/apt stable Release.gpg [473 B]
+INFO:kolla.common.utils.elasticsearch:Get:9 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.elasticsearch:Get:10 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.elasticsearch:Get:11 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.elasticsearch:Get:12 https://artifacts.elastic.co/packages/5.x/apt stable/main amd64 Packages [42.6 kB]
+INFO:kolla.common.utils.elasticsearch:Fetched 8,283 kB in 2s (4,923 kB/s)
+INFO:kolla.common.utils.elasticsearch:Reading package lists...
+INFO:kolla.common.utils.elasticsearch:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.elasticsearch:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.elasticsearch:[0m
+INFO:kolla.common.utils.elasticsearch:Reading package lists...
+INFO:kolla.common.utils.elasticsearch:Building dependency tree...
+INFO:kolla.common.utils.elasticsearch:Reading state information...
+INFO:kolla.common.utils.elasticsearch:The following additional packages will be installed:
+INFO:kolla.common.utils.elasticsearch:  ca-certificates-java fontconfig-config fonts-dejavu-core java-common
+INFO:kolla.common.utils.elasticsearch:  libasound2 libasound2-data libavahi-client3 libavahi-common-data
+INFO:kolla.common.utils.elasticsearch:  libavahi-common3 libbsd0 libcups2 libdbus-1-3 libfontconfig1 libfreetype6
+INFO:kolla.common.utils.elasticsearch:  libjpeg62-turbo liblcms2-2 libnspr4 libnss3 libpcsclite1 libpng16-16
+INFO:kolla.common.utils.elasticsearch:  libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxi6 libxrender1
+INFO:kolla.common.utils.elasticsearch:  libxtst6 openjdk-11-jre-headless sensible-utils ucf x11-common
+INFO:kolla.common.utils.elasticsearch:Suggested packages:
+INFO:kolla.common.utils.elasticsearch:  default-jre libasound2-plugins alsa-utils cups-common liblcms2-utils pcscd
+INFO:kolla.common.utils.elasticsearch:  libnss-mdns fonts-dejavu-extra fonts-ipafont-gothic fonts-ipafont-mincho
+INFO:kolla.common.utils.elasticsearch:  fonts-wqy-microhei | fonts-wqy-zenhei fonts-indic
+INFO:kolla.common.utils.elasticsearch:Recommended packages:
+INFO:kolla.common.utils.elasticsearch:  dbus
+INFO:kolla.common.utils.elasticsearch:The following NEW packages will be installed:
+INFO:kolla.common.utils.elasticsearch:  ca-certificates-java default-jre-headless elasticsearch fontconfig-config
+INFO:kolla.common.utils.elasticsearch:  fonts-dejavu-core java-common libasound2 libasound2-data libavahi-client3
+INFO:kolla.common.utils.elasticsearch:  libavahi-common-data libavahi-common3 libbsd0 libcups2 libdbus-1-3
+INFO:kolla.common.utils.elasticsearch:  libfontconfig1 libfreetype6 libjpeg62-turbo liblcms2-2 libnspr4 libnss3
+INFO:kolla.common.utils.elasticsearch:  libpcsclite1 libpng16-16 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6
+INFO:kolla.common.utils.elasticsearch:  libxext6 libxi6 libxrender1 libxtst6 openjdk-11-jre-headless sensible-utils
+INFO:kolla.common.utils.elasticsearch:  ucf x11-common
+INFO:kolla.common.utils.elasticsearch:0 upgraded, 35 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.elasticsearch:Need to get 73.4 MB of archives.
+INFO:kolla.common.utils.elasticsearch:After this operation, 206 MB of additional disk space will be used.
+INFO:kolla.common.utils.elasticsearch:Get:1 http://deb.debian.org/debian buster/main s390x sensible-utils all 0.0.12 [15.8 kB]
+INFO:kolla.common.utils.elasticsearch:Get:2 http://deb.debian.org/debian buster/main s390x ucf all 3.0038+nmu1 [69.0 kB]
+INFO:kolla.common.utils.elasticsearch:Get:3 http://deb.debian.org/debian buster/main s390x java-common all 0.71 [14.4 kB]
+INFO:kolla.common.utils.elasticsearch:Get:4 http://deb.debian.org/debian buster/main s390x libavahi-common-data s390x 0.7-4+b1 [122 kB]
+INFO:kolla.common.utils.elasticsearch:Get:5 http://deb.debian.org/debian buster/main s390x libavahi-common3 s390x 0.7-4+b1 [52.7 kB]
+INFO:kolla.common.utils.elasticsearch:Get:6 http://deb.debian.org/debian buster/main s390x libdbus-1-3 s390x 1.12.16-1 [205 kB]
+INFO:kolla.common.utils.elasticsearch:Get:7 http://deb.debian.org/debian buster/main s390x libavahi-client3 s390x 0.7-4+b1 [55.5 kB]
+INFO:kolla.common.utils.elasticsearch:Get:8 http://deb.debian.org/debian buster/main s390x libcups2 s390x 2.2.10-6+deb10u2 [304 kB]
+INFO:kolla.common.utils.elasticsearch:Get:9 http://deb.debian.org/debian buster/main s390x liblcms2-2 s390x 2.9-3 [133 kB]
+INFO:kolla.common.utils.elasticsearch:Get:10 http://deb.debian.org/debian buster/main s390x libjpeg62-turbo s390x 1:1.5.2-2+b1 [131 kB]
+INFO:kolla.common.utils.elasticsearch:Get:11 http://deb.debian.org/debian buster/main s390x libpng16-16 s390x 1.6.36-6 [285 kB]
+INFO:kolla.common.utils.elasticsearch:Get:12 http://deb.debian.org/debian buster/main s390x libfreetype6 s390x 2.9.1-3+deb10u1 [353 kB]
+INFO:kolla.common.utils.elasticsearch:Get:13 http://deb.debian.org/debian buster/main s390x fonts-dejavu-core all 2.37-1 [1,068 kB]
+INFO:kolla.common.utils.elasticsearch:Get:14 http://deb.debian.org/debian buster/main s390x fontconfig-config all 2.13.1-2 [280 kB]
+INFO:kolla.common.utils.elasticsearch:Get:15 http://deb.debian.org/debian buster/main s390x libfontconfig1 s390x 2.13.1-2 [339 kB]
+INFO:kolla.common.utils.elasticsearch:Get:16 http://deb.debian.org/debian buster/main s390x libnspr4 s390x 2:4.20-1 [107 kB]
+INFO:kolla.common.utils.elasticsearch:Get:17 http://deb.debian.org/debian buster/main s390x libnss3 s390x 2:3.42.1-1+deb10u2 [1,051 kB]
+INFO:kolla.common.utils.elasticsearch:Get:18 https://artifacts.elastic.co/packages/5.x/apt stable/main amd64 elasticsearch all 5.6.16 [33.8 MB]
+INFO:kolla.common.utils.elasticsearch:Get:19 http://deb.debian.org/debian buster/main s390x libasound2-data all 1.1.8-1 [59.6 kB]
+INFO:kolla.common.utils.elasticsearch:Get:20 http://deb.debian.org/debian buster/main s390x libasound2 s390x 1.1.8-1 [332 kB]
+INFO:kolla.common.utils.elasticsearch:Get:21 http://deb.debian.org/debian buster/main s390x libpcsclite1 s390x 1.8.24-1 [56.8 kB]
+INFO:kolla.common.utils.elasticsearch:Get:22 http://deb.debian.org/debian buster/main s390x libxau6 s390x 1:1.0.8-1+b2 [19.8 kB]
+INFO:kolla.common.utils.elasticsearch:Get:23 http://deb.debian.org/debian buster/main s390x libbsd0 s390x 0.9.1-2 [98.0 kB]
+INFO:kolla.common.utils.elasticsearch:Get:24 http://deb.debian.org/debian buster/main s390x libxdmcp6 s390x 1:1.1.2-3 [26.5 kB]
+INFO:kolla.common.utils.elasticsearch:Get:25 http://deb.debian.org/debian buster/main s390x libxcb1 s390x 1.13.1-2 [134 kB]
+INFO:kolla.common.utils.elasticsearch:Get:26 http://deb.debian.org/debian buster/main s390x libx11-data all 2:1.6.7-1 [298 kB]
+INFO:kolla.common.utils.elasticsearch:Get:27 http://deb.debian.org/debian buster/main s390x libx11-6 s390x 2:1.6.7-1 [722 kB]
+INFO:kolla.common.utils.elasticsearch:Get:28 http://deb.debian.org/debian buster/main s390x libxext6 s390x 2:1.3.3-1+b2 [51.7 kB]
+INFO:kolla.common.utils.elasticsearch:Get:29 http://deb.debian.org/debian buster/main s390x libxi6 s390x 2:1.7.9-1 [81.7 kB]
+INFO:kolla.common.utils.elasticsearch:Get:30 http://deb.debian.org/debian buster/main s390x libxrender1 s390x 1:0.9.10-1 [32.0 kB]
+INFO:kolla.common.utils.elasticsearch:Get:31 http://deb.debian.org/debian buster/main s390x x11-common all 1:7.7+19 [251 kB]
+INFO:kolla.common.utils.elasticsearch:Get:32 http://deb.debian.org/debian buster/main s390x libxtst6 s390x 2:1.2.3-1 [27.4 kB]
+INFO:kolla.common.utils.elasticsearch:Get:33 http://deb.debian.org/debian buster/main s390x openjdk-11-jre-headless s390x 11.0.6+10-1~deb10u1 [32.8 MB]
+INFO:kolla.common.utils.elasticsearch:Get:34 http://deb.debian.org/debian buster/main s390x default-jre-headless s390x 2:1.11-71 [10.9 kB]
+INFO:kolla.common.utils.elasticsearch:Get:35 http://deb.debian.org/debian buster/main s390x ca-certificates-java all 20190405 [15.7 kB]
+INFO:kolla.common.utils.elasticsearch:Preconfiguring packages ...
+INFO:kolla.common.utils.elasticsearch:Fetched 73.4 MB in 2s (44.2 MB/s)
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package sensible-utils.
+INFO:kolla.common.utils.elasticsearch:(Reading database ... 
+INFO:kolla.common.utils.elasticsearch:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.elasticsearch:(Reading database ... 80%
+INFO:kolla.common.utils.elasticsearch:(Reading database ... 85%
+INFO:kolla.common.utils.elasticsearch:(Reading database ... 90%
+INFO:kolla.common.utils.elasticsearch:(Reading database ... 95%
+INFO:kolla.common.utils.elasticsearch:(Reading database ... 100%(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../00-sensible-utils_0.0.12_all.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking sensible-utils (0.0.12) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package ucf.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../01-ucf_3.0038+nmu1_all.deb ...
+INFO:kolla.common.utils.elasticsearch:Moving old data out of the way
+INFO:kolla.common.utils.elasticsearch:Unpacking ucf (3.0038+nmu1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package java-common.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../02-java-common_0.71_all.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking java-common (0.71) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libavahi-common-data:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../03-libavahi-common-data_0.7-4+b1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libavahi-common-data:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libavahi-common3:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../04-libavahi-common3_0.7-4+b1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libavahi-common3:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libdbus-1-3:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../05-libdbus-1-3_1.12.16-1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libdbus-1-3:s390x (1.12.16-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libavahi-client3:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../06-libavahi-client3_0.7-4+b1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libavahi-client3:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libcups2:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../07-libcups2_2.2.10-6+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libcups2:s390x (2.2.10-6+deb10u2) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package liblcms2-2:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../08-liblcms2-2_2.9-3_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking liblcms2-2:s390x (2.9-3) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libjpeg62-turbo:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../09-libjpeg62-turbo_1%3a1.5.2-2+b1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libjpeg62-turbo:s390x (1:1.5.2-2+b1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libpng16-16:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../10-libpng16-16_1.6.36-6_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libpng16-16:s390x (1.6.36-6) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libfreetype6:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../11-libfreetype6_2.9.1-3+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libfreetype6:s390x (2.9.1-3+deb10u1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package fonts-dejavu-core.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../12-fonts-dejavu-core_2.37-1_all.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking fonts-dejavu-core (2.37-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package fontconfig-config.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../13-fontconfig-config_2.13.1-2_all.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking fontconfig-config (2.13.1-2) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libfontconfig1:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../14-libfontconfig1_2.13.1-2_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libfontconfig1:s390x (2.13.1-2) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libnspr4:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../15-libnspr4_2%3a4.20-1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libnspr4:s390x (2:4.20-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libnss3:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../16-libnss3_2%3a3.42.1-1+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libnss3:s390x (2:3.42.1-1+deb10u2) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libasound2-data.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../17-libasound2-data_1.1.8-1_all.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libasound2-data (1.1.8-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libasound2:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../18-libasound2_1.1.8-1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libasound2:s390x (1.1.8-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libpcsclite1:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../19-libpcsclite1_1.8.24-1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libpcsclite1:s390x (1.8.24-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libxau6:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../20-libxau6_1%3a1.0.8-1+b2_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libxau6:s390x (1:1.0.8-1+b2) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libbsd0:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../21-libbsd0_0.9.1-2_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libbsd0:s390x (0.9.1-2) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libxdmcp6:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../22-libxdmcp6_1%3a1.1.2-3_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libxdmcp6:s390x (1:1.1.2-3) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libxcb1:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../23-libxcb1_1.13.1-2_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libxcb1:s390x (1.13.1-2) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libx11-data.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../24-libx11-data_2%3a1.6.7-1_all.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libx11-data (2:1.6.7-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libx11-6:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../25-libx11-6_2%3a1.6.7-1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libx11-6:s390x (2:1.6.7-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libxext6:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../26-libxext6_2%3a1.3.3-1+b2_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libxext6:s390x (2:1.3.3-1+b2) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libxi6:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../27-libxi6_2%3a1.7.9-1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libxi6:s390x (2:1.7.9-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libxrender1:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../28-libxrender1_1%3a0.9.10-1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libxrender1:s390x (1:0.9.10-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package x11-common.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../29-x11-common_1%3a7.7+19_all.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking x11-common (1:7.7+19) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package libxtst6:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../30-libxtst6_2%3a1.2.3-1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking libxtst6:s390x (2:1.2.3-1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package openjdk-11-jre-headless:s390x.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../31-openjdk-11-jre-headless_11.0.6+10-1~deb10u1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking openjdk-11-jre-headless:s390x (11.0.6+10-1~deb10u1) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package default-jre-headless.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../32-default-jre-headless_2%3a1.11-71_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking default-jre-headless (2:1.11-71) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package ca-certificates-java.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../33-ca-certificates-java_20190405_all.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking ca-certificates-java (20190405) ...
+INFO:kolla.common.utils.elasticsearch:Selecting previously unselected package elasticsearch.
+INFO:kolla.common.utils.elasticsearch:Preparing to unpack .../34-elasticsearch_5.6.16_all.deb ...
+INFO:kolla.common.utils.elasticsearch:Unpacking elasticsearch (5.6.16) ...
+INFO:kolla.common.utils.elasticsearch:Setting up liblcms2-2:s390x (2.9-3) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libxau6:s390x (1:1.0.8-1+b2) ...
+INFO:kolla.common.utils.elasticsearch:Setting up elasticsearch (5.6.16) ...
+INFO:kolla.common.utils.elasticsearch:Setting up java-common (0.71) ...
+INFO:kolla.common.utils.elasticsearch:Setting up x11-common (1:7.7+19) ...
+INFO:kolla.common.utils.elasticsearch:update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+INFO:kolla.common.utils.elasticsearch:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.elasticsearch:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.elasticsearch:Setting up libasound2-data (1.1.8-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libjpeg62-turbo:s390x (1:1.5.2-2+b1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libx11-data (2:1.6.7-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libnspr4:s390x (2:4.20-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libavahi-common-data:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libdbus-1-3:s390x (1.12.16-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libpng16-16:s390x (1.6.36-6) ...
+INFO:kolla.common.utils.elasticsearch:Setting up fonts-dejavu-core (2.37-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libpcsclite1:s390x (1.8.24-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up sensible-utils (0.0.12) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libasound2:s390x (1.1.8-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libbsd0:s390x (0.9.1-2) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libxdmcp6:s390x (1:1.1.2-3) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libxcb1:s390x (1.13.1-2) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libavahi-common3:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libnss3:s390x (2:3.42.1-1+deb10u2) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libfreetype6:s390x (2.9.1-3+deb10u1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up ucf (3.0038+nmu1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libx11-6:s390x (2:1.6.7-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libavahi-client3:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libxrender1:s390x (1:0.9.10-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up fontconfig-config (2.13.1-2) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libxext6:s390x (2:1.3.3-1+b2) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libcups2:s390x (2.2.10-6+deb10u2) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libfontconfig1:s390x (2.13.1-2) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libxi6:s390x (2:1.7.9-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up libxtst6:s390x (2:1.2.3-1) ...
+INFO:kolla.common.utils.elasticsearch:Setting up default-jre-headless (2:1.11-71) ...
+INFO:kolla.common.utils.elasticsearch:Setting up openjdk-11-jre-headless:s390x (11.0.6+10-1~deb10u1) ...
+INFO:kolla.common.utils.elasticsearch:update-alternatives: using /usr/lib/jvm/java-11-openjdk-s390x/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode
+INFO:kolla.common.utils.elasticsearch:update-alternatives: using /usr/lib/jvm/java-11-openjdk-s390x/bin/java to provide /usr/bin/java (java) in auto mode
+INFO:kolla.common.utils.elasticsearch:update-alternatives: using /usr/lib/jvm/java-11-openjdk-s390x/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+INFO:kolla.common.utils.elasticsearch:update-alternatives: using /usr/lib/jvm/java-11-openjdk-s390x/bin/jjs to provide /usr/bin/jjs (jjs) in auto mode
+INFO:kolla.common.utils.elasticsearch:update-alternatives: using /usr/lib/jvm/java-11-openjdk-s390x/bin/pack200 to provide /usr/bin/pack200 (pack200) in auto mode
+INFO:kolla.common.utils.elasticsearch:update-alternatives: using /usr/lib/jvm/java-11-openjdk-s390x/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+INFO:kolla.common.utils.elasticsearch:update-alternatives: using /usr/lib/jvm/java-11-openjdk-s390x/bin/unpack200 to provide /usr/bin/unpack200 (unpack200) in auto mode
+INFO:kolla.common.utils.elasticsearch:update-alternatives: using /usr/lib/jvm/java-11-openjdk-s390x/bin/jfr to provide /usr/bin/jfr (jfr) in auto mode
+INFO:kolla.common.utils.elasticsearch:update-alternatives: using /usr/lib/jvm/java-11-openjdk-s390x/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+INFO:kolla.common.utils.elasticsearch:Setting up ca-certificates-java (20190405) ...
+INFO:kolla.common.utils.elasticsearch:head: cannot open '/etc/ssl/certs/java/cacerts' for reading: No such file or directory
+INFO:kolla.common.utils.elasticsearch:Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:TeliaSonera_Root_CA_v1.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:ISRG_Root_X1.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:EE_Certification_Centre_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:TrustCor_RootCert_CA-1.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Security_Communication_RootCA2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:SZAFIR_ROOT_CA2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Certum_Trusted_Network_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:XRamp_Global_CA_Root.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Certigna.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Amazon_Root_CA_2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:LuxTrust_Global_Root_2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Go_Daddy_Class_2_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Deutsche_Telekom_Root_CA_2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:TrustCor_ECA-1.pem
+INFO:kolla.common.utils.elasticsearch:
+INFO:kolla.common.utils.elasticsearch:Adding debian:GeoTrust_Universal_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:COMODO_ECC_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Certplus_Class_2_Primary_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:SwissSign_Silver_CA_-_G2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:OISTE_WISeKey_Global_Root_GA_CA.pem
+INFO:kolla.common.utils.elasticsearch:
+INFO:kolla.common.utils.elasticsearch:Adding debian:Hongkong_Post_Root_CA_1.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:DigiCert_Global_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Staat_der_Nederlanden_EV_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:CA_Disig_Root_R2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:DigiCert_Global_Root_G3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Amazon_Root_CA_3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:GlobalSign_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Sonera_Class_2_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:OISTE_WISeKey_Global_Root_GC_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:QuoVadis_Root_CA_3_G3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:SecureTrust_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Cybertrust_Global_Root.pem
+INFO:kolla.common.utils.elasticsearch:
+INFO:kolla.common.utils.elasticsearch:Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+INFO:kolla.common.utils.elasticsearch:
+INFO:kolla.common.utils.elasticsearch:Adding debian:GeoTrust_Global_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Trustis_FPS_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:ePKI_Root_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:thawte_Primary_Root_CA_-_G3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:QuoVadis_Root_CA_3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:AffirmTrust_Commercial.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:DigiCert_Assured_ID_Root_G3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Actalis_Authentication_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:GlobalSign_Root_CA_-_R2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:ACCVRAIZ1.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:E-Tugra_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:
+INFO:kolla.common.utils.elasticsearch:Adding debian:Comodo_AAA_Services_root.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Staat_der_Nederlanden_Root_CA_-_G2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:GlobalSign_Root_CA_-_R6.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Staat_der_Nederlanden_Root_CA_-_G3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Certinomis_-_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:
+INFO:kolla.common.utils.elasticsearch:Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:TrustCor_RootCert_CA-2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Amazon_Root_CA_1.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:DigiCert_Trusted_Root_G4.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Baltimore_CyberTrust_Root.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:AddTrust_External_Root.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:TWCA_Global_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:thawte_Primary_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:COMODO_RSA_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Izenpe.com.pem
+INFO:kolla.common.utils.elasticsearch:
+INFO:kolla.common.utils.elasticsearch:Adding debian:DigiCert_Global_Root_G2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:USERTrust_RSA_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:SecureSign_RootCA11.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:CFCA_EV_ROOT.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Buypass_Class_2_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:
+INFO:kolla.common.utils.elasticsearch:Adding debian:GeoTrust_Primary_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:SwissSign_Gold_CA_-_G2.pem
+INFO:kolla.common.utils.elasticsearch:
+INFO:kolla.common.utils.elasticsearch:Adding debian:Global_Chambersign_Root_-_2008.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Amazon_Root_CA_4.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Taiwan_GRCA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:USERTrust_ECC_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:QuoVadis_Root_CA_2_G3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:TWCA_Root_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:DigiCert_Assured_ID_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:GeoTrust_Primary_Certification_Authority_-_G3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Entrust_Root_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:GlobalSign_Root_CA_-_R3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:GeoTrust_Universal_CA_2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Starfield_Class_2_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:AffirmTrust_Premium.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:thawte_Primary_Root_CA_-_G2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:DST_Root_CA_X3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Secure_Global_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Network_Solutions_Certificate_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:QuoVadis_Root_CA_1_G3.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:DigiCert_Assured_ID_Root_G2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:certSIGN_ROOT_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:COMODO_Certification_Authority.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Security_Communication_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:QuoVadis_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:QuoVadis_Root_CA_2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Certum_Trusted_Network_CA_2.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:EC-ACC.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Buypass_Class_3_Root_CA.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:AffirmTrust_Premium_ECC.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:Atos_TrustedRoot_2011.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:AC_RAIZ_FNMT-RCM.pem
+INFO:kolla.common.utils.elasticsearch:Adding debian:AffirmTrust_Networking.pem
+INFO:kolla.common.utils.elasticsearch:done.
+INFO:kolla.common.utils.elasticsearch:Processing triggers for mime-support (3.62) ...
+INFO:kolla.common.utils.elasticsearch:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.elasticsearch:Processing triggers for ca-certificates (20190110) ...
+INFO:kolla.common.utils.elasticsearch:Updating certificates in /etc/ssl/certs...
+INFO:kolla.common.utils.elasticsearch:0 added, 0 removed; done.
+INFO:kolla.common.utils.elasticsearch:Running hooks in /etc/ca-certificates/update.d...
+INFO:kolla.common.utils.elasticsearch:
+INFO:kolla.common.utils.elasticsearch:done.
+INFO:kolla.common.utils.elasticsearch:done.
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container 313358944ca4
+INFO:kolla.common.utils.elasticsearch: ---> c87c0c47c898
+INFO:kolla.common.utils.elasticsearch:Step 8/10 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.elasticsearch: ---> 09125da01b69
+INFO:kolla.common.utils.elasticsearch:Step 9/10 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.elasticsearch: ---> Running in 789332ff21ba
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container 789332ff21ba
+INFO:kolla.common.utils.elasticsearch: ---> b9dbca3fcc48
+INFO:kolla.common.utils.elasticsearch:Step 10/10 : USER elasticsearch
+INFO:kolla.common.utils.elasticsearch: ---> Running in e9ce68c97638
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container e9ce68c97638
+INFO:kolla.common.utils.elasticsearch: ---> 1cbc6e101056
+INFO:kolla.common.utils.elasticsearch:Successfully built 1cbc6e101056
+INFO:kolla.common.utils.elasticsearch:Successfully tagged s390x/debian-binary-elasticsearch:9.1.0
+INFO:kolla.common.utils.elasticsearch:Built at 2020-03-02 21:23:02.666443 (took 0:00:34.388163)

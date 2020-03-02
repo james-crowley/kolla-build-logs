@@ -1,0 +1,20 @@
+INFO:kolla.common.utils.congress-api:Building started at 2020-03-02 21:27:46.148335
+INFO:kolla.common.utils.congress-api:Step 1/5 : FROM s390x/debian-binary-congress-base:9.1.0
+INFO:kolla.common.utils.congress-api: ---> b9e44d0567c1
+INFO:kolla.common.utils.congress-api:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="congress-api" build-date="20200302"
+INFO:kolla.common.utils.congress-api: ---> Running in 0e9fc58cd6f8
+INFO:kolla.common.utils.congress-api:Removing intermediate container 0e9fc58cd6f8
+INFO:kolla.common.utils.congress-api: ---> b4b15ef5e0dc
+INFO:kolla.common.utils.congress-api:Step 3/5 : COPY extend_start.sh /usr/local/bin/kolla_congress_extend_start
+INFO:kolla.common.utils.congress-api: ---> 535a922618a5
+INFO:kolla.common.utils.congress-api:Step 4/5 : RUN chmod 755 /usr/local/bin/kolla_congress_extend_start
+INFO:kolla.common.utils.congress-api: ---> Running in 804f9445abbb
+INFO:kolla.common.utils.congress-api:Removing intermediate container 804f9445abbb
+INFO:kolla.common.utils.congress-api: ---> 92ce65cde3b4
+INFO:kolla.common.utils.congress-api:Step 5/5 : USER congress
+INFO:kolla.common.utils.congress-api: ---> Running in d881606a31fe
+INFO:kolla.common.utils.congress-api:Removing intermediate container d881606a31fe
+INFO:kolla.common.utils.congress-api: ---> a592e4cc4cd0
+INFO:kolla.common.utils.congress-api:Successfully built a592e4cc4cd0
+INFO:kolla.common.utils.congress-api:Successfully tagged s390x/debian-binary-congress-api:9.1.0
+INFO:kolla.common.utils.congress-api:Built at 2020-03-02 21:27:48.943798 (took 0:00:02.795463)

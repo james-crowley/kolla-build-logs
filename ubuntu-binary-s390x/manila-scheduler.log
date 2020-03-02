@@ -1,0 +1,61 @@
+INFO:kolla.common.utils.manila-scheduler:Building started at 2020-03-02 21:46:08.830133
+INFO:kolla.common.utils.manila-scheduler:Step 1/4 : FROM s390x/ubuntu-binary-manila-base:9.1.0
+INFO:kolla.common.utils.manila-scheduler: ---> 8f2e10ab62ec
+INFO:kolla.common.utils.manila-scheduler:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="manila-scheduler" build-date="20200302"
+INFO:kolla.common.utils.manila-scheduler: ---> Running in 0270185b8650
+INFO:kolla.common.utils.manila-scheduler:Removing intermediate container 0270185b8650
+INFO:kolla.common.utils.manila-scheduler: ---> 97d874311ec3
+INFO:kolla.common.utils.manila-scheduler:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends manila-scheduler && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.manila-scheduler: ---> Running in 928c09bac728
+INFO:kolla.common.utils.manila-scheduler:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.manila-scheduler:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.manila-scheduler:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.manila-scheduler:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.manila-scheduler:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.manila-scheduler:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.manila-scheduler:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.manila-scheduler:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.manila-scheduler:Get:9 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.manila-scheduler:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.manila-scheduler:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.manila-scheduler:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.manila-scheduler:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.manila-scheduler:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.manila-scheduler:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.manila-scheduler:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.manila-scheduler:Fetched 15.6 MB in 3s (5,171 kB/s)
+INFO:kolla.common.utils.manila-scheduler:Reading package lists...
+INFO:kolla.common.utils.manila-scheduler:Reading package lists...
+INFO:kolla.common.utils.manila-scheduler:Building dependency tree...
+INFO:kolla.common.utils.manila-scheduler:Reading state information...
+INFO:kolla.common.utils.manila-scheduler:The following NEW packages will be installed:
+INFO:kolla.common.utils.manila-scheduler:  manila-scheduler
+INFO:kolla.common.utils.manila-scheduler:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.manila-scheduler:Need to get 12.8 kB of archives.
+INFO:kolla.common.utils.manila-scheduler:After this operation, 34.8 kB of additional disk space will be used.
+INFO:kolla.common.utils.manila-scheduler:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x manila-scheduler all 1:9.0.0-0ubuntu1~cloud0 [12.8 kB]
+INFO:kolla.common.utils.manila-scheduler:Fetched 12.8 kB in 0s (280 kB/s)
+INFO:kolla.common.utils.manila-scheduler:Selecting previously unselected package manila-scheduler.
+INFO:kolla.common.utils.manila-scheduler:(Reading database ... 
+INFO:kolla.common.utils.manila-scheduler:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.manila-scheduler:(Reading database ... 65%
+INFO:kolla.common.utils.manila-scheduler:(Reading database ... 70%
+INFO:kolla.common.utils.manila-scheduler:(Reading database ... 75%
+INFO:kolla.common.utils.manila-scheduler:(Reading database ... 80%
+INFO:kolla.common.utils.manila-scheduler:(Reading database ... 85%
+INFO:kolla.common.utils.manila-scheduler:(Reading database ... 90%(Reading database ... 95%
+INFO:kolla.common.utils.manila-scheduler:(Reading database ... 100%(Reading database ... 25554 files and directories currently installed.)
+INFO:kolla.common.utils.manila-scheduler:Preparing to unpack .../manila-scheduler_1%3a9.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.manila-scheduler:Unpacking manila-scheduler (1:9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.manila-scheduler:Setting up manila-scheduler (1:9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.manila-scheduler:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.manila-scheduler:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.manila-scheduler:Removing intermediate container 928c09bac728
+INFO:kolla.common.utils.manila-scheduler: ---> cc83b8960e43
+INFO:kolla.common.utils.manila-scheduler:Step 4/4 : USER manila
+INFO:kolla.common.utils.manila-scheduler: ---> Running in 33a346dde782
+INFO:kolla.common.utils.manila-scheduler:Removing intermediate container 33a346dde782
+INFO:kolla.common.utils.manila-scheduler: ---> 2b59265aced6
+INFO:kolla.common.utils.manila-scheduler:Successfully built 2b59265aced6
+INFO:kolla.common.utils.manila-scheduler:Successfully tagged s390x/ubuntu-binary-manila-scheduler:9.1.0
+INFO:kolla.common.utils.manila-scheduler:Built at 2020-03-02 21:46:18.039252 (took 0:00:09.209119)

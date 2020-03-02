@@ -1,0 +1,52 @@
+INFO:kolla.common.utils.heat-engine:Building started at 2020-03-02 21:29:15.728377
+INFO:kolla.common.utils.heat-engine:Step 1/4 : FROM s390x/debian-binary-heat-base:9.1.0
+INFO:kolla.common.utils.heat-engine: ---> ef449859c1f7
+INFO:kolla.common.utils.heat-engine:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="heat-engine" build-date="20200302"
+INFO:kolla.common.utils.heat-engine: ---> Running in 8813481b608f
+INFO:kolla.common.utils.heat-engine:Removing intermediate container 8813481b608f
+INFO:kolla.common.utils.heat-engine: ---> 8c2e92cd0c94
+INFO:kolla.common.utils.heat-engine:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends heat-engine && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.heat-engine: ---> Running in 174f05305a62
+INFO:kolla.common.utils.heat-engine:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.heat-engine:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.heat-engine:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.heat-engine:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.heat-engine:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.heat-engine:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.heat-engine:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.heat-engine:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.heat-engine:Fetched 8,235 kB in 2s (5,477 kB/s)
+INFO:kolla.common.utils.heat-engine:Reading package lists...
+INFO:kolla.common.utils.heat-engine:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.heat-engine:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.heat-engine:[0m
+INFO:kolla.common.utils.heat-engine:Reading package lists...
+INFO:kolla.common.utils.heat-engine:Building dependency tree...
+INFO:kolla.common.utils.heat-engine:Reading state information...
+INFO:kolla.common.utils.heat-engine:The following NEW packages will be installed:
+INFO:kolla.common.utils.heat-engine:  heat-engine
+INFO:kolla.common.utils.heat-engine:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.heat-engine:Need to get 11.5 kB of archives.
+INFO:kolla.common.utils.heat-engine:After this operation, 36.9 kB of additional disk space will be used.
+INFO:kolla.common.utils.heat-engine:Get:1 http://deb.debian.org/debian buster/main s390x heat-engine all 1:11.0.0-6 [11.5 kB]
+INFO:kolla.common.utils.heat-engine:Fetched 11.5 kB in 0s (134 kB/s)
+INFO:kolla.common.utils.heat-engine:Selecting previously unselected package heat-engine.
+INFO:kolla.common.utils.heat-engine:(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%
+INFO:kolla.common.utils.heat-engine:(Reading database ... 85%
+INFO:kolla.common.utils.heat-engine:(Reading database ... 90%
+INFO:kolla.common.utils.heat-engine:(Reading database ... 95%
+INFO:kolla.common.utils.heat-engine:(Reading database ... 100%(Reading database ... 27826 files and directories currently installed.)
+INFO:kolla.common.utils.heat-engine:Preparing to unpack .../heat-engine_1%3a11.0.0-6_all.deb ...
+INFO:kolla.common.utils.heat-engine:Unpacking heat-engine (1:11.0.0-6) ...
+INFO:kolla.common.utils.heat-engine:Setting up heat-engine (1:11.0.0-6) ...
+INFO:kolla.common.utils.heat-engine:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.heat-engine:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.heat-engine:Removing intermediate container 174f05305a62
+INFO:kolla.common.utils.heat-engine: ---> 73b0813e0263
+INFO:kolla.common.utils.heat-engine:Step 4/4 : USER heat
+INFO:kolla.common.utils.heat-engine: ---> Running in 881e8aa6bc1b
+INFO:kolla.common.utils.heat-engine:Removing intermediate container 881e8aa6bc1b
+INFO:kolla.common.utils.heat-engine: ---> 1353bba6e0a5
+INFO:kolla.common.utils.heat-engine:Successfully built 1353bba6e0a5
+INFO:kolla.common.utils.heat-engine:Successfully tagged s390x/debian-binary-heat-engine:9.1.0
+INFO:kolla.common.utils.heat-engine:Built at 2020-03-02 21:29:22.120840 (took 0:00:06.392463)

@@ -1,0 +1,55 @@
+INFO:kolla.common.utils.magnum-conductor:Building started at 2020-03-02 21:28:15.301355
+INFO:kolla.common.utils.magnum-conductor:Step 1/4 : FROM s390x/debian-binary-magnum-base:9.1.0
+INFO:kolla.common.utils.magnum-conductor: ---> 76e325959293
+INFO:kolla.common.utils.magnum-conductor:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="magnum-conductor" build-date="20200302"
+INFO:kolla.common.utils.magnum-conductor: ---> Running in fb09d50848ec
+INFO:kolla.common.utils.magnum-conductor:Removing intermediate container fb09d50848ec
+INFO:kolla.common.utils.magnum-conductor: ---> a7074a487a0b
+INFO:kolla.common.utils.magnum-conductor:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends magnum-conductor && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.magnum-conductor: ---> Running in 7960ad8c01f9
+INFO:kolla.common.utils.magnum-conductor:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.magnum-conductor:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.magnum-conductor:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.magnum-conductor:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.magnum-conductor:Fetched 8,235 kB in 2s (4,801 kB/s)
+INFO:kolla.common.utils.magnum-conductor:Reading package lists...
+INFO:kolla.common.utils.magnum-conductor:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.magnum-conductor:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.magnum-conductor:[0m
+INFO:kolla.common.utils.magnum-conductor:Reading package lists...
+INFO:kolla.common.utils.magnum-conductor:Building dependency tree...
+INFO:kolla.common.utils.magnum-conductor:Reading state information...
+INFO:kolla.common.utils.magnum-conductor:The following NEW packages will be installed:
+INFO:kolla.common.utils.magnum-conductor:  magnum-conductor
+INFO:kolla.common.utils.magnum-conductor:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.magnum-conductor:Need to get 7,252 B of archives.
+INFO:kolla.common.utils.magnum-conductor:After this operation, 28.7 kB of additional disk space will be used.
+INFO:kolla.common.utils.magnum-conductor:Get:1 http://deb.debian.org/debian buster/main s390x magnum-conductor all 7.1.0-1 [7,252 B]
+INFO:kolla.common.utils.magnum-conductor:Fetched 7,252 B in 0s (300 kB/s)
+INFO:kolla.common.utils.magnum-conductor:Selecting previously unselected package magnum-conductor.
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 70%
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 75%
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 80%
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 85%
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 90%(Reading database ... 95%
+INFO:kolla.common.utils.magnum-conductor:(Reading database ... 100%(Reading database ... 27888 files and directories currently installed.)
+INFO:kolla.common.utils.magnum-conductor:Preparing to unpack .../magnum-conductor_7.1.0-1_all.deb ...
+INFO:kolla.common.utils.magnum-conductor:Unpacking magnum-conductor (7.1.0-1) ...
+INFO:kolla.common.utils.magnum-conductor:Setting up magnum-conductor (7.1.0-1) ...
+INFO:kolla.common.utils.magnum-conductor:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.magnum-conductor:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.magnum-conductor:Removing intermediate container 7960ad8c01f9
+INFO:kolla.common.utils.magnum-conductor: ---> 253913abddb6
+INFO:kolla.common.utils.magnum-conductor:Step 4/4 : USER magnum
+INFO:kolla.common.utils.magnum-conductor: ---> Running in cb8dd7be5e96
+INFO:kolla.common.utils.magnum-conductor:Removing intermediate container cb8dd7be5e96
+INFO:kolla.common.utils.magnum-conductor: ---> 68759566abde
+INFO:kolla.common.utils.magnum-conductor:Successfully built 68759566abde
+INFO:kolla.common.utils.magnum-conductor:Successfully tagged s390x/debian-binary-magnum-conductor:9.1.0
+INFO:kolla.common.utils.magnum-conductor:Built at 2020-03-02 21:28:22.012703 (took 0:00:06.711348)

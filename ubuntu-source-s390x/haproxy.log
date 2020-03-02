@@ -1,0 +1,77 @@
+INFO:kolla.common.utils.haproxy:Building started at 2020-03-02 21:49:59.611654
+INFO:kolla.common.utils.haproxy:Step 1/7 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.haproxy: ---> 96ede3560f2f
+INFO:kolla.common.utils.haproxy:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="haproxy" build-date="20200302"
+INFO:kolla.common.utils.haproxy: ---> Running in 42b3682c27bf
+INFO:kolla.common.utils.haproxy:Removing intermediate container 42b3682c27bf
+INFO:kolla.common.utils.haproxy: ---> 9a82745162a5
+INFO:kolla.common.utils.haproxy:Step 3/7 : RUN usermod --append --home /var/lib/haproxy --groups kolla haproxy     && mkdir -p /var/lib/haproxy     && chown -R 42454:42454 /var/lib/haproxy
+INFO:kolla.common.utils.haproxy: ---> Running in 210b38eb96d5
+INFO:kolla.common.utils.haproxy:Removing intermediate container 210b38eb96d5
+INFO:kolla.common.utils.haproxy: ---> 973d25a96939
+INFO:kolla.common.utils.haproxy:Step 4/7 : RUN apt-get update && apt-get -y install --no-install-recommends haproxy && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.haproxy: ---> Running in f82ec2cd474e
+INFO:kolla.common.utils.haproxy:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.haproxy:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.haproxy:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.haproxy:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.haproxy:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.haproxy:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.haproxy:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.haproxy:Get:8 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.haproxy:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.haproxy:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.haproxy:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.haproxy:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.haproxy:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.haproxy:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.haproxy:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.haproxy:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.haproxy:Fetched 15.6 MB in 2s (6,632 kB/s)
+INFO:kolla.common.utils.haproxy:Reading package lists...
+INFO:kolla.common.utils.haproxy:Reading package lists...
+INFO:kolla.common.utils.haproxy:Building dependency tree...
+INFO:kolla.common.utils.haproxy:Reading state information...
+INFO:kolla.common.utils.haproxy:The following additional packages will be installed:
+INFO:kolla.common.utils.haproxy:  liblua5.3-0
+INFO:kolla.common.utils.haproxy:Suggested packages:
+INFO:kolla.common.utils.haproxy:  vim-haproxy haproxy-doc
+INFO:kolla.common.utils.haproxy:The following NEW packages will be installed:
+INFO:kolla.common.utils.haproxy:  haproxy liblua5.3-0
+INFO:kolla.common.utils.haproxy:0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.haproxy:Need to get 1,183 kB of archives.
+INFO:kolla.common.utils.haproxy:After this operation, 3,070 kB of additional disk space will be used.
+INFO:kolla.common.utils.haproxy:Get:1 http://ports.ubuntu.com bionic-updates/main s390x liblua5.3-0 s390x 5.3.3-1ubuntu0.18.04.1 [106 kB]
+INFO:kolla.common.utils.haproxy:Get:2 http://ports.ubuntu.com bionic-updates/main s390x haproxy s390x 1.8.8-1ubuntu0.9 [1,077 kB]
+INFO:kolla.common.utils.haproxy:Fetched 1,183 kB in 0s (23.0 MB/s)
+INFO:kolla.common.utils.haproxy:Selecting previously unselected package liblua5.3-0:s390x.
+INFO:kolla.common.utils.haproxy:(Reading database ... 
+INFO:kolla.common.utils.haproxy:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.haproxy:(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%
+INFO:kolla.common.utils.haproxy:(Reading database ... 95%
+INFO:kolla.common.utils.haproxy:(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.haproxy:Preparing to unpack .../liblua5.3-0_5.3.3-1ubuntu0.18.04.1_s390x.deb ...
+INFO:kolla.common.utils.haproxy:Unpacking liblua5.3-0:s390x (5.3.3-1ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.haproxy:Selecting previously unselected package haproxy.
+INFO:kolla.common.utils.haproxy:Preparing to unpack .../haproxy_1.8.8-1ubuntu0.9_s390x.deb ...
+INFO:kolla.common.utils.haproxy:Unpacking haproxy (1.8.8-1ubuntu0.9) ...
+INFO:kolla.common.utils.haproxy:Setting up liblua5.3-0:s390x (5.3.3-1ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.haproxy:Setting up haproxy (1.8.8-1ubuntu0.9) ...
+INFO:kolla.common.utils.haproxy:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.haproxy:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.haproxy:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.haproxy:Removing intermediate container f82ec2cd474e
+INFO:kolla.common.utils.haproxy: ---> 0685ca122c13
+INFO:kolla.common.utils.haproxy:Step 5/7 : RUN mkdir -p /var/lib/kolla/haproxy     && chown -R haproxy: /var/lib /run
+INFO:kolla.common.utils.haproxy: ---> Running in 22db30996f3d
+INFO:kolla.common.utils.haproxy:Removing intermediate container 22db30996f3d
+INFO:kolla.common.utils.haproxy: ---> 45c2500b7830
+INFO:kolla.common.utils.haproxy:Step 6/7 : COPY ensure_latest_config.sh /usr/local/bin/kolla_ensure_haproxy_latest_config
+INFO:kolla.common.utils.haproxy: ---> 97706e5b63b2
+INFO:kolla.common.utils.haproxy:Step 7/7 : RUN chmod 755 /usr/local/bin/kolla_ensure_haproxy_latest_config
+INFO:kolla.common.utils.haproxy: ---> Running in a5a8555add34
+INFO:kolla.common.utils.haproxy:Removing intermediate container a5a8555add34
+INFO:kolla.common.utils.haproxy: ---> e49995e06fbb
+INFO:kolla.common.utils.haproxy:Successfully built e49995e06fbb
+INFO:kolla.common.utils.haproxy:Successfully tagged s390x/ubuntu-source-haproxy:9.1.0
+INFO:kolla.common.utils.haproxy:Built at 2020-03-02 21:50:15.530962 (took 0:00:15.919308)

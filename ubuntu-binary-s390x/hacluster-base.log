@@ -1,0 +1,16 @@
+INFO:kolla.common.utils.hacluster-base:Building started at 2020-03-02 21:39:03.846065
+INFO:kolla.common.utils.hacluster-base:Step 1/4 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.hacluster-base: ---> 682558ff6b31
+INFO:kolla.common.utils.hacluster-base:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="hacluster-base" build-date="20200302"
+INFO:kolla.common.utils.hacluster-base: ---> Running in 2ee918955e87
+INFO:kolla.common.utils.hacluster-base:Removing intermediate container 2ee918955e87
+INFO:kolla.common.utils.hacluster-base: ---> 851d6da4574d
+INFO:kolla.common.utils.hacluster-base:Step 3/4 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.hacluster-base: ---> 022e9d855c7a
+INFO:kolla.common.utils.hacluster-base:Step 4/4 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.hacluster-base: ---> Running in a47d9f17b120
+INFO:kolla.common.utils.hacluster-base:Removing intermediate container a47d9f17b120
+INFO:kolla.common.utils.hacluster-base: ---> f79297519c1a
+INFO:kolla.common.utils.hacluster-base:Successfully built f79297519c1a
+INFO:kolla.common.utils.hacluster-base:Successfully tagged s390x/ubuntu-binary-hacluster-base:9.1.0
+INFO:kolla.common.utils.hacluster-base:Built at 2020-03-02 21:39:07.559421 (took 0:00:03.713356)

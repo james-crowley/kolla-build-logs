@@ -1,0 +1,156 @@
+INFO:kolla.common.utils.elasticsearch-curator:Building started at 2020-03-02 21:49:12.563899
+INFO:kolla.common.utils.elasticsearch-curator:Step 1/7 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.elasticsearch-curator: ---> 96ede3560f2f
+INFO:kolla.common.utils.elasticsearch-curator:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="elasticsearch-curator" build-date="20200302"
+INFO:kolla.common.utils.elasticsearch-curator: ---> Running in 95a0f4ec4845
+INFO:kolla.common.utils.elasticsearch-curator:Removing intermediate container 95a0f4ec4845
+INFO:kolla.common.utils.elasticsearch-curator: ---> 61813ef3723b
+INFO:kolla.common.utils.elasticsearch-curator:Step 3/7 : RUN apt-get update && apt-get -y install --no-install-recommends cron python3-pip python3-setuptools && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.elasticsearch-curator: ---> Running in ddc36caad214
+INFO:kolla.common.utils.elasticsearch-curator:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.elasticsearch-curator:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.elasticsearch-curator:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.elasticsearch-curator:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.elasticsearch-curator:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.elasticsearch-curator:Fetched 15.6 MB in 3s (5,199 kB/s)
+INFO:kolla.common.utils.elasticsearch-curator:Reading package lists...
+INFO:kolla.common.utils.elasticsearch-curator:Reading package lists...
+INFO:kolla.common.utils.elasticsearch-curator:Building dependency tree...
+INFO:kolla.common.utils.elasticsearch-curator:Reading state information...
+INFO:kolla.common.utils.elasticsearch-curator:The following additional packages will be installed:
+INFO:kolla.common.utils.elasticsearch-curator:  python-pip-whl python3-distutils python3-lib2to3 python3-pkg-resources
+INFO:kolla.common.utils.elasticsearch-curator:Suggested packages:
+INFO:kolla.common.utils.elasticsearch-curator:  anacron logrotate checksecurity exim4 | postfix | mail-transport-agent
+INFO:kolla.common.utils.elasticsearch-curator:  python-setuptools-doc
+INFO:kolla.common.utils.elasticsearch-curator:Recommended packages:
+INFO:kolla.common.utils.elasticsearch-curator:  build-essential python3-dev python3-wheel
+INFO:kolla.common.utils.elasticsearch-curator:The following NEW packages will be installed:
+INFO:kolla.common.utils.elasticsearch-curator:  cron python-pip-whl python3-distutils python3-lib2to3 python3-pip
+INFO:kolla.common.utils.elasticsearch-curator:  python3-pkg-resources python3-setuptools
+INFO:kolla.common.utils.elasticsearch-curator:0 upgraded, 7 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.elasticsearch-curator:Need to get 2,516 kB of archives.
+INFO:kolla.common.utils.elasticsearch-curator:After this operation, 7,763 kB of additional disk space will be used.
+INFO:kolla.common.utils.elasticsearch-curator:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x python3-pkg-resources all 41.1.0-1~cloud0 [154 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:2 http://ports.ubuntu.com bionic/main s390x cron s390x 3.0pl1-128.1ubuntu1 [67.0 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:3 http://ports.ubuntu.com bionic-updates/universe s390x python-pip-whl all 9.0.1-2.3~ubuntu1.18.04.1 [1,653 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x python3-setuptools all 41.1.0-1~cloud0 [307 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:5 http://ports.ubuntu.com bionic-updates/main s390x python3-lib2to3 all 3.6.9-1~18.04 [77.4 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:6 http://ports.ubuntu.com bionic-updates/main s390x python3-distutils all 3.6.9-1~18.04 [144 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Get:7 http://ports.ubuntu.com bionic-updates/universe s390x python3-pip all 9.0.1-2.3~ubuntu1.18.04.1 [114 kB]
+INFO:kolla.common.utils.elasticsearch-curator:Fetched 2,516 kB in 0s (30.2 MB/s)
+INFO:kolla.common.utils.elasticsearch-curator:Selecting previously unselected package cron.
+INFO:kolla.common.utils.elasticsearch-curator:(Reading database ... 
+INFO:kolla.common.utils.elasticsearch-curator:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%
+INFO:kolla.common.utils.elasticsearch-curator:(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.elasticsearch-curator:(Reading database ... 75%
+INFO:kolla.common.utils.elasticsearch-curator:(Reading database ... 80%
+INFO:kolla.common.utils.elasticsearch-curator:(Reading database ... 85%
+INFO:kolla.common.utils.elasticsearch-curator:(Reading database ... 90%
+INFO:kolla.common.utils.elasticsearch-curator:(Reading database ... 95%
+INFO:kolla.common.utils.elasticsearch-curator:(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.elasticsearch-curator:Preparing to unpack .../0-cron_3.0pl1-128.1ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.elasticsearch-curator:Unpacking cron (3.0pl1-128.1ubuntu1) ...
+INFO:kolla.common.utils.elasticsearch-curator:Selecting previously unselected package python-pip-whl.
+INFO:kolla.common.utils.elasticsearch-curator:Preparing to unpack .../1-python-pip-whl_9.0.1-2.3~ubuntu1.18.04.1_all.deb ...
+INFO:kolla.common.utils.elasticsearch-curator:Unpacking python-pip-whl (9.0.1-2.3~ubuntu1.18.04.1) ...
+INFO:kolla.common.utils.elasticsearch-curator:Selecting previously unselected package python3-lib2to3.
+INFO:kolla.common.utils.elasticsearch-curator:Preparing to unpack .../2-python3-lib2to3_3.6.9-1~18.04_all.deb ...
+INFO:kolla.common.utils.elasticsearch-curator:Unpacking python3-lib2to3 (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.elasticsearch-curator:Selecting previously unselected package python3-distutils.
+INFO:kolla.common.utils.elasticsearch-curator:Preparing to unpack .../3-python3-distutils_3.6.9-1~18.04_all.deb ...
+INFO:kolla.common.utils.elasticsearch-curator:Unpacking python3-distutils (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.elasticsearch-curator:Selecting previously unselected package python3-pip.
+INFO:kolla.common.utils.elasticsearch-curator:Preparing to unpack .../4-python3-pip_9.0.1-2.3~ubuntu1.18.04.1_all.deb ...
+INFO:kolla.common.utils.elasticsearch-curator:Unpacking python3-pip (9.0.1-2.3~ubuntu1.18.04.1) ...
+INFO:kolla.common.utils.elasticsearch-curator:Selecting previously unselected package python3-pkg-resources.
+INFO:kolla.common.utils.elasticsearch-curator:Preparing to unpack .../5-python3-pkg-resources_41.1.0-1~cloud0_all.deb ...
+INFO:kolla.common.utils.elasticsearch-curator:Unpacking python3-pkg-resources (41.1.0-1~cloud0) ...
+INFO:kolla.common.utils.elasticsearch-curator:Selecting previously unselected package python3-setuptools.
+INFO:kolla.common.utils.elasticsearch-curator:Preparing to unpack .../6-python3-setuptools_41.1.0-1~cloud0_all.deb ...
+INFO:kolla.common.utils.elasticsearch-curator:Unpacking python3-setuptools (41.1.0-1~cloud0) ...
+INFO:kolla.common.utils.elasticsearch-curator:Setting up python-pip-whl (9.0.1-2.3~ubuntu1.18.04.1) ...
+INFO:kolla.common.utils.elasticsearch-curator:Setting up python3-pkg-resources (41.1.0-1~cloud0) ...
+INFO:kolla.common.utils.elasticsearch-curator:Setting up python3-lib2to3 (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.elasticsearch-curator:Setting up cron (3.0pl1-128.1ubuntu1) ...
+INFO:kolla.common.utils.elasticsearch-curator:Adding group `crontab' (GID 103) ...
+INFO:kolla.common.utils.elasticsearch-curator:Done.
+INFO:kolla.common.utils.elasticsearch-curator:update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+INFO:kolla.common.utils.elasticsearch-curator:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.elasticsearch-curator:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.elasticsearch-curator:Setting up python3-distutils (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.elasticsearch-curator:Setting up python3-pip (9.0.1-2.3~ubuntu1.18.04.1) ...
+INFO:kolla.common.utils.elasticsearch-curator:Setting up python3-setuptools (41.1.0-1~cloud0) ...
+INFO:kolla.common.utils.elasticsearch-curator:Removing intermediate container ddc36caad214
+INFO:kolla.common.utils.elasticsearch-curator: ---> 5b4270c7d08a
+INFO:kolla.common.utils.elasticsearch-curator:Step 4/7 : RUN usermod --append --home /var/lib/elasticsearch --groups kolla elasticsearch     && mkdir -p /var/lib/elasticsearch     && chown -R 42412:42412 /var/lib/elasticsearch
+INFO:kolla.common.utils.elasticsearch-curator: ---> Running in 330369e56741
+INFO:kolla.common.utils.elasticsearch-curator:Removing intermediate container 330369e56741
+INFO:kolla.common.utils.elasticsearch-curator: ---> 13f4f5bfd55e
+INFO:kolla.common.utils.elasticsearch-curator:Step 5/7 : RUN pip3 --no-cache-dir install --upgrade elasticsearch-curator     && mkdir -p /etc/elasticsearch-curator     && chown -R elasticsearch: /etc/elasticsearch-curator
+INFO:kolla.common.utils.elasticsearch-curator: ---> Running in b0b9141caf34
+INFO:kolla.common.utils.elasticsearch-curator:Collecting elasticsearch-curator
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/34/78/787a52834656f7f5dab6d709e38876c4d2604f0e1a16d17937d00330b0c5/elasticsearch-curator-5.8.1.tar.gz (225kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting boto3>=1.9.142 (from elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/a2/e2/ac1c1f9acf5b1b22dfc0fcc299d72c04e1ca802dee76e926d834a611b940/boto3-1.12.12-py2.py3-none-any.whl (128kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting certifi>=2019.9.11 (from elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/b9/63/df50cac98ea0d5b006c55a399c3bf1db9da7b5a24de7890bc9cfd5dd9e99/certifi-2019.11.28-py2.py3-none-any.whl (156kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting click<7.0,>=6.7 (from elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/34/c1/8806f99713ddb993c5366c362b2f908f18269f8d792aff1abfd700775a77/click-6.7-py2.py3-none-any.whl (71kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting elasticsearch<8.0.0,>=7.0.4 (from elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/10/60/0c79dde3e81beffeed422599d9ac65419289095186d37a3201739d52a57d/elasticsearch-7.5.1-py2.py3-none-any.whl (86kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting pyyaml==3.13 (from elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz (270kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting requests>=2.20.0 (from elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/1a/70/1935c770cb3be6e3a8b78ced23d7e0f3b187f5cbfab4749523ed65d7c9b1/requests-2.23.0-py2.py3-none-any.whl (58kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting requests_aws4auth>=0.9 (from elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/a4/4e/29ac240bff356eb630bcc729da7cdce6f55f21c442af325ca60dd27d4a3f/requests_aws4auth-0.9-py2.py3-none-any.whl (54kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting six>=1.11.0 (from elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl
+INFO:kolla.common.utils.elasticsearch-curator:Collecting urllib3<1.25,>=1.24.2 (from elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/01/11/525b02e4acc0c747de8b6ccdab376331597c569c42ea66ab0a1dbd36eca2/urllib3-1.24.3-py2.py3-none-any.whl (118kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting voluptuous>=0.9.3 (from elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/24/3b/fe531688c0d9e057fccc0bc9430c0a3d4b90e0d2f015326e659c2944e328/voluptuous-0.11.7.tar.gz (45kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting jmespath<1.0.0,>=0.7.1 (from boto3>=1.9.142->elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/a3/43/1e939e1fcd87b827fe192d0c9fc25b48c5b3368902bfb913de7754b0dc03/jmespath-0.9.5-py2.py3-none-any.whl
+INFO:kolla.common.utils.elasticsearch-curator:Collecting botocore<1.16.0,>=1.15.12 (from boto3>=1.9.142->elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/dc/51/e2be8f4fe5a66aa8407ccf57285f46823414f553657a6c34273f544cc096/botocore-1.15.12-py2.py3-none-any.whl (5.9MB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting s3transfer<0.4.0,>=0.3.0 (from boto3>=1.9.142->elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/69/79/e6afb3d8b0b4e96cefbdc690f741d7dd24547ff1f94240c997a26fa908d3/s3transfer-0.3.3-py2.py3-none-any.whl (69kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting chardet<4,>=3.0.2 (from requests>=2.20.0->elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting idna<3,>=2.5 (from requests>=2.20.0->elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/89/e3/afebe61c546d18fb1709a61bee788254b40e736cff7271c7de5de2dc4128/idna-2.9-py2.py3-none-any.whl (58kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting python-dateutil<3.0.0,>=2.1 (from botocore<1.16.0,>=1.15.12->boto3>=1.9.142->elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl (227kB)
+INFO:kolla.common.utils.elasticsearch-curator:Collecting docutils<0.16,>=0.10 (from botocore<1.16.0,>=1.15.12->boto3>=1.9.142->elasticsearch-curator)
+INFO:kolla.common.utils.elasticsearch-curator:  Downloading https://files.pythonhosted.org/packages/22/cd/a6aa959dca619918ccb55023b4cb151949c64d4d5d55b3f4ffd7eee0c6e8/docutils-0.15.2-py3-none-any.whl (547kB)
+INFO:kolla.common.utils.elasticsearch-curator:Installing collected packages: jmespath, six, python-dateutil, urllib3, docutils, botocore, s3transfer, boto3, certifi, click, elasticsearch, pyyaml, chardet, idna, requests, requests-aws4auth, voluptuous, elasticsearch-curator
+INFO:kolla.common.utils.elasticsearch-curator:  Running setup.py install for pyyaml: started
+INFO:kolla.common.utils.elasticsearch-curator:    Running setup.py install for pyyaml: finished with status 'done'
+INFO:kolla.common.utils.elasticsearch-curator:  Running setup.py install for voluptuous: started
+INFO:kolla.common.utils.elasticsearch-curator:    Running setup.py install for voluptuous: finished with status 'done'
+INFO:kolla.common.utils.elasticsearch-curator:  Running setup.py install for elasticsearch-curator: started
+INFO:kolla.common.utils.elasticsearch-curator:    Running setup.py install for elasticsearch-curator: finished with status 'done'
+INFO:kolla.common.utils.elasticsearch-curator:Successfully installed boto3-1.12.12 botocore-1.15.12 certifi-2019.11.28 chardet-3.0.4 click-6.7 docutils-0.15.2 elasticsearch-7.5.1 elasticsearch-curator-5.8.1 idna-2.9 jmespath-0.9.5 python-dateutil-2.8.1 pyyaml-3.13 requests-2.23.0 requests-aws4auth-0.9 s3transfer-0.3.3 six-1.14.0 urllib3-1.24.3 voluptuous-0.11.7
+INFO:kolla.common.utils.elasticsearch-curator:Removing intermediate container b0b9141caf34
+INFO:kolla.common.utils.elasticsearch-curator: ---> 4e2685cd7ea9
+INFO:kolla.common.utils.elasticsearch-curator:Step 6/7 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.elasticsearch-curator: ---> 4efd68d5a04b
+INFO:kolla.common.utils.elasticsearch-curator:Step 7/7 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.elasticsearch-curator: ---> Running in a704cf1e1cf0
+INFO:kolla.common.utils.elasticsearch-curator:Removing intermediate container a704cf1e1cf0
+INFO:kolla.common.utils.elasticsearch-curator: ---> b7876648fcb3
+INFO:kolla.common.utils.elasticsearch-curator:Successfully built b7876648fcb3
+INFO:kolla.common.utils.elasticsearch-curator:Successfully tagged s390x/ubuntu-source-elasticsearch-curator:9.1.0
+INFO:kolla.common.utils.elasticsearch-curator:Built at 2020-03-02 21:50:55.917065 (took 0:01:43.353166)

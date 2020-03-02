@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.cloudkitty-base:Building started at 2020-03-02 21:25:31.777926
+INFO:kolla.common.utils.cloudkitty-base:Step 1/6 : FROM s390x/debian-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.cloudkitty-base: ---> d0f37d4345b6
+INFO:kolla.common.utils.cloudkitty-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="cloudkitty-base" build-date="20200302"
+INFO:kolla.common.utils.cloudkitty-base: ---> Running in 8349eb92c64b
+INFO:kolla.common.utils.cloudkitty-base:Removing intermediate container 8349eb92c64b
+INFO:kolla.common.utils.cloudkitty-base: ---> 6cf5716b9b03
+INFO:kolla.common.utils.cloudkitty-base:Step 3/6 : RUN usermod --append --home /var/lib/cloudkitty --groups kolla cloudkitty     && mkdir -p /var/lib/cloudkitty     && chown -R 42408:42408 /var/lib/cloudkitty
+INFO:kolla.common.utils.cloudkitty-base: ---> Running in 4cf0f662b238
+INFO:kolla.common.utils.cloudkitty-base:Removing intermediate container 4cf0f662b238
+INFO:kolla.common.utils.cloudkitty-base: ---> deeb37df6164
+INFO:kolla.common.utils.cloudkitty-base:Step 4/6 : RUN echo 'binary not yet available for debian'     && /bin/false
+INFO:kolla.common.utils.cloudkitty-base: ---> Running in dcaddcded1d1
+INFO:kolla.common.utils.cloudkitty-base:binary not yet available for debian
+INFO:kolla.common.utils.cloudkitty-base:Removing intermediate container dcaddcded1d1
+ERROR:kolla.common.utils.cloudkitty-base:Error'd with the following message
+ERROR:kolla.common.utils.cloudkitty-base:The command '/bin/sh -c echo 'binary not yet available for debian'     && /bin/false' returned a non-zero code: 1

@@ -1,0 +1,89 @@
+INFO:kolla.common.utils.rsyslog-base:Building started at 2020-03-02 21:49:33.032550
+INFO:kolla.common.utils.rsyslog-base:Step 1/3 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.rsyslog-base: ---> 96ede3560f2f
+INFO:kolla.common.utils.rsyslog-base:Step 2/3 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="rsyslog-base" build-date="20200302"
+INFO:kolla.common.utils.rsyslog-base: ---> Running in 1f63a07da558
+INFO:kolla.common.utils.rsyslog-base:Removing intermediate container 1f63a07da558
+INFO:kolla.common.utils.rsyslog-base: ---> 158dae400ad5
+INFO:kolla.common.utils.rsyslog-base:Step 3/3 : RUN apt-get update && apt-get -y install --no-install-recommends rsyslog && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.rsyslog-base: ---> Running in 102ad79c155c
+INFO:kolla.common.utils.rsyslog-base:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.rsyslog-base:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.rsyslog-base:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.rsyslog-base:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.rsyslog-base:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.rsyslog-base:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.rsyslog-base:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.rsyslog-base:Fetched 15.6 MB in 3s (5,410 kB/s)
+INFO:kolla.common.utils.rsyslog-base:Reading package lists...
+INFO:kolla.common.utils.rsyslog-base:Reading package lists...
+INFO:kolla.common.utils.rsyslog-base:Building dependency tree...
+INFO:kolla.common.utils.rsyslog-base:Reading state information...
+INFO:kolla.common.utils.rsyslog-base:The following additional packages will be installed:
+INFO:kolla.common.utils.rsyslog-base:  libestr0 libfastjson4 ucf
+INFO:kolla.common.utils.rsyslog-base:Suggested packages:
+INFO:kolla.common.utils.rsyslog-base:  rsyslog-mysql | rsyslog-pgsql rsyslog-doc rsyslog-gnutls rsyslog-gssapi
+INFO:kolla.common.utils.rsyslog-base:  rsyslog-relp apparmor
+INFO:kolla.common.utils.rsyslog-base:Recommended packages:
+INFO:kolla.common.utils.rsyslog-base:  logrotate
+INFO:kolla.common.utils.rsyslog-base:The following NEW packages will be installed:
+INFO:kolla.common.utils.rsyslog-base:  libestr0 libfastjson4 rsyslog ucf
+INFO:kolla.common.utils.rsyslog-base:0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.rsyslog-base:Need to get 457 kB of archives.
+INFO:kolla.common.utils.rsyslog-base:After this operation, 1,818 kB of additional disk space will be used.
+INFO:kolla.common.utils.rsyslog-base:Get:1 http://ports.ubuntu.com bionic/main s390x libestr0 s390x 0.1.10-2.1 [7,680 B]
+INFO:kolla.common.utils.rsyslog-base:Get:2 http://ports.ubuntu.com bionic/main s390x libfastjson4 s390x 0.99.8-2 [19.3 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:3 http://ports.ubuntu.com bionic/main s390x ucf all 3.0038 [50.5 kB]
+INFO:kolla.common.utils.rsyslog-base:Get:4 http://ports.ubuntu.com bionic/main s390x rsyslog s390x 8.32.0-1ubuntu4 [379 kB]
+INFO:kolla.common.utils.rsyslog-base:Preconfiguring packages ...
+INFO:kolla.common.utils.rsyslog-base:Fetched 457 kB in 0s (8,135 kB/s)
+INFO:kolla.common.utils.rsyslog-base:Selecting previously unselected package libestr0:s390x.
+INFO:kolla.common.utils.rsyslog-base:(Reading database ... 
+INFO:kolla.common.utils.rsyslog-base:(Reading database ... 5%
+INFO:kolla.common.utils.rsyslog-base:(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.rsyslog-base:(Reading database ... 75%
+INFO:kolla.common.utils.rsyslog-base:(Reading database ... 80%
+INFO:kolla.common.utils.rsyslog-base:(Reading database ... 85%
+INFO:kolla.common.utils.rsyslog-base:(Reading database ... 90%
+INFO:kolla.common.utils.rsyslog-base:(Reading database ... 95%
+INFO:kolla.common.utils.rsyslog-base:(Reading database ... 100%
+INFO:kolla.common.utils.rsyslog-base:(Reading database ... 
+INFO:kolla.common.utils.rsyslog-base:9244 files and directories currently installed.)
+INFO:kolla.common.utils.rsyslog-base:Preparing to unpack .../libestr0_0.1.10-2.1_s390x.deb ...
+INFO:kolla.common.utils.rsyslog-base:Unpacking libestr0:s390x (0.1.10-2.1) ...
+INFO:kolla.common.utils.rsyslog-base:Selecting previously unselected package libfastjson4:s390x.
+INFO:kolla.common.utils.rsyslog-base:Preparing to unpack .../libfastjson4_0.99.8-2_s390x.deb ...
+INFO:kolla.common.utils.rsyslog-base:Unpacking libfastjson4:s390x (0.99.8-2) ...
+INFO:kolla.common.utils.rsyslog-base:Selecting previously unselected package ucf.
+INFO:kolla.common.utils.rsyslog-base:Preparing to unpack .../archives/ucf_3.0038_all.deb ...
+INFO:kolla.common.utils.rsyslog-base:Moving old data out of the way
+INFO:kolla.common.utils.rsyslog-base:Unpacking ucf (3.0038) ...
+INFO:kolla.common.utils.rsyslog-base:Selecting previously unselected package rsyslog.
+INFO:kolla.common.utils.rsyslog-base:Preparing to unpack .../rsyslog_8.32.0-1ubuntu4_s390x.deb ...
+INFO:kolla.common.utils.rsyslog-base:Unpacking rsyslog (8.32.0-1ubuntu4) ...
+INFO:kolla.common.utils.rsyslog-base:Setting up libestr0:s390x (0.1.10-2.1) ...
+INFO:kolla.common.utils.rsyslog-base:Setting up libfastjson4:s390x (0.99.8-2) ...
+INFO:kolla.common.utils.rsyslog-base:Setting up ucf (3.0038) ...
+INFO:kolla.common.utils.rsyslog-base:Setting up rsyslog (8.32.0-1ubuntu4) ...
+INFO:kolla.common.utils.rsyslog-base:
+INFO:kolla.common.utils.rsyslog-base:Creating config file /etc/rsyslog.d/50-default.conf with new version
+INFO:kolla.common.utils.rsyslog-base:Adding user `syslog' to group `adm' ...
+INFO:kolla.common.utils.rsyslog-base:Adding user syslog to group adm
+INFO:kolla.common.utils.rsyslog-base:Done.
+INFO:kolla.common.utils.rsyslog-base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.rsyslog-base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.rsyslog-base:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.rsyslog-base:Removing intermediate container 102ad79c155c
+INFO:kolla.common.utils.rsyslog-base: ---> 203ba7a27de5
+INFO:kolla.common.utils.rsyslog-base:Successfully built 203ba7a27de5
+INFO:kolla.common.utils.rsyslog-base:Successfully tagged s390x/ubuntu-source-rsyslog-base:9.1.0
+INFO:kolla.common.utils.rsyslog-base:Built at 2020-03-02 21:49:43.281758 (took 0:00:10.249208)

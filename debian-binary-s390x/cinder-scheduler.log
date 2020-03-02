@@ -1,0 +1,54 @@
+INFO:kolla.common.utils.cinder-scheduler:Building started at 2020-03-02 21:27:24.150671
+INFO:kolla.common.utils.cinder-scheduler:Step 1/4 : FROM s390x/debian-binary-cinder-base:9.1.0
+INFO:kolla.common.utils.cinder-scheduler: ---> f3e867a76e50
+INFO:kolla.common.utils.cinder-scheduler:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="cinder-scheduler" build-date="20200302"
+INFO:kolla.common.utils.cinder-scheduler: ---> Running in a4ec847bd9ee
+INFO:kolla.common.utils.cinder-scheduler:Removing intermediate container a4ec847bd9ee
+INFO:kolla.common.utils.cinder-scheduler: ---> 6235a82a2a26
+INFO:kolla.common.utils.cinder-scheduler:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends cinder-scheduler && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.cinder-scheduler: ---> Running in c23b75e71887
+INFO:kolla.common.utils.cinder-scheduler:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.cinder-scheduler:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.cinder-scheduler:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.cinder-scheduler:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.cinder-scheduler:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.cinder-scheduler:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.cinder-scheduler:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.cinder-scheduler:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.cinder-scheduler:Fetched 8,235 kB in 1s (5,649 kB/s)
+INFO:kolla.common.utils.cinder-scheduler:Reading package lists...
+INFO:kolla.common.utils.cinder-scheduler:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.cinder-scheduler:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.cinder-scheduler:[0m
+INFO:kolla.common.utils.cinder-scheduler:Reading package lists...
+INFO:kolla.common.utils.cinder-scheduler:Building dependency tree...
+INFO:kolla.common.utils.cinder-scheduler:Reading state information...
+INFO:kolla.common.utils.cinder-scheduler:The following NEW packages will be installed:
+INFO:kolla.common.utils.cinder-scheduler:  cinder-scheduler
+INFO:kolla.common.utils.cinder-scheduler:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.cinder-scheduler:Need to get 15.2 kB of archives.
+INFO:kolla.common.utils.cinder-scheduler:After this operation, 44.0 kB of additional disk space will be used.
+INFO:kolla.common.utils.cinder-scheduler:Get:1 http://deb.debian.org/debian buster/main s390x cinder-scheduler all 2:13.0.3-1 [15.2 kB]
+INFO:kolla.common.utils.cinder-scheduler:Fetched 15.2 kB in 0s (532 kB/s)
+INFO:kolla.common.utils.cinder-scheduler:Selecting previously unselected package cinder-scheduler.
+INFO:kolla.common.utils.cinder-scheduler:(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.cinder-scheduler:(Reading database ... 75%
+INFO:kolla.common.utils.cinder-scheduler:(Reading database ... 80%
+INFO:kolla.common.utils.cinder-scheduler:(Reading database ... 85%
+INFO:kolla.common.utils.cinder-scheduler:(Reading database ... 90%
+INFO:kolla.common.utils.cinder-scheduler:(Reading database ... 95%
+INFO:kolla.common.utils.cinder-scheduler:(Reading database ... 100%(Reading database ... 28122 files and directories currently installed.)
+INFO:kolla.common.utils.cinder-scheduler:Preparing to unpack .../cinder-scheduler_2%3a13.0.3-1_all.deb ...
+INFO:kolla.common.utils.cinder-scheduler:Unpacking cinder-scheduler (2:13.0.3-1) ...
+INFO:kolla.common.utils.cinder-scheduler:Setting up cinder-scheduler (2:13.0.3-1) ...
+INFO:kolla.common.utils.cinder-scheduler:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.cinder-scheduler:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.cinder-scheduler:Removing intermediate container c23b75e71887
+INFO:kolla.common.utils.cinder-scheduler: ---> 367562cea755
+INFO:kolla.common.utils.cinder-scheduler:Step 4/4 : USER cinder
+INFO:kolla.common.utils.cinder-scheduler: ---> Running in ff6b3de45222
+INFO:kolla.common.utils.cinder-scheduler:Removing intermediate container ff6b3de45222
+INFO:kolla.common.utils.cinder-scheduler: ---> f8854c230210
+INFO:kolla.common.utils.cinder-scheduler:Successfully built f8854c230210
+INFO:kolla.common.utils.cinder-scheduler:Successfully tagged s390x/debian-binary-cinder-scheduler:9.1.0
+INFO:kolla.common.utils.cinder-scheduler:Built at 2020-03-02 21:27:31.595622 (took 0:00:07.444951)

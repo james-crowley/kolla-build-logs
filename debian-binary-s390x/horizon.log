@@ -1,0 +1,38 @@
+INFO:kolla.common.utils.horizon:Building started at 2020-03-02 21:24:45.903372
+INFO:kolla.common.utils.horizon:[91m[WARNING]: Empty continuation line found in:
+INFO:kolla.common.utils.horizon:    RUN echo > /etc/apache2/ports.conf     && sed -i 's|\(ServerTokens \)OS|\1Prod|' /etc/apache2/conf-available/security.conf     && ln -s ../mods-available/headers.load  /etc/apache2/mods-enabled/headers.load     && ln -s ../mods-available/expires.load  /etc/apache2/mods-enabled/expires.load     && cp /etc/openstack-dashboard/policy/*.json /etc/openstack-dashboard     && cp /usr/share/openstack-dashboard/manage.py /usr/bin/manage.py     && rm /etc/openstack-dashboard/local_settings.py     && ln -s /etc/openstack-dashboard/local_settings /etc/openstack-dashboard/local_settings.py     && for locale in /usr/lib/python3/dist-packages/*/locale; do            (cd ${locale%!/(MISSING)*} && /usr/bin/django-admin compilemessages)        done      && find /etc/openstack-dashboard/enabled/ -type f | grep -Ev     `dpkg -L openstack-dashboard python3-django-horizon |     grep '/etc/openstack-dashboard/enabled/' | sed 's/\.py/.*.py/g' |xargs -l1 basename | xargs | tr ' ' '|'` | xargs rm
+INFO:kolla.common.utils.horizon:[WARNING]: Empty continuation lines will become errors in a future release.
+INFO:kolla.common.utils.horizon:[0m
+INFO:kolla.common.utils.horizon:Step 1/7 : FROM s390x/debian-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.horizon: ---> d0f37d4345b6
+INFO:kolla.common.utils.horizon:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="horizon" build-date="20200302"
+INFO:kolla.common.utils.horizon: ---> Running in d08cdb0fe35c
+INFO:kolla.common.utils.horizon:Removing intermediate container d08cdb0fe35c
+INFO:kolla.common.utils.horizon: ---> d52172692650
+INFO:kolla.common.utils.horizon:Step 3/7 : RUN usermod --append --home /var/lib/horizon --groups kolla horizon     && mkdir -p /var/lib/horizon     && chown -R 42420:42420 /var/lib/horizon
+INFO:kolla.common.utils.horizon: ---> Running in eed36d2c776e
+INFO:kolla.common.utils.horizon:Removing intermediate container eed36d2c776e
+INFO:kolla.common.utils.horizon: ---> 4f37fd569d0e
+INFO:kolla.common.utils.horizon:Step 4/7 : RUN apt-get update && apt-get -y install --no-install-recommends apache2 gettext libapache2-mod-wsgi-py3 locales openstack-dashboard python3-designate-dashboard python3-heat-dashboard python3-manila-ui python3-octavia-dashboard python3-sahara-dashboard python3-trove-dashboard tzdata python3-neutron-fwaas-dashboard python3-neutron-vpnaas-dashboard python3-vitrage-dashboard && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.horizon: ---> Running in b17e428ba63c
+INFO:kolla.common.utils.horizon:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.horizon:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.horizon:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.horizon:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.horizon:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.horizon:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.horizon:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.horizon:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.horizon:Fetched 8,235 kB in 2s (5,429 kB/s)
+INFO:kolla.common.utils.horizon:Reading package lists...
+INFO:kolla.common.utils.horizon:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.horizon:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.horizon:[0m
+INFO:kolla.common.utils.horizon:Reading package lists...
+INFO:kolla.common.utils.horizon:Building dependency tree...
+INFO:kolla.common.utils.horizon:Reading state information...
+INFO:kolla.common.utils.horizon:[91mE: Unable to locate package python3-vitrage-dashboard
+INFO:kolla.common.utils.horizon:[0m
+INFO:kolla.common.utils.horizon:Removing intermediate container b17e428ba63c
+ERROR:kolla.common.utils.horizon:Error'd with the following message
+ERROR:kolla.common.utils.horizon:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends apache2 gettext libapache2-mod-wsgi-py3 locales openstack-dashboard python3-designate-dashboard python3-heat-dashboard python3-manila-ui python3-octavia-dashboard python3-sahara-dashboard python3-trove-dashboard tzdata python3-neutron-fwaas-dashboard python3-neutron-vpnaas-dashboard python3-vitrage-dashboard && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

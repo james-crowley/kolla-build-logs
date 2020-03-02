@@ -1,0 +1,64 @@
+INFO:kolla.common.utils.barbican-base:Building started at 2020-03-02 21:41:29.651239
+INFO:kolla.common.utils.barbican-base:Step 1/7 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.barbican-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.barbican-base:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="barbican-base" build-date="20200302"
+INFO:kolla.common.utils.barbican-base: ---> Running in 5fc3a68f7f66
+INFO:kolla.common.utils.barbican-base:Removing intermediate container 5fc3a68f7f66
+INFO:kolla.common.utils.barbican-base: ---> 2a2d4be51ad4
+INFO:kolla.common.utils.barbican-base:Step 3/7 : RUN usermod --append --home /var/lib/barbican --groups kolla barbican     && usermod --append --groups nfast barbican     && mkdir -p /var/lib/barbican     && chown -R 42403:42403 /var/lib/barbican
+INFO:kolla.common.utils.barbican-base: ---> Running in 798c19aab25b
+INFO:kolla.common.utils.barbican-base:Removing intermediate container 798c19aab25b
+INFO:kolla.common.utils.barbican-base: ---> 6f81e15f038b
+INFO:kolla.common.utils.barbican-base:Step 4/7 : RUN apt-get update && apt-get -y install --no-install-recommends barbican-common && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.barbican-base: ---> Running in 8fa85f323104
+INFO:kolla.common.utils.barbican-base:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.barbican-base:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.barbican-base:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.barbican-base:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.barbican-base:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.barbican-base:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.barbican-base:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.barbican-base:Get:8 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.barbican-base:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.barbican-base:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.barbican-base:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.barbican-base:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.barbican-base:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.barbican-base:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.barbican-base:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.barbican-base:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.barbican-base:Fetched 15.6 MB in 2s (6,696 kB/s)
+INFO:kolla.common.utils.barbican-base:Reading package lists...
+INFO:kolla.common.utils.barbican-base:Reading package lists...
+INFO:kolla.common.utils.barbican-base:Building dependency tree...
+INFO:kolla.common.utils.barbican-base:Reading state information...
+INFO:kolla.common.utils.barbican-base:The following NEW packages will be installed:
+INFO:kolla.common.utils.barbican-base:  barbican-common
+INFO:kolla.common.utils.barbican-base:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.barbican-base:Need to get 22.8 kB of archives.
+INFO:kolla.common.utils.barbican-base:After this operation, 87.0 kB of additional disk space will be used.
+INFO:kolla.common.utils.barbican-base:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x barbican-common all 1:9.0.0-0ubuntu1~cloud0 [22.8 kB]
+INFO:kolla.common.utils.barbican-base:Fetched 22.8 kB in 0s (171 kB/s)
+INFO:kolla.common.utils.barbican-base:Selecting previously unselected package barbican-common.
+INFO:kolla.common.utils.barbican-base:(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.barbican-base:(Reading database ... 80%
+INFO:kolla.common.utils.barbican-base:(Reading database ... 85%
+INFO:kolla.common.utils.barbican-base:(Reading database ... 90%
+INFO:kolla.common.utils.barbican-base:(Reading database ... 95%
+INFO:kolla.common.utils.barbican-base:(Reading database ... 100%(Reading database ... 22243 files and directories currently installed.)
+INFO:kolla.common.utils.barbican-base:Preparing to unpack .../barbican-common_1%3a9.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.barbican-base:Unpacking barbican-common (1:9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.barbican-base:Setting up barbican-common (1:9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.barbican-base:Removing intermediate container 8fa85f323104
+INFO:kolla.common.utils.barbican-base: ---> f3318094a49d
+INFO:kolla.common.utils.barbican-base:Step 5/7 : COPY barbican_sudoers /etc/sudoers.d/kolla_barbican_sudoers
+INFO:kolla.common.utils.barbican-base: ---> 1b92e6d85a2a
+INFO:kolla.common.utils.barbican-base:Step 6/7 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.barbican-base: ---> f7d641de0ce5
+INFO:kolla.common.utils.barbican-base:Step 7/7 : RUN chmod 750 /etc/sudoers.d     && chmod 640 /etc/sudoers.d/kolla_barbican_sudoers     && touch /usr/local/bin/kolla_barbican_extend_start     && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_barbican_extend_start
+INFO:kolla.common.utils.barbican-base: ---> Running in 1406a08d8609
+INFO:kolla.common.utils.barbican-base:Removing intermediate container 1406a08d8609
+INFO:kolla.common.utils.barbican-base: ---> 8caea6fef720
+INFO:kolla.common.utils.barbican-base:Successfully built 8caea6fef720
+INFO:kolla.common.utils.barbican-base:Successfully tagged s390x/ubuntu-binary-barbican-base:9.1.0
+INFO:kolla.common.utils.barbican-base:Built at 2020-03-02 21:41:44.647205 (took 0:00:14.995966)

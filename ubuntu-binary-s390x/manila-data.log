@@ -1,0 +1,65 @@
+INFO:kolla.common.utils.manila-data:Building started at 2020-03-02 21:46:07.665396
+INFO:kolla.common.utils.manila-data:Step 1/4 : FROM s390x/ubuntu-binary-manila-base:9.1.0
+INFO:kolla.common.utils.manila-data: ---> 8f2e10ab62ec
+INFO:kolla.common.utils.manila-data:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="manila-data" build-date="20200302"
+INFO:kolla.common.utils.manila-data: ---> Running in 89a5a1cf4a4f
+INFO:kolla.common.utils.manila-data:Removing intermediate container 89a5a1cf4a4f
+INFO:kolla.common.utils.manila-data: ---> 39c7890ff30c
+INFO:kolla.common.utils.manila-data:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends manila-data && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.manila-data: ---> Running in a7f78f94653d
+INFO:kolla.common.utils.manila-data:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.manila-data:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.manila-data:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.manila-data:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.manila-data:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.manila-data:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.manila-data:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.manila-data:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.manila-data:Get:9 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.manila-data:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.manila-data:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.manila-data:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.manila-data:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.manila-data:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.manila-data:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.manila-data:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.manila-data:Fetched 15.6 MB in 3s (5,272 kB/s)
+INFO:kolla.common.utils.manila-data:Reading package lists...
+INFO:kolla.common.utils.manila-data:Reading package lists...
+INFO:kolla.common.utils.manila-data:Building dependency tree...
+INFO:kolla.common.utils.manila-data:Reading state information...
+INFO:kolla.common.utils.manila-data:The following NEW packages will be installed:
+INFO:kolla.common.utils.manila-data:  manila-data
+INFO:kolla.common.utils.manila-data:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.manila-data:Need to get 12.7 kB of archives.
+INFO:kolla.common.utils.manila-data:After this operation, 34.8 kB of additional disk space will be used.
+INFO:kolla.common.utils.manila-data:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x manila-data all 1:9.0.0-0ubuntu1~cloud0 [12.7 kB]
+INFO:kolla.common.utils.manila-data:Fetched 12.7 kB in 0s (302 kB/s)
+INFO:kolla.common.utils.manila-data:Selecting previously unselected package manila-data.
+INFO:kolla.common.utils.manila-data:(Reading database ... 
+INFO:kolla.common.utils.manila-data:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%
+INFO:kolla.common.utils.manila-data:(Reading database ... 35%(Reading database ... 40%
+INFO:kolla.common.utils.manila-data:(Reading database ... 45%(Reading database ... 50%
+INFO:kolla.common.utils.manila-data:(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.manila-data:(Reading database ... 65%
+INFO:kolla.common.utils.manila-data:(Reading database ... 70%
+INFO:kolla.common.utils.manila-data:(Reading database ... 75%
+INFO:kolla.common.utils.manila-data:(Reading database ... 80%
+INFO:kolla.common.utils.manila-data:(Reading database ... 85%
+INFO:kolla.common.utils.manila-data:(Reading database ... 90%
+INFO:kolla.common.utils.manila-data:(Reading database ... 95%
+INFO:kolla.common.utils.manila-data:(Reading database ... 100%(Reading database ... 25554 files and directories currently installed.)
+INFO:kolla.common.utils.manila-data:Preparing to unpack .../manila-data_1%3a9.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.manila-data:Unpacking manila-data (1:9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.manila-data:Setting up manila-data (1:9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.manila-data:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.manila-data:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.manila-data:Removing intermediate container a7f78f94653d
+INFO:kolla.common.utils.manila-data: ---> 8bdc25f086c8
+INFO:kolla.common.utils.manila-data:Step 4/4 : USER manila
+INFO:kolla.common.utils.manila-data: ---> Running in 23235211f0a7
+INFO:kolla.common.utils.manila-data:Removing intermediate container 23235211f0a7
+INFO:kolla.common.utils.manila-data: ---> 66ba803a6d8f
+INFO:kolla.common.utils.manila-data:Successfully built 66ba803a6d8f
+INFO:kolla.common.utils.manila-data:Successfully tagged s390x/ubuntu-binary-manila-data:9.1.0
+INFO:kolla.common.utils.manila-data:Built at 2020-03-02 21:46:16.271912 (took 0:00:08.606516)

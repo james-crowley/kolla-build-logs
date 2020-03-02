@@ -1,0 +1,30 @@
+INFO:kolla.common.utils.senlin-conductor:Building started at 2020-03-02 21:27:13.931345
+INFO:kolla.common.utils.senlin-conductor:Step 1/4 : FROM s390x/debian-binary-senlin-base:9.1.0
+INFO:kolla.common.utils.senlin-conductor: ---> 7879ca7f1552
+INFO:kolla.common.utils.senlin-conductor:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="senlin-conductor" build-date="20200302"
+INFO:kolla.common.utils.senlin-conductor: ---> Running in fd454428e4ec
+INFO:kolla.common.utils.senlin-conductor:Removing intermediate container fd454428e4ec
+INFO:kolla.common.utils.senlin-conductor: ---> 1783b8a31f5e
+INFO:kolla.common.utils.senlin-conductor:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends senlin-conductor && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.senlin-conductor: ---> Running in 5f052ea5d8e6
+INFO:kolla.common.utils.senlin-conductor:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.senlin-conductor:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.senlin-conductor:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.senlin-conductor:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.senlin-conductor:Fetched 8,235 kB in 2s (4,893 kB/s)
+INFO:kolla.common.utils.senlin-conductor:Reading package lists...
+INFO:kolla.common.utils.senlin-conductor:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.senlin-conductor:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.senlin-conductor:[0m
+INFO:kolla.common.utils.senlin-conductor:Reading package lists...
+INFO:kolla.common.utils.senlin-conductor:Building dependency tree...
+INFO:kolla.common.utils.senlin-conductor:Reading state information...
+INFO:kolla.common.utils.senlin-conductor:[91mE: Unable to locate package senlin-conductor
+INFO:kolla.common.utils.senlin-conductor:[0m
+INFO:kolla.common.utils.senlin-conductor:Removing intermediate container 5f052ea5d8e6
+ERROR:kolla.common.utils.senlin-conductor:Error'd with the following message
+ERROR:kolla.common.utils.senlin-conductor:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends senlin-conductor && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

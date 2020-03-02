@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.monasca-base:Building started at 2020-03-02 21:41:20.177533
+INFO:kolla.common.utils.monasca-base:Step 1/6 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.monasca-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.monasca-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="monasca-base" build-date="20200302"
+INFO:kolla.common.utils.monasca-base: ---> Running in 72c1f1e56a0b
+INFO:kolla.common.utils.monasca-base:Removing intermediate container 72c1f1e56a0b
+INFO:kolla.common.utils.monasca-base: ---> dd68e47b9997
+INFO:kolla.common.utils.monasca-base:Step 3/6 : RUN usermod --append --home /var/lib/monasca --groups kolla monasca     && mkdir -p /var/lib/monasca     && chown -R 42431:42431 /var/lib/monasca
+INFO:kolla.common.utils.monasca-base: ---> Running in 88fa81cddfa7
+INFO:kolla.common.utils.monasca-base:Removing intermediate container 88fa81cddfa7
+INFO:kolla.common.utils.monasca-base: ---> 753c583a704c
+INFO:kolla.common.utils.monasca-base:Step 4/6 : RUN echo 'binary not yet available for ubuntu'     && /bin/false
+INFO:kolla.common.utils.monasca-base: ---> Running in c800ba374647
+INFO:kolla.common.utils.monasca-base:binary not yet available for ubuntu
+INFO:kolla.common.utils.monasca-base:Removing intermediate container c800ba374647
+ERROR:kolla.common.utils.monasca-base:Error'd with the following message
+ERROR:kolla.common.utils.monasca-base:The command '/bin/sh -c echo 'binary not yet available for ubuntu'     && /bin/false' returned a non-zero code: 1

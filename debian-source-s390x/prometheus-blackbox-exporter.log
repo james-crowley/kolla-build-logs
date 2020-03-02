@@ -1,0 +1,51 @@
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Building started at 2020-03-02 21:33:07.852403
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Step 1/7 : FROM s390x/debian-source-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> 6893629ec147
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-blackbox-exporter" build-date="20200302"
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> Running in 736b4023ba77
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Removing intermediate container 736b4023ba77
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> 87fbe757c7d9
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Step 3/7 : ENV blackbox_exporter_version=0.14.0
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> Running in d78e2c7a4392
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Removing intermediate container d78e2c7a4392
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> 08b66bdd887d
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Step 4/7 : RUN apt-get update && apt-get -y install --no-install-recommends libcap2-bin && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> Running in 336f44ac2d51
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:4 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:5 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Fetched 8,235 kB in 2s (4,563 kB/s)
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Reading package lists...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.prometheus-blackbox-exporter:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[0m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Reading package lists...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Building dependency tree...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Reading state information...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:libcap2-bin is already the newest version (1:2.25-2).
+INFO:kolla.common.utils.prometheus-blackbox-exporter:libcap2-bin set to manually installed.
+INFO:kolla.common.utils.prometheus-blackbox-exporter:0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Removing intermediate container 336f44ac2d51
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> bc013fb08db7
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Step 5/7 : RUN curl -sSL -o /tmp/blackbox_exporter.tar.gz https://github.com/prometheus/blackbox_exporter/releases/download/v${blackbox_exporter_version}/blackbox_exporter-${blackbox_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/blackbox_exporter.tar.gz -C /opt/     && rm -f /tmp/blackbox_exporter.tar.gz     && ln -s /opt/blackbox_exporter* /opt/blackbox_exporter
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> Running in 1bd998a1baaf
+INFO:kolla.common.utils.prometheus-blackbox-exporter:curl (https://github.com/prometheus/blackbox_exporter/releases/download/v0.14.0/blackbox_exporter-0.14.0.linux-s390x.tar.gz): response: 404, time: 0.157913, size: 9
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[91mtar: This does not look like a tar archive
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[0m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[91m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:gzip: stdin: not in gzip format
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[0m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[91mtar: Child returned status 1[0m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[91m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[0m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[91mtar: [0m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[91mError is not recoverable: exiting now
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[0m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Removing intermediate container 1bd998a1baaf
+ERROR:kolla.common.utils.prometheus-blackbox-exporter:Error'd with the following message
+ERROR:kolla.common.utils.prometheus-blackbox-exporter:The command '/bin/sh -c curl -sSL -o /tmp/blackbox_exporter.tar.gz https://github.com/prometheus/blackbox_exporter/releases/download/v${blackbox_exporter_version}/blackbox_exporter-${blackbox_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/blackbox_exporter.tar.gz -C /opt/     && rm -f /tmp/blackbox_exporter.tar.gz     && ln -s /opt/blackbox_exporter* /opt/blackbox_exporter' returned a non-zero code: 2

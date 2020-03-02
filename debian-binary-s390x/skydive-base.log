@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.skydive-base:Building started at 2020-03-02 21:23:01.617708
+INFO:kolla.common.utils.skydive-base:Step 1/6 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.skydive-base: ---> 4244142526cc
+INFO:kolla.common.utils.skydive-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="skydive-base" build-date="20200302"
+INFO:kolla.common.utils.skydive-base: ---> Running in eac9335bd53e
+INFO:kolla.common.utils.skydive-base:Removing intermediate container eac9335bd53e
+INFO:kolla.common.utils.skydive-base: ---> 67957561222c
+INFO:kolla.common.utils.skydive-base:Step 3/6 : RUN usermod --append --home /var/lib/skydive --groups kolla skydive     && mkdir -p /var/lib/skydive     && chown -R 42468:42468 /var/lib/skydive
+INFO:kolla.common.utils.skydive-base: ---> Running in f20e553ac691
+INFO:kolla.common.utils.skydive-base:Removing intermediate container f20e553ac691
+INFO:kolla.common.utils.skydive-base: ---> 9ca47e1821e0
+INFO:kolla.common.utils.skydive-base:Step 4/6 : RUN echo 'binary on debian not yet available on non x86_64 platforms'     && /bin/false
+INFO:kolla.common.utils.skydive-base: ---> Running in eec7f2495cc5
+INFO:kolla.common.utils.skydive-base:binary on debian not yet available on non x86_64 platforms
+INFO:kolla.common.utils.skydive-base:Removing intermediate container eec7f2495cc5
+ERROR:kolla.common.utils.skydive-base:Error'd with the following message
+ERROR:kolla.common.utils.skydive-base:The command '/bin/sh -c echo 'binary on debian not yet available on non x86_64 platforms'     && /bin/false' returned a non-zero code: 1

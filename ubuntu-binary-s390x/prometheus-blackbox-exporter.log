@@ -1,0 +1,79 @@
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Building started at 2020-03-02 21:40:02.758657
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Step 1/7 : FROM s390x/ubuntu-binary-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> 3a4f3fd769cf
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-blackbox-exporter" build-date="20200302"
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> Running in c3f67c5ab8e2
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Removing intermediate container c3f67c5ab8e2
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> ae5c6f184f03
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Step 3/7 : ENV blackbox_exporter_version=0.14.0
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> Running in 63e8d67a2ece
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Removing intermediate container 63e8d67a2ece
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> 27c1ad491671
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Step 4/7 : RUN apt-get update && apt-get -y install --no-install-recommends libcap2-bin && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> Running in 775bfc049480
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:6 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:8 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Fetched 15.6 MB in 3s (6,240 kB/s)
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Reading package lists...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Reading package lists...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Building dependency tree...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Reading state information...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:The following additional packages will be installed:
+INFO:kolla.common.utils.prometheus-blackbox-exporter:  libcap2
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Recommended packages:
+INFO:kolla.common.utils.prometheus-blackbox-exporter:  libpam-cap
+INFO:kolla.common.utils.prometheus-blackbox-exporter:The following NEW packages will be installed:
+INFO:kolla.common.utils.prometheus-blackbox-exporter:  libcap2 libcap2-bin
+INFO:kolla.common.utils.prometheus-blackbox-exporter:0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Need to get 33.4 kB of archives.
+INFO:kolla.common.utils.prometheus-blackbox-exporter:After this operation, 133 kB of additional disk space will be used.
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:1 http://ports.ubuntu.com bionic/main s390x libcap2 s390x 1:2.25-1.2 [13.2 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Get:2 http://ports.ubuntu.com bionic/main s390x libcap2-bin s390x 1:2.25-1.2 [20.2 kB]
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Fetched 33.4 kB in 0s (470 kB/s)
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Selecting previously unselected package libcap2:s390x.
+INFO:kolla.common.utils.prometheus-blackbox-exporter:(Reading database ... 
+INFO:kolla.common.utils.prometheus-blackbox-exporter:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.prometheus-blackbox-exporter:(Reading database ... 75%
+INFO:kolla.common.utils.prometheus-blackbox-exporter:(Reading database ... 80%
+INFO:kolla.common.utils.prometheus-blackbox-exporter:(Reading database ... 85%
+INFO:kolla.common.utils.prometheus-blackbox-exporter:(Reading database ... 90%
+INFO:kolla.common.utils.prometheus-blackbox-exporter:(Reading database ... 95%
+INFO:kolla.common.utils.prometheus-blackbox-exporter:(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Preparing to unpack .../libcap2_1%3a2.25-1.2_s390x.deb ...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Unpacking libcap2:s390x (1:2.25-1.2) ...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Selecting previously unselected package libcap2-bin.
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Preparing to unpack .../libcap2-bin_1%3a2.25-1.2_s390x.deb ...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Unpacking libcap2-bin (1:2.25-1.2) ...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Setting up libcap2:s390x (1:2.25-1.2) ...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Setting up libcap2-bin (1:2.25-1.2) ...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Removing intermediate container 775bfc049480
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> d46a4248477d
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Step 5/7 : RUN curl -sSL -o /tmp/blackbox_exporter.tar.gz https://github.com/prometheus/blackbox_exporter/releases/download/v${blackbox_exporter_version}/blackbox_exporter-${blackbox_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/blackbox_exporter.tar.gz -C /opt/     && rm -f /tmp/blackbox_exporter.tar.gz     && ln -s /opt/blackbox_exporter* /opt/blackbox_exporter
+INFO:kolla.common.utils.prometheus-blackbox-exporter: ---> Running in ccc4379d5fe3
+INFO:kolla.common.utils.prometheus-blackbox-exporter:curl (https://github.com/prometheus/blackbox_exporter/releases/download/v0.14.0/blackbox_exporter-0.14.0.linux-s390x.tar.gz): response: 404, time: 0.171661, size: 9
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[91mtar: This does not look like a tar archive
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[0m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[91m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:gzip: stdin: not in gzip format
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[0m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[91mtar: Child returned status 1
+INFO:kolla.common.utils.prometheus-blackbox-exporter:tar: Error is not recoverable: exiting now
+INFO:kolla.common.utils.prometheus-blackbox-exporter:[0m
+INFO:kolla.common.utils.prometheus-blackbox-exporter:Removing intermediate container ccc4379d5fe3
+ERROR:kolla.common.utils.prometheus-blackbox-exporter:Error'd with the following message
+ERROR:kolla.common.utils.prometheus-blackbox-exporter:The command '/bin/sh -c curl -sSL -o /tmp/blackbox_exporter.tar.gz https://github.com/prometheus/blackbox_exporter/releases/download/v${blackbox_exporter_version}/blackbox_exporter-${blackbox_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/blackbox_exporter.tar.gz -C /opt/     && rm -f /tmp/blackbox_exporter.tar.gz     && ln -s /opt/blackbox_exporter* /opt/blackbox_exporter' returned a non-zero code: 2

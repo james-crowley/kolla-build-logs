@@ -1,0 +1,62 @@
+INFO:kolla.common.utils.trove-taskmanager:Building started at 2020-03-02 21:45:54.537801
+INFO:kolla.common.utils.trove-taskmanager:Step 1/4 : FROM s390x/ubuntu-binary-trove-base:9.1.0
+INFO:kolla.common.utils.trove-taskmanager: ---> 2edfa4cc27ad
+INFO:kolla.common.utils.trove-taskmanager:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="trove-taskmanager" build-date="20200302"
+INFO:kolla.common.utils.trove-taskmanager: ---> Running in 811da05b3c5d
+INFO:kolla.common.utils.trove-taskmanager:Removing intermediate container 811da05b3c5d
+INFO:kolla.common.utils.trove-taskmanager: ---> 06b677d85062
+INFO:kolla.common.utils.trove-taskmanager:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends trove-taskmanager && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.trove-taskmanager: ---> Running in 88e8e2f15771
+INFO:kolla.common.utils.trove-taskmanager:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.trove-taskmanager:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.trove-taskmanager:Get:3 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.trove-taskmanager:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.trove-taskmanager:Get:5 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.trove-taskmanager:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.trove-taskmanager:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.trove-taskmanager:Get:8 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.trove-taskmanager:Get:9 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.trove-taskmanager:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.trove-taskmanager:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.trove-taskmanager:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.trove-taskmanager:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.trove-taskmanager:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.trove-taskmanager:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.trove-taskmanager:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.trove-taskmanager:Fetched 15.6 MB in 3s (5,276 kB/s)
+INFO:kolla.common.utils.trove-taskmanager:Reading package lists...
+INFO:kolla.common.utils.trove-taskmanager:Reading package lists...
+INFO:kolla.common.utils.trove-taskmanager:Building dependency tree...
+INFO:kolla.common.utils.trove-taskmanager:Reading state information...
+INFO:kolla.common.utils.trove-taskmanager:The following NEW packages will be installed:
+INFO:kolla.common.utils.trove-taskmanager:  trove-taskmanager
+INFO:kolla.common.utils.trove-taskmanager:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.trove-taskmanager:Need to get 15.1 kB of archives.
+INFO:kolla.common.utils.trove-taskmanager:After this operation, 35.8 kB of additional disk space will be used.
+INFO:kolla.common.utils.trove-taskmanager:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x trove-taskmanager all 1:12.0.0-0ubuntu1~cloud0 [15.1 kB]
+INFO:kolla.common.utils.trove-taskmanager:Fetched 15.1 kB in 0s (376 kB/s)
+INFO:kolla.common.utils.trove-taskmanager:Selecting previously unselected package trove-taskmanager.
+INFO:kolla.common.utils.trove-taskmanager:(Reading database ... 
+INFO:kolla.common.utils.trove-taskmanager:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.trove-taskmanager:(Reading database ... 65%
+INFO:kolla.common.utils.trove-taskmanager:(Reading database ... 70%
+INFO:kolla.common.utils.trove-taskmanager:(Reading database ... 75%
+INFO:kolla.common.utils.trove-taskmanager:(Reading database ... 80%
+INFO:kolla.common.utils.trove-taskmanager:(Reading database ... 85%
+INFO:kolla.common.utils.trove-taskmanager:(Reading database ... 90%
+INFO:kolla.common.utils.trove-taskmanager:(Reading database ... 95%
+INFO:kolla.common.utils.trove-taskmanager:(Reading database ... 100%(Reading database ... 26304 files and directories currently installed.)
+INFO:kolla.common.utils.trove-taskmanager:Preparing to unpack .../trove-taskmanager_1%3a12.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.trove-taskmanager:Unpacking trove-taskmanager (1:12.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.trove-taskmanager:Setting up trove-taskmanager (1:12.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.trove-taskmanager:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.trove-taskmanager:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.trove-taskmanager:Removing intermediate container 88e8e2f15771
+INFO:kolla.common.utils.trove-taskmanager: ---> a558f5251848
+INFO:kolla.common.utils.trove-taskmanager:Step 4/4 : USER trove
+INFO:kolla.common.utils.trove-taskmanager: ---> Running in b0783254bd6f
+INFO:kolla.common.utils.trove-taskmanager:Removing intermediate container b0783254bd6f
+INFO:kolla.common.utils.trove-taskmanager: ---> aced72165f9d
+INFO:kolla.common.utils.trove-taskmanager:Successfully built aced72165f9d
+INFO:kolla.common.utils.trove-taskmanager:Successfully tagged s390x/ubuntu-binary-trove-taskmanager:9.1.0
+INFO:kolla.common.utils.trove-taskmanager:Built at 2020-03-02 21:46:03.308256 (took 0:00:08.770455)

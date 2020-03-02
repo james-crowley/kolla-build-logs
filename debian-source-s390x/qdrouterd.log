@@ -1,0 +1,36 @@
+INFO:kolla.common.utils.qdrouterd:Building started at 2020-03-02 21:31:06.098196
+INFO:kolla.common.utils.qdrouterd:Step 1/8 : FROM s390x/debian-source-base:9.1.0
+INFO:kolla.common.utils.qdrouterd: ---> 80efb5983713
+INFO:kolla.common.utils.qdrouterd:Step 2/8 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="qdrouterd" build-date="20200302"
+INFO:kolla.common.utils.qdrouterd: ---> Running in 3d1d701901d3
+INFO:kolla.common.utils.qdrouterd:Removing intermediate container 3d1d701901d3
+INFO:kolla.common.utils.qdrouterd: ---> 9785fa4f8f85
+INFO:kolla.common.utils.qdrouterd:Step 3/8 : RUN usermod --append --home /var/lib/qdrouterd --groups kolla qdrouterd     && mkdir -p /var/lib/qdrouterd     && chown -R 42465:42465 /var/lib/qdrouterd
+INFO:kolla.common.utils.qdrouterd: ---> Running in fef0ffb4d277
+INFO:kolla.common.utils.qdrouterd:Removing intermediate container fef0ffb4d277
+INFO:kolla.common.utils.qdrouterd: ---> 216fadcf54fe
+INFO:kolla.common.utils.qdrouterd:Step 4/8 : RUN apt-get update && apt-get -y install --no-install-recommends sasl2-bin libpython2.7 qdrouterd qdmanage qdstat && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.qdrouterd: ---> Running in 386057446eca
+INFO:kolla.common.utils.qdrouterd:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.qdrouterd:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.qdrouterd:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.qdrouterd:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.qdrouterd:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.qdrouterd:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.qdrouterd:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.qdrouterd:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.qdrouterd:Fetched 8,235 kB in 2s (5,076 kB/s)
+INFO:kolla.common.utils.qdrouterd:Reading package lists...
+INFO:kolla.common.utils.qdrouterd:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.qdrouterd:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.qdrouterd:[0m
+INFO:kolla.common.utils.qdrouterd:Reading package lists...
+INFO:kolla.common.utils.qdrouterd:Building dependency tree...
+INFO:kolla.common.utils.qdrouterd:Reading state information...
+INFO:kolla.common.utils.qdrouterd:[91mE: Unable to locate package qdrouterd
+INFO:kolla.common.utils.qdrouterd:E: Unable to locate package qdmanage
+INFO:kolla.common.utils.qdrouterd:E: Unable to locate package qdstat
+INFO:kolla.common.utils.qdrouterd:[0m
+INFO:kolla.common.utils.qdrouterd:Removing intermediate container 386057446eca
+ERROR:kolla.common.utils.qdrouterd:Error'd with the following message
+ERROR:kolla.common.utils.qdrouterd:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends sasl2-bin libpython2.7 qdrouterd qdmanage qdstat && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

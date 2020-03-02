@@ -1,0 +1,69 @@
+INFO:kolla.common.utils.zaqar-server:Building started at 2020-03-02 21:44:23.211108
+INFO:kolla.common.utils.zaqar-server:Step 1/3 : FROM s390x/ubuntu-binary-zaqar-base:9.1.0
+INFO:kolla.common.utils.zaqar-server: ---> ad178fa6b8be
+INFO:kolla.common.utils.zaqar-server:Step 2/3 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="zaqar-server" build-date="20200302"
+INFO:kolla.common.utils.zaqar-server: ---> Running in b49b10d6f5b8
+INFO:kolla.common.utils.zaqar-server:Removing intermediate container b49b10d6f5b8
+INFO:kolla.common.utils.zaqar-server: ---> 732ef5eeca43
+INFO:kolla.common.utils.zaqar-server:Step 3/3 : RUN apt-get update && apt-get -y install --no-install-recommends zaqar-server && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.zaqar-server: ---> Running in 65221a8ef053
+INFO:kolla.common.utils.zaqar-server:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.zaqar-server:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.zaqar-server:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.zaqar-server:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.zaqar-server:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.zaqar-server:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.zaqar-server:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.zaqar-server:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.zaqar-server:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.zaqar-server:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.zaqar-server:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.zaqar-server:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.zaqar-server:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.zaqar-server:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.zaqar-server:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.zaqar-server:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.zaqar-server:Fetched 15.6 MB in 3s (6,109 kB/s)
+INFO:kolla.common.utils.zaqar-server:Reading package lists...
+INFO:kolla.common.utils.zaqar-server:Reading package lists...
+INFO:kolla.common.utils.zaqar-server:Building dependency tree...
+INFO:kolla.common.utils.zaqar-server:Reading state information...
+INFO:kolla.common.utils.zaqar-server:The following additional packages will be installed:
+INFO:kolla.common.utils.zaqar-server:  python-q-text-as-data
+INFO:kolla.common.utils.zaqar-server:The following NEW packages will be installed:
+INFO:kolla.common.utils.zaqar-server:  python-q-text-as-data zaqar-server
+INFO:kolla.common.utils.zaqar-server:0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.zaqar-server:Need to get 43.2 kB of archives.
+INFO:kolla.common.utils.zaqar-server:After this operation, 211 kB of additional disk space will be used.
+INFO:kolla.common.utils.zaqar-server:Get:1 http://ports.ubuntu.com bionic/universe s390x python-q-text-as-data all 1.4.0-2 [18.9 kB]
+INFO:kolla.common.utils.zaqar-server:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x zaqar-server all 9.0.0-0ubuntu1~cloud0 [24.2 kB]
+INFO:kolla.common.utils.zaqar-server:Preconfiguring packages ...
+INFO:kolla.common.utils.zaqar-server:Fetched 43.2 kB in 0s (365 kB/s)
+INFO:kolla.common.utils.zaqar-server:Selecting previously unselected package python-q-text-as-data.
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 65%
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 70%
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 75%
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 80%
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 85%
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 90%
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 95%
+INFO:kolla.common.utils.zaqar-server:(Reading database ... 100%(Reading database ... 27564 files and directories currently installed.)
+INFO:kolla.common.utils.zaqar-server:Preparing to unpack .../python-q-text-as-data_1.4.0-2_all.deb ...
+INFO:kolla.common.utils.zaqar-server:Unpacking python-q-text-as-data (1.4.0-2) ...
+INFO:kolla.common.utils.zaqar-server:Selecting previously unselected package zaqar-server.
+INFO:kolla.common.utils.zaqar-server:Preparing to unpack .../zaqar-server_9.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.zaqar-server:Unpacking zaqar-server (9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.zaqar-server:Setting up python-q-text-as-data (1.4.0-2) ...
+INFO:kolla.common.utils.zaqar-server:update-alternatives: using /usr/bin/python2-q-text-as-data to provide /usr/bin/q (q) in auto mode
+INFO:kolla.common.utils.zaqar-server:Setting up zaqar-server (9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.zaqar-server:Will not register zaqar endpoint this time (no user request for it).
+INFO:kolla.common.utils.zaqar-server:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.zaqar-server:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.zaqar-server:Removing intermediate container 65221a8ef053
+INFO:kolla.common.utils.zaqar-server: ---> 2c78fa1ef65a
+INFO:kolla.common.utils.zaqar-server:Successfully built 2c78fa1ef65a
+INFO:kolla.common.utils.zaqar-server:Successfully tagged s390x/ubuntu-binary-zaqar-server:9.1.0
+INFO:kolla.common.utils.zaqar-server:Built at 2020-03-02 21:44:32.817079 (took 0:00:09.605971)

@@ -1,0 +1,62 @@
+INFO:kolla.common.utils.nova-scheduler:Building started at 2020-03-02 21:44:38.001272
+INFO:kolla.common.utils.nova-scheduler:Step 1/4 : FROM s390x/ubuntu-binary-nova-base:9.1.0
+INFO:kolla.common.utils.nova-scheduler: ---> 635ef465de63
+INFO:kolla.common.utils.nova-scheduler:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="nova-scheduler" build-date="20200302"
+INFO:kolla.common.utils.nova-scheduler: ---> Running in 64eb3a921f18
+INFO:kolla.common.utils.nova-scheduler:Removing intermediate container 64eb3a921f18
+INFO:kolla.common.utils.nova-scheduler: ---> 6ba1944a2236
+INFO:kolla.common.utils.nova-scheduler:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends nova-scheduler && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.nova-scheduler: ---> Running in d4a74d6261c3
+INFO:kolla.common.utils.nova-scheduler:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.nova-scheduler:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.nova-scheduler:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.nova-scheduler:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-scheduler:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.nova-scheduler:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-scheduler:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.nova-scheduler:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.nova-scheduler:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.nova-scheduler:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.nova-scheduler:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.nova-scheduler:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.nova-scheduler:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.nova-scheduler:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.nova-scheduler:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.nova-scheduler:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.nova-scheduler:Fetched 15.6 MB in 3s (4,490 kB/s)
+INFO:kolla.common.utils.nova-scheduler:Reading package lists...
+INFO:kolla.common.utils.nova-scheduler:Reading package lists...
+INFO:kolla.common.utils.nova-scheduler:Building dependency tree...
+INFO:kolla.common.utils.nova-scheduler:Reading state information...
+INFO:kolla.common.utils.nova-scheduler:The following NEW packages will be installed:
+INFO:kolla.common.utils.nova-scheduler:  nova-scheduler
+INFO:kolla.common.utils.nova-scheduler:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.nova-scheduler:Need to get 36.7 kB of archives.
+INFO:kolla.common.utils.nova-scheduler:After this operation, 60.4 kB of additional disk space will be used.
+INFO:kolla.common.utils.nova-scheduler:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x nova-scheduler all 2:20.0.0-0ubuntu1~cloud0 [36.7 kB]
+INFO:kolla.common.utils.nova-scheduler:Fetched 36.7 kB in 0s (940 kB/s)
+INFO:kolla.common.utils.nova-scheduler:Selecting previously unselected package nova-scheduler.
+INFO:kolla.common.utils.nova-scheduler:(Reading database ... 
+INFO:kolla.common.utils.nova-scheduler:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%
+INFO:kolla.common.utils.nova-scheduler:(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.nova-scheduler:(Reading database ... 65%
+INFO:kolla.common.utils.nova-scheduler:(Reading database ... 70%
+INFO:kolla.common.utils.nova-scheduler:(Reading database ... 75%(Reading database ... 80%
+INFO:kolla.common.utils.nova-scheduler:(Reading database ... 85%
+INFO:kolla.common.utils.nova-scheduler:(Reading database ... 90%
+INFO:kolla.common.utils.nova-scheduler:(Reading database ... 95%
+INFO:kolla.common.utils.nova-scheduler:(Reading database ... 100%(Reading database ... 32742 files and directories currently installed.)
+INFO:kolla.common.utils.nova-scheduler:Preparing to unpack .../nova-scheduler_2%3a20.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.nova-scheduler:Unpacking nova-scheduler (2:20.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-scheduler:Setting up nova-scheduler (2:20.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-scheduler:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.nova-scheduler:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.nova-scheduler:Removing intermediate container d4a74d6261c3
+INFO:kolla.common.utils.nova-scheduler: ---> 12589f2a76b4
+INFO:kolla.common.utils.nova-scheduler:Step 4/4 : USER nova
+INFO:kolla.common.utils.nova-scheduler: ---> Running in bad1ea2cf797
+INFO:kolla.common.utils.nova-scheduler:Removing intermediate container bad1ea2cf797
+INFO:kolla.common.utils.nova-scheduler: ---> b78442dfb7b0
+INFO:kolla.common.utils.nova-scheduler:Successfully built b78442dfb7b0
+INFO:kolla.common.utils.nova-scheduler:Successfully tagged s390x/ubuntu-binary-nova-scheduler:9.1.0
+INFO:kolla.common.utils.nova-scheduler:Built at 2020-03-02 21:44:47.420799 (took 0:00:09.419527)

@@ -1,0 +1,72 @@
+INFO:kolla.common.utils.influxdb:Building started at 2020-03-02 21:31:57.940266
+INFO:kolla.common.utils.influxdb:Step 1/9 : FROM s390x/debian-source-base:9.1.0
+INFO:kolla.common.utils.influxdb: ---> 80efb5983713
+INFO:kolla.common.utils.influxdb:Step 2/9 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="influxdb" build-date="20200302"
+INFO:kolla.common.utils.influxdb: ---> Running in 90490ffb29d4
+INFO:kolla.common.utils.influxdb:Removing intermediate container 90490ffb29d4
+INFO:kolla.common.utils.influxdb: ---> ba9931a0c0b3
+INFO:kolla.common.utils.influxdb:Step 3/9 : RUN usermod --append --home /var/lib/influxdb --groups kolla influxdb     && mkdir -p /var/lib/influxdb     && chown -R 42421:42421 /var/lib/influxdb
+INFO:kolla.common.utils.influxdb: ---> Running in 901554efcd74
+INFO:kolla.common.utils.influxdb:Removing intermediate container 901554efcd74
+INFO:kolla.common.utils.influxdb: ---> 05b973b44dc8
+INFO:kolla.common.utils.influxdb:Step 4/9 : RUN echo "deb https://repos.influxdata.com/debian buster stable" >/etc/apt/sources.list.d/influxdb.list
+INFO:kolla.common.utils.influxdb: ---> Running in b06e71df30fc
+INFO:kolla.common.utils.influxdb:Removing intermediate container b06e71df30fc
+INFO:kolla.common.utils.influxdb: ---> a6955ed10819
+INFO:kolla.common.utils.influxdb:Step 5/9 : RUN apt-get update && apt-get -y install --no-install-recommends influxdb && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.influxdb: ---> Running in 384fb25db17d
+INFO:kolla.common.utils.influxdb:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.influxdb:Get:2 https://repos.influxdata.com/debian buster InRelease [4,731 B]
+INFO:kolla.common.utils.influxdb:Get:4 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.influxdb:Get:5 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.influxdb:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.influxdb:Get:6 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.influxdb:Get:7 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.influxdb:Get:8 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.influxdb:Get:9 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.influxdb:Fetched 8,240 kB in 2s (4,864 kB/s)
+INFO:kolla.common.utils.influxdb:Reading package lists...
+INFO:kolla.common.utils.influxdb:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.influxdb:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.influxdb:[0m
+INFO:kolla.common.utils.influxdb:Reading package lists...
+INFO:kolla.common.utils.influxdb:Building dependency tree...
+INFO:kolla.common.utils.influxdb:Reading state information...
+INFO:kolla.common.utils.influxdb:The following NEW packages will be installed:
+INFO:kolla.common.utils.influxdb:  influxdb
+INFO:kolla.common.utils.influxdb:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.influxdb:Need to get 4,704 kB of archives.
+INFO:kolla.common.utils.influxdb:After this operation, 19.3 MB of additional disk space will be used.
+INFO:kolla.common.utils.influxdb:Get:1 http://deb.debian.org/debian buster/main s390x influxdb s390x 1.6.4-1+b22 [4,704 kB]
+INFO:kolla.common.utils.influxdb:Fetched 4,704 kB in 0s (39.2 MB/s)
+INFO:kolla.common.utils.influxdb:Selecting previously unselected package influxdb.
+INFO:kolla.common.utils.influxdb:(Reading database ... 
+INFO:kolla.common.utils.influxdb:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%
+INFO:kolla.common.utils.influxdb:(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.influxdb:(Reading database ... 80%
+INFO:kolla.common.utils.influxdb:(Reading database ... 85%
+INFO:kolla.common.utils.influxdb:(Reading database ... 90%
+INFO:kolla.common.utils.influxdb:(Reading database ... 95%
+INFO:kolla.common.utils.influxdb:(Reading database ... 100%(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.influxdb:Preparing to unpack .../influxdb_1.6.4-1+b22_s390x.deb ...
+INFO:kolla.common.utils.influxdb:Unpacking influxdb (1.6.4-1+b22) ...
+INFO:kolla.common.utils.influxdb:Setting up influxdb (1.6.4-1+b22) ...
+INFO:kolla.common.utils.influxdb:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.influxdb:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.influxdb:Removing intermediate container 384fb25db17d
+INFO:kolla.common.utils.influxdb: ---> d9b2fba55fcb
+INFO:kolla.common.utils.influxdb:Step 6/9 : COPY influxdb_sudoers /etc/sudoers.d/kolla_influxdb_sudoers
+INFO:kolla.common.utils.influxdb: ---> 5f0db2edf40e
+INFO:kolla.common.utils.influxdb:Step 7/9 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.influxdb: ---> 59c5e33099e9
+INFO:kolla.common.utils.influxdb:Step 8/9 : RUN chmod 750 /etc/sudoers.d     && chmod 440 /etc/sudoers.d/kolla_influxdb_sudoers     && chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.influxdb: ---> Running in 0334db8301a3
+INFO:kolla.common.utils.influxdb:Removing intermediate container 0334db8301a3
+INFO:kolla.common.utils.influxdb: ---> b0796632375c
+INFO:kolla.common.utils.influxdb:Step 9/9 : USER influxdb
+INFO:kolla.common.utils.influxdb: ---> Running in c6a4bf19ae47
+INFO:kolla.common.utils.influxdb:Removing intermediate container c6a4bf19ae47
+INFO:kolla.common.utils.influxdb: ---> a4ed23217164
+INFO:kolla.common.utils.influxdb:Successfully built a4ed23217164
+INFO:kolla.common.utils.influxdb:Successfully tagged s390x/debian-source-influxdb:9.1.0
+INFO:kolla.common.utils.influxdb:Built at 2020-03-02 21:32:15.702261 (took 0:00:17.761995)

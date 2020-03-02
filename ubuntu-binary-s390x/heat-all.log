@@ -1,0 +1,13 @@
+INFO:kolla.common.utils.heat-all:Building started at 2020-03-02 21:46:12.771368
+INFO:kolla.common.utils.heat-all:Step 1/4 : FROM s390x/ubuntu-binary-heat-base:9.1.0
+INFO:kolla.common.utils.heat-all: ---> 923f4e6f6ed1
+INFO:kolla.common.utils.heat-all:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="heat-all" build-date="20200302"
+INFO:kolla.common.utils.heat-all: ---> Running in 06261fa6bb27
+INFO:kolla.common.utils.heat-all:Removing intermediate container 06261fa6bb27
+INFO:kolla.common.utils.heat-all: ---> 9c2cc69fe910
+INFO:kolla.common.utils.heat-all:Step 3/4 : RUN echo 'heat-all not yet available for ubuntu' && /bin/false
+INFO:kolla.common.utils.heat-all: ---> Running in 883bc7507ed1
+INFO:kolla.common.utils.heat-all:heat-all not yet available for ubuntu
+INFO:kolla.common.utils.heat-all:Removing intermediate container 883bc7507ed1
+ERROR:kolla.common.utils.heat-all:Error'd with the following message
+ERROR:kolla.common.utils.heat-all:The command '/bin/sh -c echo 'heat-all not yet available for ubuntu' && /bin/false' returned a non-zero code: 1

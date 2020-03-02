@@ -1,0 +1,46 @@
+INFO:kolla.common.utils.sensu-base:Building started at 2020-03-02 21:38:31.369510
+INFO:kolla.common.utils.sensu-base:Step 1/7 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.sensu-base: ---> 682558ff6b31
+INFO:kolla.common.utils.sensu-base:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="sensu-base" build-date="20200302"
+INFO:kolla.common.utils.sensu-base: ---> Running in 07fab4f72e18
+INFO:kolla.common.utils.sensu-base:Removing intermediate container 07fab4f72e18
+INFO:kolla.common.utils.sensu-base: ---> 216717ccd7bb
+INFO:kolla.common.utils.sensu-base:Step 3/7 : RUN usermod --append --home /var/lib/sensu --groups kolla sensu     && mkdir -p /var/lib/sensu     && chown -R 42467:42467 /var/lib/sensu
+INFO:kolla.common.utils.sensu-base: ---> Running in b90eace3546f
+INFO:kolla.common.utils.sensu-base:Removing intermediate container b90eace3546f
+INFO:kolla.common.utils.sensu-base: ---> bf56c6dfb78d
+INFO:kolla.common.utils.sensu-base:Step 4/7 : RUN echo "deb https://sensu.global.ssl.fastly.net/apt bionic main" >/etc/apt/sources.list.d/sensu.list
+INFO:kolla.common.utils.sensu-base: ---> Running in 718089341cc3
+INFO:kolla.common.utils.sensu-base:Removing intermediate container 718089341cc3
+INFO:kolla.common.utils.sensu-base: ---> 6aa2e69e7356
+INFO:kolla.common.utils.sensu-base:Step 5/7 : RUN apt-get update && apt-get -y install --no-install-recommends sensu && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.sensu-base: ---> Running in 03a7decf8e01
+INFO:kolla.common.utils.sensu-base:Ign:1 https://sensu.global.ssl.fastly.net/apt bionic InRelease
+INFO:kolla.common.utils.sensu-base:Get:2 https://sensu.global.ssl.fastly.net/apt bionic Release [9,970 B]
+INFO:kolla.common.utils.sensu-base:Get:3 https://sensu.global.ssl.fastly.net/apt bionic Release.gpg [473 B]
+INFO:kolla.common.utils.sensu-base:Ign:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.sensu-base:Get:5 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.sensu-base:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.sensu-base:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.sensu-base:Get:8 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.sensu-base:Get:9 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.sensu-base:Get:10 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.sensu-base:Get:11 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.sensu-base:Get:12 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.sensu-base:Get:13 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.sensu-base:Get:14 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.sensu-base:Get:15 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.sensu-base:Get:16 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.sensu-base:Get:17 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.sensu-base:Get:18 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.sensu-base:Get:19 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.sensu-base:Fetched 15.6 MB in 4s (4,376 kB/s)
+INFO:kolla.common.utils.sensu-base:Reading package lists...
+INFO:kolla.common.utils.sensu-base:Reading package lists...
+INFO:kolla.common.utils.sensu-base:Building dependency tree...
+INFO:kolla.common.utils.sensu-base:Reading state information...
+INFO:kolla.common.utils.sensu-base:[91mE: Unable to locate package sensu
+INFO:kolla.common.utils.sensu-base:[0m
+INFO:kolla.common.utils.sensu-base:Removing intermediate container 03a7decf8e01
+ERROR:kolla.common.utils.sensu-base:Error'd with the following message
+ERROR:kolla.common.utils.sensu-base:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends sensu && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

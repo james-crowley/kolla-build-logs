@@ -1,0 +1,54 @@
+INFO:kolla.common.utils.elasticsearch:Building started at 2020-03-02 21:49:18.720759
+INFO:kolla.common.utils.elasticsearch:Step 1/10 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.elasticsearch: ---> 96ede3560f2f
+INFO:kolla.common.utils.elasticsearch:Step 2/10 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="elasticsearch" build-date="20200302"
+INFO:kolla.common.utils.elasticsearch: ---> Running in b804c7b46f7a
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container b804c7b46f7a
+INFO:kolla.common.utils.elasticsearch: ---> 6266fe513c2d
+INFO:kolla.common.utils.elasticsearch:Step 3/10 : RUN usermod --append --home /usr/share/elasticsearch --groups kolla elasticsearch     && chsh --shell /bin/bash elasticsearch     && mkdir -p /usr/share/elasticsearch     && chown -R 42412:42412 /usr/share/elasticsearch
+INFO:kolla.common.utils.elasticsearch: ---> Running in 53a1ffdbeecf
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container 53a1ffdbeecf
+INFO:kolla.common.utils.elasticsearch: ---> e23abda6023a
+INFO:kolla.common.utils.elasticsearch:Step 4/10 : RUN echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" >/etc/apt/sources.list.d/elasticsearch.list
+INFO:kolla.common.utils.elasticsearch: ---> Running in 4e531fdf4176
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container 4e531fdf4176
+INFO:kolla.common.utils.elasticsearch: ---> ad0517851dcf
+INFO:kolla.common.utils.elasticsearch:Step 5/10 : ENV JAVA_HOME /usr/lib/jvm/java--openjdk-s390x/
+INFO:kolla.common.utils.elasticsearch: ---> Running in ebb67b4e61bd
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container ebb67b4e61bd
+INFO:kolla.common.utils.elasticsearch: ---> 2bd2f30a8ded
+INFO:kolla.common.utils.elasticsearch:Step 6/10 : ENV ES_SKIP_SET_KERNEL_PARAMETERS true
+INFO:kolla.common.utils.elasticsearch: ---> Running in 25c05bf4a794
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container 25c05bf4a794
+INFO:kolla.common.utils.elasticsearch: ---> 770bd8b6f478
+INFO:kolla.common.utils.elasticsearch:Step 7/10 : RUN apt-get update && apt-get -y install --no-install-recommends default-jre-headless elasticsearch && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.elasticsearch: ---> Running in 6686c18ec1e8
+INFO:kolla.common.utils.elasticsearch:Ign:1 https://artifacts.elastic.co/packages/5.x/apt stable InRelease
+INFO:kolla.common.utils.elasticsearch:Get:2 https://artifacts.elastic.co/packages/5.x/apt stable Release [5,116 B]
+INFO:kolla.common.utils.elasticsearch:Get:3 https://artifacts.elastic.co/packages/5.x/apt stable Release.gpg [473 B]
+INFO:kolla.common.utils.elasticsearch:Get:4 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.elasticsearch:Ign:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.elasticsearch:Get:6 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.elasticsearch:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.elasticsearch:Get:8 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.elasticsearch:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.elasticsearch:Get:10 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.elasticsearch:Get:11 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.elasticsearch:Get:12 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.elasticsearch:Get:13 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.elasticsearch:Get:14 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.elasticsearch:Get:15 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.elasticsearch:Get:16 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.elasticsearch:Get:17 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.elasticsearch:Get:18 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.elasticsearch:Get:19 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.elasticsearch:Fetched 15.6 MB in 2s (6,355 kB/s)
+INFO:kolla.common.utils.elasticsearch:Reading package lists...
+INFO:kolla.common.utils.elasticsearch:Reading package lists...
+INFO:kolla.common.utils.elasticsearch:Building dependency tree...
+INFO:kolla.common.utils.elasticsearch:Reading state information...
+INFO:kolla.common.utils.elasticsearch:[91mE: Unable to locate package elasticsearch
+INFO:kolla.common.utils.elasticsearch:[0m
+INFO:kolla.common.utils.elasticsearch:Removing intermediate container 6686c18ec1e8
+ERROR:kolla.common.utils.elasticsearch:Error'd with the following message
+ERROR:kolla.common.utils.elasticsearch:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends default-jre-headless elasticsearch && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

@@ -1,0 +1,34 @@
+INFO:kolla.common.utils.trove-base:Building started at 2020-03-02 21:26:06.255952
+INFO:kolla.common.utils.trove-base:Step 1/6 : FROM s390x/debian-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.trove-base: ---> d0f37d4345b6
+INFO:kolla.common.utils.trove-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="trove-base" build-date="20200302"
+INFO:kolla.common.utils.trove-base: ---> Running in 403bb943f7f3
+INFO:kolla.common.utils.trove-base:Removing intermediate container 403bb943f7f3
+INFO:kolla.common.utils.trove-base: ---> 5bd1c6ca50e7
+INFO:kolla.common.utils.trove-base:Step 3/6 : RUN usermod --append --home /var/lib/trove --groups kolla trove     && mkdir -p /var/lib/trove     && chown -R 42449:42449 /var/lib/trove
+INFO:kolla.common.utils.trove-base: ---> Running in 3e189a7f2d82
+INFO:kolla.common.utils.trove-base:Removing intermediate container 3e189a7f2d82
+INFO:kolla.common.utils.trove-base: ---> c135e12f52d4
+INFO:kolla.common.utils.trove-base:Step 4/6 : RUN apt-get update && apt-get -y install --no-install-recommends trove-common && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.trove-base: ---> Running in dba871a88460
+INFO:kolla.common.utils.trove-base:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.trove-base:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.trove-base:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.trove-base:Get:4 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.trove-base:Get:5 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.trove-base:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.trove-base:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.trove-base:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.trove-base:Fetched 8,235 kB in 1s (5,624 kB/s)
+INFO:kolla.common.utils.trove-base:Reading package lists...
+INFO:kolla.common.utils.trove-base:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.trove-base:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.trove-base:[0m
+INFO:kolla.common.utils.trove-base:Reading package lists...
+INFO:kolla.common.utils.trove-base:Building dependency tree...
+INFO:kolla.common.utils.trove-base:Reading state information...
+INFO:kolla.common.utils.trove-base:[91mE: Unable to locate package trove-common
+INFO:kolla.common.utils.trove-base:[0m
+INFO:kolla.common.utils.trove-base:Removing intermediate container dba871a88460
+ERROR:kolla.common.utils.trove-base:Error'd with the following message
+ERROR:kolla.common.utils.trove-base:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends trove-common && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

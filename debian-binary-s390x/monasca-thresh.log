@@ -1,0 +1,21 @@
+INFO:kolla.common.utils.monasca-thresh:Building started at 2020-03-02 21:27:12.614864
+INFO:kolla.common.utils.monasca-thresh:Step 1/8 : FROM s390x/debian-binary-storm:9.1.0
+INFO:kolla.common.utils.monasca-thresh: ---> 8f5791f5fd5e
+INFO:kolla.common.utils.monasca-thresh:Step 2/8 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="monasca-thresh" build-date="20200302"
+INFO:kolla.common.utils.monasca-thresh: ---> Running in 7ab2dc74553b
+INFO:kolla.common.utils.monasca-thresh:Removing intermediate container 7ab2dc74553b
+INFO:kolla.common.utils.monasca-thresh: ---> b29365219143
+INFO:kolla.common.utils.monasca-thresh:Step 3/8 : USER root
+INFO:kolla.common.utils.monasca-thresh: ---> Running in 4e80ff6f10ed
+INFO:kolla.common.utils.monasca-thresh:Removing intermediate container 4e80ff6f10ed
+INFO:kolla.common.utils.monasca-thresh: ---> 276f42e10e81
+INFO:kolla.common.utils.monasca-thresh:Step 4/8 : RUN usermod --append --home /var/lib/monasca --groups kolla monasca     && mkdir -p /var/lib/monasca     && chown -R 42431:42431 /var/lib/monasca
+INFO:kolla.common.utils.monasca-thresh: ---> Running in 678356bb2c28
+INFO:kolla.common.utils.monasca-thresh:Removing intermediate container 678356bb2c28
+INFO:kolla.common.utils.monasca-thresh: ---> bf22ea8b8108
+INFO:kolla.common.utils.monasca-thresh:Step 5/8 : RUN echo 'binary not yet available for debian'     && /bin/false
+INFO:kolla.common.utils.monasca-thresh: ---> Running in 3daf02bf7d50
+INFO:kolla.common.utils.monasca-thresh:binary not yet available for debian
+INFO:kolla.common.utils.monasca-thresh:Removing intermediate container 3daf02bf7d50
+ERROR:kolla.common.utils.monasca-thresh:Error'd with the following message
+ERROR:kolla.common.utils.monasca-thresh:The command '/bin/sh -c echo 'binary not yet available for debian'     && /bin/false' returned a non-zero code: 1

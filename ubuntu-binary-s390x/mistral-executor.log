@@ -1,0 +1,63 @@
+INFO:kolla.common.utils.mistral-executor:Building started at 2020-03-02 21:46:30.903304
+INFO:kolla.common.utils.mistral-executor:Step 1/4 : FROM s390x/ubuntu-binary-mistral-base:9.1.0
+INFO:kolla.common.utils.mistral-executor: ---> fcb69739f1ec
+INFO:kolla.common.utils.mistral-executor:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="mistral-executor" build-date="20200302"
+INFO:kolla.common.utils.mistral-executor: ---> Running in b553b96c4af5
+INFO:kolla.common.utils.mistral-executor:Removing intermediate container b553b96c4af5
+INFO:kolla.common.utils.mistral-executor: ---> 5bcdd387c073
+INFO:kolla.common.utils.mistral-executor:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends mistral-executor && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.mistral-executor: ---> Running in bea351d0246e
+INFO:kolla.common.utils.mistral-executor:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.mistral-executor:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.mistral-executor:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.mistral-executor:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.mistral-executor:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.mistral-executor:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.mistral-executor:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.mistral-executor:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.mistral-executor:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.mistral-executor:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.mistral-executor:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.mistral-executor:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.mistral-executor:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.mistral-executor:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.mistral-executor:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.mistral-executor:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.mistral-executor:Fetched 15.6 MB in 3s (4,779 kB/s)
+INFO:kolla.common.utils.mistral-executor:Reading package lists...
+INFO:kolla.common.utils.mistral-executor:Reading package lists...
+INFO:kolla.common.utils.mistral-executor:Building dependency tree...
+INFO:kolla.common.utils.mistral-executor:Reading state information...
+INFO:kolla.common.utils.mistral-executor:The following NEW packages will be installed:
+INFO:kolla.common.utils.mistral-executor:  mistral-executor
+INFO:kolla.common.utils.mistral-executor:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.mistral-executor:Need to get 9,308 B of archives.
+INFO:kolla.common.utils.mistral-executor:After this operation, 29.7 kB of additional disk space will be used.
+INFO:kolla.common.utils.mistral-executor:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x mistral-executor all 9.0.0-0ubuntu1~cloud0 [9,308 B]
+INFO:kolla.common.utils.mistral-executor:Fetched 9,308 B in 0s (368 kB/s)
+INFO:kolla.common.utils.mistral-executor:Selecting previously unselected package mistral-executor.
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 60%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 65%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 70%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 75%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 80%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 85%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 90%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 95%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 100%(Reading database ... 26845 files and directories currently installed.)
+INFO:kolla.common.utils.mistral-executor:Preparing to unpack .../mistral-executor_9.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.mistral-executor:Unpacking mistral-executor (9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.mistral-executor:Setting up mistral-executor (9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.mistral-executor:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.mistral-executor:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.mistral-executor:Removing intermediate container bea351d0246e
+INFO:kolla.common.utils.mistral-executor: ---> 0fddc508e657
+INFO:kolla.common.utils.mistral-executor:Step 4/4 : USER mistral
+INFO:kolla.common.utils.mistral-executor: ---> Running in 3df790278698
+INFO:kolla.common.utils.mistral-executor:Removing intermediate container 3df790278698
+INFO:kolla.common.utils.mistral-executor: ---> 4ca63fd76c78
+INFO:kolla.common.utils.mistral-executor:Successfully built 4ca63fd76c78
+INFO:kolla.common.utils.mistral-executor:Successfully tagged s390x/ubuntu-binary-mistral-executor:9.1.0
+INFO:kolla.common.utils.mistral-executor:Built at 2020-03-02 21:46:40.285531 (took 0:00:09.382227)

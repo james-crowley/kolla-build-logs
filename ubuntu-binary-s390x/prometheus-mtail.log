@@ -1,0 +1,13 @@
+INFO:kolla.common.utils.prometheus-mtail:Building started at 2020-03-02 21:40:16.612451
+INFO:kolla.common.utils.prometheus-mtail:Step 1/7 : FROM s390x/ubuntu-binary-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-mtail: ---> 3a4f3fd769cf
+INFO:kolla.common.utils.prometheus-mtail:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-mtail" build-date="20200302"
+INFO:kolla.common.utils.prometheus-mtail: ---> Running in 0dc57469636b
+INFO:kolla.common.utils.prometheus-mtail:Removing intermediate container 0dc57469636b
+INFO:kolla.common.utils.prometheus-mtail: ---> c6cacaef6f27
+INFO:kolla.common.utils.prometheus-mtail:Step 3/7 : RUN echo 'There are no mtail binaries for s390x'     && /bin/false
+INFO:kolla.common.utils.prometheus-mtail: ---> Running in e13876a0cb45
+INFO:kolla.common.utils.prometheus-mtail:There are no mtail binaries for s390x
+INFO:kolla.common.utils.prometheus-mtail:Removing intermediate container e13876a0cb45
+ERROR:kolla.common.utils.prometheus-mtail:Error'd with the following message
+ERROR:kolla.common.utils.prometheus-mtail:The command '/bin/sh -c echo 'There are no mtail binaries for s390x'     && /bin/false' returned a non-zero code: 1

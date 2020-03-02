@@ -1,0 +1,63 @@
+INFO:kolla.common.utils.ovn-sb-db-server:Building started at 2020-03-02 21:43:01.601216
+INFO:kolla.common.utils.ovn-sb-db-server:Step 1/5 : FROM s390x/ubuntu-binary-ovn-base:9.1.0
+INFO:kolla.common.utils.ovn-sb-db-server: ---> 847231a5b41d
+INFO:kolla.common.utils.ovn-sb-db-server:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="ovn-sb-db-server" build-date="20200302"
+INFO:kolla.common.utils.ovn-sb-db-server: ---> Running in 66acc173aa4c
+INFO:kolla.common.utils.ovn-sb-db-server:Removing intermediate container 66acc173aa4c
+INFO:kolla.common.utils.ovn-sb-db-server: ---> 46b0a37a90ef
+INFO:kolla.common.utils.ovn-sb-db-server:Step 3/5 : RUN apt-get update && apt-get -y install --no-install-recommends ovn-central && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.ovn-sb-db-server: ---> Running in 72a0d6a18015
+INFO:kolla.common.utils.ovn-sb-db-server:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.ovn-sb-db-server:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:8 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.ovn-sb-db-server:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.ovn-sb-db-server:Fetched 15.6 MB in 3s (5,840 kB/s)
+INFO:kolla.common.utils.ovn-sb-db-server:Reading package lists...
+INFO:kolla.common.utils.ovn-sb-db-server:Reading package lists...
+INFO:kolla.common.utils.ovn-sb-db-server:Building dependency tree...
+INFO:kolla.common.utils.ovn-sb-db-server:Reading state information...
+INFO:kolla.common.utils.ovn-sb-db-server:The following NEW packages will be installed:
+INFO:kolla.common.utils.ovn-sb-db-server:  ovn-central
+INFO:kolla.common.utils.ovn-sb-db-server:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.ovn-sb-db-server:Need to get 812 kB of archives.
+INFO:kolla.common.utils.ovn-sb-db-server:After this operation, 3,015 kB of additional disk space will be used.
+INFO:kolla.common.utils.ovn-sb-db-server:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x ovn-central s390x 2.12.0-0ubuntu1~cloud0 [812 kB]
+INFO:kolla.common.utils.ovn-sb-db-server:Fetched 812 kB in 0s (10.4 MB/s)
+INFO:kolla.common.utils.ovn-sb-db-server:Selecting previously unselected package ovn-central.
+INFO:kolla.common.utils.ovn-sb-db-server:(Reading database ... 
+INFO:kolla.common.utils.ovn-sb-db-server:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.ovn-sb-db-server:(Reading database ... 70%
+INFO:kolla.common.utils.ovn-sb-db-server:(Reading database ... 75%
+INFO:kolla.common.utils.ovn-sb-db-server:(Reading database ... 80%
+INFO:kolla.common.utils.ovn-sb-db-server:(Reading database ... 85%
+INFO:kolla.common.utils.ovn-sb-db-server:(Reading database ... 90%
+INFO:kolla.common.utils.ovn-sb-db-server:(Reading database ... 95%
+INFO:kolla.common.utils.ovn-sb-db-server:(Reading database ... 100%(Reading database ... 9474 files and directories currently installed.)
+INFO:kolla.common.utils.ovn-sb-db-server:Preparing to unpack .../ovn-central_2.12.0-0ubuntu1~cloud0_s390x.deb ...
+INFO:kolla.common.utils.ovn-sb-db-server:Unpacking ovn-central (2.12.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.ovn-sb-db-server:Setting up ovn-central (2.12.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.ovn-sb-db-server:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.ovn-sb-db-server:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.ovn-sb-db-server:Removing intermediate container 72a0d6a18015
+INFO:kolla.common.utils.ovn-sb-db-server: ---> 7973a820e0c2
+INFO:kolla.common.utils.ovn-sb-db-server:Step 4/5 : COPY start_sb_db_server.sh /usr/local/bin/start-sb-db-server
+INFO:kolla.common.utils.ovn-sb-db-server: ---> 2bd6cadadaf1
+INFO:kolla.common.utils.ovn-sb-db-server:Step 5/5 : RUN chmod 755 /usr/local/bin/start-sb-db-server
+INFO:kolla.common.utils.ovn-sb-db-server: ---> Running in 36629dce7798
+INFO:kolla.common.utils.ovn-sb-db-server:Removing intermediate container 36629dce7798
+INFO:kolla.common.utils.ovn-sb-db-server: ---> 1bf0b85849be
+INFO:kolla.common.utils.ovn-sb-db-server:Successfully built 1bf0b85849be
+INFO:kolla.common.utils.ovn-sb-db-server:Successfully tagged s390x/ubuntu-binary-ovn-sb-db-server:9.1.0
+INFO:kolla.common.utils.ovn-sb-db-server:Built at 2020-03-02 21:43:11.648209 (took 0:00:10.046993)

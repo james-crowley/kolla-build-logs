@@ -1,0 +1,14 @@
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent:Building started at 2020-03-02 21:29:16.351721
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent:Step 1/3 : FROM s390x/debian-binary-neutron-server:9.1.0
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent: ---> 494ab0daffd7
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent:Step 2/3 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="neutron-infoblox-ipam-agent" build-date="20200302"
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent: ---> Running in daf0ea613d8d
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent:Removing intermediate container daf0ea613d8d
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent: ---> 70d38b79e3ac
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent:Step 3/3 : USER neutron
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent: ---> Running in a11b08b2978f
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent:Removing intermediate container a11b08b2978f
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent: ---> 91c8b8f2c727
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent:Successfully built 91c8b8f2c727
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent:Successfully tagged s390x/debian-binary-neutron-infoblox-ipam-agent:9.1.0
+INFO:kolla.common.utils.neutron-infoblox-ipam-agent:Built at 2020-03-02 21:29:17.463837 (took 0:00:01.112116)

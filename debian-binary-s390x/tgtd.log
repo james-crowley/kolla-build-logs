@@ -1,0 +1,36 @@
+INFO:kolla.common.utils.tgtd:Building started at 2020-03-02 21:22:18.922360
+INFO:kolla.common.utils.tgtd:Step 1/4 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.tgtd: ---> 4244142526cc
+INFO:kolla.common.utils.tgtd:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="tgtd" build-date="20200302"
+INFO:kolla.common.utils.tgtd: ---> Running in e7b325331607
+INFO:kolla.common.utils.tgtd:Removing intermediate container e7b325331607
+INFO:kolla.common.utils.tgtd: ---> 24cb627657b7
+INFO:kolla.common.utils.tgtd:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends tgt && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.tgtd: ---> Running in bbf436e1aae4
+INFO:kolla.common.utils.tgtd:Get:2 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.tgtd:Get:1 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.tgtd:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.tgtd:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.tgtd:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.tgtd:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.tgtd:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.tgtd:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.tgtd:Fetched 8,235 kB in 2s (4,296 kB/s)
+INFO:kolla.common.utils.tgtd:Reading package lists...
+INFO:kolla.common.utils.tgtd:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.tgtd:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.tgtd:[0m
+INFO:kolla.common.utils.tgtd:Reading package lists...
+INFO:kolla.common.utils.tgtd:Building dependency tree...
+INFO:kolla.common.utils.tgtd:Reading state information...
+INFO:kolla.common.utils.tgtd:tgt is already the newest version (1:1.0.74-1).
+INFO:kolla.common.utils.tgtd:0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.tgtd:Removing intermediate container bbf436e1aae4
+INFO:kolla.common.utils.tgtd: ---> 04da2c4443c3
+INFO:kolla.common.utils.tgtd:Step 4/4 : RUN sed -i '1 i include /var/lib/cinder/volumes/*' /etc/tgt/targets.conf
+INFO:kolla.common.utils.tgtd: ---> Running in 6ecdd12108fb
+INFO:kolla.common.utils.tgtd:Removing intermediate container 6ecdd12108fb
+INFO:kolla.common.utils.tgtd: ---> a2e5c5dc9dc3
+INFO:kolla.common.utils.tgtd:Successfully built a2e5c5dc9dc3
+INFO:kolla.common.utils.tgtd:Successfully tagged s390x/debian-binary-tgtd:9.1.0
+INFO:kolla.common.utils.tgtd:Built at 2020-03-02 21:22:27.710614 (took 0:00:08.788254)

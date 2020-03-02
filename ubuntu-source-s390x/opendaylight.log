@@ -1,0 +1,482 @@
+INFO:kolla.common.utils.opendaylight:Building started at 2020-03-02 21:49:43.003389
+INFO:kolla.common.utils.opendaylight:Step 1/7 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.opendaylight: ---> 96ede3560f2f
+INFO:kolla.common.utils.opendaylight:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="opendaylight" build-date="20200302"
+INFO:kolla.common.utils.opendaylight: ---> Running in 75f058cdd43c
+INFO:kolla.common.utils.opendaylight:Removing intermediate container 75f058cdd43c
+INFO:kolla.common.utils.opendaylight: ---> edd79032bd0d
+INFO:kolla.common.utils.opendaylight:Step 3/7 : RUN usermod --append --home /var/lib/odl --groups kolla odl     && mkdir -p /var/lib/odl     && chown -R 42462:42462 /var/lib/odl
+INFO:kolla.common.utils.opendaylight: ---> Running in ede83c7fbe6f
+INFO:kolla.common.utils.opendaylight:Removing intermediate container ede83c7fbe6f
+INFO:kolla.common.utils.opendaylight: ---> 6050377032a5
+INFO:kolla.common.utils.opendaylight:Step 4/7 : RUN echo "deb http://ppa.launchpad.net/odl-team/carbon/ubuntu xenial main" >/etc/apt/sources.list.d/opendaylight.list
+INFO:kolla.common.utils.opendaylight: ---> Running in 896a1855690b
+INFO:kolla.common.utils.opendaylight:Removing intermediate container 896a1855690b
+INFO:kolla.common.utils.opendaylight: ---> b699b434fde5
+INFO:kolla.common.utils.opendaylight:Step 5/7 : RUN apt-get update && apt-get -y install --no-install-recommends opendaylight openjdk-8-jre-headless && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.opendaylight: ---> Running in 8b0b66d607e7
+INFO:kolla.common.utils.opendaylight:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.opendaylight:Get:2 http://ppa.launchpad.net/odl-team/carbon/ubuntu xenial InRelease [18.0 kB]
+INFO:kolla.common.utils.opendaylight:Ign:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.opendaylight:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.opendaylight:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.opendaylight:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.opendaylight:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.opendaylight:Get:8 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.opendaylight:Get:9 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.opendaylight:Get:10 http://ppa.launchpad.net/odl-team/carbon/ubuntu xenial/main s390x Packages [445 B]
+INFO:kolla.common.utils.opendaylight:Get:11 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.opendaylight:Get:12 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.opendaylight:Get:13 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.opendaylight:Get:14 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.opendaylight:Get:15 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.opendaylight:Get:16 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.opendaylight:Get:17 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.opendaylight:Get:18 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.opendaylight:Fetched 15.6 MB in 3s (6,100 kB/s)
+INFO:kolla.common.utils.opendaylight:Reading package lists...
+INFO:kolla.common.utils.opendaylight:Reading package lists...
+INFO:kolla.common.utils.opendaylight:Building dependency tree...
+INFO:kolla.common.utils.opendaylight:Reading state information...
+INFO:kolla.common.utils.opendaylight:The following additional packages will be installed:
+INFO:kolla.common.utils.opendaylight:  ca-certificates-java fontconfig-config fonts-dejavu-core java-common
+INFO:kolla.common.utils.opendaylight:  libavahi-client3 libavahi-common-data libavahi-common3 libbsd0 libcups2
+INFO:kolla.common.utils.opendaylight:  libdbus-1-3 libfontconfig1 libfreetype6 libjpeg-turbo8 libjpeg8 liblcms2-2
+INFO:kolla.common.utils.opendaylight:  libnspr4 libnss3 libpcsclite1 libpng16-16 libx11-6 libx11-data libxau6
+INFO:kolla.common.utils.opendaylight:  libxcb1 libxdmcp6 libxext6 libxi6 libxrender1 libxtst6 multiarch-support ucf
+INFO:kolla.common.utils.opendaylight:  x11-common
+INFO:kolla.common.utils.opendaylight:Suggested packages:
+INFO:kolla.common.utils.opendaylight:  default-jre cups-common liblcms2-utils pcscd libnss-mdns fonts-dejavu-extra
+INFO:kolla.common.utils.opendaylight:  fonts-ipafont-gothic fonts-ipafont-mincho fonts-wqy-microhei
+INFO:kolla.common.utils.opendaylight:  fonts-wqy-zenhei fonts-indic
+INFO:kolla.common.utils.opendaylight:Recommended packages:
+INFO:kolla.common.utils.opendaylight:  dbus
+INFO:kolla.common.utils.opendaylight:The following NEW packages will be installed:
+INFO:kolla.common.utils.opendaylight:  ca-certificates-java fontconfig-config fonts-dejavu-core java-common
+INFO:kolla.common.utils.opendaylight:  libavahi-client3 libavahi-common-data libavahi-common3 libbsd0 libcups2
+INFO:kolla.common.utils.opendaylight:  libdbus-1-3 libfontconfig1 libfreetype6 libjpeg-turbo8 libjpeg8 liblcms2-2
+INFO:kolla.common.utils.opendaylight:  libnspr4 libnss3 libpcsclite1 libpng16-16 libx11-6 libx11-data libxau6
+INFO:kolla.common.utils.opendaylight:  libxcb1 libxdmcp6 libxext6 libxi6 libxrender1 libxtst6 multiarch-support
+INFO:kolla.common.utils.opendaylight:  opendaylight openjdk-8-jre-headless ucf x11-common
+INFO:kolla.common.utils.opendaylight:0 upgraded, 33 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.opendaylight:Need to get 415 MB of archives.
+INFO:kolla.common.utils.opendaylight:After this operation, 611 MB of additional disk space will be used.
+INFO:kolla.common.utils.opendaylight:Get:1 http://ports.ubuntu.com bionic/main s390x multiarch-support s390x 2.27-3ubuntu1 [6,916 B]
+INFO:kolla.common.utils.opendaylight:Get:2 http://ppa.launchpad.net/odl-team/carbon/ubuntu xenial/main s390x opendaylight all 6.3.0-1ppa2 [384 MB]
+INFO:kolla.common.utils.opendaylight:Get:3 http://ports.ubuntu.com bionic-updates/main s390x libjpeg-turbo8 s390x 1.5.2-0ubuntu5.18.04.3 [101 kB]
+INFO:kolla.common.utils.opendaylight:Get:4 http://ports.ubuntu.com bionic-updates/main s390x libbsd0 s390x 0.8.7-1ubuntu0.1 [40.1 kB]
+INFO:kolla.common.utils.opendaylight:Get:5 http://ports.ubuntu.com bionic-updates/main s390x libdbus-1-3 s390x 1.12.2-1ubuntu1.1 [168 kB]
+INFO:kolla.common.utils.opendaylight:Get:6 http://ports.ubuntu.com bionic/main s390x ucf all 3.0038 [50.5 kB]
+INFO:kolla.common.utils.opendaylight:Get:7 http://ports.ubuntu.com bionic-updates/main s390x libpng16-16 s390x 1.6.34-1ubuntu0.18.04.2 [171 kB]
+INFO:kolla.common.utils.opendaylight:Get:8 http://ports.ubuntu.com bionic/main s390x libxau6 s390x 1:1.0.8-1 [7,420 B]
+INFO:kolla.common.utils.opendaylight:Get:9 http://ports.ubuntu.com bionic/main s390x libxdmcp6 s390x 1:1.1.2-3 [10.7 kB]
+INFO:kolla.common.utils.opendaylight:Get:10 http://ports.ubuntu.com bionic-updates/main s390x libxcb1 s390x 1.13-2~ubuntu18.04 [43.5 kB]
+INFO:kolla.common.utils.opendaylight:Get:11 http://ports.ubuntu.com bionic-updates/main s390x libx11-data all 2:1.6.4-3ubuntu0.2 [113 kB]
+INFO:kolla.common.utils.opendaylight:Get:12 http://ports.ubuntu.com bionic-updates/main s390x libx11-6 s390x 2:1.6.4-3ubuntu0.2 [542 kB]
+INFO:kolla.common.utils.opendaylight:Get:13 http://ports.ubuntu.com bionic/main s390x libxext6 s390x 2:1.3.3-1 [27.8 kB]
+INFO:kolla.common.utils.opendaylight:Get:14 http://ports.ubuntu.com bionic-updates/main s390x java-common all 0.68ubuntu1~18.04.1 [14.5 kB]
+INFO:kolla.common.utils.opendaylight:Get:15 http://ports.ubuntu.com bionic-updates/main s390x libavahi-common-data s390x 0.7-3.1ubuntu1.2 [22.1 kB]
+INFO:kolla.common.utils.opendaylight:Get:16 http://ports.ubuntu.com bionic-updates/main s390x libavahi-common3 s390x 0.7-3.1ubuntu1.2 [20.0 kB]
+INFO:kolla.common.utils.opendaylight:Get:17 http://ports.ubuntu.com bionic-updates/main s390x libavahi-client3 s390x 0.7-3.1ubuntu1.2 [22.5 kB]
+INFO:kolla.common.utils.opendaylight:Get:18 http://ports.ubuntu.com bionic-updates/main s390x libcups2 s390x 2.2.7-1ubuntu2.7 [193 kB]
+INFO:kolla.common.utils.opendaylight:Get:19 http://ports.ubuntu.com bionic-updates/main s390x liblcms2-2 s390x 2.9-1ubuntu0.1 [127 kB]
+INFO:kolla.common.utils.opendaylight:Get:20 http://ports.ubuntu.com bionic/main s390x libjpeg8 s390x 8c-2ubuntu8 [2,142 B]
+INFO:kolla.common.utils.opendaylight:Get:21 http://ports.ubuntu.com bionic/main s390x libfreetype6 s390x 2.8.1-2ubuntu2 [314 kB]
+INFO:kolla.common.utils.opendaylight:Get:22 http://ports.ubuntu.com bionic/main s390x fonts-dejavu-core all 2.37-1 [1,041 kB]
+INFO:kolla.common.utils.opendaylight:Get:23 http://ports.ubuntu.com bionic/main s390x fontconfig-config all 2.12.6-0ubuntu2 [55.8 kB]
+INFO:kolla.common.utils.opendaylight:Get:24 http://ports.ubuntu.com bionic/main s390x libfontconfig1 s390x 2.12.6-0ubuntu2 [132 kB]
+INFO:kolla.common.utils.opendaylight:Get:25 http://ports.ubuntu.com bionic/main s390x libnspr4 s390x 2:4.18-1ubuntu1 [107 kB]
+INFO:kolla.common.utils.opendaylight:Get:26 http://ports.ubuntu.com bionic-updates/main s390x libnss3 s390x 2:3.35-2ubuntu2.7 [1,034 kB]
+INFO:kolla.common.utils.opendaylight:Get:27 http://ports.ubuntu.com bionic/main s390x libpcsclite1 s390x 1.8.23-1 [19.9 kB]
+INFO:kolla.common.utils.opendaylight:Get:28 http://ports.ubuntu.com bionic/main s390x libxi6 s390x 2:1.7.9-1 [27.5 kB]
+INFO:kolla.common.utils.opendaylight:Get:29 http://ports.ubuntu.com bionic/main s390x libxrender1 s390x 1:0.9.10-1 [17.8 kB]
+INFO:kolla.common.utils.opendaylight:Get:30 http://ports.ubuntu.com bionic-updates/main s390x x11-common all 1:7.7+19ubuntu7.1 [22.5 kB]
+INFO:kolla.common.utils.opendaylight:Get:31 http://ports.ubuntu.com bionic/main s390x libxtst6 s390x 2:1.2.3-1 [12.7 kB]
+INFO:kolla.common.utils.opendaylight:Get:32 http://ports.ubuntu.com bionic-updates/universe s390x openjdk-8-jre-headless s390x 8u242-b08-0ubuntu3~18.04 [25.7 MB]
+INFO:kolla.common.utils.opendaylight:Get:33 http://ports.ubuntu.com bionic-updates/main s390x ca-certificates-java all 20180516ubuntu1~18.04.1 [12.2 kB]
+INFO:kolla.common.utils.opendaylight:Preconfiguring packages ...
+INFO:kolla.common.utils.opendaylight:Fetched 415 MB in 7s (62.1 MB/s)
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package multiarch-support.
+INFO:kolla.common.utils.opendaylight:(Reading database ... 
+INFO:kolla.common.utils.opendaylight:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 75%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 80%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 85%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 90%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 95%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../multiarch-support_2.27-3ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking multiarch-support (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.opendaylight:Setting up multiarch-support (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libjpeg-turbo8:s390x.
+INFO:kolla.common.utils.opendaylight:(Reading database ... 
+INFO:kolla.common.utils.opendaylight:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 75%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 80%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 85%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 90%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 95%
+INFO:kolla.common.utils.opendaylight:(Reading database ... 100%(Reading database ... 9247 files and directories currently installed.)
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../00-libjpeg-turbo8_1.5.2-0ubuntu5.18.04.3_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libjpeg-turbo8:s390x (1.5.2-0ubuntu5.18.04.3) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libbsd0:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../01-libbsd0_0.8.7-1ubuntu0.1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libbsd0:s390x (0.8.7-1ubuntu0.1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libdbus-1-3:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../02-libdbus-1-3_1.12.2-1ubuntu1.1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libdbus-1-3:s390x (1.12.2-1ubuntu1.1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package ucf.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../03-ucf_3.0038_all.deb ...
+INFO:kolla.common.utils.opendaylight:Moving old data out of the way
+INFO:kolla.common.utils.opendaylight:Unpacking ucf (3.0038) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libpng16-16:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../04-libpng16-16_1.6.34-1ubuntu0.18.04.2_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libpng16-16:s390x (1.6.34-1ubuntu0.18.04.2) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libxau6:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../05-libxau6_1%3a1.0.8-1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libxau6:s390x (1:1.0.8-1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libxdmcp6:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../06-libxdmcp6_1%3a1.1.2-3_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libxdmcp6:s390x (1:1.1.2-3) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libxcb1:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../07-libxcb1_1.13-2~ubuntu18.04_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libxcb1:s390x (1.13-2~ubuntu18.04) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libx11-data.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../08-libx11-data_2%3a1.6.4-3ubuntu0.2_all.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libx11-data (2:1.6.4-3ubuntu0.2) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libx11-6:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../09-libx11-6_2%3a1.6.4-3ubuntu0.2_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libx11-6:s390x (2:1.6.4-3ubuntu0.2) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libxext6:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../10-libxext6_2%3a1.3.3-1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libxext6:s390x (2:1.3.3-1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package java-common.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../11-java-common_0.68ubuntu1~18.04.1_all.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking java-common (0.68ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libavahi-common-data:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../12-libavahi-common-data_0.7-3.1ubuntu1.2_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libavahi-common-data:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libavahi-common3:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../13-libavahi-common3_0.7-3.1ubuntu1.2_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libavahi-common3:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libavahi-client3:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../14-libavahi-client3_0.7-3.1ubuntu1.2_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libavahi-client3:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libcups2:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../15-libcups2_2.2.7-1ubuntu2.7_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libcups2:s390x (2.2.7-1ubuntu2.7) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package liblcms2-2:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../16-liblcms2-2_2.9-1ubuntu0.1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking liblcms2-2:s390x (2.9-1ubuntu0.1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libjpeg8:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../17-libjpeg8_8c-2ubuntu8_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libjpeg8:s390x (8c-2ubuntu8) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libfreetype6:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../18-libfreetype6_2.8.1-2ubuntu2_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libfreetype6:s390x (2.8.1-2ubuntu2) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package fonts-dejavu-core.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../19-fonts-dejavu-core_2.37-1_all.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking fonts-dejavu-core (2.37-1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package fontconfig-config.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../20-fontconfig-config_2.12.6-0ubuntu2_all.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking fontconfig-config (2.12.6-0ubuntu2) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libfontconfig1:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../21-libfontconfig1_2.12.6-0ubuntu2_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libfontconfig1:s390x (2.12.6-0ubuntu2) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libnspr4:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../22-libnspr4_2%3a4.18-1ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libnspr4:s390x (2:4.18-1ubuntu1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libnss3:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../23-libnss3_2%3a3.35-2ubuntu2.7_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libnss3:s390x (2:3.35-2ubuntu2.7) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libpcsclite1:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../24-libpcsclite1_1.8.23-1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libpcsclite1:s390x (1.8.23-1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libxi6:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../25-libxi6_2%3a1.7.9-1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libxi6:s390x (2:1.7.9-1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libxrender1:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../26-libxrender1_1%3a0.9.10-1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libxrender1:s390x (1:0.9.10-1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package x11-common.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../27-x11-common_1%3a7.7+19ubuntu7.1_all.deb ...
+INFO:kolla.common.utils.opendaylight:dpkg-query: no packages found matching nux-tools
+INFO:kolla.common.utils.opendaylight:Unpacking x11-common (1:7.7+19ubuntu7.1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package libxtst6:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../28-libxtst6_2%3a1.2.3-1_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking libxtst6:s390x (2:1.2.3-1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package openjdk-8-jre-headless:s390x.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../29-openjdk-8-jre-headless_8u242-b08-0ubuntu3~18.04_s390x.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking openjdk-8-jre-headless:s390x (8u242-b08-0ubuntu3~18.04) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package ca-certificates-java.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../30-ca-certificates-java_20180516ubuntu1~18.04.1_all.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking ca-certificates-java (20180516ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.opendaylight:Selecting previously unselected package opendaylight.
+INFO:kolla.common.utils.opendaylight:Preparing to unpack .../31-opendaylight_6.3.0-1ppa2_all.deb ...
+INFO:kolla.common.utils.opendaylight:Unpacking opendaylight (6.3.0-1ppa2) ...
+INFO:kolla.common.utils.opendaylight:Setting up libpng16-16:s390x (1.6.34-1ubuntu0.18.04.2) ...
+INFO:kolla.common.utils.opendaylight:Setting up liblcms2-2:s390x (2.9-1ubuntu0.1) ...
+INFO:kolla.common.utils.opendaylight:Setting up libpcsclite1:s390x (1.8.23-1) ...
+INFO:kolla.common.utils.opendaylight:Setting up fonts-dejavu-core (2.37-1) ...
+INFO:kolla.common.utils.opendaylight:Setting up java-common (0.68ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.opendaylight:Setting up libjpeg-turbo8:s390x (1.5.2-0ubuntu5.18.04.3) ...
+INFO:kolla.common.utils.opendaylight:Setting up libbsd0:s390x (0.8.7-1ubuntu0.1) ...
+INFO:kolla.common.utils.opendaylight:Setting up libnspr4:s390x (2:4.18-1ubuntu1) ...
+INFO:kolla.common.utils.opendaylight:Setting up ucf (3.0038) ...
+INFO:kolla.common.utils.opendaylight:Setting up libfreetype6:s390x (2.8.1-2ubuntu2) ...
+INFO:kolla.common.utils.opendaylight:Setting up libxdmcp6:s390x (1:1.1.2-3) ...
+INFO:kolla.common.utils.opendaylight:Setting up x11-common (1:7.7+19ubuntu7.1) ...
+INFO:kolla.common.utils.opendaylight:update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+INFO:kolla.common.utils.opendaylight:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.opendaylight:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.opendaylight:Setting up libx11-data (2:1.6.4-3ubuntu0.2) ...
+INFO:kolla.common.utils.opendaylight:Setting up libxau6:s390x (1:1.0.8-1) ...
+INFO:kolla.common.utils.opendaylight:Setting up libdbus-1-3:s390x (1.12.2-1ubuntu1.1) ...
+INFO:kolla.common.utils.opendaylight:Setting up libavahi-common-data:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.opendaylight:Setting up libjpeg8:s390x (8c-2ubuntu8) ...
+INFO:kolla.common.utils.opendaylight:Setting up fontconfig-config (2.12.6-0ubuntu2) ...
+INFO:kolla.common.utils.opendaylight:Setting up libnss3:s390x (2:3.35-2ubuntu2.7) ...
+INFO:kolla.common.utils.opendaylight:Setting up libavahi-common3:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.opendaylight:Setting up libxcb1:s390x (1.13-2~ubuntu18.04) ...
+INFO:kolla.common.utils.opendaylight:Setting up libfontconfig1:s390x (2.12.6-0ubuntu2) ...
+INFO:kolla.common.utils.opendaylight:Setting up libx11-6:s390x (2:1.6.4-3ubuntu0.2) ...
+INFO:kolla.common.utils.opendaylight:Setting up libxrender1:s390x (1:0.9.10-1) ...
+INFO:kolla.common.utils.opendaylight:Setting up libavahi-client3:s390x (0.7-3.1ubuntu1.2) ...
+INFO:kolla.common.utils.opendaylight:Setting up libcups2:s390x (2.2.7-1ubuntu2.7) ...
+INFO:kolla.common.utils.opendaylight:Setting up libxext6:s390x (2:1.3.3-1) ...
+INFO:kolla.common.utils.opendaylight:Setting up libxtst6:s390x (2:1.2.3-1) ...
+INFO:kolla.common.utils.opendaylight:Setting up libxi6:s390x (2:1.7.9-1) ...
+INFO:kolla.common.utils.opendaylight:Setting up openjdk-8-jre-headless:s390x (8u242-b08-0ubuntu3~18.04) ...
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/java to provide /usr/bin/java (java) in auto mode
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/jjs to provide /usr/bin/jjs (jjs) in auto mode
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/pack200 to provide /usr/bin/pack200 (pack200) in auto mode
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/unpack200 to provide /usr/bin/unpack200 (unpack200) in auto mode
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/orbd to provide /usr/bin/orbd (orbd) in auto mode
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/servertool to provide /usr/bin/servertool (servertool) in auto mode
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/bin/tnameserv to provide /usr/bin/tnameserv (tnameserv) in auto mode
+INFO:kolla.common.utils.opendaylight:update-alternatives: using /usr/lib/jvm/java-8-openjdk-s390x/jre/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+INFO:kolla.common.utils.opendaylight:Setting up ca-certificates-java (20180516ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.opendaylight:head: cannot open '/etc/ssl/certs/java/cacerts' for reading
+INFO:kolla.common.utils.opendaylight:: No such file or directory
+INFO:kolla.common.utils.opendaylight:Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:TeliaSonera_Root_CA_v1.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:ISRG_Root_X1.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:EE_Certification_Centre_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:TrustCor_RootCert_CA-1.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Security_Communication_RootCA2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:SZAFIR_ROOT_CA2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Certum_Trusted_Network_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:OpenTrust_Root_CA_G1.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Certplus_Root_CA_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:XRamp_Global_CA_Root.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Certigna.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Amazon_Root_CA_2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:LuxTrust_Global_Root_2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Go_Daddy_Class_2_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Deutsche_Telekom_Root_CA_2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:TrustCor_ECA-1.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:GeoTrust_Universal_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Visa_eCommerce_Root.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:COMODO_ECC_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Certplus_Class_2_Primary_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:SwissSign_Silver_CA_-_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:OISTE_WISeKey_Global_Root_GA_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Hongkong_Post_Root_CA_1.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:DigiCert_Global_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Staat_der_Nederlanden_EV_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:CA_Disig_Root_R2.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:DigiCert_Global_Root_G3.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Amazon_Root_CA_3.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:GlobalSign_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:OpenTrust_Root_CA_G3.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Sonera_Class_2_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:QuoVadis_Root_CA_3_G3.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:SecureTrust_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Cybertrust_Global_Root.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:GeoTrust_Global_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Trustis_FPS_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:OpenTrust_Root_CA_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:ePKI_Root_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:thawte_Primary_Root_CA_-_G3.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:QuoVadis_Root_CA_3.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:AffirmTrust_Commercial.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:DigiCert_Assured_ID_Root_G3.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Actalis_Authentication_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:GlobalSign_Root_CA_-_R2.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:ACCVRAIZ1.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:E-Tugra_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Certplus_Root_CA_G1.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Comodo_AAA_Services_root.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Staat_der_Nederlanden_Root_CA_-_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Staat_der_Nederlanden_Root_CA_-_G3.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Certinomis_-_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:TrustCor_RootCert_CA-2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Amazon_Root_CA_1.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:DigiCert_Trusted_Root_G4.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Baltimore_CyberTrust_Root.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:AddTrust_External_Root.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:TWCA_Global_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:thawte_Primary_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:TÜRKTRUST_Elektronik_Sertifika_Hizmet_Sağlayıcısı_H5.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:COMODO_RSA_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+INFO:kolla.common.utils.opendaylight:Ad
+INFO:kolla.common.utils.opendaylight:ding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Izenpe.com.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:DigiCert_Global_Root_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:USERTrust_RSA_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:SecureSign_RootCA11.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:CFCA_EV_ROOT.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Buypass_Class_2_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:GeoTrust_Primary_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:SwissSign_Gold_CA_-_G2.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Global_Chambersign_Root_-_2008.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Amazon_Root_CA_4.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Taiwan_GRCA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:USERTrust_ECC_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:QuoVadis_Root_CA_2_G3.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:TWCA_Root_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:DigiCert_Assured_ID_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:GeoTrust_Primary_Certification_Authority_-_G3.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Entrust_Root_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:GlobalSign_Root_CA_-_R3.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:GeoTrust_Universal_CA_2.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Starfield_Class_2_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:AffirmTrust_Premium.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:thawte_Primary_Root_CA_-_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:DST_Root_CA_X3.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Secure_Global_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Network_Solutions_Certificate_Authority.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:QuoVadis_Root_CA_1_G3.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:DigiCert_Assured_ID_Root_G2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:certSIGN_ROOT_CA.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:COMODO_Certification_Authority.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Security_Communication_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:QuoVadis_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:QuoVadis_Root_CA_2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:Certum_Trusted_Network_CA_2.pem
+INFO:kolla.common.utils.opendaylight:Adding debian:EC-ACC.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Buypass_Class_3_Root_CA.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:AffirmTrust_Premium_ECC.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:Atos_TrustedRoot_2011.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:AC_RAIZ_FNMT-RCM.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:Adding debian:AffirmTrust_Networking.pem
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:done.
+INFO:kolla.common.utils.opendaylight:Setting up opendaylight (6.3.0-1ppa2) ...
+INFO:kolla.common.utils.opendaylight:invoke-rc.d: unknown initscript, /etc/init.d/opendaylight not found.
+INFO:kolla.common.utils.opendaylight:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.opendaylight:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.opendaylight:Processing triggers for ca-certificates (20180409) ...
+INFO:kolla.common.utils.opendaylight:Updating certificates in /etc/ssl/certs...
+INFO:kolla.common.utils.opendaylight:0 added, 0 removed; done.
+INFO:kolla.common.utils.opendaylight:Running hooks in /etc/ca-certificates/update.d...
+INFO:kolla.common.utils.opendaylight:
+INFO:kolla.common.utils.opendaylight:done.
+INFO:kolla.common.utils.opendaylight:done.
+INFO:kolla.common.utils.opendaylight:Removing intermediate container 8b0b66d607e7
+INFO:kolla.common.utils.opendaylight: ---> f67769483399
+INFO:kolla.common.utils.opendaylight:Step 6/7 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.opendaylight: ---> 7b4969ecc848
+INFO:kolla.common.utils.opendaylight:Step 7/7 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.opendaylight: ---> Running in d52ad110996c
+INFO:kolla.common.utils.opendaylight:Removing intermediate container d52ad110996c
+INFO:kolla.common.utils.opendaylight: ---> 0f119f402dd0
+INFO:kolla.common.utils.opendaylight:Successfully built 0f119f402dd0
+INFO:kolla.common.utils.opendaylight:Successfully tagged s390x/ubuntu-source-opendaylight:9.1.0
+INFO:kolla.common.utils.opendaylight:Built at 2020-03-02 21:50:55.917584 (took 0:01:12.914195)

@@ -1,0 +1,60 @@
+INFO:kolla.common.utils.watcher-engine:Building started at 2020-03-02 21:44:16.179580
+INFO:kolla.common.utils.watcher-engine:Step 1/4 : FROM s390x/ubuntu-binary-watcher-base:9.1.0
+INFO:kolla.common.utils.watcher-engine: ---> 9dc0b818189e
+INFO:kolla.common.utils.watcher-engine:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="watcher-engine" build-date="20200302"
+INFO:kolla.common.utils.watcher-engine: ---> Running in 5bf9b1f78409
+INFO:kolla.common.utils.watcher-engine:Removing intermediate container 5bf9b1f78409
+INFO:kolla.common.utils.watcher-engine: ---> e5fbc2e60729
+INFO:kolla.common.utils.watcher-engine:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends watcher-decision-engine && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.watcher-engine: ---> Running in fc3ccb8aa2a3
+INFO:kolla.common.utils.watcher-engine:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.watcher-engine:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.watcher-engine:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.watcher-engine:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.watcher-engine:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.watcher-engine:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.watcher-engine:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.watcher-engine:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.watcher-engine:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.watcher-engine:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.watcher-engine:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.watcher-engine:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.watcher-engine:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.watcher-engine:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.watcher-engine:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.watcher-engine:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.watcher-engine:Fetched 15.6 MB in 2s (6,403 kB/s)
+INFO:kolla.common.utils.watcher-engine:Reading package lists...
+INFO:kolla.common.utils.watcher-engine:Reading package lists...
+INFO:kolla.common.utils.watcher-engine:Building dependency tree...
+INFO:kolla.common.utils.watcher-engine:Reading state information...
+INFO:kolla.common.utils.watcher-engine:The following NEW packages will be installed:
+INFO:kolla.common.utils.watcher-engine:  watcher-decision-engine
+INFO:kolla.common.utils.watcher-engine:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.watcher-engine:Need to get 8,968 B of archives.
+INFO:kolla.common.utils.watcher-engine:After this operation, 29.7 kB of additional disk space will be used.
+INFO:kolla.common.utils.watcher-engine:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x watcher-decision-engine all 1:3.0.0-0ubuntu1~cloud0 [8,968 B]
+INFO:kolla.common.utils.watcher-engine:Fetched 8,968 B in 0s (129 kB/s)
+INFO:kolla.common.utils.watcher-engine:Selecting previously unselected package watcher-decision-engine.
+INFO:kolla.common.utils.watcher-engine:(Reading database ... 
+INFO:kolla.common.utils.watcher-engine:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.watcher-engine:(Reading database ... 75%
+INFO:kolla.common.utils.watcher-engine:(Reading database ... 80%
+INFO:kolla.common.utils.watcher-engine:(Reading database ... 85%
+INFO:kolla.common.utils.watcher-engine:(Reading database ... 90%
+INFO:kolla.common.utils.watcher-engine:(Reading database ... 95%
+INFO:kolla.common.utils.watcher-engine:(Reading database ... 100%(Reading database ... 26251 files and directories currently installed.)
+INFO:kolla.common.utils.watcher-engine:Preparing to unpack .../watcher-decision-engine_1%3a3.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.watcher-engine:Unpacking watcher-decision-engine (1:3.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.watcher-engine:Setting up watcher-decision-engine (1:3.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.watcher-engine:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.watcher-engine:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.watcher-engine:Removing intermediate container fc3ccb8aa2a3
+INFO:kolla.common.utils.watcher-engine: ---> 9a4b9e727757
+INFO:kolla.common.utils.watcher-engine:Step 4/4 : USER watcher
+INFO:kolla.common.utils.watcher-engine: ---> Running in 1afa2f702cf9
+INFO:kolla.common.utils.watcher-engine:Removing intermediate container 1afa2f702cf9
+INFO:kolla.common.utils.watcher-engine: ---> 52ee2bde8a04
+INFO:kolla.common.utils.watcher-engine:Successfully built 52ee2bde8a04
+INFO:kolla.common.utils.watcher-engine:Successfully tagged s390x/ubuntu-binary-watcher-engine:9.1.0
+INFO:kolla.common.utils.watcher-engine:Built at 2020-03-02 21:44:25.656837 (took 0:00:09.477257)

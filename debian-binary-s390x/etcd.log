@@ -1,0 +1,83 @@
+INFO:kolla.common.utils.etcd:Building started at 2020-03-02 21:21:30.413075
+INFO:kolla.common.utils.etcd:Step 1/8 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.etcd: ---> 4244142526cc
+INFO:kolla.common.utils.etcd:Step 2/8 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="etcd" build-date="20200302"
+INFO:kolla.common.utils.etcd: ---> Running in c313fe7e7ca2
+INFO:kolla.common.utils.etcd:Removing intermediate container c313fe7e7ca2
+INFO:kolla.common.utils.etcd: ---> e8b0f686d4e8
+INFO:kolla.common.utils.etcd:Step 3/8 : RUN usermod --append --home /var/lib/etcd --groups kolla etcd     && mkdir -p /var/lib/etcd     && chown -R 42413:42413 /var/lib/etcd
+INFO:kolla.common.utils.etcd: ---> Running in 7491ab965263
+INFO:kolla.common.utils.etcd:Removing intermediate container 7491ab965263
+INFO:kolla.common.utils.etcd: ---> 31c98df8b3fe
+INFO:kolla.common.utils.etcd:Step 4/8 : RUN apt-get update && apt-get -y install --no-install-recommends etcd && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.etcd: ---> Running in eb6cfdcc2537
+INFO:kolla.common.utils.etcd:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.etcd:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.etcd:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.etcd:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.etcd:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.etcd:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.etcd:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.etcd:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.etcd:Fetched 8,235 kB in 2s (4,858 kB/s)
+INFO:kolla.common.utils.etcd:Reading package lists...
+INFO:kolla.common.utils.etcd:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.etcd:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.etcd:[0m
+INFO:kolla.common.utils.etcd:Reading package lists...
+INFO:kolla.common.utils.etcd:Building dependency tree...
+INFO:kolla.common.utils.etcd:Reading state information...
+INFO:kolla.common.utils.etcd:The following additional packages will be installed:
+INFO:kolla.common.utils.etcd:  etcd-client etcd-server pipexec
+INFO:kolla.common.utils.etcd:The following NEW packages will be installed:
+INFO:kolla.common.utils.etcd:  etcd etcd-client etcd-server pipexec
+INFO:kolla.common.utils.etcd:0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.etcd:Need to get 9,136 kB of archives.
+INFO:kolla.common.utils.etcd:After this operation, 40.6 MB of additional disk space will be used.
+INFO:kolla.common.utils.etcd:Get:1 http://deb.debian.org/debian buster/main s390x etcd-client s390x 3.2.26+dfsg-3+b1 [4,019 kB]
+INFO:kolla.common.utils.etcd:Get:2 http://deb.debian.org/debian buster/main s390x pipexec s390x 2.5.5-2 [16.2 kB]
+INFO:kolla.common.utils.etcd:Get:3 http://deb.debian.org/debian buster/main s390x etcd-server s390x 3.2.26+dfsg-3+b1 [5,093 kB]
+INFO:kolla.common.utils.etcd:Get:4 http://deb.debian.org/debian buster/main s390x etcd all 3.2.26+dfsg-3 [7,916 B]
+INFO:kolla.common.utils.etcd:Fetched 9,136 kB in 0s (42.3 MB/s)
+INFO:kolla.common.utils.etcd:Selecting previously unselected package etcd-client.
+INFO:kolla.common.utils.etcd:(Reading database ... 
+INFO:kolla.common.utils.etcd:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.etcd:(Reading database ... 80%
+INFO:kolla.common.utils.etcd:(Reading database ... 85%
+INFO:kolla.common.utils.etcd:(Reading database ... 90%
+INFO:kolla.common.utils.etcd:(Reading database ... 95%
+INFO:kolla.common.utils.etcd:(Reading database ... 100%(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.etcd:Preparing to unpack .../etcd-client_3.2.26+dfsg-3+b1_s390x.deb ...
+INFO:kolla.common.utils.etcd:Unpacking etcd-client (3.2.26+dfsg-3+b1) ...
+INFO:kolla.common.utils.etcd:Selecting previously unselected package pipexec.
+INFO:kolla.common.utils.etcd:Preparing to unpack .../pipexec_2.5.5-2_s390x.deb ...
+INFO:kolla.common.utils.etcd:Unpacking pipexec (2.5.5-2) ...
+INFO:kolla.common.utils.etcd:Selecting previously unselected package etcd-server.
+INFO:kolla.common.utils.etcd:Preparing to unpack .../etcd-server_3.2.26+dfsg-3+b1_s390x.deb ...
+INFO:kolla.common.utils.etcd:Unpacking etcd-server (3.2.26+dfsg-3+b1) ...
+INFO:kolla.common.utils.etcd:Selecting previously unselected package etcd.
+INFO:kolla.common.utils.etcd:Preparing to unpack .../etcd_3.2.26+dfsg-3_all.deb ...
+INFO:kolla.common.utils.etcd:Unpacking etcd (3.2.26+dfsg-3) ...
+INFO:kolla.common.utils.etcd:Setting up pipexec (2.5.5-2) ...
+INFO:kolla.common.utils.etcd:Setting up etcd-client (3.2.26+dfsg-3+b1) ...
+INFO:kolla.common.utils.etcd:Setting up etcd-server (3.2.26+dfsg-3+b1) ...
+INFO:kolla.common.utils.etcd:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.etcd:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.etcd:Setting up etcd (3.2.26+dfsg-3) ...
+INFO:kolla.common.utils.etcd:Removing intermediate container eb6cfdcc2537
+INFO:kolla.common.utils.etcd: ---> 201ba072566f
+INFO:kolla.common.utils.etcd:Step 5/8 : COPY etcd_sudoers /etc/sudoers.d/kolla_etcd_sudoers
+INFO:kolla.common.utils.etcd: ---> 58d474b78918
+INFO:kolla.common.utils.etcd:Step 6/8 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.etcd: ---> 7479b5bada7d
+INFO:kolla.common.utils.etcd:Step 7/8 : RUN chmod 755 /usr/local/bin/kolla_extend_start     && chmod 750 /etc/sudoers.d     && chmod 440 /etc/sudoers.d/kolla_etcd_sudoers
+INFO:kolla.common.utils.etcd: ---> Running in 23a34a625f8c
+INFO:kolla.common.utils.etcd:Removing intermediate container 23a34a625f8c
+INFO:kolla.common.utils.etcd: ---> a4b1796cc55e
+INFO:kolla.common.utils.etcd:Step 8/8 : USER etcd
+INFO:kolla.common.utils.etcd: ---> Running in a170c2def5f2
+INFO:kolla.common.utils.etcd:Removing intermediate container a170c2def5f2
+INFO:kolla.common.utils.etcd: ---> 4e9f5780fccd
+INFO:kolla.common.utils.etcd:Successfully built 4e9f5780fccd
+INFO:kolla.common.utils.etcd:Successfully tagged s390x/debian-binary-etcd:9.1.0
+INFO:kolla.common.utils.etcd:Built at 2020-03-02 21:21:44.204873 (took 0:00:13.791798)

@@ -1,0 +1,13 @@
+INFO:kolla.common.utils.openvswitch-netcontrold:Building started at 2020-03-02 21:23:12.627702
+INFO:kolla.common.utils.openvswitch-netcontrold:Step 1/5 : FROM s390x/debian-binary-openvswitch-base:9.1.0
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> 61ae59c0c5e2
+INFO:kolla.common.utils.openvswitch-netcontrold:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="openvswitch-netcontrold" build-date="20200302"
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> Running in 59e998d5eb9b
+INFO:kolla.common.utils.openvswitch-netcontrold:Removing intermediate container 59e998d5eb9b
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> c70fb0a05923
+INFO:kolla.common.utils.openvswitch-netcontrold:Step 3/5 : RUN echo 'binary not yet available for debian'     && /bin/false
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> Running in 9d66b0db04b2
+INFO:kolla.common.utils.openvswitch-netcontrold:binary not yet available for debian
+INFO:kolla.common.utils.openvswitch-netcontrold:Removing intermediate container 9d66b0db04b2
+ERROR:kolla.common.utils.openvswitch-netcontrold:Error'd with the following message
+ERROR:kolla.common.utils.openvswitch-netcontrold:The command '/bin/sh -c echo 'binary not yet available for debian'     && /bin/false' returned a non-zero code: 1

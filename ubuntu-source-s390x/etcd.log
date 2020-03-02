@@ -1,0 +1,88 @@
+INFO:kolla.common.utils.etcd:Building started at 2020-03-02 21:48:05.180192
+INFO:kolla.common.utils.etcd:Step 1/8 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.etcd: ---> 96ede3560f2f
+INFO:kolla.common.utils.etcd:Step 2/8 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="etcd" build-date="20200302"
+INFO:kolla.common.utils.etcd: ---> Running in 976cae01293d
+INFO:kolla.common.utils.etcd:Removing intermediate container 976cae01293d
+INFO:kolla.common.utils.etcd: ---> ab7f2c6a5bdb
+INFO:kolla.common.utils.etcd:Step 3/8 : RUN usermod --append --home /var/lib/etcd --groups kolla etcd     && mkdir -p /var/lib/etcd     && chown -R 42413:42413 /var/lib/etcd
+INFO:kolla.common.utils.etcd: ---> Running in 53dbb274eb2b
+INFO:kolla.common.utils.etcd:Removing intermediate container 53dbb274eb2b
+INFO:kolla.common.utils.etcd: ---> 6c3ecc8fc672
+INFO:kolla.common.utils.etcd:Step 4/8 : RUN apt-get update && apt-get -y install --no-install-recommends etcd && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.etcd: ---> Running in 85bf6f785896
+INFO:kolla.common.utils.etcd:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.etcd:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.etcd:Get:3 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.etcd:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.etcd:Get:5 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.etcd:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.etcd:Get:7 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.etcd:Get:8 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.etcd:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.etcd:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.etcd:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.etcd:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.etcd:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.etcd:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.etcd:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.etcd:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.etcd:Fetched 15.6 MB in 6s (2,752 kB/s)
+INFO:kolla.common.utils.etcd:Reading package lists...
+INFO:kolla.common.utils.etcd:Reading package lists...
+INFO:kolla.common.utils.etcd:Building dependency tree...
+INFO:kolla.common.utils.etcd:Reading state information...
+INFO:kolla.common.utils.etcd:The following additional packages will be installed:
+INFO:kolla.common.utils.etcd:  etcd-client etcd-server pipexec
+INFO:kolla.common.utils.etcd:The following NEW packages will be installed:
+INFO:kolla.common.utils.etcd:  etcd etcd-client etcd-server pipexec
+INFO:kolla.common.utils.etcd:0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.etcd:Need to get 11.7 MB of archives.
+INFO:kolla.common.utils.etcd:After this operation, 53.9 MB of additional disk space will be used.
+INFO:kolla.common.utils.etcd:Get:1 http://ports.ubuntu.com bionic/universe s390x pipexec s390x 2.5.5-1 [16.8 kB]
+INFO:kolla.common.utils.etcd:Get:2 http://ports.ubuntu.com bionic/universe s390x etcd-client s390x 3.2.17+dfsg-1 [7,670 kB]
+INFO:kolla.common.utils.etcd:Get:3 http://ports.ubuntu.com bionic/universe s390x etcd-server s390x 3.2.17+dfsg-1 [4,004 kB]
+INFO:kolla.common.utils.etcd:Get:4 http://ports.ubuntu.com bionic/universe s390x etcd all 3.2.17+dfsg-1 [2,516 B]
+INFO:kolla.common.utils.etcd:Fetched 11.7 MB in 0s (38.7 MB/s)
+INFO:kolla.common.utils.etcd:Selecting previously unselected package pipexec.
+INFO:kolla.common.utils.etcd:(Reading database ... 
+INFO:kolla.common.utils.etcd:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.etcd:(Reading database ... 75%(Reading database ... 80%
+INFO:kolla.common.utils.etcd:(Reading database ... 85%
+INFO:kolla.common.utils.etcd:(Reading database ... 90%
+INFO:kolla.common.utils.etcd:(Reading database ... 95%
+INFO:kolla.common.utils.etcd:(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.etcd:Preparing to unpack .../pipexec_2.5.5-1_s390x.deb ...
+INFO:kolla.common.utils.etcd:Unpacking pipexec (2.5.5-1) ...
+INFO:kolla.common.utils.etcd:Selecting previously unselected package etcd-client.
+INFO:kolla.common.utils.etcd:Preparing to unpack .../etcd-client_3.2.17+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.etcd:Unpacking etcd-client (3.2.17+dfsg-1) ...
+INFO:kolla.common.utils.etcd:Selecting previously unselected package etcd-server.
+INFO:kolla.common.utils.etcd:Preparing to unpack .../etcd-server_3.2.17+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.etcd:Unpacking etcd-server (3.2.17+dfsg-1) ...
+INFO:kolla.common.utils.etcd:Selecting previously unselected package etcd.
+INFO:kolla.common.utils.etcd:Preparing to unpack .../etcd_3.2.17+dfsg-1_all.deb ...
+INFO:kolla.common.utils.etcd:Unpacking etcd (3.2.17+dfsg-1) ...
+INFO:kolla.common.utils.etcd:Setting up pipexec (2.5.5-1) ...
+INFO:kolla.common.utils.etcd:Setting up etcd-client (3.2.17+dfsg-1) ...
+INFO:kolla.common.utils.etcd:Setting up etcd-server (3.2.17+dfsg-1) ...
+INFO:kolla.common.utils.etcd:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.etcd:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.etcd:Setting up etcd (3.2.17+dfsg-1) ...
+INFO:kolla.common.utils.etcd:Removing intermediate container 85bf6f785896
+INFO:kolla.common.utils.etcd: ---> e444e5552644
+INFO:kolla.common.utils.etcd:Step 5/8 : COPY etcd_sudoers /etc/sudoers.d/kolla_etcd_sudoers
+INFO:kolla.common.utils.etcd: ---> 6f173c2bc914
+INFO:kolla.common.utils.etcd:Step 6/8 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.etcd: ---> 400a27ded3ac
+INFO:kolla.common.utils.etcd:Step 7/8 : RUN chmod 755 /usr/local/bin/kolla_extend_start     && chmod 750 /etc/sudoers.d     && chmod 440 /etc/sudoers.d/kolla_etcd_sudoers
+INFO:kolla.common.utils.etcd: ---> Running in 1168ad05c8d0
+INFO:kolla.common.utils.etcd:Removing intermediate container 1168ad05c8d0
+INFO:kolla.common.utils.etcd: ---> 61d5aadba5eb
+INFO:kolla.common.utils.etcd:Step 8/8 : USER etcd
+INFO:kolla.common.utils.etcd: ---> Running in 3610e41eac85
+INFO:kolla.common.utils.etcd:Removing intermediate container 3610e41eac85
+INFO:kolla.common.utils.etcd: ---> 37d708ceb305
+INFO:kolla.common.utils.etcd:Successfully built 37d708ceb305
+INFO:kolla.common.utils.etcd:Successfully tagged s390x/ubuntu-source-etcd:9.1.0
+INFO:kolla.common.utils.etcd:Built at 2020-03-02 21:48:23.464888 (took 0:00:18.284696)

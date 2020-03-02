@@ -1,0 +1,34 @@
+INFO:kolla.common.utils.neutron-server-opendaylight:Building started at 2020-03-02 21:29:17.464081
+INFO:kolla.common.utils.neutron-server-opendaylight:Step 1/5 : FROM s390x/debian-binary-neutron-server:9.1.0
+INFO:kolla.common.utils.neutron-server-opendaylight: ---> 494ab0daffd7
+INFO:kolla.common.utils.neutron-server-opendaylight:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="neutron-server-opendaylight" build-date="20200302"
+INFO:kolla.common.utils.neutron-server-opendaylight: ---> Running in 04f4c5e8dc5f
+INFO:kolla.common.utils.neutron-server-opendaylight:Removing intermediate container 04f4c5e8dc5f
+INFO:kolla.common.utils.neutron-server-opendaylight: ---> cd081561c4de
+INFO:kolla.common.utils.neutron-server-opendaylight:Step 3/5 : USER root
+INFO:kolla.common.utils.neutron-server-opendaylight: ---> Running in c44657450208
+INFO:kolla.common.utils.neutron-server-opendaylight:Removing intermediate container c44657450208
+INFO:kolla.common.utils.neutron-server-opendaylight: ---> 5637a450427f
+INFO:kolla.common.utils.neutron-server-opendaylight:Step 4/5 : RUN apt-get update && apt-get -y install --no-install-recommends python3-networking-bgpvpn python3-networking-l2gw python3-networking-odl && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.neutron-server-opendaylight: ---> Running in e8cb6819c543
+INFO:kolla.common.utils.neutron-server-opendaylight:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.neutron-server-opendaylight:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.neutron-server-opendaylight:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.neutron-server-opendaylight:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.neutron-server-opendaylight:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.neutron-server-opendaylight:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.neutron-server-opendaylight:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.neutron-server-opendaylight:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.neutron-server-opendaylight:Fetched 8,235 kB in 1s (5,620 kB/s)
+INFO:kolla.common.utils.neutron-server-opendaylight:Reading package lists...
+INFO:kolla.common.utils.neutron-server-opendaylight:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.neutron-server-opendaylight:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.neutron-server-opendaylight:[0m
+INFO:kolla.common.utils.neutron-server-opendaylight:Reading package lists...
+INFO:kolla.common.utils.neutron-server-opendaylight:Building dependency tree...
+INFO:kolla.common.utils.neutron-server-opendaylight:Reading state information...
+INFO:kolla.common.utils.neutron-server-opendaylight:[91mE: Unable to locate package python3-networking-odl
+INFO:kolla.common.utils.neutron-server-opendaylight:[0m
+INFO:kolla.common.utils.neutron-server-opendaylight:Removing intermediate container e8cb6819c543
+ERROR:kolla.common.utils.neutron-server-opendaylight:Error'd with the following message
+ERROR:kolla.common.utils.neutron-server-opendaylight:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends python3-networking-bgpvpn python3-networking-l2gw python3-networking-odl && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

@@ -1,0 +1,18 @@
+INFO:kolla.common.utils.openvswitch-db-server:Building started at 2020-03-02 21:39:40.208663
+INFO:kolla.common.utils.openvswitch-db-server:Step 1/5 : FROM s390x/ubuntu-binary-openvswitch-base:9.1.0
+INFO:kolla.common.utils.openvswitch-db-server: ---> aa51c9e8210f
+INFO:kolla.common.utils.openvswitch-db-server:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="openvswitch-db-server" build-date="20200302"
+INFO:kolla.common.utils.openvswitch-db-server: ---> Running in 030887c6f388
+INFO:kolla.common.utils.openvswitch-db-server:Removing intermediate container 030887c6f388
+INFO:kolla.common.utils.openvswitch-db-server: ---> 75017c9b75e0
+INFO:kolla.common.utils.openvswitch-db-server:Step 3/5 : COPY ovs_ensure_configured.sh /usr/local/bin/kolla_ensure_openvswitch_configured
+INFO:kolla.common.utils.openvswitch-db-server: ---> 3a9ed5af048f
+INFO:kolla.common.utils.openvswitch-db-server:Step 4/5 : COPY extend_start.sh /usr/local/bin/kolla_openvswitch_extend_start
+INFO:kolla.common.utils.openvswitch-db-server: ---> dcdb4105d6ef
+INFO:kolla.common.utils.openvswitch-db-server:Step 5/5 : RUN chmod 755 /usr/local/bin/kolla_ensure_openvswitch_configured               /usr/local/bin/kolla_openvswitch_extend_start
+INFO:kolla.common.utils.openvswitch-db-server: ---> Running in 32b29d3d56b3
+INFO:kolla.common.utils.openvswitch-db-server:Removing intermediate container 32b29d3d56b3
+INFO:kolla.common.utils.openvswitch-db-server: ---> e90a43b4dfcd
+INFO:kolla.common.utils.openvswitch-db-server:Successfully built e90a43b4dfcd
+INFO:kolla.common.utils.openvswitch-db-server:Successfully tagged s390x/ubuntu-binary-openvswitch-db-server:9.1.0
+INFO:kolla.common.utils.openvswitch-db-server:Built at 2020-03-02 21:39:43.758575 (took 0:00:03.549912)

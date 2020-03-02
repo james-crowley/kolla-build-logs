@@ -1,0 +1,41 @@
+INFO:kolla.common.utils.tgtd:Building started at 2020-03-02 21:38:35.393890
+INFO:kolla.common.utils.tgtd:Step 1/4 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.tgtd: ---> 682558ff6b31
+INFO:kolla.common.utils.tgtd:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="tgtd" build-date="20200302"
+INFO:kolla.common.utils.tgtd: ---> Running in 14d1266a142d
+INFO:kolla.common.utils.tgtd:Removing intermediate container 14d1266a142d
+INFO:kolla.common.utils.tgtd: ---> 959b2f2ab58e
+INFO:kolla.common.utils.tgtd:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends tgt && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.tgtd: ---> Running in 9e862dbd2b63
+INFO:kolla.common.utils.tgtd:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.tgtd:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.tgtd:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.tgtd:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.tgtd:Get:5 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.tgtd:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.tgtd:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.tgtd:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.tgtd:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.tgtd:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.tgtd:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.tgtd:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.tgtd:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.tgtd:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.tgtd:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.tgtd:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.tgtd:Fetched 15.6 MB in 3s (4,946 kB/s)
+INFO:kolla.common.utils.tgtd:Reading package lists...
+INFO:kolla.common.utils.tgtd:Reading package lists...
+INFO:kolla.common.utils.tgtd:Building dependency tree...
+INFO:kolla.common.utils.tgtd:Reading state information...
+INFO:kolla.common.utils.tgtd:tgt is already the newest version (1:1.0.72-1ubuntu1).
+INFO:kolla.common.utils.tgtd:0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.tgtd:Removing intermediate container 9e862dbd2b63
+INFO:kolla.common.utils.tgtd: ---> 6a91914a534f
+INFO:kolla.common.utils.tgtd:Step 4/4 : RUN sed -i '1 i include /var/lib/cinder/volumes/*' /etc/tgt/targets.conf
+INFO:kolla.common.utils.tgtd: ---> Running in 95d2b6bd8e56
+INFO:kolla.common.utils.tgtd:Removing intermediate container 95d2b6bd8e56
+INFO:kolla.common.utils.tgtd: ---> 60c6e4a79404
+INFO:kolla.common.utils.tgtd:Successfully built 60c6e4a79404
+INFO:kolla.common.utils.tgtd:Successfully tagged s390x/ubuntu-binary-tgtd:9.1.0
+INFO:kolla.common.utils.tgtd:Built at 2020-03-02 21:38:49.492100 (took 0:00:14.098210)

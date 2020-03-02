@@ -1,0 +1,99 @@
+INFO:kolla.common.utils.glance-api:Building started at 2020-03-02 21:44:42.108385
+INFO:kolla.common.utils.glance-api:Step 1/6 : FROM s390x/ubuntu-binary-glance-base:9.1.0
+INFO:kolla.common.utils.glance-api: ---> 34ab8c440a47
+INFO:kolla.common.utils.glance-api:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="glance-api" build-date="20200302"
+INFO:kolla.common.utils.glance-api: ---> Running in 98d6dff38c36
+INFO:kolla.common.utils.glance-api:Removing intermediate container 98d6dff38c36
+INFO:kolla.common.utils.glance-api: ---> b0953a5d49c3
+INFO:kolla.common.utils.glance-api:Step 3/6 : RUN apt-get update && apt-get -y install --no-install-recommends qemu-utils && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.glance-api: ---> Running in 2403dc8373c5
+INFO:kolla.common.utils.glance-api:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.glance-api:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.glance-api:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.glance-api:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.glance-api:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.glance-api:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.glance-api:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.glance-api:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.glance-api:Get:9 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.glance-api:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.glance-api:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.glance-api:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.glance-api:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.glance-api:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.glance-api:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.glance-api:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.glance-api:Fetched 15.6 MB in 2s (6,486 kB/s)
+INFO:kolla.common.utils.glance-api:Reading package lists...
+INFO:kolla.common.utils.glance-api:Reading package lists...
+INFO:kolla.common.utils.glance-api:Building dependency tree...
+INFO:kolla.common.utils.glance-api:Reading state information...
+INFO:kolla.common.utils.glance-api:The following additional packages will be installed:
+INFO:kolla.common.utils.glance-api:  libcurl3-gnutls libiscsi7 libxkbcommon0 qemu-block-extra xkb-data
+INFO:kolla.common.utils.glance-api:Suggested packages:
+INFO:kolla.common.utils.glance-api:  debootstrap
+INFO:kolla.common.utils.glance-api:Recommended packages:
+INFO:kolla.common.utils.glance-api:  sharutils
+INFO:kolla.common.utils.glance-api:The following NEW packages will be installed:
+INFO:kolla.common.utils.glance-api:  libcurl3-gnutls libiscsi7 libxkbcommon0 qemu-block-extra qemu-utils xkb-data
+INFO:kolla.common.utils.glance-api:0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.glance-api:Need to get 1,910 kB of archives.
+INFO:kolla.common.utils.glance-api:After this operation, 12.7 MB of additional disk space will be used.
+INFO:kolla.common.utils.glance-api:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x qemu-block-extra s390x 1:4.0+dfsg-0ubuntu9~cloud0 [114 kB]
+INFO:kolla.common.utils.glance-api:Get:2 http://ports.ubuntu.com bionic-updates/main s390x xkb-data all 2.23.1-1ubuntu1.18.04.1 [325 kB]
+INFO:kolla.common.utils.glance-api:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x qemu-utils s390x 1:4.0+dfsg-0ubuntu9~cloud0 [1,131 kB]
+INFO:kolla.common.utils.glance-api:Get:4 http://ports.ubuntu.com bionic-updates/main s390x libcurl3-gnutls s390x 7.58.0-2ubuntu3.8 [195 kB]
+INFO:kolla.common.utils.glance-api:Get:5 http://ports.ubuntu.com bionic/main s390x libiscsi7 s390x 1.17.0-1.1 [52.9 kB]
+INFO:kolla.common.utils.glance-api:Get:6 http://ports.ubuntu.com bionic-updates/main s390x libxkbcommon0 s390x 0.8.2-1~ubuntu18.04.1 [92.0 kB]
+INFO:kolla.common.utils.glance-api:Fetched 1,910 kB in 0s (33.1 MB/s)
+INFO:kolla.common.utils.glance-api:Selecting previously unselected package xkb-data.
+INFO:kolla.common.utils.glance-api:(Reading database ... 
+INFO:kolla.common.utils.glance-api:(Reading database ... 5%
+INFO:kolla.common.utils.glance-api:(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.glance-api:(Reading database ... 65%
+INFO:kolla.common.utils.glance-api:(Reading database ... 70%
+INFO:kolla.common.utils.glance-api:(Reading database ... 75%
+INFO:kolla.common.utils.glance-api:(Reading database ... 80%
+INFO:kolla.common.utils.glance-api:(Reading database ... 85%
+INFO:kolla.common.utils.glance-api:(Reading database ... 90%
+INFO:kolla.common.utils.glance-api:(Reading database ... 95%
+INFO:kolla.common.utils.glance-api:(Reading database ... 100%(Reading database ... 26315 files and directories currently installed.)
+INFO:kolla.common.utils.glance-api:Preparing to unpack .../0-xkb-data_2.23.1-1ubuntu1.18.04.1_all.deb ...
+INFO:kolla.common.utils.glance-api:Unpacking xkb-data (2.23.1-1ubuntu1.18.04.1) ...
+INFO:kolla.common.utils.glance-api:Selecting previously unselected package libcurl3-gnutls:s390x.
+INFO:kolla.common.utils.glance-api:Preparing to unpack .../1-libcurl3-gnutls_7.58.0-2ubuntu3.8_s390x.deb ...
+INFO:kolla.common.utils.glance-api:Unpacking libcurl3-gnutls:s390x (7.58.0-2ubuntu3.8) ...
+INFO:kolla.common.utils.glance-api:Selecting previously unselected package libiscsi7:s390x.
+INFO:kolla.common.utils.glance-api:Preparing to unpack .../2-libiscsi7_1.17.0-1.1_s390x.deb ...
+INFO:kolla.common.utils.glance-api:Unpacking libiscsi7:s390x (1.17.0-1.1) ...
+INFO:kolla.common.utils.glance-api:Selecting previously unselected package libxkbcommon0:s390x.
+INFO:kolla.common.utils.glance-api:Preparing to unpack .../3-libxkbcommon0_0.8.2-1~ubuntu18.04.1_s390x.deb ...
+INFO:kolla.common.utils.glance-api:Unpacking libxkbcommon0:s390x (0.8.2-1~ubuntu18.04.1) ...
+INFO:kolla.common.utils.glance-api:Selecting previously unselected package qemu-block-extra:s390x.
+INFO:kolla.common.utils.glance-api:Preparing to unpack .../4-qemu-block-extra_1%3a4.0+dfsg-0ubuntu9~cloud0_s390x.deb ...
+INFO:kolla.common.utils.glance-api:Unpacking qemu-block-extra:s390x (1:4.0+dfsg-0ubuntu9~cloud0) ...
+INFO:kolla.common.utils.glance-api:Selecting previously unselected package qemu-utils.
+INFO:kolla.common.utils.glance-api:Preparing to unpack .../5-qemu-utils_1%3a4.0+dfsg-0ubuntu9~cloud0_s390x.deb ...
+INFO:kolla.common.utils.glance-api:Unpacking qemu-utils (1:4.0+dfsg-0ubuntu9~cloud0) ...
+INFO:kolla.common.utils.glance-api:Setting up libcurl3-gnutls:s390x (7.58.0-2ubuntu3.8) ...
+INFO:kolla.common.utils.glance-api:Setting up libiscsi7:s390x (1.17.0-1.1) ...
+INFO:kolla.common.utils.glance-api:Setting up xkb-data (2.23.1-1ubuntu1.18.04.1) ...
+INFO:kolla.common.utils.glance-api:Setting up qemu-block-extra:s390x (1:4.0+dfsg-0ubuntu9~cloud0) ...
+INFO:kolla.common.utils.glance-api:Setting up libxkbcommon0:s390x (0.8.2-1~ubuntu18.04.1) ...
+INFO:kolla.common.utils.glance-api:Setting up qemu-utils (1:4.0+dfsg-0ubuntu9~cloud0) ...
+INFO:kolla.common.utils.glance-api:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.glance-api:Removing intermediate container 2403dc8373c5
+INFO:kolla.common.utils.glance-api: ---> ac4fc9a9c962
+INFO:kolla.common.utils.glance-api:Step 4/6 : COPY extend_start.sh /usr/local/bin/kolla_glance_extend_start
+INFO:kolla.common.utils.glance-api: ---> 7a00922e40c7
+INFO:kolla.common.utils.glance-api:Step 5/6 : RUN chmod 755 /usr/local/bin/kolla_glance_extend_start
+INFO:kolla.common.utils.glance-api: ---> Running in 0a6826356ce9
+INFO:kolla.common.utils.glance-api:Removing intermediate container 0a6826356ce9
+INFO:kolla.common.utils.glance-api: ---> 4f41f75b0213
+INFO:kolla.common.utils.glance-api:Step 6/6 : USER glance
+INFO:kolla.common.utils.glance-api: ---> Running in 124e9b7a810c
+INFO:kolla.common.utils.glance-api:Removing intermediate container 124e9b7a810c
+INFO:kolla.common.utils.glance-api: ---> 6c2174be6b27
+INFO:kolla.common.utils.glance-api:Successfully built 6c2174be6b27
+INFO:kolla.common.utils.glance-api:Successfully tagged s390x/ubuntu-binary-glance-api:9.1.0
+INFO:kolla.common.utils.glance-api:Built at 2020-03-02 21:44:53.464249 (took 0:00:11.355864)

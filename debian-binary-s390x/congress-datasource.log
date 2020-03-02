@@ -1,0 +1,14 @@
+INFO:kolla.common.utils.congress-datasource:Building started at 2020-03-02 21:27:46.233001
+INFO:kolla.common.utils.congress-datasource:Step 1/3 : FROM s390x/debian-binary-congress-base:9.1.0
+INFO:kolla.common.utils.congress-datasource: ---> b9e44d0567c1
+INFO:kolla.common.utils.congress-datasource:Step 2/3 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="congress-datasource" build-date="20200302"
+INFO:kolla.common.utils.congress-datasource: ---> Running in 014fd56590c5
+INFO:kolla.common.utils.congress-datasource:Removing intermediate container 014fd56590c5
+INFO:kolla.common.utils.congress-datasource: ---> 2b40a638a021
+INFO:kolla.common.utils.congress-datasource:Step 3/3 : USER congress
+INFO:kolla.common.utils.congress-datasource: ---> Running in 5437c03a371f
+INFO:kolla.common.utils.congress-datasource:Removing intermediate container 5437c03a371f
+INFO:kolla.common.utils.congress-datasource: ---> e86c03193a6f
+INFO:kolla.common.utils.congress-datasource:Successfully built e86c03193a6f
+INFO:kolla.common.utils.congress-datasource:Successfully tagged s390x/debian-binary-congress-datasource:9.1.0
+INFO:kolla.common.utils.congress-datasource:Built at 2020-03-02 21:27:47.297349 (took 0:00:01.064348)

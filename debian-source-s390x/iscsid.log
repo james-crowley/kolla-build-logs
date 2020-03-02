@@ -1,0 +1,119 @@
+INFO:kolla.common.utils.iscsid:Building started at 2020-03-02 21:31:06.070706
+INFO:kolla.common.utils.iscsid:Step 1/5 : FROM s390x/debian-source-base:9.1.0
+INFO:kolla.common.utils.iscsid: ---> 80efb5983713
+INFO:kolla.common.utils.iscsid:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="iscsid" build-date="20200302"
+INFO:kolla.common.utils.iscsid: ---> Running in f33d9e9264d4
+INFO:kolla.common.utils.iscsid:Removing intermediate container f33d9e9264d4
+INFO:kolla.common.utils.iscsid: ---> 6a6a7fd87c9e
+INFO:kolla.common.utils.iscsid:Step 3/5 : RUN apt-get update && apt-get -y install --no-install-recommends open-iscsi python3-rtslib-fb targetcli-fb && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.iscsid: ---> Running in 29384b5a7f18
+INFO:kolla.common.utils.iscsid:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.iscsid:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.iscsid:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.iscsid:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.iscsid:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.iscsid:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.iscsid:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.iscsid:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.iscsid:Fetched 8,235 kB in 2s (5,336 kB/s)
+INFO:kolla.common.utils.iscsid:Reading package lists...
+INFO:kolla.common.utils.iscsid:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.iscsid:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.iscsid:[0m
+INFO:kolla.common.utils.iscsid:Reading package lists...
+INFO:kolla.common.utils.iscsid:Building dependency tree...
+INFO:kolla.common.utils.iscsid:Reading state information...
+INFO:kolla.common.utils.iscsid:open-iscsi is already the newest version (2.0.874-7.1).
+INFO:kolla.common.utils.iscsid:The following additional packages will be installed:
+INFO:kolla.common.utils.iscsid:  gir1.2-glib-2.0 libgirepository-1.0-1 libglib2.0-0 python3-configshell-fb
+INFO:kolla.common.utils.iscsid:  python3-gi python3-pyparsing python3-pyudev python3-six python3-urwid
+INFO:kolla.common.utils.iscsid:Suggested packages:
+INFO:kolla.common.utils.iscsid:  python-configshell-fb-doc python-pyparsing-doc python-rtslib-fb-doc
+INFO:kolla.common.utils.iscsid:  python-urwid-doc
+INFO:kolla.common.utils.iscsid:Recommended packages:
+INFO:kolla.common.utils.iscsid:  libglib2.0-data shared-mime-info xdg-user-dirs
+INFO:kolla.common.utils.iscsid:The following NEW packages will be installed:
+INFO:kolla.common.utils.iscsid:  gir1.2-glib-2.0 libgirepository-1.0-1 libglib2.0-0 python3-configshell-fb
+INFO:kolla.common.utils.iscsid:  python3-gi python3-pyparsing python3-pyudev python3-rtslib-fb python3-six
+INFO:kolla.common.utils.iscsid:  python3-urwid targetcli-fb
+INFO:kolla.common.utils.iscsid:0 upgraded, 11 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.iscsid:Need to get 1,971 kB of archives.
+INFO:kolla.common.utils.iscsid:After this operation, 8,349 kB of additional disk space will be used.
+INFO:kolla.common.utils.iscsid:Get:1 http://deb.debian.org/debian buster/main s390x libglib2.0-0 s390x 2.58.3-2+deb10u2 [1,159 kB]
+INFO:kolla.common.utils.iscsid:Get:2 http://deb.debian.org/debian buster/main s390x libgirepository-1.0-1 s390x 1.58.3-2 [88.1 kB]
+INFO:kolla.common.utils.iscsid:Get:3 http://deb.debian.org/debian buster/main s390x gir1.2-glib-2.0 s390x 1.58.3-2 [142 kB]
+INFO:kolla.common.utils.iscsid:Get:4 http://deb.debian.org/debian buster/main s390x python3-pyparsing all 2.2.0+dfsg1-2 [89.6 kB]
+INFO:kolla.common.utils.iscsid:Get:5 http://deb.debian.org/debian buster/main s390x python3-six all 1.12.0-1 [15.7 kB]
+INFO:kolla.common.utils.iscsid:Get:6 http://deb.debian.org/debian buster/main s390x python3-urwid s390x 2.0.1-2+b1 [174 kB]
+INFO:kolla.common.utils.iscsid:Get:7 http://deb.debian.org/debian buster/main s390x python3-configshell-fb all 1.1.24-1 [27.7 kB]
+INFO:kolla.common.utils.iscsid:Get:8 http://deb.debian.org/debian buster/main s390x python3-gi s390x 3.30.4-1 [171 kB]
+INFO:kolla.common.utils.iscsid:Get:9 http://deb.debian.org/debian buster/main s390x python3-pyudev all 0.21.0-1 [40.2 kB]
+INFO:kolla.common.utils.iscsid:Get:10 http://deb.debian.org/debian buster/main s390x python3-rtslib-fb all 2.1.66-2 [33.7 kB]
+INFO:kolla.common.utils.iscsid:Get:11 http://deb.debian.org/debian buster/main s390x targetcli-fb all 2.1.48-2 [29.6 kB]
+INFO:kolla.common.utils.iscsid:Fetched 1,971 kB in 0s (24.1 MB/s)
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package libglib2.0-0:s390x.
+INFO:kolla.common.utils.iscsid:(Reading database ... 
+INFO:kolla.common.utils.iscsid:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%
+INFO:kolla.common.utils.iscsid:(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.iscsid:(Reading database ... 80%
+INFO:kolla.common.utils.iscsid:(Reading database ... 85%
+INFO:kolla.common.utils.iscsid:(Reading database ... 90%
+INFO:kolla.common.utils.iscsid:(Reading database ... 95%
+INFO:kolla.common.utils.iscsid:(Reading database ... 100%(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../00-libglib2.0-0_2.58.3-2+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking libglib2.0-0:s390x (2.58.3-2+deb10u2) ...
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package libgirepository-1.0-1:s390x.
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../01-libgirepository-1.0-1_1.58.3-2_s390x.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking libgirepository-1.0-1:s390x (1.58.3-2) ...
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package gir1.2-glib-2.0:s390x.
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../02-gir1.2-glib-2.0_1.58.3-2_s390x.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking gir1.2-glib-2.0:s390x (1.58.3-2) ...
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package python3-pyparsing.
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../03-python3-pyparsing_2.2.0+dfsg1-2_all.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking python3-pyparsing (2.2.0+dfsg1-2) ...
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package python3-six.
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../04-python3-six_1.12.0-1_all.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking python3-six (1.12.0-1) ...
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package python3-urwid.
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../05-python3-urwid_2.0.1-2+b1_s390x.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking python3-urwid (2.0.1-2+b1) ...
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package python3-configshell-fb.
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../06-python3-configshell-fb_1.1.24-1_all.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking python3-configshell-fb (1.1.24-1) ...
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package python3-gi.
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../07-python3-gi_3.30.4-1_s390x.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking python3-gi (3.30.4-1) ...
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package python3-pyudev.
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../08-python3-pyudev_0.21.0-1_all.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking python3-pyudev (0.21.0-1) ...
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package python3-rtslib-fb.
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../09-python3-rtslib-fb_2.1.66-2_all.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking python3-rtslib-fb (2.1.66-2) ...
+INFO:kolla.common.utils.iscsid:Selecting previously unselected package targetcli-fb.
+INFO:kolla.common.utils.iscsid:Preparing to unpack .../10-targetcli-fb_2.1.48-2_all.deb ...
+INFO:kolla.common.utils.iscsid:Unpacking targetcli-fb (2.1.48-2) ...
+INFO:kolla.common.utils.iscsid:Setting up libglib2.0-0:s390x (2.58.3-2+deb10u2) ...
+INFO:kolla.common.utils.iscsid:No schema files found: doing nothing.
+INFO:kolla.common.utils.iscsid:Setting up python3-urwid (2.0.1-2+b1) ...
+INFO:kolla.common.utils.iscsid:Setting up python3-six (1.12.0-1) ...
+INFO:kolla.common.utils.iscsid:Setting up python3-pyparsing (2.2.0+dfsg1-2) ...
+INFO:kolla.common.utils.iscsid:Setting up libgirepository-1.0-1:s390x (1.58.3-2) ...
+INFO:kolla.common.utils.iscsid:Setting up python3-configshell-fb (1.1.24-1) ...
+INFO:kolla.common.utils.iscsid:Setting up python3-pyudev (0.21.0-1) ...
+INFO:kolla.common.utils.iscsid:Setting up python3-rtslib-fb (2.1.66-2) ...
+INFO:kolla.common.utils.iscsid:update-alternatives: using /usr/bin/targetctl-python3 to provide /usr/bin/targetctl (targetctl) in auto mode
+INFO:kolla.common.utils.iscsid:Setting up gir1.2-glib-2.0:s390x (1.58.3-2) ...
+INFO:kolla.common.utils.iscsid:Setting up python3-gi (3.30.4-1) ...
+INFO:kolla.common.utils.iscsid:Setting up targetcli-fb (2.1.48-2) ...
+INFO:kolla.common.utils.iscsid:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.iscsid:Removing intermediate container 29384b5a7f18
+INFO:kolla.common.utils.iscsid: ---> fd1ce4a5d8ef
+INFO:kolla.common.utils.iscsid:Step 4/5 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.iscsid: ---> 678cb58f16e1
+INFO:kolla.common.utils.iscsid:Step 5/5 : RUN chmod 755 /usr/local/bin/kolla_extend_start     && rm /etc/iscsi/initiatorname.iscsi
+INFO:kolla.common.utils.iscsid: ---> Running in 2924b105ac8c
+INFO:kolla.common.utils.iscsid:Removing intermediate container 2924b105ac8c
+INFO:kolla.common.utils.iscsid: ---> 1b0421d3f148
+INFO:kolla.common.utils.iscsid:Successfully built 1b0421d3f148
+INFO:kolla.common.utils.iscsid:Successfully tagged s390x/debian-source-iscsid:9.1.0
+INFO:kolla.common.utils.iscsid:Built at 2020-03-02 21:31:20.773401 (took 0:00:14.702695)

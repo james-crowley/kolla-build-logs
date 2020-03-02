@@ -1,0 +1,27 @@
+INFO:kolla.common.utils.prometheus-node-exporter:Building started at 2020-03-02 21:40:17.141052
+INFO:kolla.common.utils.prometheus-node-exporter:Step 1/5 : FROM s390x/ubuntu-binary-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-node-exporter: ---> 3a4f3fd769cf
+INFO:kolla.common.utils.prometheus-node-exporter:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-node-exporter" build-date="20200302"
+INFO:kolla.common.utils.prometheus-node-exporter: ---> Running in 29edf3c39a31
+INFO:kolla.common.utils.prometheus-node-exporter:Removing intermediate container 29edf3c39a31
+INFO:kolla.common.utils.prometheus-node-exporter: ---> a016bcb01467
+INFO:kolla.common.utils.prometheus-node-exporter:Step 3/5 : ENV node_exporter_version=0.17.0
+INFO:kolla.common.utils.prometheus-node-exporter: ---> Running in d856424b3968
+INFO:kolla.common.utils.prometheus-node-exporter:Removing intermediate container d856424b3968
+INFO:kolla.common.utils.prometheus-node-exporter: ---> 527d164b9d07
+INFO:kolla.common.utils.prometheus-node-exporter:Step 4/5 : RUN curl -sSL -o /tmp/node_exporter.tar.gz https://github.com/prometheus/node_exporter/releases/download/v${node_exporter_version}/node_exporter-${node_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/node_exporter.tar.gz -C /opt/     && rm -f /tmp/node_exporter.tar.gz     && ln -s /opt/node_exporter* /opt/node_exporter
+INFO:kolla.common.utils.prometheus-node-exporter: ---> Running in 42c10da66bad
+INFO:kolla.common.utils.prometheus-node-exporter:curl (https://github-production-release-asset-2e65be.s3.amazonaws.com/9524057/b958ab80-f4c9-11e8-89f1-a4b4d5f38c24?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200302T214019Z&X-Amz-Expires=300&X-Amz-Signature=bc68a6e669473f70df903fa64eb653ba4be1f2e36bb28bc6322aa327ff45f007&X-Amz-SignedHeaders=host&actor_id=0&response-content-disposition=attachment%3B%20filename%3Dnode_exporter-0.17.0.linux-s390x.tar.gz&response-content-type=application%2Foctet-stream): response: 200, time: 3.925701, size: 7082014
+INFO:kolla.common.utils.prometheus-node-exporter:node_exporter-0.17.0.linux-s390x/
+INFO:kolla.common.utils.prometheus-node-exporter:node_exporter-0.17.0.linux-s390x/NOTICE
+INFO:kolla.common.utils.prometheus-node-exporter:node_exporter-0.17.0.linux-s390x/node_exporter
+INFO:kolla.common.utils.prometheus-node-exporter:node_exporter-0.17.0.linux-s390x/LICENSE
+INFO:kolla.common.utils.prometheus-node-exporter:Removing intermediate container 42c10da66bad
+INFO:kolla.common.utils.prometheus-node-exporter: ---> 6871440a6fa3
+INFO:kolla.common.utils.prometheus-node-exporter:Step 5/5 : USER prometheus
+INFO:kolla.common.utils.prometheus-node-exporter: ---> Running in 88458cc2bf38
+INFO:kolla.common.utils.prometheus-node-exporter:Removing intermediate container 88458cc2bf38
+INFO:kolla.common.utils.prometheus-node-exporter: ---> 86a7008b3019
+INFO:kolla.common.utils.prometheus-node-exporter:Successfully built 86a7008b3019
+INFO:kolla.common.utils.prometheus-node-exporter:Successfully tagged s390x/ubuntu-binary-prometheus-node-exporter:9.1.0
+INFO:kolla.common.utils.prometheus-node-exporter:Built at 2020-03-02 21:40:28.003694 (took 0:00:10.862642)

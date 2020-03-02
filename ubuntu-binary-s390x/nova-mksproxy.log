@@ -1,0 +1,13 @@
+INFO:kolla.common.utils.nova-mksproxy:Building started at 2020-03-02 21:44:28.767237
+INFO:kolla.common.utils.nova-mksproxy:Step 1/4 : FROM s390x/ubuntu-binary-nova-base:9.1.0
+INFO:kolla.common.utils.nova-mksproxy: ---> 635ef465de63
+INFO:kolla.common.utils.nova-mksproxy:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="nova-mksproxy" build-date="20200302"
+INFO:kolla.common.utils.nova-mksproxy: ---> Running in 02526bdfe3c2
+INFO:kolla.common.utils.nova-mksproxy:Removing intermediate container 02526bdfe3c2
+INFO:kolla.common.utils.nova-mksproxy: ---> 401a2228e3bf
+INFO:kolla.common.utils.nova-mksproxy:Step 3/4 : RUN echo 'binary not yet available for ubuntu' && /bin/false
+INFO:kolla.common.utils.nova-mksproxy: ---> Running in 92b9e6a00b45
+INFO:kolla.common.utils.nova-mksproxy:binary not yet available for ubuntu
+INFO:kolla.common.utils.nova-mksproxy:Removing intermediate container 92b9e6a00b45
+ERROR:kolla.common.utils.nova-mksproxy:Error'd with the following message
+ERROR:kolla.common.utils.nova-mksproxy:The command '/bin/sh -c echo 'binary not yet available for ubuntu' && /bin/false' returned a non-zero code: 1

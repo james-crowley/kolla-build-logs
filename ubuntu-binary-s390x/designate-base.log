@@ -1,0 +1,94 @@
+INFO:kolla.common.utils.designate-base:Building started at 2020-03-02 21:41:50.311930
+INFO:kolla.common.utils.designate-base:Step 1/7 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.designate-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.designate-base:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="designate-base" build-date="20200302"
+INFO:kolla.common.utils.designate-base: ---> Running in 46c2df5265f0
+INFO:kolla.common.utils.designate-base:Removing intermediate container 46c2df5265f0
+INFO:kolla.common.utils.designate-base: ---> 9bcbabd1bc08
+INFO:kolla.common.utils.designate-base:Step 3/7 : RUN usermod --append --home /var/lib/designate --groups kolla designate     && mkdir -p /var/lib/designate     && chown -R 42411:42411 /var/lib/designate
+INFO:kolla.common.utils.designate-base: ---> Running in 4b85adbcf625
+INFO:kolla.common.utils.designate-base:Removing intermediate container 4b85adbcf625
+INFO:kolla.common.utils.designate-base: ---> e3a0e39321ea
+INFO:kolla.common.utils.designate-base:Step 4/7 : RUN apt-get update && apt-get -y install --no-install-recommends designate-common python3-tooz && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.designate-base: ---> Running in b104460f6002
+INFO:kolla.common.utils.designate-base:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.designate-base:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.designate-base:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.designate-base:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.designate-base:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.designate-base:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.designate-base:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.designate-base:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.designate-base:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.designate-base:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.designate-base:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.designate-base:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.designate-base:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.designate-base:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.designate-base:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.designate-base:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.designate-base:Fetched 15.6 MB in 3s (5,690 kB/s)
+INFO:kolla.common.utils.designate-base:Reading package lists...
+INFO:kolla.common.utils.designate-base:Reading package lists...
+INFO:kolla.common.utils.designate-base:Building dependency tree...
+INFO:kolla.common.utils.designate-base:Reading state information...
+INFO:kolla.common.utils.designate-base:The following additional packages will be installed:
+INFO:kolla.common.utils.designate-base:  python3-tenacity python3-voluptuous sqlite3
+INFO:kolla.common.utils.designate-base:Suggested packages:
+INFO:kolla.common.utils.designate-base:  python-tenacity-doc sqlite3-doc
+INFO:kolla.common.utils.designate-base:The following NEW packages will be installed:
+INFO:kolla.common.utils.designate-base:  designate-common python3-tenacity python3-tooz python3-voluptuous sqlite3
+INFO:kolla.common.utils.designate-base:0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.designate-base:Need to get 825 kB of archives.
+INFO:kolla.common.utils.designate-base:After this operation, 3,397 kB of additional disk space will be used.
+INFO:kolla.common.utils.designate-base:Get:1 http://ports.ubuntu.com bionic-updates/main s390x sqlite3 s390x 3.22.0-1ubuntu0.2 [688 kB]
+INFO:kolla.common.utils.designate-base:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x designate-common all 1:9.0.0-0ubuntu1~cloud0 [28.5 kB]
+INFO:kolla.common.utils.designate-base:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x python3-tenacity all 5.1.1-0ubuntu2~cloud0 [34.9 kB]
+INFO:kolla.common.utils.designate-base:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x python3-tooz all 1.66.2-0ubuntu1~cloud0 [50.3 kB]
+INFO:kolla.common.utils.designate-base:Get:5 http://ports.ubuntu.com bionic/main s390x python3-voluptuous all 0.9.3-1 [24.2 kB]
+INFO:kolla.common.utils.designate-base:Fetched 825 kB in 0s (10.4 MB/s)
+INFO:kolla.common.utils.designate-base:Selecting previously unselected package sqlite3.
+INFO:kolla.common.utils.designate-base:(Reading database ... 
+INFO:kolla.common.utils.designate-base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%
+INFO:kolla.common.utils.designate-base:(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%
+INFO:kolla.common.utils.designate-base:(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.designate-base:(Reading database ... 65%
+INFO:kolla.common.utils.designate-base:(Reading database ... 70%
+INFO:kolla.common.utils.designate-base:(Reading database ... 75%
+INFO:kolla.common.utils.designate-base:(Reading database ... 80%
+INFO:kolla.common.utils.designate-base:(Reading database ... 85%
+INFO:kolla.common.utils.designate-base:(Reading database ... 90%
+INFO:kolla.common.utils.designate-base:(Reading database ... 95%
+INFO:kolla.common.utils.designate-base:(Reading database ... 100%(Reading database ... 22243 files and directories currently installed.)
+INFO:kolla.common.utils.designate-base:Preparing to unpack .../sqlite3_3.22.0-1ubuntu0.2_s390x.deb ...
+INFO:kolla.common.utils.designate-base:Unpacking sqlite3 (3.22.0-1ubuntu0.2) ...
+INFO:kolla.common.utils.designate-base:Selecting previously unselected package designate-common.
+INFO:kolla.common.utils.designate-base:Preparing to unpack .../designate-common_1%3a9.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.designate-base:Unpacking designate-common (1:9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.designate-base:Selecting previously unselected package python3-tenacity.
+INFO:kolla.common.utils.designate-base:Preparing to unpack .../python3-tenacity_5.1.1-0ubuntu2~cloud0_all.deb ...
+INFO:kolla.common.utils.designate-base:Unpacking python3-tenacity (5.1.1-0ubuntu2~cloud0) ...
+INFO:kolla.common.utils.designate-base:Selecting previously unselected package python3-voluptuous.
+INFO:kolla.common.utils.designate-base:Preparing to unpack .../python3-voluptuous_0.9.3-1_all.deb ...
+INFO:kolla.common.utils.designate-base:Unpacking python3-voluptuous (0.9.3-1) ...
+INFO:kolla.common.utils.designate-base:Selecting previously unselected package python3-tooz.
+INFO:kolla.common.utils.designate-base:Preparing to unpack .../python3-tooz_1.66.2-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.designate-base:Unpacking python3-tooz (1.66.2-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.designate-base:Setting up python3-tenacity (5.1.1-0ubuntu2~cloud0) ...
+INFO:kolla.common.utils.designate-base:Setting up sqlite3 (3.22.0-1ubuntu0.2) ...
+INFO:kolla.common.utils.designate-base:Setting up python3-voluptuous (0.9.3-1) ...
+INFO:kolla.common.utils.designate-base:Setting up python3-tooz (1.66.2-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.designate-base:Setting up designate-common (1:9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.designate-base:Removing intermediate container b104460f6002
+INFO:kolla.common.utils.designate-base: ---> 8456cf63741b
+INFO:kolla.common.utils.designate-base:Step 5/7 : COPY designate_sudoers /etc/sudoers.d/kolla_designate_sudoers
+INFO:kolla.common.utils.designate-base: ---> 6568fd510287
+INFO:kolla.common.utils.designate-base:Step 6/7 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.designate-base: ---> b1487d7f4dce
+INFO:kolla.common.utils.designate-base:Step 7/7 : RUN chmod 750 /etc/sudoers.d     && chmod 640 /etc/sudoers.d/kolla_designate_sudoers     && touch /usr/local/bin/kolla_designate_extend_start     && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_designate_extend_start
+INFO:kolla.common.utils.designate-base: ---> Running in b8bc2e0d6092
+INFO:kolla.common.utils.designate-base:Removing intermediate container b8bc2e0d6092
+INFO:kolla.common.utils.designate-base: ---> 7ab495cb48dc
+INFO:kolla.common.utils.designate-base:Successfully built 7ab495cb48dc
+INFO:kolla.common.utils.designate-base:Successfully tagged s390x/ubuntu-binary-designate-base:9.1.0
+INFO:kolla.common.utils.designate-base:Built at 2020-03-02 21:42:04.782941 (took 0:00:14.471011)

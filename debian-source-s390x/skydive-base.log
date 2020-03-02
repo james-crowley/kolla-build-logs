@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.skydive-base:Building started at 2020-03-02 21:32:23.282249
+INFO:kolla.common.utils.skydive-base:Step 1/6 : FROM s390x/debian-source-base:9.1.0
+INFO:kolla.common.utils.skydive-base: ---> 80efb5983713
+INFO:kolla.common.utils.skydive-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="skydive-base" build-date="20200302"
+INFO:kolla.common.utils.skydive-base: ---> Running in 9d5192a50eb1
+INFO:kolla.common.utils.skydive-base:Removing intermediate container 9d5192a50eb1
+INFO:kolla.common.utils.skydive-base: ---> 63e43c18736b
+INFO:kolla.common.utils.skydive-base:Step 3/6 : RUN usermod --append --home /var/lib/skydive --groups kolla skydive     && mkdir -p /var/lib/skydive     && chown -R 42468:42468 /var/lib/skydive
+INFO:kolla.common.utils.skydive-base: ---> Running in 1643646a14db
+INFO:kolla.common.utils.skydive-base:Removing intermediate container 1643646a14db
+INFO:kolla.common.utils.skydive-base: ---> 116b843e3663
+INFO:kolla.common.utils.skydive-base:Step 4/6 : RUN echo 'source on debian not yet available on non x86_64 platforms'     && /bin/false
+INFO:kolla.common.utils.skydive-base: ---> Running in 3731862711ad
+INFO:kolla.common.utils.skydive-base:source on debian not yet available on non x86_64 platforms
+INFO:kolla.common.utils.skydive-base:Removing intermediate container 3731862711ad
+ERROR:kolla.common.utils.skydive-base:Error'd with the following message
+ERROR:kolla.common.utils.skydive-base:The command '/bin/sh -c echo 'source on debian not yet available on non x86_64 platforms'     && /bin/false' returned a non-zero code: 1

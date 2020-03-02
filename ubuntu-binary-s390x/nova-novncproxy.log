@@ -1,0 +1,156 @@
+INFO:kolla.common.utils.nova-novncproxy:Building started at 2020-03-02 21:44:38.912458
+INFO:kolla.common.utils.nova-novncproxy:Step 1/4 : FROM s390x/ubuntu-binary-nova-base:9.1.0
+INFO:kolla.common.utils.nova-novncproxy: ---> 635ef465de63
+INFO:kolla.common.utils.nova-novncproxy:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="nova-novncproxy" build-date="20200302"
+INFO:kolla.common.utils.nova-novncproxy: ---> Running in 8248d8721b90
+INFO:kolla.common.utils.nova-novncproxy:Removing intermediate container 8248d8721b90
+INFO:kolla.common.utils.nova-novncproxy: ---> ce723c8b13df
+INFO:kolla.common.utils.nova-novncproxy:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends nova-novncproxy && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.nova-novncproxy: ---> Running in 093b9b7bb1df
+INFO:kolla.common.utils.nova-novncproxy:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.nova-novncproxy:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.nova-novncproxy:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.nova-novncproxy:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:8 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.nova-novncproxy:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.nova-novncproxy:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.nova-novncproxy:Fetched 15.6 MB in 3s (4,947 kB/s)
+INFO:kolla.common.utils.nova-novncproxy:Reading package lists...
+INFO:kolla.common.utils.nova-novncproxy:Reading package lists...
+INFO:kolla.common.utils.nova-novncproxy:Building dependency tree...
+INFO:kolla.common.utils.nova-novncproxy:Reading state information...
+INFO:kolla.common.utils.nova-novncproxy:The following additional packages will be installed:
+INFO:kolla.common.utils.nova-novncproxy:  libjs-swfobject novnc python-debtcollector python-docutils python-funcsigs
+INFO:kolla.common.utils.nova-novncproxy:  python-netaddr python-novnc python-numpy python-oslo.config python-rfc3986
+INFO:kolla.common.utils.nova-novncproxy:  python-roman python-wrapt websockify
+INFO:kolla.common.utils.nova-novncproxy:Suggested packages:
+INFO:kolla.common.utils.nova-novncproxy:  python-nova python-debtcollector-doc fonts-linuxlibertine
+INFO:kolla.common.utils.nova-novncproxy:  | ttf-linux-libertine texlive-lang-french texlive-latex-base
+INFO:kolla.common.utils.nova-novncproxy:  texlive-latex-recommended python-funcsigs-doc ipython python-netaddr-docs
+INFO:kolla.common.utils.nova-novncproxy:  gcc gfortran python-dev python-nose python-numpy-dbg python-numpy-doc
+INFO:kolla.common.utils.nova-novncproxy:Recommended packages:
+INFO:kolla.common.utils.nova-novncproxy:  docutils-doc libpaper-utils python-pil python-pygments
+INFO:kolla.common.utils.nova-novncproxy:The following NEW packages will be installed:
+INFO:kolla.common.utils.nova-novncproxy:  libjs-swfobject nova-novncproxy novnc python-debtcollector python-docutils
+INFO:kolla.common.utils.nova-novncproxy:  python-funcsigs python-netaddr python-novnc python-numpy python-oslo.config
+INFO:kolla.common.utils.nova-novncproxy:  python-rfc3986 python-roman python-wrapt websockify
+INFO:kolla.common.utils.nova-novncproxy:0 upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.nova-novncproxy:Need to get 2,731 kB of archives.
+INFO:kolla.common.utils.nova-novncproxy:After this operation, 15.0 MB of additional disk space will be used.
+INFO:kolla.common.utils.nova-novncproxy:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x python-rfc3986 all 1.2.0-0ubuntu1~cloud0 [19.6 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x nova-novncproxy all 2:20.0.0-0ubuntu1~cloud0 [36.7 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:3 http://ports.ubuntu.com bionic/universe s390x libjs-swfobject all 2.2+dfsg-2 [8,160 B]
+INFO:kolla.common.utils.nova-novncproxy:Get:4 http://ports.ubuntu.com bionic/main s390x python-funcsigs all 1.0.2-4 [13.5 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:5 http://ports.ubuntu.com bionic/main s390x python-wrapt s390x 1.9.0-3 [26.8 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:6 http://ports.ubuntu.com bionic/main s390x python-debtcollector all 1.13.0-0ubuntu1 [13.4 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:7 http://ports.ubuntu.com bionic/main s390x python-roman all 2.0.0-3 [8,548 B]
+INFO:kolla.common.utils.nova-novncproxy:Get:8 http://ports.ubuntu.com bionic/main s390x python-docutils all 0.14+dfsg-3 [365 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:9 http://ports.ubuntu.com bionic/main s390x python-netaddr all 0.7.19-1 [213 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:10 http://ports.ubuntu.com bionic/main s390x python-oslo.config all 1:5.2.0-0ubuntu1 [79.7 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:11 http://ports.ubuntu.com bionic/universe s390x python-novnc all 1:0.4+dfsg+1+20131010+gitf68af8af3d-7 [19.2 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:12 http://ports.ubuntu.com bionic/main s390x python-numpy s390x 1:1.13.3-2ubuntu1 [1,794 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:13 http://ports.ubuntu.com bionic/universe s390x websockify s390x 0.8.0+dfsg1-9 [20.8 kB]
+INFO:kolla.common.utils.nova-novncproxy:Get:14 http://ports.ubuntu.com bionic/universe s390x novnc all 1:0.4+dfsg+1+20131010+gitf68af8af3d-7 [112 kB]
+INFO:kolla.common.utils.nova-novncproxy:Fetched 2,731 kB in 0s (7,905 kB/s)
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package libjs-swfobject.
+INFO:kolla.common.utils.nova-novncproxy:(Reading database ... 
+INFO:kolla.common.utils.nova-novncproxy:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.nova-novncproxy:(Reading database ... 65%
+INFO:kolla.common.utils.nova-novncproxy:(Reading database ... 70%
+INFO:kolla.common.utils.nova-novncproxy:(Reading database ... 75%
+INFO:kolla.common.utils.nova-novncproxy:(Reading database ... 80%
+INFO:kolla.common.utils.nova-novncproxy:(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 32742 files and directories currently installed.)
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../00-libjs-swfobject_2.2+dfsg-2_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking libjs-swfobject (2.2+dfsg-2) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package python-funcsigs.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../01-python-funcsigs_1.0.2-4_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking python-funcsigs (1.0.2-4) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package python-wrapt.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../02-python-wrapt_1.9.0-3_s390x.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking python-wrapt (1.9.0-3) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package python-debtcollector.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../03-python-debtcollector_1.13.0-0ubuntu1_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking python-debtcollector (1.13.0-0ubuntu1) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package python-roman.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../04-python-roman_2.0.0-3_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking python-roman (2.0.0-3) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package python-docutils.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../05-python-docutils_0.14+dfsg-3_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking python-docutils (0.14+dfsg-3) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package python-netaddr.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../06-python-netaddr_0.7.19-1_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking python-netaddr (0.7.19-1) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package python-rfc3986.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../07-python-rfc3986_1.2.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking python-rfc3986 (1.2.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package python-oslo.config.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../08-python-oslo.config_1%3a5.2.0-0ubuntu1_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking python-oslo.config (1:5.2.0-0ubuntu1) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package python-novnc.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../09-python-novnc_1%3a0.4+dfsg+1+20131010+gitf68af8af3d-7_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking python-novnc (1:0.4+dfsg+1+20131010+gitf68af8af3d-7) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package python-numpy.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../10-python-numpy_1%3a1.13.3-2ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking python-numpy (1:1.13.3-2ubuntu1) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package websockify.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../11-websockify_0.8.0+dfsg1-9_s390x.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking websockify (0.8.0+dfsg1-9) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package novnc.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../12-novnc_1%3a0.4+dfsg+1+20131010+gitf68af8af3d-7_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking novnc (1:0.4+dfsg+1+20131010+gitf68af8af3d-7) ...
+INFO:kolla.common.utils.nova-novncproxy:Selecting previously unselected package nova-novncproxy.
+INFO:kolla.common.utils.nova-novncproxy:Preparing to unpack .../13-nova-novncproxy_2%3a20.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.nova-novncproxy:Unpacking nova-novncproxy (2:20.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up python-wrapt (1.9.0-3) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up python-netaddr (0.7.19-1) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up libjs-swfobject (2.2+dfsg-2) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up python-roman (2.0.0-3) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up python-numpy (1:1.13.3-2ubuntu1) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up python-funcsigs (1.0.2-4) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up python-rfc3986 (1.2.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up python-docutils (0.14+dfsg-3) ...
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rst-buildhtml to provide /usr/bin/rst-buildhtml (rst-buildhtml) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rst2html to provide /usr/bin/rst2html (rst2html) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rst2html4 to provide /usr/bin/rst2html4 (rst2html4) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: 
+INFO:kolla.common.utils.nova-novncproxy:using /usr/share/docutils/scripts/python2/rst2html5 to provide /usr/bin/rst2html5 (rst2html5) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rst2latex to provide /usr/bin/rst2latex (rst2latex) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rst2man to provide /usr/bin/rst2man (rst2man) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: 
+INFO:kolla.common.utils.nova-novncproxy:using /usr/share/docutils/scripts/python2/rst2odt to provide /usr/bin/rst2odt (rst2odt) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rst2odt_prepstyles to provide /usr/bin/rst2odt_prepstyles (rst2odt_prepstyles) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rst2pseudoxml to provide /usr/bin/rst2pseudoxml (rst2pseudoxml) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rst2s5 to provide /usr/bin/rst2s5 (rst2s5) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rst2xetex to provide /usr/bin/rst2xetex (rst2xetex) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rst2xml to provide /usr/bin/rst2xml (rst2xml) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/share/docutils/scripts/python2/rstpep2html to provide /usr/bin/rstpep2html (rstpep2html) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:Setting up python-debtcollector (1.13.0-0ubuntu1) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up websockify (0.8.0+dfsg1-9) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up python-oslo.config (1:5.2.0-0ubuntu1) ...
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: using /usr/bin/python2-oslo-config-generator to provide /usr/bin/oslo-config-generator (oslo-config-generator) in auto mode
+INFO:kolla.common.utils.nova-novncproxy:update-alternatives: warning: not replacing /usr/bin/oslo-config-generator with a link
+INFO:kolla.common.utils.nova-novncproxy:Setting up python-novnc (1:0.4+dfsg+1+20131010+gitf68af8af3d-7) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up novnc (1:0.4+dfsg+1+20131010+gitf68af8af3d-7) ...
+INFO:kolla.common.utils.nova-novncproxy:Setting up nova-novncproxy (2:20.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-novncproxy:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.nova-novncproxy:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.nova-novncproxy:Removing intermediate container 093b9b7bb1df
+INFO:kolla.common.utils.nova-novncproxy: ---> 493ac2b688cc
+INFO:kolla.common.utils.nova-novncproxy:Step 4/4 : USER nova
+INFO:kolla.common.utils.nova-novncproxy: ---> Running in 341cd6c9d538
+INFO:kolla.common.utils.nova-novncproxy:Removing intermediate container 341cd6c9d538
+INFO:kolla.common.utils.nova-novncproxy: ---> dc87e502d795
+INFO:kolla.common.utils.nova-novncproxy:Successfully built dc87e502d795
+INFO:kolla.common.utils.nova-novncproxy:Successfully tagged s390x/ubuntu-binary-nova-novncproxy:9.1.0
+INFO:kolla.common.utils.nova-novncproxy:Built at 2020-03-02 21:44:53.157550 (took 0:00:14.245092)

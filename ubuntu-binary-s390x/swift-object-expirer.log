@@ -1,0 +1,60 @@
+INFO:kolla.common.utils.swift-object-expirer:Building started at 2020-03-02 21:45:28.301558
+INFO:kolla.common.utils.swift-object-expirer:Step 1/4 : FROM s390x/ubuntu-binary-swift-base:9.1.0
+INFO:kolla.common.utils.swift-object-expirer: ---> 983b5500ecf1
+INFO:kolla.common.utils.swift-object-expirer:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="swift-object-expirer" build-date="20200302"
+INFO:kolla.common.utils.swift-object-expirer: ---> Running in 4c5ad244257d
+INFO:kolla.common.utils.swift-object-expirer:Removing intermediate container 4c5ad244257d
+INFO:kolla.common.utils.swift-object-expirer: ---> bea55880da46
+INFO:kolla.common.utils.swift-object-expirer:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends swift-object-expirer && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.swift-object-expirer: ---> Running in 5b62cadf78cd
+INFO:kolla.common.utils.swift-object-expirer:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:2 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.swift-object-expirer:Ign:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.swift-object-expirer:Get:4 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.swift-object-expirer:Get:6 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.swift-object-expirer:Get:8 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.swift-object-expirer:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.swift-object-expirer:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.swift-object-expirer:Fetched 15.6 MB in 2s (6,365 kB/s)
+INFO:kolla.common.utils.swift-object-expirer:Reading package lists...
+INFO:kolla.common.utils.swift-object-expirer:Reading package lists...
+INFO:kolla.common.utils.swift-object-expirer:Building dependency tree...
+INFO:kolla.common.utils.swift-object-expirer:Reading state information...
+INFO:kolla.common.utils.swift-object-expirer:The following NEW packages will be installed:
+INFO:kolla.common.utils.swift-object-expirer:  swift-object-expirer
+INFO:kolla.common.utils.swift-object-expirer:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.swift-object-expirer:Need to get 18.5 kB of archives.
+INFO:kolla.common.utils.swift-object-expirer:After this operation, 45.1 kB of additional disk space will be used.
+INFO:kolla.common.utils.swift-object-expirer:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x swift-object-expirer all 2.23.0-0ubuntu1~cloud0 [18.5 kB]
+INFO:kolla.common.utils.swift-object-expirer:Fetched 18.5 kB in 0s (654 kB/s)
+INFO:kolla.common.utils.swift-object-expirer:Selecting previously unselected package swift-object-expirer.
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 65%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 70%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 75%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 80%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 85%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 90%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 95%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 100%(Reading database ... 23128 files and directories currently installed.)
+INFO:kolla.common.utils.swift-object-expirer:Preparing to unpack .../swift-object-expirer_2.23.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.swift-object-expirer:Unpacking swift-object-expirer (2.23.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.swift-object-expirer:Setting up swift-object-expirer (2.23.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.swift-object-expirer:Removing intermediate container 5b62cadf78cd
+INFO:kolla.common.utils.swift-object-expirer: ---> a6e3a9e1afaf
+INFO:kolla.common.utils.swift-object-expirer:Step 4/4 : USER swift
+INFO:kolla.common.utils.swift-object-expirer: ---> Running in 574ae63fcfc3
+INFO:kolla.common.utils.swift-object-expirer:Removing intermediate container 574ae63fcfc3
+INFO:kolla.common.utils.swift-object-expirer: ---> 0c889147076c
+INFO:kolla.common.utils.swift-object-expirer:Successfully built 0c889147076c
+INFO:kolla.common.utils.swift-object-expirer:Successfully tagged s390x/ubuntu-binary-swift-object-expirer:9.1.0
+INFO:kolla.common.utils.swift-object-expirer:Built at 2020-03-02 21:45:36.565034 (took 0:00:08.263476)

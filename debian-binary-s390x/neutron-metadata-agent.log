@@ -1,0 +1,79 @@
+INFO:kolla.common.utils.neutron-metadata-agent:Building started at 2020-03-02 21:28:39.136324
+INFO:kolla.common.utils.neutron-metadata-agent:Step 1/4 : FROM s390x/debian-binary-neutron-base:9.1.0
+INFO:kolla.common.utils.neutron-metadata-agent: ---> c27b5a2440a1
+INFO:kolla.common.utils.neutron-metadata-agent:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="neutron-metadata-agent" build-date="20200302"
+INFO:kolla.common.utils.neutron-metadata-agent: ---> Running in 9879f594f5c5
+INFO:kolla.common.utils.neutron-metadata-agent:Removing intermediate container 9879f594f5c5
+INFO:kolla.common.utils.neutron-metadata-agent: ---> c6b1ffcab117
+INFO:kolla.common.utils.neutron-metadata-agent:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends neutron-metadata-agent && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.neutron-metadata-agent: ---> Running in dfdbc26b17b8
+INFO:kolla.common.utils.neutron-metadata-agent:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.neutron-metadata-agent:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.neutron-metadata-agent:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.neutron-metadata-agent:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.neutron-metadata-agent:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.neutron-metadata-agent:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.neutron-metadata-agent:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.neutron-metadata-agent:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.neutron-metadata-agent:Fetched 8,235 kB in 2s (5,324 kB/s)
+INFO:kolla.common.utils.neutron-metadata-agent:Reading package lists...
+INFO:kolla.common.utils.neutron-metadata-agent:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.neutron-metadata-agent:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.neutron-metadata-agent:[0m
+INFO:kolla.common.utils.neutron-metadata-agent:Reading package lists...
+INFO:kolla.common.utils.neutron-metadata-agent:Building dependency tree...
+INFO:kolla.common.utils.neutron-metadata-agent:Reading state information...
+INFO:kolla.common.utils.neutron-metadata-agent:The following additional packages will be installed:
+INFO:kolla.common.utils.neutron-metadata-agent:  haproxy liblua5.3-0 libpcre2-8-0
+INFO:kolla.common.utils.neutron-metadata-agent:Suggested packages:
+INFO:kolla.common.utils.neutron-metadata-agent:  vim-haproxy haproxy-doc
+INFO:kolla.common.utils.neutron-metadata-agent:The following NEW packages will be installed:
+INFO:kolla.common.utils.neutron-metadata-agent:  haproxy liblua5.3-0 libpcre2-8-0 neutron-metadata-agent
+INFO:kolla.common.utils.neutron-metadata-agent:0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.neutron-metadata-agent:Need to get 1,519 kB of archives.
+INFO:kolla.common.utils.neutron-metadata-agent:After this operation, 3,813 kB of additional disk space will be used.
+INFO:kolla.common.utils.neutron-metadata-agent:Get:1 http://deb.debian.org/debian buster/main s390x liblua5.3-0 s390x 5.3.3-1.1 [108 kB]
+INFO:kolla.common.utils.neutron-metadata-agent:Get:2 http://deb.debian.org/debian buster/main s390x libpcre2-8-0 s390x 10.32-5 [130 kB]
+INFO:kolla.common.utils.neutron-metadata-agent:Get:3 http://deb.debian.org/debian buster/main s390x haproxy s390x 1.8.19-1+deb10u1 [1,254 kB]
+INFO:kolla.common.utils.neutron-metadata-agent:Get:4 http://deb.debian.org/debian buster/main s390x neutron-metadata-agent all 2:13.0.2-15 [27.0 kB]
+INFO:kolla.common.utils.neutron-metadata-agent:Preconfiguring packages ...
+INFO:kolla.common.utils.neutron-metadata-agent:Fetched 1,519 kB in 0s (16.0 MB/s)
+INFO:kolla.common.utils.neutron-metadata-agent:Selecting previously unselected package liblua5.3-0:s390x.
+INFO:kolla.common.utils.neutron-metadata-agent:(Reading database ... 
+INFO:kolla.common.utils.neutron-metadata-agent:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.neutron-metadata-agent:(Reading database ... 70%
+INFO:kolla.common.utils.neutron-metadata-agent:(Reading database ... 75%
+INFO:kolla.common.utils.neutron-metadata-agent:(Reading database ... 80%
+INFO:kolla.common.utils.neutron-metadata-agent:(Reading database ... 85%
+INFO:kolla.common.utils.neutron-metadata-agent:(Reading database ... 90%
+INFO:kolla.common.utils.neutron-metadata-agent:(Reading database ... 95%
+INFO:kolla.common.utils.neutron-metadata-agent:(Reading database ... 100%(Reading database ... 31839 files and directories currently installed.)
+INFO:kolla.common.utils.neutron-metadata-agent:Preparing to unpack .../liblua5.3-0_5.3.3-1.1_s390x.deb ...
+INFO:kolla.common.utils.neutron-metadata-agent:Unpacking liblua5.3-0:s390x (5.3.3-1.1) ...
+INFO:kolla.common.utils.neutron-metadata-agent:Selecting previously unselected package libpcre2-8-0:s390x.
+INFO:kolla.common.utils.neutron-metadata-agent:Preparing to unpack .../libpcre2-8-0_10.32-5_s390x.deb ...
+INFO:kolla.common.utils.neutron-metadata-agent:Unpacking libpcre2-8-0:s390x (10.32-5) ...
+INFO:kolla.common.utils.neutron-metadata-agent:Selecting previously unselected package haproxy.
+INFO:kolla.common.utils.neutron-metadata-agent:Preparing to unpack .../haproxy_1.8.19-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.neutron-metadata-agent:Unpacking haproxy (1.8.19-1+deb10u1) ...
+INFO:kolla.common.utils.neutron-metadata-agent:Selecting previously unselected package neutron-metadata-agent.
+INFO:kolla.common.utils.neutron-metadata-agent:Preparing to unpack .../neutron-metadata-agent_2%3a13.0.2-15_all.deb ...
+INFO:kolla.common.utils.neutron-metadata-agent:Unpacking neutron-metadata-agent (2:13.0.2-15) ...
+INFO:kolla.common.utils.neutron-metadata-agent:Setting up libpcre2-8-0:s390x (10.32-5) ...
+INFO:kolla.common.utils.neutron-metadata-agent:Setting up liblua5.3-0:s390x (5.3.3-1.1) ...
+INFO:kolla.common.utils.neutron-metadata-agent:Setting up haproxy (1.8.19-1+deb10u1) ...
+INFO:kolla.common.utils.neutron-metadata-agent:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.neutron-metadata-agent:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.neutron-metadata-agent:Setting up neutron-metadata-agent (2:13.0.2-15) ...
+INFO:kolla.common.utils.neutron-metadata-agent:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.neutron-metadata-agent:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.neutron-metadata-agent:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.neutron-metadata-agent:Removing intermediate container dfdbc26b17b8
+INFO:kolla.common.utils.neutron-metadata-agent: ---> 3fd1ad6bbea4
+INFO:kolla.common.utils.neutron-metadata-agent:Step 4/4 : USER neutron
+INFO:kolla.common.utils.neutron-metadata-agent: ---> Running in 4304725adb12
+INFO:kolla.common.utils.neutron-metadata-agent:Removing intermediate container 4304725adb12
+INFO:kolla.common.utils.neutron-metadata-agent: ---> 24e509c8b159
+INFO:kolla.common.utils.neutron-metadata-agent:Successfully built 24e509c8b159
+INFO:kolla.common.utils.neutron-metadata-agent:Successfully tagged s390x/debian-binary-neutron-metadata-agent:9.1.0
+INFO:kolla.common.utils.neutron-metadata-agent:Built at 2020-03-02 21:28:46.972289 (took 0:00:07.835965)

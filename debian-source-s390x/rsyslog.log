@@ -1,0 +1,51 @@
+INFO:kolla.common.utils.rsyslog:Building started at 2020-03-02 21:33:30.277987
+INFO:kolla.common.utils.rsyslog:Step 1/3 : FROM s390x/debian-source-rsyslog-base:9.1.0
+INFO:kolla.common.utils.rsyslog: ---> c2bfa8e6e07a
+INFO:kolla.common.utils.rsyslog:Step 2/3 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="rsyslog" build-date="20200302"
+INFO:kolla.common.utils.rsyslog: ---> Running in c8dd9c7dfed6
+INFO:kolla.common.utils.rsyslog:Removing intermediate container c8dd9c7dfed6
+INFO:kolla.common.utils.rsyslog: ---> 2cd5a7906331
+INFO:kolla.common.utils.rsyslog:Step 3/3 : RUN apt-get update && apt-get -y install --no-install-recommends rsyslog-gnutls && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.rsyslog: ---> Running in 096bd181e56e
+INFO:kolla.common.utils.rsyslog:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.rsyslog:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.rsyslog:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.rsyslog:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.rsyslog:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.rsyslog:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.rsyslog:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.rsyslog:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.rsyslog:Fetched 8,235 kB in 2s (3,637 kB/s)
+INFO:kolla.common.utils.rsyslog:Reading package lists...
+INFO:kolla.common.utils.rsyslog:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.rsyslog:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.rsyslog:[0m
+INFO:kolla.common.utils.rsyslog:Reading package lists...
+INFO:kolla.common.utils.rsyslog:Building dependency tree...
+INFO:kolla.common.utils.rsyslog:Reading state information...
+INFO:kolla.common.utils.rsyslog:Suggested packages:
+INFO:kolla.common.utils.rsyslog:  gnutls-bin
+INFO:kolla.common.utils.rsyslog:The following NEW packages will be installed:
+INFO:kolla.common.utils.rsyslog:  rsyslog-gnutls
+INFO:kolla.common.utils.rsyslog:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.rsyslog:Need to get 254 kB of archives.
+INFO:kolla.common.utils.rsyslog:After this operation, 295 kB of additional disk space will be used.
+INFO:kolla.common.utils.rsyslog:Get:1 http://deb.debian.org/debian buster/main s390x rsyslog-gnutls s390x 8.1901.0-1 [254 kB]
+INFO:kolla.common.utils.rsyslog:Fetched 254 kB in 0s (6,475 kB/s)
+INFO:kolla.common.utils.rsyslog:Selecting previously unselected package rsyslog-gnutls.
+INFO:kolla.common.utils.rsyslog:(Reading database ... 
+INFO:kolla.common.utils.rsyslog:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%
+INFO:kolla.common.utils.rsyslog:(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.rsyslog:(Reading database ... 80%
+INFO:kolla.common.utils.rsyslog:(Reading database ... 85%
+INFO:kolla.common.utils.rsyslog:(Reading database ... 90%
+INFO:kolla.common.utils.rsyslog:(Reading database ... 95%
+INFO:kolla.common.utils.rsyslog:(Reading database ... 100%(Reading database ... 12093 files and directories currently installed.)
+INFO:kolla.common.utils.rsyslog:Preparing to unpack .../rsyslog-gnutls_8.1901.0-1_s390x.deb ...
+INFO:kolla.common.utils.rsyslog:Unpacking rsyslog-gnutls (8.1901.0-1) ...
+INFO:kolla.common.utils.rsyslog:Setting up rsyslog-gnutls (8.1901.0-1) ...
+INFO:kolla.common.utils.rsyslog:Removing intermediate container 096bd181e56e
+INFO:kolla.common.utils.rsyslog: ---> 8eebac8d51c5
+INFO:kolla.common.utils.rsyslog:Successfully built 8eebac8d51c5
+INFO:kolla.common.utils.rsyslog:Successfully tagged s390x/debian-source-rsyslog:9.1.0
+INFO:kolla.common.utils.rsyslog:Built at 2020-03-02 21:33:38.513845 (took 0:00:08.235858)

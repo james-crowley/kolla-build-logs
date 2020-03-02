@@ -1,0 +1,192 @@
+INFO:kolla.common.utils.manila-api:Building started at 2020-03-02 21:28:57.934609
+INFO:kolla.common.utils.manila-api:Step 1/7 : FROM s390x/debian-binary-manila-base:9.1.0
+INFO:kolla.common.utils.manila-api: ---> 521f71fa2b52
+INFO:kolla.common.utils.manila-api:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="manila-api" build-date="20200302"
+INFO:kolla.common.utils.manila-api: ---> Running in de910d460d3b
+INFO:kolla.common.utils.manila-api:Removing intermediate container de910d460d3b
+INFO:kolla.common.utils.manila-api: ---> bd891a29be1c
+INFO:kolla.common.utils.manila-api:Step 3/7 : RUN apt-get update && apt-get -y install --no-install-recommends apache2 libapache2-mod-wsgi-py3 manila-api && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.manila-api: ---> Running in f5470b99e649
+INFO:kolla.common.utils.manila-api:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.manila-api:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.manila-api:Get:3 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.manila-api:Get:4 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.manila-api:Get:5 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.manila-api:Get:6 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.manila-api:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.manila-api:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.manila-api:Fetched 8,235 kB in 2s (5,099 kB/s)
+INFO:kolla.common.utils.manila-api:Reading package lists...
+INFO:kolla.common.utils.manila-api:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.manila-api:[0m
+INFO:kolla.common.utils.manila-api:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.manila-api:[0m
+INFO:kolla.common.utils.manila-api:Reading package lists...
+INFO:kolla.common.utils.manila-api:Building dependency tree...
+INFO:kolla.common.utils.manila-api:Reading state information...
+INFO:kolla.common.utils.manila-api:The following additional packages will be installed:
+INFO:kolla.common.utils.manila-api:  apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+INFO:kolla.common.utils.manila-api:  libaprutil1-dbd-sqlite3 libaprutil1-ldap libbrotli1 libjansson4 liblua5.2-0
+INFO:kolla.common.utils.manila-api:  libpython3.7 python-q-text-as-data python-six sqlite3
+INFO:kolla.common.utils.manila-api:Suggested packages:
+INFO:kolla.common.utils.manila-api:  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser
+INFO:kolla.common.utils.manila-api:  sqlite3-doc
+INFO:kolla.common.utils.manila-api:Recommended packages:
+INFO:kolla.common.utils.manila-api:  ssl-cert
+INFO:kolla.common.utils.manila-api:The following NEW packages will be installed:
+INFO:kolla.common.utils.manila-api:  apache2 apache2-bin apache2-data apache2-utils libapache2-mod-wsgi-py3
+INFO:kolla.common.utils.manila-api:  libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap libbrotli1
+INFO:kolla.common.utils.manila-api:  libjansson4 liblua5.2-0 libpython3.7 manila-api python-q-text-as-data
+INFO:kolla.common.utils.manila-api:  python-six sqlite3
+INFO:kolla.common.utils.manila-api:0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.manila-api:Need to get 4,831 kB of archives.
+INFO:kolla.common.utils.manila-api:After this operation, 17.5 MB of additional disk space will be used.
+INFO:kolla.common.utils.manila-api:Get:1 http://deb.debian.org/debian buster/main s390x libapr1 s390x 1.6.5-1+b1 [97.3 kB]
+INFO:kolla.common.utils.manila-api:Get:2 http://deb.debian.org/debian buster/main s390x libaprutil1 s390x 1.6.1-4 [88.8 kB]
+INFO:kolla.common.utils.manila-api:Get:3 http://deb.debian.org/debian buster/main s390x libaprutil1-dbd-sqlite3 s390x 1.6.1-4 [18.5 kB]
+INFO:kolla.common.utils.manila-api:Get:4 http://deb.debian.org/debian buster/main s390x libaprutil1-ldap s390x 1.6.1-4 [16.7 kB]
+INFO:kolla.common.utils.manila-api:Get:5 http://deb.debian.org/debian buster/main s390x libbrotli1 s390x 1.0.7-2 [262 kB]
+INFO:kolla.common.utils.manila-api:Get:6 http://deb.debian.org/debian buster/main s390x libjansson4 s390x 2.12-1 [35.7 kB]
+INFO:kolla.common.utils.manila-api:Get:7 http://deb.debian.org/debian buster/main s390x liblua5.2-0 s390x 5.2.4-1.1+b2 [102 kB]
+INFO:kolla.common.utils.manila-api:Get:8 http://deb.debian.org/debian buster/main s390x apache2-bin s390x 2.4.38-3+deb10u3 [1,193 kB]
+INFO:kolla.common.utils.manila-api:Get:9 http://deb.debian.org/debian buster/main s390x apache2-data all 2.4.38-3+deb10u3 [165 kB]
+INFO:kolla.common.utils.manila-api:Get:10 http://deb.debian.org/debian buster/main s390x apache2-utils s390x 2.4.38-3+deb10u3 [235 kB]
+INFO:kolla.common.utils.manila-api:Get:11 http://deb.debian.org/debian buster/main s390x apache2 s390x 2.4.38-3+deb10u3 [251 kB]
+INFO:kolla.common.utils.manila-api:Get:12 http://deb.debian.org/debian buster/main s390x libpython3.7 s390x 3.7.3-2+deb10u1 [1,359 kB]
+INFO:kolla.common.utils.manila-api:Get:13 http://deb.debian.org/debian buster/main s390x libapache2-mod-wsgi-py3 s390x 4.6.5-1 [87.9 kB]
+INFO:kolla.common.utils.manila-api:Get:14 http://deb.debian.org/debian buster/main s390x python-six all 1.12.0-1 [15.7 kB]
+INFO:kolla.common.utils.manila-api:Get:15 http://deb.debian.org/debian buster/main s390x sqlite3 s390x 3.27.2-3 [855 kB]
+INFO:kolla.common.utils.manila-api:Get:16 http://deb.debian.org/debian buster/main s390x python-q-text-as-data all 1.7.4+2018.12.21+git+28f776ed46-1 [26.3 kB]
+INFO:kolla.common.utils.manila-api:Get:17 http://deb.debian.org/debian buster/main s390x manila-api all 1:7.0.0-1 [22.9 kB]
+INFO:kolla.common.utils.manila-api:Preconfiguring packages ...
+INFO:kolla.common.utils.manila-api:Fetched 4,831 kB in 0s (24.2 MB/s)
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package libapr1:s390x.
+INFO:kolla.common.utils.manila-api:(Reading database ... 
+INFO:kolla.common.utils.manila-api:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%
+INFO:kolla.common.utils.manila-api:(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.manila-api:(Reading database ... 70%
+INFO:kolla.common.utils.manila-api:(Reading database ... 75%
+INFO:kolla.common.utils.manila-api:(Reading database ... 80%
+INFO:kolla.common.utils.manila-api:(Reading database ... 85%
+INFO:kolla.common.utils.manila-api:(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 26126 files and directories currently installed.)
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../00-libapr1_1.6.5-1+b1_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking libapr1:s390x (1.6.5-1+b1) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package libaprutil1:s390x.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../01-libaprutil1_1.6.1-4_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking libaprutil1:s390x (1.6.1-4) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package libaprutil1-dbd-sqlite3:s390x.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.1-4_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking libaprutil1-dbd-sqlite3:s390x (1.6.1-4) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package libaprutil1-ldap:s390x.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../03-libaprutil1-ldap_1.6.1-4_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking libaprutil1-ldap:s390x (1.6.1-4) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package libbrotli1:s390x.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../04-libbrotli1_1.0.7-2_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking libbrotli1:s390x (1.0.7-2) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package libjansson4:s390x.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../05-libjansson4_2.12-1_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking libjansson4:s390x (2.12-1) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package liblua5.2-0:s390x.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../06-liblua5.2-0_5.2.4-1.1+b2_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking liblua5.2-0:s390x (5.2.4-1.1+b2) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package apache2-bin.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../07-apache2-bin_2.4.38-3+deb10u3_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking apache2-bin (2.4.38-3+deb10u3) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package apache2-data.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../08-apache2-data_2.4.38-3+deb10u3_all.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking apache2-data (2.4.38-3+deb10u3) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package apache2-utils.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../09-apache2-utils_2.4.38-3+deb10u3_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking apache2-utils (2.4.38-3+deb10u3) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package apache2.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../10-apache2_2.4.38-3+deb10u3_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking apache2 (2.4.38-3+deb10u3) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package libpython3.7:s390x.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../11-libpython3.7_3.7.3-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking libpython3.7:s390x (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package libapache2-mod-wsgi-py3.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../12-libapache2-mod-wsgi-py3_4.6.5-1_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking libapache2-mod-wsgi-py3 (4.6.5-1) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package python-six.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../13-python-six_1.12.0-1_all.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking python-six (1.12.0-1) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package sqlite3.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../14-sqlite3_3.27.2-3_s390x.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking sqlite3 (3.27.2-3) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package python-q-text-as-data.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../15-python-q-text-as-data_1.7.4+2018.12.21+git+28f776ed46-1_all.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking python-q-text-as-data (1.7.4+2018.12.21+git+28f776ed46-1) ...
+INFO:kolla.common.utils.manila-api:Selecting previously unselected package manila-api.
+INFO:kolla.common.utils.manila-api:Preparing to unpack .../16-manila-api_1%3a7.0.0-1_all.deb ...
+INFO:kolla.common.utils.manila-api:Unpacking manila-api (1:7.0.0-1) ...
+INFO:kolla.common.utils.manila-api:Setting up libpython3.7:s390x (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.manila-api:Setting up libbrotli1:s390x (1.0.7-2) ...
+INFO:kolla.common.utils.manila-api:Setting up libapr1:s390x (1.6.5-1+b1) ...
+INFO:kolla.common.utils.manila-api:Setting up libjansson4:s390x (2.12-1) ...
+INFO:kolla.common.utils.manila-api:Setting up python-six (1.12.0-1) ...
+INFO:kolla.common.utils.manila-api:Setting up liblua5.2-0:s390x (5.2.4-1.1+b2) ...
+INFO:kolla.common.utils.manila-api:Setting up apache2-data (2.4.38-3+deb10u3) ...
+INFO:kolla.common.utils.manila-api:Setting up sqlite3 (3.27.2-3) ...
+INFO:kolla.common.utils.manila-api:Setting up python-q-text-as-data (1.7.4+2018.12.21+git+28f776ed46-1) ...
+INFO:kolla.common.utils.manila-api:update-alternatives: using /usr/bin/python2-q-text-as-data to provide /usr/bin/q (q) in auto mode
+INFO:kolla.common.utils.manila-api:Setting up libaprutil1:s390x (1.6.1-4) ...
+INFO:kolla.common.utils.manila-api:Setting up libaprutil1-ldap:s390x (1.6.1-4) ...
+INFO:kolla.common.utils.manila-api:Setting up libaprutil1-dbd-sqlite3:s390x (1.6.1-4) ...
+INFO:kolla.common.utils.manila-api:Setting up manila-api (1:7.0.0-1) ...
+INFO:kolla.common.utils.manila-api:Will not register  endpoint this time (no user request for it).
+INFO:kolla.common.utils.manila-api:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.manila-api:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.manila-api:Setting up apache2-utils (2.4.38-3+deb10u3) ...
+INFO:kolla.common.utils.manila-api:Setting up apache2-bin (2.4.38-3+deb10u3) ...
+INFO:kolla.common.utils.manila-api:Setting up apache2 (2.4.38-3+deb10u3) ...
+INFO:kolla.common.utils.manila-api:Enabling module mpm_event.
+INFO:kolla.common.utils.manila-api:Enabling module authz_core.
+INFO:kolla.common.utils.manila-api:Enabling module authz_host.
+INFO:kolla.common.utils.manila-api:Enabling module authn_core.
+INFO:kolla.common.utils.manila-api:Enabling module auth_basic.
+INFO:kolla.common.utils.manila-api:Enabling module access_compat.
+INFO:kolla.common.utils.manila-api:Enabling module authn_file.
+INFO:kolla.common.utils.manila-api:Enabling module authz_user.
+INFO:kolla.common.utils.manila-api:Enabling module alias.
+INFO:kolla.common.utils.manila-api:Enabling module dir.
+INFO:kolla.common.utils.manila-api:Enabling module autoindex.
+INFO:kolla.common.utils.manila-api:Enabling module env.
+INFO:kolla.common.utils.manila-api:Enabling module mime.
+INFO:kolla.common.utils.manila-api:Enabling module negotiation.
+INFO:kolla.common.utils.manila-api:Enabling module setenvif.
+INFO:kolla.common.utils.manila-api:Enabling module filter.
+INFO:kolla.common.utils.manila-api:Enabling module deflate.
+INFO:kolla.common.utils.manila-api:Enabling module status.
+INFO:kolla.common.utils.manila-api:Enabling module reqtimeout.
+INFO:kolla.common.utils.manila-api:Enabling conf charset.
+INFO:kolla.common.utils.manila-api:Enabling conf localized-error-pages.
+INFO:kolla.common.utils.manila-api:Enabling conf other-vhosts-access-log.
+INFO:kolla.common.utils.manila-api:Enabling conf security.
+INFO:kolla.common.utils.manila-api:Enabling conf serve-cgi-bin.
+INFO:kolla.common.utils.manila-api:Enabling site 000-default.
+INFO:kolla.common.utils.manila-api:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.manila-api:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.manila-api:Setting up libapache2-mod-wsgi-py3 (4.6.5-1) ...
+INFO:kolla.common.utils.manila-api:apache2_invoke: Enable module wsgi
+INFO:kolla.common.utils.manila-api:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.manila-api:invoke-rc.d: policy-rc.d denied execution of restart.
+INFO:kolla.common.utils.manila-api:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.manila-api:Removing intermediate container f5470b99e649
+INFO:kolla.common.utils.manila-api: ---> 53fe043202a6
+INFO:kolla.common.utils.manila-api:Step 4/7 : RUN mkdir -p /var/www/cgi-bin/manila     && cp -a /usr/bin/manila-wsgi /var/www/cgi-bin/manila/manila-wsgi     && echo > /etc/apache2/ports.conf
+INFO:kolla.common.utils.manila-api: ---> Running in 15c684b8e525
+INFO:kolla.common.utils.manila-api:Removing intermediate container 15c684b8e525
+INFO:kolla.common.utils.manila-api: ---> 7219c95604e3
+INFO:kolla.common.utils.manila-api:Step 5/7 : COPY extend_start.sh /usr/local/bin/kolla_manila_extend_start
+INFO:kolla.common.utils.manila-api: ---> 89ec761dd650
+INFO:kolla.common.utils.manila-api:Step 6/7 : RUN chmod 755 /usr/local/bin/kolla_manila_extend_start     && chown -R manila: /var/www/cgi-bin/manila     && chmod 755 /var/www/cgi-bin/manila/manila-wsgi
+INFO:kolla.common.utils.manila-api: ---> Running in 47656c1d299d
+INFO:kolla.common.utils.manila-api:Removing intermediate container 47656c1d299d
+INFO:kolla.common.utils.manila-api: ---> f135d87d3846
+INFO:kolla.common.utils.manila-api:Step 7/7 : USER manila
+INFO:kolla.common.utils.manila-api: ---> Running in 3220c7cb4da1
+INFO:kolla.common.utils.manila-api:Removing intermediate container 3220c7cb4da1
+INFO:kolla.common.utils.manila-api: ---> 0ac4d473d7dc
+INFO:kolla.common.utils.manila-api:Successfully built 0ac4d473d7dc
+INFO:kolla.common.utils.manila-api:Successfully tagged s390x/debian-binary-manila-api:9.1.0
+INFO:kolla.common.utils.manila-api:Built at 2020-03-02 21:29:13.174047 (took 0:00:15.239438)

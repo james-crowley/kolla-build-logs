@@ -1,0 +1,20 @@
+INFO:kolla.common.utils.prometheus-base:Building started at 2020-03-02 21:22:32.511867
+INFO:kolla.common.utils.prometheus-base:Step 1/5 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.prometheus-base: ---> 4244142526cc
+INFO:kolla.common.utils.prometheus-base:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-base" build-date="20200302"
+INFO:kolla.common.utils.prometheus-base: ---> Running in d38fe7f417b8
+INFO:kolla.common.utils.prometheus-base:Removing intermediate container d38fe7f417b8
+INFO:kolla.common.utils.prometheus-base: ---> 9bee8032335e
+INFO:kolla.common.utils.prometheus-base:Step 3/5 : RUN usermod --append --home /var/lib/prometheus --groups kolla prometheus     && mkdir -p /var/lib/prometheus     && chown -R 42472:42472 /var/lib/prometheus
+INFO:kolla.common.utils.prometheus-base: ---> Running in 1c6d66957d21
+INFO:kolla.common.utils.prometheus-base:Removing intermediate container 1c6d66957d21
+INFO:kolla.common.utils.prometheus-base: ---> 594491183291
+INFO:kolla.common.utils.prometheus-base:Step 4/5 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.prometheus-base: ---> d20011f052b7
+INFO:kolla.common.utils.prometheus-base:Step 5/5 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.prometheus-base: ---> Running in 82304f977b74
+INFO:kolla.common.utils.prometheus-base:Removing intermediate container 82304f977b74
+INFO:kolla.common.utils.prometheus-base: ---> 2ccf34e0ee94
+INFO:kolla.common.utils.prometheus-base:Successfully built 2ccf34e0ee94
+INFO:kolla.common.utils.prometheus-base:Successfully tagged s390x/debian-binary-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-base:Built at 2020-03-02 21:22:38.450486 (took 0:00:05.938619)

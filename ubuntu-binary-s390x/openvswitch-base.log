@@ -1,0 +1,131 @@
+INFO:kolla.common.utils.openvswitch-base:Building started at 2020-03-02 21:37:41.168858
+INFO:kolla.common.utils.openvswitch-base:Step 1/5 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.openvswitch-base: ---> 682558ff6b31
+INFO:kolla.common.utils.openvswitch-base:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="openvswitch-base" build-date="20200302"
+INFO:kolla.common.utils.openvswitch-base: ---> Running in 1982dcb9a1c7
+INFO:kolla.common.utils.openvswitch-base:Removing intermediate container 1982dcb9a1c7
+INFO:kolla.common.utils.openvswitch-base: ---> a41355e099c3
+INFO:kolla.common.utils.openvswitch-base:Step 3/5 : RUN apt-get update && apt-get -y install --no-install-recommends openvswitch-switch python3-openvswitch python3-netifaces tcpdump && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.openvswitch-base: ---> Running in 255b4329fd56
+INFO:kolla.common.utils.openvswitch-base:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.openvswitch-base:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.openvswitch-base:Get:3 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.openvswitch-base:Get:5 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:8 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.openvswitch-base:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.openvswitch-base:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.openvswitch-base:Fetched 15.6 MB in 3s (5,099 kB/s)
+INFO:kolla.common.utils.openvswitch-base:Reading package lists...
+INFO:kolla.common.utils.openvswitch-base:Reading package lists...
+INFO:kolla.common.utils.openvswitch-base:Building dependency tree...
+INFO:kolla.common.utils.openvswitch-base:Reading state information...
+INFO:kolla.common.utils.openvswitch-base:The following additional packages will be installed:
+INFO:kolla.common.utils.openvswitch-base:  libevent-2.1-6 libpcap0.8 libunbound2 openvswitch-common python3-six
+INFO:kolla.common.utils.openvswitch-base:  python3-sortedcontainers uuid-runtime
+INFO:kolla.common.utils.openvswitch-base:Suggested packages:
+INFO:kolla.common.utils.openvswitch-base:  ethtool openvswitch-doc python-sortedcontainers-doc apparmor
+INFO:kolla.common.utils.openvswitch-base:The following NEW packages will be installed:
+INFO:kolla.common.utils.openvswitch-base:  libevent-2.1-6 libpcap0.8 libunbound2 openvswitch-common openvswitch-switch
+INFO:kolla.common.utils.openvswitch-base:  python3-netifaces python3-openvswitch python3-six python3-sortedcontainers
+INFO:kolla.common.utils.openvswitch-base:  tcpdump uuid-runtime
+INFO:kolla.common.utils.openvswitch-base:0 upgraded, 11 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.openvswitch-base:Need to get 3,477 kB of archives.
+INFO:kolla.common.utils.openvswitch-base:After this operation, 16.3 MB of additional disk space will be used.
+INFO:kolla.common.utils.openvswitch-base:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x openvswitch-common s390x 2.12.0-0ubuntu1~cloud0 [886 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:2 http://ports.ubuntu.com bionic-updates/main s390x uuid-runtime s390x 2.31.1-0.4ubuntu3.5 [33.7 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x python3-openvswitch all 2.12.0-0ubuntu1~cloud0 [107 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x openvswitch-switch s390x 2.12.0-0ubuntu1~cloud0 [1,560 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:5 http://ports.ubuntu.com bionic-updates/main s390x libpcap0.8 s390x 1.8.1-6ubuntu1.18.04.1 [109 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:6 http://ports.ubuntu.com bionic-updates/main s390x tcpdump s390x 4.9.3-0ubuntu0.18.04.1 [333 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:7 http://ports.ubuntu.com bionic/main s390x libevent-2.1-6 s390x 2.1.8-stable-4build1 [122 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:8 http://ports.ubuntu.com bionic-updates/main s390x libunbound2 s390x 1.6.7-1ubuntu2.2 [275 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:9 http://ports.ubuntu.com bionic/main s390x python3-six all 1.11.0-2 [11.4 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:10 http://ports.ubuntu.com bionic/main s390x python3-netifaces s390x 0.10.4-0.1build4 [12.4 kB]
+INFO:kolla.common.utils.openvswitch-base:Get:11 http://ports.ubuntu.com bionic/universe s390x python3-sortedcontainers all 1.5.7-1 [26.3 kB]
+INFO:kolla.common.utils.openvswitch-base:Fetched 3,477 kB in 1s (6,133 kB/s)
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package uuid-runtime.
+INFO:kolla.common.utils.openvswitch-base:(Reading database ... 
+INFO:kolla.common.utils.openvswitch-base:(Reading database ... 5%(Reading database ... 10%
+INFO:kolla.common.utils.openvswitch-base:(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%
+INFO:kolla.common.utils.openvswitch-base:(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.openvswitch-base:(Reading database ... 75%
+INFO:kolla.common.utils.openvswitch-base:(Reading database ... 80%
+INFO:kolla.common.utils.openvswitch-base:(Reading database ... 85%
+INFO:kolla.common.utils.openvswitch-base:(Reading database ... 90%
+INFO:kolla.common.utils.openvswitch-base:(Reading database ... 95%
+INFO:kolla.common.utils.openvswitch-base:(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../00-uuid-runtime_2.31.1-0.4ubuntu3.5_s390x.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking uuid-runtime (2.31.1-0.4ubuntu3.5) ...
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package libpcap0.8:s390x.
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../01-libpcap0.8_1.8.1-6ubuntu1.18.04.1_s390x.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking libpcap0.8:s390x (1.8.1-6ubuntu1.18.04.1) ...
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package tcpdump.
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../02-tcpdump_4.9.3-0ubuntu0.18.04.1_s390x.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking tcpdump (4.9.3-0ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package libevent-2.1-6:s390x.
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../03-libevent-2.1-6_2.1.8-stable-4build1_s390x.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking libevent-2.1-6:s390x (2.1.8-stable-4build1) ...
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package libunbound2:s390x.
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../04-libunbound2_1.6.7-1ubuntu2.2_s390x.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking libunbound2:s390x (1.6.7-1ubuntu2.2) ...
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package python3-six.
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../05-python3-six_1.11.0-2_all.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking python3-six (1.11.0-2) ...
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package openvswitch-common.
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../06-openvswitch-common_2.12.0-0ubuntu1~cloud0_s390x.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking openvswitch-common (2.12.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package python3-netifaces.
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../07-python3-netifaces_0.10.4-0.1build4_s390x.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking python3-netifaces (0.10.4-0.1build4) ...
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package python3-sortedcontainers.
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../08-python3-sortedcontainers_1.5.7-1_all.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking python3-sortedcontainers (1.5.7-1) ...
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package python3-openvswitch.
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../09-python3-openvswitch_2.12.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking python3-openvswitch (2.12.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.openvswitch-base:Selecting previously unselected package openvswitch-switch.
+INFO:kolla.common.utils.openvswitch-base:Preparing to unpack .../10-openvswitch-switch_2.12.0-0ubuntu1~cloud0_s390x.deb ...
+INFO:kolla.common.utils.openvswitch-base:Unpacking openvswitch-switch (2.12.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.openvswitch-base:Setting up libevent-2.1-6:s390x (2.1.8-stable-4build1) ...
+INFO:kolla.common.utils.openvswitch-base:Setting up python3-six (1.11.0-2) ...
+INFO:kolla.common.utils.openvswitch-base:Setting up python3-netifaces (0.10.4-0.1build4) ...
+INFO:kolla.common.utils.openvswitch-base:Setting up uuid-runtime (2.31.1-0.4ubuntu3.5) ...
+INFO:kolla.common.utils.openvswitch-base:Adding group `uuidd' (GID 103) ...
+INFO:kolla.common.utils.openvswitch-base:Done.
+INFO:kolla.common.utils.openvswitch-base:Warning: The home dir /run/uuidd you specified can't be accessed: No such file or directory
+INFO:kolla.common.utils.openvswitch-base:Adding system user `uuidd' (UID 101) ...
+INFO:kolla.common.utils.openvswitch-base:Adding new user `uuidd' (UID 101) with group `uuidd' ...
+INFO:kolla.common.utils.openvswitch-base:Not creating home directory `/run/uuidd'.
+INFO:kolla.common.utils.openvswitch-base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.openvswitch-base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.openvswitch-base:Setting up python3-sortedcontainers (1.5.7-1) ...
+INFO:kolla.common.utils.openvswitch-base:Setting up python3-openvswitch (2.12.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.openvswitch-base:Setting up libpcap0.8:s390x (1.8.1-6ubuntu1.18.04.1) ...
+INFO:kolla.common.utils.openvswitch-base:Setting up libunbound2:s390x (1.6.7-1ubuntu2.2) ...
+INFO:kolla.common.utils.openvswitch-base:Setting up openvswitch-common (2.12.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.openvswitch-base:Setting up tcpdump (4.9.3-0ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.openvswitch-base:Setting up openvswitch-switch (2.12.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.openvswitch-base:update-alternatives: using /usr/lib/openvswitch-switch/ovs-vswitchd to provide /usr/sbin/ovs-vswitchd (ovs-vswitchd) in auto mode
+INFO:kolla.common.utils.openvswitch-base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.openvswitch-base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.openvswitch-base:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.openvswitch-base:Removing intermediate container 255b4329fd56
+INFO:kolla.common.utils.openvswitch-base: ---> c3f1fce652de
+INFO:kolla.common.utils.openvswitch-base:Step 4/5 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.openvswitch-base: ---> 9c6b8197a095
+INFO:kolla.common.utils.openvswitch-base:Step 5/5 : RUN mv /usr/sbin/tcpdump /usr/bin/tcpdump     && touch /usr/local/bin/kolla_openvswitch_extend_start     && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_openvswitch_extend_start
+INFO:kolla.common.utils.openvswitch-base: ---> Running in 73f8a1fad610
+INFO:kolla.common.utils.openvswitch-base:Removing intermediate container 73f8a1fad610
+INFO:kolla.common.utils.openvswitch-base: ---> aa51c9e8210f
+INFO:kolla.common.utils.openvswitch-base:Successfully built aa51c9e8210f
+INFO:kolla.common.utils.openvswitch-base:Successfully tagged s390x/ubuntu-binary-openvswitch-base:9.1.0
+INFO:kolla.common.utils.openvswitch-base:Built at 2020-03-02 21:37:54.303316 (took 0:00:13.134458)

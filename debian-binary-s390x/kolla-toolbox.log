@@ -1,0 +1,1246 @@
+INFO:kolla.common.utils.kolla-toolbox:Building started at 2020-03-02 21:21:38.932538
+INFO:kolla.common.utils.kolla-toolbox:Step 1/16 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.kolla-toolbox: ---> 4244142526cc
+INFO:kolla.common.utils.kolla-toolbox:Step 2/16 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="kolla-toolbox" build-date="20200302"
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in 8c0de7bea3ea
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container 8c0de7bea3ea
+INFO:kolla.common.utils.kolla-toolbox: ---> 17cf5821efbe
+INFO:kolla.common.utils.kolla-toolbox:Step 3/16 : RUN usermod --append --home /var/lib/ansible --groups kolla ansible     && mkdir -p /var/lib/ansible     && chown -R 42401:42401 /var/lib/ansible
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in ca2f5dd8a5ed
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container ca2f5dd8a5ed
+INFO:kolla.common.utils.kolla-toolbox: ---> cebbfe19e997
+INFO:kolla.common.utils.kolla-toolbox:Step 4/16 : RUN usermod --append --home /var/lib/rabbitmq --groups kolla rabbitmq     && mkdir -p /var/lib/rabbitmq     && chown -R 42439:42439 /var/lib/rabbitmq
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in 1ebfcae2b0fe
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container 1ebfcae2b0fe
+INFO:kolla.common.utils.kolla-toolbox: ---> 0cd64b9265fc
+INFO:kolla.common.utils.kolla-toolbox:Step 5/16 : RUN apt-get update && apt-get -y install --no-install-recommends build-essential ca-certificates crudini gdisk git jq libffi-dev libmariadb-dev-compat libssl-dev libxslt1-dev mariadb-client python3-dev rabbitmq-server && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in 98e619ce5983
+INFO:kolla.common.utils.kolla-toolbox:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.kolla-toolbox:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.kolla-toolbox:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.kolla-toolbox:Fetched 8,235 kB in 2s (5,246 kB/s)
+INFO:kolla.common.utils.kolla-toolbox:Reading package lists...
+INFO:kolla.common.utils.kolla-toolbox:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.kolla-toolbox:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.kolla-toolbox:[0m
+INFO:kolla.common.utils.kolla-toolbox:Reading package lists...
+INFO:kolla.common.utils.kolla-toolbox:Building dependency tree...
+INFO:kolla.common.utils.kolla-toolbox:Reading state information...
+INFO:kolla.common.utils.kolla-toolbox:ca-certificates is already the newest version (20190110).
+INFO:kolla.common.utils.kolla-toolbox:The following additional packages will be installed:
+INFO:kolla.common.utils.kolla-toolbox:  binutils binutils-common binutils-s390x-linux-gnu bzip2 cpp cpp-8 cron
+INFO:kolla.common.utils.kolla-toolbox:  dh-python dpkg-dev erlang-asn1 erlang-base erlang-crypto erlang-eldap
+INFO:kolla.common.utils.kolla-toolbox:  erlang-ftp erlang-inets erlang-mnesia erlang-os-mon erlang-parsetools
+INFO:kolla.common.utils.kolla-toolbox:  erlang-public-key erlang-runtime-tools erlang-snmp erlang-ssl
+INFO:kolla.common.utils.kolla-toolbox:  erlang-syntax-tools erlang-tftp erlang-tools erlang-xmerl g++ g++-8 gcc
+INFO:kolla.common.utils.kolla-toolbox:  gcc-8 git-man icu-devtools libasan5 libatomic1 libbinutils libc-dev-bin
+INFO:kolla.common.utils.kolla-toolbox:  libc6-dev libcc1-0 libconfig-inifiles-perl libcurl3-gnutls libdpkg-perl
+INFO:kolla.common.utils.kolla-toolbox:  liberror-perl libevent-2.1-6 libexpat1-dev libgcc-8-dev libgmp-dev
+INFO:kolla.common.utils.kolla-toolbox:  libgmpxx4ldbl libgnutls-dane0 libgnutls-openssl27 libgnutls28-dev
+INFO:kolla.common.utils.kolla-toolbox:  libgnutlsxx28 libgomp1 libicu-dev libicu63 libidn2-dev libisl19 libitm1
+INFO:kolla.common.utils.kolla-toolbox:  libjq1 libmariadb-dev libmariadb3 libmpc3 libonig5 libp11-kit-dev
+INFO:kolla.common.utils.kolla-toolbox:  libpcre2-8-0 libpopt0 libpython-stdlib libpython2-stdlib
+INFO:kolla.common.utils.kolla-toolbox:  libpython2.7-minimal libpython2.7-stdlib libpython3-dev libpython3.7
+INFO:kolla.common.utils.kolla-toolbox:  libpython3.7-dev libsnappy1v5 libstdc++-8-dev libtasn1-6-dev libubsan1
+INFO:kolla.common.utils.kolla-toolbox:  libunbound8 libxml2 libxml2-dev libxslt1.1 linux-libc-dev locales-all
+INFO:kolla.common.utils.kolla-toolbox:  logrotate make mariadb-client-10.3 mariadb-client-core-10.3 mariadb-common
+INFO:kolla.common.utils.kolla-toolbox:  mysql-common nettle-dev patch python python-iniparse python-minimal
+INFO:kolla.common.utils.kolla-toolbox:  python-six python2 python2-minimal python2.7 python2.7-minimal
+INFO:kolla.common.utils.kolla-toolbox:  python3-distutils python3-lib2to3 python3.7-dev sensible-utils xz-utils
+INFO:kolla.common.utils.kolla-toolbox:  zlib1g-dev
+INFO:kolla.common.utils.kolla-toolbox:Suggested packages:
+INFO:kolla.common.utils.kolla-toolbox:  binutils-doc bzip2-doc cpp-doc gcc-8-locales anacron checksecurity
+INFO:kolla.common.utils.kolla-toolbox:  debian-keyring erlang erlang-manpages erlang-doc g++-multilib g++-8-multilib
+INFO:kolla.common.utils.kolla-toolbox:  gcc-8-doc libstdc++6-8-dbg gcc-multilib manpages-dev autoconf automake
+INFO:kolla.common.utils.kolla-toolbox:  libtool flex bison gdb gcc-doc gcc-8-multilib libgcc1-dbg libgomp1-dbg
+INFO:kolla.common.utils.kolla-toolbox:  libitm1-dbg libatomic1-dbg libasan5-dbg liblsan0-dbg libtsan0-dbg
+INFO:kolla.common.utils.kolla-toolbox:  libubsan1-dbg libmpx2-dbg libquadmath0-dbg gettext-base git-daemon-run
+INFO:kolla.common.utils.kolla-toolbox:  | git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-cvs
+INFO:kolla.common.utils.kolla-toolbox:  git-mediawiki git-svn glibc-doc bzr gmp-doc libgmp10-doc libmpfr-dev
+INFO:kolla.common.utils.kolla-toolbox:  dns-root-data gnutls-bin gnutls-doc icu-doc libssl-doc libstdc++-8-doc
+INFO:kolla.common.utils.kolla-toolbox:  pkg-config make-doc ed diffutils-doc python-doc python-tk python2-doc
+INFO:kolla.common.utils.kolla-toolbox:  python2.7-doc binfmt-support
+INFO:kolla.common.utils.kolla-toolbox:Recommended packages:
+INFO:kolla.common.utils.kolla-toolbox:  default-mta | mail-transport-agent fakeroot libalgorithm-merge-perl libsctp1
+INFO:kolla.common.utils.kolla-toolbox:  groff-base less ssh-client manpages manpages-dev libfile-fcntllock-perl
+INFO:kolla.common.utils.kolla-toolbox:  liblocale-gettext-perl libtasn1-doc bsd-mailx | mailx libdbd-mysql-perl
+INFO:kolla.common.utils.kolla-toolbox:  libdbi-perl libterm-readkey-perl
+INFO:kolla.common.utils.kolla-toolbox:The following NEW packages will be installed:
+INFO:kolla.common.utils.kolla-toolbox:  binutils binutils-common binutils-s390x-linux-gnu build-essential bzip2 cpp
+INFO:kolla.common.utils.kolla-toolbox:  cpp-8 cron crudini dh-python dpkg-dev erlang-asn1 erlang-base erlang-crypto
+INFO:kolla.common.utils.kolla-toolbox:  erlang-eldap erlang-ftp erlang-inets erlang-mnesia erlang-os-mon
+INFO:kolla.common.utils.kolla-toolbox:  erlang-parsetools erlang-public-key erlang-runtime-tools erlang-snmp
+INFO:kolla.common.utils.kolla-toolbox:  erlang-ssl erlang-syntax-tools erlang-tftp erlang-tools erlang-xmerl g++
+INFO:kolla.common.utils.kolla-toolbox:  g++-8 gcc gcc-8 gdisk git git-man icu-devtools jq libasan5 libatomic1
+INFO:kolla.common.utils.kolla-toolbox:  libbinutils libc-dev-bin libc6-dev libcc1-0 libconfig-inifiles-perl
+INFO:kolla.common.utils.kolla-toolbox:  libcurl3-gnutls libdpkg-perl liberror-perl libevent-2.1-6 libexpat1-dev
+INFO:kolla.common.utils.kolla-toolbox:  libffi-dev libgcc-8-dev libgmp-dev libgmpxx4ldbl libgnutls-dane0
+INFO:kolla.common.utils.kolla-toolbox:  libgnutls-openssl27 libgnutls28-dev libgnutlsxx28 libgomp1 libicu-dev
+INFO:kolla.common.utils.kolla-toolbox:  libicu63 libidn2-dev libisl19 libitm1 libjq1 libmariadb-dev
+INFO:kolla.common.utils.kolla-toolbox:  libmariadb-dev-compat libmariadb3 libmpc3 libonig5 libp11-kit-dev
+INFO:kolla.common.utils.kolla-toolbox:  libpcre2-8-0 libpopt0 libpython-stdlib libpython2-stdlib
+INFO:kolla.common.utils.kolla-toolbox:  libpython2.7-minimal libpython2.7-stdlib libpython3-dev libpython3.7
+INFO:kolla.common.utils.kolla-toolbox:  libpython3.7-dev libsnappy1v5 libssl-dev libstdc++-8-dev libtasn1-6-dev
+INFO:kolla.common.utils.kolla-toolbox:  libubsan1 libunbound8 libxml2 libxml2-dev libxslt1-dev libxslt1.1
+INFO:kolla.common.utils.kolla-toolbox:  linux-libc-dev locales-all logrotate make mariadb-client mariadb-client-10.3
+INFO:kolla.common.utils.kolla-toolbox:  mariadb-client-core-10.3 mariadb-common mysql-common nettle-dev patch python
+INFO:kolla.common.utils.kolla-toolbox:  python-iniparse python-minimal python-six python2 python2-minimal python2.7
+INFO:kolla.common.utils.kolla-toolbox:  python2.7-minimal python3-dev python3-distutils python3-lib2to3
+INFO:kolla.common.utils.kolla-toolbox:  python3.7-dev rabbitmq-server sensible-utils xz-utils zlib1g-dev
+INFO:kolla.common.utils.kolla-toolbox:0 upgraded, 116 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.kolla-toolbox:Need to get 168 MB of archives.
+INFO:kolla.common.utils.kolla-toolbox:After this operation, 734 MB of additional disk space will be used.
+INFO:kolla.common.utils.kolla-toolbox:Get:1 http://deb.debian.org/debian buster/main s390x sensible-utils all 0.0.12 [15.8 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:2 http://deb.debian.org/debian buster/main s390x cron s390x 3.0pl1-134+deb10u1 [97.3 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:3 http://deb.debian.org/debian buster/main s390x libpython2.7-minimal s390x 2.7.16-2+deb10u1 [395 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:5 http://deb.debian.org/debian buster/main s390x python2.7-minimal s390x 2.7.16-2+deb10u1 [1,234 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:6 http://deb.debian.org/debian buster/main s390x python2-minimal s390x 2.7.16-1 [41.4 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:7 http://deb.debian.org/debian buster/main s390x python-minimal s390x 2.7.16-1 [21.0 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:8 http://deb.debian.org/debian buster/main s390x libpython2.7-stdlib s390x 2.7.16-2+deb10u1 [1,853 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:4 http://security-cdn.debian.org/debian-security buster/updates/main s390x libcurl3-gnutls s390x 7.64.0-4+deb10u1 [307 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:9 http://deb.debian.org/debian buster/main s390x python2.7 s390x 2.7.16-2+deb10u1 [305 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:10 http://deb.debian.org/debian buster/main s390x libpython2-stdlib s390x 2.7.16-1 [20.8 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:11 http://deb.debian.org/debian buster/main s390x libpython-stdlib s390x 2.7.16-1 [20.8 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:12 http://deb.debian.org/debian buster/main s390x python2 s390x 2.7.16-1 [41.6 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:13 http://deb.debian.org/debian buster/main s390x python s390x 2.7.16-1 [22.8 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:14 http://deb.debian.org/debian buster/main s390x libpopt0 s390x 1.16-12 [47.7 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:15 http://deb.debian.org/debian buster/main s390x logrotate s390x 3.14.0-4 [59.9 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:16 http://deb.debian.org/debian buster/main s390x bzip2 s390x 1.0.6-9.2~deb10u1 [47.8 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:17 http://deb.debian.org/debian buster/main s390x xz-utils s390x 5.2.4-1 [181 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:18 http://deb.debian.org/debian buster/main s390x binutils-common s390x 2.31.1-16 [2,073 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:19 http://deb.debian.org/debian buster/main s390x libbinutils s390x 2.31.1-16 [298 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:20 http://deb.debian.org/debian buster/main s390x binutils-s390x-linux-gnu s390x 2.31.1-16 [1,653 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:21 http://deb.debian.org/debian buster/main s390x binutils s390x 2.31.1-16 [56.7 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:22 http://deb.debian.org/debian buster/main s390x libc-dev-bin s390x 2.28-10 [269 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:23 http://deb.debian.org/debian buster/main s390x linux-libc-dev s390x 4.19.98-1 [1,311 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:24 http://deb.debian.org/debian buster/main s390x libc6-dev s390x 2.28-10 [2,270 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:25 http://deb.debian.org/debian buster/main s390x libisl19 s390x 0.20-2 [547 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:26 http://deb.debian.org/debian buster/main s390x libmpc3 s390x 1.1.0-1 [38.0 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:27 http://deb.debian.org/debian buster/main s390x cpp-8 s390x 8.3.0-6 [6,785 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:28 http://deb.debian.org/debian buster/main s390x cpp s390x 4:8.3.0-1 [19.4 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:29 http://deb.debian.org/debian buster/main s390x libcc1-0 s390x 8.3.0-6 [43.8 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:30 http://deb.debian.org/debian buster/main s390x libgomp1 s390x 8.3.0-6 [69.0 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:31 http://deb.debian.org/debian buster/main s390x libitm1 s390x 8.3.0-6 [26.7 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:32 http://deb.debian.org/debian buster/main s390x libatomic1 s390x 8.3.0-6 [8,184 B]
+INFO:kolla.common.utils.kolla-toolbox:Get:33 http://deb.debian.org/debian buster/main s390x libasan5 s390x 8.3.0-6 [321 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:34 http://deb.debian.org/debian buster/main s390x libubsan1 s390x 8.3.0-6 [113 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:35 http://deb.debian.org/debian buster/main s390x libgcc-8-dev s390x 8.3.0-6 [641 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:36 http://deb.debian.org/debian buster/main s390x gcc-8 s390x 8.3.0-6 [7,277 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:37 http://deb.debian.org/debian buster/main s390x gcc s390x 4:8.3.0-1 [5,188 B]
+INFO:kolla.common.utils.kolla-toolbox:Get:38 http://deb.debian.org/debian buster/main s390x libstdc++-8-dev s390x 8.3.0-6 [1,502 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:39 http://deb.debian.org/debian buster/main s390x g++-8 s390x 8.3.0-6 [7,525 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:40 http://deb.debian.org/debian buster/main s390x g++ s390x 4:8.3.0-1 [1,636 B]
+INFO:kolla.common.utils.kolla-toolbox:Get:41 http://deb.debian.org/debian buster/main s390x make s390x 4.2.1-1.2 [333 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:42 http://deb.debian.org/debian buster/main s390x libdpkg-perl all 1.19.7 [1,414 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:43 http://deb.debian.org/debian buster/main s390x patch s390x 2.7.6-3+deb10u1 [124 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:44 http://deb.debian.org/debian buster/main s390x dpkg-dev all 1.19.7 [1,773 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:45 http://deb.debian.org/debian buster/main s390x build-essential s390x 12.6 [7,576 B]
+INFO:kolla.common.utils.kolla-toolbox:Get:46 http://deb.debian.org/debian buster/main s390x python-six all 1.12.0-1 [15.7 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:47 http://deb.debian.org/debian buster/main s390x python-iniparse all 0.4-2.2 [21.0 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:48 http://deb.debian.org/debian buster/main s390x crudini s390x 0.7-1 [12.2 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:49 http://deb.debian.org/debian buster/main s390x python3-lib2to3 all 3.7.3-1 [76.7 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:50 http://deb.debian.org/debian buster/main s390x python3-distutils all 3.7.3-1 [142 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:51 http://deb.debian.org/debian buster/main s390x dh-python all 3.20190308 [99.3 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:52 http://deb.debian.org/debian buster/main s390x erlang-base s390x 1:21.2.6+dfsg-1 [7,573 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:53 http://deb.debian.org/debian buster/main s390x erlang-asn1 s390x 1:21.2.6+dfsg-1 [754 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:54 http://deb.debian.org/debian buster/main s390x erlang-crypto s390x 1:21.2.6+dfsg-1 [146 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:55 http://deb.debian.org/debian buster/main s390x erlang-public-key s390x 1:21.2.6+dfsg-1 [603 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:56 http://deb.debian.org/debian buster/main s390x erlang-mnesia s390x 1:21.2.6+dfsg-1 [756 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:57 http://deb.debian.org/debian buster/main s390x erlang-runtime-tools s390x 1:21.2.6+dfsg-1 [215 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:58 http://deb.debian.org/debian buster/main s390x erlang-ssl s390x 1:21.2.6+dfsg-1 [897 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:59 http://deb.debian.org/debian buster/main s390x erlang-eldap s390x 1:21.2.6+dfsg-1 [133 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:60 http://deb.debian.org/debian buster/main s390x erlang-ftp s390x 1:21.2.6+dfsg-1 [101 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:61 http://deb.debian.org/debian buster/main s390x erlang-tftp s390x 1:21.2.6+dfsg-1 [117 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:62 http://deb.debian.org/debian buster/main s390x erlang-inets s390x 1:21.2.6+dfsg-1 [614 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:63 http://deb.debian.org/debian buster/main s390x erlang-snmp s390x 1:21.2.6+dfsg-1 [1,565 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:64 http://deb.debian.org/debian buster/main s390x erlang-os-mon s390x 1:21.2.6+dfsg-1 [124 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:65 http://deb.debian.org/debian buster/main s390x erlang-parsetools s390x 1:21.2.6+dfsg-1 [184 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:66 http://deb.debian.org/debian buster/main s390x erlang-syntax-tools s390x 1:21.2.6+dfsg-1 [379 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:67 http://deb.debian.org/debian buster/main s390x erlang-tools s390x 1:21.2.6+dfsg-1 [524 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:68 http://deb.debian.org/debian buster/main s390x erlang-xmerl s390x 1:21.2.6+dfsg-1 [996 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:69 http://deb.debian.org/debian buster/main s390x gdisk s390x 1.0.3-1.1 [190 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:70 http://deb.debian.org/debian buster/main s390x libpcre2-8-0 s390x 10.32-5 [130 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:71 http://deb.debian.org/debian buster/main s390x liberror-perl all 0.17027-2 [30.9 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:72 http://deb.debian.org/debian buster/main s390x git-man all 1:2.20.1-2+deb10u1 [1,620 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:73 http://deb.debian.org/debian buster/main s390x git s390x 1:2.20.1-2+deb10u1 [5,185 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:74 http://deb.debian.org/debian buster/main s390x libicu63 s390x 63.1-6 [8,030 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:75 http://deb.debian.org/debian buster/main s390x icu-devtools s390x 63.1-6 [178 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:76 http://deb.debian.org/debian buster/main s390x libonig5 s390x 6.9.1-1 [165 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:77 http://deb.debian.org/debian buster/main s390x libjq1 s390x 1.5+dfsg-2+b1 [125 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:78 http://deb.debian.org/debian buster/main s390x jq s390x 1.5+dfsg-2+b1 [59.5 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:79 http://deb.debian.org/debian buster/main s390x libconfig-inifiles-perl all 3.000001-1 [51.9 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:80 http://deb.debian.org/debian buster/main s390x libevent-2.1-6 s390x 2.1.8-stable-4 [170 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:81 http://deb.debian.org/debian buster/main s390x libexpat1-dev s390x 2.2.6-2+deb10u1 [146 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:82 http://deb.debian.org/debian buster/main s390x libffi-dev s390x 3.2.1-9 [154 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:83 http://deb.debian.org/debian buster/main s390x libgmpxx4ldbl s390x 2:6.1.2+dfsg-4 [22.6 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:84 http://deb.debian.org/debian buster/main s390x libgmp-dev s390x 2:6.1.2+dfsg-4 [617 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:85 http://deb.debian.org/debian buster/main s390x libunbound8 s390x 1.9.0-2+deb10u1 [424 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:86 http://deb.debian.org/debian buster/main s390x libgnutls-dane0 s390x 3.6.7-4+deb10u2 [316 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:87 http://deb.debian.org/debian buster/main s390x libgnutls-openssl27 s390x 3.6.7-4+deb10u2 [317 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:88 http://deb.debian.org/debian buster/main s390x libgnutlsxx28 s390x 3.6.7-4+deb10u2 [13.9 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:89 http://deb.debian.org/debian buster/main s390x libidn2-dev s390x 2.0.5-1+deb10u1 [78.1 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:90 http://deb.debian.org/debian buster/main s390x libp11-kit-dev s390x 0.23.15-2 [195 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:91 http://deb.debian.org/debian buster/main s390x libtasn1-6-dev s390x 4.13-3 [102 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:92 http://deb.debian.org/debian buster/main s390x nettle-dev s390x 3.4.1-1 [1,085 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:93 http://deb.debian.org/debian buster/main s390x libgnutls28-dev s390x 3.6.7-4+deb10u2 [986 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:94 http://deb.debian.org/debian buster/main s390x libicu-dev s390x 63.1-6 [8,887 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:95 http://deb.debian.org/debian buster/main s390x mysql-common all 5.8+1.0.5 [7,324 B]
+INFO:kolla.common.utils.kolla-toolbox:Get:96 http://deb.debian.org/debian buster/main s390x mariadb-common all 1:10.3.22-0+deb10u1 [31.9 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:97 http://deb.debian.org/debian buster/main s390x libmariadb3 s390x 1:10.3.22-0+deb10u1 [167 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:98 http://deb.debian.org/debian buster/main s390x zlib1g-dev s390x 1:1.2.11.dfsg-1 [211 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:99 http://deb.debian.org/debian buster/main s390x libmariadb-dev s390x 1:10.3.22-0+deb10u1 [1,007 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:100 http://deb.debian.org/debian buster/main s390x libmariadb-dev-compat s390x 1:10.3.22-0+deb10u1 [31.0 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:101 http://deb.debian.org/debian buster/main s390x libpython3.7 s390x 3.7.3-2+deb10u1 [1,359 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:102 http://deb.debian.org/debian buster/main s390x libpython3.7-dev s390x 3.7.3-2+deb10u1 [47.8 MB]
+INFO:kolla.common.utils.kolla-toolbox:Get:103 http://deb.debian.org/debian buster/main s390x libpython3-dev s390x 3.7.3-1 [20.1 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:104 http://deb.debian.org/debian buster/main s390x libsnappy1v5 s390x 1.1.7-1 [16.9 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:105 http://deb.debian.org/debian buster/main s390x libssl-dev s390x 1.1.1d-0+deb10u2 [1,459 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:106 http://deb.debian.org/debian buster/main s390x libxml2 s390x 2.9.4+dfsg1-7+b3 [606 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:107 http://deb.debian.org/debian buster/main s390x libxml2-dev s390x 2.9.4+dfsg1-7+b3 [715 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:108 http://deb.debian.org/debian buster/main s390x libxslt1.1 s390x 1.1.32-2.2~deb10u1 [224 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:109 http://deb.debian.org/debian buster/main s390x libxslt1-dev s390x 1.1.32-2.2~deb10u1 [509 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:110 http://deb.debian.org/debian buster/main s390x locales-all s390x 2.28-10 [11.0 MB]
+INFO:kolla.common.utils.kolla-toolbox:Get:111 http://deb.debian.org/debian buster/main s390x mariadb-client-core-10.3 s390x 1:10.3.22-0+deb10u1 [5,565 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:112 http://deb.debian.org/debian buster/main s390x mariadb-client-10.3 s390x 1:10.3.22-0+deb10u1 [1,143 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:113 http://deb.debian.org/debian buster/main s390x mariadb-client all 1:10.3.22-0+deb10u1 [30.7 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:114 http://deb.debian.org/debian buster/main s390x python3.7-dev s390x 3.7.3-2+deb10u1 [509 kB]
+INFO:kolla.common.utils.kolla-toolbox:Get:115 http://deb.debian.org/debian buster/main s390x python3-dev s390x 3.7.3-1 [1,264 B]
+INFO:kolla.common.utils.kolla-toolbox:Get:116 http://deb.debian.org/debian buster/main s390x rabbitmq-server all 3.7.8-4 [9,227 kB]
+INFO:kolla.common.utils.kolla-toolbox:Fetched 168 MB in 4s (46.7 MB/s)
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package sensible-utils.
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 80%(Reading database ... 85%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 90%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 95%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 100%(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../0-sensible-utils_0.0.12_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking sensible-utils (0.0.12) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package cron.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../1-cron_3.0pl1-134+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking cron (3.0pl1-134+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libpython2.7-minimal:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../2-libpython2.7-minimal_2.7.16-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libpython2.7-minimal:s390x (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python2.7-minimal.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../3-python2.7-minimal_2.7.16-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python2.7-minimal (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python2-minimal.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../4-python2-minimal_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python2-minimal (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python-minimal.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../5-python-minimal_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python-minimal (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libpython2.7-stdlib:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../6-libpython2.7-stdlib_2.7.16-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libpython2.7-stdlib:s390x (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python2.7.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../7-python2.7_2.7.16-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python2.7 (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libpython2-stdlib:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../8-libpython2-stdlib_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libpython2-stdlib:s390x (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libpython-stdlib:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../9-libpython-stdlib_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libpython-stdlib:s390x (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libpython2.7-minimal:s390x (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python2.7-minimal (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python2-minimal (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python2.
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 30%(Reading database ... 35%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 80%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 85%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 90%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 95%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 100%(Reading database ... 12831 files and directories currently installed.)
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../python2_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python2 (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python-minimal (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python.
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 80%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 85%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 90%(Reading database ... 95%
+INFO:kolla.common.utils.kolla-toolbox:(Reading database ... 100%(Reading database ... 12863 files and directories currently installed.)
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../000-python_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libpopt0:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../001-libpopt0_1.16-12_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libpopt0:s390x (1.16-12) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package logrotate.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../002-logrotate_3.14.0-4_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking logrotate (3.14.0-4) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package bzip2.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../003-bzip2_1.0.6-9.2~deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking bzip2 (1.0.6-9.2~deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package xz-utils.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../004-xz-utils_5.2.4-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking xz-utils (5.2.4-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package binutils-common:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../005-binutils-common_2.31.1-16_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking binutils-common:s390x (2.31.1-16) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libbinutils:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../006-libbinutils_2.31.1-16_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libbinutils:s390x (2.31.1-16) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package binutils-s390x-linux-gnu.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../007-binutils-s390x-linux-gnu_2.31.1-16_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking binutils-s390x-linux-gnu (2.31.1-16) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package binutils.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../008-binutils_2.31.1-16_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking binutils (2.31.1-16) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libc-dev-bin.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../009-libc-dev-bin_2.28-10_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libc-dev-bin (2.28-10) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package linux-libc-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../010-linux-libc-dev_4.19.98-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking linux-libc-dev:s390x (4.19.98-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libc6-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../011-libc6-dev_2.28-10_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libc6-dev:s390x (2.28-10) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libisl19:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../012-libisl19_0.20-2_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libisl19:s390x (0.20-2) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libmpc3:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../013-libmpc3_1.1.0-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libmpc3:s390x (1.1.0-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package cpp-8.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../014-cpp-8_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking cpp-8 (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package cpp.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../015-cpp_4%3a8.3.0-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking cpp (4:8.3.0-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libcc1-0:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../016-libcc1-0_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libcc1-0:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libgomp1:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../017-libgomp1_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libgomp1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libitm1:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../018-libitm1_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libitm1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libatomic1:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../019-libatomic1_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libatomic1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libasan5:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../020-libasan5_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libasan5:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libubsan1:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../021-libubsan1_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libubsan1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libgcc-8-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../022-libgcc-8-dev_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libgcc-8-dev:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package gcc-8.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../023-gcc-8_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking gcc-8 (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package gcc.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../024-gcc_4%3a8.3.0-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking gcc (4:8.3.0-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libstdc++-8-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../025-libstdc++-8-dev_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libstdc++-8-dev:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package g++-8.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../026-g++-8_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking g++-8 (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package g++.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../027-g++_4%3a8.3.0-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking g++ (4:8.3.0-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package make.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../028-make_4.2.1-1.2_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking make (4.2.1-1.2) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libdpkg-perl.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../029-libdpkg-perl_1.19.7_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libdpkg-perl (1.19.7) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package patch.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../030-patch_2.7.6-3+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking patch (2.7.6-3+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package dpkg-dev.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../031-dpkg-dev_1.19.7_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking dpkg-dev (1.19.7) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package build-essential.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../032-build-essential_12.6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking build-essential (12.6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python-six.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../033-python-six_1.12.0-1_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python-six (1.12.0-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python-iniparse.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../034-python-iniparse_0.4-2.2_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python-iniparse (0.4-2.2) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package crudini.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../035-crudini_0.7-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking crudini (0.7-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python3-lib2to3.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../036-python3-lib2to3_3.7.3-1_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python3-lib2to3 (3.7.3-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python3-distutils.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../037-python3-distutils_3.7.3-1_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python3-distutils (3.7.3-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package dh-python.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../038-dh-python_3.20190308_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking dh-python (3.20190308) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-base.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../039-erlang-base_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-base (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-asn1.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../040-erlang-asn1_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-asn1 (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-crypto.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../041-erlang-crypto_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-crypto (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-public-key.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../042-erlang-public-key_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-public-key (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-mnesia.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../043-erlang-mnesia_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-mnesia (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-runtime-tools.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../044-erlang-runtime-tools_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-runtime-tools (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-ssl.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../045-erlang-ssl_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-ssl (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-eldap.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../046-erlang-eldap_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-eldap (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-ftp.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../047-erlang-ftp_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-ftp (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-tftp.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../048-erlang-tftp_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-tftp (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-inets.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../049-erlang-inets_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-inets (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-snmp.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../050-erlang-snmp_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-snmp (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-os-mon.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../051-erlang-os-mon_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-os-mon (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-parsetools.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../052-erlang-parsetools_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-parsetools (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-syntax-tools.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../053-erlang-syntax-tools_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-syntax-tools (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-tools.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../054-erlang-tools_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-tools (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package erlang-xmerl.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../055-erlang-xmerl_1%3a21.2.6+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking erlang-xmerl (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package gdisk.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../056-gdisk_1.0.3-1.1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking gdisk (1.0.3-1.1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libcurl3-gnutls:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../057-libcurl3-gnutls_7.64.0-4+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libcurl3-gnutls:s390x (7.64.0-4+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libpcre2-8-0:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../058-libpcre2-8-0_10.32-5_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libpcre2-8-0:s390x (10.32-5) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package liberror-perl.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../059-liberror-perl_0.17027-2_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking liberror-perl (0.17027-2) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package git-man.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../060-git-man_1%3a2.20.1-2+deb10u1_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking git-man (1:2.20.1-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package git.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../061-git_1%3a2.20.1-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking git (1:2.20.1-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libicu63:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../062-libicu63_63.1-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libicu63:s390x (63.1-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package icu-devtools.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../063-icu-devtools_63.1-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking icu-devtools (63.1-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libonig5:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../064-libonig5_6.9.1-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libonig5:s390x (6.9.1-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libjq1:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../065-libjq1_1.5+dfsg-2+b1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libjq1:s390x (1.5+dfsg-2+b1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package jq.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../066-jq_1.5+dfsg-2+b1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking jq (1.5+dfsg-2+b1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libconfig-inifiles-perl.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../067-libconfig-inifiles-perl_3.000001-1_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libconfig-inifiles-perl (3.000001-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libevent-2.1-6:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../068-libevent-2.1-6_2.1.8-stable-4_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libevent-2.1-6:s390x (2.1.8-stable-4) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libexpat1-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../069-libexpat1-dev_2.2.6-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libexpat1-dev:s390x (2.2.6-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libffi-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../070-libffi-dev_3.2.1-9_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libffi-dev:s390x (3.2.1-9) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libgmpxx4ldbl:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../071-libgmpxx4ldbl_2%3a6.1.2+dfsg-4_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libgmpxx4ldbl:s390x (2:6.1.2+dfsg-4) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libgmp-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../072-libgmp-dev_2%3a6.1.2+dfsg-4_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libgmp-dev:s390x (2:6.1.2+dfsg-4) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libunbound8:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../073-libunbound8_1.9.0-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libunbound8:s390x (1.9.0-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libgnutls-dane0:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../074-libgnutls-dane0_3.6.7-4+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libgnutls-dane0:s390x (3.6.7-4+deb10u2) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libgnutls-openssl27:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../075-libgnutls-openssl27_3.6.7-4+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libgnutls-openssl27:s390x (3.6.7-4+deb10u2) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libgnutlsxx28:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../076-libgnutlsxx28_3.6.7-4+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libgnutlsxx28:s390x (3.6.7-4+deb10u2) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libidn2-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../077-libidn2-dev_2.0.5-1+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libidn2-dev:s390x (2.0.5-1+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libp11-kit-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../078-libp11-kit-dev_0.23.15-2_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libp11-kit-dev:s390x (0.23.15-2) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libtasn1-6-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../079-libtasn1-6-dev_4.13-3_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libtasn1-6-dev:s390x (4.13-3) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package nettle-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../080-nettle-dev_3.4.1-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking nettle-dev:s390x (3.4.1-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libgnutls28-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../081-libgnutls28-dev_3.6.7-4+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libgnutls28-dev:s390x (3.6.7-4+deb10u2) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libicu-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../082-libicu-dev_63.1-6_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libicu-dev:s390x (63.1-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package mysql-common.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../083-mysql-common_5.8+1.0.5_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking mysql-common (5.8+1.0.5) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package mariadb-common.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../084-mariadb-common_1%3a10.3.22-0+deb10u1_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking mariadb-common (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libmariadb3:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../085-libmariadb3_1%3a10.3.22-0+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libmariadb3:s390x (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package zlib1g-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../086-zlib1g-dev_1%3a1.2.11.dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking zlib1g-dev:s390x (1:1.2.11.dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libmariadb-dev.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../087-libmariadb-dev_1%3a10.3.22-0+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libmariadb-dev (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libmariadb-dev-compat:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../088-libmariadb-dev-compat_1%3a10.3.22-0+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libmariadb-dev-compat:s390x (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libpython3.7:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../089-libpython3.7_3.7.3-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libpython3.7:s390x (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libpython3.7-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../090-libpython3.7-dev_3.7.3-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libpython3.7-dev:s390x (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libpython3-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../091-libpython3-dev_3.7.3-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libpython3-dev:s390x (3.7.3-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libsnappy1v5:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../092-libsnappy1v5_1.1.7-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libsnappy1v5:s390x (1.1.7-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libssl-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../093-libssl-dev_1.1.1d-0+deb10u2_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libssl-dev:s390x (1.1.1d-0+deb10u2) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libxml2:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../094-libxml2_2.9.4+dfsg1-7+b3_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libxml2:s390x (2.9.4+dfsg1-7+b3) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libxml2-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../095-libxml2-dev_2.9.4+dfsg1-7+b3_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libxml2-dev:s390x (2.9.4+dfsg1-7+b3) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libxslt1.1:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../096-libxslt1.1_1.1.32-2.2~deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libxslt1.1:s390x (1.1.32-2.2~deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package libxslt1-dev:s390x.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../097-libxslt1-dev_1.1.32-2.2~deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking libxslt1-dev:s390x (1.1.32-2.2~deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package locales-all.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../098-locales-all_2.28-10_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking locales-all (2.28-10) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package mariadb-client-core-10.3.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../099-mariadb-client-core-10.3_1%3a10.3.22-0+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking mariadb-client-core-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package mariadb-client-10.3.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../100-mariadb-client-10.3_1%3a10.3.22-0+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking mariadb-client-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package mariadb-client.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../101-mariadb-client_1%3a10.3.22-0+deb10u1_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking mariadb-client (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python3.7-dev.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../102-python3.7-dev_3.7.3-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python3.7-dev (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package python3-dev.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../103-python3-dev_3.7.3-1_s390x.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking python3-dev (3.7.3-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Selecting previously unselected package rabbitmq-server.
+INFO:kolla.common.utils.kolla-toolbox:Preparing to unpack .../104-rabbitmq-server_3.7.8-4_all.deb ...
+INFO:kolla.common.utils.kolla-toolbox:Unpacking rabbitmq-server (3.7.8-4) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libconfig-inifiles-perl (3.000001-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up mysql-common (5.8+1.0.5) ...
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: 
+INFO:kolla.common.utils.kolla-toolbox:using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+INFO:kolla.common.utils.kolla-toolbox:
+INFO:kolla.common.utils.kolla-toolbox:Setting up libgnutls-openssl27:s390x (3.6.7-4+deb10u2) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-base (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Searching for services which depend on erlang and should be started... 
+INFO:kolla.common.utils.kolla-toolbox:none found.
+INFO:kolla.common.utils.kolla-toolbox:Setting up libpython3.7:s390x (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-xmerl (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up binutils-common:s390x (2.31.1-16) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up linux-libc-dev:s390x (4.19.98-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-syntax-tools (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libcurl3-gnutls:s390x (7.64.0-4+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libgomp1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up bzip2 (1.0.6-9.2~deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libffi-dev:s390x (3.2.1-9) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up locales-all (2.28-10) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libicu63:s390x (63.1-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libsnappy1v5:s390x (1.1.7-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libpython2.7-stdlib:s390x (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up liberror-perl (0.17027-2) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up mariadb-common (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: using /etc/mysql/mariadb.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+INFO:kolla.common.utils.kolla-toolbox:Setting up libasan5:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libgmpxx4ldbl:s390x (2:6.1.2+dfsg-4) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-parsetools (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up make (4.2.1-1.2) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up xz-utils (5.2.4-1) ...
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
+INFO:kolla.common.utils.kolla-toolbox:
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
+INFO:kolla.common.utils.kolla-toolbox:Setting up libssl-dev:s390x (1.1.1d-0+deb10u2) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libmpc3:s390x (1.1.0-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libatomic1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up patch (2.7.6-3+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up icu-devtools (63.1-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libmariadb3:s390x (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libgnutlsxx28:s390x (3.6.7-4+deb10u2) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libpcre2-8-0:s390x (10.32-5) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-asn1 (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libidn2-dev:s390x (2.0.5-1+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-tftp (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libdpkg-perl (1.19.7) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libevent-2.1-6:s390x (2.1.8-stable-4) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libubsan1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libisl19:s390x (0.20-2) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up sensible-utils (0.0.12) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up mariadb-client-core-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-mnesia (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up git-man (1:2.20.1-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-crypto (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libbinutils:s390x (2.31.1-16) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up cpp-8 (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libc-dev-bin (2.28-10) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libtasn1-6-dev:s390x (4.13-3) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python3-lib2to3 (3.7.3-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libxml2:s390x (2.9.4+dfsg1-7+b3) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libcc1-0:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libonig5:s390x (6.9.1-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libp11-kit-dev:s390x (0.23.15-2) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libitm1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libpopt0:s390x (1.16-12) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python3-distutils (3.7.3-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up dh-python (3.20190308) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libgmp-dev:s390x (2:6.1.2+dfsg-4) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up binutils-s390x-linux-gnu (2.31.1-16) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up nettle-dev:s390x (3.4.1-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python2.7 (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-runtime-tools (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libpython2-stdlib:s390x (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libjq1:s390x (1.5+dfsg-2+b1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up cron (3.0pl1-134+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Adding group `crontab' (GID 106) ...
+INFO:kolla.common.utils.kolla-toolbox:Done.
+INFO:kolla.common.utils.kolla-toolbox:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.kolla-toolbox:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-tools (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up binutils (2.31.1-16) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python2 (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up dpkg-dev (1.19.7) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-snmp (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up gdisk (1.0.3-1.1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libpython-stdlib:s390x (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libunbound8:s390x (1.9.0-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-public-key (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up mariadb-client-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up git (1:2.20.1-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libgcc-8-dev:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up cpp (4:8.3.0-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up jq (1.5+dfsg-2+b1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libxslt1.1:s390x (1.1.32-2.2~deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libc6-dev:s390x (2.28-10) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python (2.7.16-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libicu-dev:s390x (63.1-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-ssl (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libstdc++-8-dev:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up logrotate (3.14.0-4) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libgnutls-dane0:s390x (3.6.7-4+deb10u2) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up gcc-8 (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up mariadb-client (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-os-mon (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up gcc (4:8.3.0-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python-six (1.12.0-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libxml2-dev:s390x (2.9.4+dfsg1-7+b3) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-eldap (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libexpat1-dev:s390x (2.2.6-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-ftp (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up zlib1g-dev:s390x (1:1.2.11.dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up g++-8 (8.3.0-6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libgnutls28-dev:s390x (3.6.7-4+deb10u2) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libxslt1-dev:s390x (1.1.32-2.2~deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libpython3.7-dev:s390x (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up erlang-inets (1:21.2.6+dfsg-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python-iniparse (0.4-2.2) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python3.7-dev (3.7.3-2+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libmariadb-dev (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up g++ (4:8.3.0-1) ...
+INFO:kolla.common.utils.kolla-toolbox:update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+INFO:kolla.common.utils.kolla-toolbox:
+INFO:kolla.common.utils.kolla-toolbox:Setting up build-essential (12.6) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libmariadb-dev-compat:s390x (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up rabbitmq-server (3.7.8-4) ...
+INFO:kolla.common.utils.kolla-toolbox:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.kolla-toolbox:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.kolla-toolbox:Setting up crudini (0.7-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up libpython3-dev:s390x (3.7.3-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Setting up python3-dev (3.7.3-1) ...
+INFO:kolla.common.utils.kolla-toolbox:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.kolla-toolbox:Processing triggers for mime-support (3.62) ...
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container 98e619ce5983
+INFO:kolla.common.utils.kolla-toolbox: ---> 356511aeb6f4
+INFO:kolla.common.utils.kolla-toolbox:Step 6/16 : RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py     && python3 get-pip.py     && rm get-pip.py
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in 87b3667e5661
+INFO:kolla.common.utils.kolla-toolbox:curl (https://bootstrap.pypa.io/get-pip.py): response: 200, time: 0.077705, size: 1807342
+INFO:kolla.common.utils.kolla-toolbox:Collecting pip
+INFO:kolla.common.utils.kolla-toolbox:  Downloading pip-20.0.2-py2.py3-none-any.whl (1.4 MB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting setuptools
+INFO:kolla.common.utils.kolla-toolbox:  Downloading setuptools-45.2.0-py3-none-any.whl (584 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting wheel
+INFO:kolla.common.utils.kolla-toolbox:  Downloading wheel-0.34.2-py2.py3-none-any.whl (26 kB)
+INFO:kolla.common.utils.kolla-toolbox:Installing collected packages: pip, setuptools, wheel
+INFO:kolla.common.utils.kolla-toolbox:Successfully installed pip-20.0.2 setuptools-45.2.0 wheel-0.34.2
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container 87b3667e5661
+INFO:kolla.common.utils.kolla-toolbox: ---> e9513fc7a761
+INFO:kolla.common.utils.kolla-toolbox:Step 7/16 : RUN pip --no-cache-dir install --upgrade virtualenv     && virtualenv --system-site-packages /opt/ansible
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in bbe516d2e2c5
+INFO:kolla.common.utils.kolla-toolbox:Collecting virtualenv
+INFO:kolla.common.utils.kolla-toolbox:  Downloading virtualenv-20.0.7-py2.py3-none-any.whl (8.0 MB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting appdirs<2,>=1.4.3
+INFO:kolla.common.utils.kolla-toolbox:  Downloading appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting importlib-metadata<2,>=0.12; python_version < "3.8"
+INFO:kolla.common.utils.kolla-toolbox:  Downloading importlib_metadata-1.5.0-py2.py3-none-any.whl (30 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting distlib<1,>=0.3.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading distlib-0.3.0.zip (571 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting six<2,>=1.9.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading six-1.14.0-py2.py3-none-any.whl (10 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting filelock<4,>=3.0.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading filelock-3.0.12-py3-none-any.whl (7.6 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting zipp>=0.5
+INFO:kolla.common.utils.kolla-toolbox:  Downloading zipp-3.0.0-py3-none-any.whl (4.8 kB)
+INFO:kolla.common.utils.kolla-toolbox:Building wheels for collected packages: distlib
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for distlib (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for distlib (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for distlib: filename=distlib-0.3.0-py3-none-any.whl size=340427 sha256=607d5c4b15fe7539e3034fb46ea8edb27c7b347045f5105c162743f70d87624b
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-pz57js54/wheels/a2/19/da/a15d4e2bedf3062c739b190d5cb5b7b2ecfbccb6b0d93c861b
+INFO:kolla.common.utils.kolla-toolbox:Successfully built distlib
+INFO:kolla.common.utils.kolla-toolbox:Installing collected packages: appdirs, zipp, importlib-metadata, distlib, six, filelock, virtualenv
+INFO:kolla.common.utils.kolla-toolbox:Successfully installed appdirs-1.4.3 distlib-0.3.0 filelock-3.0.12 importlib-metadata-1.5.0 six-1.14.0 virtualenv-20.0.7 zipp-3.0.0
+INFO:kolla.common.utils.kolla-toolbox:created virtual environment CPython3.7.3.final.0-64 in 273ms
+INFO:kolla.common.utils.kolla-toolbox:  creator CPython3Posix(dest=/opt/ansible, clear=False, global=True)
+INFO:kolla.common.utils.kolla-toolbox:  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/tmp/tmpwer2h42p/seed-app-data/v1)
+INFO:kolla.common.utils.kolla-toolbox:  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container bbe516d2e2c5
+INFO:kolla.common.utils.kolla-toolbox: ---> eb2f8126894e
+INFO:kolla.common.utils.kolla-toolbox:Step 8/16 : ENV PATH /opt/ansible/bin:$PATH
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in 6b32cd201151
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container 6b32cd201151
+INFO:kolla.common.utils.kolla-toolbox: ---> e58008860fd7
+INFO:kolla.common.utils.kolla-toolbox:Step 9/16 : RUN mkdir -p /requirements     && curl -sSL -o /requirements/upper-constraints.txt https://releases.openstack.org/constraints/upper/master     && pip --no-cache-dir install --upgrade -c /requirements/upper-constraints.txt ansible==2.8.* cmd2 influxdb mysqlclient os-client-config pbr pymongo python-openstackclient pytz pyudev shade     && mkdir -p /etc/ansible /usr/share/ansible     && echo 'localhost ansible_connection=local ansible_python_interpreter=/opt/ansible/bin/python' > /etc/ansible/hosts     && sed -i 's|  "identity_api_version": "2.0",|  "identity_api_version": "3",|' /opt/ansible/lib/python3.7/site-packages/os_client_config/defaults.json
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in e7c3af84eca5
+INFO:kolla.common.utils.kolla-toolbox:curl (https://opendev.org/openstack/requirements/raw/branch/master/upper-constraints.txt): response: 200, time: 0.867719, size: 24283
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-saharaclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-saharaclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.limit: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.limit: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-actdiag: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-actdiag: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring os-api-ref: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring os-api-ref: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.concurrency: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.concurrency: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring osprofiler: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring osprofiler: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring pytest: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring pytest: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.service: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.service: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-nwdiag: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-nwdiag: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring microversion-parse: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring microversion-parse: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring Pint: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring Pint: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.i18n: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.i18n: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-mistralclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-mistralclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.context: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.context: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-senlinclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-senlinclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring pycadf: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring pycadf: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring neutron-lib: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring neutron-lib: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-websupport: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring thriftpy2: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-htmlhelp: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring ipaddress: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-freezerclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-freezerclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-vitrageclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-vitrageclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring networkx: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring networkx: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring bashate: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring bashate: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring Pillow: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring Pillow: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring zeroconf: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring zeroconf: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring scipy: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring scipy: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring mypy-extensions: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring debtcollector: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring debtcollector: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-cloudkittyclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-cloudkittyclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring soupsieve: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring soupsieve: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-blockdiag: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-blockdiag: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring taskflow: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring taskflow: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring openstack-doc-tools: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring openstack-doc-tools: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.messaging: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.messaging: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring ifaddr: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring reno: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring reno: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring unicodecsv: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring pathlib: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring tornado: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring tornado: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring backports.ssl-match-hostname: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring mox3: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring mox3: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring gunicorn: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring gunicorn: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring libvirt-python: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring libvirt-python: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring asyncio: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-jsmath: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-manilaclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-manilaclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-serializinghtml: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring M2Crypto: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring influxdb: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring influxdb: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring cliff: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring cliff: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring trollius: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring funcsigs: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring dnspython3: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring joblib: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring castellan: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring castellan: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.versionedobjects: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.versionedobjects: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring webcolors: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring webcolors: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring autobahn: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring autobahn: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.log: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.log: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-searchlightclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-searchlightclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.middleware: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.middleware: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring os-ken: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring os-ken: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring mypy: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-seqdiag: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-seqdiag: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring os-win: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring os-win: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring jeepney: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring singledispatch: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.serialization: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.serialization: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-svg2pdfconverter: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-svg2pdfconverter: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.vmware: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.vmware: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring gitdb: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring gitdb: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-monascaclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-monascaclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring automaton: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring automaton: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring keyring: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring keyring: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring enum34: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring txaio: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring txaio: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-qinlingclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-qinlingclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring blockdiag: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring blockdiag: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-cinderclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-cinderclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring SecretStorage: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring SecretStorage: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring tooz: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring tooz: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring weakrefmethod: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.cache: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.cache: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.reports: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.reports: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring Faker: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring Faker: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring more-itertools: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring more-itertools: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring seqdiag: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring seqdiag: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring numpy: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring numpy: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring Sphinx: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring Sphinx: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.config: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.config: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring openstackdocstheme: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring openstackdocstheme: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-solumclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-solumclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring tricircleclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring tricircleclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.upgradecheck: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.upgradecheck: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.rootwrap: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.rootwrap: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring Django: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring Django: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring atomicwrites: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring typed-ast: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring stomp.py: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring stomp.py: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring subprocess32: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring GitPython: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring GitPython: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-ironicclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-ironicclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.db: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.db: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring dataclasses: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.privsep: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.privsep: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-muranoclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-muranoclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring functools32: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring os-vif: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring os-vif: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring backports.functools-lru-cache: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring entrypoints: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring cachetools: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring cachetools: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring backports-abc: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-qthelp: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring qpid-python: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring contextlib2: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-congressclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-congressclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring ovsdbapp: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring ovsdbapp: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring configparser: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring futurist: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring futurist: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-devhelp: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-blazarclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-blazarclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring dnspython: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring dnspython: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring scandir: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring zipp: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring zipp: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring smmap2: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring futures: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring happybase: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-tackerclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-tackerclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-heatclient: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring python-heatclient: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.utils: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring oslo.utils: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring gitdb2: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring gitdb2: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring typing-extensions: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring actdiag: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring actdiag: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring sphinxcontrib-applehelp: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring scikit-learn: markers 'python_version == "2.7"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Ignoring scikit-learn: markers 'python_version == "3.6"' don't match your environment
+INFO:kolla.common.utils.kolla-toolbox:Collecting pbr===5.4.4
+INFO:kolla.common.utils.kolla-toolbox:  Downloading pbr-5.4.4-py2.py3-none-any.whl (110 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting pymongo===3.10.1
+INFO:kolla.common.utils.kolla-toolbox:  Downloading pymongo-3.10.1-cp37-cp37m-manylinux2014_s390x.whl (463 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting pyudev===0.22.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading pyudev-0.22.0.tar.gz (85 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting os-client-config===2.0.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading os_client_config-2.0.0-py2.py3-none-any.whl (31 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting influxdb===5.2.3
+INFO:kolla.common.utils.kolla-toolbox:  Downloading influxdb-5.2.3-py2.py3-none-any.whl (73 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting shade===1.33.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading shade-1.33.0-py2.py3-none-any.whl (373 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting cmd2===0.8.9
+INFO:kolla.common.utils.kolla-toolbox:  Downloading cmd2-0.8.9-py2.py3-none-any.whl (53 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting openstacksdk===0.41.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading openstacksdk-0.41.0-py2.py3-none-any.whl (1.2 MB)
+INFO:kolla.common.utils.kolla-toolbox:Requirement already up-to-date: six===1.14.0 in /usr/local/lib/python3.7/dist-packages (from -c /requirements/upper-constraints.txt (line 621)) (1.14.0)
+INFO:kolla.common.utils.kolla-toolbox:Collecting requestsexceptions===1.4.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading requestsexceptions-1.4.0-py2.py3-none-any.whl (3.8 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting python-openstackclient===5.0.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading python_openstackclient-5.0.0-py3-none-any.whl (880 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting netifaces===0.10.9
+INFO:kolla.common.utils.kolla-toolbox:  Downloading netifaces-0.10.9.tar.gz (28 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting keystoneauth1===3.18.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading keystoneauth1-3.18.0-py2.py3-none-any.whl (310 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting python-keystoneclient===3.22.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading python_keystoneclient-3.22.0-py2.py3-none-any.whl (397 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting decorator===4.4.1
+INFO:kolla.common.utils.kolla-toolbox:  Downloading decorator-4.4.1-py2.py3-none-any.whl (9.2 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting Babel===2.8.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading Babel-2.8.0-py2.py3-none-any.whl (8.6 MB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting oslo.utils===4.1.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading oslo.utils-4.1.0-py3-none-any.whl (100 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting python-dateutil===2.8.1
+INFO:kolla.common.utils.kolla-toolbox:  Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting pytz===2019.3
+INFO:kolla.common.utils.kolla-toolbox:  Downloading pytz-2019.3-py2.py3-none-any.whl (509 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting ansible==2.8.*
+INFO:kolla.common.utils.kolla-toolbox:  Downloading ansible-2.8.8.tar.gz (12.7 MB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting mysqlclient
+INFO:kolla.common.utils.kolla-toolbox:  Downloading mysqlclient-1.4.6.tar.gz (85 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting requests===2.23.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading requests-2.23.0-py2.py3-none-any.whl (58 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting wcwidth===0.1.8
+INFO:kolla.common.utils.kolla-toolbox:  Downloading wcwidth-0.1.8-py2.py3-none-any.whl (17 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting pyparsing===2.4.6
+INFO:kolla.common.utils.kolla-toolbox:  Downloading pyparsing-2.4.6-py2.py3-none-any.whl (67 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting pyperclip===1.7.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading pyperclip-1.7.0.tar.gz (15 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting cryptography===2.8
+INFO:kolla.common.utils.kolla-toolbox:  Downloading cryptography-2.8.tar.gz (504 kB)
+INFO:kolla.common.utils.kolla-toolbox:  Installing build dependencies: started
+INFO:kolla.common.utils.kolla-toolbox:  Installing build dependencies: finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Getting requirements to build wheel: started
+INFO:kolla.common.utils.kolla-toolbox:  Getting requirements to build wheel: finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:    Preparing wheel metadata: started
+INFO:kolla.common.utils.kolla-toolbox:    Preparing wheel metadata: finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:Collecting PyYAML===5.3
+INFO:kolla.common.utils.kolla-toolbox:  Downloading PyYAML-5.3.tar.gz (268 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting jmespath===0.9.5
+INFO:kolla.common.utils.kolla-toolbox:  Downloading jmespath-0.9.5-py2.py3-none-any.whl (24 kB)
+INFO:kolla.common.utils.kolla-toolbox:Requirement already up-to-date: appdirs===1.4.3 in /usr/local/lib/python3.7/dist-packages (from -c /requirements/upper-constraints.txt (line 310)) (1.4.3)
+INFO:kolla.common.utils.kolla-toolbox:Collecting munch===2.5.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading munch-2.5.0-py2.py3-none-any.whl (10 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting os-service-types===1.7.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading os_service_types-1.7.0-py2.py3-none-any.whl (24 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting jsonpatch===1.25
+INFO:kolla.common.utils.kolla-toolbox:  Downloading jsonpatch-1.25-py2.py3-none-any.whl (11 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting iso8601===0.1.12
+INFO:kolla.common.utils.kolla-toolbox:  Downloading iso8601-0.1.12-py2.py3-none-any.whl (12 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting dogpile.cache===0.9.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading dogpile.cache-0.9.0.tar.gz (325 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting cliff===3.0.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading cliff-3.0.0-py3-none-any.whl (79 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting oslo.i18n===4.0.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading oslo.i18n-4.0.0-py3-none-any.whl (47 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting python-cinderclient===6.0.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading python_cinderclient-6.0.0-py2.py3-none-any.whl (274 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting python-glanceclient===2.17.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading python_glanceclient-2.17.0-py2.py3-none-any.whl (195 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting osc-lib===2.0.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading osc_lib-2.0.0-py2.py3-none-any.whl (89 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting python-novaclient===16.0.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading python_novaclient-16.0.0-py2.py3-none-any.whl (330 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting stevedore===1.32.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading stevedore-1.32.0-py2.py3-none-any.whl (43 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting debtcollector===2.0.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading debtcollector-2.0.0-py3-none-any.whl (23 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting oslo.serialization===3.0.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading oslo.serialization-3.0.0-py3-none-any.whl (28 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting oslo.config===8.0.1
+INFO:kolla.common.utils.kolla-toolbox:  Downloading oslo.config-8.0.1-py3-none-any.whl (125 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting netaddr===0.7.19
+INFO:kolla.common.utils.kolla-toolbox:  Downloading netaddr-0.7.19-py2.py3-none-any.whl (1.6 MB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting Jinja2===2.11.1
+INFO:kolla.common.utils.kolla-toolbox:  Downloading Jinja2-2.11.1-py2.py3-none-any.whl (126 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting idna===2.9
+INFO:kolla.common.utils.kolla-toolbox:  Downloading idna-2.9-py2.py3-none-any.whl (58 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting chardet===3.0.4
+INFO:kolla.common.utils.kolla-toolbox:  Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting urllib3===1.25.8
+INFO:kolla.common.utils.kolla-toolbox:  Downloading urllib3-1.25.8-py2.py3-none-any.whl (125 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting certifi===2019.11.28
+INFO:kolla.common.utils.kolla-toolbox:  Downloading certifi-2019.11.28-py2.py3-none-any.whl (156 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting cffi===1.14.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading cffi-1.14.0.tar.gz (463 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting jsonpointer===2.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading jsonpointer-2.0-py2.py3-none-any.whl (7.6 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting prettytable===0.7.2
+INFO:kolla.common.utils.kolla-toolbox:  Downloading prettytable-0.7.2.tar.bz2 (21 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting simplejson===3.17.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading simplejson-3.17.0.tar.gz (83 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting pyOpenSSL===19.1.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading pyOpenSSL-19.1.0-py2.py3-none-any.whl (53 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting wrapt===1.12.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading wrapt-1.12.0.tar.gz (27 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting warlock===1.3.3
+INFO:kolla.common.utils.kolla-toolbox:  Downloading warlock-1.3.3.tar.gz (11 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting msgpack===0.6.2
+INFO:kolla.common.utils.kolla-toolbox:  Downloading msgpack-0.6.2.tar.gz (119 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting rfc3986===1.3.2
+INFO:kolla.common.utils.kolla-toolbox:  Downloading rfc3986-1.3.2-py2.py3-none-any.whl (31 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting MarkupSafe===1.1.1
+INFO:kolla.common.utils.kolla-toolbox:  Downloading MarkupSafe-1.1.1.tar.gz (19 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting pycparser===2.19
+INFO:kolla.common.utils.kolla-toolbox:  Downloading pycparser-2.19.tar.gz (158 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting jsonschema===3.2.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading jsonschema-3.2.0-py2.py3-none-any.whl (56 kB)
+INFO:kolla.common.utils.kolla-toolbox:Requirement already satisfied, skipping upgrade: setuptools in /opt/ansible/lib/python3.7/site-packages (from jsonschema===3.2.0->-c /requirements/upper-constraints.txt (line 735)) (45.2.0)
+INFO:kolla.common.utils.kolla-toolbox:Collecting pyrsistent===0.15.7
+INFO:kolla.common.utils.kolla-toolbox:  Downloading pyrsistent-0.15.7.tar.gz (107 kB)
+INFO:kolla.common.utils.kolla-toolbox:Collecting attrs===19.3.0
+INFO:kolla.common.utils.kolla-toolbox:  Downloading attrs-19.3.0-py2.py3-none-any.whl (39 kB)
+INFO:kolla.common.utils.kolla-toolbox:Requirement already up-to-date: importlib-metadata===1.5.0 in /usr/local/lib/python3.7/dist-packages (from -c /requirements/upper-constraints.txt (line 376)) (1.5.0)
+INFO:kolla.common.utils.kolla-toolbox:Requirement already up-to-date: zipp===3.0.0 in /usr/local/lib/python3.7/dist-packages (from -c /requirements/upper-constraints.txt (line 755)) (3.0.0)
+INFO:kolla.common.utils.kolla-toolbox:Building wheels for collected packages: simplejson, MarkupSafe, prettytable, pyudev, pycparser, PyYAML, cryptography, pyperclip, warlock, msgpack, dogpile.cache, wrapt, pyrsistent, netifaces, cffi, ansible, mysqlclient
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for simplejson (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for simplejson (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for simplejson: filename=simplejson-3.17.0-cp37-cp37m-linux_s390x.whl size=125211 sha256=ca6936c1f1d2fa075b500794634f2332ced1ac224a00b5973de03478058ee31d
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/8a/2d/bb/65cfe3f590a9cbb199f2011a6e4ccecd858844fb04e0dee2e9
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for MarkupSafe (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for MarkupSafe (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for MarkupSafe: filename=MarkupSafe-1.1.1-cp37-cp37m-linux_s390x.whl size=33746 sha256=8bbff636651e1a79f7433f6a898651d37584795854d8c42b981b9acdacacb0e1
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/b9/d9/ae/63bf9056b0a22b13ade9f6b9e08187c1bb71c47ef21a8c9924
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for prettytable (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for prettytable (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for prettytable: filename=prettytable-0.7.2-py3-none-any.whl size=13698 sha256=67ba1ce80731bed6edada0aa1831581fd8943da631863428493748613d36304b
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/8c/76/0b/eb9eb3da7e2335e3577e3f96a0ae9f74f206e26457bd1a2bc8
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for pyudev (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for pyudev (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for pyudev: filename=pyudev-0.22.0-py3-none-any.whl size=63469 sha256=c05113058a8a11ad3c5069bdb15994fdfea062cf145ed3e0fb8cc56709143102
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/79/a1/eb/5ba8285641fb38a04ede056341c3dc556b9c32cb24650b15ab
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for pycparser (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for pycparser (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for pycparser: filename=pycparser-2.19-py2.py3-none-any.whl size=111031 sha256=1a9d9bf4aac7eea015654c22eea74153f1b3d0d36f2dad1277188e5fc1d7c213
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/0e/53/27/fee7fd9562e10dd046caccfc0340b8cf789b46846e660f3380
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for PyYAML (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for PyYAML (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for PyYAML: filename=PyYAML-5.3-cp37-cp37m-linux_s390x.whl size=44228 sha256=3d5f2751c58a65033244ef2db83b00a7947536f02d321dd6acfab3870f449cb5
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/8a/55/a4/c0a81d27c33462cfdcb904db018f5550197e88b2b6b85beed2
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for cryptography (PEP 517): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for cryptography (PEP 517): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for cryptography: filename=cryptography-2.8-cp37-cp37m-linux_s390x.whl size=915179 sha256=ea56dfefb29ad5d9c2681605a2c7f336230c6865e31d762860c27ba927663a60
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/2e/bb/ec/8be3cafe83681b23f8d4786deedb0d2ac34876cf998d3b6313
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for pyperclip (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for pyperclip (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for pyperclip: filename=pyperclip-1.7.0-py3-none-any.whl size=8358 sha256=79ff4e466144a509ec102081fb809b526c48a92dd341fd2dcfd3613cf5e21957
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/44/f1/a7/9fa7d156d0826235a9d269fc024aeedad9ad4d6a9ea4a64af1
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for warlock (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for warlock (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for warlock: filename=warlock-1.3.3-py2.py3-none-any.whl size=9818 sha256=f68a48b7908f3bfcea9f0d5d460f8438bb1b28b334d9f5be9dd67fd8cb0616d0
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/69/68/a5/25e0551af5d0e3788cf8338c368234886fc45e55d44c0cafb5
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for msgpack (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for msgpack (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for msgpack: filename=msgpack-0.6.2-cp37-cp37m-linux_s390x.whl size=278870 sha256=ae75c6524aa48682dbf898d66b5004575e381c289451ad4f41b7bff83b5a8bd7
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/28/d0/ba/5a2666e6d43c32760a1e608f0bc51f63b1116f7971932bfbbd
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for dogpile.cache (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for dogpile.cache (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for dogpile.cache: filename=dogpile.cache-0.9.0-py2.py3-none-any.whl size=44831 sha256=2609896cf01d50913901dc99165c7f2f36c3c7a1fdee4f162e852f16a702140a
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/1e/35/0f/a7110bd6eb0eeaaf534dd070582d75ae05a8d9ee3e1e098519
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for wrapt (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for wrapt (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for wrapt: filename=wrapt-1.12.0-cp37-cp37m-linux_s390x.whl size=74781 sha256=1a7dd9a91ba111d5992292568d2388fffd486b99ac98486da532f771f8435066
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/e5/78/69/f40ab7cae531c8f07003a9d1b4b81ebec14cda95519c57e7dd
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for pyrsistent (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for pyrsistent (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for pyrsistent: filename=pyrsistent-0.15.7-cp37-cp37m-linux_s390x.whl size=104558 sha256=576bca9b80857f9bfc0cbcc62521035a61e8d46f125acf1839414ebdacdf1d50
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/57/74/e3/61db397ec89f304e49711ec9f68490f15814b80c1c0ee9b8c0
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for netifaces (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for netifaces (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for netifaces: filename=netifaces-0.10.9-cp37-cp37m-linux_s390x.whl size=39399 sha256=4c69fcc88b3354a94280d868d881f1bfbd8ec233ba2773e768e8d418473cd7a3
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/5f/09/cf/2b1aa8371c071fa89518ac0bbda1b8cca4e65b6e2538af4192
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for cffi (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for cffi (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for cffi: filename=cffi-1.14.0-cp37-cp37m-linux_s390x.whl size=363534 sha256=71cd0fad8e5b2e4bde45ec660904bdba1e248ee15dd5bdc5e540250084f0a6ed
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/c4/91/4f/81fe591804590e3cd010d6c54f251607dc4c61fc5eb5840a51
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for ansible (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for ansible (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for ansible: filename=ansible-2.8.8-py3-none-any.whl size=12650706 sha256=1c2bc048075322d908eb3ab71765a866f50084a316066e02abd6b5e0bb98e187
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/a0/08/b8/318a1d3f594044f3f4eb65df506e16b307b18dc874ca33f29a
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for mysqlclient (setup.py): started
+INFO:kolla.common.utils.kolla-toolbox:  Building wheel for mysqlclient (setup.py): finished with status 'done'
+INFO:kolla.common.utils.kolla-toolbox:  Created wheel for mysqlclient: filename=mysqlclient-1.4.6-cp37-cp37m-linux_s390x.whl size=110864 sha256=45bfa8d90fcb3166323ff0af4259e39c2893e1903c9758a3de09cccef8875e96
+INFO:kolla.common.utils.kolla-toolbox:  Stored in directory: /tmp/pip-ephem-wheel-cache-8zxs77z1/wheels/0d/77/50/313243794eb2e9f37ca5cbb677288009b2828c22f5f03dc7ff
+INFO:kolla.common.utils.kolla-toolbox:Successfully built simplejson MarkupSafe prettytable pyudev pycparser PyYAML cryptography pyperclip warlock msgpack dogpile.cache wrapt pyrsistent netifaces cffi ansible mysqlclient
+INFO:kolla.common.utils.kolla-toolbox:Installing collected packages: chardet, certifi, pbr, munch, attrs, pytz, Babel, oslo.i18n, simplejson, pycparser, cffi, cryptography, pyOpenSSL, prettytable, wrapt, debtcollector, netaddr, pyparsing, netifaces, iso8601, oslo.utils, idna, urllib3, requests, pyrsistent, jsonschema, jsonpointer, jsonpatch, warlock, os-service-types, stevedore, keystoneauth1, python-glanceclient, MarkupSafe, pymongo, wcwidth, pyudev, PyYAML, msgpack, oslo.serialization, python-novaclient, jmespath, requestsexceptions, decorator, dogpile.cache, openstacksdk, os-client-config, Jinja2, python-dateutil, influxdb, pyperclip, cmd2, cliff, shade, python-cinderclient, osc-lib, rfc3986, oslo.config, python-keystoneclient, python-openstackclient, ansible, mysqlclient
+INFO:kolla.common.utils.kolla-toolbox:Successfully installed Babel-2.8.0 Jinja2-2.11.1 MarkupSafe-1.1.1 PyYAML-5.3 ansible-2.8.8 attrs-19.3.0 certifi-2019.11.28 cffi-1.14.0 chardet-3.0.4 cliff-3.0.0 cmd2-0.8.9 cryptography-2.8 debtcollector-2.0.0 decorator-4.4.1 dogpile.cache-0.9.0 idna-2.9 influxdb-5.2.3 iso8601-0.1.12 jmespath-0.9.5 jsonpatch-1.25 jsonpointer-2.0 jsonschema-3.2.0 keystoneauth1-3.18.0 msgpack-0.6.2 munch-2.5.0 mysqlclient-1.4.6 netaddr-0.7.19 netifaces-0.10.9 openstacksdk-0.41.0 os-client-config-2.0.0 os-service-types-1.7.0 osc-lib-2.0.0 oslo.config-8.0.1 oslo.i18n-4.0.0 oslo.serialization-3.0.0 oslo.utils-4.1.0 pbr-5.4.4 prettytable-0.7.2 pyOpenSSL-19.1.0 pycparser-2.19 pymongo-3.10.1 pyparsing-2.4.6 pyperclip-1.7.0 pyrsistent-0.15.7 python-cinderclient-6.0.0 python-dateutil-2.8.1 python-glanceclient-2.17.0 python-keystoneclient-3.22.0 python-novaclient-16.0.0 python-openstackclient-5.0.0 pytz-2019.3 pyudev-0.22.0 requests-2.23.0 requestsexceptions-1.4.0 rfc3986-1.3.2 shade-1.33.0 simplejson-3.17.0 stevedore-1.32.0 urllib3-1.25.8 warlock-1.3.3 wcwidth-0.1.8 wrapt-1.12.0
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container e7c3af84eca5
+INFO:kolla.common.utils.kolla-toolbox: ---> 2e38965cd9fa
+INFO:kolla.common.utils.kolla-toolbox:Step 10/16 : ENV ANSIBLE_LIBRARY /usr/share/ansible:$ANSIBLE_LIBRARY
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in 288dbfb0d31a
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container 288dbfb0d31a
+INFO:kolla.common.utils.kolla-toolbox: ---> 8a537d25bb11
+INFO:kolla.common.utils.kolla-toolbox:Step 11/16 : COPY find_disks.py kolla_sanity.py /usr/share/ansible/
+INFO:kolla.common.utils.kolla-toolbox: ---> 88bb8f3a51ce
+INFO:kolla.common.utils.kolla-toolbox:Step 12/16 : COPY ansible.cfg /var/lib/ansible/.ansible.cfg
+INFO:kolla.common.utils.kolla-toolbox: ---> 909c53122713
+INFO:kolla.common.utils.kolla-toolbox:Step 13/16 : RUN chmod 644 /usr/share/ansible/find_disks.py               /usr/share/ansible/kolla_sanity.py               /var/lib/ansible/.ansible.cfg
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in e8bce86756bc
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container e8bce86756bc
+INFO:kolla.common.utils.kolla-toolbox: ---> 3facd3c5a123
+INFO:kolla.common.utils.kolla-toolbox:Step 14/16 : COPY ansible_sudoers /etc/sudoers.d/kolla_ansible_sudoers
+INFO:kolla.common.utils.kolla-toolbox: ---> 6628d26901d0
+INFO:kolla.common.utils.kolla-toolbox:Step 15/16 : RUN chmod 440 /etc/sudoers.d/kolla_ansible_sudoers
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in 76d659f3ea6a
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container 76d659f3ea6a
+INFO:kolla.common.utils.kolla-toolbox: ---> 3a8b54783116
+INFO:kolla.common.utils.kolla-toolbox:Step 16/16 : USER ansible
+INFO:kolla.common.utils.kolla-toolbox: ---> Running in b6fa80997230
+INFO:kolla.common.utils.kolla-toolbox:Removing intermediate container b6fa80997230
+INFO:kolla.common.utils.kolla-toolbox: ---> f9e56dd2014b
+INFO:kolla.common.utils.kolla-toolbox:Successfully built f9e56dd2014b
+INFO:kolla.common.utils.kolla-toolbox:Successfully tagged s390x/debian-binary-kolla-toolbox:9.1.0
+INFO:kolla.common.utils.kolla-toolbox:Built at 2020-03-02 21:24:16.612862 (took 0:02:37.680324)

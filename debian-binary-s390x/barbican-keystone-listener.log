@@ -1,0 +1,57 @@
+INFO:kolla.common.utils.barbican-keystone-listener:Building started at 2020-03-02 21:27:59.025876
+INFO:kolla.common.utils.barbican-keystone-listener:Step 1/4 : FROM s390x/debian-binary-barbican-base:9.1.0
+INFO:kolla.common.utils.barbican-keystone-listener: ---> 55911d98aa85
+INFO:kolla.common.utils.barbican-keystone-listener:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="barbican-keystone-listener" build-date="20200302"
+INFO:kolla.common.utils.barbican-keystone-listener: ---> Running in 91a67541d9c2
+INFO:kolla.common.utils.barbican-keystone-listener:Removing intermediate container 91a67541d9c2
+INFO:kolla.common.utils.barbican-keystone-listener: ---> de18cb4e2b38
+INFO:kolla.common.utils.barbican-keystone-listener:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends barbican-keystone-listener && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.barbican-keystone-listener: ---> Running in 4656a00b86f4
+INFO:kolla.common.utils.barbican-keystone-listener:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.barbican-keystone-listener:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.barbican-keystone-listener:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.barbican-keystone-listener:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.barbican-keystone-listener:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.barbican-keystone-listener:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.barbican-keystone-listener:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.barbican-keystone-listener:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.barbican-keystone-listener:Fetched 8,235 kB in 2s (5,342 kB/s)
+INFO:kolla.common.utils.barbican-keystone-listener:Reading package lists...
+INFO:kolla.common.utils.barbican-keystone-listener:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.barbican-keystone-listener:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.barbican-keystone-listener:[0m
+INFO:kolla.common.utils.barbican-keystone-listener:Reading package lists...
+INFO:kolla.common.utils.barbican-keystone-listener:Building dependency tree...
+INFO:kolla.common.utils.barbican-keystone-listener:Reading state information...
+INFO:kolla.common.utils.barbican-keystone-listener:The following NEW packages will be installed:
+INFO:kolla.common.utils.barbican-keystone-listener:  barbican-keystone-listener
+INFO:kolla.common.utils.barbican-keystone-listener:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.barbican-keystone-listener:Need to get 8,144 B of archives.
+INFO:kolla.common.utils.barbican-keystone-listener:After this operation, 28.7 kB of additional disk space will be used.
+INFO:kolla.common.utils.barbican-keystone-listener:Get:1 http://deb.debian.org/debian buster/main s390x barbican-keystone-listener all 1:7.0.0-1 [8,144 B]
+INFO:kolla.common.utils.barbican-keystone-listener:Fetched 8,144 B in 0s (245 kB/s)
+INFO:kolla.common.utils.barbican-keystone-listener:Selecting previously unselected package barbican-keystone-listener.
+INFO:kolla.common.utils.barbican-keystone-listener:(Reading database ... 
+INFO:kolla.common.utils.barbican-keystone-listener:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.barbican-keystone-listener:(Reading database ... 65%
+INFO:kolla.common.utils.barbican-keystone-listener:(Reading database ... 70%
+INFO:kolla.common.utils.barbican-keystone-listener:(Reading database ... 75%
+INFO:kolla.common.utils.barbican-keystone-listener:(Reading database ... 80%
+INFO:kolla.common.utils.barbican-keystone-listener:(Reading database ... 85%
+INFO:kolla.common.utils.barbican-keystone-listener:(Reading database ... 90%
+INFO:kolla.common.utils.barbican-keystone-listener:(Reading database ... 95%
+INFO:kolla.common.utils.barbican-keystone-listener:(Reading database ... 100%(Reading database ... 25147 files and directories currently installed.)
+INFO:kolla.common.utils.barbican-keystone-listener:Preparing to unpack .../barbican-keystone-listener_1%3a7.0.0-1_all.deb ...
+INFO:kolla.common.utils.barbican-keystone-listener:Unpacking barbican-keystone-listener (1:7.0.0-1) ...
+INFO:kolla.common.utils.barbican-keystone-listener:Setting up barbican-keystone-listener (1:7.0.0-1) ...
+INFO:kolla.common.utils.barbican-keystone-listener:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.barbican-keystone-listener:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.barbican-keystone-listener:Removing intermediate container 4656a00b86f4
+INFO:kolla.common.utils.barbican-keystone-listener: ---> aa3c26e3b61d
+INFO:kolla.common.utils.barbican-keystone-listener:Step 4/4 : USER barbican
+INFO:kolla.common.utils.barbican-keystone-listener: ---> Running in a530bf4df9ff
+INFO:kolla.common.utils.barbican-keystone-listener:Removing intermediate container a530bf4df9ff
+INFO:kolla.common.utils.barbican-keystone-listener: ---> 05f1f0fd8481
+INFO:kolla.common.utils.barbican-keystone-listener:Successfully built 05f1f0fd8481
+INFO:kolla.common.utils.barbican-keystone-listener:Successfully tagged s390x/debian-binary-barbican-keystone-listener:9.1.0
+INFO:kolla.common.utils.barbican-keystone-listener:Built at 2020-03-02 21:28:06.103120 (took 0:00:07.077244)

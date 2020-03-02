@@ -1,0 +1,25 @@
+INFO:kolla.common.utils.prometheus-mysqld-exporter:Building started at 2020-03-02 21:51:00.972384
+INFO:kolla.common.utils.prometheus-mysqld-exporter:Step 1/5 : FROM s390x/ubuntu-source-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-mysqld-exporter: ---> 91d5cbd16b50
+INFO:kolla.common.utils.prometheus-mysqld-exporter:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-mysqld-exporter" build-date="20200302"
+INFO:kolla.common.utils.prometheus-mysqld-exporter: ---> Running in 7012b3f6745b
+INFO:kolla.common.utils.prometheus-mysqld-exporter:Removing intermediate container 7012b3f6745b
+INFO:kolla.common.utils.prometheus-mysqld-exporter: ---> 05a3fbee6043
+INFO:kolla.common.utils.prometheus-mysqld-exporter:Step 3/5 : ENV mysqld_exporter_version=0.11.0
+INFO:kolla.common.utils.prometheus-mysqld-exporter: ---> Running in 11d61468aeff
+INFO:kolla.common.utils.prometheus-mysqld-exporter:Removing intermediate container 11d61468aeff
+INFO:kolla.common.utils.prometheus-mysqld-exporter: ---> a60ce9e552bb
+INFO:kolla.common.utils.prometheus-mysqld-exporter:Step 4/5 : RUN curl -ssL -o /tmp/mysqld_exporter.tar.gz https://github.com/prometheus/mysqld_exporter/releases/download/v${mysqld_exporter_version}/mysqld_exporter-${mysqld_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/mysqld_exporter.tar.gz -C /opt/     && rm -f /tmp/mysqld_exporter.tar.gz     && ln -s /opt/mysqld_exporter* /opt/mysqld_exporter
+INFO:kolla.common.utils.prometheus-mysqld-exporter: ---> Running in 242976aa3541
+INFO:kolla.common.utils.prometheus-mysqld-exporter:curl (https://github.com/prometheus/mysqld_exporter/releases/download/v0.11.0/mysqld_exporter-0.11.0.linux-s390x.tar.gz): response: 404, time: 0.211397, size: 9
+INFO:kolla.common.utils.prometheus-mysqld-exporter:[91mtar: This does not look like a tar archive
+INFO:kolla.common.utils.prometheus-mysqld-exporter:[0m
+INFO:kolla.common.utils.prometheus-mysqld-exporter:[91m
+INFO:kolla.common.utils.prometheus-mysqld-exporter:gzip: stdin: not in gzip format
+INFO:kolla.common.utils.prometheus-mysqld-exporter:[0m
+INFO:kolla.common.utils.prometheus-mysqld-exporter:[91mtar: Child returned status 1
+INFO:kolla.common.utils.prometheus-mysqld-exporter:tar: Error is not recoverable: exiting now
+INFO:kolla.common.utils.prometheus-mysqld-exporter:[0m
+INFO:kolla.common.utils.prometheus-mysqld-exporter:Removing intermediate container 242976aa3541
+ERROR:kolla.common.utils.prometheus-mysqld-exporter:Error'd with the following message
+ERROR:kolla.common.utils.prometheus-mysqld-exporter:The command '/bin/sh -c curl -ssL -o /tmp/mysqld_exporter.tar.gz https://github.com/prometheus/mysqld_exporter/releases/download/v${mysqld_exporter_version}/mysqld_exporter-${mysqld_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/mysqld_exporter.tar.gz -C /opt/     && rm -f /tmp/mysqld_exporter.tar.gz     && ln -s /opt/mysqld_exporter* /opt/mysqld_exporter' returned a non-zero code: 2

@@ -1,0 +1,39 @@
+INFO:kolla.common.utils.keystone-base:Building started at 2020-03-02 21:41:08.723841
+INFO:kolla.common.utils.keystone-base:Step 1/6 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.keystone-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.keystone-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="keystone-base" build-date="20200302"
+INFO:kolla.common.utils.keystone-base: ---> Running in e6d1c94b4dda
+INFO:kolla.common.utils.keystone-base:Removing intermediate container e6d1c94b4dda
+INFO:kolla.common.utils.keystone-base: ---> 0e8e92c0b846
+INFO:kolla.common.utils.keystone-base:Step 3/6 : RUN usermod --append --home /var/lib/keystone --groups kolla keystone     && mkdir -p /var/lib/keystone     && chown -R 42425:42425 /var/lib/keystone
+INFO:kolla.common.utils.keystone-base: ---> Running in fba481e7e47b
+INFO:kolla.common.utils.keystone-base:Removing intermediate container fba481e7e47b
+INFO:kolla.common.utils.keystone-base: ---> ef2812f18397
+INFO:kolla.common.utils.keystone-base:Step 4/6 : RUN apt-get update && apt-get -y install --no-install-recommends apache2 keystone libapache2-mod-auth-mellon libapache2-mod-auth-openidc libapache2-mod-wsgi-py3 python3-ldappool && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.keystone-base: ---> Running in 6aa2890a4e7f
+INFO:kolla.common.utils.keystone-base:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.keystone-base:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.keystone-base:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.keystone-base:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.keystone-base:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.keystone-base:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.keystone-base:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.keystone-base:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.keystone-base:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.keystone-base:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.keystone-base:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.keystone-base:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.keystone-base:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.keystone-base:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.keystone-base:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.keystone-base:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.keystone-base:Fetched 15.6 MB in 3s (5,663 kB/s)
+INFO:kolla.common.utils.keystone-base:Reading package lists...
+INFO:kolla.common.utils.keystone-base:Reading package lists...
+INFO:kolla.common.utils.keystone-base:Building dependency tree...
+INFO:kolla.common.utils.keystone-base:Reading state information...
+INFO:kolla.common.utils.keystone-base:[91mE: Unable to locate package libapache2-mod-auth-openidc
+INFO:kolla.common.utils.keystone-base:[0m
+INFO:kolla.common.utils.keystone-base:Removing intermediate container 6aa2890a4e7f
+ERROR:kolla.common.utils.keystone-base:Error'd with the following message
+ERROR:kolla.common.utils.keystone-base:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends apache2 keystone libapache2-mod-auth-mellon libapache2-mod-auth-openidc libapache2-mod-wsgi-py3 python3-ldappool && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

@@ -1,0 +1,13 @@
+INFO:kolla.common.utils.ironic-neutron-agent:Building started at 2020-03-02 21:28:50.578091
+INFO:kolla.common.utils.ironic-neutron-agent:Step 1/4 : FROM s390x/debian-binary-neutron-base:9.1.0
+INFO:kolla.common.utils.ironic-neutron-agent: ---> c27b5a2440a1
+INFO:kolla.common.utils.ironic-neutron-agent:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="ironic-neutron-agent" build-date="20200302"
+INFO:kolla.common.utils.ironic-neutron-agent: ---> Running in 0ef3585d9742
+INFO:kolla.common.utils.ironic-neutron-agent:Removing intermediate container 0ef3585d9742
+INFO:kolla.common.utils.ironic-neutron-agent: ---> c72581f72cc5
+INFO:kolla.common.utils.ironic-neutron-agent:Step 3/4 : RUN echo 'binary not yet available for debian'             && /bin/false
+INFO:kolla.common.utils.ironic-neutron-agent: ---> Running in a5f023800956
+INFO:kolla.common.utils.ironic-neutron-agent:binary not yet available for debian
+INFO:kolla.common.utils.ironic-neutron-agent:Removing intermediate container a5f023800956
+ERROR:kolla.common.utils.ironic-neutron-agent:Error'd with the following message
+ERROR:kolla.common.utils.ironic-neutron-agent:The command '/bin/sh -c echo 'binary not yet available for debian'             && /bin/false' returned a non-zero code: 1

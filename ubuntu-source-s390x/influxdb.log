@@ -1,0 +1,44 @@
+INFO:kolla.common.utils.influxdb:Building started at 2020-03-02 21:49:31.637441
+INFO:kolla.common.utils.influxdb:Step 1/9 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.influxdb: ---> 96ede3560f2f
+INFO:kolla.common.utils.influxdb:Step 2/9 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="influxdb" build-date="20200302"
+INFO:kolla.common.utils.influxdb: ---> Running in 3d61a02a4dbe
+INFO:kolla.common.utils.influxdb:Removing intermediate container 3d61a02a4dbe
+INFO:kolla.common.utils.influxdb: ---> b44d5edd0bbf
+INFO:kolla.common.utils.influxdb:Step 3/9 : RUN usermod --append --home /var/lib/influxdb --groups kolla influxdb     && mkdir -p /var/lib/influxdb     && chown -R 42421:42421 /var/lib/influxdb
+INFO:kolla.common.utils.influxdb: ---> Running in 87e598a5ce8f
+INFO:kolla.common.utils.influxdb:Removing intermediate container 87e598a5ce8f
+INFO:kolla.common.utils.influxdb: ---> 8cd4ea49dd60
+INFO:kolla.common.utils.influxdb:Step 4/9 : RUN echo "deb https://repos.influxdata.com/ubuntu bionic stable" >/etc/apt/sources.list.d/influxdb.list
+INFO:kolla.common.utils.influxdb: ---> Running in 5afd74e1e185
+INFO:kolla.common.utils.influxdb:Removing intermediate container 5afd74e1e185
+INFO:kolla.common.utils.influxdb: ---> a189966d9e8f
+INFO:kolla.common.utils.influxdb:Step 5/9 : RUN apt-get update && apt-get -y install --no-install-recommends influxdb && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.influxdb: ---> Running in 21ce45364906
+INFO:kolla.common.utils.influxdb:Get:1 https://repos.influxdata.com/ubuntu bionic InRelease [4,731 B]
+INFO:kolla.common.utils.influxdb:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.influxdb:Get:3 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.influxdb:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.influxdb:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.influxdb:Get:6 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.influxdb:Get:7 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.influxdb:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.influxdb:Get:9 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.influxdb:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.influxdb:Get:11 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.influxdb:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.influxdb:Get:13 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.influxdb:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.influxdb:Get:15 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.influxdb:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.influxdb:Get:17 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.influxdb:Fetched 15.6 MB in 3s (5,544 kB/s)
+INFO:kolla.common.utils.influxdb:Reading package lists...
+INFO:kolla.common.utils.influxdb:Reading package lists...
+INFO:kolla.common.utils.influxdb:Building dependency tree...
+INFO:kolla.common.utils.influxdb:Reading state information...
+INFO:kolla.common.utils.influxdb:[91mE: Unable to locate package influxdb
+INFO:kolla.common.utils.influxdb:[0m
+INFO:kolla.common.utils.influxdb:Removing intermediate container 21ce45364906
+ERROR:kolla.common.utils.influxdb:Error'd with the following message
+ERROR:kolla.common.utils.influxdb:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends influxdb && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

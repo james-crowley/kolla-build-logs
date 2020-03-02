@@ -1,0 +1,449 @@
+INFO:kolla.common.utils.fluentd:Building started at 2020-03-02 21:48:05.180082
+INFO:kolla.common.utils.fluentd:Step 1/16 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.fluentd: ---> 96ede3560f2f
+INFO:kolla.common.utils.fluentd:Step 2/16 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="fluentd" build-date="20200302"
+INFO:kolla.common.utils.fluentd: ---> Running in 84891285223b
+INFO:kolla.common.utils.fluentd:Removing intermediate container 84891285223b
+INFO:kolla.common.utils.fluentd: ---> 11217b814843
+INFO:kolla.common.utils.fluentd:Step 3/16 : LABEL fluentd_version="0.14" fluentd_binary="fluentd"
+INFO:kolla.common.utils.fluentd: ---> Running in 374154e4b894
+INFO:kolla.common.utils.fluentd:Removing intermediate container 374154e4b894
+INFO:kolla.common.utils.fluentd: ---> aeed86617e93
+INFO:kolla.common.utils.fluentd:Step 4/16 : RUN echo "deb http://packages.treasuredata.com/3/ubuntu/bionic/ bionic contrib" >/etc/apt/sources.list.d/td-agent.list
+INFO:kolla.common.utils.fluentd: ---> Running in 107f95d62658
+INFO:kolla.common.utils.fluentd:Removing intermediate container 107f95d62658
+INFO:kolla.common.utils.fluentd: ---> 1c8081cdcc6a
+INFO:kolla.common.utils.fluentd:Step 5/16 : RUN usermod --append --home /var/lib/fluentd --groups kolla fluentd     && usermod --append --groups mysql fluentd     && mkdir -p /var/lib/fluentd     && chown -R 42474:42474 /var/lib/fluentd
+INFO:kolla.common.utils.fluentd: ---> Running in cb389e268784
+INFO:kolla.common.utils.fluentd:Removing intermediate container cb389e268784
+INFO:kolla.common.utils.fluentd: ---> 39740a7c8f62
+INFO:kolla.common.utils.fluentd:Step 6/16 : RUN apt-get update && apt-get -y install --no-install-recommends g++ make ruby ruby-dev && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.fluentd: ---> Running in d28fa8c94791
+INFO:kolla.common.utils.fluentd:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.fluentd:Get:2 http://packages.treasuredata.com/3/ubuntu/bionic bionic InRelease [4,391 B]
+INFO:kolla.common.utils.fluentd:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.fluentd:Get:4 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.fluentd:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.fluentd:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.fluentd:Get:7 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.fluentd:Get:8 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.fluentd:Get:9 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.fluentd:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.fluentd:Get:11 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.fluentd:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.fluentd:Get:13 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.fluentd:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.fluentd:Get:15 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.fluentd:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.fluentd:Get:17 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.fluentd:Fetched 15.6 MB in 5s (3,273 kB/s)
+INFO:kolla.common.utils.fluentd:Reading package lists...
+INFO:kolla.common.utils.fluentd:Reading package lists...
+INFO:kolla.common.utils.fluentd:Building dependency tree...
+INFO:kolla.common.utils.fluentd:Reading state information...
+INFO:kolla.common.utils.fluentd:The following additional packages will be installed:
+INFO:kolla.common.utils.fluentd:  binutils binutils-common binutils-s390x-linux-gnu cpp cpp-7 g++-7 gcc gcc-7
+INFO:kolla.common.utils.fluentd:  gcc-7-base libasan4 libatomic1 libbinutils libc-dev-bin libc6-dev libcc1-0
+INFO:kolla.common.utils.fluentd:  libgcc-7-dev libgmp-dev libgmpxx4ldbl libgomp1 libisl19 libitm1 libmpc3
+INFO:kolla.common.utils.fluentd:  libruby2.5 libstdc++-7-dev libubsan0 libyaml-0-2 linux-libc-dev rake
+INFO:kolla.common.utils.fluentd:  ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert
+INFO:kolla.common.utils.fluentd:  ruby-test-unit ruby2.5 ruby2.5-dev rubygems-integration
+INFO:kolla.common.utils.fluentd:Suggested packages:
+INFO:kolla.common.utils.fluentd:  binutils-doc cpp-doc gcc-7-locales g++-multilib g++-7-multilib gcc-7-doc
+INFO:kolla.common.utils.fluentd:  libstdc++6-7-dbg gcc-multilib manpages-dev autoconf automake libtool flex
+INFO:kolla.common.utils.fluentd:  bison gdb gcc-doc gcc-7-multilib libgcc1-dbg libgomp1-dbg libitm1-dbg
+INFO:kolla.common.utils.fluentd:  libatomic1-dbg libasan4-dbg liblsan0-dbg libtsan0-dbg libubsan0-dbg
+INFO:kolla.common.utils.fluentd:  libcilkrts5-dbg libmpx2-dbg libquadmath0-dbg glibc-doc gmp-doc libgmp10-doc
+INFO:kolla.common.utils.fluentd:  libmpfr-dev libstdc++-7-doc make-doc ri bundler
+INFO:kolla.common.utils.fluentd:Recommended packages:
+INFO:kolla.common.utils.fluentd:  manpages manpages-dev zip fonts-lato libjs-jquery ruby2.5-doc
+INFO:kolla.common.utils.fluentd:The following NEW packages will be installed:
+INFO:kolla.common.utils.fluentd:  binutils binutils-common binutils-s390x-linux-gnu cpp cpp-7 g++ g++-7 gcc
+INFO:kolla.common.utils.fluentd:  gcc-7 gcc-7-base libasan4 libatomic1 libbinutils libc-dev-bin libc6-dev
+INFO:kolla.common.utils.fluentd:  libcc1-0 libgcc-7-dev libgmp-dev libgmpxx4ldbl libgomp1 libisl19 libitm1
+INFO:kolla.common.utils.fluentd:  libmpc3 libruby2.5 libstdc++-7-dev libubsan0 libyaml-0-2 linux-libc-dev make
+INFO:kolla.common.utils.fluentd:  rake ruby ruby-dev ruby-did-you-mean ruby-minitest ruby-net-telnet
+INFO:kolla.common.utils.fluentd:  ruby-power-assert ruby-test-unit ruby2.5 ruby2.5-dev rubygems-integration
+INFO:kolla.common.utils.fluentd:0 upgraded, 40 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.fluentd:Need to get 29.5 MB of archives.
+INFO:kolla.common.utils.fluentd:After this operation, 137 MB of additional disk space will be used.
+INFO:kolla.common.utils.fluentd:Get:1 http://ports.ubuntu.com bionic/main s390x libyaml-0-2 s390x 0.1.7-2ubuntu3 [41.3 kB]
+INFO:kolla.common.utils.fluentd:Get:2 http://ports.ubuntu.com bionic-updates/main s390x binutils-common s390x 2.30-21ubuntu1~18.04.2 [193 kB]
+INFO:kolla.common.utils.fluentd:Get:3 http://ports.ubuntu.com bionic-updates/main s390x libbinutils s390x 2.30-21ubuntu1~18.04.2 [305 kB]
+INFO:kolla.common.utils.fluentd:Get:4 http://ports.ubuntu.com bionic-updates/main s390x binutils-s390x-linux-gnu s390x 2.30-21ubuntu1~18.04.2 [1,723 kB]
+INFO:kolla.common.utils.fluentd:Get:5 http://ports.ubuntu.com bionic-updates/main s390x binutils s390x 2.30-21ubuntu1~18.04.2 [3,336 B]
+INFO:kolla.common.utils.fluentd:Get:6 http://ports.ubuntu.com bionic-updates/main s390x gcc-7-base s390x 7.4.0-1ubuntu1~18.04.1 [18.9 kB]
+INFO:kolla.common.utils.fluentd:Get:7 http://ports.ubuntu.com bionic/main s390x libisl19 s390x 0.19-1 [512 kB]
+INFO:kolla.common.utils.fluentd:Get:8 http://ports.ubuntu.com bionic/main s390x libmpc3 s390x 1.1.0-1 [38.3 kB]
+INFO:kolla.common.utils.fluentd:Get:9 http://ports.ubuntu.com bionic-updates/main s390x cpp-7 s390x 7.4.0-1ubuntu1~18.04.1 [5,186 kB]
+INFO:kolla.common.utils.fluentd:Get:10 http://ports.ubuntu.com bionic-updates/main s390x cpp s390x 4:7.4.0-1ubuntu2.3 [27.6 kB]
+INFO:kolla.common.utils.fluentd:Get:11 http://ports.ubuntu.com bionic-updates/main s390x libcc1-0 s390x 8.3.0-6ubuntu1~18.04.1 [45.1 kB]
+INFO:kolla.common.utils.fluentd:Get:12 http://ports.ubuntu.com bionic-updates/main s390x libgomp1 s390x 8.3.0-6ubuntu1~18.04.1 [69.9 kB]
+INFO:kolla.common.utils.fluentd:Get:13 http://ports.ubuntu.com bionic-updates/main s390x libitm1 s390x 8.3.0-6ubuntu1~18.04.1 [26.9 kB]
+INFO:kolla.common.utils.fluentd:Get:14 http://ports.ubuntu.com bionic-updates/main s390x libatomic1 s390x 8.3.0-6ubuntu1~18.04.1 [8,428 B]
+INFO:kolla.common.utils.fluentd:Get:15 http://ports.ubuntu.com bionic-updates/main s390x libasan4 s390x 7.4.0-1ubuntu1~18.04.1 [319 kB]
+INFO:kolla.common.utils.fluentd:Get:16 http://ports.ubuntu.com bionic-updates/main s390x libubsan0 s390x 7.4.0-1ubuntu1~18.04.1 [120 kB]
+INFO:kolla.common.utils.fluentd:Get:17 http://ports.ubuntu.com bionic-updates/main s390x libgcc-7-dev s390x 7.4.0-1ubuntu1~18.04.1 [641 kB]
+INFO:kolla.common.utils.fluentd:Get:18 http://ports.ubuntu.com bionic-updates/main s390x gcc-7 s390x 7.4.0-1ubuntu1~18.04.1 [5,898 kB]
+INFO:kolla.common.utils.fluentd:Get:19 http://ports.ubuntu.com bionic-updates/main s390x gcc s390x 4:7.4.0-1ubuntu2.3 [5,188 B]
+INFO:kolla.common.utils.fluentd:Get:20 http://ports.ubuntu.com bionic/main s390x libc-dev-bin s390x 2.27-3ubuntu1 [62.1 kB]
+INFO:kolla.common.utils.fluentd:Get:21 http://ports.ubuntu.com bionic-updates/main s390x linux-libc-dev s390x 4.15.0-88.88 [1,016 kB]
+INFO:kolla.common.utils.fluentd:Get:22 http://ports.ubuntu.com bionic/main s390x libc6-dev s390x 2.27-3ubuntu1 [2,034 kB]
+INFO:kolla.common.utils.fluentd:Get:23 http://ports.ubuntu.com bionic-updates/main s390x libstdc++-7-dev s390x 7.4.0-1ubuntu1~18.04.1 [1,458 kB]
+INFO:kolla.common.utils.fluentd:Get:24 http://ports.ubuntu.com bionic-updates/main s390x g++-7 s390x 7.4.0-1ubuntu1~18.04.1 [5,993 kB]
+INFO:kolla.common.utils.fluentd:Get:25 http://ports.ubuntu.com bionic-updates/main s390x g++ s390x 4:7.4.0-1ubuntu2.3 [1,572 B]
+INFO:kolla.common.utils.fluentd:Get:26 http://ports.ubuntu.com bionic/main s390x libgmpxx4ldbl s390x 2:6.1.2+dfsg-2 [8,868 B]
+INFO:kolla.common.utils.fluentd:Get:27 http://ports.ubuntu.com bionic/main s390x libgmp-dev s390x 2:6.1.2+dfsg-2 [302 kB]
+INFO:kolla.common.utils.fluentd:Get:28 http://ports.ubuntu.com bionic/main s390x rubygems-integration all 1.11 [4,994 B]
+INFO:kolla.common.utils.fluentd:Get:29 http://ports.ubuntu.com bionic-updates/main s390x ruby2.5 s390x 2.5.1-1ubuntu1.6 [48.6 kB]
+INFO:kolla.common.utils.fluentd:Get:30 http://ports.ubuntu.com bionic/main s390x ruby s390x 1:2.5.1 [5,712 B]
+INFO:kolla.common.utils.fluentd:Get:31 http://ports.ubuntu.com bionic/main s390x rake all 12.3.1-1 [45.1 kB]
+INFO:kolla.common.utils.fluentd:Get:32 http://ports.ubuntu.com bionic/main s390x ruby-did-you-mean all 1.2.0-2 [9,700 B]
+INFO:kolla.common.utils.fluentd:Get:33 http://ports.ubuntu.com bionic/main s390x ruby-minitest all 5.10.3-1 [38.6 kB]
+INFO:kolla.common.utils.fluentd:Get:34 http://ports.ubuntu.com bionic/main s390x ruby-net-telnet all 0.1.1-2 [12.6 kB]
+INFO:kolla.common.utils.fluentd:Get:35 http://ports.ubuntu.com bionic/main s390x ruby-power-assert all 0.3.0-1 [7,952 B]
+INFO:kolla.common.utils.fluentd:Get:36 http://ports.ubuntu.com bionic/main s390x ruby-test-unit all 3.2.5-1 [61.1 kB]
+INFO:kolla.common.utils.fluentd:Get:37 http://ports.ubuntu.com bionic-updates/main s390x libruby2.5 s390x 2.5.1-1ubuntu1.6 [2,968 kB]
+INFO:kolla.common.utils.fluentd:Get:38 http://ports.ubuntu.com bionic/main s390x make s390x 4.1-9.1ubuntu1 [148 kB]
+INFO:kolla.common.utils.fluentd:Get:39 http://ports.ubuntu.com bionic-updates/main s390x ruby2.5-dev s390x 2.5.1-1ubuntu1.6 [63.7 kB]
+INFO:kolla.common.utils.fluentd:Get:40 http://ports.ubuntu.com bionic/main s390x ruby-dev s390x 1:2.5.1 [4,604 B]
+INFO:kolla.common.utils.fluentd:Fetched 29.5 MB in 1s (46.2 MB/s)
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libyaml-0-2:s390x.
+INFO:kolla.common.utils.fluentd:(Reading database ... 
+INFO:kolla.common.utils.fluentd:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%
+INFO:kolla.common.utils.fluentd:(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.fluentd:(Reading database ... 75%
+INFO:kolla.common.utils.fluentd:(Reading database ... 80%
+INFO:kolla.common.utils.fluentd:(Reading database ... 85%
+INFO:kolla.common.utils.fluentd:(Reading database ... 90%
+INFO:kolla.common.utils.fluentd:(Reading database ... 95%
+INFO:kolla.common.utils.fluentd:(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../00-libyaml-0-2_0.1.7-2ubuntu3_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libyaml-0-2:s390x (0.1.7-2ubuntu3) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package binutils-common:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../01-binutils-common_2.30-21ubuntu1~18.04.2_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking binutils-common:s390x (2.30-21ubuntu1~18.04.2) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libbinutils:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../02-libbinutils_2.30-21ubuntu1~18.04.2_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libbinutils:s390x (2.30-21ubuntu1~18.04.2) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package binutils-s390x-linux-gnu.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../03-binutils-s390x-linux-gnu_2.30-21ubuntu1~18.04.2_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking binutils-s390x-linux-gnu (2.30-21ubuntu1~18.04.2) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package binutils.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../04-binutils_2.30-21ubuntu1~18.04.2_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking binutils (2.30-21ubuntu1~18.04.2) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package gcc-7-base:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../05-gcc-7-base_7.4.0-1ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking gcc-7-base:s390x (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libisl19:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../06-libisl19_0.19-1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libisl19:s390x (0.19-1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libmpc3:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../07-libmpc3_1.1.0-1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libmpc3:s390x (1.1.0-1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package cpp-7.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../08-cpp-7_7.4.0-1ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking cpp-7 (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package cpp.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../09-cpp_4%3a7.4.0-1ubuntu2.3_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking cpp (4:7.4.0-1ubuntu2.3) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libcc1-0:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../10-libcc1-0_8.3.0-6ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libcc1-0:s390x (8.3.0-6ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libgomp1:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../11-libgomp1_8.3.0-6ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libgomp1:s390x (8.3.0-6ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libitm1:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../12-libitm1_8.3.0-6ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libitm1:s390x (8.3.0-6ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libatomic1:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../13-libatomic1_8.3.0-6ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libatomic1:s390x (8.3.0-6ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libasan4:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../14-libasan4_7.4.0-1ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libasan4:s390x (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libubsan0:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../15-libubsan0_7.4.0-1ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libubsan0:s390x (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libgcc-7-dev:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../16-libgcc-7-dev_7.4.0-1ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libgcc-7-dev:s390x (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package gcc-7.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../17-gcc-7_7.4.0-1ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking gcc-7 (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package gcc.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../18-gcc_4%3a7.4.0-1ubuntu2.3_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking gcc (4:7.4.0-1ubuntu2.3) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libc-dev-bin.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../19-libc-dev-bin_2.27-3ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libc-dev-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package linux-libc-dev:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../20-linux-libc-dev_4.15.0-88.88_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking linux-libc-dev:s390x (4.15.0-88.88) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libc6-dev:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../21-libc6-dev_2.27-3ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libc6-dev:s390x (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libstdc++-7-dev:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../22-libstdc++-7-dev_7.4.0-1ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libstdc++-7-dev:s390x (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package g++-7.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../23-g++-7_7.4.0-1ubuntu1~18.04.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking g++-7 (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package g++.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../24-g++_4%3a7.4.0-1ubuntu2.3_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking g++ (4:7.4.0-1ubuntu2.3) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libgmpxx4ldbl:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../25-libgmpxx4ldbl_2%3a6.1.2+dfsg-2_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libgmpxx4ldbl:s390x (2:6.1.2+dfsg-2) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libgmp-dev:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../26-libgmp-dev_2%3a6.1.2+dfsg-2_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libgmp-dev:s390x (2:6.1.2+dfsg-2) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package rubygems-integration.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../27-rubygems-integration_1.11_all.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking rubygems-integration (1.11) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package ruby2.5.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../28-ruby2.5_2.5.1-1ubuntu1.6_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking ruby2.5 (2.5.1-1ubuntu1.6) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package ruby.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../29-ruby_1%3a2.5.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking ruby (1:2.5.1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package rake.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../30-rake_12.3.1-1_all.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking rake (12.3.1-1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package ruby-did-you-mean.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../31-ruby-did-you-mean_1.2.0-2_all.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking ruby-did-you-mean (1.2.0-2) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package ruby-minitest.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../32-ruby-minitest_5.10.3-1_all.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking ruby-minitest (5.10.3-1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package ruby-net-telnet.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../33-ruby-net-telnet_0.1.1-2_all.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking ruby-net-telnet (0.1.1-2) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package ruby-power-assert.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../34-ruby-power-assert_0.3.0-1_all.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking ruby-power-assert (0.3.0-1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package ruby-test-unit.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../35-ruby-test-unit_3.2.5-1_all.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking ruby-test-unit (3.2.5-1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package libruby2.5:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../36-libruby2.5_2.5.1-1ubuntu1.6_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking libruby2.5:s390x (2.5.1-1ubuntu1.6) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package make.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../37-make_4.1-9.1ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking make (4.1-9.1ubuntu1) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package ruby2.5-dev:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../38-ruby2.5-dev_2.5.1-1ubuntu1.6_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking ruby2.5-dev:s390x (2.5.1-1ubuntu1.6) ...
+INFO:kolla.common.utils.fluentd:Selecting previously unselected package ruby-dev:s390x.
+INFO:kolla.common.utils.fluentd:Preparing to unpack .../39-ruby-dev_1%3a2.5.1_s390x.deb ...
+INFO:kolla.common.utils.fluentd:Unpacking ruby-dev:s390x (1:2.5.1) ...
+INFO:kolla.common.utils.fluentd:Setting up libgomp1:s390x (8.3.0-6ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up libatomic1:s390x (8.3.0-6ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up libcc1-0:s390x (8.3.0-6ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up make (4.1-9.1ubuntu1) ...
+INFO:kolla.common.utils.fluentd:Setting up linux-libc-dev:s390x (4.15.0-88.88) ...
+INFO:kolla.common.utils.fluentd:Setting up gcc-7-base:s390x (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up binutils-common:s390x (2.30-21ubuntu1~18.04.2) ...
+INFO:kolla.common.utils.fluentd:Setting up ruby-did-you-mean (1.2.0-2) ...
+INFO:kolla.common.utils.fluentd:Setting up libyaml-0-2:s390x (0.1.7-2ubuntu3) ...
+INFO:kolla.common.utils.fluentd:Setting up ruby-net-telnet (0.1.1-2) ...
+INFO:kolla.common.utils.fluentd:Setting up rubygems-integration (1.11) ...
+INFO:kolla.common.utils.fluentd:Setting up libmpc3:s390x (1.1.0-1) ...
+INFO:kolla.common.utils.fluentd:Setting up libc-dev-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.fluentd:Setting up libgmpxx4ldbl:s390x (2:6.1.2+dfsg-2) ...
+INFO:kolla.common.utils.fluentd:Setting up ruby-minitest (5.10.3-1) ...
+INFO:kolla.common.utils.fluentd:Setting up libc6-dev:s390x (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.fluentd:Setting up libitm1:s390x (8.3.0-6ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up ruby-power-assert (0.3.0-1) ...
+INFO:kolla.common.utils.fluentd:Setting up libisl19:s390x (0.19-1) ...
+INFO:kolla.common.utils.fluentd:Setting up libgmp-dev:s390x (2:6.1.2+dfsg-2) ...
+INFO:kolla.common.utils.fluentd:Setting up libasan4:s390x (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up libbinutils:s390x (2.30-21ubuntu1~18.04.2) ...
+INFO:kolla.common.utils.fluentd:Setting up libubsan0:s390x (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up binutils-s390x-linux-gnu (2.30-21ubuntu1~18.04.2) ...
+INFO:kolla.common.utils.fluentd:Setting up libgcc-7-dev:s390x (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up cpp-7 (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up libstdc++-7-dev:s390x (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up binutils (2.30-21ubuntu1~18.04.2) ...
+INFO:kolla.common.utils.fluentd:Setting up cpp (4:7.4.0-1ubuntu2.3) ...
+INFO:kolla.common.utils.fluentd:Setting up gcc-7 (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up g++-7 (7.4.0-1ubuntu1~18.04.1) ...
+INFO:kolla.common.utils.fluentd:Setting up gcc (4:7.4.0-1ubuntu2.3) ...
+INFO:kolla.common.utils.fluentd:Setting up g++ (4:7.4.0-1ubuntu2.3) ...
+INFO:kolla.common.utils.fluentd:update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+INFO:kolla.common.utils.fluentd:update-alternatives: warning: skip creation of /usr/share/man/man1/c++.1.gz because associated file /usr/share/man/man1/g++.1.gz (of link group c++) doesn't exist
+INFO:kolla.common.utils.fluentd:Setting up rake (12.3.1-1) ...
+INFO:kolla.common.utils.fluentd:Setting up ruby2.5 (2.5.1-1ubuntu1.6) ...
+INFO:kolla.common.utils.fluentd:Setting up ruby (1:2.5.1) ...
+INFO:kolla.common.utils.fluentd:Setting up ruby-test-unit (3.2.5-1) ...
+INFO:kolla.common.utils.fluentd:Setting up libruby2.5:s390x (2.5.1-1ubuntu1.6) ...
+INFO:kolla.common.utils.fluentd:Setting up ruby2.5-dev:s390x (2.5.1-1ubuntu1.6) ...
+INFO:kolla.common.utils.fluentd:Setting up ruby-dev:s390x (1:2.5.1) ...
+INFO:kolla.common.utils.fluentd:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.fluentd:Removing intermediate container d28fa8c94791
+INFO:kolla.common.utils.fluentd: ---> 8cb64c7231fd
+INFO:kolla.common.utils.fluentd:Step 7/16 : RUN /usr/bin/gem install fluentd --no-rdoc --no-ri
+INFO:kolla.common.utils.fluentd: ---> Running in d41dcab7758d
+INFO:kolla.common.utils.fluentd:Building native extensions. This could take a while...
+INFO:kolla.common.utils.fluentd:Successfully installed msgpack-1.3.3
+INFO:kolla.common.utils.fluentd:Building native extensions. This could take a while...
+INFO:kolla.common.utils.fluentd:Successfully installed yajl-ruby-1.4.1
+INFO:kolla.common.utils.fluentd:Building native extensions. This could take a while...
+INFO:kolla.common.utils.fluentd:Successfully installed cool.io-1.6.0
+INFO:kolla.common.utils.fluentd:Successfully installed sigdump-0.2.4
+INFO:kolla.common.utils.fluentd:Successfully installed serverengine-2.2.1
+INFO:kolla.common.utils.fluentd:Building native extensions. This could take a while...
+INFO:kolla.common.utils.fluentd:Successfully installed http_parser.rb-0.6.0
+INFO:kolla.common.utils.fluentd:Successfully installed concurrent-ruby-1.1.6
+INFO:kolla.common.utils.fluentd:Successfully installed tzinfo-2.0.1
+INFO:kolla.common.utils.fluentd:Successfully installed tzinfo-data-1.2019.3
+INFO:kolla.common.utils.fluentd:Building native extensions. This could take a while...
+INFO:kolla.common.utils.fluentd:Successfully installed strptime-0.2.3
+INFO:kolla.common.utils.fluentd:Successfully installed fluentd-1.9.2
+INFO:kolla.common.utils.fluentd:11 gems installed
+INFO:kolla.common.utils.fluentd:Removing intermediate container d41dcab7758d
+INFO:kolla.common.utils.fluentd: ---> 71ae251fbdc5
+INFO:kolla.common.utils.fluentd:Step 8/16 : COPY fluentd_sudoers /etc/sudoers.d/kolla_fluentd_sudoers
+INFO:kolla.common.utils.fluentd: ---> 0bead86a58f3
+INFO:kolla.common.utils.fluentd:Step 9/16 : RUN chmod 440 /etc/sudoers.d/kolla_fluentd_sudoers     && mkdir -p /etc/fluentd     && mkdir -p /var/run/fluentd     && chown -R fluentd: /etc/fluentd /var/run/fluentd
+INFO:kolla.common.utils.fluentd: ---> Running in 9c73ac030ea6
+INFO:kolla.common.utils.fluentd:Removing intermediate container 9c73ac030ea6
+INFO:kolla.common.utils.fluentd: ---> 5db7775426c3
+INFO:kolla.common.utils.fluentd:Step 10/16 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.fluentd: ---> 740becef2c94
+INFO:kolla.common.utils.fluentd:Step 11/16 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.fluentd: ---> Running in 95a3b7591b98
+INFO:kolla.common.utils.fluentd:Removing intermediate container 95a3b7591b98
+INFO:kolla.common.utils.fluentd: ---> ef5410f1751d
+INFO:kolla.common.utils.fluentd:Step 12/16 : RUN ulimit -n 65536 && gem install --minimal-deps fluent-plugin-elasticsearch fluent-plugin-grep fluent-plugin-grok-parser fluent-plugin-parser fluent-plugin-rewrite-tag-filter
+INFO:kolla.common.utils.fluentd: ---> Running in 973a3f50f9f8
+INFO:kolla.common.utils.fluentd:Successfully installed excon-0.72.0
+INFO:kolla.common.utils.fluentd:Successfully installed multi_json-1.14.1
+INFO:kolla.common.utils.fluentd:Successfully installed multipart-post-2.1.1
+INFO:kolla.common.utils.fluentd:Successfully installed faraday-0.17.3
+INFO:kolla.common.utils.fluentd:Successfully installed elasticsearch-transport-7.5.0
+INFO:kolla.common.utils.fluentd:Successfully installed elasticsearch-api-7.5.0
+INFO:kolla.common.utils.fluentd:Successfully installed elasticsearch-7.5.0
+INFO:kolla.common.utils.fluentd:Successfully installed fluent-plugin-elasticsearch-4.0.5
+INFO:kolla.common.utils.fluentd:Parsing documentation for excon-0.72.0
+INFO:kolla.common.utils.fluentd:Installing ri documentation for excon-0.72.0
+INFO:kolla.common.utils.fluentd:Parsing documentation for multi_json-1.14.1
+INFO:kolla.common.utils.fluentd:Installing ri documentation for multi_json-1.14.1
+INFO:kolla.common.utils.fluentd:Parsing documentation for multipart-post-2.1.1
+INFO:kolla.common.utils.fluentd:Installing ri documentation for multipart-post-2.1.1
+INFO:kolla.common.utils.fluentd:Parsing documentation for faraday-0.17.3
+INFO:kolla.common.utils.fluentd:Installing ri documentation for faraday-0.17.3
+INFO:kolla.common.utils.fluentd:Parsing documentation for elasticsearch-transport-7.5.0
+INFO:kolla.common.utils.fluentd:Installing ri documentation for elasticsearch-transport-7.5.0
+INFO:kolla.common.utils.fluentd:Parsing documentation for elasticsearch-api-7.5.0
+INFO:kolla.common.utils.fluentd:Installing ri documentation for elasticsearch-api-7.5.0
+INFO:kolla.common.utils.fluentd:Parsing documentation for elasticsearch-7.5.0
+INFO:kolla.common.utils.fluentd:Installing ri documentation for elasticsearch-7.5.0
+INFO:kolla.common.utils.fluentd:Parsing documentation for fluent-plugin-elasticsearch-4.0.5
+INFO:kolla.common.utils.fluentd:Installing ri documentation for fluent-plugin-elasticsearch-4.0.5
+INFO:kolla.common.utils.fluentd:Done installing documentation for excon, multi_json, multipart-post, faraday, elasticsearch-transport, elasticsearch-api, elasticsearch, fluent-plugin-elasticsearch after 3 seconds
+INFO:kolla.common.utils.fluentd:Successfully installed fluent-plugin-grep-0.3.4
+INFO:kolla.common.utils.fluentd:Parsing documentation for fluent-plugin-grep-0.3.4
+INFO:kolla.common.utils.fluentd:Installing ri documentation for fluent-plugin-grep-0.3.4
+INFO:kolla.common.utils.fluentd:Done installing documentation for fluent-plugin-grep after 0 seconds
+INFO:kolla.common.utils.fluentd:Successfully installed fluent-plugin-grok-parser-2.6.1
+INFO:kolla.common.utils.fluentd:Parsing documentation for fluent-plugin-grok-parser-2.6.1
+INFO:kolla.common.utils.fluentd:Installing ri documentation for fluent-plugin-grok-parser-2.6.1
+INFO:kolla.common.utils.fluentd:Done installing documentation for fluent-plugin-grok-parser after 0 seconds
+INFO:kolla.common.utils.fluentd:Building native extensions. This could take a while...
+INFO:kolla.common.utils.fluentd:Successfully installed string-scrub-0.0.5
+INFO:kolla.common.utils.fluentd:Successfully installed fluentd-0.12.43
+INFO:kolla.common.utils.fluentd:Successfully installed fluent-plugin-parser-0.6.1
+INFO:kolla.common.utils.fluentd:Parsing documentation for string-scrub-0.0.5
+INFO:kolla.common.utils.fluentd:Installing ri documentation for string-scrub-0.0.5
+INFO:kolla.common.utils.fluentd:Parsing documentation for fluentd-0.12.43
+INFO:kolla.common.utils.fluentd:Installing ri documentation for fluentd-0.12.43
+INFO:kolla.common.utils.fluentd:Parsing documentation for fluent-plugin-parser-0.6.1
+INFO:kolla.common.utils.fluentd:Installing ri documentation for fluent-plugin-parser-0.6.1
+INFO:kolla.common.utils.fluentd:Done installing documentation for string-scrub, fluentd, fluent-plugin-parser after 1 seconds
+INFO:kolla.common.utils.fluentd:Successfully installed fluent-config-regexp-type-1.0.0
+INFO:kolla.common.utils.fluentd:Successfully installed fluent-plugin-rewrite-tag-filter-2.2.0
+INFO:kolla.common.utils.fluentd:Parsing documentation for fluent-config-regexp-type-1.0.0
+INFO:kolla.common.utils.fluentd:Installing ri documentation for fluent-config-regexp-type-1.0.0
+INFO:kolla.common.utils.fluentd:Parsing documentation for fluent-plugin-rewrite-tag-filter-2.2.0
+INFO:kolla.common.utils.fluentd:Installing ri documentation for fluent-plugin-rewrite-tag-filter-2.2.0
+INFO:kolla.common.utils.fluentd:Done installing documentation for fluent-config-regexp-type, fluent-plugin-rewrite-tag-filter after 0 seconds
+INFO:kolla.common.utils.fluentd:15 gems installed
+INFO:kolla.common.utils.fluentd:Removing intermediate container 973a3f50f9f8
+INFO:kolla.common.utils.fluentd: ---> eba4d07e54d6
+INFO:kolla.common.utils.fluentd:Step 13/16 : ARG monasca_output_plugin_tag=0.1.1
+INFO:kolla.common.utils.fluentd: ---> Running in c1eaf4336ed3
+INFO:kolla.common.utils.fluentd:Removing intermediate container c1eaf4336ed3
+INFO:kolla.common.utils.fluentd: ---> 5f295a308c01
+INFO:kolla.common.utils.fluentd:Step 14/16 : ARG monasca_output_plugin_url=https://github.com/monasca/fluentd-monasca/archive/$monasca_output_plugin_tag.tar.gz
+INFO:kolla.common.utils.fluentd: ---> Running in 511cb1724302
+INFO:kolla.common.utils.fluentd:Removing intermediate container 511cb1724302
+INFO:kolla.common.utils.fluentd: ---> 2ba137f76aa2
+INFO:kolla.common.utils.fluentd:Step 15/16 : RUN curl -sSL $monasca_output_plugin_url -o /tmp/fluentd-monasca.tar.gz     && tar -xvf /tmp/fluentd-monasca.tar.gz -C /tmp     && cd /tmp/fluentd-monasca-*     && gem build fluentd-monasca-output.gemspec     && ulimit -n 65536 && gem install --minimal-deps fluentd-monasca-output-*.gem     && rm -rf /tmp/fluentd*
+INFO:kolla.common.utils.fluentd: ---> Running in 8a2e87edf608
+INFO:kolla.common.utils.fluentd:curl (https://codeload.github.com/monasca/fluentd-monasca/tar.gz/0.1.1): response: 200, time: 0.380459, size: 8860
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/.gitignore
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/.travis.yml
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/Gemfile
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/LICENSE
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/README.md
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/fluentd-monasca-output.gemspec
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/fluent/
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/fluent/plugin/
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/fluent/plugin/helper/
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/fluent/plugin/helper/url_helper.rb
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/fluent/plugin/keystone/
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/fluent/plugin/keystone/keystone_client.rb
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/fluent/plugin/keystone/token.rb
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/fluent/plugin/monasca/
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/fluent/plugin/monasca/monasca_log_api_client.rb
+INFO:kolla.common.utils.fluentd:fluentd-monasca-0.1.1/lib/fluent/plugin/out_monasca.rb
+INFO:kolla.common.utils.fluentd:[91mWARNING:  description and summary are identical
+INFO:kolla.common.utils.fluentd:[0m
+INFO:kolla.common.utils.fluentd:[91mWARNING:  open-ended dependency on rake (>= 0, development) is not recommended
+INFO:kolla.common.utils.fluentd:  if rake is semantically versioned, use:
+INFO:kolla.common.utils.fluentd:    add_development_dependency 'rake', '~> 0'
+INFO:kolla.common.utils.fluentd:WARNING:  See http://guides.rubygems.org/specification-reference/ for help
+INFO:kolla.common.utils.fluentd:[0m
+INFO:kolla.common.utils.fluentd:  Successfully built RubyGem
+INFO:kolla.common.utils.fluentd:  Name: fluentd-monasca-output
+INFO:kolla.common.utils.fluentd:  Version: 0.0.1
+INFO:kolla.common.utils.fluentd:  File: fluentd-monasca-output-0.0.1.gem
+INFO:kolla.common.utils.fluentd:Successfully installed netrc-0.11.0
+INFO:kolla.common.utils.fluentd:Successfully installed mime-types-2.99.3
+INFO:kolla.common.utils.fluentd:Building native extensions. This could take a while...
+INFO:kolla.common.utils.fluentd:Successfully installed unf_ext-0.0.7.6
+INFO:kolla.common.utils.fluentd:Successfully installed unf-0.1.4
+INFO:kolla.common.utils.fluentd:Successfully installed domain_name-0.5.20190701
+INFO:kolla.common.utils.fluentd:Successfully installed http-cookie-1.0.3
+INFO:kolla.common.utils.fluentd:Successfully installed rest-client-1.8.0
+INFO:kolla.common.utils.fluentd:Successfully installed fluentd-monasca-output-0.0.1
+INFO:kolla.common.utils.fluentd:Parsing documentation for netrc-0.11.0
+INFO:kolla.common.utils.fluentd:Installing ri documentation for netrc-0.11.0
+INFO:kolla.common.utils.fluentd:Parsing documentation for mime-types-2.99.3
+INFO:kolla.common.utils.fluentd:Installing ri documentation for mime-types-2.99.3
+INFO:kolla.common.utils.fluentd:Parsing documentation for unf_ext-0.0.7.6
+INFO:kolla.common.utils.fluentd:Installing ri documentation for unf_ext-0.0.7.6
+INFO:kolla.common.utils.fluentd:Parsing documentation for unf-0.1.4
+INFO:kolla.common.utils.fluentd:Installing ri documentation for unf-0.1.4
+INFO:kolla.common.utils.fluentd:Parsing documentation for domain_name-0.5.20190701
+INFO:kolla.common.utils.fluentd:Installing ri documentation for domain_name-0.5.20190701
+INFO:kolla.common.utils.fluentd:Parsing documentation for http-cookie-1.0.3
+INFO:kolla.common.utils.fluentd:Installing ri documentation for http-cookie-1.0.3
+INFO:kolla.common.utils.fluentd:Parsing documentation for rest-client-1.8.0
+INFO:kolla.common.utils.fluentd:Installing ri documentation for rest-client-1.8.0
+INFO:kolla.common.utils.fluentd:Parsing documentation for fluentd-monasca-output-0.0.1
+INFO:kolla.common.utils.fluentd:Installing ri documentation for fluentd-monasca-output-0.0.1
+INFO:kolla.common.utils.fluentd:Done installing documentation for netrc, mime-types, unf_ext, unf, domain_name, http-cookie, rest-client, fluentd-monasca-output after 3 seconds
+INFO:kolla.common.utils.fluentd:8 gems installed
+INFO:kolla.common.utils.fluentd:Removing intermediate container 8a2e87edf608
+INFO:kolla.common.utils.fluentd: ---> e356aa41630a
+INFO:kolla.common.utils.fluentd:Step 16/16 : USER fluentd
+INFO:kolla.common.utils.fluentd: ---> Running in 227486044a41
+INFO:kolla.common.utils.fluentd:Removing intermediate container 227486044a41
+INFO:kolla.common.utils.fluentd: ---> c980195b914e
+INFO:kolla.common.utils.fluentd:Successfully built c980195b914e
+INFO:kolla.common.utils.fluentd:Successfully tagged s390x/ubuntu-source-fluentd:9.1.0
+INFO:kolla.common.utils.fluentd:Built at 2020-03-02 21:49:31.637149 (took 0:01:26.457067)

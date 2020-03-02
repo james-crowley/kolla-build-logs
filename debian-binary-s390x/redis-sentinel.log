@@ -1,0 +1,97 @@
+INFO:kolla.common.utils.redis-sentinel:Building started at 2020-03-02 21:23:26.273975
+INFO:kolla.common.utils.redis-sentinel:Step 1/4 : FROM s390x/debian-binary-redis-base:9.1.0
+INFO:kolla.common.utils.redis-sentinel: ---> 23e9e8834b75
+INFO:kolla.common.utils.redis-sentinel:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="redis-sentinel" build-date="20200302"
+INFO:kolla.common.utils.redis-sentinel: ---> Running in 1209ad48568e
+INFO:kolla.common.utils.redis-sentinel:Removing intermediate container 1209ad48568e
+INFO:kolla.common.utils.redis-sentinel: ---> a53b491965e9
+INFO:kolla.common.utils.redis-sentinel:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends redis-sentinel && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.redis-sentinel: ---> Running in b90564390b02
+INFO:kolla.common.utils.redis-sentinel:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.redis-sentinel:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.redis-sentinel:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.redis-sentinel:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.redis-sentinel:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.redis-sentinel:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.redis-sentinel:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.redis-sentinel:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.redis-sentinel:Fetched 8,235 kB in 1s (6,263 kB/s)
+INFO:kolla.common.utils.redis-sentinel:Reading package lists...
+INFO:kolla.common.utils.redis-sentinel:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.redis-sentinel:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.redis-sentinel:[0m
+INFO:kolla.common.utils.redis-sentinel:Reading package lists...
+INFO:kolla.common.utils.redis-sentinel:Building dependency tree...
+INFO:kolla.common.utils.redis-sentinel:Reading state information...
+INFO:kolla.common.utils.redis-sentinel:The following additional packages will be installed:
+INFO:kolla.common.utils.redis-sentinel:  libatomic1 libhiredis0.14 libjemalloc2 liblua5.1-0 lua-bitop lua-cjson
+INFO:kolla.common.utils.redis-sentinel:  redis-tools
+INFO:kolla.common.utils.redis-sentinel:Suggested packages:
+INFO:kolla.common.utils.redis-sentinel:  ruby-redis
+INFO:kolla.common.utils.redis-sentinel:The following NEW packages will be installed:
+INFO:kolla.common.utils.redis-sentinel:  libatomic1 libhiredis0.14 libjemalloc2 liblua5.1-0 lua-bitop lua-cjson
+INFO:kolla.common.utils.redis-sentinel:  redis-sentinel redis-tools
+INFO:kolla.common.utils.redis-sentinel:0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.redis-sentinel:Need to get 877 kB of archives.
+INFO:kolla.common.utils.redis-sentinel:After this operation, 3,960 kB of additional disk space will be used.
+INFO:kolla.common.utils.redis-sentinel:Get:1 http://deb.debian.org/debian buster/main s390x libatomic1 s390x 8.3.0-6 [8,184 B]
+INFO:kolla.common.utils.redis-sentinel:Get:2 http://deb.debian.org/debian buster/main s390x libhiredis0.14 s390x 0.14.0-3 [31.8 kB]
+INFO:kolla.common.utils.redis-sentinel:Get:3 http://deb.debian.org/debian buster/main s390x libjemalloc2 s390x 5.1.0-3 [173 kB]
+INFO:kolla.common.utils.redis-sentinel:Get:4 http://deb.debian.org/debian buster/main s390x liblua5.1-0 s390x 5.1.5-8.1+b2 [104 kB]
+INFO:kolla.common.utils.redis-sentinel:Get:5 http://deb.debian.org/debian buster/main s390x lua-bitop s390x 1.0.2-5 [7,000 B]
+INFO:kolla.common.utils.redis-sentinel:Get:6 http://deb.debian.org/debian buster/main s390x lua-cjson s390x 2.1.0+dfsg-2.1 [16.7 kB]
+INFO:kolla.common.utils.redis-sentinel:Get:7 http://deb.debian.org/debian buster/main s390x redis-tools s390x 5:5.0.3-4+deb10u1 [485 kB]
+INFO:kolla.common.utils.redis-sentinel:Get:8 http://deb.debian.org/debian buster/main s390x redis-sentinel s390x 5:5.0.3-4+deb10u1 [52.5 kB]
+INFO:kolla.common.utils.redis-sentinel:Fetched 877 kB in 0s (10.8 MB/s)
+INFO:kolla.common.utils.redis-sentinel:Selecting previously unselected package libatomic1:s390x.
+INFO:kolla.common.utils.redis-sentinel:(Reading database ... 
+INFO:kolla.common.utils.redis-sentinel:(Reading database ... 5%
+INFO:kolla.common.utils.redis-sentinel:(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.redis-sentinel:(Reading database ... 80%
+INFO:kolla.common.utils.redis-sentinel:(Reading database ... 85%
+INFO:kolla.common.utils.redis-sentinel:(Reading database ... 90%
+INFO:kolla.common.utils.redis-sentinel:(Reading database ... 95%
+INFO:kolla.common.utils.redis-sentinel:(Reading database ... 100%(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.redis-sentinel:Preparing to unpack .../0-libatomic1_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.redis-sentinel:Unpacking libatomic1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.redis-sentinel:Selecting previously unselected package libhiredis0.14:s390x.
+INFO:kolla.common.utils.redis-sentinel:Preparing to unpack .../1-libhiredis0.14_0.14.0-3_s390x.deb ...
+INFO:kolla.common.utils.redis-sentinel:Unpacking libhiredis0.14:s390x (0.14.0-3) ...
+INFO:kolla.common.utils.redis-sentinel:Selecting previously unselected package libjemalloc2:s390x.
+INFO:kolla.common.utils.redis-sentinel:Preparing to unpack .../2-libjemalloc2_5.1.0-3_s390x.deb ...
+INFO:kolla.common.utils.redis-sentinel:Unpacking libjemalloc2:s390x (5.1.0-3) ...
+INFO:kolla.common.utils.redis-sentinel:Selecting previously unselected package liblua5.1-0:s390x.
+INFO:kolla.common.utils.redis-sentinel:Preparing to unpack .../3-liblua5.1-0_5.1.5-8.1+b2_s390x.deb ...
+INFO:kolla.common.utils.redis-sentinel:Unpacking liblua5.1-0:s390x (5.1.5-8.1+b2) ...
+INFO:kolla.common.utils.redis-sentinel:Selecting previously unselected package lua-bitop:s390x.
+INFO:kolla.common.utils.redis-sentinel:Preparing to unpack .../4-lua-bitop_1.0.2-5_s390x.deb ...
+INFO:kolla.common.utils.redis-sentinel:Unpacking lua-bitop:s390x (1.0.2-5) ...
+INFO:kolla.common.utils.redis-sentinel:Selecting previously unselected package lua-cjson:s390x.
+INFO:kolla.common.utils.redis-sentinel:Preparing to unpack .../5-lua-cjson_2.1.0+dfsg-2.1_s390x.deb ...
+INFO:kolla.common.utils.redis-sentinel:Unpacking lua-cjson:s390x (2.1.0+dfsg-2.1) ...
+INFO:kolla.common.utils.redis-sentinel:Selecting previously unselected package redis-tools.
+INFO:kolla.common.utils.redis-sentinel:Preparing to unpack .../6-redis-tools_5%3a5.0.3-4+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.redis-sentinel:Unpacking redis-tools (5:5.0.3-4+deb10u1) ...
+INFO:kolla.common.utils.redis-sentinel:Selecting previously unselected package redis-sentinel.
+INFO:kolla.common.utils.redis-sentinel:Preparing to unpack .../7-redis-sentinel_5%3a5.0.3-4+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.redis-sentinel:Unpacking redis-sentinel (5:5.0.3-4+deb10u1) ...
+INFO:kolla.common.utils.redis-sentinel:Setting up libjemalloc2:s390x (5.1.0-3) ...
+INFO:kolla.common.utils.redis-sentinel:Setting up lua-cjson:s390x (2.1.0+dfsg-2.1) ...
+INFO:kolla.common.utils.redis-sentinel:Setting up libatomic1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.redis-sentinel:Setting up lua-bitop:s390x (1.0.2-5) ...
+INFO:kolla.common.utils.redis-sentinel:Setting up liblua5.1-0:s390x (5.1.5-8.1+b2) ...
+INFO:kolla.common.utils.redis-sentinel:Setting up libhiredis0.14:s390x (0.14.0-3) ...
+INFO:kolla.common.utils.redis-sentinel:Setting up redis-tools (5:5.0.3-4+deb10u1) ...
+INFO:kolla.common.utils.redis-sentinel:Setting up redis-sentinel (5:5.0.3-4+deb10u1) ...
+INFO:kolla.common.utils.redis-sentinel:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.redis-sentinel:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.redis-sentinel:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.redis-sentinel:Removing intermediate container b90564390b02
+INFO:kolla.common.utils.redis-sentinel: ---> 6e49328f789d
+INFO:kolla.common.utils.redis-sentinel:Step 4/4 : USER redis
+INFO:kolla.common.utils.redis-sentinel: ---> Running in 38c12af5da44
+INFO:kolla.common.utils.redis-sentinel:Removing intermediate container 38c12af5da44
+INFO:kolla.common.utils.redis-sentinel: ---> bc59b2543e78
+INFO:kolla.common.utils.redis-sentinel:Successfully built bc59b2543e78
+INFO:kolla.common.utils.redis-sentinel:Successfully tagged s390x/debian-binary-redis-sentinel:9.1.0
+INFO:kolla.common.utils.redis-sentinel:Built at 2020-03-02 21:23:37.291559 (took 0:00:11.017584)

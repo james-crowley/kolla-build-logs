@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.bifrost-base:Building started at 2020-03-02 21:41:48.489238
+INFO:kolla.common.utils.bifrost-base:Step 1/6 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.bifrost-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.bifrost-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="bifrost-base" build-date="20200302"
+INFO:kolla.common.utils.bifrost-base: ---> Running in 1a978b99862d
+INFO:kolla.common.utils.bifrost-base:Removing intermediate container 1a978b99862d
+INFO:kolla.common.utils.bifrost-base: ---> 215ab039bd5e
+INFO:kolla.common.utils.bifrost-base:Step 3/6 : RUN usermod --append --home /var/lib/bifrost --groups kolla bifrost     && mkdir -p /var/lib/bifrost     && chown -R 42404:42404 /var/lib/bifrost
+INFO:kolla.common.utils.bifrost-base: ---> Running in be6c73ed73bb
+INFO:kolla.common.utils.bifrost-base:Removing intermediate container be6c73ed73bb
+INFO:kolla.common.utils.bifrost-base: ---> 03946c0f6f83
+INFO:kolla.common.utils.bifrost-base:Step 4/6 : RUN echo 'binary not yet available for ubuntu' && /bin/false
+INFO:kolla.common.utils.bifrost-base: ---> Running in f473133e75cc
+INFO:kolla.common.utils.bifrost-base:binary not yet available for ubuntu
+INFO:kolla.common.utils.bifrost-base:Removing intermediate container f473133e75cc
+ERROR:kolla.common.utils.bifrost-base:Error'd with the following message
+ERROR:kolla.common.utils.bifrost-base:The command '/bin/sh -c echo 'binary not yet available for ubuntu' && /bin/false' returned a non-zero code: 1

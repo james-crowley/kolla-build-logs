@@ -1,0 +1,60 @@
+INFO:kolla.common.utils.swift-object:Building started at 2020-03-02 21:45:23.333006
+INFO:kolla.common.utils.swift-object:Step 1/4 : FROM s390x/ubuntu-binary-swift-base:9.1.0
+INFO:kolla.common.utils.swift-object: ---> 983b5500ecf1
+INFO:kolla.common.utils.swift-object:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="swift-object" build-date="20200302"
+INFO:kolla.common.utils.swift-object: ---> Running in 3ad752530ae3
+INFO:kolla.common.utils.swift-object:Removing intermediate container 3ad752530ae3
+INFO:kolla.common.utils.swift-object: ---> c6dcbf306a4e
+INFO:kolla.common.utils.swift-object:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends swift-object && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.swift-object: ---> Running in 14d13a6426c6
+INFO:kolla.common.utils.swift-object:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.swift-object:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.swift-object:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.swift-object:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.swift-object:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.swift-object:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.swift-object:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.swift-object:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.swift-object:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.swift-object:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.swift-object:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.swift-object:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.swift-object:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.swift-object:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.swift-object:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.swift-object:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.swift-object:Fetched 15.6 MB in 3s (6,215 kB/s)
+INFO:kolla.common.utils.swift-object:Reading package lists...
+INFO:kolla.common.utils.swift-object:Reading package lists...
+INFO:kolla.common.utils.swift-object:Building dependency tree...
+INFO:kolla.common.utils.swift-object:Reading state information...
+INFO:kolla.common.utils.swift-object:The following NEW packages will be installed:
+INFO:kolla.common.utils.swift-object:  swift-object
+INFO:kolla.common.utils.swift-object:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.swift-object:Need to get 35.3 kB of archives.
+INFO:kolla.common.utils.swift-object:After this operation, 105 kB of additional disk space will be used.
+INFO:kolla.common.utils.swift-object:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x swift-object all 2.23.0-0ubuntu1~cloud0 [35.3 kB]
+INFO:kolla.common.utils.swift-object:Fetched 35.3 kB in 0s (500 kB/s)
+INFO:kolla.common.utils.swift-object:Selecting previously unselected package swift-object.
+INFO:kolla.common.utils.swift-object:(Reading database ... 
+INFO:kolla.common.utils.swift-object:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.swift-object:(Reading database ... 65%
+INFO:kolla.common.utils.swift-object:(Reading database ... 70%
+INFO:kolla.common.utils.swift-object:(Reading database ... 75%
+INFO:kolla.common.utils.swift-object:(Reading database ... 80%
+INFO:kolla.common.utils.swift-object:(Reading database ... 85%
+INFO:kolla.common.utils.swift-object:(Reading database ... 90%
+INFO:kolla.common.utils.swift-object:(Reading database ... 95%
+INFO:kolla.common.utils.swift-object:(Reading database ... 100%(Reading database ... 23128 files and directories currently installed.)
+INFO:kolla.common.utils.swift-object:Preparing to unpack .../swift-object_2.23.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.swift-object:Unpacking swift-object (2.23.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.swift-object:Setting up swift-object (2.23.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.swift-object:Removing intermediate container 14d13a6426c6
+INFO:kolla.common.utils.swift-object: ---> 6eba059e95a9
+INFO:kolla.common.utils.swift-object:Step 4/4 : USER swift
+INFO:kolla.common.utils.swift-object: ---> Running in f0d1d5837193
+INFO:kolla.common.utils.swift-object:Removing intermediate container f0d1d5837193
+INFO:kolla.common.utils.swift-object: ---> 764a79981d94
+INFO:kolla.common.utils.swift-object:Successfully built 764a79981d94
+INFO:kolla.common.utils.swift-object:Successfully tagged s390x/ubuntu-binary-swift-object:9.1.0
+INFO:kolla.common.utils.swift-object:Built at 2020-03-02 21:45:31.603654 (took 0:00:08.270648)

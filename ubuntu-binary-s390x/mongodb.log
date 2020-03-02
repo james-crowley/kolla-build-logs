@@ -1,0 +1,126 @@
+INFO:kolla.common.utils.mongodb:Building started at 2020-03-02 21:38:31.052734
+INFO:kolla.common.utils.mongodb:Step 1/8 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.mongodb: ---> 682558ff6b31
+INFO:kolla.common.utils.mongodb:Step 2/8 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="mongodb" build-date="20200302"
+INFO:kolla.common.utils.mongodb: ---> Running in 9cad20be2b71
+INFO:kolla.common.utils.mongodb:Removing intermediate container 9cad20be2b71
+INFO:kolla.common.utils.mongodb: ---> 8476e75455e2
+INFO:kolla.common.utils.mongodb:Step 3/8 : RUN usermod --append --home /var/lib/mongodb --groups kolla mongodb     && mkdir -p /var/lib/mongodb     && chown -R 42432:65534 /var/lib/mongodb
+INFO:kolla.common.utils.mongodb: ---> Running in 0c2d9f68e8e6
+INFO:kolla.common.utils.mongodb:Removing intermediate container 0c2d9f68e8e6
+INFO:kolla.common.utils.mongodb: ---> c138e94ec662
+INFO:kolla.common.utils.mongodb:Step 4/8 : RUN apt-get update && apt-get -y install --no-install-recommends mongodb-server && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.mongodb: ---> Running in f44256911627
+INFO:kolla.common.utils.mongodb:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.mongodb:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.mongodb:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.mongodb:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.mongodb:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.mongodb:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.mongodb:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.mongodb:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.mongodb:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.mongodb:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.mongodb:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.mongodb:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.mongodb:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.mongodb:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.mongodb:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.mongodb:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.mongodb:Fetched 15.6 MB in 3s (6,160 kB/s)
+INFO:kolla.common.utils.mongodb:Reading package lists...
+INFO:kolla.common.utils.mongodb:Reading package lists...
+INFO:kolla.common.utils.mongodb:Building dependency tree...
+INFO:kolla.common.utils.mongodb:Reading state information...
+INFO:kolla.common.utils.mongodb:The following additional packages will be installed:
+INFO:kolla.common.utils.mongodb:  libboost-filesystem1.65.1 libboost-iostreams1.65.1
+INFO:kolla.common.utils.mongodb:  libboost-program-options1.65.1 libboost-system1.65.1 libpcrecpp0v5
+INFO:kolla.common.utils.mongodb:  libsnappy1v5 libstemmer0d libyaml-cpp0.5v5 mongodb-clients
+INFO:kolla.common.utils.mongodb:  mongodb-server-core
+INFO:kolla.common.utils.mongodb:Recommended packages:
+INFO:kolla.common.utils.mongodb:  mongo-tools
+INFO:kolla.common.utils.mongodb:The following NEW packages will be installed:
+INFO:kolla.common.utils.mongodb:  libboost-filesystem1.65.1 libboost-iostreams1.65.1
+INFO:kolla.common.utils.mongodb:  libboost-program-options1.65.1 libboost-system1.65.1 libpcrecpp0v5
+INFO:kolla.common.utils.mongodb:  libsnappy1v5 libstemmer0d libyaml-cpp0.5v5 mongodb-clients mongodb-server
+INFO:kolla.common.utils.mongodb:  mongodb-server-core
+INFO:kolla.common.utils.mongodb:0 upgraded, 11 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.mongodb:Need to get 37.0 MB of archives.
+INFO:kolla.common.utils.mongodb:After this operation, 151 MB of additional disk space will be used.
+INFO:kolla.common.utils.mongodb:Get:1 http://ports.ubuntu.com bionic/main s390x libboost-system1.65.1 s390x 1.65.1+dfsg-0ubuntu5 [10.4 kB]
+INFO:kolla.common.utils.mongodb:Get:2 http://ports.ubuntu.com bionic/main s390x libboost-filesystem1.65.1 s390x 1.65.1+dfsg-0ubuntu5 [37.3 kB]
+INFO:kolla.common.utils.mongodb:Get:3 http://ports.ubuntu.com bionic/main s390x libboost-iostreams1.65.1 s390x 1.65.1+dfsg-0ubuntu5 [28.1 kB]
+INFO:kolla.common.utils.mongodb:Get:4 http://ports.ubuntu.com bionic/main s390x libboost-program-options1.65.1 s390x 1.65.1+dfsg-0ubuntu5 [125 kB]
+INFO:kolla.common.utils.mongodb:Get:5 http://ports.ubuntu.com bionic/main s390x libpcrecpp0v5 s390x 2:8.39-9 [14.5 kB]
+INFO:kolla.common.utils.mongodb:Get:6 http://ports.ubuntu.com bionic/main s390x libstemmer0d s390x 0+svn585-1build1 [58.8 kB]
+INFO:kolla.common.utils.mongodb:Get:7 http://ports.ubuntu.com bionic/universe s390x libyaml-cpp0.5v5 s390x 0.5.2-4ubuntu1 [135 kB]
+INFO:kolla.common.utils.mongodb:Get:8 http://ports.ubuntu.com bionic/main s390x libsnappy1v5 s390x 1.1.7-1 [15.6 kB]
+INFO:kolla.common.utils.mongodb:Get:9 http://ports.ubuntu.com bionic-updates/universe s390x mongodb-clients s390x 1:3.6.3-0ubuntu1.1 [18.0 MB]
+INFO:kolla.common.utils.mongodb:Get:10 http://ports.ubuntu.com bionic-updates/universe s390x mongodb-server-core s390x 1:3.6.3-0ubuntu1.1 [18.5 MB]
+INFO:kolla.common.utils.mongodb:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x mongodb-server all 1:3.6.3-0ubuntu1.1 [12.6 kB]
+INFO:kolla.common.utils.mongodb:Fetched 37.0 MB in 1s (32.3 MB/s)
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package libboost-system1.65.1:s390x.
+INFO:kolla.common.utils.mongodb:(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../00-libboost-system1.65.1_1.65.1+dfsg-0ubuntu5_s390x.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking libboost-system1.65.1:s390x (1.65.1+dfsg-0ubuntu5) ...
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package libboost-filesystem1.65.1:s390x.
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../01-libboost-filesystem1.65.1_1.65.1+dfsg-0ubuntu5_s390x.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking libboost-filesystem1.65.1:s390x (1.65.1+dfsg-0ubuntu5) ...
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package libboost-iostreams1.65.1:s390x.
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../02-libboost-iostreams1.65.1_1.65.1+dfsg-0ubuntu5_s390x.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking libboost-iostreams1.65.1:s390x (1.65.1+dfsg-0ubuntu5) ...
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package libboost-program-options1.65.1:s390x.
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../03-libboost-program-options1.65.1_1.65.1+dfsg-0ubuntu5_s390x.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking libboost-program-options1.65.1:s390x (1.65.1+dfsg-0ubuntu5) ...
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package libpcrecpp0v5:s390x.
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../04-libpcrecpp0v5_2%3a8.39-9_s390x.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking libpcrecpp0v5:s390x (2:8.39-9) ...
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package libstemmer0d:s390x.
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../05-libstemmer0d_0+svn585-1build1_s390x.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking libstemmer0d:s390x (0+svn585-1build1) ...
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package libyaml-cpp0.5v5:s390x.
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../06-libyaml-cpp0.5v5_0.5.2-4ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking libyaml-cpp0.5v5:s390x (0.5.2-4ubuntu1) ...
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package libsnappy1v5:s390x.
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../07-libsnappy1v5_1.1.7-1_s390x.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking libsnappy1v5:s390x (1.1.7-1) ...
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package mongodb-clients.
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../08-mongodb-clients_1%3a3.6.3-0ubuntu1.1_s390x.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking mongodb-clients (1:3.6.3-0ubuntu1.1) ...
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package mongodb-server-core.
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../09-mongodb-server-core_1%3a3.6.3-0ubuntu1.1_s390x.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking mongodb-server-core (1:3.6.3-0ubuntu1.1) ...
+INFO:kolla.common.utils.mongodb:Selecting previously unselected package mongodb-server.
+INFO:kolla.common.utils.mongodb:Preparing to unpack .../10-mongodb-server_1%3a3.6.3-0ubuntu1.1_all.deb ...
+INFO:kolla.common.utils.mongodb:Unpacking mongodb-server (1:3.6.3-0ubuntu1.1) ...
+INFO:kolla.common.utils.mongodb:Setting up libboost-iostreams1.65.1:s390x (1.65.1+dfsg-0ubuntu5) ...
+INFO:kolla.common.utils.mongodb:Setting up libstemmer0d:s390x (0+svn585-1build1) ...
+INFO:kolla.common.utils.mongodb:Setting up libboost-system1.65.1:s390x (1.65.1+dfsg-0ubuntu5) ...
+INFO:kolla.common.utils.mongodb:Setting up libsnappy1v5:s390x (1.1.7-1) ...
+INFO:kolla.common.utils.mongodb:Setting up libpcrecpp0v5:s390x (2:8.39-9) ...
+INFO:kolla.common.utils.mongodb:Setting up libyaml-cpp0.5v5:s390x (0.5.2-4ubuntu1) ...
+INFO:kolla.common.utils.mongodb:Setting up libboost-program-options1.65.1:s390x (1.65.1+dfsg-0ubuntu5) ...
+INFO:kolla.common.utils.mongodb:Setting up libboost-filesystem1.65.1:s390x (1.65.1+dfsg-0ubuntu5) ...
+INFO:kolla.common.utils.mongodb:Setting up mongodb-server-core (1:3.6.3-0ubuntu1.1) ...
+INFO:kolla.common.utils.mongodb:Setting up mongodb-clients (1:3.6.3-0ubuntu1.1) ...
+INFO:kolla.common.utils.mongodb:Setting up mongodb-server (1:3.6.3-0ubuntu1.1) ...
+INFO:kolla.common.utils.mongodb:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.mongodb:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.mongodb:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.mongodb:Removing intermediate container f44256911627
+INFO:kolla.common.utils.mongodb: ---> 1a939fb5b7ef
+INFO:kolla.common.utils.mongodb:Step 5/8 : COPY mongodb_sudoers /etc/sudoers.d/kolla_mongodb_sudoers
+INFO:kolla.common.utils.mongodb: ---> 7a9c1f6ce06c
+INFO:kolla.common.utils.mongodb:Step 6/8 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.mongodb: ---> e130ce43eb8e
+INFO:kolla.common.utils.mongodb:Step 7/8 : RUN chmod 755 /usr/local/bin/kolla_extend_start     && chmod 750 /etc/sudoers.d     && chmod 440 /etc/sudoers.d/kolla_mongodb_sudoers
+INFO:kolla.common.utils.mongodb: ---> Running in 5dd81d6cfae9
+INFO:kolla.common.utils.mongodb:Removing intermediate container 5dd81d6cfae9
+INFO:kolla.common.utils.mongodb: ---> 5c37027541be
+INFO:kolla.common.utils.mongodb:Step 8/8 : USER mongodb
+INFO:kolla.common.utils.mongodb: ---> Running in 0700d97b5983
+INFO:kolla.common.utils.mongodb:Removing intermediate container 0700d97b5983
+INFO:kolla.common.utils.mongodb: ---> e7abe1d2010b
+INFO:kolla.common.utils.mongodb:Successfully built e7abe1d2010b
+INFO:kolla.common.utils.mongodb:Successfully tagged s390x/ubuntu-binary-mongodb:9.1.0
+INFO:kolla.common.utils.mongodb:Built at 2020-03-02 21:38:55.376283 (took 0:00:24.323549)

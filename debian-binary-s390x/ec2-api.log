@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.ec2-api:Building started at 2020-03-02 21:24:31.211771
+INFO:kolla.common.utils.ec2-api:Step 1/7 : FROM s390x/debian-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.ec2-api: ---> d0f37d4345b6
+INFO:kolla.common.utils.ec2-api:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="ec2-api" build-date="20200302"
+INFO:kolla.common.utils.ec2-api: ---> Running in bb0b0b4e9232
+INFO:kolla.common.utils.ec2-api:Removing intermediate container bb0b0b4e9232
+INFO:kolla.common.utils.ec2-api: ---> 79148398d6f0
+INFO:kolla.common.utils.ec2-api:Step 3/7 : RUN usermod --append --home /var/lib/ec2api --groups kolla ec2api     && mkdir -p /var/lib/ec2api     && chown -R 42466:42466 /var/lib/ec2api
+INFO:kolla.common.utils.ec2-api: ---> Running in 074bd332d0c9
+INFO:kolla.common.utils.ec2-api:Removing intermediate container 074bd332d0c9
+INFO:kolla.common.utils.ec2-api: ---> eac0a73a77ff
+INFO:kolla.common.utils.ec2-api:Step 4/7 : RUN echo 'binary not yet available for debian'     && /bin/false
+INFO:kolla.common.utils.ec2-api: ---> Running in 8e44e9deadbc
+INFO:kolla.common.utils.ec2-api:binary not yet available for debian
+INFO:kolla.common.utils.ec2-api:Removing intermediate container 8e44e9deadbc
+ERROR:kolla.common.utils.ec2-api:Error'd with the following message
+ERROR:kolla.common.utils.ec2-api:The command '/bin/sh -c echo 'binary not yet available for debian'     && /bin/false' returned a non-zero code: 1

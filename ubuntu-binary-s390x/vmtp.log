@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.vmtp:Building started at 2020-03-02 21:42:49.792180
+INFO:kolla.common.utils.vmtp:Step 1/7 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.vmtp: ---> 0b248122f3fe
+INFO:kolla.common.utils.vmtp:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="vmtp" build-date="20200302"
+INFO:kolla.common.utils.vmtp: ---> Running in 2971b93d64ad
+INFO:kolla.common.utils.vmtp:Removing intermediate container 2971b93d64ad
+INFO:kolla.common.utils.vmtp: ---> 588660861184
+INFO:kolla.common.utils.vmtp:Step 3/7 : RUN usermod --append --home /var/lib/vmtp --groups kolla vmtp     && mkdir -p /var/lib/vmtp     && chown -R 42450:42450 /var/lib/vmtp
+INFO:kolla.common.utils.vmtp: ---> Running in 4e675151621f
+INFO:kolla.common.utils.vmtp:Removing intermediate container 4e675151621f
+INFO:kolla.common.utils.vmtp: ---> d982071467f7
+INFO:kolla.common.utils.vmtp:Step 4/7 : RUN echo 'binary not yet available for ubuntu'     && /bin/false
+INFO:kolla.common.utils.vmtp: ---> Running in 83779912eff3
+INFO:kolla.common.utils.vmtp:binary not yet available for ubuntu
+INFO:kolla.common.utils.vmtp:Removing intermediate container 83779912eff3
+ERROR:kolla.common.utils.vmtp:Error'd with the following message
+ERROR:kolla.common.utils.vmtp:The command '/bin/sh -c echo 'binary not yet available for ubuntu'     && /bin/false' returned a non-zero code: 1

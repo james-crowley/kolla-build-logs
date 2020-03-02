@@ -1,0 +1,56 @@
+INFO:kolla.common.utils.swift-object-expirer:Building started at 2020-03-02 21:28:25.297010
+INFO:kolla.common.utils.swift-object-expirer:Step 1/4 : FROM s390x/debian-binary-swift-base:9.1.0
+INFO:kolla.common.utils.swift-object-expirer: ---> f51af6288789
+INFO:kolla.common.utils.swift-object-expirer:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="swift-object-expirer" build-date="20200302"
+INFO:kolla.common.utils.swift-object-expirer: ---> Running in 4ca38fa6b439
+INFO:kolla.common.utils.swift-object-expirer:Removing intermediate container 4ca38fa6b439
+INFO:kolla.common.utils.swift-object-expirer: ---> e7773bd3faf5
+INFO:kolla.common.utils.swift-object-expirer:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends swift-object-expirer && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.swift-object-expirer: ---> Running in 55597eb53164
+INFO:kolla.common.utils.swift-object-expirer:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.swift-object-expirer:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.swift-object-expirer:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.swift-object-expirer:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.swift-object-expirer:Fetched 8,235 kB in 2s (5,382 kB/s)
+INFO:kolla.common.utils.swift-object-expirer:Reading package lists...
+INFO:kolla.common.utils.swift-object-expirer:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.swift-object-expirer:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.swift-object-expirer:[0m
+INFO:kolla.common.utils.swift-object-expirer:Reading package lists...
+INFO:kolla.common.utils.swift-object-expirer:Building dependency tree...
+INFO:kolla.common.utils.swift-object-expirer:Reading state information...
+INFO:kolla.common.utils.swift-object-expirer:The following NEW packages will be installed:
+INFO:kolla.common.utils.swift-object-expirer:  swift-object-expirer
+INFO:kolla.common.utils.swift-object-expirer:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.swift-object-expirer:Need to get 62.6 kB of archives.
+INFO:kolla.common.utils.swift-object-expirer:After this operation, 101 kB of additional disk space will be used.
+INFO:kolla.common.utils.swift-object-expirer:Get:1 http://deb.debian.org/debian buster/main s390x swift-object-expirer all 2.19.1-1 [62.6 kB]
+INFO:kolla.common.utils.swift-object-expirer:Fetched 62.6 kB in 0s (1,486 kB/s)
+INFO:kolla.common.utils.swift-object-expirer:Selecting previously unselected package swift-object-expirer.
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 80%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 85%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 90%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 95%
+INFO:kolla.common.utils.swift-object-expirer:(Reading database ... 100%(Reading database ... 24045 files and directories currently installed.)
+INFO:kolla.common.utils.swift-object-expirer:Preparing to unpack .../swift-object-expirer_2.19.1-1_all.deb ...
+INFO:kolla.common.utils.swift-object-expirer:Unpacking swift-object-expirer (2.19.1-1) ...
+INFO:kolla.common.utils.swift-object-expirer:Setting up swift-object-expirer (2.19.1-1) ...
+INFO:kolla.common.utils.swift-object-expirer:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.swift-object-expirer:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.swift-object-expirer:Removing intermediate container 55597eb53164
+INFO:kolla.common.utils.swift-object-expirer: ---> a56dbe0905dd
+INFO:kolla.common.utils.swift-object-expirer:Step 4/4 : USER swift
+INFO:kolla.common.utils.swift-object-expirer: ---> Running in 03c368a482f7
+INFO:kolla.common.utils.swift-object-expirer:Removing intermediate container 03c368a482f7
+INFO:kolla.common.utils.swift-object-expirer: ---> ec98205892cc
+INFO:kolla.common.utils.swift-object-expirer:Successfully built ec98205892cc
+INFO:kolla.common.utils.swift-object-expirer:Successfully tagged s390x/debian-binary-swift-object-expirer:9.1.0
+INFO:kolla.common.utils.swift-object-expirer:Built at 2020-03-02 21:28:32.739147 (took 0:00:07.442137)

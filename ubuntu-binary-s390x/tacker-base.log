@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.tacker-base:Building started at 2020-03-02 21:42:31.212095
+INFO:kolla.common.utils.tacker-base:Step 1/6 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.tacker-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.tacker-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="tacker-base" build-date="20200302"
+INFO:kolla.common.utils.tacker-base: ---> Running in 65c9efaade9a
+INFO:kolla.common.utils.tacker-base:Removing intermediate container 65c9efaade9a
+INFO:kolla.common.utils.tacker-base: ---> c196d8c9377e
+INFO:kolla.common.utils.tacker-base:Step 3/6 : RUN usermod --append --home /var/lib/tacker --groups kolla tacker     && mkdir -p /var/lib/tacker     && chown -R 42446:42446 /var/lib/tacker
+INFO:kolla.common.utils.tacker-base: ---> Running in c5148fab1fe8
+INFO:kolla.common.utils.tacker-base:Removing intermediate container c5148fab1fe8
+INFO:kolla.common.utils.tacker-base: ---> b4c27b053205
+INFO:kolla.common.utils.tacker-base:Step 4/6 : RUN echo 'binary not yet available for ubuntu'     && /bin/false
+INFO:kolla.common.utils.tacker-base: ---> Running in b641c856642b
+INFO:kolla.common.utils.tacker-base:binary not yet available for ubuntu
+INFO:kolla.common.utils.tacker-base:Removing intermediate container b641c856642b
+ERROR:kolla.common.utils.tacker-base:Error'd with the following message
+ERROR:kolla.common.utils.tacker-base:The command '/bin/sh -c echo 'binary not yet available for ubuntu'     && /bin/false' returned a non-zero code: 1

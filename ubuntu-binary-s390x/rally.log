@@ -1,0 +1,46 @@
+INFO:kolla.common.utils.rally:Building started at 2020-03-02 21:40:34.039790
+INFO:kolla.common.utils.rally:Step 1/7 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.rally: ---> 0b248122f3fe
+INFO:kolla.common.utils.rally:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="rally" build-date="20200302"
+INFO:kolla.common.utils.rally: ---> Running in 2e7965ab0b26
+INFO:kolla.common.utils.rally:Removing intermediate container 2e7965ab0b26
+INFO:kolla.common.utils.rally: ---> 5ef261170222
+INFO:kolla.common.utils.rally:Step 3/7 : RUN usermod --append --home /var/lib/rally --groups kolla rally     && mkdir -p /var/lib/rally     && chown -R 42440:42440 /var/lib/rally
+INFO:kolla.common.utils.rally: ---> Running in cb51aa374601
+INFO:kolla.common.utils.rally:Removing intermediate container cb51aa374601
+INFO:kolla.common.utils.rally: ---> 065e6eff7f22
+INFO:kolla.common.utils.rally:Step 4/7 : RUN apt-get update && apt-get -y install --no-install-recommends python-os-testr rally && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.rally: ---> Running in a1194625bda0
+INFO:kolla.common.utils.rally:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.rally:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.rally:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.rally:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.rally:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.rally:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.rally:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.rally:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.rally:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.rally:Get:10 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.rally:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.rally:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.rally:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.rally:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.rally:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.rally:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.rally:Fetched 15.6 MB in 3s (5,187 kB/s)
+INFO:kolla.common.utils.rally:Reading package lists...
+INFO:kolla.common.utils.rally:Reading package lists...
+INFO:kolla.common.utils.rally:Building dependency tree...
+INFO:kolla.common.utils.rally:Reading state information...
+INFO:kolla.common.utils.rally:Some packages could not be installed. This may mean that you have
+INFO:kolla.common.utils.rally:requested an impossible situation or if you are using the unstable
+INFO:kolla.common.utils.rally:distribution that some required packages have not yet been created
+INFO:kolla.common.utils.rally:or been moved out of Incoming.
+INFO:kolla.common.utils.rally:The following information may help to resolve the situation:
+INFO:kolla.common.utils.rally:The following packages have unmet dependencies:
+INFO:kolla.common.utils.rally: rally : Depends: python-rally (= 0.9.1-0ubuntu2) but it is not going to be installed
+INFO:kolla.common.utils.rally:[91mE: Unable to correct problems, you have held broken packages.
+INFO:kolla.common.utils.rally:[0m
+INFO:kolla.common.utils.rally:Removing intermediate container a1194625bda0
+ERROR:kolla.common.utils.rally:Error'd with the following message
+ERROR:kolla.common.utils.rally:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends python-os-testr rally && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

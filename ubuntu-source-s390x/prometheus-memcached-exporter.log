@@ -1,0 +1,29 @@
+INFO:kolla.common.utils.prometheus-memcached-exporter:Building started at 2020-03-02 21:50:57.848814
+INFO:kolla.common.utils.prometheus-memcached-exporter:Step 1/5 : FROM s390x/ubuntu-source-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-memcached-exporter: ---> 91d5cbd16b50
+INFO:kolla.common.utils.prometheus-memcached-exporter:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-memcached-exporter" build-date="20200302"
+INFO:kolla.common.utils.prometheus-memcached-exporter: ---> Running in 93104dfbfabe
+INFO:kolla.common.utils.prometheus-memcached-exporter:Removing intermediate container 93104dfbfabe
+INFO:kolla.common.utils.prometheus-memcached-exporter: ---> 13a741b5e467
+INFO:kolla.common.utils.prometheus-memcached-exporter:Step 3/5 : ENV memcached_exporter_version=0.5.0
+INFO:kolla.common.utils.prometheus-memcached-exporter: ---> Running in bf18fef69995
+INFO:kolla.common.utils.prometheus-memcached-exporter:Removing intermediate container bf18fef69995
+INFO:kolla.common.utils.prometheus-memcached-exporter: ---> 3a04fa55ae6c
+INFO:kolla.common.utils.prometheus-memcached-exporter:Step 4/5 : RUN curl -sSL -o /tmp/memcached_exporter.tar.gz https://github.com/prometheus/memcached_exporter/releases/download/v${memcached_exporter_version}/memcached_exporter-${memcached_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/memcached_exporter.tar.gz -C /opt/     && rm -f /tmp/memcached_exporter.tar.gz     && ln -s /opt/memcached_exporter* /opt/memcached_exporter
+INFO:kolla.common.utils.prometheus-memcached-exporter: ---> Running in 335d8bba5de9
+INFO:kolla.common.utils.prometheus-memcached-exporter:curl (https://github-production-release-asset-2e65be.s3.amazonaws.com/57182606/01977380-d266-11e8-953a-6a3e355c5533?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200302T215059Z&X-Amz-Expires=300&X-Amz-Signature=ad6d26d56d938e9501f284f7a0d7f993fb893a6af1376d0c74b92af2542f73cc&X-Amz-SignedHeaders=host&actor_id=0&response-content-disposition=attachment%3B%20filename%3Dmemcached_exporter-0.5.0.linux-s390x.tar.gz&response-content-type=application%2Foctet-stream): response: 200, time: 0.397060, size: 5846048
+INFO:kolla.common.utils.prometheus-memcached-exporter:memcached_exporter-0.5.0.linux-s390x/
+INFO:kolla.common.utils.prometheus-memcached-exporter:memcached_exporter-0.5.0.linux-s390x/CHANGELOG.md
+INFO:kolla.common.utils.prometheus-memcached-exporter:memcached_exporter-0.5.0.linux-s390x/LICENSE
+INFO:kolla.common.utils.prometheus-memcached-exporter:memcached_exporter-0.5.0.linux-s390x/README.md
+INFO:kolla.common.utils.prometheus-memcached-exporter:memcached_exporter-0.5.0.linux-s390x/NOTICE
+INFO:kolla.common.utils.prometheus-memcached-exporter:memcached_exporter-0.5.0.linux-s390x/memcached_exporter
+INFO:kolla.common.utils.prometheus-memcached-exporter:Removing intermediate container 335d8bba5de9
+INFO:kolla.common.utils.prometheus-memcached-exporter: ---> f8e654bdec45
+INFO:kolla.common.utils.prometheus-memcached-exporter:Step 5/5 : USER prometheus
+INFO:kolla.common.utils.prometheus-memcached-exporter: ---> Running in f0f92bf82dbf
+INFO:kolla.common.utils.prometheus-memcached-exporter:Removing intermediate container f0f92bf82dbf
+INFO:kolla.common.utils.prometheus-memcached-exporter: ---> 8a948612dc19
+INFO:kolla.common.utils.prometheus-memcached-exporter:Successfully built 8a948612dc19
+INFO:kolla.common.utils.prometheus-memcached-exporter:Successfully tagged s390x/ubuntu-source-prometheus-memcached-exporter:9.1.0
+INFO:kolla.common.utils.prometheus-memcached-exporter:Built at 2020-03-02 21:51:02.060169 (took 0:00:04.211355)

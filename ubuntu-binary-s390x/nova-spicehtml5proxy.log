@@ -1,0 +1,74 @@
+INFO:kolla.common.utils.nova-spicehtml5proxy:Building started at 2020-03-02 21:44:30.699538
+INFO:kolla.common.utils.nova-spicehtml5proxy:Step 1/4 : FROM s390x/ubuntu-binary-nova-base:9.1.0
+INFO:kolla.common.utils.nova-spicehtml5proxy: ---> 635ef465de63
+INFO:kolla.common.utils.nova-spicehtml5proxy:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="nova-spicehtml5proxy" build-date="20200302"
+INFO:kolla.common.utils.nova-spicehtml5proxy: ---> Running in 075a5b0130ad
+INFO:kolla.common.utils.nova-spicehtml5proxy:Removing intermediate container 075a5b0130ad
+INFO:kolla.common.utils.nova-spicehtml5proxy: ---> 3fa147d868f9
+INFO:kolla.common.utils.nova-spicehtml5proxy:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends nova-spiceproxy websockify && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.nova-spicehtml5proxy: ---> Running in 0f8ea2ca9127
+INFO:kolla.common.utils.nova-spicehtml5proxy:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Fetched 15.6 MB in 3s (6,025 kB/s)
+INFO:kolla.common.utils.nova-spicehtml5proxy:Reading package lists...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Reading package lists...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Building dependency tree...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Reading state information...
+INFO:kolla.common.utils.nova-spicehtml5proxy:The following additional packages will be installed:
+INFO:kolla.common.utils.nova-spicehtml5proxy:  python-numpy spice-html5
+INFO:kolla.common.utils.nova-spicehtml5proxy:Suggested packages:
+INFO:kolla.common.utils.nova-spicehtml5proxy:  gcc gfortran python-dev python-nose python-numpy-dbg python-numpy-doc
+INFO:kolla.common.utils.nova-spicehtml5proxy:The following NEW packages will be installed:
+INFO:kolla.common.utils.nova-spicehtml5proxy:  nova-spiceproxy python-numpy spice-html5 websockify
+INFO:kolla.common.utils.nova-spicehtml5proxy:0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.nova-spicehtml5proxy:Need to get 1,913 kB of archives.
+INFO:kolla.common.utils.nova-spicehtml5proxy:After this operation, 11.0 MB of additional disk space will be used.
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:1 http://ports.ubuntu.com bionic-updates/universe s390x spice-html5 all 0.1.7-2ubuntu1 [61.8 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x nova-spiceproxy all 2:20.0.0-0ubuntu1~cloud0 [36.7 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:3 http://ports.ubuntu.com bionic/main s390x python-numpy s390x 1:1.13.3-2ubuntu1 [1,794 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Get:4 http://ports.ubuntu.com bionic/universe s390x websockify s390x 0.8.0+dfsg1-9 [20.8 kB]
+INFO:kolla.common.utils.nova-spicehtml5proxy:Fetched 1,913 kB in 0s (4,123 kB/s)
+INFO:kolla.common.utils.nova-spicehtml5proxy:Selecting previously unselected package spice-html5.
+INFO:kolla.common.utils.nova-spicehtml5proxy:(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.nova-spicehtml5proxy:(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%
+INFO:kolla.common.utils.nova-spicehtml5proxy:(Reading database ... 100%(Reading database ... 32742 files and directories currently installed.)
+INFO:kolla.common.utils.nova-spicehtml5proxy:Preparing to unpack .../spice-html5_0.1.7-2ubuntu1_all.deb ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Unpacking spice-html5 (0.1.7-2ubuntu1) ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Selecting previously unselected package python-numpy.
+INFO:kolla.common.utils.nova-spicehtml5proxy:Preparing to unpack .../python-numpy_1%3a1.13.3-2ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Unpacking python-numpy (1:1.13.3-2ubuntu1) ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Selecting previously unselected package websockify.
+INFO:kolla.common.utils.nova-spicehtml5proxy:Preparing to unpack .../websockify_0.8.0+dfsg1-9_s390x.deb ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Unpacking websockify (0.8.0+dfsg1-9) ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Selecting previously unselected package nova-spiceproxy.
+INFO:kolla.common.utils.nova-spicehtml5proxy:Preparing to unpack .../nova-spiceproxy_2%3a20.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Unpacking nova-spiceproxy (2:20.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Setting up spice-html5 (0.1.7-2ubuntu1) ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Setting up nova-spiceproxy (2:20.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.nova-spicehtml5proxy:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.nova-spicehtml5proxy:Setting up python-numpy (1:1.13.3-2ubuntu1) ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Setting up websockify (0.8.0+dfsg1-9) ...
+INFO:kolla.common.utils.nova-spicehtml5proxy:Removing intermediate container 0f8ea2ca9127
+INFO:kolla.common.utils.nova-spicehtml5proxy: ---> 7eaa3a20cf59
+INFO:kolla.common.utils.nova-spicehtml5proxy:Step 4/4 : USER nova
+INFO:kolla.common.utils.nova-spicehtml5proxy: ---> Running in 58ab115e0b07
+INFO:kolla.common.utils.nova-spicehtml5proxy:Removing intermediate container 58ab115e0b07
+INFO:kolla.common.utils.nova-spicehtml5proxy: ---> e5aa97bf34b6
+INFO:kolla.common.utils.nova-spicehtml5proxy:Successfully built e5aa97bf34b6
+INFO:kolla.common.utils.nova-spicehtml5proxy:Successfully tagged s390x/ubuntu-binary-nova-spicehtml5proxy:9.1.0
+INFO:kolla.common.utils.nova-spicehtml5proxy:Built at 2020-03-02 21:44:42.107990 (took 0:00:11.408452)

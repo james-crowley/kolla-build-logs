@@ -1,0 +1,57 @@
+INFO:kolla.common.utils.rabbitmq:Building started at 2020-03-02 21:49:50.484198
+INFO:kolla.common.utils.rabbitmq:Step 1/16 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.rabbitmq: ---> 96ede3560f2f
+INFO:kolla.common.utils.rabbitmq:Step 2/16 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="rabbitmq" build-date="20200302"
+INFO:kolla.common.utils.rabbitmq: ---> Running in 572b9283d664
+INFO:kolla.common.utils.rabbitmq:Removing intermediate container 572b9283d664
+INFO:kolla.common.utils.rabbitmq: ---> 718cae069a6f
+INFO:kolla.common.utils.rabbitmq:Step 3/16 : RUN usermod --append --home /var/lib/rabbitmq --groups kolla rabbitmq     && mkdir -p /var/lib/rabbitmq     && chown -R 42439:42439 /var/lib/rabbitmq
+INFO:kolla.common.utils.rabbitmq: ---> Running in 8061a18a706e
+INFO:kolla.common.utils.rabbitmq:Removing intermediate container 8061a18a706e
+INFO:kolla.common.utils.rabbitmq: ---> 391c862f494a
+INFO:kolla.common.utils.rabbitmq:Step 4/16 : RUN echo "deb https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu/ bionic main" >/etc/apt/sources.list.d/rabbitmq.list
+INFO:kolla.common.utils.rabbitmq: ---> Running in 315161ed3d46
+INFO:kolla.common.utils.rabbitmq:Removing intermediate container 315161ed3d46
+INFO:kolla.common.utils.rabbitmq: ---> a1fb7e81a8a7
+INFO:kolla.common.utils.rabbitmq:Step 5/16 : RUN apt-get update && apt-get -y install --no-install-recommends erlang-nox logrotate rabbitmq-server erlang-base-hipe && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.rabbitmq: ---> Running in e3fa7f2976f0
+INFO:kolla.common.utils.rabbitmq:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.rabbitmq:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.rabbitmq:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.rabbitmq:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.rabbitmq:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.rabbitmq:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.rabbitmq:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.rabbitmq:Get:9 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.rabbitmq:Get:10 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.rabbitmq:Get:11 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.rabbitmq:Get:8 https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu bionic InRelease [23.7 kB]
+INFO:kolla.common.utils.rabbitmq:Get:13 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.rabbitmq:Get:14 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.rabbitmq:Get:15 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.rabbitmq:Get:12 https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu bionic/main s390x Packages [6,403 B]
+INFO:kolla.common.utils.rabbitmq:Get:16 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.rabbitmq:Get:17 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.rabbitmq:Get:18 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.rabbitmq:Fetched 15.6 MB in 2s (6,990 kB/s)
+INFO:kolla.common.utils.rabbitmq:Reading package lists...
+INFO:kolla.common.utils.rabbitmq:Reading package lists...
+INFO:kolla.common.utils.rabbitmq:Building dependency tree...
+INFO:kolla.common.utils.rabbitmq:Reading state information...
+INFO:kolla.common.utils.rabbitmq:Package erlang-base-hipe is not available, but is referred to by another package.
+INFO:kolla.common.utils.rabbitmq:This may mean that the package is missing, has been obsoleted, or
+INFO:kolla.common.utils.rabbitmq:is only available from another source
+INFO:kolla.common.utils.rabbitmq:However the following packages replace it:
+INFO:kolla.common.utils.rabbitmq:  erlang-wx erlang-src erlang-reltool erlang-observer erlang-mode
+INFO:kolla.common.utils.rabbitmq:  erlang-ic-java erlang-et erlang-dialyzer erlang-debugger erlang-common-test
+INFO:kolla.common.utils.rabbitmq:  erlang-xmerl erlang-tools erlang-syntax-tools erlang-ssl erlang-ssh
+INFO:kolla.common.utils.rabbitmq:  erlang-snmp erlang-runtime-tools erlang-public-key erlang-parsetools
+INFO:kolla.common.utils.rabbitmq:  erlang-os-mon erlang-odbc erlang-mnesia erlang-megaco erlang-inets erlang-ic
+INFO:kolla.common.utils.rabbitmq:  erlang-examples erlang-eunit erlang-erl-docgen erlang-eldap erlang-edoc
+INFO:kolla.common.utils.rabbitmq:  erlang-asn1 erlang-diameter erlang-dev erlang-crypto erlang-corba
+INFO:kolla.common.utils.rabbitmq:  erlang-base
+INFO:kolla.common.utils.rabbitmq:[91mE: Package 'erlang-base-hipe' has no installation candidate
+INFO:kolla.common.utils.rabbitmq:[0m
+INFO:kolla.common.utils.rabbitmq:Removing intermediate container e3fa7f2976f0
+ERROR:kolla.common.utils.rabbitmq:Error'd with the following message
+ERROR:kolla.common.utils.rabbitmq:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends erlang-nox logrotate rabbitmq-server erlang-base-hipe && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

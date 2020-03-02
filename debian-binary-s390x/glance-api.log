@@ -1,0 +1,64 @@
+INFO:kolla.common.utils.glance-api:Building started at 2020-03-02 21:27:57.069699
+INFO:kolla.common.utils.glance-api:Step 1/6 : FROM s390x/debian-binary-glance-base:9.1.0
+INFO:kolla.common.utils.glance-api: ---> dc883d2c8c04
+INFO:kolla.common.utils.glance-api:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="glance-api" build-date="20200302"
+INFO:kolla.common.utils.glance-api: ---> Running in 5602c89746a5
+INFO:kolla.common.utils.glance-api:Removing intermediate container 5602c89746a5
+INFO:kolla.common.utils.glance-api: ---> b85533b2e635
+INFO:kolla.common.utils.glance-api:Step 3/6 : RUN apt-get update && apt-get -y install --no-install-recommends qemu-utils && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.glance-api: ---> Running in be6b49bced9b
+INFO:kolla.common.utils.glance-api:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.glance-api:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.glance-api:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.glance-api:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.glance-api:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.glance-api:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.glance-api:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.glance-api:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.glance-api:Fetched 8,235 kB in 2s (4,900 kB/s)
+INFO:kolla.common.utils.glance-api:Reading package lists...
+INFO:kolla.common.utils.glance-api:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.glance-api:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.glance-api:[0m
+INFO:kolla.common.utils.glance-api:Reading package lists...
+INFO:kolla.common.utils.glance-api:Building dependency tree...
+INFO:kolla.common.utils.glance-api:Reading state information...
+INFO:kolla.common.utils.glance-api:Suggested packages:
+INFO:kolla.common.utils.glance-api:  debootstrap qemu-block-extra
+INFO:kolla.common.utils.glance-api:The following NEW packages will be installed:
+INFO:kolla.common.utils.glance-api:  qemu-utils
+INFO:kolla.common.utils.glance-api:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.glance-api:Need to get 885 kB of archives.
+INFO:kolla.common.utils.glance-api:After this operation, 5,906 kB of additional disk space will be used.
+INFO:kolla.common.utils.glance-api:Get:1 http://security-cdn.debian.org/debian-security buster/updates/main s390x qemu-utils s390x 1:3.1+dfsg-8+deb10u4 [885 kB]
+INFO:kolla.common.utils.glance-api:Fetched 885 kB in 0s (7,395 kB/s)
+INFO:kolla.common.utils.glance-api:Selecting previously unselected package qemu-utils.
+INFO:kolla.common.utils.glance-api:(Reading database ... 
+INFO:kolla.common.utils.glance-api:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%
+INFO:kolla.common.utils.glance-api:(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%
+INFO:kolla.common.utils.glance-api:(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.glance-api:(Reading database ... 70%
+INFO:kolla.common.utils.glance-api:(Reading database ... 75%
+INFO:kolla.common.utils.glance-api:(Reading database ... 80%
+INFO:kolla.common.utils.glance-api:(Reading database ... 85%
+INFO:kolla.common.utils.glance-api:(Reading database ... 90%
+INFO:kolla.common.utils.glance-api:(Reading database ... 95%
+INFO:kolla.common.utils.glance-api:(Reading database ... 100%(Reading database ... 29877 files and directories currently installed.)
+INFO:kolla.common.utils.glance-api:Preparing to unpack .../qemu-utils_1%3a3.1+dfsg-8+deb10u4_s390x.deb ...
+INFO:kolla.common.utils.glance-api:Unpacking qemu-utils (1:3.1+dfsg-8+deb10u4) ...
+INFO:kolla.common.utils.glance-api:Setting up qemu-utils (1:3.1+dfsg-8+deb10u4) ...
+INFO:kolla.common.utils.glance-api:Removing intermediate container be6b49bced9b
+INFO:kolla.common.utils.glance-api: ---> e38b8a0e7093
+INFO:kolla.common.utils.glance-api:Step 4/6 : COPY extend_start.sh /usr/local/bin/kolla_glance_extend_start
+INFO:kolla.common.utils.glance-api: ---> d02e5def41d6
+INFO:kolla.common.utils.glance-api:Step 5/6 : RUN chmod 755 /usr/local/bin/kolla_glance_extend_start
+INFO:kolla.common.utils.glance-api: ---> Running in d0e2d9bc2ebe
+INFO:kolla.common.utils.glance-api:Removing intermediate container d0e2d9bc2ebe
+INFO:kolla.common.utils.glance-api: ---> ce5c4e0df11b
+INFO:kolla.common.utils.glance-api:Step 6/6 : USER glance
+INFO:kolla.common.utils.glance-api: ---> Running in ff6a7bbddd78
+INFO:kolla.common.utils.glance-api:Removing intermediate container ff6a7bbddd78
+INFO:kolla.common.utils.glance-api: ---> f7581674a975
+INFO:kolla.common.utils.glance-api:Successfully built f7581674a975
+INFO:kolla.common.utils.glance-api:Successfully tagged s390x/debian-binary-glance-api:9.1.0
+INFO:kolla.common.utils.glance-api:Built at 2020-03-02 21:28:07.605971 (took 0:00:10.536272)

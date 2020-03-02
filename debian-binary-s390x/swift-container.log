@@ -1,0 +1,72 @@
+INFO:kolla.common.utils.swift-container:Building started at 2020-03-02 21:28:29.480618
+INFO:kolla.common.utils.swift-container:Step 1/4 : FROM s390x/debian-binary-swift-base:9.1.0
+INFO:kolla.common.utils.swift-container: ---> f51af6288789
+INFO:kolla.common.utils.swift-container:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="swift-container" build-date="20200302"
+INFO:kolla.common.utils.swift-container: ---> Running in 28368d934687
+INFO:kolla.common.utils.swift-container:Removing intermediate container 28368d934687
+INFO:kolla.common.utils.swift-container: ---> 95a614a62b77
+INFO:kolla.common.utils.swift-container:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends swift-container && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.swift-container: ---> Running in 5c59a09a352c
+INFO:kolla.common.utils.swift-container:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.swift-container:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.swift-container:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.swift-container:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.swift-container:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.swift-container:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.swift-container:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.swift-container:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.swift-container:Fetched 8,235 kB in 2s (5,218 kB/s)
+INFO:kolla.common.utils.swift-container:Reading package lists...
+INFO:kolla.common.utils.swift-container:[91mW[0m
+INFO:kolla.common.utils.swift-container:[91m: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.swift-container:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.swift-container:[0m
+INFO:kolla.common.utils.swift-container:Reading package lists...
+INFO:kolla.common.utils.swift-container:Building dependency tree...
+INFO:kolla.common.utils.swift-container:Reading state information...
+INFO:kolla.common.utils.swift-container:Recommended packages:
+INFO:kolla.common.utils.swift-container:  swift-drive-audit
+INFO:kolla.common.utils.swift-container:The following NEW packages will be installed:
+INFO:kolla.common.utils.swift-container:  swift-container
+INFO:kolla.common.utils.swift-container:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.swift-container:Need to get 85.2 kB of archives.
+INFO:kolla.common.utils.swift-container:After this operation, 234 kB of additional disk space will be used.
+INFO:kolla.common.utils.swift-container:Get:1 http://deb.debian.org/debian buster/main s390x swift-container all 2.19.1-1 [85.2 kB]
+INFO:kolla.common.utils.swift-container:Fetched 85.2 kB in 0s (1,033 kB/s)
+INFO:kolla.common.utils.swift-container:Selecting previously unselected package swift-container.
+INFO:kolla.common.utils.swift-container:(Reading database ... 
+INFO:kolla.common.utils.swift-container:(Reading database ... 5%(Reading database ... 10%
+INFO:kolla.common.utils.swift-container:(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.swift-container:(Reading database ... 70%
+INFO:kolla.common.utils.swift-container:(Reading database ... 75%
+INFO:kolla.common.utils.swift-container:(Reading database ... 80%
+INFO:kolla.common.utils.swift-container:(Reading database ... 85%
+INFO:kolla.common.utils.swift-container:(Reading database ... 90%
+INFO:kolla.common.utils.swift-container:(Reading database ... 95%
+INFO:kolla.common.utils.swift-container:(Reading database ... 100%(Reading database ... 24045 files and directories currently installed.)
+INFO:kolla.common.utils.swift-container:Preparing to unpack .../swift-container_2.19.1-1_all.deb ...
+INFO:kolla.common.utils.swift-container:Unpacking swift-container (2.19.1-1) ...
+INFO:kolla.common.utils.swift-container:Setting up swift-container (2.19.1-1) ...
+INFO:kolla.common.utils.swift-container:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.swift-container:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.swift-container:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.swift-container:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.swift-container:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.swift-container:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.swift-container:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.swift-container:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.swift-container:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.swift-container:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.swift-container:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.swift-container:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.swift-container:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.swift-container:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.swift-container:Removing intermediate container 5c59a09a352c
+INFO:kolla.common.utils.swift-container: ---> 248713858e17
+INFO:kolla.common.utils.swift-container:Step 4/4 : USER swift
+INFO:kolla.common.utils.swift-container: ---> Running in b3d39d88fa22
+INFO:kolla.common.utils.swift-container:Removing intermediate container b3d39d88fa22
+INFO:kolla.common.utils.swift-container: ---> 8919c3c08f27
+INFO:kolla.common.utils.swift-container:Successfully built 8919c3c08f27
+INFO:kolla.common.utils.swift-container:Successfully tagged s390x/debian-binary-swift-container:9.1.0
+INFO:kolla.common.utils.swift-container:Built at 2020-03-02 21:28:39.136106 (took 0:00:09.655488)

@@ -1,0 +1,20 @@
+INFO:kolla.common.utils.redis-base:Building started at 2020-03-02 21:48:21.090734
+INFO:kolla.common.utils.redis-base:Step 1/5 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.redis-base: ---> 96ede3560f2f
+INFO:kolla.common.utils.redis-base:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="redis-base" build-date="20200302"
+INFO:kolla.common.utils.redis-base: ---> Running in ba68255091f1
+INFO:kolla.common.utils.redis-base:Removing intermediate container ba68255091f1
+INFO:kolla.common.utils.redis-base: ---> d08d1e5e8cc1
+INFO:kolla.common.utils.redis-base:Step 3/5 : RUN usermod --append --home /run/redis --groups kolla redis     && mkdir -p /run/redis     && chown -R 42460:42460 /run/redis
+INFO:kolla.common.utils.redis-base: ---> Running in 45d442616db7
+INFO:kolla.common.utils.redis-base:Removing intermediate container 45d442616db7
+INFO:kolla.common.utils.redis-base: ---> 607b4c1d6d00
+INFO:kolla.common.utils.redis-base:Step 4/5 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.redis-base: ---> 454030fe220a
+INFO:kolla.common.utils.redis-base:Step 5/5 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.redis-base: ---> Running in d2c4cddaea6f
+INFO:kolla.common.utils.redis-base:Removing intermediate container d2c4cddaea6f
+INFO:kolla.common.utils.redis-base: ---> 6038239dfaf7
+INFO:kolla.common.utils.redis-base:Successfully built 6038239dfaf7
+INFO:kolla.common.utils.redis-base:Successfully tagged s390x/ubuntu-source-redis-base:9.1.0
+INFO:kolla.common.utils.redis-base:Built at 2020-03-02 21:48:26.959317 (took 0:00:05.868583)

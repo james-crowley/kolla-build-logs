@@ -1,0 +1,34 @@
+INFO:kolla.common.utils.opendaylight:Building started at 2020-03-02 21:22:54.141948
+INFO:kolla.common.utils.opendaylight:Step 1/6 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.opendaylight: ---> 4244142526cc
+INFO:kolla.common.utils.opendaylight:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="opendaylight" build-date="20200302"
+INFO:kolla.common.utils.opendaylight: ---> Running in e2e3b3608d09
+INFO:kolla.common.utils.opendaylight:Removing intermediate container e2e3b3608d09
+INFO:kolla.common.utils.opendaylight: ---> 8d0b6789c3e3
+INFO:kolla.common.utils.opendaylight:Step 3/6 : RUN usermod --append --home /var/lib/odl --groups kolla odl     && mkdir -p /var/lib/odl     && chown -R 42462:42462 /var/lib/odl
+INFO:kolla.common.utils.opendaylight: ---> Running in 0e6847a202bf
+INFO:kolla.common.utils.opendaylight:Removing intermediate container 0e6847a202bf
+INFO:kolla.common.utils.opendaylight: ---> 5df5e751e446
+INFO:kolla.common.utils.opendaylight:Step 4/6 : RUN apt-get update && apt-get -y install --no-install-recommends opendaylight openjdk-11-jre-headless && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.opendaylight: ---> Running in b3ca3729824e
+INFO:kolla.common.utils.opendaylight:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.opendaylight:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.opendaylight:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.opendaylight:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.opendaylight:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.opendaylight:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.opendaylight:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.opendaylight:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.opendaylight:Fetched 8,235 kB in 2s (4,971 kB/s)
+INFO:kolla.common.utils.opendaylight:Reading package lists...
+INFO:kolla.common.utils.opendaylight:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.opendaylight:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.opendaylight:[0m
+INFO:kolla.common.utils.opendaylight:Reading package lists...
+INFO:kolla.common.utils.opendaylight:Building dependency tree...
+INFO:kolla.common.utils.opendaylight:Reading state information...
+INFO:kolla.common.utils.opendaylight:[91mE: Unable to locate package opendaylight
+INFO:kolla.common.utils.opendaylight:[0m
+INFO:kolla.common.utils.opendaylight:Removing intermediate container b3ca3729824e
+ERROR:kolla.common.utils.opendaylight:Error'd with the following message
+ERROR:kolla.common.utils.opendaylight:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends opendaylight openjdk-11-jre-headless && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

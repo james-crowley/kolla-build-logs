@@ -1,0 +1,13 @@
+INFO:kolla.common.utils.tripleoclient:Building started at 2020-03-02 21:39:01.130193
+INFO:kolla.common.utils.tripleoclient:Step 1/5 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.tripleoclient: ---> 682558ff6b31
+INFO:kolla.common.utils.tripleoclient:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="tripleoclient" build-date="20200302"
+INFO:kolla.common.utils.tripleoclient: ---> Running in 5c9b4a343b33
+INFO:kolla.common.utils.tripleoclient:Removing intermediate container 5c9b4a343b33
+INFO:kolla.common.utils.tripleoclient: ---> b50217d19c69
+INFO:kolla.common.utils.tripleoclient:Step 3/5 : RUN echo 'tripleoclient not yet available for ubuntu' && /bin/false
+INFO:kolla.common.utils.tripleoclient: ---> Running in 63038bb0c67d
+INFO:kolla.common.utils.tripleoclient:tripleoclient not yet available for ubuntu
+INFO:kolla.common.utils.tripleoclient:Removing intermediate container 63038bb0c67d
+ERROR:kolla.common.utils.tripleoclient:Error'd with the following message
+ERROR:kolla.common.utils.tripleoclient:The command '/bin/sh -c echo 'tripleoclient not yet available for ubuntu' && /bin/false' returned a non-zero code: 1

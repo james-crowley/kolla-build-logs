@@ -1,0 +1,35 @@
+INFO:kolla.common.utils.senlin-health-manager:Building started at 2020-03-02 21:43:29.003247
+INFO:kolla.common.utils.senlin-health-manager:Step 1/4 : FROM s390x/ubuntu-binary-senlin-base:9.1.0
+INFO:kolla.common.utils.senlin-health-manager: ---> 4fd2c3ebebf0
+INFO:kolla.common.utils.senlin-health-manager:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="senlin-health-manager" build-date="20200302"
+INFO:kolla.common.utils.senlin-health-manager: ---> Running in 60355ff82be3
+INFO:kolla.common.utils.senlin-health-manager:Removing intermediate container 60355ff82be3
+INFO:kolla.common.utils.senlin-health-manager: ---> 6b20748eab0b
+INFO:kolla.common.utils.senlin-health-manager:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends senlin-health-manager && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.senlin-health-manager: ---> Running in 8ae12646d1d6
+INFO:kolla.common.utils.senlin-health-manager:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.senlin-health-manager:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.senlin-health-manager:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.senlin-health-manager:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.senlin-health-manager:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.senlin-health-manager:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.senlin-health-manager:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.senlin-health-manager:Get:8 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.senlin-health-manager:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.senlin-health-manager:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.senlin-health-manager:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.senlin-health-manager:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.senlin-health-manager:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.senlin-health-manager:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.senlin-health-manager:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.senlin-health-manager:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.senlin-health-manager:Fetched 15.6 MB in 2s (6,605 kB/s)
+INFO:kolla.common.utils.senlin-health-manager:Reading package lists...
+INFO:kolla.common.utils.senlin-health-manager:Reading package lists...
+INFO:kolla.common.utils.senlin-health-manager:Building dependency tree...
+INFO:kolla.common.utils.senlin-health-manager:Reading state information...
+INFO:kolla.common.utils.senlin-health-manager:[91mE: Unable to locate package senlin-health-manager
+INFO:kolla.common.utils.senlin-health-manager:[0m
+INFO:kolla.common.utils.senlin-health-manager:Removing intermediate container 8ae12646d1d6
+ERROR:kolla.common.utils.senlin-health-manager:Error'd with the following message
+ERROR:kolla.common.utils.senlin-health-manager:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends senlin-health-manager && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

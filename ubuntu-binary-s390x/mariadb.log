@@ -1,0 +1,45 @@
+INFO:kolla.common.utils.mariadb:Building started at 2020-03-02 21:39:27.259225
+INFO:kolla.common.utils.mariadb:Step 1/17 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.mariadb: ---> 682558ff6b31
+INFO:kolla.common.utils.mariadb:Step 2/17 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="mariadb" build-date="20200302"
+INFO:kolla.common.utils.mariadb: ---> Running in 6d358ca7f29d
+INFO:kolla.common.utils.mariadb:Removing intermediate container 6d358ca7f29d
+INFO:kolla.common.utils.mariadb: ---> 9ebc67a51489
+INFO:kolla.common.utils.mariadb:Step 3/17 : RUN usermod --append --home /var/lib/mysql --groups kolla mysql     && mkdir -p /var/lib/mysql     && chown -R 42434:42434 /var/lib/mysql
+INFO:kolla.common.utils.mariadb: ---> Running in cdd21ce5d12a
+INFO:kolla.common.utils.mariadb:Removing intermediate container cdd21ce5d12a
+INFO:kolla.common.utils.mariadb: ---> dcc31edfaa2b
+INFO:kolla.common.utils.mariadb:Step 4/17 : RUN echo "deb http://downloads.mariadb.com/MariaDB/mariadb-10.3/repo/ubuntu bionic main" >/etc/apt/sources.list.d/mariadb.list
+INFO:kolla.common.utils.mariadb: ---> Running in f0c68c324f59
+INFO:kolla.common.utils.mariadb:Removing intermediate container f0c68c324f59
+INFO:kolla.common.utils.mariadb: ---> bd04094508b0
+INFO:kolla.common.utils.mariadb:Step 5/17 : RUN apt-get update && apt-get -y install --no-install-recommends expect mariadb-backup mariadb-client mariadb-server && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.mariadb: ---> Running in e6ec14236f70
+INFO:kolla.common.utils.mariadb:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.mariadb:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.mariadb:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.mariadb:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.mariadb:Get:5 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.mariadb:Get:7 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.mariadb:Get:8 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.mariadb:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.mariadb:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.mariadb:Get:6 https://downloads.mariadb.com/MariaDB/mariadb-10.3/repo/ubuntu bionic InRelease [6,265 B]
+INFO:kolla.common.utils.mariadb:Get:11 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.mariadb:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.mariadb:Get:13 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.mariadb:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.mariadb:Get:15 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.mariadb:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.mariadb:Get:17 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.mariadb:Fetched 15.6 MB in 2s (6,680 kB/s)
+INFO:kolla.common.utils.mariadb:Reading package lists...
+INFO:kolla.common.utils.mariadb:Reading package lists...
+INFO:kolla.common.utils.mariadb:Building dependency tree...
+INFO:kolla.common.utils.mariadb:Reading state information...
+INFO:kolla.common.utils.mariadb:[91mE[0m
+INFO:kolla.common.utils.mariadb:[91m: Unable to locate package mariadb-backup
+INFO:kolla.common.utils.mariadb:[0m
+INFO:kolla.common.utils.mariadb:Removing intermediate container e6ec14236f70
+ERROR:kolla.common.utils.mariadb:Error'd with the following message
+ERROR:kolla.common.utils.mariadb:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends expect mariadb-backup mariadb-client mariadb-server && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

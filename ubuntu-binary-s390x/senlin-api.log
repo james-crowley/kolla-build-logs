@@ -1,0 +1,69 @@
+INFO:kolla.common.utils.senlin-api:Building started at 2020-03-02 21:43:26.141797
+INFO:kolla.common.utils.senlin-api:Step 1/6 : FROM s390x/ubuntu-binary-senlin-base:9.1.0
+INFO:kolla.common.utils.senlin-api: ---> 4fd2c3ebebf0
+INFO:kolla.common.utils.senlin-api:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="senlin-api" build-date="20200302"
+INFO:kolla.common.utils.senlin-api: ---> Running in 7624fb9717a9
+INFO:kolla.common.utils.senlin-api:Removing intermediate container 7624fb9717a9
+INFO:kolla.common.utils.senlin-api: ---> ad16427f9f31
+INFO:kolla.common.utils.senlin-api:Step 3/6 : RUN apt-get update && apt-get -y install --no-install-recommends senlin-api && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.senlin-api: ---> Running in 294354cedbe3
+INFO:kolla.common.utils.senlin-api:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.senlin-api:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.senlin-api:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.senlin-api:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.senlin-api:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.senlin-api:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.senlin-api:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.senlin-api:Get:8 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.senlin-api:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.senlin-api:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.senlin-api:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.senlin-api:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.senlin-api:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.senlin-api:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.senlin-api:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.senlin-api:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.senlin-api:Fetched 15.6 MB in 2s (6,462 kB/s)
+INFO:kolla.common.utils.senlin-api:Reading package lists...
+INFO:kolla.common.utils.senlin-api:Reading package lists...
+INFO:kolla.common.utils.senlin-api:Building dependency tree...
+INFO:kolla.common.utils.senlin-api:Reading state information...
+INFO:kolla.common.utils.senlin-api:The following NEW packages will be installed:
+INFO:kolla.common.utils.senlin-api:  senlin-api
+INFO:kolla.common.utils.senlin-api:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.senlin-api:Need to get 23.6 kB of archives.
+INFO:kolla.common.utils.senlin-api:After this operation, 141 kB of additional disk space will be used.
+INFO:kolla.common.utils.senlin-api:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x senlin-api all 8.0.0-0ubuntu1~cloud0 [23.6 kB]
+INFO:kolla.common.utils.senlin-api:Preconfiguring packages ...
+INFO:kolla.common.utils.senlin-api:Fetched 23.6 kB in 0s (589 kB/s)
+INFO:kolla.common.utils.senlin-api:Selecting previously unselected package senlin-api.
+INFO:kolla.common.utils.senlin-api:(Reading database ... 
+INFO:kolla.common.utils.senlin-api:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.senlin-api:(Reading database ... 65%
+INFO:kolla.common.utils.senlin-api:(Reading database ... 70%
+INFO:kolla.common.utils.senlin-api:(Reading database ... 75%
+INFO:kolla.common.utils.senlin-api:(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%
+INFO:kolla.common.utils.senlin-api:(Reading database ... 95%
+INFO:kolla.common.utils.senlin-api:(Reading database ... 100%(Reading database ... 
+INFO:kolla.common.utils.senlin-api:24894 files and directories currently installed.)
+INFO:kolla.common.utils.senlin-api:Preparing to unpack .../senlin-api_8.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.senlin-api:Unpacking senlin-api (8.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.senlin-api:Setting up senlin-api (8.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.senlin-api:Will not register senlin endpoint this time (no user request for it).
+INFO:kolla.common.utils.senlin-api:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.senlin-api:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.senlin-api:Removing intermediate container 294354cedbe3
+INFO:kolla.common.utils.senlin-api: ---> 9090744c2af6
+INFO:kolla.common.utils.senlin-api:Step 4/6 : COPY extend_start.sh /usr/local/bin/kolla_senlin_extend_start
+INFO:kolla.common.utils.senlin-api: ---> a1d4b126be41
+INFO:kolla.common.utils.senlin-api:Step 5/6 : RUN chmod 755 /usr/local/bin/kolla_senlin_extend_start
+INFO:kolla.common.utils.senlin-api: ---> Running in 5dfd46b57b1b
+INFO:kolla.common.utils.senlin-api:Removing intermediate container 5dfd46b57b1b
+INFO:kolla.common.utils.senlin-api: ---> 57afb96e25ea
+INFO:kolla.common.utils.senlin-api:Step 6/6 : USER senlin
+INFO:kolla.common.utils.senlin-api: ---> Running in f217b5fdb3d8
+INFO:kolla.common.utils.senlin-api:Removing intermediate container f217b5fdb3d8
+INFO:kolla.common.utils.senlin-api: ---> 8d5c67f1e184
+INFO:kolla.common.utils.senlin-api:Successfully built 8d5c67f1e184
+INFO:kolla.common.utils.senlin-api:Successfully tagged s390x/ubuntu-binary-senlin-api:9.1.0
+INFO:kolla.common.utils.senlin-api:Built at 2020-03-02 21:43:37.098754 (took 0:00:10.956957)

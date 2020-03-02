@@ -1,0 +1,13 @@
+INFO:kolla.common.utils.tripleoclient:Building started at 2020-03-02 21:22:36.897756
+INFO:kolla.common.utils.tripleoclient:Step 1/5 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.tripleoclient: ---> 4244142526cc
+INFO:kolla.common.utils.tripleoclient:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="tripleoclient" build-date="20200302"
+INFO:kolla.common.utils.tripleoclient: ---> Running in d50f6ba4a80c
+INFO:kolla.common.utils.tripleoclient:Removing intermediate container d50f6ba4a80c
+INFO:kolla.common.utils.tripleoclient: ---> 2598e0b903ce
+INFO:kolla.common.utils.tripleoclient:Step 3/5 : RUN echo 'tripleoclient not yet available for debian' && /bin/false
+INFO:kolla.common.utils.tripleoclient: ---> Running in 0203f84ca840
+INFO:kolla.common.utils.tripleoclient:tripleoclient not yet available for debian
+INFO:kolla.common.utils.tripleoclient:Removing intermediate container 0203f84ca840
+ERROR:kolla.common.utils.tripleoclient:Error'd with the following message
+ERROR:kolla.common.utils.tripleoclient:The command '/bin/sh -c echo 'tripleoclient not yet available for debian' && /bin/false' returned a non-zero code: 1

@@ -1,0 +1,14 @@
+INFO:kolla.common.utils.glance-registry:Building started at 2020-03-02 21:44:45.762774
+INFO:kolla.common.utils.glance-registry:Step 1/3 : FROM s390x/ubuntu-binary-glance-base:9.1.0
+INFO:kolla.common.utils.glance-registry: ---> 34ab8c440a47
+INFO:kolla.common.utils.glance-registry:Step 2/3 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="glance-registry" build-date="20200302"
+INFO:kolla.common.utils.glance-registry: ---> Running in 58cf05d06f5f
+INFO:kolla.common.utils.glance-registry:Removing intermediate container 58cf05d06f5f
+INFO:kolla.common.utils.glance-registry: ---> 94a17690fbd8
+INFO:kolla.common.utils.glance-registry:Step 3/3 : USER glance
+INFO:kolla.common.utils.glance-registry: ---> Running in 82b754d7b485
+INFO:kolla.common.utils.glance-registry:Removing intermediate container 82b754d7b485
+INFO:kolla.common.utils.glance-registry: ---> bb0d081b2084
+INFO:kolla.common.utils.glance-registry:Successfully built bb0d081b2084
+INFO:kolla.common.utils.glance-registry:Successfully tagged s390x/ubuntu-binary-glance-registry:9.1.0
+INFO:kolla.common.utils.glance-registry:Built at 2020-03-02 21:44:47.124470 (took 0:00:01.361696)

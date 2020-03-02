@@ -1,0 +1,58 @@
+INFO:kolla.common.utils.murano-engine:Building started at 2020-03-02 21:28:54.068028
+INFO:kolla.common.utils.murano-engine:Step 1/4 : FROM s390x/debian-binary-murano-base:9.1.0
+INFO:kolla.common.utils.murano-engine: ---> a62d7bc5fd95
+INFO:kolla.common.utils.murano-engine:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="murano-engine" build-date="20200302"
+INFO:kolla.common.utils.murano-engine: ---> Running in dfdbfaa47f66
+INFO:kolla.common.utils.murano-engine:Removing intermediate container dfdbfaa47f66
+INFO:kolla.common.utils.murano-engine: ---> d9c4f1c2d9b4
+INFO:kolla.common.utils.murano-engine:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends murano-engine && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.murano-engine: ---> Running in 67ab86e658aa
+INFO:kolla.common.utils.murano-engine:Get:2 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.murano-engine:Get:3 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.murano-engine:Get:4 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.murano-engine:Get:1 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.murano-engine:Get:5 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.murano-engine:Get:6 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.murano-engine:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.murano-engine:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.murano-engine:Fetched 8,235 kB in 2s (5,338 kB/s)
+INFO:kolla.common.utils.murano-engine:Reading package lists...
+INFO:kolla.common.utils.murano-engine:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.murano-engine:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.murano-engine:[0m
+INFO:kolla.common.utils.murano-engine:Reading package lists...
+INFO:kolla.common.utils.murano-engine:Building dependency tree...
+INFO:kolla.common.utils.murano-engine:Reading state information...
+INFO:kolla.common.utils.murano-engine:The following NEW packages will be installed:
+INFO:kolla.common.utils.murano-engine:  murano-engine
+INFO:kolla.common.utils.murano-engine:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.murano-engine:Need to get 8,964 B of archives.
+INFO:kolla.common.utils.murano-engine:After this operation, 31.7 kB of additional disk space will be used.
+INFO:kolla.common.utils.murano-engine:Get:1 http://deb.debian.org/debian buster/main s390x murano-engine all 1:6.0.0-2 [8,964 B]
+INFO:kolla.common.utils.murano-engine:Fetched 8,964 B in 0s (263 kB/s)
+INFO:kolla.common.utils.murano-engine:Selecting previously unselected package murano-engine.
+INFO:kolla.common.utils.murano-engine:(Reading database ... 
+INFO:kolla.common.utils.murano-engine:(Reading database ... 5%
+INFO:kolla.common.utils.murano-engine:(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.murano-engine:(Reading database ... 70%
+INFO:kolla.common.utils.murano-engine:(Reading database ... 75%
+INFO:kolla.common.utils.murano-engine:(Reading database ... 80%
+INFO:kolla.common.utils.murano-engine:(Reading database ... 85%
+INFO:kolla.common.utils.murano-engine:(Reading database ... 90%
+INFO:kolla.common.utils.murano-engine:(Reading database ... 95%
+INFO:kolla.common.utils.murano-engine:(Reading database ... 100%(Reading database ... 
+INFO:kolla.common.utils.murano-engine:24590 files and directories currently installed.)
+INFO:kolla.common.utils.murano-engine:Preparing to unpack .../murano-engine_1%3a6.0.0-2_all.deb ...
+INFO:kolla.common.utils.murano-engine:Unpacking murano-engine (1:6.0.0-2) ...
+INFO:kolla.common.utils.murano-engine:Setting up murano-engine (1:6.0.0-2) ...
+INFO:kolla.common.utils.murano-engine:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.murano-engine:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.murano-engine:Removing intermediate container 67ab86e658aa
+INFO:kolla.common.utils.murano-engine: ---> 8d18864a2818
+INFO:kolla.common.utils.murano-engine:Step 4/4 : USER murano
+INFO:kolla.common.utils.murano-engine: ---> Running in 5292982aaffb
+INFO:kolla.common.utils.murano-engine:Removing intermediate container 5292982aaffb
+INFO:kolla.common.utils.murano-engine: ---> d9ca808e164d
+INFO:kolla.common.utils.murano-engine:Successfully built d9ca808e164d
+INFO:kolla.common.utils.murano-engine:Successfully tagged s390x/debian-binary-murano-engine:9.1.0
+INFO:kolla.common.utils.murano-engine:Built at 2020-03-02 21:29:01.160418 (took 0:00:07.092390)

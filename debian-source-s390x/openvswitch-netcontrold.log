@@ -1,0 +1,81 @@
+INFO:kolla.common.utils.openvswitch-netcontrold:Building started at 2020-03-02 21:32:55.171792
+INFO:kolla.common.utils.openvswitch-netcontrold:Step 1/6 : FROM s390x/debian-source-openvswitch-base:9.1.0
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> 4661ba0c4fbd
+INFO:kolla.common.utils.openvswitch-netcontrold:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="openvswitch-netcontrold" build-date="20200302"
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> Running in aae5431ec7c4
+INFO:kolla.common.utils.openvswitch-netcontrold:Removing intermediate container aae5431ec7c4
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> 408371398863
+INFO:kolla.common.utils.openvswitch-netcontrold:Step 3/6 : RUN apt-get update && apt-get -y install --no-install-recommends python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> Running in ca95aebc8095
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:4 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:5 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:7 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:8 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.openvswitch-netcontrold:Fetched 8,235 kB in 1s (5,773 kB/s)
+INFO:kolla.common.utils.openvswitch-netcontrold:Reading package lists...
+INFO:kolla.common.utils.openvswitch-netcontrold:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.openvswitch-netcontrold:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.openvswitch-netcontrold:[0m
+INFO:kolla.common.utils.openvswitch-netcontrold:Reading package lists...
+INFO:kolla.common.utils.openvswitch-netcontrold:Building dependency tree...
+INFO:kolla.common.utils.openvswitch-netcontrold:Reading state information...
+INFO:kolla.common.utils.openvswitch-netcontrold:The following additional packages will be installed:
+INFO:kolla.common.utils.openvswitch-netcontrold:  python-pip-whl python3-distutils python3-lib2to3
+INFO:kolla.common.utils.openvswitch-netcontrold:Recommended packages:
+INFO:kolla.common.utils.openvswitch-netcontrold:  build-essential python3-dev python3-setuptools python3-wheel
+INFO:kolla.common.utils.openvswitch-netcontrold:The following NEW packages will be installed:
+INFO:kolla.common.utils.openvswitch-netcontrold:  python-pip-whl python3-distutils python3-lib2to3 python3-pip
+INFO:kolla.common.utils.openvswitch-netcontrold:0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.openvswitch-netcontrold:Need to get 1,980 kB of archives.
+INFO:kolla.common.utils.openvswitch-netcontrold:After this operation, 3,772 kB of additional disk space will be used.
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:1 http://deb.debian.org/debian buster/main s390x python-pip-whl all 18.1-5 [1,591 kB]
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:2 http://deb.debian.org/debian buster/main s390x python3-lib2to3 all 3.7.3-1 [76.7 kB]
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:3 http://deb.debian.org/debian buster/main s390x python3-distutils all 3.7.3-1 [142 kB]
+INFO:kolla.common.utils.openvswitch-netcontrold:Get:4 http://deb.debian.org/debian buster/main s390x python3-pip all 18.1-5 [171 kB]
+INFO:kolla.common.utils.openvswitch-netcontrold:Fetched 1,980 kB in 0s (16.4 MB/s)
+INFO:kolla.common.utils.openvswitch-netcontrold:Selecting previously unselected package python-pip-whl.
+INFO:kolla.common.utils.openvswitch-netcontrold:(Reading database ... 
+INFO:kolla.common.utils.openvswitch-netcontrold:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%
+INFO:kolla.common.utils.openvswitch-netcontrold:(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.openvswitch-netcontrold:(Reading database ... 80%
+INFO:kolla.common.utils.openvswitch-netcontrold:(Reading database ... 85%
+INFO:kolla.common.utils.openvswitch-netcontrold:(Reading database ... 90%
+INFO:kolla.common.utils.openvswitch-netcontrold:(Reading database ... 95%(Reading database ... 100%(Reading database ... 13084 files and directories currently installed.)
+INFO:kolla.common.utils.openvswitch-netcontrold:Preparing to unpack .../python-pip-whl_18.1-5_all.deb ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Unpacking python-pip-whl (18.1-5) ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Selecting previously unselected package python3-lib2to3.
+INFO:kolla.common.utils.openvswitch-netcontrold:Preparing to unpack .../python3-lib2to3_3.7.3-1_all.deb ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Unpacking python3-lib2to3 (3.7.3-1) ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Selecting previously unselected package python3-distutils.
+INFO:kolla.common.utils.openvswitch-netcontrold:Preparing to unpack .../python3-distutils_3.7.3-1_all.deb ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Unpacking python3-distutils (3.7.3-1) ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Selecting previously unselected package python3-pip.
+INFO:kolla.common.utils.openvswitch-netcontrold:Preparing to unpack .../python3-pip_18.1-5_all.deb ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Unpacking python3-pip (18.1-5) ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Setting up python-pip-whl (18.1-5) ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Setting up python3-lib2to3 (3.7.3-1) ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Setting up python3-distutils (3.7.3-1) ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Setting up python3-pip (18.1-5) ...
+INFO:kolla.common.utils.openvswitch-netcontrold:Removing intermediate container ca95aebc8095
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> d79835b00564
+INFO:kolla.common.utils.openvswitch-netcontrold:Step 4/6 : RUN pip3 --no-cache-dir install --upgrade netcontrold
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> Running in 6c229cca7aba
+INFO:kolla.common.utils.openvswitch-netcontrold:Collecting netcontrold
+INFO:kolla.common.utils.openvswitch-netcontrold:  Downloading https://files.pythonhosted.org/packages/f9/ca/9690757ad97f0ad8cf3ab345331fbe8448cf78fb4ba54b5bda24f3ba2f2c/netcontrold-1.0.14-py3-none-any.whl
+INFO:kolla.common.utils.openvswitch-netcontrold:Installing collected packages: netcontrold
+INFO:kolla.common.utils.openvswitch-netcontrold:Successfully installed netcontrold-1.0.14
+INFO:kolla.common.utils.openvswitch-netcontrold:Removing intermediate container 6c229cca7aba
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> 59296a8e56bb
+INFO:kolla.common.utils.openvswitch-netcontrold:Step 5/6 : COPY extend_start.sh /usr/local/bin/kolla_openvswitch_extend_start
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> 50196deb3620
+INFO:kolla.common.utils.openvswitch-netcontrold:Step 6/6 : RUN chmod 755 /usr/local/bin/kolla_openvswitch_extend_start
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> Running in 9e3fa216604d
+INFO:kolla.common.utils.openvswitch-netcontrold:Removing intermediate container 9e3fa216604d
+INFO:kolla.common.utils.openvswitch-netcontrold: ---> ab2118969453
+INFO:kolla.common.utils.openvswitch-netcontrold:Successfully built ab2118969453
+INFO:kolla.common.utils.openvswitch-netcontrold:Successfully tagged s390x/debian-source-openvswitch-netcontrold:9.1.0
+INFO:kolla.common.utils.openvswitch-netcontrold:Built at 2020-03-02 21:33:07.852156 (took 0:00:12.680364)

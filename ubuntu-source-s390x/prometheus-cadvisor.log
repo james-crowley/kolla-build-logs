@@ -1,0 +1,14 @@
+INFO:kolla.common.utils.prometheus-cadvisor:Building started at 2020-03-02 21:50:56.861886
+INFO:kolla.common.utils.prometheus-cadvisor:Step 1/3 : FROM s390x/ubuntu-source-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-cadvisor: ---> 91d5cbd16b50
+INFO:kolla.common.utils.prometheus-cadvisor:Step 2/3 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-cadvisor" build-date="20200302"
+INFO:kolla.common.utils.prometheus-cadvisor: ---> Running in 94e2f04f26c2
+INFO:kolla.common.utils.prometheus-cadvisor:Removing intermediate container 94e2f04f26c2
+INFO:kolla.common.utils.prometheus-cadvisor: ---> b144a47bf95e
+INFO:kolla.common.utils.prometheus-cadvisor:Step 3/3 : ENV prometheus_cadvisor_version=0.35.0
+INFO:kolla.common.utils.prometheus-cadvisor: ---> Running in 45b0fcc5aa4a
+INFO:kolla.common.utils.prometheus-cadvisor:Removing intermediate container 45b0fcc5aa4a
+INFO:kolla.common.utils.prometheus-cadvisor: ---> b6d911f9af69
+INFO:kolla.common.utils.prometheus-cadvisor:Successfully built b6d911f9af69
+INFO:kolla.common.utils.prometheus-cadvisor:Successfully tagged s390x/ubuntu-source-prometheus-cadvisor:9.1.0
+INFO:kolla.common.utils.prometheus-cadvisor:Built at 2020-03-02 21:50:57.848452 (took 0:00:00.986566)

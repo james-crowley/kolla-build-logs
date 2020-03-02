@@ -1,0 +1,70 @@
+INFO:kolla.common.utils.memcached:Building started at 2020-03-02 21:30:46.383082
+INFO:kolla.common.utils.memcached:Step 1/5 : FROM s390x/debian-source-base:9.1.0
+INFO:kolla.common.utils.memcached: ---> 80efb5983713
+INFO:kolla.common.utils.memcached:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="memcached" build-date="20200302"
+INFO:kolla.common.utils.memcached: ---> Running in 3d6552b8072e
+INFO:kolla.common.utils.memcached:Removing intermediate container 3d6552b8072e
+INFO:kolla.common.utils.memcached: ---> f43a3fa25b5c
+INFO:kolla.common.utils.memcached:Step 3/5 : RUN usermod --append --home /run/memcache --groups kolla memcached     && mkdir -p /run/memcache     && chown -R 42457:42457 /run/memcache
+INFO:kolla.common.utils.memcached: ---> Running in 09e7a4eb3846
+INFO:kolla.common.utils.memcached:Removing intermediate container 09e7a4eb3846
+INFO:kolla.common.utils.memcached: ---> f920c45f3966
+INFO:kolla.common.utils.memcached:Step 4/5 : RUN apt-get update && apt-get -y install --no-install-recommends memcached && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.memcached: ---> Running in 2b33763b19b5
+INFO:kolla.common.utils.memcached:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.memcached:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.memcached:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.memcached:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.memcached:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.memcached:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.memcached:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.memcached:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.memcached:Fetched 8,235 kB in 2s (5,135 kB/s)
+INFO:kolla.common.utils.memcached:Reading package lists...
+INFO:kolla.common.utils.memcached:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.memcached:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.memcached:[0m
+INFO:kolla.common.utils.memcached:Reading package lists...
+INFO:kolla.common.utils.memcached:Building dependency tree...
+INFO:kolla.common.utils.memcached:Reading state information...
+INFO:kolla.common.utils.memcached:The following additional packages will be installed:
+INFO:kolla.common.utils.memcached:  libevent-2.1-6
+INFO:kolla.common.utils.memcached:Suggested packages:
+INFO:kolla.common.utils.memcached:  libcache-memcached-perl libmemcached libanyevent-perl libyaml-perl
+INFO:kolla.common.utils.memcached:  libterm-readkey-perl
+INFO:kolla.common.utils.memcached:The following NEW packages will be installed:
+INFO:kolla.common.utils.memcached:  libevent-2.1-6 memcached
+INFO:kolla.common.utils.memcached:0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.memcached:Need to get 289 kB of archives.
+INFO:kolla.common.utils.memcached:After this operation, 805 kB of additional disk space will be used.
+INFO:kolla.common.utils.memcached:Get:1 http://deb.debian.org/debian buster/main s390x libevent-2.1-6 s390x 2.1.8-stable-4 [170 kB]
+INFO:kolla.common.utils.memcached:Get:2 http://deb.debian.org/debian buster/main s390x memcached s390x 1.5.6-1.1 [119 kB]
+INFO:kolla.common.utils.memcached:Fetched 289 kB in 0s (6,279 kB/s)
+INFO:kolla.common.utils.memcached:Selecting previously unselected package libevent-2.1-6:s390x.
+INFO:kolla.common.utils.memcached:(Reading database ... 
+INFO:kolla.common.utils.memcached:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%
+INFO:kolla.common.utils.memcached:(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.memcached:(Reading database ... 80%
+INFO:kolla.common.utils.memcached:(Reading database ... 85%
+INFO:kolla.common.utils.memcached:(Reading database ... 90%
+INFO:kolla.common.utils.memcached:(Reading database ... 95%
+INFO:kolla.common.utils.memcached:(Reading database ... 100%(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.memcached:Preparing to unpack .../libevent-2.1-6_2.1.8-stable-4_s390x.deb ...
+INFO:kolla.common.utils.memcached:Unpacking libevent-2.1-6:s390x (2.1.8-stable-4) ...
+INFO:kolla.common.utils.memcached:Selecting previously unselected package memcached.
+INFO:kolla.common.utils.memcached:Preparing to unpack .../memcached_1.5.6-1.1_s390x.deb ...
+INFO:kolla.common.utils.memcached:Unpacking memcached (1.5.6-1.1) ...
+INFO:kolla.common.utils.memcached:Setting up libevent-2.1-6:s390x (2.1.8-stable-4) ...
+INFO:kolla.common.utils.memcached:Setting up memcached (1.5.6-1.1) ...
+INFO:kolla.common.utils.memcached:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.memcached:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.memcached:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.memcached:Removing intermediate container 2b33763b19b5
+INFO:kolla.common.utils.memcached: ---> 904abaf5a591
+INFO:kolla.common.utils.memcached:Step 5/5 : USER memcached
+INFO:kolla.common.utils.memcached: ---> Running in 65453a731dc1
+INFO:kolla.common.utils.memcached:Removing intermediate container 65453a731dc1
+INFO:kolla.common.utils.memcached: ---> 4988da29ebe7
+INFO:kolla.common.utils.memcached:Successfully built 4988da29ebe7
+INFO:kolla.common.utils.memcached:Successfully tagged s390x/debian-source-memcached:9.1.0
+INFO:kolla.common.utils.memcached:Built at 2020-03-02 21:30:56.730195 (took 0:00:10.347113)

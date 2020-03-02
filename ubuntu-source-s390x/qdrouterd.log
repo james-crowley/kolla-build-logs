@@ -1,0 +1,45 @@
+INFO:kolla.common.utils.qdrouterd:Building started at 2020-03-02 21:48:31.511260
+INFO:kolla.common.utils.qdrouterd:Step 1/9 : FROM s390x/ubuntu-source-base:9.1.0
+INFO:kolla.common.utils.qdrouterd: ---> 96ede3560f2f
+INFO:kolla.common.utils.qdrouterd:Step 2/9 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="qdrouterd" build-date="20200302"
+INFO:kolla.common.utils.qdrouterd: ---> Running in 08a9e628f027
+INFO:kolla.common.utils.qdrouterd:Removing intermediate container 08a9e628f027
+INFO:kolla.common.utils.qdrouterd: ---> 0b94764ceef3
+INFO:kolla.common.utils.qdrouterd:Step 3/9 : RUN usermod --append --home /var/lib/qdrouterd --groups kolla qdrouterd     && mkdir -p /var/lib/qdrouterd     && chown -R 42465:42465 /var/lib/qdrouterd
+INFO:kolla.common.utils.qdrouterd: ---> Running in a7b16ac5d250
+INFO:kolla.common.utils.qdrouterd:Removing intermediate container a7b16ac5d250
+INFO:kolla.common.utils.qdrouterd: ---> c2121d66d312
+INFO:kolla.common.utils.qdrouterd:Step 4/9 : RUN echo "deb http://ppa.launchpad.net/qpid/released/ubuntu/ bionic main" >/etc/apt/sources.list.d/qdrouterd.list
+INFO:kolla.common.utils.qdrouterd: ---> Running in 473130d72e59
+INFO:kolla.common.utils.qdrouterd:Removing intermediate container 473130d72e59
+INFO:kolla.common.utils.qdrouterd: ---> db4af7c1c361
+INFO:kolla.common.utils.qdrouterd:Step 5/9 : RUN apt-get update && apt-get -y install --no-install-recommends sasl2-bin libpython2.7 qdrouterd qdmanage qdstat && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.qdrouterd: ---> Running in daadbed95e1d
+INFO:kolla.common.utils.qdrouterd:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.qdrouterd:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.qdrouterd:Get:3 http://ppa.launchpad.net/qpid/released/ubuntu bionic InRelease [15.9 kB]
+INFO:kolla.common.utils.qdrouterd:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.qdrouterd:Get:5 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.qdrouterd:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.qdrouterd:Get:7 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.qdrouterd:Get:8 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.qdrouterd:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.qdrouterd:Get:10 http://ppa.launchpad.net/qpid/released/ubuntu bionic/main s390x Packages [2,500 B]
+INFO:kolla.common.utils.qdrouterd:Get:11 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.qdrouterd:Get:12 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.qdrouterd:Get:13 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.qdrouterd:Get:14 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.qdrouterd:Get:15 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.qdrouterd:Get:16 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.qdrouterd:Get:17 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.qdrouterd:Get:18 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.qdrouterd:Fetched 15.6 MB in 3s (6,050 kB/s)
+INFO:kolla.common.utils.qdrouterd:Reading package lists...
+INFO:kolla.common.utils.qdrouterd:Reading package lists...
+INFO:kolla.common.utils.qdrouterd:Building dependency tree...
+INFO:kolla.common.utils.qdrouterd:Reading state information...
+INFO:kolla.common.utils.qdrouterd:[91mE: Unable to locate package qdrouterd
+INFO:kolla.common.utils.qdrouterd:[0m
+INFO:kolla.common.utils.qdrouterd:Removing intermediate container daadbed95e1d
+ERROR:kolla.common.utils.qdrouterd:Error'd with the following message
+ERROR:kolla.common.utils.qdrouterd:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends sasl2-bin libpython2.7 qdrouterd qdmanage qdstat && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

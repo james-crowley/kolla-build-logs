@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.kuryr-base:Building started at 2020-03-02 21:41:53.831533
+INFO:kolla.common.utils.kuryr-base:Step 1/6 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.kuryr-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.kuryr-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="kuryr-base" build-date="20200302"
+INFO:kolla.common.utils.kuryr-base: ---> Running in 9d842826cbad
+INFO:kolla.common.utils.kuryr-base:Removing intermediate container 9d842826cbad
+INFO:kolla.common.utils.kuryr-base: ---> 7822d6e27c57
+INFO:kolla.common.utils.kuryr-base:Step 3/6 : RUN usermod --append --home /var/lib/kuryr --groups kolla kuryr     && mkdir -p /var/lib/kuryr     && chown -R 42469:42469 /var/lib/kuryr
+INFO:kolla.common.utils.kuryr-base: ---> Running in 40123488311e
+INFO:kolla.common.utils.kuryr-base:Removing intermediate container 40123488311e
+INFO:kolla.common.utils.kuryr-base: ---> 504fe7522a93
+INFO:kolla.common.utils.kuryr-base:Step 4/6 : RUN echo 'binary not yet available for ubuntu'     && /bin/false
+INFO:kolla.common.utils.kuryr-base: ---> Running in 2862d818dbcd
+INFO:kolla.common.utils.kuryr-base:binary not yet available for ubuntu
+INFO:kolla.common.utils.kuryr-base:Removing intermediate container 2862d818dbcd
+ERROR:kolla.common.utils.kuryr-base:Error'd with the following message
+ERROR:kolla.common.utils.kuryr-base:The command '/bin/sh -c echo 'binary not yet available for ubuntu'     && /bin/false' returned a non-zero code: 1

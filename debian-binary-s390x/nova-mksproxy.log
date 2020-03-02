@@ -1,0 +1,13 @@
+INFO:kolla.common.utils.nova-mksproxy:Building started at 2020-03-02 21:27:36.327328
+INFO:kolla.common.utils.nova-mksproxy:Step 1/4 : FROM s390x/debian-binary-nova-base:9.1.0
+INFO:kolla.common.utils.nova-mksproxy: ---> 5bbc1e433571
+INFO:kolla.common.utils.nova-mksproxy:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="nova-mksproxy" build-date="20200302"
+INFO:kolla.common.utils.nova-mksproxy: ---> Running in b1e95e3268a4
+INFO:kolla.common.utils.nova-mksproxy:Removing intermediate container b1e95e3268a4
+INFO:kolla.common.utils.nova-mksproxy: ---> 968a7082b790
+INFO:kolla.common.utils.nova-mksproxy:Step 3/4 : RUN echo 'binary not yet available for debian' && /bin/false
+INFO:kolla.common.utils.nova-mksproxy: ---> Running in fc9bfc56b0f1
+INFO:kolla.common.utils.nova-mksproxy:binary not yet available for debian
+INFO:kolla.common.utils.nova-mksproxy:Removing intermediate container fc9bfc56b0f1
+ERROR:kolla.common.utils.nova-mksproxy:Error'd with the following message
+ERROR:kolla.common.utils.nova-mksproxy:The command '/bin/sh -c echo 'binary not yet available for debian' && /bin/false' returned a non-zero code: 1

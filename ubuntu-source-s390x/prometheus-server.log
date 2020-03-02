@@ -1,0 +1,25 @@
+INFO:kolla.common.utils.prometheus-server:Building started at 2020-03-02 21:50:54.280790
+INFO:kolla.common.utils.prometheus-server:Step 1/5 : FROM s390x/ubuntu-source-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-server: ---> 91d5cbd16b50
+INFO:kolla.common.utils.prometheus-server:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-server" build-date="20200302"
+INFO:kolla.common.utils.prometheus-server: ---> Running in 4c8074cbbeca
+INFO:kolla.common.utils.prometheus-server:Removing intermediate container 4c8074cbbeca
+INFO:kolla.common.utils.prometheus-server: ---> 45c31b347821
+INFO:kolla.common.utils.prometheus-server:Step 3/5 : ENV prometheus_version=1.8.2
+INFO:kolla.common.utils.prometheus-server: ---> Running in d6d9939ee47a
+INFO:kolla.common.utils.prometheus-server:Removing intermediate container d6d9939ee47a
+INFO:kolla.common.utils.prometheus-server: ---> 76e460a2f632
+INFO:kolla.common.utils.prometheus-server:Step 4/5 : RUN curl -sSL -o /tmp/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v${prometheus_version}/prometheus-${prometheus_version}.linux-s390x.tar.gz     && tar xvf /tmp/prometheus.tar.gz -C /opt/     && rm -f /tmp/prometheus.tar.gz     && ln -s /opt/prometheus* /opt/prometheus     && mkdir -p /etc/prometheus /data
+INFO:kolla.common.utils.prometheus-server: ---> Running in 92483c77b87c
+INFO:kolla.common.utils.prometheus-server:curl (https://github.com/prometheus/prometheus/releases/download/v1.8.2/prometheus-1.8.2.linux-s390x.tar.gz): response: 404, time: 0.263448, size: 9
+INFO:kolla.common.utils.prometheus-server:[91mtar: This does not look like a tar archive
+INFO:kolla.common.utils.prometheus-server:[0m
+INFO:kolla.common.utils.prometheus-server:[91m
+INFO:kolla.common.utils.prometheus-server:gzip: stdin: not in gzip format
+INFO:kolla.common.utils.prometheus-server:[0m
+INFO:kolla.common.utils.prometheus-server:[91mtar: Child returned status 1
+INFO:kolla.common.utils.prometheus-server:tar: Error is not recoverable: exiting now
+INFO:kolla.common.utils.prometheus-server:[0m
+INFO:kolla.common.utils.prometheus-server:Removing intermediate container 92483c77b87c
+ERROR:kolla.common.utils.prometheus-server:Error'd with the following message
+ERROR:kolla.common.utils.prometheus-server:The command '/bin/sh -c curl -sSL -o /tmp/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v${prometheus_version}/prometheus-${prometheus_version}.linux-s390x.tar.gz     && tar xvf /tmp/prometheus.tar.gz -C /opt/     && rm -f /tmp/prometheus.tar.gz     && ln -s /opt/prometheus* /opt/prometheus     && mkdir -p /etc/prometheus /data' returned a non-zero code: 2

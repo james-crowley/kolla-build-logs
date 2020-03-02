@@ -1,0 +1,278 @@
+INFO:kolla.common.utils:=========================                                                                                                                                                     [224/1883]
+INFO:kolla.common.utils:Successfully built images
+INFO:kolla.common.utils:=========================
+INFO:kolla.common.utils:base
+INFO:kolla.common.utils:certmonger
+INFO:kolla.common.utils:chrony
+INFO:kolla.common.utils:cron
+INFO:kolla.common.utils:dnsmasq
+INFO:kolla.common.utils:elasticsearch-curator
+INFO:kolla.common.utils:etcd
+INFO:kolla.common.utils:fluentd
+INFO:kolla.common.utils:hacluster-base
+INFO:kolla.common.utils:hacluster-corosync
+INFO:kolla.common.utils:hacluster-pacemaker
+INFO:kolla.common.utils:hacluster-pacemaker-remote
+INFO:kolla.common.utils:hacluster-pcs
+INFO:kolla.common.utils:haproxy
+INFO:kolla.common.utils:iscsid
+INFO:kolla.common.utils:kafka
+INFO:kolla.common.utils:keepalived
+INFO:kolla.common.utils:kibana
+INFO:kolla.common.utils:kolla-toolbox
+INFO:kolla.common.utils:logstash
+INFO:kolla.common.utils:memcached
+INFO:kolla.common.utils:monasca-thresh
+INFO:kolla.common.utils:mongodb
+INFO:kolla.common.utils:multipathd
+INFO:kolla.common.utils:opendaylight
+INFO:kolla.common.utils:openvswitch-base
+INFO:kolla.common.utils:openvswitch-db-server
+INFO:kolla.common.utils:openvswitch-netcontrold
+INFO:kolla.common.utils:openvswitch-vswitchd
+INFO:kolla.common.utils:ovn-base
+INFO:kolla.common.utils:ovn-controller
+INFO:kolla.common.utils:ovn-nb-db-server
+INFO:kolla.common.utils:ovn-northd
+INFO:kolla.common.utils:ovn-sb-db-server
+INFO:kolla.common.utils:prometheus-base
+INFO:kolla.common.utils:prometheus-cadvisor
+INFO:kolla.common.utils:prometheus-haproxy-exporter
+INFO:kolla.common.utils:prometheus-memcached-exporter
+INFO:kolla.common.utils:prometheus-node-exporter
+INFO:kolla.common.utils:ptp
+INFO:kolla.common.utils:radvd
+INFO:kolla.common.utils:redis
+INFO:kolla.common.utils:redis-base
+INFO:kolla.common.utils:redis-sentinel
+INFO:kolla.common.utils:rsyslog
+INFO:kolla.common.utils:rsyslog-base
+INFO:kolla.common.utils:storm
+INFO:kolla.common.utils:tgtd
+INFO:kolla.common.utils:zookeeper
+INFO:kolla.common.utils:===========================
+INFO:kolla.common.utils:Images that failed to build
+INFO:kolla.common.utils:===========================
+ERROR:kolla.common.utils:aodh-api Failed with status: matched
+ERROR:kolla.common.utils:aodh-base Failed with status: matched
+ERROR:kolla.common.utils:aodh-evaluator Failed with status: matched
+ERROR:kolla.common.utils:aodh-expirer Failed with status: matched
+ERROR:kolla.common.utils:aodh-listener Failed with status: matched
+ERROR:kolla.common.utils:aodh-notifier Failed with status: matched
+ERROR:kolla.common.utils:barbican-api Failed with status: matched
+ERROR:kolla.common.utils:barbican-base Failed with status: matched
+ERROR:kolla.common.utils:barbican-keystone-listener Failed with status: matched
+ERROR:kolla.common.utils:barbican-worker Failed with status: matched
+ERROR:kolla.common.utils:bifrost-base Failed with status: matched
+ERROR:kolla.common.utils:bifrost-deploy Failed with status: matched
+ERROR:kolla.common.utils:blazar-api Failed with status: matched
+ERROR:kolla.common.utils:blazar-base Failed with status: matched
+ERROR:kolla.common.utils:blazar-manager Failed with status: matched
+ERROR:kolla.common.utils:ceilometer-base Failed with status: matched
+ERROR:kolla.common.utils:ceilometer-central Failed with status: matched
+ERROR:kolla.common.utils:ceilometer-compute Failed with status: matched
+ERROR:kolla.common.utils:ceilometer-ipmi Failed with status: matched
+ERROR:kolla.common.utils:ceilometer-notification Failed with status: matched
+ERROR:kolla.common.utils:cinder-api Failed with status: matched
+ERROR:kolla.common.utils:cinder-backup Failed with status: matched
+ERROR:kolla.common.utils:cinder-base Failed with status: matched
+ERROR:kolla.common.utils:cinder-scheduler Failed with status: matched
+ERROR:kolla.common.utils:cinder-volume Failed with status: matched
+ERROR:kolla.common.utils:cloudkitty-api Failed with status: matched
+ERROR:kolla.common.utils:cloudkitty-base Failed with status: matched
+ERROR:kolla.common.utils:cloudkitty-processor Failed with status: matched
+ERROR:kolla.common.utils:collectd Failed with status: matched
+ERROR:kolla.common.utils:congress-api Failed with status: matched
+ERROR:kolla.common.utils:congress-base Failed with status: matched
+ERROR:kolla.common.utils:congress-datasource Failed with status: matched
+ERROR:kolla.common.utils:congress-policy-engine Failed with status: matched
+ERROR:kolla.common.utils:cyborg-agent Failed with status: matched
+ERROR:kolla.common.utils:cyborg-api Failed with status: matched
+ERROR:kolla.common.utils:cyborg-base Failed with status: matched
+ERROR:kolla.common.utils:cyborg-conductor Failed with status: matched
+ERROR:kolla.common.utils:designate-api Failed with status: matched
+ERROR:kolla.common.utils:designate-backend-bind9 Failed with status: matched
+ERROR:kolla.common.utils:designate-base Failed with status: matched
+ERROR:kolla.common.utils:designate-central Failed with status: matched
+ERROR:kolla.common.utils:designate-mdns Failed with status: matched
+ERROR:kolla.common.utils:designate-producer Failed with status: matched
+ERROR:kolla.common.utils:designate-sink Failed with status: matched
+ERROR:kolla.common.utils:designate-worker Failed with status: matched
+ERROR:kolla.common.utils:ec2-api Failed with status: matched
+ERROR:kolla.common.utils:elasticsearch Failed with status: error
+ERROR:kolla.common.utils:freezer-api Failed with status: matched
+ERROR:kolla.common.utils:freezer-base Failed with status: matched
+ERROR:kolla.common.utils:freezer-scheduler Failed with status: matched
+ERROR:kolla.common.utils:glance-api Failed with status: matched
+ERROR:kolla.common.utils:glance-base Failed with status: matched
+ERROR:kolla.common.utils:glance-registry Failed with status: matched                                                                                                                                  
+ERROR:kolla.common.utils:gnocchi-api Failed with status: matched
+ERROR:kolla.common.utils:gnocchi-base Failed with status: matched
+ERROR:kolla.common.utils:gnocchi-metricd Failed with status: matched
+ERROR:kolla.common.utils:gnocchi-statsd Failed with status: matched
+ERROR:kolla.common.utils:grafana Failed with status: error
+ERROR:kolla.common.utils:heat-all Failed with status: matched
+ERROR:kolla.common.utils:heat-api Failed with status: matched
+ERROR:kolla.common.utils:heat-api-cfn Failed with status: matched
+ERROR:kolla.common.utils:heat-base Failed with status: matched
+ERROR:kolla.common.utils:heat-engine Failed with status: matched
+ERROR:kolla.common.utils:horizon Failed with status: matched
+ERROR:kolla.common.utils:influxdb Failed with status: error
+ERROR:kolla.common.utils:ironic-api Failed with status: matched
+ERROR:kolla.common.utils:ironic-base Failed with status: matched
+ERROR:kolla.common.utils:ironic-conductor Failed with status: matched
+ERROR:kolla.common.utils:ironic-inspector Failed with status: matched
+ERROR:kolla.common.utils:ironic-neutron-agent Failed with status: matched
+ERROR:kolla.common.utils:ironic-pxe Failed with status: matched
+ERROR:kolla.common.utils:karbor-api Failed with status: matched
+ERROR:kolla.common.utils:karbor-base Failed with status: matched
+ERROR:kolla.common.utils:karbor-operationengine Failed with status: matched
+ERROR:kolla.common.utils:karbor-protection Failed with status: matched
+ERROR:kolla.common.utils:keystone Failed with status: matched
+ERROR:kolla.common.utils:keystone-base Failed with status: matched
+ERROR:kolla.common.utils:keystone-fernet Failed with status: matched
+ERROR:kolla.common.utils:keystone-ssh Failed with status: matched
+ERROR:kolla.common.utils:kuryr-base Failed with status: matched
+ERROR:kolla.common.utils:kuryr-libnetwork Failed with status: matched
+ERROR:kolla.common.utils:magnum-api Failed with status: matched
+ERROR:kolla.common.utils:magnum-base Failed with status: matched
+ERROR:kolla.common.utils:magnum-conductor Failed with status: matched
+ERROR:kolla.common.utils:manila-api Failed with status: matched
+ERROR:kolla.common.utils:manila-base Failed with status: matched
+ERROR:kolla.common.utils:manila-data Failed with status: matched
+ERROR:kolla.common.utils:manila-scheduler Failed with status: matched
+ERROR:kolla.common.utils:manila-share Failed with status: matched
+ERROR:kolla.common.utils:mariadb Failed with status: error
+ERROR:kolla.common.utils:masakari-api Failed with status: matched
+ERROR:kolla.common.utils:masakari-base Failed with status: matched
+ERROR:kolla.common.utils:masakari-engine Failed with status: matched
+ERROR:kolla.common.utils:masakari-monitors Failed with status: matched
+ERROR:kolla.common.utils:mistral-api Failed with status: matched
+ERROR:kolla.common.utils:mistral-base Failed with status: matched
+ERROR:kolla.common.utils:mistral-engine Failed with status: matched
+ERROR:kolla.common.utils:mistral-event-engine Failed with status: matched
+ERROR:kolla.common.utils:mistral-executor Failed with status: matched
+ERROR:kolla.common.utils:monasca-agent Failed with status: matched
+ERROR:kolla.common.utils:monasca-api Failed with status: matched
+ERROR:kolla.common.utils:monasca-base Failed with status: matched
+ERROR:kolla.common.utils:monasca-grafana Failed with status: error
+ERROR:kolla.common.utils:monasca-log-api Failed with status: matched
+ERROR:kolla.common.utils:monasca-notification Failed with status: matched
+ERROR:kolla.common.utils:monasca-persister Failed with status: matched
+ERROR:kolla.common.utils:murano-api Failed with status: matched
+ERROR:kolla.common.utils:murano-base Failed with status: matched                                                                                                                                       [62/1883]
+ERROR:kolla.common.utils:murano-engine Failed with status: matched
+ERROR:kolla.common.utils:neutron-base Failed with status: matched
+ERROR:kolla.common.utils:neutron-bgp-dragent Failed with status: matched
+ERROR:kolla.common.utils:neutron-dhcp-agent Failed with status: matched
+ERROR:kolla.common.utils:neutron-infoblox-ipam-agent Failed with status: matched
+ERROR:kolla.common.utils:neutron-l3-agent Failed with status: matched
+ERROR:kolla.common.utils:neutron-linuxbridge-agent Failed with status: matched
+ERROR:kolla.common.utils:neutron-metadata-agent Failed with status: matched
+ERROR:kolla.common.utils:neutron-metadata-agent-ovn Failed with status: matched
+ERROR:kolla.common.utils:neutron-metering-agent Failed with status: matched
+ERROR:kolla.common.utils:neutron-mlnx-agent Failed with status: matched
+ERROR:kolla.common.utils:neutron-openvswitch-agent Failed with status: matched
+ERROR:kolla.common.utils:neutron-server Failed with status: matched
+ERROR:kolla.common.utils:neutron-server-opendaylight Failed with status: matched
+ERROR:kolla.common.utils:neutron-server-ovn Failed with status: matched
+ERROR:kolla.common.utils:neutron-sriov-agent Failed with status: matched
+ERROR:kolla.common.utils:nova-api Failed with status: matched
+ERROR:kolla.common.utils:nova-base Failed with status: matched
+ERROR:kolla.common.utils:nova-compute Failed with status: matched
+ERROR:kolla.common.utils:nova-compute-ironic Failed with status: matched
+ERROR:kolla.common.utils:nova-conductor Failed with status: matched
+ERROR:kolla.common.utils:nova-libvirt Failed with status: error
+ERROR:kolla.common.utils:nova-mksproxy Failed with status: matched
+ERROR:kolla.common.utils:nova-novncproxy Failed with status: matched
+ERROR:kolla.common.utils:nova-scheduler Failed with status: matched
+ERROR:kolla.common.utils:nova-serialproxy Failed with status: matched
+ERROR:kolla.common.utils:nova-spicehtml5proxy Failed with status: matched
+ERROR:kolla.common.utils:nova-ssh Failed with status: matched
+ERROR:kolla.common.utils:novajoin-base Failed with status: matched
+ERROR:kolla.common.utils:novajoin-notifier Failed with status: matched
+ERROR:kolla.common.utils:novajoin-server Failed with status: matched
+ERROR:kolla.common.utils:octavia-api Failed with status: matched
+ERROR:kolla.common.utils:octavia-base Failed with status: matched
+ERROR:kolla.common.utils:octavia-health-manager Failed with status: matched
+ERROR:kolla.common.utils:octavia-housekeeping Failed with status: matched
+ERROR:kolla.common.utils:octavia-worker Failed with status: matched
+ERROR:kolla.common.utils:openstack-base Failed with status: error
+ERROR:kolla.common.utils:ovsdpdk Failed with status: error
+ERROR:kolla.common.utils:ovsdpdk-db Failed with status: matched
+ERROR:kolla.common.utils:ovsdpdk-vswitchd Failed with status: matched
+ERROR:kolla.common.utils:panko-api Failed with status: matched
+ERROR:kolla.common.utils:panko-base Failed with status: matched
+ERROR:kolla.common.utils:placement-api Failed with status: matched
+ERROR:kolla.common.utils:placement-base Failed with status: matched
+ERROR:kolla.common.utils:prometheus-alertmanager Failed with status: error
+ERROR:kolla.common.utils:prometheus-blackbox-exporter Failed with status: error
+ERROR:kolla.common.utils:prometheus-elasticsearch-exporter Failed with status: error
+ERROR:kolla.common.utils:prometheus-mtail Failed with status: error
+ERROR:kolla.common.utils:prometheus-mysqld-exporter Failed with status: error
+ERROR:kolla.common.utils:prometheus-openstack-exporter Failed with status: error
+ERROR:kolla.common.utils:prometheus-server Failed with status: error
+ERROR:kolla.common.utils:qdrouterd Failed with status: error
+ERROR:kolla.common.utils:qinling-api Failed with status: matched
+ERROR:kolla.common.utils:qinling-base Failed with status: matched
+ERROR:kolla.common.utils:qinling-engine Failed with status: matched                                                                                                                                     [7/1883]
+ERROR:kolla.common.utils:rabbitmq Failed with status: error
+ERROR:kolla.common.utils:rally Failed with status: matched
+ERROR:kolla.common.utils:sahara-api Failed with status: matched
+ERROR:kolla.common.utils:sahara-base Failed with status: matched
+ERROR:kolla.common.utils:sahara-engine Failed with status: matched
+ERROR:kolla.common.utils:searchlight-api Failed with status: matched
+ERROR:kolla.common.utils:searchlight-base Failed with status: matched
+ERROR:kolla.common.utils:searchlight-listener Failed with status: matched
+ERROR:kolla.common.utils:senlin-api Failed with status: matched
+ERROR:kolla.common.utils:senlin-base Failed with status: matched
+ERROR:kolla.common.utils:senlin-conductor Failed with status: matched
+ERROR:kolla.common.utils:senlin-engine Failed with status: matched
+ERROR:kolla.common.utils:senlin-health-manager Failed with status: matched
+ERROR:kolla.common.utils:sensu-api Failed with status: matched
+ERROR:kolla.common.utils:sensu-base Failed with status: error
+ERROR:kolla.common.utils:sensu-client Failed with status: matched
+ERROR:kolla.common.utils:sensu-server Failed with status: matched
+ERROR:kolla.common.utils:skydive-agent Failed with status: matched
+ERROR:kolla.common.utils:skydive-analyzer Failed with status: matched
+ERROR:kolla.common.utils:skydive-base Failed with status: error
+ERROR:kolla.common.utils:solum-api Failed with status: matched
+ERROR:kolla.common.utils:solum-base Failed with status: matched
+ERROR:kolla.common.utils:solum-conductor Failed with status: matched
+ERROR:kolla.common.utils:solum-deployer Failed with status: matched
+ERROR:kolla.common.utils:solum-worker Failed with status: matched
+ERROR:kolla.common.utils:swift-account Failed with status: matched
+ERROR:kolla.common.utils:swift-base Failed with status: matched
+ERROR:kolla.common.utils:swift-container Failed with status: matched
+ERROR:kolla.common.utils:swift-object Failed with status: matched
+ERROR:kolla.common.utils:swift-object-expirer Failed with status: matched
+ERROR:kolla.common.utils:swift-proxy-server Failed with status: matched
+ERROR:kolla.common.utils:swift-rsyncd Failed with status: matched
+ERROR:kolla.common.utils:tacker-base Failed with status: matched
+ERROR:kolla.common.utils:tacker-conductor Failed with status: matched
+ERROR:kolla.common.utils:tacker-server Failed with status: matched
+ERROR:kolla.common.utils:telegraf Failed with status: error
+ERROR:kolla.common.utils:tempest Failed with status: matched
+ERROR:kolla.common.utils:tripleoclient Failed with status: error
+ERROR:kolla.common.utils:trove-api Failed with status: matched
+ERROR:kolla.common.utils:trove-base Failed with status: matched
+ERROR:kolla.common.utils:trove-conductor Failed with status: matched
+ERROR:kolla.common.utils:trove-guestagent Failed with status: matched
+ERROR:kolla.common.utils:trove-taskmanager Failed with status: matched
+ERROR:kolla.common.utils:vitrage-api Failed with status: matched
+ERROR:kolla.common.utils:vitrage-base Failed with status: matched
+ERROR:kolla.common.utils:vitrage-graph Failed with status: matched
+ERROR:kolla.common.utils:vitrage-ml Failed with status: matched
+ERROR:kolla.common.utils:vitrage-notifier Failed with status: matched
+ERROR:kolla.common.utils:vmtp Failed with status: matched
+ERROR:kolla.common.utils:watcher-api Failed with status: matched
+ERROR:kolla.common.utils:watcher-applier Failed with status: matched
+ERROR:kolla.common.utils:watcher-base Failed with status: matched
+ERROR:kolla.common.utils:watcher-engine Failed with status: matched
+ERROR:kolla.common.utils:zaqar-base Failed with status: matched
+ERROR:kolla.common.utils:zaqar-server Failed with status: matched
+ERROR:kolla.common.utils:zaqar-wsgi Failed with status: matched
+ERROR:kolla.common.utils:zun-api Failed with status: matched
+ERROR:kolla.common.utils:zun-base Failed with status: matched
+ERROR:kolla.common.utils:zun-compute Failed with status: matched
+ERROR:kolla.common.utils:zun-wsproxy Failed with status: matched

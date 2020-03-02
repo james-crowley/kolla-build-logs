@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.grafana:Building started at 2020-03-02 21:31:49.341433
+INFO:kolla.common.utils.grafana:Step 1/12 : FROM s390x/debian-source-base:9.1.0
+INFO:kolla.common.utils.grafana: ---> 80efb5983713
+INFO:kolla.common.utils.grafana:Step 2/12 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="grafana" build-date="20200302"
+INFO:kolla.common.utils.grafana: ---> Running in fc54a3875621
+INFO:kolla.common.utils.grafana:Removing intermediate container fc54a3875621
+INFO:kolla.common.utils.grafana: ---> 65f8942ccf28
+INFO:kolla.common.utils.grafana:Step 3/12 : RUN echo "deb https://packages.grafana.com/oss/deb stable main" >/etc/apt/sources.list.d/grafana.list
+INFO:kolla.common.utils.grafana: ---> Running in 10e12eb885e1
+INFO:kolla.common.utils.grafana:Removing intermediate container 10e12eb885e1
+INFO:kolla.common.utils.grafana: ---> 7ff1b4f7a623
+INFO:kolla.common.utils.grafana:Step 4/12 : RUN echo 'There are no Grafana external repositories for s390x'     && /bin/false
+INFO:kolla.common.utils.grafana: ---> Running in 162497e74015
+INFO:kolla.common.utils.grafana:There are no Grafana external repositories for s390x
+INFO:kolla.common.utils.grafana:Removing intermediate container 162497e74015
+ERROR:kolla.common.utils.grafana:Error'd with the following message
+ERROR:kolla.common.utils.grafana:The command '/bin/sh -c echo 'There are no Grafana external repositories for s390x'     && /bin/false' returned a non-zero code: 1

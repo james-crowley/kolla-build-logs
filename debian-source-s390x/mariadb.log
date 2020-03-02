@@ -1,0 +1,228 @@
+INFO:kolla.common.utils.mariadb:Building started at 2020-03-02 21:32:25.844414
+INFO:kolla.common.utils.mariadb:Step 1/16 : FROM s390x/debian-source-base:9.1.0
+INFO:kolla.common.utils.mariadb: ---> 80efb5983713
+INFO:kolla.common.utils.mariadb:Step 2/16 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="mariadb" build-date="20200302"
+INFO:kolla.common.utils.mariadb: ---> Running in 0a426cac50be
+INFO:kolla.common.utils.mariadb:Removing intermediate container 0a426cac50be
+INFO:kolla.common.utils.mariadb: ---> 4996b5800b6d
+INFO:kolla.common.utils.mariadb:Step 3/16 : RUN usermod --append --home /var/lib/mysql --groups kolla mysql     && mkdir -p /var/lib/mysql     && chown -R 42434:42434 /var/lib/mysql
+INFO:kolla.common.utils.mariadb: ---> Running in d79bfe02dff3
+INFO:kolla.common.utils.mariadb:Removing intermediate container d79bfe02dff3
+INFO:kolla.common.utils.mariadb: ---> 455001c5d58a
+INFO:kolla.common.utils.mariadb:Step 4/16 : RUN apt-get update && apt-get -y install --no-install-recommends expect mariadb-backup mariadb-client mariadb-server && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.mariadb: ---> Running in 12d9f7b193b7
+INFO:kolla.common.utils.mariadb:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.mariadb:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.mariadb:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.mariadb:Get:4 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.mariadb:Get:5 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.mariadb:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.mariadb:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.mariadb:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.mariadb:Fetched 8,235 kB in 2s (5,173 kB/s)
+INFO:kolla.common.utils.mariadb:Reading package lists...
+INFO:kolla.common.utils.mariadb:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.mariadb:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.mariadb:[0m
+INFO:kolla.common.utils.mariadb:Reading package lists...
+INFO:kolla.common.utils.mariadb:Building dependency tree...
+INFO:kolla.common.utils.mariadb:Reading state information...
+INFO:kolla.common.utils.mariadb:The following additional packages will be installed:
+INFO:kolla.common.utils.mariadb:  galera-3 libatomic1 libconfig-inifiles-perl libdbi-perl libpopt0
+INFO:kolla.common.utils.mariadb:  libsnappy1v5 libtcl8.6 lsof mariadb-client-10.3 mariadb-client-core-10.3
+INFO:kolla.common.utils.mariadb:  mariadb-common mariadb-server-10.3 mariadb-server-core-10.3 mysql-common
+INFO:kolla.common.utils.mariadb:  psmisc rsync tcl-expect tcl8.6
+INFO:kolla.common.utils.mariadb:Suggested packages:
+INFO:kolla.common.utils.mariadb:  tk8.6 libclone-perl libmldbm-perl libnet-daemon-perl libsql-statement-perl
+INFO:kolla.common.utils.mariadb:  mailx mariadb-test netcat-openbsd tinyca openssh-client openssh-server
+INFO:kolla.common.utils.mariadb:  tcl-tclreadline
+INFO:kolla.common.utils.mariadb:Recommended packages:
+INFO:kolla.common.utils.mariadb:  libdbd-mysql-perl libterm-readkey-perl libhtml-template-perl
+INFO:kolla.common.utils.mariadb:The following NEW packages will be installed:
+INFO:kolla.common.utils.mariadb:  expect galera-3 libatomic1 libconfig-inifiles-perl libdbi-perl libpopt0
+INFO:kolla.common.utils.mariadb:  libsnappy1v5 libtcl8.6 lsof mariadb-backup mariadb-client
+INFO:kolla.common.utils.mariadb:  mariadb-client-10.3 mariadb-client-core-10.3 mariadb-common mariadb-server
+INFO:kolla.common.utils.mariadb:  mariadb-server-10.3 mariadb-server-core-10.3 mysql-common psmisc rsync
+INFO:kolla.common.utils.mariadb:  tcl-expect tcl8.6
+INFO:kolla.common.utils.mariadb:0 upgraded, 22 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.mariadb:Need to get 25.3 MB of archives.
+INFO:kolla.common.utils.mariadb:After this operation, 200 MB of additional disk space will be used.
+INFO:kolla.common.utils.mariadb:Get:1 http://deb.debian.org/debian buster/main s390x mysql-common all 5.8+1.0.5 [7,324 B]
+INFO:kolla.common.utils.mariadb:Get:2 http://deb.debian.org/debian buster/main s390x mariadb-common all 1:10.3.22-0+deb10u1 [31.9 kB]
+INFO:kolla.common.utils.mariadb:Get:3 http://deb.debian.org/debian buster/main s390x libatomic1 s390x 8.3.0-6 [8,184 B]
+INFO:kolla.common.utils.mariadb:Get:4 http://deb.debian.org/debian buster/main s390x galera-3 s390x 25.3.25-2 [784 kB]
+INFO:kolla.common.utils.mariadb:Get:5 http://deb.debian.org/debian buster/main s390x libdbi-perl s390x 1.642-1+b1 [769 kB]
+INFO:kolla.common.utils.mariadb:Get:6 http://deb.debian.org/debian buster/main s390x lsof s390x 4.91+dfsg-1 [316 kB]
+INFO:kolla.common.utils.mariadb:Get:7 http://deb.debian.org/debian buster/main s390x libconfig-inifiles-perl all 3.000001-1 [51.9 kB]
+INFO:kolla.common.utils.mariadb:Get:8 http://deb.debian.org/debian buster/main s390x libsnappy1v5 s390x 1.1.7-1 [16.9 kB]
+INFO:kolla.common.utils.mariadb:Get:9 http://deb.debian.org/debian buster/main s390x mariadb-client-core-10.3 s390x 1:10.3.22-0+deb10u1 [5,565 kB]
+INFO:kolla.common.utils.mariadb:Get:10 http://deb.debian.org/debian buster/main s390x mariadb-client-10.3 s390x 1:10.3.22-0+deb10u1 [1,143 kB]
+INFO:kolla.common.utils.mariadb:Get:11 http://deb.debian.org/debian buster/main s390x mariadb-server-core-10.3 s390x 1:10.3.22-0+deb10u1 [5,622 kB]
+INFO:kolla.common.utils.mariadb:Get:12 http://deb.debian.org/debian buster/main s390x psmisc s390x 23.2-1 [121 kB]
+INFO:kolla.common.utils.mariadb:Get:13 http://deb.debian.org/debian buster/main s390x libpopt0 s390x 1.16-12 [47.7 kB]
+INFO:kolla.common.utils.mariadb:Get:14 http://deb.debian.org/debian buster/main s390x rsync s390x 3.1.3-6 [385 kB]
+INFO:kolla.common.utils.mariadb:Get:15 http://deb.debian.org/debian buster/main s390x mariadb-server-10.3 s390x 1:10.3.22-0+deb10u1 [4,082 kB]
+INFO:kolla.common.utils.mariadb:Get:16 http://deb.debian.org/debian buster/main s390x libtcl8.6 s390x 8.6.9+dfsg-2 [935 kB]
+INFO:kolla.common.utils.mariadb:Get:17 http://deb.debian.org/debian buster/main s390x tcl8.6 s390x 8.6.9+dfsg-2 [123 kB]
+INFO:kolla.common.utils.mariadb:Get:18 http://deb.debian.org/debian buster/main s390x tcl-expect s390x 5.45.4-2 [126 kB]
+INFO:kolla.common.utils.mariadb:Get:19 http://deb.debian.org/debian buster/main s390x expect s390x 5.45.4-2 [166 kB]
+INFO:kolla.common.utils.mariadb:Get:20 http://deb.debian.org/debian buster/main s390x mariadb-backup s390x 1:10.3.22-0+deb10u1 [4,949 kB]
+INFO:kolla.common.utils.mariadb:Get:21 http://deb.debian.org/debian buster/main s390x mariadb-client all 1:10.3.22-0+deb10u1 [30.7 kB]
+INFO:kolla.common.utils.mariadb:Get:22 http://deb.debian.org/debian buster/main s390x mariadb-server all 1:10.3.22-0+deb10u1 [30.8 kB]
+INFO:kolla.common.utils.mariadb:Preconfiguring packages ...
+INFO:kolla.common.utils.mariadb:Fetched 25.3 MB in 1s (45.7 MB/s)
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package mysql-common.
+INFO:kolla.common.utils.mariadb:(Reading database ... 
+INFO:kolla.common.utils.mariadb:(Reading database ... 5%(Reading database ... 10%
+INFO:kolla.common.utils.mariadb:(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.mariadb:(Reading database ... 80%
+INFO:kolla.common.utils.mariadb:(Reading database ... 85%
+INFO:kolla.common.utils.mariadb:(Reading database ... 90%
+INFO:kolla.common.utils.mariadb:(Reading database ... 95%
+INFO:kolla.common.utils.mariadb:(Reading database ... 100%
+INFO:kolla.common.utils.mariadb:(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../00-mysql-common_5.8+1.0.5_all.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking mysql-common (5.8+1.0.5) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package mariadb-common.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../01-mariadb-common_1%3a10.3.22-0+deb10u1_all.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking mariadb-common (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package libatomic1:s390x.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../02-libatomic1_8.3.0-6_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking libatomic1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package galera-3.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../03-galera-3_25.3.25-2_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking galera-3 (25.3.25-2) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package libdbi-perl:s390x.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../04-libdbi-perl_1.642-1+b1_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking libdbi-perl:s390x (1.642-1+b1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package lsof.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../05-lsof_4.91+dfsg-1_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking lsof (4.91+dfsg-1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package libconfig-inifiles-perl.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../06-libconfig-inifiles-perl_3.000001-1_all.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking libconfig-inifiles-perl (3.000001-1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package libsnappy1v5:s390x.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../07-libsnappy1v5_1.1.7-1_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking libsnappy1v5:s390x (1.1.7-1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package mariadb-client-core-10.3.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../08-mariadb-client-core-10.3_1%3a10.3.22-0+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking mariadb-client-core-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package mariadb-client-10.3.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../09-mariadb-client-10.3_1%3a10.3.22-0+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking mariadb-client-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package mariadb-server-core-10.3.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../10-mariadb-server-core-10.3_1%3a10.3.22-0+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking mariadb-server-core-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package psmisc.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../11-psmisc_23.2-1_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking psmisc (23.2-1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package libpopt0:s390x.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../12-libpopt0_1.16-12_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking libpopt0:s390x (1.16-12) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package rsync.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../13-rsync_3.1.3-6_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking rsync (3.1.3-6) ...
+INFO:kolla.common.utils.mariadb:Setting up mysql-common (5.8+1.0.5) ...
+INFO:kolla.common.utils.mariadb:update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+INFO:kolla.common.utils.mariadb:Setting up mariadb-common (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:update-alternatives: using /etc/mysql/mariadb.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package mariadb-server-10.3.
+INFO:kolla.common.utils.mariadb:(Reading database ... 
+INFO:kolla.common.utils.mariadb:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%
+INFO:kolla.common.utils.mariadb:(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.mariadb:(Reading database ... 80%
+INFO:kolla.common.utils.mariadb:(Reading database ... 85%
+INFO:kolla.common.utils.mariadb:(Reading database ... 90%
+INFO:kolla.common.utils.mariadb:(Reading database ... 95%
+INFO:kolla.common.utils.mariadb:(Reading database ... 100%(Reading database ... 12515 files and directories currently installed.)
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../0-mariadb-server-10.3_1%3a10.3.22-0+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking mariadb-server-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package libtcl8.6:s390x.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../1-libtcl8.6_8.6.9+dfsg-2_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking libtcl8.6:s390x (8.6.9+dfsg-2) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package tcl8.6.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../2-tcl8.6_8.6.9+dfsg-2_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking tcl8.6 (8.6.9+dfsg-2) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package tcl-expect:s390x.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../3-tcl-expect_5.45.4-2_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking tcl-expect:s390x (5.45.4-2) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package expect.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../4-expect_5.45.4-2_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking expect (5.45.4-2) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package mariadb-backup.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../5-mariadb-backup_1%3a10.3.22-0+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking mariadb-backup (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package mariadb-client.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../6-mariadb-client_1%3a10.3.22-0+deb10u1_all.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking mariadb-client (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Selecting previously unselected package mariadb-server.
+INFO:kolla.common.utils.mariadb:Preparing to unpack .../7-mariadb-server_1%3a10.3.22-0+deb10u1_all.deb ...
+INFO:kolla.common.utils.mariadb:Unpacking mariadb-server (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Setting up libconfig-inifiles-perl (3.000001-1) ...
+INFO:kolla.common.utils.mariadb:Setting up psmisc (23.2-1) ...
+INFO:kolla.common.utils.mariadb:Setting up libsnappy1v5:s390x (1.1.7-1) ...
+INFO:kolla.common.utils.mariadb:Setting up mariadb-server-core-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Setting up libatomic1:s390x (8.3.0-6) ...
+INFO:kolla.common.utils.mariadb:Setting up libtcl8.6:s390x (8.6.9+dfsg-2) ...
+INFO:kolla.common.utils.mariadb:Setting up lsof (4.91+dfsg-1) ...
+INFO:kolla.common.utils.mariadb:Setting up galera-3 (25.3.25-2) ...
+INFO:kolla.common.utils.mariadb:Setting up mariadb-client-core-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Setting up libdbi-perl:s390x (1.642-1+b1) ...
+INFO:kolla.common.utils.mariadb:Setting up libpopt0:s390x (1.16-12) ...
+INFO:kolla.common.utils.mariadb:Setting up tcl8.6 (8.6.9+dfsg-2) ...
+INFO:kolla.common.utils.mariadb:Setting up tcl-expect:s390x (5.45.4-2) ...
+INFO:kolla.common.utils.mariadb:Setting up mariadb-client-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Setting up mariadb-backup (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Setting up rsync (3.1.3-6) ...
+INFO:kolla.common.utils.mariadb:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.mariadb:invoke-rc.d: policy-rc.d denied execution of restart.
+INFO:kolla.common.utils.mariadb:Setting up mariadb-client (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Setting up expect (5.45.4-2) ...
+INFO:kolla.common.utils.mariadb:Setting up mariadb-server-10.3 (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.mariadb:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.mariadb:Setting up mariadb-server (1:10.3.22-0+deb10u1) ...
+INFO:kolla.common.utils.mariadb:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.mariadb:Removing intermediate container 12d9f7b193b7
+INFO:kolla.common.utils.mariadb: ---> 9f2e917e0cec
+INFO:kolla.common.utils.mariadb:Step 5/16 : COPY mariadb_sudoers /etc/sudoers.d/kolla_mariadb_sudoers
+INFO:kolla.common.utils.mariadb: ---> 597dde35f03c
+INFO:kolla.common.utils.mariadb:Step 6/16 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.mariadb: ---> 2ba751d9ead9
+INFO:kolla.common.utils.mariadb:Step 7/16 : COPY security_reset.expect /usr/local/bin/kolla_security_reset
+INFO:kolla.common.utils.mariadb: ---> 957253ac4741
+INFO:kolla.common.utils.mariadb:Step 8/16 : RUN chmod 755 /usr/local/bin/kolla_extend_start     && chmod 755 /usr/local/bin/kolla_security_reset     && chmod 750 /etc/sudoers.d     && chmod 440 /etc/sudoers.d/kolla_mariadb_sudoers     && rm -rf /var/lib/mysql/*
+INFO:kolla.common.utils.mariadb: ---> Running in a6dd3504f209
+INFO:kolla.common.utils.mariadb:Removing intermediate container a6dd3504f209
+INFO:kolla.common.utils.mariadb: ---> 585cefc3b650
+INFO:kolla.common.utils.mariadb:Step 9/16 : RUN mkdir -p /var/run/mysqld && chown mysql /var/run/mysqld && chmod 755 /var/run/mysqld
+INFO:kolla.common.utils.mariadb: ---> Running in a0c103b80cc2
+INFO:kolla.common.utils.mariadb:Removing intermediate container a0c103b80cc2
+INFO:kolla.common.utils.mariadb: ---> 23c358e8f1ef
+INFO:kolla.common.utils.mariadb:Step 10/16 : COPY backup.sh /usr/local/bin/kolla_mariadb_backup.sh
+INFO:kolla.common.utils.mariadb: ---> 824750300fad
+INFO:kolla.common.utils.mariadb:Step 11/16 : RUN chmod 755 /usr/local/bin/kolla_mariadb_backup.sh
+INFO:kolla.common.utils.mariadb: ---> Running in 51d82cee7fab
+INFO:kolla.common.utils.mariadb:Removing intermediate container 51d82cee7fab
+INFO:kolla.common.utils.mariadb: ---> 771b91459f14
+INFO:kolla.common.utils.mariadb:Step 12/16 : COPY healthcheck_mariadb /usr/local/bin/healthcheck_mariadb
+INFO:kolla.common.utils.mariadb: ---> 6be19b297b6e
+INFO:kolla.common.utils.mariadb:Step 13/16 : RUN chmod 755 /usr/local/bin/healthcheck_mariadb
+INFO:kolla.common.utils.mariadb: ---> Running in 023095d7609a
+INFO:kolla.common.utils.mariadb:Removing intermediate container 023095d7609a
+INFO:kolla.common.utils.mariadb: ---> 9a45448f328b
+INFO:kolla.common.utils.mariadb:Step 14/16 : ENTRYPOINT ["dumb-init", "--"]
+INFO:kolla.common.utils.mariadb: ---> Running in 0285ace6a4e5
+INFO:kolla.common.utils.mariadb:Removing intermediate container 0285ace6a4e5
+INFO:kolla.common.utils.mariadb: ---> d1ec23fdd924
+INFO:kolla.common.utils.mariadb:Step 15/16 : CMD ["kolla_start"]
+INFO:kolla.common.utils.mariadb: ---> Running in ccf45fd1e7df
+INFO:kolla.common.utils.mariadb:Removing intermediate container ccf45fd1e7df
+INFO:kolla.common.utils.mariadb: ---> f1b0c737c34f
+INFO:kolla.common.utils.mariadb:Step 16/16 : USER mysql
+INFO:kolla.common.utils.mariadb: ---> Running in 348a9452a549
+INFO:kolla.common.utils.mariadb:Removing intermediate container 348a9452a549
+INFO:kolla.common.utils.mariadb: ---> 581804105206
+INFO:kolla.common.utils.mariadb:Successfully built 581804105206
+INFO:kolla.common.utils.mariadb:Successfully tagged s390x/debian-source-mariadb:9.1.0
+INFO:kolla.common.utils.mariadb:Built at 2020-03-02 21:33:01.675153 (took 0:00:35.830739)

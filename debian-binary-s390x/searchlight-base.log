@@ -1,0 +1,17 @@
+INFO:kolla.common.utils.searchlight-base:Building started at 2020-03-02 21:25:19.567413
+INFO:kolla.common.utils.searchlight-base:Step 1/6 : FROM s390x/debian-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.searchlight-base: ---> d0f37d4345b6
+INFO:kolla.common.utils.searchlight-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="searchlight-base" build-date="20200302"
+INFO:kolla.common.utils.searchlight-base: ---> Running in 261c6f184975
+INFO:kolla.common.utils.searchlight-base:Removing intermediate container 261c6f184975
+INFO:kolla.common.utils.searchlight-base: ---> c38b91ac1b08
+INFO:kolla.common.utils.searchlight-base:Step 3/6 : RUN usermod --append --home /var/lib/searchlight --groups kolla searchlight     && mkdir -p /var/lib/searchlight     && chown -R 42442:42442 /var/lib/searchlight
+INFO:kolla.common.utils.searchlight-base: ---> Running in 16e3a14050d6
+INFO:kolla.common.utils.searchlight-base:Removing intermediate container 16e3a14050d6
+INFO:kolla.common.utils.searchlight-base: ---> 5da95ebae3ba
+INFO:kolla.common.utils.searchlight-base:Step 4/6 : RUN echo 'binary not yet available for debian'     && /bin/false
+INFO:kolla.common.utils.searchlight-base: ---> Running in 5450a4da54d3
+INFO:kolla.common.utils.searchlight-base:binary not yet available for debian
+INFO:kolla.common.utils.searchlight-base:Removing intermediate container 5450a4da54d3
+ERROR:kolla.common.utils.searchlight-base:Error'd with the following message
+ERROR:kolla.common.utils.searchlight-base:The command '/bin/sh -c echo 'binary not yet available for debian'     && /bin/false' returned a non-zero code: 1

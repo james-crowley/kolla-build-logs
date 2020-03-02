@@ -1,0 +1,75 @@
+INFO:kolla.common.utils.prometheus-cadvisor:Building started at 2020-03-02 21:33:11.822015
+INFO:kolla.common.utils.prometheus-cadvisor:Step 1/5 : FROM s390x/debian-source-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-cadvisor: ---> 6893629ec147
+INFO:kolla.common.utils.prometheus-cadvisor:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-cadvisor" build-date="20200302"
+INFO:kolla.common.utils.prometheus-cadvisor: ---> Running in f74f0ce0d3c9
+INFO:kolla.common.utils.prometheus-cadvisor:Removing intermediate container f74f0ce0d3c9
+INFO:kolla.common.utils.prometheus-cadvisor: ---> 483dbd16b459
+INFO:kolla.common.utils.prometheus-cadvisor:Step 3/5 : ENV prometheus_cadvisor_version=0.35.0
+INFO:kolla.common.utils.prometheus-cadvisor: ---> Running in c10d91392022
+INFO:kolla.common.utils.prometheus-cadvisor:Removing intermediate container c10d91392022
+INFO:kolla.common.utils.prometheus-cadvisor: ---> 5f1c232dbe00
+INFO:kolla.common.utils.prometheus-cadvisor:Step 4/5 : RUN apt-get update && apt-get -y install --no-install-recommends libjs-bootstrap libjs-jquery && apt-get clean && rm -rf /var/lib/apt/lists/* && curl --location https://snapshot.debian.org/archive/debian/20180503T060640Z/pool/main/c/cadvisor/cadvisor_0.27.1+dfsg2-1_arm64.deb -o cadvisor_0.27.1+dfsg2-1_arm64.deb && dpkg -i cadvisor_0.27.1+dfsg2-1_arm64.deb && rm -rf cadvisor_0.27.1+dfsg2-1_arm64.deb
+INFO:kolla.common.utils.prometheus-cadvisor: ---> Running in 3583fbd045cb
+INFO:kolla.common.utils.prometheus-cadvisor:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.prometheus-cadvisor:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.prometheus-cadvisor:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.prometheus-cadvisor:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.prometheus-cadvisor:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.prometheus-cadvisor:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.prometheus-cadvisor:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.prometheus-cadvisor:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.prometheus-cadvisor:Fetched 8,235 kB in 1s (5,518 kB/s)
+INFO:kolla.common.utils.prometheus-cadvisor:Reading package lists...
+INFO:kolla.common.utils.prometheus-cadvisor:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.prometheus-cadvisor:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.prometheus-cadvisor:[0m
+INFO:kolla.common.utils.prometheus-cadvisor:Reading package lists...
+INFO:kolla.common.utils.prometheus-cadvisor:Building dependency tree...
+INFO:kolla.common.utils.prometheus-cadvisor:Reading state information...
+INFO:kolla.common.utils.prometheus-cadvisor:The following additional packages will be installed:
+INFO:kolla.common.utils.prometheus-cadvisor:  fonts-glyphicons-halflings
+INFO:kolla.common.utils.prometheus-cadvisor:Recommended packages:
+INFO:kolla.common.utils.prometheus-cadvisor:  javascript-common
+INFO:kolla.common.utils.prometheus-cadvisor:The following NEW packages will be installed:
+INFO:kolla.common.utils.prometheus-cadvisor:  fonts-glyphicons-halflings libjs-bootstrap libjs-jquery
+INFO:kolla.common.utils.prometheus-cadvisor:0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.prometheus-cadvisor:Need to get 669 kB of archives.
+INFO:kolla.common.utils.prometheus-cadvisor:After this operation, 1,935 kB of additional disk space will be used.
+INFO:kolla.common.utils.prometheus-cadvisor:Get:1 http://deb.debian.org/debian buster/main s390x fonts-glyphicons-halflings all 1.009~3.4.1+dfsg-1 [164 kB]
+INFO:kolla.common.utils.prometheus-cadvisor:Get:2 http://deb.debian.org/debian buster/main s390x libjs-bootstrap all 3.4.1+dfsg-1 [173 kB]
+INFO:kolla.common.utils.prometheus-cadvisor:Get:3 http://deb.debian.org/debian buster/main s390x libjs-jquery all 3.3.1~dfsg-3 [332 kB]
+INFO:kolla.common.utils.prometheus-cadvisor:Fetched 669 kB in 0s (14.2 MB/s)
+INFO:kolla.common.utils.prometheus-cadvisor:Selecting previously unselected package fonts-glyphicons-halflings.
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 50%(Reading database ... 55%
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 80%
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 85%
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 90%
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 95%
+INFO:kolla.common.utils.prometheus-cadvisor:(Reading database ... 100%(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.prometheus-cadvisor:Preparing to unpack .../fonts-glyphicons-halflings_1.009~3.4.1+dfsg-1_all.deb ...
+INFO:kolla.common.utils.prometheus-cadvisor:Unpacking fonts-glyphicons-halflings (1.009~3.4.1+dfsg-1) ...
+INFO:kolla.common.utils.prometheus-cadvisor:Selecting previously unselected package libjs-bootstrap.
+INFO:kolla.common.utils.prometheus-cadvisor:Preparing to unpack .../libjs-bootstrap_3.4.1+dfsg-1_all.deb ...
+INFO:kolla.common.utils.prometheus-cadvisor:Unpacking libjs-bootstrap (3.4.1+dfsg-1) ...
+INFO:kolla.common.utils.prometheus-cadvisor:Selecting previously unselected package libjs-jquery.
+INFO:kolla.common.utils.prometheus-cadvisor:Preparing to unpack .../libjs-jquery_3.3.1~dfsg-3_all.deb ...
+INFO:kolla.common.utils.prometheus-cadvisor:Unpacking libjs-jquery (3.3.1~dfsg-3) ...
+INFO:kolla.common.utils.prometheus-cadvisor:Setting up fonts-glyphicons-halflings (1.009~3.4.1+dfsg-1) ...
+INFO:kolla.common.utils.prometheus-cadvisor:Setting up libjs-jquery (3.3.1~dfsg-3) ...
+INFO:kolla.common.utils.prometheus-cadvisor:Setting up libjs-bootstrap (3.4.1+dfsg-1) ...
+INFO:kolla.common.utils.prometheus-cadvisor:curl (https://snapshot.debian.org/archive/debian/20180503T060640Z/pool/main/c/cadvisor/cadvisor_0.27.1+dfsg2-1_arm64.deb): response: 200, time: 2.281839, size: 3443972
+INFO:kolla.common.utils.prometheus-cadvisor:[91mdpkg: error processing archive cadvisor_0.27.1+dfsg2-1_arm64.deb (--install):
+INFO:kolla.common.utils.prometheus-cadvisor: package architecture (arm64) does not match system (s390x)
+INFO:kolla.common.utils.prometheus-cadvisor:[0m
+INFO:kolla.common.utils.prometheus-cadvisor:[91mErrors were encountered while processing:
+INFO:kolla.common.utils.prometheus-cadvisor: cadvisor_0.27.1+dfsg2-1_arm64.deb
+INFO:kolla.common.utils.prometheus-cadvisor:[0m
+INFO:kolla.common.utils.prometheus-cadvisor:Removing intermediate container 3583fbd045cb
+ERROR:kolla.common.utils.prometheus-cadvisor:Error'd with the following message
+ERROR:kolla.common.utils.prometheus-cadvisor:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends libjs-bootstrap libjs-jquery && apt-get clean && rm -rf /var/lib/apt/lists/* && curl --location https://snapshot.debian.org/archive/debian/20180503T060640Z/pool/main/c/cadvisor/cadvisor_0.27.1+dfsg2-1_arm64.deb -o cadvisor_0.27.1+dfsg2-1_arm64.deb && dpkg -i cadvisor_0.27.1+dfsg2-1_arm64.deb && rm -rf cadvisor_0.27.1+dfsg2-1_arm64.deb' returned a non-zero code: 1

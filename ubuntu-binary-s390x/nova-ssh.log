@@ -1,0 +1,104 @@
+INFO:kolla.common.utils.nova-ssh:Building started at 2020-03-02 21:44:29.387511
+INFO:kolla.common.utils.nova-ssh:Step 1/8 : FROM s390x/ubuntu-binary-nova-base:9.1.0
+INFO:kolla.common.utils.nova-ssh: ---> 635ef465de63
+INFO:kolla.common.utils.nova-ssh:Step 2/8 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="nova-ssh" build-date="20200302"
+INFO:kolla.common.utils.nova-ssh: ---> Running in 534f1ae65b2d
+INFO:kolla.common.utils.nova-ssh:Removing intermediate container 534f1ae65b2d
+INFO:kolla.common.utils.nova-ssh: ---> c98e10eb5124
+INFO:kolla.common.utils.nova-ssh:Step 3/8 : RUN usermod --append --home /var/lib/nova --groups kolla nova     && chsh --shell /bin/bash nova     && mkdir -p /var/lib/nova     && chown -R 42436:42436 /var/lib/nova
+INFO:kolla.common.utils.nova-ssh: ---> Running in 6039e0537c62
+INFO:kolla.common.utils.nova-ssh:Removing intermediate container 6039e0537c62
+INFO:kolla.common.utils.nova-ssh: ---> c4bd8d0dfd7a
+INFO:kolla.common.utils.nova-ssh:Step 4/8 : RUN mkdir -p /var/run/sshd     && chmod 0755 /var/run/sshd
+INFO:kolla.common.utils.nova-ssh: ---> Running in 62b015fbb6eb
+INFO:kolla.common.utils.nova-ssh:Removing intermediate container 62b015fbb6eb
+INFO:kolla.common.utils.nova-ssh: ---> 702b923d2ce3
+INFO:kolla.common.utils.nova-ssh:Step 5/8 : RUN apt-get update && apt-get -y install --no-install-recommends openssh-server && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.nova-ssh: ---> Running in ad1c5dc59fb8
+INFO:kolla.common.utils.nova-ssh:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.nova-ssh:Get:2 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-ssh:Ign:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.nova-ssh:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.nova-ssh:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-ssh:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.nova-ssh:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.nova-ssh:Get:8 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.nova-ssh:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.nova-ssh:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.nova-ssh:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.nova-ssh:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.nova-ssh:Get:13 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.nova-ssh:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.nova-ssh:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.nova-ssh:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.nova-ssh:Fetched 15.6 MB in 2s (6,383 kB/s)
+INFO:kolla.common.utils.nova-ssh:Reading package lists...
+INFO:kolla.common.utils.nova-ssh:Reading package lists...
+INFO:kolla.common.utils.nova-ssh:Building dependency tree...
+INFO:kolla.common.utils.nova-ssh:Reading state information...
+INFO:kolla.common.utils.nova-ssh:The following additional packages will be installed:
+INFO:kolla.common.utils.nova-ssh:  openssh-sftp-server ucf
+INFO:kolla.common.utils.nova-ssh:Suggested packages:
+INFO:kolla.common.utils.nova-ssh:  molly-guard monkeysphere rssh ssh-askpass ufw
+INFO:kolla.common.utils.nova-ssh:Recommended packages:
+INFO:kolla.common.utils.nova-ssh:  libpam-systemd ncurses-term xauth ssh-import-id
+INFO:kolla.common.utils.nova-ssh:The following NEW packages will be installed:
+INFO:kolla.common.utils.nova-ssh:  openssh-server openssh-sftp-server ucf
+INFO:kolla.common.utils.nova-ssh:0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.nova-ssh:Need to get 405 kB of archives.
+INFO:kolla.common.utils.nova-ssh:After this operation, 1,272 kB of additional disk space will be used.
+INFO:kolla.common.utils.nova-ssh:Get:1 http://ports.ubuntu.com bionic/main s390x ucf all 3.0038 [50.5 kB]
+INFO:kolla.common.utils.nova-ssh:Get:2 http://ports.ubuntu.com bionic-updates/main s390x openssh-sftp-server s390x 1:7.6p1-4ubuntu0.3 [42.7 kB]
+INFO:kolla.common.utils.nova-ssh:Get:3 http://ports.ubuntu.com bionic-updates/main s390x openssh-server s390x 1:7.6p1-4ubuntu0.3 [311 kB]
+INFO:kolla.common.utils.nova-ssh:Preconfiguring packages ...
+INFO:kolla.common.utils.nova-ssh:Fetched 405 kB in 0s (2,345 kB/s)
+INFO:kolla.common.utils.nova-ssh:Selecting previously unselected package ucf.
+INFO:kolla.common.utils.nova-ssh:(Reading database ... 
+INFO:kolla.common.utils.nova-ssh:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%
+INFO:kolla.common.utils.nova-ssh:(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.nova-ssh:(Reading database ... 65%
+INFO:kolla.common.utils.nova-ssh:(Reading database ... 70%
+INFO:kolla.common.utils.nova-ssh:(Reading database ... 75%
+INFO:kolla.common.utils.nova-ssh:(Reading database ... 80%
+INFO:kolla.common.utils.nova-ssh:(Reading database ... 85%(Reading database ... 90%
+INFO:kolla.common.utils.nova-ssh:(Reading database ... 95%(Reading database ... 100%(Reading database ... 32742 files and directories currently installed.)
+INFO:kolla.common.utils.nova-ssh:Preparing to unpack .../archives/ucf_3.0038_all.deb ...
+INFO:kolla.common.utils.nova-ssh:Moving old data out of the way
+INFO:kolla.common.utils.nova-ssh:Unpacking ucf (3.0038) ...
+INFO:kolla.common.utils.nova-ssh:Selecting previously unselected package openssh-sftp-server.
+INFO:kolla.common.utils.nova-ssh:Preparing to unpack .../openssh-sftp-server_1%3a7.6p1-4ubuntu0.3_s390x.deb ...
+INFO:kolla.common.utils.nova-ssh:Unpacking openssh-sftp-server (1:7.6p1-4ubuntu0.3) ...
+INFO:kolla.common.utils.nova-ssh:Selecting previously unselected package openssh-server.
+INFO:kolla.common.utils.nova-ssh:Preparing to unpack .../openssh-server_1%3a7.6p1-4ubuntu0.3_s390x.deb ...
+INFO:kolla.common.utils.nova-ssh:Unpacking openssh-server (1:7.6p1-4ubuntu0.3) ...
+INFO:kolla.common.utils.nova-ssh:Setting up ucf (3.0038) ...
+INFO:kolla.common.utils.nova-ssh:Setting up openssh-sftp-server (1:7.6p1-4ubuntu0.3) ...
+INFO:kolla.common.utils.nova-ssh:Setting up openssh-server (1:7.6p1-4ubuntu0.3) ...
+INFO:kolla.common.utils.nova-ssh:
+INFO:kolla.common.utils.nova-ssh:Creating config file /etc/ssh/sshd_config with new version
+INFO:kolla.common.utils.nova-ssh:Creating SSH2 RSA key; this may take some time ...
+INFO:kolla.common.utils.nova-ssh:
+INFO:kolla.common.utils.nova-ssh:2048 SHA256:sGsixY0v56pEGWbLpZXk0TxHdmLjH+4uvstKxi5E0S0 root@ad1c5dc59fb8 (RSA)
+INFO:kolla.common.utils.nova-ssh:Creating SSH2 ECDSA key; this may take some time ...
+INFO:kolla.common.utils.nova-ssh:
+INFO:kolla.common.utils.nova-ssh:256 SHA256:lJypgXGd1DOPhaGobl75YJPG+zIQ3x1417d4q6C2Ta8 root@ad1c5dc59fb8 (ECDSA)
+INFO:kolla.common.utils.nova-ssh:Creating SSH2 ED25519 key; this may take some time ...
+INFO:kolla.common.utils.nova-ssh:
+INFO:kolla.common.utils.nova-ssh:256 SHA256:a44b2PTjKomA3JEGYOdaXtv6JvcMeXjOZI0dMH0EMxc root@ad1c5dc59fb8 (ED25519)
+INFO:kolla.common.utils.nova-ssh:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.nova-ssh:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.nova-ssh:Removing intermediate container ad1c5dc59fb8
+INFO:kolla.common.utils.nova-ssh: ---> ab06a228a422
+INFO:kolla.common.utils.nova-ssh:Step 6/8 : RUN sed -ri 's/session(\s+)required(\s+)pam_loginuid.so/session\1optional\2pam_loginuid.so/' /etc/pam.d/sshd
+INFO:kolla.common.utils.nova-ssh: ---> Running in d43e09537008
+INFO:kolla.common.utils.nova-ssh:Removing intermediate container d43e09537008
+INFO:kolla.common.utils.nova-ssh: ---> 4bd3a9dc49da
+INFO:kolla.common.utils.nova-ssh:Step 7/8 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.nova-ssh: ---> 90325c0759d6
+INFO:kolla.common.utils.nova-ssh:Step 8/8 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.nova-ssh: ---> Running in 282ebd2f0fc8
+INFO:kolla.common.utils.nova-ssh:Removing intermediate container 282ebd2f0fc8
+INFO:kolla.common.utils.nova-ssh: ---> bdad543641e4
+INFO:kolla.common.utils.nova-ssh:Successfully built bdad543641e4
+INFO:kolla.common.utils.nova-ssh:Successfully tagged s390x/ubuntu-binary-nova-ssh:9.1.0
+INFO:kolla.common.utils.nova-ssh:Built at 2020-03-02 21:44:45.762473 (took 0:00:16.374962)

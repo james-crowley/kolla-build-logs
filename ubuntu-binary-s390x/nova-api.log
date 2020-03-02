@@ -1,0 +1,205 @@
+INFO:kolla.common.utils.nova-api:Building started at 2020-03-02 21:44:32.817375
+INFO:kolla.common.utils.nova-api:Step 1/7 : FROM s390x/ubuntu-binary-nova-base:9.1.0
+INFO:kolla.common.utils.nova-api: ---> 635ef465de63
+INFO:kolla.common.utils.nova-api:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="nova-api" build-date="20200302"
+INFO:kolla.common.utils.nova-api: ---> Running in dd1d15359444
+INFO:kolla.common.utils.nova-api:Removing intermediate container dd1d15359444
+INFO:kolla.common.utils.nova-api: ---> 9adea0f202e9
+INFO:kolla.common.utils.nova-api:Step 3/7 : RUN apt-get update && apt-get -y install --no-install-recommends apache2 libapache2-mod-wsgi-py3 nova-api python3-memcache && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.nova-api: ---> Running in c531b27e5909
+INFO:kolla.common.utils.nova-api:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.nova-api:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.nova-api:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.nova-api:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-api:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.nova-api:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-api:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.nova-api:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.nova-api:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.nova-api:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.nova-api:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.nova-api:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.nova-api:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.nova-api:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.nova-api:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.nova-api:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.nova-api:Fetched 15.6 MB in 3s (5,531 kB/s)
+INFO:kolla.common.utils.nova-api:Reading package lists...
+INFO:kolla.common.utils.nova-api:Reading package lists...
+INFO:kolla.common.utils.nova-api:Building dependency tree...
+INFO:kolla.common.utils.nova-api:Reading state information...
+INFO:kolla.common.utils.nova-api:python3-memcache is already the newest version (1.59-1~cloud0).
+INFO:kolla.common.utils.nova-api:The following additional packages will be installed:
+INFO:kolla.common.utils.nova-api:  apache2-bin apache2-data apache2-utils iptables libapr1 libaprutil1
+INFO:kolla.common.utils.nova-api:  libaprutil1-dbd-sqlite3 libaprutil1-ldap libip4tc0 libip6tc0 libiptc0
+INFO:kolla.common.utils.nova-api:  liblua5.2-0 libnetfilter-conntrack3 libnfnetlink0 libpython3.6 libxtables12
+INFO:kolla.common.utils.nova-api:Suggested packages:
+INFO:kolla.common.utils.nova-api:  www-browser apache2-doc apache2-suexec-pristine | apache2-suexec-custom ufw
+INFO:kolla.common.utils.nova-api:Recommended packages:
+INFO:kolla.common.utils.nova-api:  ssl-cert
+INFO:kolla.common.utils.nova-api:The following NEW packages will be installed:
+INFO:kolla.common.utils.nova-api:  apache2 apache2-bin apache2-data apache2-utils iptables
+INFO:kolla.common.utils.nova-api:  libapache2-mod-wsgi-py3 libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+INFO:kolla.common.utils.nova-api:  libaprutil1-ldap libip4tc0 libip6tc0 libiptc0 liblua5.2-0
+INFO:kolla.common.utils.nova-api:  libnetfilter-conntrack3 libnfnetlink0 libpython3.6 libxtables12 nova-api
+INFO:kolla.common.utils.nova-api:0 upgraded, 19 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.nova-api:Need to get 3,385 kB of archives.
+INFO:kolla.common.utils.nova-api:After this operation, 14.6 MB of additional disk space will be used.
+INFO:kolla.common.utils.nova-api:Get:1 http://ports.ubuntu.com bionic/main s390x libapr1 s390x 1.6.3-2 [87.4 kB]
+INFO:kolla.common.utils.nova-api:Get:2 http://ports.ubuntu.com bionic/main s390x libaprutil1 s390x 1.6.1-2 [81.8 kB]
+INFO:kolla.common.utils.nova-api:Get:3 http://ports.ubuntu.com bionic/main s390x libaprutil1-dbd-sqlite3 s390x 1.6.1-2 [10.4 kB]
+INFO:kolla.common.utils.nova-api:Get:4 http://ports.ubuntu.com bionic/main s390x libaprutil1-ldap s390x 1.6.1-2 [8,652 B]
+INFO:kolla.common.utils.nova-api:Get:5 http://ports.ubuntu.com bionic/main s390x liblua5.2-0 s390x 5.2.4-1.1build1 [99.9 kB]
+INFO:kolla.common.utils.nova-api:Get:6 http://ports.ubuntu.com bionic-updates/main s390x apache2-bin s390x 2.4.29-1ubuntu4.12 [978 kB]
+INFO:kolla.common.utils.nova-api:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x nova-api all 2:20.0.0-0ubuntu1~cloud0 [36.7 kB]
+INFO:kolla.common.utils.nova-api:Get:8 http://ports.ubuntu.com bionic-updates/main s390x apache2-utils s390x 2.4.29-1ubuntu4.12 [81.3 kB]
+INFO:kolla.common.utils.nova-api:Get:9 http://ports.ubuntu.com bionic-updates/main s390x apache2-data all 2.4.29-1ubuntu4.12 [160 kB]
+INFO:kolla.common.utils.nova-api:Get:10 http://ports.ubuntu.com bionic-updates/main s390x apache2 s390x 2.4.29-1ubuntu4.12 [95.1 kB]
+INFO:kolla.common.utils.nova-api:Get:11 http://ports.ubuntu.com bionic/main s390x libip4tc0 s390x 1.6.1-2ubuntu2 [19.3 kB]
+INFO:kolla.common.utils.nova-api:Get:12 http://ports.ubuntu.com bionic/main s390x libxtables12 s390x 1.6.1-2ubuntu2 [26.6 kB]
+INFO:kolla.common.utils.nova-api:Get:13 http://ports.ubuntu.com bionic/main s390x libip6tc0 s390x 1.6.1-2ubuntu2 [19.6 kB]
+INFO:kolla.common.utils.nova-api:Get:14 http://ports.ubuntu.com bionic/main s390x libiptc0 s390x 1.6.1-2ubuntu2 [9,344 B]
+INFO:kolla.common.utils.nova-api:Get:15 http://ports.ubuntu.com bionic/main s390x libnfnetlink0 s390x 1.0.1-3 [12.9 kB]
+INFO:kolla.common.utils.nova-api:Get:16 http://ports.ubuntu.com bionic/main s390x libnetfilter-conntrack3 s390x 1.0.6-2 [35.8 kB]
+INFO:kolla.common.utils.nova-api:Get:17 http://ports.ubuntu.com bionic/main s390x iptables s390x 1.6.1-2ubuntu2 [256 kB]
+INFO:kolla.common.utils.nova-api:Get:18 http://ports.ubuntu.com bionic-updates/main s390x libpython3.6 s390x 3.6.9-1~18.04 [1,284 kB]
+INFO:kolla.common.utils.nova-api:Get:19 http://ports.ubuntu.com bionic-updates/universe s390x libapache2-mod-wsgi-py3 s390x 4.5.17-1ubuntu1 [81.9 kB]
+INFO:kolla.common.utils.nova-api:Fetched 3,385 kB in 0s (31.3 MB/s)
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libapr1:s390x.
+INFO:kolla.common.utils.nova-api:(Reading database ... 
+INFO:kolla.common.utils.nova-api:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.nova-api:(Reading database ... 65%
+INFO:kolla.common.utils.nova-api:(Reading database ... 70%
+INFO:kolla.common.utils.nova-api:(Reading database ... 75%
+INFO:kolla.common.utils.nova-api:(Reading database ... 80%
+INFO:kolla.common.utils.nova-api:(Reading database ... 85%
+INFO:kolla.common.utils.nova-api:(Reading database ... 90%
+INFO:kolla.common.utils.nova-api:(Reading database ... 95%
+INFO:kolla.common.utils.nova-api:(Reading database ... 100%(Reading database ... 32742 files and directories currently installed.)
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../00-libapr1_1.6.3-2_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libapr1:s390x (1.6.3-2) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libaprutil1:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../01-libaprutil1_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libaprutil1:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libaprutil1-dbd-sqlite3:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libaprutil1-dbd-sqlite3:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libaprutil1-ldap:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../03-libaprutil1-ldap_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libaprutil1-ldap:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package liblua5.2-0:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../04-liblua5.2-0_5.2.4-1.1build1_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking liblua5.2-0:s390x (5.2.4-1.1build1) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package apache2-bin.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../05-apache2-bin_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking apache2-bin (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package apache2-utils.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../06-apache2-utils_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking apache2-utils (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package apache2-data.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../07-apache2-data_2.4.29-1ubuntu4.12_all.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking apache2-data (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package apache2.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../08-apache2_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking apache2 (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libip4tc0:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../09-libip4tc0_1.6.1-2ubuntu2_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libip4tc0:s390x (1.6.1-2ubuntu2) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libxtables12:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../10-libxtables12_1.6.1-2ubuntu2_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libxtables12:s390x (1.6.1-2ubuntu2) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libip6tc0:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../11-libip6tc0_1.6.1-2ubuntu2_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libip6tc0:s390x (1.6.1-2ubuntu2) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libiptc0:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../12-libiptc0_1.6.1-2ubuntu2_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libiptc0:s390x (1.6.1-2ubuntu2) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libnfnetlink0:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../13-libnfnetlink0_1.0.1-3_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libnfnetlink0:s390x (1.0.1-3) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libnetfilter-conntrack3:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../14-libnetfilter-conntrack3_1.0.6-2_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libnetfilter-conntrack3:s390x (1.0.6-2) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package iptables.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../15-iptables_1.6.1-2ubuntu2_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking iptables (1.6.1-2ubuntu2) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libpython3.6:s390x.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../16-libpython3.6_3.6.9-1~18.04_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libpython3.6:s390x (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package libapache2-mod-wsgi-py3.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../17-libapache2-mod-wsgi-py3_4.5.17-1ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking libapache2-mod-wsgi-py3 (4.5.17-1ubuntu1) ...
+INFO:kolla.common.utils.nova-api:Selecting previously unselected package nova-api.
+INFO:kolla.common.utils.nova-api:Preparing to unpack .../18-nova-api_2%3a20.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.nova-api:Unpacking nova-api (2:20.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-api:Setting up libapr1:s390x (1.6.3-2) ...
+INFO:kolla.common.utils.nova-api:Setting up libip4tc0:s390x (1.6.1-2ubuntu2) ...
+INFO:kolla.common.utils.nova-api:Setting up libiptc0:s390x (1.6.1-2ubuntu2) ...
+INFO:kolla.common.utils.nova-api:Setting up apache2-data (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.nova-api:Setting up libxtables12:s390x (1.6.1-2ubuntu2) ...
+INFO:kolla.common.utils.nova-api:Setting up libaprutil1:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.nova-api:Setting up libnfnetlink0:s390x (1.0.1-3) ...
+INFO:kolla.common.utils.nova-api:Setting up liblua5.2-0:s390x (5.2.4-1.1build1) ...
+INFO:kolla.common.utils.nova-api:Setting up libip6tc0:s390x (1.6.1-2ubuntu2) ...
+INFO:kolla.common.utils.nova-api:Setting up libpython3.6:s390x (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.nova-api:Setting up libaprutil1-ldap:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.nova-api:Setting up libnetfilter-conntrack3:s390x (1.0.6-2) ...
+INFO:kolla.common.utils.nova-api:Setting up libaprutil1-dbd-sqlite3:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.nova-api:Setting up apache2-utils (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.nova-api:Setting up apache2-bin (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.nova-api:Setting up iptables (1.6.1-2ubuntu2) ...
+INFO:kolla.common.utils.nova-api:Setting up libapache2-mod-wsgi-py3 (4.5.17-1ubuntu1) ...
+INFO:kolla.common.utils.nova-api:Package apache2 is not configured yet. Will defer actions by package libapache2-mod-wsgi-py3.
+INFO:kolla.common.utils.nova-api:Setting up apache2 (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.nova-api:Enabling module mpm_event.
+INFO:kolla.common.utils.nova-api:Enabling module authz_core.
+INFO:kolla.common.utils.nova-api:Enabling module authz_host.
+INFO:kolla.common.utils.nova-api:Enabling module authn_core.
+INFO:kolla.common.utils.nova-api:Enabling module auth_basic.
+INFO:kolla.common.utils.nova-api:Enabling module access_compat.
+INFO:kolla.common.utils.nova-api:Enabling module authn_file.
+INFO:kolla.common.utils.nova-api:Enabling module authz_user.
+INFO:kolla.common.utils.nova-api:Enabling module alias.
+INFO:kolla.common.utils.nova-api:Enabling module dir.
+INFO:kolla.common.utils.nova-api:Enabling module autoindex.
+INFO:kolla.common.utils.nova-api:Enabling module env.
+INFO:kolla.common.utils.nova-api:Enabling module mime.
+INFO:kolla.common.utils.nova-api:Enabling module negotiation.
+INFO:kolla.common.utils.nova-api:Enabling module setenvif.
+INFO:kolla.common.utils.nova-api:Enabling module filter.
+INFO:kolla.common.utils.nova-api:Enabling module deflate.
+INFO:kolla.common.utils.nova-api:Enabling module status.
+INFO:kolla.common.utils.nova-api:Enabling module reqtimeout.
+INFO:kolla.common.utils.nova-api:Enabling conf charset.
+INFO:kolla.common.utils.nova-api:Enabling conf localized-error-pages.
+INFO:kolla.common.utils.nova-api:Enabling conf other-vhosts-access-log.
+INFO:kolla.common.utils.nova-api:Enabling conf security.
+INFO:kolla.common.utils.nova-api:Enabling conf serve-cgi-bin.
+INFO:kolla.common.utils.nova-api:Enabling site 000-default.
+INFO:kolla.common.utils.nova-api:info: Executing deferred 'a2enmod wsgi' for package libapache2-mod-wsgi-py3
+INFO:kolla.common.utils.nova-api:Enabling module wsgi.
+INFO:kolla.common.utils.nova-api:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.nova-api:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.nova-api:Setting up nova-api (2:20.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-api:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.nova-api:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.nova-api:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.nova-api:Removing intermediate container c531b27e5909
+INFO:kolla.common.utils.nova-api: ---> cd1ae4cf858b
+INFO:kolla.common.utils.nova-api:Step 4/7 : RUN echo > /etc/apache2/ports.conf
+INFO:kolla.common.utils.nova-api: ---> Running in 7d12ce871e88
+INFO:kolla.common.utils.nova-api:Removing intermediate container 7d12ce871e88
+INFO:kolla.common.utils.nova-api: ---> 70492065d0ee
+INFO:kolla.common.utils.nova-api:Step 5/7 : COPY extend_start.sh /usr/local/bin/kolla_nova_extend_start
+INFO:kolla.common.utils.nova-api: ---> 0e83f7f98650
+INFO:kolla.common.utils.nova-api:Step 6/7 : RUN chmod 755 /usr/local/bin/kolla_nova_extend_start
+INFO:kolla.common.utils.nova-api: ---> Running in 32e054070709
+INFO:kolla.common.utils.nova-api:Removing intermediate container 32e054070709
+INFO:kolla.common.utils.nova-api: ---> dc4265041c3e
+INFO:kolla.common.utils.nova-api:Step 7/7 : USER nova
+INFO:kolla.common.utils.nova-api: ---> Running in 0c30e3fa0a0d
+INFO:kolla.common.utils.nova-api:Removing intermediate container 0c30e3fa0a0d
+INFO:kolla.common.utils.nova-api: ---> 89293a58debe
+INFO:kolla.common.utils.nova-api:Successfully built 89293a58debe
+INFO:kolla.common.utils.nova-api:Successfully tagged s390x/ubuntu-binary-nova-api:9.1.0
+INFO:kolla.common.utils.nova-api:Built at 2020-03-02 21:44:50.565854 (took 0:00:17.748479)

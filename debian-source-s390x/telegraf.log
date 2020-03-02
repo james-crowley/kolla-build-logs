@@ -1,0 +1,39 @@
+INFO:kolla.common.utils.telegraf:Building started at 2020-03-02 21:31:20.773697
+INFO:kolla.common.utils.telegraf:Step 1/9 : FROM s390x/debian-source-base:9.1.0
+INFO:kolla.common.utils.telegraf: ---> 80efb5983713
+INFO:kolla.common.utils.telegraf:Step 2/9 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="telegraf" build-date="20200302"
+INFO:kolla.common.utils.telegraf: ---> Running in 8bee77dfd8ef
+INFO:kolla.common.utils.telegraf:Removing intermediate container 8bee77dfd8ef
+INFO:kolla.common.utils.telegraf: ---> 544d521a9a6d
+INFO:kolla.common.utils.telegraf:Step 3/9 : RUN usermod --append --home /etc/telegraf --groups kolla telegraf     && mkdir -p /etc/telegraf     && chown -R 42448:42448 /etc/telegraf
+INFO:kolla.common.utils.telegraf: ---> Running in 79d82cb51632
+INFO:kolla.common.utils.telegraf:Removing intermediate container 79d82cb51632
+INFO:kolla.common.utils.telegraf: ---> e413fbfc6947
+INFO:kolla.common.utils.telegraf:Step 4/9 : RUN echo "deb https://repos.influxdata.com/debian buster stable" >/etc/apt/sources.list.d/influxdb.list
+INFO:kolla.common.utils.telegraf: ---> Running in 94b86f1c2448
+INFO:kolla.common.utils.telegraf:Removing intermediate container 94b86f1c2448
+INFO:kolla.common.utils.telegraf: ---> 7dfacff6acd0
+INFO:kolla.common.utils.telegraf:Step 5/9 : RUN apt-get update && apt-get -y install --no-install-recommends chrony net-tools telegraf collectd-core python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.telegraf: ---> Running in e0aadcf37f48
+INFO:kolla.common.utils.telegraf:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.telegraf:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.telegraf:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.telegraf:Get:4 https://repos.influxdata.com/debian buster InRelease [4,731 B]
+INFO:kolla.common.utils.telegraf:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.telegraf:Get:6 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.telegraf:Get:7 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.telegraf:Get:8 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.telegraf:Get:9 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.telegraf:Fetched 8,240 kB in 2s (4,358 kB/s)
+INFO:kolla.common.utils.telegraf:Reading package lists...
+INFO:kolla.common.utils.telegraf:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.telegraf:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.telegraf:[0m
+INFO:kolla.common.utils.telegraf:Reading package lists...
+INFO:kolla.common.utils.telegraf:Building dependency tree...
+INFO:kolla.common.utils.telegraf:Reading state information...
+INFO:kolla.common.utils.telegraf:[91mE: Unable to locate package telegraf
+INFO:kolla.common.utils.telegraf:[0m
+INFO:kolla.common.utils.telegraf:Removing intermediate container e0aadcf37f48
+ERROR:kolla.common.utils.telegraf:Error'd with the following message
+ERROR:kolla.common.utils.telegraf:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends chrony net-tools telegraf collectd-core python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

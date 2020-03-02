@@ -1,0 +1,58 @@
+INFO:kolla.common.utils.gnocchi-metricd:Building started at 2020-03-02 21:29:25.435858
+INFO:kolla.common.utils.gnocchi-metricd:Step 1/4 : FROM s390x/debian-binary-gnocchi-base:9.1.0
+INFO:kolla.common.utils.gnocchi-metricd: ---> d39fe1e099a3
+INFO:kolla.common.utils.gnocchi-metricd:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="gnocchi-metricd" build-date="20200302"
+INFO:kolla.common.utils.gnocchi-metricd: ---> Running in 522cfd4fce12
+INFO:kolla.common.utils.gnocchi-metricd:Removing intermediate container 522cfd4fce12
+INFO:kolla.common.utils.gnocchi-metricd: ---> a815478f376b
+INFO:kolla.common.utils.gnocchi-metricd:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends gnocchi-metricd && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.gnocchi-metricd: ---> Running in 99062889a23f
+INFO:kolla.common.utils.gnocchi-metricd:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.gnocchi-metricd:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.gnocchi-metricd:Get:3 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.gnocchi-metricd:Get:4 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.gnocchi-metricd:Get:5 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.gnocchi-metricd:Get:6 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.gnocchi-metricd:Get:7 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.gnocchi-metricd:Get:8 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.gnocchi-metricd:Fetched 8,235 kB in 1s (5,675 kB/s)
+INFO:kolla.common.utils.gnocchi-metricd:Reading package lists...
+INFO:kolla.common.utils.gnocchi-metricd:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.gnocchi-metricd:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.gnocchi-metricd:[0m
+INFO:kolla.common.utils.gnocchi-metricd:Reading package lists...
+INFO:kolla.common.utils.gnocchi-metricd:Building dependency tree...
+INFO:kolla.common.utils.gnocchi-metricd:Reading state information...
+INFO:kolla.common.utils.gnocchi-metricd:The following NEW packages will be installed:
+INFO:kolla.common.utils.gnocchi-metricd:  gnocchi-metricd
+INFO:kolla.common.utils.gnocchi-metricd:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.gnocchi-metricd:Need to get 7,428 B of archives.
+INFO:kolla.common.utils.gnocchi-metricd:After this operation, 28.7 kB of additional disk space will be used.
+INFO:kolla.common.utils.gnocchi-metricd:Get:1 http://deb.debian.org/debian buster/main s390x gnocchi-metricd all 4.3.1-3 [7,428 B]
+INFO:kolla.common.utils.gnocchi-metricd:Fetched 7,428 B in 0s (255 kB/s)
+INFO:kolla.common.utils.gnocchi-metricd:Selecting previously unselected package gnocchi-metricd.
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 65%
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 70%
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 75%
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 80%
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 85%
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 90%
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 95%
+INFO:kolla.common.utils.gnocchi-metricd:(Reading database ... 100%(Reading database ... 30367 files and directories currently installed.)
+INFO:kolla.common.utils.gnocchi-metricd:Preparing to unpack .../gnocchi-metricd_4.3.1-3_all.deb ...
+INFO:kolla.common.utils.gnocchi-metricd:Unpacking gnocchi-metricd (4.3.1-3) ...
+INFO:kolla.common.utils.gnocchi-metricd:Setting up gnocchi-metricd (4.3.1-3) ...
+INFO:kolla.common.utils.gnocchi-metricd:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.gnocchi-metricd:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.gnocchi-metricd:Removing intermediate container 99062889a23f
+INFO:kolla.common.utils.gnocchi-metricd: ---> c3326c563928
+INFO:kolla.common.utils.gnocchi-metricd:Step 4/4 : USER gnocchi
+INFO:kolla.common.utils.gnocchi-metricd: ---> Running in 620710d0af62
+INFO:kolla.common.utils.gnocchi-metricd:Removing intermediate container 620710d0af62
+INFO:kolla.common.utils.gnocchi-metricd: ---> 9c91d55333ad
+INFO:kolla.common.utils.gnocchi-metricd:Successfully built 9c91d55333ad
+INFO:kolla.common.utils.gnocchi-metricd:Successfully tagged s390x/debian-binary-gnocchi-metricd:9.1.0
+INFO:kolla.common.utils.gnocchi-metricd:Built at 2020-03-02 21:29:31.265388 (took 0:00:05.829530)

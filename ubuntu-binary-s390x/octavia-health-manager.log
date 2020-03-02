@@ -1,0 +1,55 @@
+INFO:kolla.common.utils.octavia-health-manager:Building started at 2020-03-02 21:45:58.658876
+INFO:kolla.common.utils.octavia-health-manager:Step 1/4 : FROM s390x/ubuntu-binary-octavia-base:9.1.0
+INFO:kolla.common.utils.octavia-health-manager: ---> e0301563b547
+INFO:kolla.common.utils.octavia-health-manager:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="octavia-health-manager" build-date="20200302"
+INFO:kolla.common.utils.octavia-health-manager: ---> Running in 5cd2660d2c9f
+INFO:kolla.common.utils.octavia-health-manager:Removing intermediate container 5cd2660d2c9f
+INFO:kolla.common.utils.octavia-health-manager: ---> e5a9d25b3f01
+INFO:kolla.common.utils.octavia-health-manager:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends octavia-health-manager && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.octavia-health-manager: ---> Running in e9bc4dbd46e6
+INFO:kolla.common.utils.octavia-health-manager:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.octavia-health-manager:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.octavia-health-manager:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.octavia-health-manager:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.octavia-health-manager:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.octavia-health-manager:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.octavia-health-manager:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.octavia-health-manager:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.octavia-health-manager:Get:9 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.octavia-health-manager:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.octavia-health-manager:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.octavia-health-manager:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.octavia-health-manager:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.octavia-health-manager:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.octavia-health-manager:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.octavia-health-manager:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.octavia-health-manager:Fetched 15.6 MB in 4s (4,443 kB/s)
+INFO:kolla.common.utils.octavia-health-manager:Reading package lists...
+INFO:kolla.common.utils.octavia-health-manager:Reading package lists...
+INFO:kolla.common.utils.octavia-health-manager:Building dependency tree...
+INFO:kolla.common.utils.octavia-health-manager:Reading state information...
+INFO:kolla.common.utils.octavia-health-manager:The following NEW packages will be installed:
+INFO:kolla.common.utils.octavia-health-manager:  octavia-health-manager
+INFO:kolla.common.utils.octavia-health-manager:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.octavia-health-manager:Need to get 6,980 B of archives.
+INFO:kolla.common.utils.octavia-health-manager:After this operation, 27.6 kB of additional disk space will be used.
+INFO:kolla.common.utils.octavia-health-manager:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x octavia-health-manager all 5.0.0-0ubuntu1~cloud0 [6,980 B]
+INFO:kolla.common.utils.octavia-health-manager:Fetched 6,980 B in 0s (135 kB/s)
+INFO:kolla.common.utils.octavia-health-manager:Selecting previously unselected package octavia-health-manager.
+INFO:kolla.common.utils.octavia-health-manager:(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.octavia-health-manager:(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%
+INFO:kolla.common.utils.octavia-health-manager:(Reading database ... 100%(Reading database ... 27481 files and directories currently installed.)
+INFO:kolla.common.utils.octavia-health-manager:Preparing to unpack .../octavia-health-manager_5.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.octavia-health-manager:Unpacking octavia-health-manager (5.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.octavia-health-manager:Setting up octavia-health-manager (5.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.octavia-health-manager:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.octavia-health-manager:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.octavia-health-manager:Removing intermediate container e9bc4dbd46e6
+INFO:kolla.common.utils.octavia-health-manager: ---> 2bf4cf5048e1
+INFO:kolla.common.utils.octavia-health-manager:Step 4/4 : USER octavia
+INFO:kolla.common.utils.octavia-health-manager: ---> Running in d0c3ae8a5e3d
+INFO:kolla.common.utils.octavia-health-manager:Removing intermediate container d0c3ae8a5e3d
+INFO:kolla.common.utils.octavia-health-manager: ---> 232ff0f0a863
+INFO:kolla.common.utils.octavia-health-manager:Successfully built 232ff0f0a863
+INFO:kolla.common.utils.octavia-health-manager:Successfully tagged s390x/ubuntu-binary-octavia-health-manager:9.1.0
+INFO:kolla.common.utils.octavia-health-manager:Built at 2020-03-02 21:46:08.458752 (took 0:00:09.799876)

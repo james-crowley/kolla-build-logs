@@ -1,0 +1,27 @@
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Building started at 2020-03-02 21:23:48.169216
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Step 1/5 : FROM s390x/debian-binary-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-haproxy-exporter: ---> 2ccf34e0ee94
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-haproxy-exporter" build-date="20200302"
+INFO:kolla.common.utils.prometheus-haproxy-exporter: ---> Running in 019e05506eb5
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Removing intermediate container 019e05506eb5
+INFO:kolla.common.utils.prometheus-haproxy-exporter: ---> 772bcc25897a
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Step 3/5 : ENV haproxy_exporter_version=0.10.0
+INFO:kolla.common.utils.prometheus-haproxy-exporter: ---> Running in 7fbd96362539
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Removing intermediate container 7fbd96362539
+INFO:kolla.common.utils.prometheus-haproxy-exporter: ---> 0263980250fd
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Step 4/5 : RUN curl -sSL -o /tmp/haproxy_exporter.tar.gz https://github.com/prometheus/haproxy_exporter/releases/download/v${haproxy_exporter_version}/haproxy_exporter-${haproxy_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/haproxy_exporter.tar.gz -C /opt/     && rm -f /tmp/haproxy_exporter.tar.gz     && ln -s /opt/haproxy_exporter* /opt/haproxy_exporter
+INFO:kolla.common.utils.prometheus-haproxy-exporter: ---> Running in f86a2978766a
+INFO:kolla.common.utils.prometheus-haproxy-exporter:curl (https://github-production-release-asset-2e65be.s3.amazonaws.com/7939398/347ef100-18c1-11e9-9e58-c0bfeafd2f7e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200302T212350Z&X-Amz-Expires=300&X-Amz-Signature=9c1388040b04df19c25760efb9207372b7df4a2e8a27fa44912aa1383bb3a8cd&X-Amz-SignedHeaders=host&actor_id=0&response-content-disposition=attachment%3B%20filename%3Dhaproxy_exporter-0.10.0.linux-s390x.tar.gz&response-content-type=application%2Foctet-stream): response: 200, time: 0.410361, size: 6049942
+INFO:kolla.common.utils.prometheus-haproxy-exporter:haproxy_exporter-0.10.0.linux-s390x/
+INFO:kolla.common.utils.prometheus-haproxy-exporter:haproxy_exporter-0.10.0.linux-s390x/LICENSE
+INFO:kolla.common.utils.prometheus-haproxy-exporter:haproxy_exporter-0.10.0.linux-s390x/NOTICE
+INFO:kolla.common.utils.prometheus-haproxy-exporter:haproxy_exporter-0.10.0.linux-s390x/haproxy_exporter
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Removing intermediate container f86a2978766a
+INFO:kolla.common.utils.prometheus-haproxy-exporter: ---> 214be2ed2407
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Step 5/5 : USER prometheus
+INFO:kolla.common.utils.prometheus-haproxy-exporter: ---> Running in 268581dbdb76
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Removing intermediate container 268581dbdb76
+INFO:kolla.common.utils.prometheus-haproxy-exporter: ---> 9e57764a2d48
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Successfully built 9e57764a2d48
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Successfully tagged s390x/debian-binary-prometheus-haproxy-exporter:9.1.0
+INFO:kolla.common.utils.prometheus-haproxy-exporter:Built at 2020-03-02 21:23:52.600100 (took 0:00:04.430884)

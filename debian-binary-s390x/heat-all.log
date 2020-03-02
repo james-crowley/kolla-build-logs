@@ -1,0 +1,13 @@
+INFO:kolla.common.utils.heat-all:Building started at 2020-03-02 21:29:13.174267
+INFO:kolla.common.utils.heat-all:Step 1/4 : FROM s390x/debian-binary-heat-base:9.1.0
+INFO:kolla.common.utils.heat-all: ---> ef449859c1f7
+INFO:kolla.common.utils.heat-all:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="heat-all" build-date="20200302"
+INFO:kolla.common.utils.heat-all: ---> Running in 3c9848480d7e
+INFO:kolla.common.utils.heat-all:Removing intermediate container 3c9848480d7e
+INFO:kolla.common.utils.heat-all: ---> 70ecb4cdc552
+INFO:kolla.common.utils.heat-all:Step 3/4 : RUN echo 'heat-all not yet available for debian' && /bin/false
+INFO:kolla.common.utils.heat-all: ---> Running in 288522e6fafa
+INFO:kolla.common.utils.heat-all:heat-all not yet available for debian
+INFO:kolla.common.utils.heat-all:Removing intermediate container 288522e6fafa
+ERROR:kolla.common.utils.heat-all:Error'd with the following message
+ERROR:kolla.common.utils.heat-all:The command '/bin/sh -c echo 'heat-all not yet available for debian' && /bin/false' returned a non-zero code: 1

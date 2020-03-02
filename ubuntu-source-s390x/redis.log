@@ -1,0 +1,76 @@
+INFO:kolla.common.utils.redis:Building started at 2020-03-02 21:50:43.771625
+INFO:kolla.common.utils.redis:Step 1/4 : FROM s390x/ubuntu-source-redis-base:9.1.0
+INFO:kolla.common.utils.redis: ---> 6038239dfaf7
+INFO:kolla.common.utils.redis:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="redis" build-date="20200302"
+INFO:kolla.common.utils.redis: ---> Running in 05e83679c388
+INFO:kolla.common.utils.redis:Removing intermediate container 05e83679c388
+INFO:kolla.common.utils.redis: ---> 21ddb4f4087e
+INFO:kolla.common.utils.redis:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends redis-server && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.redis: ---> Running in 6963867ef6c7
+INFO:kolla.common.utils.redis:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.redis:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.redis:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.redis:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.redis:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.redis:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.redis:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.redis:Get:8 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.redis:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.redis:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.redis:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.redis:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.redis:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.redis:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.redis:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.redis:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.redis:Fetched 15.6 MB in 2s (6,849 kB/s)
+INFO:kolla.common.utils.redis:Reading package lists...
+INFO:kolla.common.utils.redis:Reading package lists...
+INFO:kolla.common.utils.redis:Building dependency tree...
+INFO:kolla.common.utils.redis:Reading state information...
+INFO:kolla.common.utils.redis:The following additional packages will be installed:
+INFO:kolla.common.utils.redis:  libjemalloc1 redis-tools
+INFO:kolla.common.utils.redis:Suggested packages:
+INFO:kolla.common.utils.redis:  ruby-redis
+INFO:kolla.common.utils.redis:The following NEW packages will be installed:
+INFO:kolla.common.utils.redis:  libjemalloc1 redis-server redis-tools
+INFO:kolla.common.utils.redis:0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.redis:Need to get 593 kB of archives.
+INFO:kolla.common.utils.redis:After this operation, 3,248 kB of additional disk space will be used.
+INFO:kolla.common.utils.redis:Get:1 http://ports.ubuntu.com bionic/universe s390x libjemalloc1 s390x 3.6.0-11 [75.5 kB]
+INFO:kolla.common.utils.redis:Get:2 http://ports.ubuntu.com bionic-updates/universe s390x redis-tools s390x 5:4.0.9-1ubuntu0.2 [482 kB]
+INFO:kolla.common.utils.redis:Get:3 http://ports.ubuntu.com bionic-updates/universe s390x redis-server s390x 5:4.0.9-1ubuntu0.2 [35.4 kB]
+INFO:kolla.common.utils.redis:Fetched 593 kB in 0s (5,263 kB/s)
+INFO:kolla.common.utils.redis:Selecting previously unselected package libjemalloc1.
+INFO:kolla.common.utils.redis:(Reading database ... 
+INFO:kolla.common.utils.redis:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%
+INFO:kolla.common.utils.redis:(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.redis:(Reading database ... 75%
+INFO:kolla.common.utils.redis:(Reading database ... 80%
+INFO:kolla.common.utils.redis:(Reading database ... 85%
+INFO:kolla.common.utils.redis:(Reading database ... 90%
+INFO:kolla.common.utils.redis:(Reading database ... 95%
+INFO:kolla.common.utils.redis:(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.redis:Preparing to unpack .../libjemalloc1_3.6.0-11_s390x.deb ...
+INFO:kolla.common.utils.redis:Unpacking libjemalloc1 (3.6.0-11) ...
+INFO:kolla.common.utils.redis:Selecting previously unselected package redis-tools.
+INFO:kolla.common.utils.redis:Preparing to unpack .../redis-tools_5%3a4.0.9-1ubuntu0.2_s390x.deb ...
+INFO:kolla.common.utils.redis:Unpacking redis-tools (5:4.0.9-1ubuntu0.2) ...
+INFO:kolla.common.utils.redis:Selecting previously unselected package redis-server.
+INFO:kolla.common.utils.redis:Preparing to unpack .../redis-server_5%3a4.0.9-1ubuntu0.2_s390x.deb ...
+INFO:kolla.common.utils.redis:Unpacking redis-server (5:4.0.9-1ubuntu0.2) ...
+INFO:kolla.common.utils.redis:Setting up libjemalloc1 (3.6.0-11) ...
+INFO:kolla.common.utils.redis:Setting up redis-tools (5:4.0.9-1ubuntu0.2) ...
+INFO:kolla.common.utils.redis:Setting up redis-server (5:4.0.9-1ubuntu0.2) ...
+INFO:kolla.common.utils.redis:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.redis:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.redis:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.redis:Removing intermediate container 6963867ef6c7
+INFO:kolla.common.utils.redis: ---> 9ff5b4fa5113
+INFO:kolla.common.utils.redis:Step 4/4 : USER redis
+INFO:kolla.common.utils.redis: ---> Running in b3e734206ee4
+INFO:kolla.common.utils.redis:Removing intermediate container b3e734206ee4
+INFO:kolla.common.utils.redis: ---> 2e855e1ed492
+INFO:kolla.common.utils.redis:Successfully built 2e855e1ed492
+INFO:kolla.common.utils.redis:Successfully tagged s390x/ubuntu-source-redis:9.1.0
+INFO:kolla.common.utils.redis:Built at 2020-03-02 21:50:54.966569 (took 0:00:11.194944)

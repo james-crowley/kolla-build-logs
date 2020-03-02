@@ -1,0 +1,25 @@
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:Building started at 2020-03-02 21:23:37.291666
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:Step 1/5 : FROM s390x/debian-binary-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter: ---> 2ccf34e0ee94
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-elasticsearch-exporter" build-date="20200302"
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter: ---> Running in a41b4c5d49c6
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:Removing intermediate container a41b4c5d49c6
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter: ---> 308514f2883a
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:Step 3/5 : ENV elasticsearch_exporter_version=1.0.2
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter: ---> Running in 440ede70b497
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:Removing intermediate container 440ede70b497
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter: ---> d873463da317
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:Step 4/5 : RUN curl -sSL -o /tmp/elasticsearch_exporter.tar.gz https://github.com/justwatchcom/elasticsearch_exporter/releases/download/v${elasticsearch_exporter_version}/elasticsearch_exporter-${elasticsearch_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/elasticsearch_exporter.tar.gz -C /opt/     && rm -f /tmp/elasticsearch_exporter.tar.gz     && ln -s /opt/elasticsearch_exporter* /opt/elasticsearch_exporter
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter: ---> Running in e01049a4b99a
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:curl (https://github.com/justwatchcom/elasticsearch_exporter/releases/download/v1.0.2/elasticsearch_exporter-1.0.2.linux-s390x.tar.gz): response: 404, time: 0.180930, size: 9
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:[91mtar: This does not look like a tar archive
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:[0m
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:[91m
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:gzip: stdin: not in gzip format
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:[0m
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:[91mtar: Child returned status 1
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:tar: Error is not recoverable: exiting now
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:[0m
+INFO:kolla.common.utils.prometheus-elasticsearch-exporter:Removing intermediate container e01049a4b99a
+ERROR:kolla.common.utils.prometheus-elasticsearch-exporter:Error'd with the following message
+ERROR:kolla.common.utils.prometheus-elasticsearch-exporter:The command '/bin/sh -c curl -sSL -o /tmp/elasticsearch_exporter.tar.gz https://github.com/justwatchcom/elasticsearch_exporter/releases/download/v${elasticsearch_exporter_version}/elasticsearch_exporter-${elasticsearch_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/elasticsearch_exporter.tar.gz -C /opt/     && rm -f /tmp/elasticsearch_exporter.tar.gz     && ln -s /opt/elasticsearch_exporter* /opt/elasticsearch_exporter' returned a non-zero code: 2

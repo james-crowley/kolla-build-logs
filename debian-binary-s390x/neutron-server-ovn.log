@@ -1,0 +1,40 @@
+INFO:kolla.common.utils.neutron-server-ovn:Building started at 2020-03-02 21:29:17.360726
+INFO:kolla.common.utils.neutron-server-ovn:Step 1/5 : FROM s390x/debian-binary-neutron-server:9.1.0
+INFO:kolla.common.utils.neutron-server-ovn: ---> 494ab0daffd7
+INFO:kolla.common.utils.neutron-server-ovn:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="neutron-server-ovn" build-date="20200302"
+INFO:kolla.common.utils.neutron-server-ovn: ---> Running in ade0165b94e1
+INFO:kolla.common.utils.neutron-server-ovn:Removing intermediate container ade0165b94e1
+INFO:kolla.common.utils.neutron-server-ovn: ---> 55c3874cabb3
+INFO:kolla.common.utils.neutron-server-ovn:Step 3/5 : USER root
+INFO:kolla.common.utils.neutron-server-ovn: ---> Running in 3f12969b7b4b
+INFO:kolla.common.utils.neutron-server-ovn:Removing intermediate container 3f12969b7b4b
+INFO:kolla.common.utils.neutron-server-ovn: ---> a0ecf982e9e9
+INFO:kolla.common.utils.neutron-server-ovn:Step 4/5 : RUN apt-get update && apt-get -y install --no-install-recommends python3-networking-ovn && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.neutron-server-ovn: ---> Running in 42f0882da36f
+INFO:kolla.common.utils.neutron-server-ovn:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.neutron-server-ovn:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.neutron-server-ovn:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.neutron-server-ovn:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.neutron-server-ovn:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.neutron-server-ovn:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.neutron-server-ovn:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.neutron-server-ovn:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.neutron-server-ovn:Fetched 8,235 kB in 1s (5,627 kB/s)
+INFO:kolla.common.utils.neutron-server-ovn:Reading package lists...
+INFO:kolla.common.utils.neutron-server-ovn:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.neutron-server-ovn:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.neutron-server-ovn:[0m
+INFO:kolla.common.utils.neutron-server-ovn:Reading package lists...
+INFO:kolla.common.utils.neutron-server-ovn:Building dependency tree...
+INFO:kolla.common.utils.neutron-server-ovn:Reading state information...
+INFO:kolla.common.utils.neutron-server-ovn:python3-networking-ovn is already the newest version (5.0.0-1).
+INFO:kolla.common.utils.neutron-server-ovn:0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.neutron-server-ovn:Removing intermediate container 42f0882da36f
+INFO:kolla.common.utils.neutron-server-ovn: ---> d94ecff9d171
+INFO:kolla.common.utils.neutron-server-ovn:Step 5/5 : USER neutron
+INFO:kolla.common.utils.neutron-server-ovn: ---> Running in 21d643c05b59
+INFO:kolla.common.utils.neutron-server-ovn:Removing intermediate container 21d643c05b59
+INFO:kolla.common.utils.neutron-server-ovn: ---> 22f982301cea
+INFO:kolla.common.utils.neutron-server-ovn:Successfully built 22f982301cea
+INFO:kolla.common.utils.neutron-server-ovn:Successfully tagged s390x/debian-binary-neutron-server-ovn:9.1.0
+INFO:kolla.common.utils.neutron-server-ovn:Built at 2020-03-02 21:29:23.514780 (took 0:00:06.154054)

@@ -1,0 +1,53 @@
+INFO:kolla.common.utils.aodh-evaluator:Building started at 2020-03-02 21:28:30.755218
+INFO:kolla.common.utils.aodh-evaluator:Step 1/4 : FROM s390x/debian-binary-aodh-base:9.1.0
+INFO:kolla.common.utils.aodh-evaluator: ---> 6d4538a42e8c
+INFO:kolla.common.utils.aodh-evaluator:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="aodh-evaluator" build-date="20200302"
+INFO:kolla.common.utils.aodh-evaluator: ---> Running in 0dcb1fac22b9
+INFO:kolla.common.utils.aodh-evaluator:Removing intermediate container 0dcb1fac22b9
+INFO:kolla.common.utils.aodh-evaluator: ---> 2f3a3c98eb1c
+INFO:kolla.common.utils.aodh-evaluator:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends aodh-evaluator && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.aodh-evaluator: ---> Running in 07fd977730fc
+INFO:kolla.common.utils.aodh-evaluator:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.aodh-evaluator:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.aodh-evaluator:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.aodh-evaluator:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.aodh-evaluator:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.aodh-evaluator:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.aodh-evaluator:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.aodh-evaluator:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.aodh-evaluator:Fetched 8,235 kB in 2s (5,466 kB/s)
+INFO:kolla.common.utils.aodh-evaluator:Reading package lists...
+INFO:kolla.common.utils.aodh-evaluator:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.aodh-evaluator:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.aodh-evaluator:[0m
+INFO:kolla.common.utils.aodh-evaluator:Reading package lists...
+INFO:kolla.common.utils.aodh-evaluator:Building dependency tree...
+INFO:kolla.common.utils.aodh-evaluator:Reading state information...
+INFO:kolla.common.utils.aodh-evaluator:The following NEW packages will be installed:
+INFO:kolla.common.utils.aodh-evaluator:  aodh-evaluator
+INFO:kolla.common.utils.aodh-evaluator:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.aodh-evaluator:Need to get 8,556 B of archives.
+INFO:kolla.common.utils.aodh-evaluator:After this operation, 29.7 kB of additional disk space will be used.
+INFO:kolla.common.utils.aodh-evaluator:Get:1 http://deb.debian.org/debian buster/main s390x aodh-evaluator all 7.0.0-5 [8,556 B]
+INFO:kolla.common.utils.aodh-evaluator:Fetched 8,556 B in 0s (275 kB/s)
+INFO:kolla.common.utils.aodh-evaluator:Selecting previously unselected package aodh-evaluator.
+INFO:kolla.common.utils.aodh-evaluator:(Reading database ... 
+INFO:kolla.common.utils.aodh-evaluator:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.aodh-evaluator:(Reading database ... 70%
+INFO:kolla.common.utils.aodh-evaluator:(Reading database ... 75%
+INFO:kolla.common.utils.aodh-evaluator:(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%
+INFO:kolla.common.utils.aodh-evaluator:(Reading database ... 100%(Reading database ... 27239 files and directories currently installed.)
+INFO:kolla.common.utils.aodh-evaluator:Preparing to unpack .../aodh-evaluator_7.0.0-5_all.deb ...
+INFO:kolla.common.utils.aodh-evaluator:Unpacking aodh-evaluator (7.0.0-5) ...
+INFO:kolla.common.utils.aodh-evaluator:Setting up aodh-evaluator (7.0.0-5) ...
+INFO:kolla.common.utils.aodh-evaluator:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.aodh-evaluator:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.aodh-evaluator:Removing intermediate container 07fd977730fc
+INFO:kolla.common.utils.aodh-evaluator: ---> a31acf49d473
+INFO:kolla.common.utils.aodh-evaluator:Step 4/4 : USER aodh
+INFO:kolla.common.utils.aodh-evaluator: ---> Running in 0addd492a8f1
+INFO:kolla.common.utils.aodh-evaluator:Removing intermediate container 0addd492a8f1
+INFO:kolla.common.utils.aodh-evaluator: ---> 73048a62b0b4
+INFO:kolla.common.utils.aodh-evaluator:Successfully built 73048a62b0b4
+INFO:kolla.common.utils.aodh-evaluator:Successfully tagged s390x/debian-binary-aodh-evaluator:9.1.0
+INFO:kolla.common.utils.aodh-evaluator:Built at 2020-03-02 21:28:37.417106 (took 0:00:06.661888)

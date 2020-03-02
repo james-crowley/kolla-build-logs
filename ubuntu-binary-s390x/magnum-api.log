@@ -1,0 +1,85 @@
+INFO:kolla.common.utils.magnum-api:Building started at 2020-03-02 21:45:40.912212
+INFO:kolla.common.utils.magnum-api:Step 1/6 : FROM s390x/ubuntu-binary-magnum-base:9.1.0
+INFO:kolla.common.utils.magnum-api: ---> a7eeadfe2542
+INFO:kolla.common.utils.magnum-api:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="magnum-api" build-date="20200302"
+INFO:kolla.common.utils.magnum-api: ---> Running in 996d02cc4459
+INFO:kolla.common.utils.magnum-api:Removing intermediate container 996d02cc4459
+INFO:kolla.common.utils.magnum-api: ---> d41bac0c143f
+INFO:kolla.common.utils.magnum-api:Step 3/6 : RUN apt-get update && apt-get -y install --no-install-recommends magnum-api && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.magnum-api: ---> Running in 1c39edeba47a
+INFO:kolla.common.utils.magnum-api:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.magnum-api:Get:2 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.magnum-api:Get:3 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.magnum-api:Ign:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.magnum-api:Get:5 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.magnum-api:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.magnum-api:Get:7 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.magnum-api:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.magnum-api:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.magnum-api:Get:10 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.magnum-api:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.magnum-api:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.magnum-api:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.magnum-api:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.magnum-api:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.magnum-api:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.magnum-api:Fetched 15.6 MB in 3s (4,802 kB/s)
+INFO:kolla.common.utils.magnum-api:Reading package lists...
+INFO:kolla.common.utils.magnum-api:Reading package lists...
+INFO:kolla.common.utils.magnum-api:Building dependency tree...
+INFO:kolla.common.utils.magnum-api:Reading state information...
+INFO:kolla.common.utils.magnum-api:The following additional packages will be installed:
+INFO:kolla.common.utils.magnum-api:  python-q-text-as-data sqlite3
+INFO:kolla.common.utils.magnum-api:Suggested packages:
+INFO:kolla.common.utils.magnum-api:  sqlite3-doc
+INFO:kolla.common.utils.magnum-api:The following NEW packages will be installed:
+INFO:kolla.common.utils.magnum-api:  magnum-api python-q-text-as-data sqlite3
+INFO:kolla.common.utils.magnum-api:0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.magnum-api:Need to get 730 kB of archives.
+INFO:kolla.common.utils.magnum-api:After this operation, 2,919 kB of additional disk space will be used.
+INFO:kolla.common.utils.magnum-api:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x magnum-api all 9.0.0-0ubuntu1~cloud0 [23.8 kB]
+INFO:kolla.common.utils.magnum-api:Get:2 http://ports.ubuntu.com bionic-updates/main s390x sqlite3 s390x 3.22.0-1ubuntu0.2 [688 kB]
+INFO:kolla.common.utils.magnum-api:Get:3 http://ports.ubuntu.com bionic/universe s390x python-q-text-as-data all 1.4.0-2 [18.9 kB]
+INFO:kolla.common.utils.magnum-api:Preconfiguring packages ...
+INFO:kolla.common.utils.magnum-api:Fetched 730 kB in 0s (4,313 kB/s)
+INFO:kolla.common.utils.magnum-api:Selecting previously unselected package sqlite3.
+INFO:kolla.common.utils.magnum-api:(Reading database ... 
+INFO:kolla.common.utils.magnum-api:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.magnum-api:(Reading database ... 65%
+INFO:kolla.common.utils.magnum-api:(Reading database ... 70%
+INFO:kolla.common.utils.magnum-api:(Reading database ... 75%
+INFO:kolla.common.utils.magnum-api:(Reading database ... 80%
+INFO:kolla.common.utils.magnum-api:(Reading database ... 85%
+INFO:kolla.common.utils.magnum-api:(Reading database ... 90%
+INFO:kolla.common.utils.magnum-api:(Reading database ... 95%
+INFO:kolla.common.utils.magnum-api:(Reading database ... 100%(Reading database ... 27164 files and directories currently installed.)
+INFO:kolla.common.utils.magnum-api:Preparing to unpack .../sqlite3_3.22.0-1ubuntu0.2_s390x.deb ...
+INFO:kolla.common.utils.magnum-api:Unpacking sqlite3 (3.22.0-1ubuntu0.2) ...
+INFO:kolla.common.utils.magnum-api:Selecting previously unselected package python-q-text-as-data.
+INFO:kolla.common.utils.magnum-api:Preparing to unpack .../python-q-text-as-data_1.4.0-2_all.deb ...
+INFO:kolla.common.utils.magnum-api:Unpacking python-q-text-as-data (1.4.0-2) ...
+INFO:kolla.common.utils.magnum-api:Selecting previously unselected package magnum-api.
+INFO:kolla.common.utils.magnum-api:Preparing to unpack .../magnum-api_9.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.magnum-api:Unpacking magnum-api (9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.magnum-api:Setting up sqlite3 (3.22.0-1ubuntu0.2) ...
+INFO:kolla.common.utils.magnum-api:Setting up python-q-text-as-data (1.4.0-2) ...
+INFO:kolla.common.utils.magnum-api:update-alternatives: using /usr/bin/python2-q-text-as-data to provide /usr/bin/q (q) in auto mode
+INFO:kolla.common.utils.magnum-api:Setting up magnum-api (9.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.magnum-api:Will not register magnum endpoint this time (no user request for it).
+INFO:kolla.common.utils.magnum-api:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.magnum-api:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.magnum-api:Removing intermediate container 1c39edeba47a
+INFO:kolla.common.utils.magnum-api: ---> 75fac4876ae5
+INFO:kolla.common.utils.magnum-api:Step 4/6 : COPY extend_start.sh /usr/local/bin/kolla_magnum_extend_start
+INFO:kolla.common.utils.magnum-api: ---> 855abb641f50
+INFO:kolla.common.utils.magnum-api:Step 5/6 : RUN chmod 755 /usr/local/bin/kolla_magnum_extend_start
+INFO:kolla.common.utils.magnum-api: ---> Running in ef2f3429f472
+INFO:kolla.common.utils.magnum-api:Removing intermediate container ef2f3429f472
+INFO:kolla.common.utils.magnum-api: ---> 169ccf7bf117
+INFO:kolla.common.utils.magnum-api:Step 6/6 : USER magnum
+INFO:kolla.common.utils.magnum-api: ---> Running in 92d32407988d
+INFO:kolla.common.utils.magnum-api:Removing intermediate container 92d32407988d
+INFO:kolla.common.utils.magnum-api: ---> 5ef15208b013
+INFO:kolla.common.utils.magnum-api:Successfully built 5ef15208b013
+INFO:kolla.common.utils.magnum-api:Successfully tagged s390x/ubuntu-binary-magnum-api:9.1.0
+INFO:kolla.common.utils.magnum-api:Built at 2020-03-02 21:45:53.075522 (took 0:00:12.163310)

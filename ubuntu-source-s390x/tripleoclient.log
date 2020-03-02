@@ -1,0 +1,2 @@
+INFO:kolla.common.utils.tripleoclient:Building started at 2020-03-02 21:49:28.917315
+ERROR:kolla.common.utils.tripleoclient:Failed to download archive: status_code 404

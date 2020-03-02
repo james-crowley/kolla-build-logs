@@ -1,0 +1,103 @@
+INFO:kolla.common.utils.placement-base:Building started at 2020-03-02 21:42:22.654853
+INFO:kolla.common.utils.placement-base:Step 1/6 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.placement-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.placement-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="placement-base" build-date="20200302"
+INFO:kolla.common.utils.placement-base: ---> Running in 6025cb665223
+INFO:kolla.common.utils.placement-base:Removing intermediate container 6025cb665223
+INFO:kolla.common.utils.placement-base: ---> dc91e201414b
+INFO:kolla.common.utils.placement-base:Step 3/6 : RUN usermod --append --home /var/lib/placement --groups kolla placement     && mkdir -p /var/lib/placement     && chown -R 42482:42482 /var/lib/placement
+INFO:kolla.common.utils.placement-base: ---> Running in ae7b69a417ee
+INFO:kolla.common.utils.placement-base:Removing intermediate container ae7b69a417ee
+INFO:kolla.common.utils.placement-base: ---> a6376e927600
+INFO:kolla.common.utils.placement-base:Step 4/6 : RUN apt-get update && apt-get -y install --no-install-recommends mariadb-client placement-common python3-pymysql && apt-get clean && rm -rf /var/lib/apt/lists/*     && cp /usr/share/placement/mysql-migrate-db.sh /opt/     && chmod 755 /opt/mysql-migrate-db.sh
+INFO:kolla.common.utils.placement-base: ---> Running in 8a46020b6bdc
+INFO:kolla.common.utils.placement-base:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.placement-base:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.placement-base:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.placement-base:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.placement-base:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.placement-base:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.placement-base:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.placement-base:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.placement-base:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.placement-base:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.placement-base:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.placement-base:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.placement-base:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.placement-base:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.placement-base:Get:15 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.placement-base:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.placement-base:Fetched 15.6 MB in 3s (6,206 kB/s)
+INFO:kolla.common.utils.placement-base:Reading package lists...
+INFO:kolla.common.utils.placement-base:Reading package lists...
+INFO:kolla.common.utils.placement-base:Building dependency tree...
+INFO:kolla.common.utils.placement-base:Reading state information...
+INFO:kolla.common.utils.placement-base:python3-pymysql is already the newest version (0.8.0-1).
+INFO:kolla.common.utils.placement-base:The following additional packages will be installed:
+INFO:kolla.common.utils.placement-base:  libconfig-inifiles-perl libjemalloc1 mariadb-client-10.1
+INFO:kolla.common.utils.placement-base:  mariadb-client-core-10.1 mariadb-common
+INFO:kolla.common.utils.placement-base:Recommended packages:
+INFO:kolla.common.utils.placement-base:  libdbd-mysql-perl libdbi-perl libterm-readkey-perl
+INFO:kolla.common.utils.placement-base:The following NEW packages will be installed:
+INFO:kolla.common.utils.placement-base:  libconfig-inifiles-perl libjemalloc1 mariadb-client mariadb-client-10.1
+INFO:kolla.common.utils.placement-base:  mariadb-client-core-10.1 mariadb-common placement-common
+INFO:kolla.common.utils.placement-base:0 upgraded, 7 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.placement-base:Need to get 9,982 kB of archives.
+INFO:kolla.common.utils.placement-base:After this operation, 72.9 MB of additional disk space will be used.
+INFO:kolla.common.utils.placement-base:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x placement-common all 2.0.0-0ubuntu1~cloud0 [15.2 kB]
+INFO:kolla.common.utils.placement-base:Get:2 http://ports.ubuntu.com bionic/main s390x libconfig-inifiles-perl all 2.94-1 [40.4 kB]
+INFO:kolla.common.utils.placement-base:Get:3 http://ports.ubuntu.com bionic-updates/universe s390x mariadb-common all 1:10.1.44-0ubuntu0.18.04.1 [16.1 kB]
+INFO:kolla.common.utils.placement-base:Get:4 http://ports.ubuntu.com bionic-updates/universe s390x mariadb-client-core-10.1 s390x 1:10.1.44-0ubuntu0.18.04.1 [4,524 kB]
+INFO:kolla.common.utils.placement-base:Get:5 http://ports.ubuntu.com bionic/universe s390x libjemalloc1 s390x 3.6.0-11 [75.5 kB]
+INFO:kolla.common.utils.placement-base:Get:6 http://ports.ubuntu.com bionic-updates/universe s390x mariadb-client-10.1 s390x 1:10.1.44-0ubuntu0.18.04.1 [5,299 kB]
+INFO:kolla.common.utils.placement-base:Get:7 http://ports.ubuntu.com bionic-updates/universe s390x mariadb-client all 1:10.1.44-0ubuntu0.18.04.1 [12.8 kB]
+INFO:kolla.common.utils.placement-base:Fetched 9,982 kB in 5s (1,910 kB/s)
+INFO:kolla.common.utils.placement-base:Selecting previously unselected package libconfig-inifiles-perl.
+INFO:kolla.common.utils.placement-base:(Reading database ... 
+INFO:kolla.common.utils.placement-base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.placement-base:(Reading database ... 65%
+INFO:kolla.common.utils.placement-base:(Reading database ... 70%
+INFO:kolla.common.utils.placement-base:(Reading database ... 75%
+INFO:kolla.common.utils.placement-base:(Reading database ... 80%
+INFO:kolla.common.utils.placement-base:(Reading database ... 85%
+INFO:kolla.common.utils.placement-base:(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22243 files and directories currently installed.)
+INFO:kolla.common.utils.placement-base:Preparing to unpack .../0-libconfig-inifiles-perl_2.94-1_all.deb ...
+INFO:kolla.common.utils.placement-base:Unpacking libconfig-inifiles-perl (2.94-1) ...
+INFO:kolla.common.utils.placement-base:Selecting previously unselected package mariadb-common.
+INFO:kolla.common.utils.placement-base:Preparing to unpack .../1-mariadb-common_1%3a10.1.44-0ubuntu0.18.04.1_all.deb ...
+INFO:kolla.common.utils.placement-base:Unpacking mariadb-common (1:10.1.44-0ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.placement-base:Selecting previously unselected package mariadb-client-core-10.1.
+INFO:kolla.common.utils.placement-base:Preparing to unpack .../2-mariadb-client-core-10.1_1%3a10.1.44-0ubuntu0.18.04.1_s390x.deb ...
+INFO:kolla.common.utils.placement-base:Unpacking mariadb-client-core-10.1 (1:10.1.44-0ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.placement-base:Selecting previously unselected package libjemalloc1.
+INFO:kolla.common.utils.placement-base:Preparing to unpack .../3-libjemalloc1_3.6.0-11_s390x.deb ...
+INFO:kolla.common.utils.placement-base:Unpacking libjemalloc1 (3.6.0-11) ...
+INFO:kolla.common.utils.placement-base:Selecting previously unselected package mariadb-client-10.1.
+INFO:kolla.common.utils.placement-base:Preparing to unpack .../4-mariadb-client-10.1_1%3a10.1.44-0ubuntu0.18.04.1_s390x.deb ...
+INFO:kolla.common.utils.placement-base:Unpacking mariadb-client-10.1 (1:10.1.44-0ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.placement-base:Selecting previously unselected package mariadb-client.
+INFO:kolla.common.utils.placement-base:Preparing to unpack .../5-mariadb-client_1%3a10.1.44-0ubuntu0.18.04.1_all.deb ...
+INFO:kolla.common.utils.placement-base:Unpacking mariadb-client (1:10.1.44-0ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.placement-base:Selecting previously unselected package placement-common.
+INFO:kolla.common.utils.placement-base:Preparing to unpack .../6-placement-common_2.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.placement-base:Unpacking placement-common (2.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.placement-base:Setting up mariadb-common (1:10.1.44-0ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.placement-base:update-alternatives: using /etc/mysql/mariadb.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+INFO:kolla.common.utils.placement-base:Setting up libconfig-inifiles-perl (2.94-1) ...
+INFO:kolla.common.utils.placement-base:Setting up libjemalloc1 (3.6.0-11) ...
+INFO:kolla.common.utils.placement-base:Setting up mariadb-client-core-10.1 (1:10.1.44-0ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.placement-base:Setting up placement-common (2.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.placement-base:Setting up mariadb-client-10.1 (1:10.1.44-0ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.placement-base:Setting up mariadb-client (1:10.1.44-0ubuntu0.18.04.1) ...
+INFO:kolla.common.utils.placement-base:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.placement-base:Removing intermediate container 8a46020b6bdc
+INFO:kolla.common.utils.placement-base: ---> 37b597db41aa
+INFO:kolla.common.utils.placement-base:Step 5/6 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.placement-base: ---> 66991c6b91ed
+INFO:kolla.common.utils.placement-base:Step 6/6 : RUN touch /usr/local/bin/kolla_placement_extend_start     && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_placement_extend_start
+INFO:kolla.common.utils.placement-base: ---> Running in f16b95669028
+INFO:kolla.common.utils.placement-base:Removing intermediate container f16b95669028
+INFO:kolla.common.utils.placement-base: ---> fc72f9db3397
+INFO:kolla.common.utils.placement-base:Successfully built fc72f9db3397
+INFO:kolla.common.utils.placement-base:Successfully tagged s390x/ubuntu-binary-placement-base:9.1.0
+INFO:kolla.common.utils.placement-base:Built at 2020-03-02 21:42:42.913908 (took 0:00:20.259055)

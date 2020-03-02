@@ -1,0 +1,74 @@
+INFO:kolla.common.utils.ironic-base:Building started at 2020-03-02 21:41:06.288741
+INFO:kolla.common.utils.ironic-base:Step 1/6 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.ironic-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.ironic-base:Step 2/6 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="ironic-base" build-date="20200302"
+INFO:kolla.common.utils.ironic-base: ---> Running in c5c1f15ebb96
+INFO:kolla.common.utils.ironic-base:Removing intermediate container c5c1f15ebb96
+INFO:kolla.common.utils.ironic-base: ---> fe87695261de
+INFO:kolla.common.utils.ironic-base:Step 3/6 : RUN usermod --append --home /var/lib/ironic --groups kolla ironic     && mkdir -p /var/lib/ironic     && chown -R 42422:42422 /var/lib/ironic
+INFO:kolla.common.utils.ironic-base: ---> Running in 7da5753f4769
+INFO:kolla.common.utils.ironic-base:Removing intermediate container 7da5753f4769
+INFO:kolla.common.utils.ironic-base: ---> a47132751c80
+INFO:kolla.common.utils.ironic-base:Step 4/6 : RUN apt-get update && apt-get -y install --no-install-recommends ironic-common && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.ironic-base: ---> Running in d31f652af324
+INFO:kolla.common.utils.ironic-base:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.ironic-base:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.ironic-base:Get:3 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.ironic-base:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.ironic-base:Get:5 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.ironic-base:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.ironic-base:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.ironic-base:Get:8 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.ironic-base:Get:9 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.ironic-base:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.ironic-base:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.ironic-base:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.ironic-base:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.ironic-base:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.ironic-base:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.ironic-base:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.ironic-base:Fetched 15.6 MB in 3s (5,954 kB/s)
+INFO:kolla.common.utils.ironic-base:Reading package lists...
+INFO:kolla.common.utils.ironic-base:Reading package lists...
+INFO:kolla.common.utils.ironic-base:Building dependency tree...
+INFO:kolla.common.utils.ironic-base:Reading state information...
+INFO:kolla.common.utils.ironic-base:The following additional packages will be installed:
+INFO:kolla.common.utils.ironic-base:  psmisc
+INFO:kolla.common.utils.ironic-base:The following NEW packages will be installed:
+INFO:kolla.common.utils.ironic-base:  ironic-common psmisc
+INFO:kolla.common.utils.ironic-base:0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.ironic-base:Need to get 83.8 kB of archives.
+INFO:kolla.common.utils.ironic-base:After this operation, 428 kB of additional disk space will be used.
+INFO:kolla.common.utils.ironic-base:Get:1 http://ports.ubuntu.com bionic-updates/main s390x psmisc s390x 23.1-1ubuntu0.1 [47.5 kB]
+INFO:kolla.common.utils.ironic-base:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x ironic-common all 1:13.0.1-0ubuntu1~cloud0 [36.3 kB]
+INFO:kolla.common.utils.ironic-base:Fetched 83.8 kB in 0s (1,765 kB/s)
+INFO:kolla.common.utils.ironic-base:Selecting previously unselected package psmisc.
+INFO:kolla.common.utils.ironic-base:(Reading database ... 
+INFO:kolla.common.utils.ironic-base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%
+INFO:kolla.common.utils.ironic-base:(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.ironic-base:(Reading database ... 65%
+INFO:kolla.common.utils.ironic-base:(Reading database ... 70%
+INFO:kolla.common.utils.ironic-base:(Reading database ... 75%
+INFO:kolla.common.utils.ironic-base:(Reading database ... 80%
+INFO:kolla.common.utils.ironic-base:(Reading database ... 85%
+INFO:kolla.common.utils.ironic-base:(Reading database ... 90%
+INFO:kolla.common.utils.ironic-base:(Reading database ... 95%
+INFO:kolla.common.utils.ironic-base:(Reading database ... 100%(Reading database ... 22243 files and directories currently installed.)
+INFO:kolla.common.utils.ironic-base:Preparing to unpack .../psmisc_23.1-1ubuntu0.1_s390x.deb ...
+INFO:kolla.common.utils.ironic-base:Unpacking psmisc (23.1-1ubuntu0.1) ...
+INFO:kolla.common.utils.ironic-base:Selecting previously unselected package ironic-common.
+INFO:kolla.common.utils.ironic-base:Preparing to unpack .../ironic-common_1%3a13.0.1-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.ironic-base:Unpacking ironic-common (1:13.0.1-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.ironic-base:Setting up psmisc (23.1-1ubuntu0.1) ...
+INFO:kolla.common.utils.ironic-base:Setting up ironic-common (1:13.0.1-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.ironic-base:Removing intermediate container d31f652af324
+INFO:kolla.common.utils.ironic-base: ---> f52db13a9afe
+INFO:kolla.common.utils.ironic-base:Step 5/6 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.ironic-base: ---> e1c13acd3dcd
+INFO:kolla.common.utils.ironic-base:Step 6/6 : RUN touch /usr/local/bin/kolla_ironic_extend_start     && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_ironic_extend_start     && chown -R ironic: /etc/ironic
+INFO:kolla.common.utils.ironic-base: ---> Running in 7dbda8b70914
+INFO:kolla.common.utils.ironic-base:Removing intermediate container 7dbda8b70914
+INFO:kolla.common.utils.ironic-base: ---> ded2e1dcc132
+INFO:kolla.common.utils.ironic-base:Successfully built ded2e1dcc132
+INFO:kolla.common.utils.ironic-base:Successfully tagged s390x/ubuntu-binary-ironic-base:9.1.0
+INFO:kolla.common.utils.ironic-base:Built at 2020-03-02 21:41:20.177150 (took 0:00:13.888409)

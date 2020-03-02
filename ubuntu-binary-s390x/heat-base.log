@@ -1,0 +1,165 @@
+INFO:kolla.common.utils.heat-base:Building started at 2020-03-02 21:42:42.914179
+INFO:kolla.common.utils.heat-base:Step 1/7 : FROM s390x/ubuntu-binary-openstack-base:9.1.0
+INFO:kolla.common.utils.heat-base: ---> 0b248122f3fe
+INFO:kolla.common.utils.heat-base:Step 2/7 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="heat-base" build-date="20200302"
+INFO:kolla.common.utils.heat-base: ---> Running in a968501a08cd
+INFO:kolla.common.utils.heat-base:Removing intermediate container a968501a08cd
+INFO:kolla.common.utils.heat-base: ---> cc9d53e51496
+INFO:kolla.common.utils.heat-base:Step 3/7 : RUN usermod --append --home /var/lib/heat --groups kolla heat     && mkdir -p /var/lib/heat     && chown -R 42418:42418 /var/lib/heat
+INFO:kolla.common.utils.heat-base: ---> Running in 53de3abbc613
+INFO:kolla.common.utils.heat-base:Removing intermediate container 53de3abbc613
+INFO:kolla.common.utils.heat-base: ---> 6788dc3da248
+INFO:kolla.common.utils.heat-base:Step 4/7 : RUN apt-get update && apt-get -y install --no-install-recommends apache2 heat-common libapache2-mod-wsgi-py3 && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.heat-base: ---> Running in 2ef82611213f
+INFO:kolla.common.utils.heat-base:Get:1 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.heat-base:Ign:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.heat-base:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.heat-base:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.heat-base:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.heat-base:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.heat-base:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.heat-base:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.heat-base:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.heat-base:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.heat-base:Get:11 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.heat-base:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.heat-base:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.heat-base:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.heat-base:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.heat-base:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.heat-base:Fetched 15.6 MB in 3s (6,027 kB/s)
+INFO:kolla.common.utils.heat-base:Reading package lists...
+INFO:kolla.common.utils.heat-base:Reading package lists...
+INFO:kolla.common.utils.heat-base:Building dependency tree...
+INFO:kolla.common.utils.heat-base:Reading state information...
+INFO:kolla.common.utils.heat-base:The following additional packages will be installed:
+INFO:kolla.common.utils.heat-base:  apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+INFO:kolla.common.utils.heat-base:  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.2-0 libpython3.6
+INFO:kolla.common.utils.heat-base:Suggested packages:
+INFO:kolla.common.utils.heat-base:  www-browser apache2-doc apache2-suexec-pristine | apache2-suexec-custom ufw
+INFO:kolla.common.utils.heat-base:Recommended packages:
+INFO:kolla.common.utils.heat-base:  ssl-cert
+INFO:kolla.common.utils.heat-base:The following NEW packages will be installed:
+INFO:kolla.common.utils.heat-base:  apache2 apache2-bin apache2-data apache2-utils heat-common
+INFO:kolla.common.utils.heat-base:  libapache2-mod-wsgi-py3 libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+INFO:kolla.common.utils.heat-base:  libaprutil1-ldap liblua5.2-0 libpython3.6
+INFO:kolla.common.utils.heat-base:0 upgraded, 12 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.heat-base:Need to get 2,999 kB of archives.
+INFO:kolla.common.utils.heat-base:After this operation, 12.5 MB of additional disk space will be used.
+INFO:kolla.common.utils.heat-base:Get:1 http://ports.ubuntu.com bionic/main s390x libapr1 s390x 1.6.3-2 [87.4 kB]
+INFO:kolla.common.utils.heat-base:Get:2 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x heat-common all 1:13.0.0-0ubuntu1~cloud0 [30.4 kB]
+INFO:kolla.common.utils.heat-base:Get:3 http://ports.ubuntu.com bionic/main s390x libaprutil1 s390x 1.6.1-2 [81.8 kB]
+INFO:kolla.common.utils.heat-base:Get:4 http://ports.ubuntu.com bionic/main s390x libaprutil1-dbd-sqlite3 s390x 1.6.1-2 [10.4 kB]
+INFO:kolla.common.utils.heat-base:Get:5 http://ports.ubuntu.com bionic/main s390x libaprutil1-ldap s390x 1.6.1-2 [8,652 B]
+INFO:kolla.common.utils.heat-base:Get:6 http://ports.ubuntu.com bionic/main s390x liblua5.2-0 s390x 5.2.4-1.1build1 [99.9 kB]
+INFO:kolla.common.utils.heat-base:Get:7 http://ports.ubuntu.com bionic-updates/main s390x apache2-bin s390x 2.4.29-1ubuntu4.12 [978 kB]
+INFO:kolla.common.utils.heat-base:Get:8 http://ports.ubuntu.com bionic-updates/main s390x apache2-utils s390x 2.4.29-1ubuntu4.12 [81.3 kB]
+INFO:kolla.common.utils.heat-base:Get:9 http://ports.ubuntu.com bionic-updates/main s390x apache2-data all 2.4.29-1ubuntu4.12 [160 kB]
+INFO:kolla.common.utils.heat-base:Get:10 http://ports.ubuntu.com bionic-updates/main s390x apache2 s390x 2.4.29-1ubuntu4.12 [95.1 kB]
+INFO:kolla.common.utils.heat-base:Get:11 http://ports.ubuntu.com bionic-updates/main s390x libpython3.6 s390x 3.6.9-1~18.04 [1,284 kB]
+INFO:kolla.common.utils.heat-base:Get:12 http://ports.ubuntu.com bionic-updates/universe s390x libapache2-mod-wsgi-py3 s390x 4.5.17-1ubuntu1 [81.9 kB]
+INFO:kolla.common.utils.heat-base:Fetched 2,999 kB in 0s (25.8 MB/s)
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package libapr1:s390x.
+INFO:kolla.common.utils.heat-base:(Reading database ... 
+INFO:kolla.common.utils.heat-base:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.heat-base:(Reading database ... 65%
+INFO:kolla.common.utils.heat-base:(Reading database ... 70%
+INFO:kolla.common.utils.heat-base:(Reading database ... 75%
+INFO:kolla.common.utils.heat-base:(Reading database ... 80%
+INFO:kolla.common.utils.heat-base:(Reading database ... 85%
+INFO:kolla.common.utils.heat-base:(Reading database ... 90%
+INFO:kolla.common.utils.heat-base:(Reading database ... 95%
+INFO:kolla.common.utils.heat-base:(Reading database ... 100%(Reading database ... 22243 files and directories currently installed.)
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../00-libapr1_1.6.3-2_s390x.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking libapr1:s390x (1.6.3-2) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package libaprutil1:s390x.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../01-libaprutil1_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking libaprutil1:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package libaprutil1-dbd-sqlite3:s390x.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking libaprutil1-dbd-sqlite3:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package libaprutil1-ldap:s390x.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../03-libaprutil1-ldap_1.6.1-2_s390x.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking libaprutil1-ldap:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package liblua5.2-0:s390x.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../04-liblua5.2-0_5.2.4-1.1build1_s390x.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking liblua5.2-0:s390x (5.2.4-1.1build1) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package apache2-bin.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../05-apache2-bin_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking apache2-bin (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package apache2-utils.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../06-apache2-utils_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking apache2-utils (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package apache2-data.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../07-apache2-data_2.4.29-1ubuntu4.12_all.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking apache2-data (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package apache2.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../08-apache2_2.4.29-1ubuntu4.12_s390x.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking apache2 (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package heat-common.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../09-heat-common_1%3a13.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking heat-common (1:13.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package libpython3.6:s390x.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../10-libpython3.6_3.6.9-1~18.04_s390x.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking libpython3.6:s390x (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.heat-base:Selecting previously unselected package libapache2-mod-wsgi-py3.
+INFO:kolla.common.utils.heat-base:Preparing to unpack .../11-libapache2-mod-wsgi-py3_4.5.17-1ubuntu1_s390x.deb ...
+INFO:kolla.common.utils.heat-base:Unpacking libapache2-mod-wsgi-py3 (4.5.17-1ubuntu1) ...
+INFO:kolla.common.utils.heat-base:Setting up libapr1:s390x (1.6.3-2) ...
+INFO:kolla.common.utils.heat-base:Setting up apache2-data (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.heat-base:Setting up libaprutil1:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.heat-base:Setting up liblua5.2-0:s390x (5.2.4-1.1build1) ...
+INFO:kolla.common.utils.heat-base:Setting up heat-common (1:13.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.heat-base:Setting up libpython3.6:s390x (3.6.9-1~18.04) ...
+INFO:kolla.common.utils.heat-base:Setting up libaprutil1-ldap:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.heat-base:Setting up libaprutil1-dbd-sqlite3:s390x (1.6.1-2) ...
+INFO:kolla.common.utils.heat-base:Setting up apache2-utils (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.heat-base:Setting up apache2-bin (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.heat-base:Setting up libapache2-mod-wsgi-py3 (4.5.17-1ubuntu1) ...
+INFO:kolla.common.utils.heat-base:Package apache2 is not configured yet. Will defer actions by package libapache2-mod-wsgi-py3.
+INFO:kolla.common.utils.heat-base:Setting up apache2 (2.4.29-1ubuntu4.12) ...
+INFO:kolla.common.utils.heat-base:Enabling module mpm_event.
+INFO:kolla.common.utils.heat-base:Enabling module authz_core.
+INFO:kolla.common.utils.heat-base:Enabling module authz_host.
+INFO:kolla.common.utils.heat-base:Enabling module authn_core.
+INFO:kolla.common.utils.heat-base:Enabling module auth_basic.
+INFO:kolla.common.utils.heat-base:Enabling module access_compat.
+INFO:kolla.common.utils.heat-base:Enabling module authn_file.
+INFO:kolla.common.utils.heat-base:Enabling module authz_user.
+INFO:kolla.common.utils.heat-base:Enabling module alias.
+INFO:kolla.common.utils.heat-base:Enabling module dir.
+INFO:kolla.common.utils.heat-base:Enabling module autoindex.
+INFO:kolla.common.utils.heat-base:Enabling module env.
+INFO:kolla.common.utils.heat-base:Enabling module mime.
+INFO:kolla.common.utils.heat-base:Enabling module negotiation.
+INFO:kolla.common.utils.heat-base:Enabling module setenvif.
+INFO:kolla.common.utils.heat-base:Enabling module filter.
+INFO:kolla.common.utils.heat-base:Enabling module deflate.
+INFO:kolla.common.utils.heat-base:Enabling module status.
+INFO:kolla.common.utils.heat-base:Enabling module reqtimeout.
+INFO:kolla.common.utils.heat-base:Enabling conf charset.
+INFO:kolla.common.utils.heat-base:Enabling conf localized-error-pages.
+INFO:kolla.common.utils.heat-base:Enabling conf other-vhosts-access-log.
+INFO:kolla.common.utils.heat-base:Enabling conf security.
+INFO:kolla.common.utils.heat-base:Enabling conf serve-cgi-bin.
+INFO:kolla.common.utils.heat-base:Enabling site 000-default.
+INFO:kolla.common.utils.heat-base:info: Executing deferred 'a2enmod wsgi' for package libapache2-mod-wsgi-py3
+INFO:kolla.common.utils.heat-base:Enabling module wsgi.
+INFO:kolla.common.utils.heat-base:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.heat-base:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.heat-base:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.heat-base:Removing intermediate container 2ef82611213f
+INFO:kolla.common.utils.heat-base: ---> 9109320fec74
+INFO:kolla.common.utils.heat-base:Step 5/7 : RUN echo > /etc/apache2/ports.conf
+INFO:kolla.common.utils.heat-base: ---> Running in 5d31f16d5a34
+INFO:kolla.common.utils.heat-base:Removing intermediate container 5d31f16d5a34
+INFO:kolla.common.utils.heat-base: ---> 3b3cff1b3e30
+INFO:kolla.common.utils.heat-base:Step 6/7 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.heat-base: ---> 4ec974092eda
+INFO:kolla.common.utils.heat-base:Step 7/7 : RUN touch /usr/local/bin/kolla_heat_extend_start     && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_heat_extend_start
+INFO:kolla.common.utils.heat-base: ---> Running in 7e90be49e5b5
+INFO:kolla.common.utils.heat-base:Removing intermediate container 7e90be49e5b5
+INFO:kolla.common.utils.heat-base: ---> 923f4e6f6ed1
+INFO:kolla.common.utils.heat-base:Successfully built 923f4e6f6ed1
+INFO:kolla.common.utils.heat-base:Successfully tagged s390x/ubuntu-binary-heat-base:9.1.0
+INFO:kolla.common.utils.heat-base:Built at 2020-03-02 21:43:01.600854 (took 0:00:18.686675)

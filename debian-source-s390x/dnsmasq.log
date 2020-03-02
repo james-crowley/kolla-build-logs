@@ -1,0 +1,77 @@
+INFO:kolla.common.utils.dnsmasq:Building started at 2020-03-02 21:31:40.561017
+INFO:kolla.common.utils.dnsmasq:Step 1/3 : FROM s390x/debian-source-base:9.1.0
+INFO:kolla.common.utils.dnsmasq: ---> 80efb5983713
+INFO:kolla.common.utils.dnsmasq:Step 2/3 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="dnsmasq" build-date="20200302"
+INFO:kolla.common.utils.dnsmasq: ---> Running in 4edd0a94000e
+INFO:kolla.common.utils.dnsmasq:Removing intermediate container 4edd0a94000e
+INFO:kolla.common.utils.dnsmasq: ---> 83a25ebeee8a
+INFO:kolla.common.utils.dnsmasq:Step 3/3 : RUN apt-get update && apt-get -y install --no-install-recommends dnsmasq && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.dnsmasq: ---> Running in e6e6d3e43f83
+INFO:kolla.common.utils.dnsmasq:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.dnsmasq:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.dnsmasq:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.dnsmasq:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.dnsmasq:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.dnsmasq:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.dnsmasq:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.dnsmasq:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.dnsmasq:Fetched 8,235 kB in 2s (5,225 kB/s)
+INFO:kolla.common.utils.dnsmasq:Reading package lists...
+INFO:kolla.common.utils.dnsmasq:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.dnsmasq:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.dnsmasq:[0m
+INFO:kolla.common.utils.dnsmasq:Reading package lists...
+INFO:kolla.common.utils.dnsmasq:Building dependency tree...
+INFO:kolla.common.utils.dnsmasq:Reading state information...
+INFO:kolla.common.utils.dnsmasq:The following additional packages will be installed:
+INFO:kolla.common.utils.dnsmasq:  dnsmasq-base libdbus-1-3 libidn11 libnetfilter-conntrack3 libnfnetlink0
+INFO:kolla.common.utils.dnsmasq:Suggested packages:
+INFO:kolla.common.utils.dnsmasq:  resolvconf
+INFO:kolla.common.utils.dnsmasq:Recommended packages:
+INFO:kolla.common.utils.dnsmasq:  dns-root-data dbus
+INFO:kolla.common.utils.dnsmasq:The following NEW packages will be installed:
+INFO:kolla.common.utils.dnsmasq:  dnsmasq dnsmasq-base libdbus-1-3 libidn11 libnetfilter-conntrack3
+INFO:kolla.common.utils.dnsmasq:  libnfnetlink0
+INFO:kolla.common.utils.dnsmasq:0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.dnsmasq:Need to get 807 kB of archives.
+INFO:kolla.common.utils.dnsmasq:After this operation, 2,043 kB of additional disk space will be used.
+INFO:kolla.common.utils.dnsmasq:Get:1 http://deb.debian.org/debian buster/main s390x libdbus-1-3 s390x 1.12.16-1 [205 kB]
+INFO:kolla.common.utils.dnsmasq:Get:2 http://deb.debian.org/debian buster/main s390x libidn11 s390x 1.33-2.2 [114 kB]
+INFO:kolla.common.utils.dnsmasq:Get:3 http://deb.debian.org/debian buster/main s390x libnfnetlink0 s390x 1.0.1-3+b1 [13.7 kB]
+INFO:kolla.common.utils.dnsmasq:Get:4 http://deb.debian.org/debian buster/main s390x libnetfilter-conntrack3 s390x 1.0.7-1 [39.0 kB]
+INFO:kolla.common.utils.dnsmasq:Get:5 http://deb.debian.org/debian buster/main s390x dnsmasq-base s390x 2.80-1 [420 kB]
+INFO:kolla.common.utils.dnsmasq:Get:6 http://deb.debian.org/debian buster/main s390x dnsmasq all 2.80-1 [16.4 kB]
+INFO:kolla.common.utils.dnsmasq:Fetched 807 kB in 0s (16.1 MB/s)
+INFO:kolla.common.utils.dnsmasq:Selecting previously unselected package libdbus-1-3:s390x.
+INFO:kolla.common.utils.dnsmasq:(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.dnsmasq:Preparing to unpack .../0-libdbus-1-3_1.12.16-1_s390x.deb ...
+INFO:kolla.common.utils.dnsmasq:Unpacking libdbus-1-3:s390x (1.12.16-1) ...
+INFO:kolla.common.utils.dnsmasq:Selecting previously unselected package libidn11:s390x.
+INFO:kolla.common.utils.dnsmasq:Preparing to unpack .../1-libidn11_1.33-2.2_s390x.deb ...
+INFO:kolla.common.utils.dnsmasq:Unpacking libidn11:s390x (1.33-2.2) ...
+INFO:kolla.common.utils.dnsmasq:Selecting previously unselected package libnfnetlink0:s390x.
+INFO:kolla.common.utils.dnsmasq:Preparing to unpack .../2-libnfnetlink0_1.0.1-3+b1_s390x.deb ...
+INFO:kolla.common.utils.dnsmasq:Unpacking libnfnetlink0:s390x (1.0.1-3+b1) ...
+INFO:kolla.common.utils.dnsmasq:Selecting previously unselected package libnetfilter-conntrack3:s390x.
+INFO:kolla.common.utils.dnsmasq:Preparing to unpack .../3-libnetfilter-conntrack3_1.0.7-1_s390x.deb ...
+INFO:kolla.common.utils.dnsmasq:Unpacking libnetfilter-conntrack3:s390x (1.0.7-1) ...
+INFO:kolla.common.utils.dnsmasq:Selecting previously unselected package dnsmasq-base.
+INFO:kolla.common.utils.dnsmasq:Preparing to unpack .../4-dnsmasq-base_2.80-1_s390x.deb ...
+INFO:kolla.common.utils.dnsmasq:Unpacking dnsmasq-base (2.80-1) ...
+INFO:kolla.common.utils.dnsmasq:Selecting previously unselected package dnsmasq.
+INFO:kolla.common.utils.dnsmasq:Preparing to unpack .../5-dnsmasq_2.80-1_all.deb ...
+INFO:kolla.common.utils.dnsmasq:Unpacking dnsmasq (2.80-1) ...
+INFO:kolla.common.utils.dnsmasq:Setting up libidn11:s390x (1.33-2.2) ...
+INFO:kolla.common.utils.dnsmasq:Setting up libdbus-1-3:s390x (1.12.16-1) ...
+INFO:kolla.common.utils.dnsmasq:Setting up libnfnetlink0:s390x (1.0.1-3+b1) ...
+INFO:kolla.common.utils.dnsmasq:Setting up libnetfilter-conntrack3:s390x (1.0.7-1) ...
+INFO:kolla.common.utils.dnsmasq:Setting up dnsmasq-base (2.80-1) ...
+INFO:kolla.common.utils.dnsmasq:Setting up dnsmasq (2.80-1) ...
+INFO:kolla.common.utils.dnsmasq:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.dnsmasq:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.dnsmasq:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.dnsmasq:Removing intermediate container e6e6d3e43f83
+INFO:kolla.common.utils.dnsmasq: ---> 815d40c70445
+INFO:kolla.common.utils.dnsmasq:Successfully built 815d40c70445
+INFO:kolla.common.utils.dnsmasq:Successfully tagged s390x/debian-source-dnsmasq:9.1.0
+INFO:kolla.common.utils.dnsmasq:Built at 2020-03-02 21:31:49.341142 (took 0:00:08.780125)

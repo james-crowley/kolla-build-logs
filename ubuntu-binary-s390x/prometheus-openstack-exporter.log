@@ -1,0 +1,25 @@
+INFO:kolla.common.utils.prometheus-openstack-exporter:Building started at 2020-03-02 21:40:12.616238
+INFO:kolla.common.utils.prometheus-openstack-exporter:Step 1/5 : FROM s390x/ubuntu-binary-prometheus-base:9.1.0
+INFO:kolla.common.utils.prometheus-openstack-exporter: ---> 3a4f3fd769cf
+INFO:kolla.common.utils.prometheus-openstack-exporter:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="prometheus-openstack-exporter" build-date="20200302"
+INFO:kolla.common.utils.prometheus-openstack-exporter: ---> Running in f15e28f7d8e7
+INFO:kolla.common.utils.prometheus-openstack-exporter:Removing intermediate container f15e28f7d8e7
+INFO:kolla.common.utils.prometheus-openstack-exporter: ---> 147dbc612aa5
+INFO:kolla.common.utils.prometheus-openstack-exporter:Step 3/5 : ENV prometheus_openstack_exporter_version=0.6.0
+INFO:kolla.common.utils.prometheus-openstack-exporter: ---> Running in 6e357a7081e4
+INFO:kolla.common.utils.prometheus-openstack-exporter:Removing intermediate container 6e357a7081e4
+INFO:kolla.common.utils.prometheus-openstack-exporter: ---> 3f2841665322
+INFO:kolla.common.utils.prometheus-openstack-exporter:Step 4/5 : RUN curl -sSL -o /tmp/prometheus_openstack_exporter.tar.gz https://github.com/openstack-exporter/openstack-exporter/releases/download/v${prometheus_openstack_exporter_version}/openstack-exporter-${prometheus_openstack_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/prometheus_openstack_exporter.tar.gz -C /opt/     && rm -f /tmp/prometheus_openstack_exporter.tar.gz     && ln -s /opt/openstack-exporter* /opt/openstack-exporter
+INFO:kolla.common.utils.prometheus-openstack-exporter: ---> Running in e1caaa1682f6
+INFO:kolla.common.utils.prometheus-openstack-exporter:curl (https://github.com/openstack-exporter/openstack-exporter/releases/download/v0.6.0/openstack-exporter-0.6.0.linux-s390x.tar.gz): response: 404, time: 0.180371, size: 9
+INFO:kolla.common.utils.prometheus-openstack-exporter:[91mtar: This does not look like a tar archive
+INFO:kolla.common.utils.prometheus-openstack-exporter:[0m
+INFO:kolla.common.utils.prometheus-openstack-exporter:[91m
+INFO:kolla.common.utils.prometheus-openstack-exporter:gzip: stdin: not in gzip format
+INFO:kolla.common.utils.prometheus-openstack-exporter:[0m
+INFO:kolla.common.utils.prometheus-openstack-exporter:[91mtar: Child returned status 1
+INFO:kolla.common.utils.prometheus-openstack-exporter:tar: Error is not recoverable: exiting now
+INFO:kolla.common.utils.prometheus-openstack-exporter:[0m
+INFO:kolla.common.utils.prometheus-openstack-exporter:Removing intermediate container e1caaa1682f6
+ERROR:kolla.common.utils.prometheus-openstack-exporter:Error'd with the following message
+ERROR:kolla.common.utils.prometheus-openstack-exporter:The command '/bin/sh -c curl -sSL -o /tmp/prometheus_openstack_exporter.tar.gz https://github.com/openstack-exporter/openstack-exporter/releases/download/v${prometheus_openstack_exporter_version}/openstack-exporter-${prometheus_openstack_exporter_version}.linux-s390x.tar.gz     && tar xvf /tmp/prometheus_openstack_exporter.tar.gz -C /opt/     && rm -f /tmp/prometheus_openstack_exporter.tar.gz     && ln -s /opt/openstack-exporter* /opt/openstack-exporter' returned a non-zero code: 2

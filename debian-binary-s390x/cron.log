@@ -1,0 +1,75 @@
+INFO:kolla.common.utils.cron:Building started at 2020-03-02 21:21:30.412503
+INFO:kolla.common.utils.cron:Step 1/3 : FROM s390x/debian-binary-base:9.1.0
+INFO:kolla.common.utils.cron: ---> 4244142526cc
+INFO:kolla.common.utils.cron:Step 2/3 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="cron" build-date="20200302"
+INFO:kolla.common.utils.cron: ---> Running in 0d1851d398cb
+INFO:kolla.common.utils.cron:Removing intermediate container 0d1851d398cb
+INFO:kolla.common.utils.cron: ---> 554f780c8e46
+INFO:kolla.common.utils.cron:Step 3/3 : RUN apt-get update && apt-get -y install --no-install-recommends cron logrotate && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.cron: ---> Running in a55ed839cb5b
+INFO:kolla.common.utils.cron:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.cron:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.cron:Get:4 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.cron:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.cron:Get:5 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.cron:Get:6 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.cron:Get:7 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.cron:Get:8 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.cron:Fetched 8,235 kB in 1s (5,904 kB/s)
+INFO:kolla.common.utils.cron:Reading package lists...
+INFO:kolla.common.utils.cron:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.cron:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.cron:[0m
+INFO:kolla.common.utils.cron:Reading package lists...
+INFO:kolla.common.utils.cron:Building dependency tree...
+INFO:kolla.common.utils.cron:Reading state information...
+INFO:kolla.common.utils.cron:The following additional packages will be installed:
+INFO:kolla.common.utils.cron:  libpopt0 sensible-utils
+INFO:kolla.common.utils.cron:Suggested packages:
+INFO:kolla.common.utils.cron:  anacron checksecurity
+INFO:kolla.common.utils.cron:Recommended packages:
+INFO:kolla.common.utils.cron:  default-mta | mail-transport-agent bsd-mailx | mailx
+INFO:kolla.common.utils.cron:The following NEW packages will be installed:
+INFO:kolla.common.utils.cron:  cron libpopt0 logrotate sensible-utils
+INFO:kolla.common.utils.cron:0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.cron:Need to get 221 kB of archives.
+INFO:kolla.common.utils.cron:After this operation, 706 kB of additional disk space will be used.
+INFO:kolla.common.utils.cron:Get:1 http://deb.debian.org/debian buster/main s390x sensible-utils all 0.0.12 [15.8 kB]
+INFO:kolla.common.utils.cron:Get:2 http://deb.debian.org/debian buster/main s390x cron s390x 3.0pl1-134+deb10u1 [97.3 kB]
+INFO:kolla.common.utils.cron:Get:3 http://deb.debian.org/debian buster/main s390x libpopt0 s390x 1.16-12 [47.7 kB]
+INFO:kolla.common.utils.cron:Get:4 http://deb.debian.org/debian buster/main s390x logrotate s390x 3.14.0-4 [59.9 kB]
+INFO:kolla.common.utils.cron:Fetched 221 kB in 0s (1,273 kB/s)
+INFO:kolla.common.utils.cron:Selecting previously unselected package sensible-utils.
+INFO:kolla.common.utils.cron:(Reading database ... 
+INFO:kolla.common.utils.cron:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+INFO:kolla.common.utils.cron:(Reading database ... 80%
+INFO:kolla.common.utils.cron:(Reading database ... 85%
+INFO:kolla.common.utils.cron:(Reading database ... 90%
+INFO:kolla.common.utils.cron:(Reading database ... 95%
+INFO:kolla.common.utils.cron:(Reading database ... 100%(Reading database ... 12012 files and directories currently installed.)
+INFO:kolla.common.utils.cron:Preparing to unpack .../sensible-utils_0.0.12_all.deb ...
+INFO:kolla.common.utils.cron:Unpacking sensible-utils (0.0.12) ...
+INFO:kolla.common.utils.cron:Selecting previously unselected package cron.
+INFO:kolla.common.utils.cron:Preparing to unpack .../cron_3.0pl1-134+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.cron:Unpacking cron (3.0pl1-134+deb10u1) ...
+INFO:kolla.common.utils.cron:Selecting previously unselected package libpopt0:s390x.
+INFO:kolla.common.utils.cron:Preparing to unpack .../libpopt0_1.16-12_s390x.deb ...
+INFO:kolla.common.utils.cron:Unpacking libpopt0:s390x (1.16-12) ...
+INFO:kolla.common.utils.cron:Selecting previously unselected package logrotate.
+INFO:kolla.common.utils.cron:Preparing to unpack .../logrotate_3.14.0-4_s390x.deb ...
+INFO:kolla.common.utils.cron:Unpacking logrotate (3.14.0-4) ...
+INFO:kolla.common.utils.cron:Setting up sensible-utils (0.0.12) ...
+INFO:kolla.common.utils.cron:Setting up libpopt0:s390x (1.16-12) ...
+INFO:kolla.common.utils.cron:Setting up cron (3.0pl1-134+deb10u1) ...
+INFO:kolla.common.utils.cron:Adding group `crontab' (GID 105) ...
+INFO:kolla.common.utils.cron:Done.
+INFO:kolla.common.utils.cron:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.cron:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.cron:Setting up logrotate (3.14.0-4) ...
+INFO:kolla.common.utils.cron:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.cron:Processing triggers for mime-support (3.62) ...
+INFO:kolla.common.utils.cron:Removing intermediate container a55ed839cb5b
+INFO:kolla.common.utils.cron: ---> 00647d42e52e
+INFO:kolla.common.utils.cron:Successfully built 00647d42e52e
+INFO:kolla.common.utils.cron:Successfully tagged s390x/debian-binary-cron:9.1.0
+INFO:kolla.common.utils.cron:Built at 2020-03-02 21:21:37.868184 (took 0:00:07.455681)

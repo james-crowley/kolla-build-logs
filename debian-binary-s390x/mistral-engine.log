@@ -1,0 +1,56 @@
+INFO:kolla.common.utils.mistral-engine:Building started at 2020-03-02 21:29:06.582900
+INFO:kolla.common.utils.mistral-engine:Step 1/4 : FROM s390x/debian-binary-mistral-base:9.1.0
+INFO:kolla.common.utils.mistral-engine: ---> 79fc02827c40
+INFO:kolla.common.utils.mistral-engine:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="mistral-engine" build-date="20200302"
+INFO:kolla.common.utils.mistral-engine: ---> Running in f5e3e66298df
+INFO:kolla.common.utils.mistral-engine:Removing intermediate container f5e3e66298df
+INFO:kolla.common.utils.mistral-engine: ---> a75566d665fb
+INFO:kolla.common.utils.mistral-engine:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends mistral-engine && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.mistral-engine: ---> Running in 3d007ac69910
+INFO:kolla.common.utils.mistral-engine:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.mistral-engine:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.mistral-engine:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.mistral-engine:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.mistral-engine:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.mistral-engine:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.mistral-engine:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.mistral-engine:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.mistral-engine:Fetched 8,235 kB in 2s (5,221 kB/s)
+INFO:kolla.common.utils.mistral-engine:Reading package lists...
+INFO:kolla.common.utils.mistral-engine:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.mistral-engine:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.mistral-engine:[0m
+INFO:kolla.common.utils.mistral-engine:Reading package lists...
+INFO:kolla.common.utils.mistral-engine:Building dependency tree...
+INFO:kolla.common.utils.mistral-engine:Reading state information...
+INFO:kolla.common.utils.mistral-engine:The following NEW packages will be installed:
+INFO:kolla.common.utils.mistral-engine:  mistral-engine
+INFO:kolla.common.utils.mistral-engine:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.mistral-engine:Need to get 7,288 B of archives.
+INFO:kolla.common.utils.mistral-engine:After this operation, 28.7 kB of additional disk space will be used.
+INFO:kolla.common.utils.mistral-engine:Get:1 http://deb.debian.org/debian buster/main s390x mistral-engine all 7.0.0-2 [7,288 B]
+INFO:kolla.common.utils.mistral-engine:Fetched 7,288 B in 0s (369 kB/s)
+INFO:kolla.common.utils.mistral-engine:Selecting previously unselected package mistral-engine.
+INFO:kolla.common.utils.mistral-engine:(Reading database ... 
+INFO:kolla.common.utils.mistral-engine:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.mistral-engine:(Reading database ... 70%
+INFO:kolla.common.utils.mistral-engine:(Reading database ... 75%
+INFO:kolla.common.utils.mistral-engine:(Reading database ... 80%
+INFO:kolla.common.utils.mistral-engine:(Reading database ... 85%
+INFO:kolla.common.utils.mistral-engine:(Reading database ... 90%
+INFO:kolla.common.utils.mistral-engine:(Reading database ... 95%
+INFO:kolla.common.utils.mistral-engine:(Reading database ... 100%(Reading database ... 27186 files and directories currently installed.)
+INFO:kolla.common.utils.mistral-engine:Preparing to unpack .../mistral-engine_7.0.0-2_all.deb ...
+INFO:kolla.common.utils.mistral-engine:Unpacking mistral-engine (7.0.0-2) ...
+INFO:kolla.common.utils.mistral-engine:Setting up mistral-engine (7.0.0-2) ...
+INFO:kolla.common.utils.mistral-engine:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.mistral-engine:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.mistral-engine:Removing intermediate container 3d007ac69910
+INFO:kolla.common.utils.mistral-engine: ---> 500748845b04
+INFO:kolla.common.utils.mistral-engine:Step 4/4 : USER mistral
+INFO:kolla.common.utils.mistral-engine: ---> Running in ea9ed21fb29f
+INFO:kolla.common.utils.mistral-engine:Removing intermediate container ea9ed21fb29f
+INFO:kolla.common.utils.mistral-engine: ---> 713f68c6ae68
+INFO:kolla.common.utils.mistral-engine:Successfully built 713f68c6ae68
+INFO:kolla.common.utils.mistral-engine:Successfully tagged s390x/debian-binary-mistral-engine:9.1.0
+INFO:kolla.common.utils.mistral-engine:Built at 2020-03-02 21:29:13.448048 (took 0:00:06.865148)

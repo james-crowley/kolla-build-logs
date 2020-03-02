@@ -1,0 +1,142 @@
+INFO:kolla.common.utils.designate-api:Building started at 2020-03-02 21:28:14.249597
+INFO:kolla.common.utils.designate-api:Step 1/4 : FROM s390x/debian-binary-designate-base:9.1.0
+INFO:kolla.common.utils.designate-api: ---> f4cc9494fd1d
+INFO:kolla.common.utils.designate-api:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="designate-api" build-date="20200302"
+INFO:kolla.common.utils.designate-api: ---> Running in 682d64f5617a
+INFO:kolla.common.utils.designate-api:Removing intermediate container 682d64f5617a
+INFO:kolla.common.utils.designate-api: ---> 8babd0a52992
+INFO:kolla.common.utils.designate-api:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends designate-api && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.designate-api: ---> Running in f17269f86afe
+INFO:kolla.common.utils.designate-api:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.designate-api:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.designate-api:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.designate-api:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.designate-api:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.designate-api:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.designate-api:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.designate-api:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.designate-api:Fetched 8,235 kB in 2s (5,176 kB/s)
+INFO:kolla.common.utils.designate-api:Reading package lists...
+INFO:kolla.common.utils.designate-api:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.designate-api:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.designate-api:[0m
+INFO:kolla.common.utils.designate-api:Reading package lists...
+INFO:kolla.common.utils.designate-api:Building dependency tree...
+INFO:kolla.common.utils.designate-api:Reading state information...
+INFO:kolla.common.utils.designate-api:The following additional packages will be installed:
+INFO:kolla.common.utils.designate-api:  libpython-stdlib libpython2-stdlib libpython2.7-minimal libpython2.7-stdlib
+INFO:kolla.common.utils.designate-api:  python python-minimal python-q-text-as-data python-six python2
+INFO:kolla.common.utils.designate-api:  python2-minimal python2.7 python2.7-minimal
+INFO:kolla.common.utils.designate-api:Suggested packages:
+INFO:kolla.common.utils.designate-api:  python-doc python-tk python2-doc python2.7-doc binutils binfmt-support
+INFO:kolla.common.utils.designate-api:The following NEW packages will be installed:
+INFO:kolla.common.utils.designate-api:  designate-api libpython-stdlib libpython2-stdlib libpython2.7-minimal
+INFO:kolla.common.utils.designate-api:  libpython2.7-stdlib python python-minimal python-q-text-as-data python-six
+INFO:kolla.common.utils.designate-api:  python2 python2-minimal python2.7 python2.7-minimal
+INFO:kolla.common.utils.designate-api:0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.designate-api:Need to get 4,019 kB of archives.
+INFO:kolla.common.utils.designate-api:After this operation, 17.1 MB of additional disk space will be used.
+INFO:kolla.common.utils.designate-api:Get:1 http://deb.debian.org/debian buster/main s390x libpython2.7-minimal s390x 2.7.16-2+deb10u1 [395 kB]
+INFO:kolla.common.utils.designate-api:Get:2 http://deb.debian.org/debian buster/main s390x python2.7-minimal s390x 2.7.16-2+deb10u1 [1,234 kB]
+INFO:kolla.common.utils.designate-api:Get:3 http://deb.debian.org/debian buster/main s390x python2-minimal s390x 2.7.16-1 [41.4 kB]
+INFO:kolla.common.utils.designate-api:Get:4 http://deb.debian.org/debian buster/main s390x python-minimal s390x 2.7.16-1 [21.0 kB]
+INFO:kolla.common.utils.designate-api:Get:5 http://deb.debian.org/debian buster/main s390x libpython2.7-stdlib s390x 2.7.16-2+deb10u1 [1,853 kB]
+INFO:kolla.common.utils.designate-api:Get:6 http://deb.debian.org/debian buster/main s390x python2.7 s390x 2.7.16-2+deb10u1 [305 kB]
+INFO:kolla.common.utils.designate-api:Get:7 http://deb.debian.org/debian buster/main s390x libpython2-stdlib s390x 2.7.16-1 [20.8 kB]
+INFO:kolla.common.utils.designate-api:Get:8 http://deb.debian.org/debian buster/main s390x libpython-stdlib s390x 2.7.16-1 [20.8 kB]
+INFO:kolla.common.utils.designate-api:Get:9 http://deb.debian.org/debian buster/main s390x python2 s390x 2.7.16-1 [41.6 kB]
+INFO:kolla.common.utils.designate-api:Get:10 http://deb.debian.org/debian buster/main s390x python s390x 2.7.16-1 [22.8 kB]
+INFO:kolla.common.utils.designate-api:Get:11 http://deb.debian.org/debian buster/main s390x python-six all 1.12.0-1 [15.7 kB]
+INFO:kolla.common.utils.designate-api:Get:12 http://deb.debian.org/debian buster/main s390x python-q-text-as-data all 1.7.4+2018.12.21+git+28f776ed46-1 [26.3 kB]
+INFO:kolla.common.utils.designate-api:Get:13 http://deb.debian.org/debian buster/main s390x designate-api all 1:7.0.0-2 [23.0 kB]
+INFO:kolla.common.utils.designate-api:Preconfiguring packages ...
+INFO:kolla.common.utils.designate-api:Fetched 4,019 kB in 0s (31.0 MB/s)
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package libpython2.7-minimal:s390x.
+INFO:kolla.common.utils.designate-api:(Reading database ... 
+INFO:kolla.common.utils.designate-api:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.designate-api:(Reading database ... 65%
+INFO:kolla.common.utils.designate-api:(Reading database ... 70%
+INFO:kolla.common.utils.designate-api:(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%
+INFO:kolla.common.utils.designate-api:(Reading database ... 90%
+INFO:kolla.common.utils.designate-api:(Reading database ... 95%
+INFO:kolla.common.utils.designate-api:(Reading database ... 100%(Reading database ... 25496 files and directories currently installed.)
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../0-libpython2.7-minimal_2.7.16-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking libpython2.7-minimal:s390x (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package python2.7-minimal.
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../1-python2.7-minimal_2.7.16-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking python2.7-minimal (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package python2-minimal.
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../2-python2-minimal_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking python2-minimal (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package python-minimal.
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../3-python-minimal_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking python-minimal (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package libpython2.7-stdlib:s390x.
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../4-libpython2.7-stdlib_2.7.16-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking libpython2.7-stdlib:s390x (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package python2.7.
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../5-python2.7_2.7.16-2+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking python2.7 (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package libpython2-stdlib:s390x.
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../6-libpython2-stdlib_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking libpython2-stdlib:s390x (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package libpython-stdlib:s390x.
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../7-libpython-stdlib_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking libpython-stdlib:s390x (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Setting up libpython2.7-minimal:s390x (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.designate-api:Setting up python2.7-minimal (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.designate-api:Setting up python2-minimal (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package python2.
+INFO:kolla.common.utils.designate-api:(Reading database ... 
+INFO:kolla.common.utils.designate-api:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.designate-api:(Reading database ... 70%
+INFO:kolla.common.utils.designate-api:(Reading database ... 75%
+INFO:kolla.common.utils.designate-api:(Reading database ... 80%
+INFO:kolla.common.utils.designate-api:(Reading database ... 85%
+INFO:kolla.common.utils.designate-api:(Reading database ... 90%
+INFO:kolla.common.utils.designate-api:(Reading database ... 95%
+INFO:kolla.common.utils.designate-api:(Reading database ... 100%(Reading database ... 26253 files and directories currently installed.)
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../python2_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking python2 (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Setting up python-minimal (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package python.
+INFO:kolla.common.utils.designate-api:(Reading database ... 
+INFO:kolla.common.utils.designate-api:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.designate-api:(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%
+INFO:kolla.common.utils.designate-api:(Reading database ... 90%
+INFO:kolla.common.utils.designate-api:(Reading database ... 95%
+INFO:kolla.common.utils.designate-api:(Reading database ... 100%(Reading database ... 26281 files and directories currently installed.)
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../python_2.7.16-1_s390x.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking python (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package python-six.
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../python-six_1.12.0-1_all.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking python-six (1.12.0-1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package python-q-text-as-data.
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../python-q-text-as-data_1.7.4+2018.12.21+git+28f776ed46-1_all.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking python-q-text-as-data (1.7.4+2018.12.21+git+28f776ed46-1) ...
+INFO:kolla.common.utils.designate-api:Selecting previously unselected package designate-api.
+INFO:kolla.common.utils.designate-api:Preparing to unpack .../designate-api_1%3a7.0.0-2_all.deb ...
+INFO:kolla.common.utils.designate-api:Unpacking designate-api (1:7.0.0-2) ...
+INFO:kolla.common.utils.designate-api:Setting up libpython2.7-stdlib:s390x (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.designate-api:Setting up python2.7 (2.7.16-2+deb10u1) ...
+INFO:kolla.common.utils.designate-api:Setting up libpython2-stdlib:s390x (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Setting up python2 (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Setting up libpython-stdlib:s390x (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Setting up python (2.7.16-1) ...
+INFO:kolla.common.utils.designate-api:Setting up python-six (1.12.0-1) ...
+INFO:kolla.common.utils.designate-api:Setting up python-q-text-as-data (1.7.4+2018.12.21+git+28f776ed46-1) ...
+INFO:kolla.common.utils.designate-api:update-alternatives: using /usr/bin/python2-q-text-as-data to provide /usr/bin/q (q) in auto mode
+INFO:kolla.common.utils.designate-api:Setting up designate-api (1:7.0.0-2) ...
+INFO:kolla.common.utils.designate-api:Will not register designate endpoint this time (no user request for it).
+INFO:kolla.common.utils.designate-api:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.designate-api:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.designate-api:Processing triggers for mime-support (3.62) ...
+INFO:kolla.common.utils.designate-api:Removing intermediate container f17269f86afe
+INFO:kolla.common.utils.designate-api: ---> d45a7966fd9e
+INFO:kolla.common.utils.designate-api:Step 4/4 : USER designate
+INFO:kolla.common.utils.designate-api: ---> Running in d01f403f2d26
+INFO:kolla.common.utils.designate-api:Removing intermediate container d01f403f2d26
+INFO:kolla.common.utils.designate-api: ---> 5adbc32b3b19
+INFO:kolla.common.utils.designate-api:Successfully built 5adbc32b3b19
+INFO:kolla.common.utils.designate-api:Successfully tagged s390x/debian-binary-designate-api:9.1.0
+INFO:kolla.common.utils.designate-api:Built at 2020-03-02 21:28:25.296850 (took 0:00:11.047253)

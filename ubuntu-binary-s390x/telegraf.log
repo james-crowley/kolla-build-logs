@@ -1,0 +1,44 @@
+INFO:kolla.common.utils.telegraf:Building started at 2020-03-02 21:38:17.153678
+INFO:kolla.common.utils.telegraf:Step 1/9 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.telegraf: ---> 682558ff6b31
+INFO:kolla.common.utils.telegraf:Step 2/9 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="telegraf" build-date="20200302"
+INFO:kolla.common.utils.telegraf: ---> Running in 64e94ecf9e41
+INFO:kolla.common.utils.telegraf:Removing intermediate container 64e94ecf9e41
+INFO:kolla.common.utils.telegraf: ---> 0e0c7f172c31
+INFO:kolla.common.utils.telegraf:Step 3/9 : RUN usermod --append --home /etc/telegraf --groups kolla telegraf     && mkdir -p /etc/telegraf     && chown -R 42448:42448 /etc/telegraf
+INFO:kolla.common.utils.telegraf: ---> Running in 87b7d8e97695
+INFO:kolla.common.utils.telegraf:Removing intermediate container 87b7d8e97695
+INFO:kolla.common.utils.telegraf: ---> 009e1995e85d
+INFO:kolla.common.utils.telegraf:Step 4/9 : RUN echo "deb https://repos.influxdata.com/ubuntu bionic stable" >/etc/apt/sources.list.d/influxdb.list
+INFO:kolla.common.utils.telegraf: ---> Running in d90d540f6625
+INFO:kolla.common.utils.telegraf:Removing intermediate container d90d540f6625
+INFO:kolla.common.utils.telegraf: ---> 1b049c5340ea
+INFO:kolla.common.utils.telegraf:Step 5/9 : RUN apt-get update && apt-get -y install --no-install-recommends chrony net-tools telegraf collectd-core python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.telegraf: ---> Running in a017e3e3f2e5
+INFO:kolla.common.utils.telegraf:Get:1 https://repos.influxdata.com/ubuntu bionic InRelease [4,731 B]
+INFO:kolla.common.utils.telegraf:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.telegraf:Ign:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.telegraf:Get:4 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.telegraf:Get:5 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.telegraf:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.telegraf:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.telegraf:Get:8 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.telegraf:Get:9 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.telegraf:Get:10 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.telegraf:Get:11 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.telegraf:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.telegraf:Get:13 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.telegraf:Get:14 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.telegraf:Get:15 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.telegraf:Get:16 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.telegraf:Get:17 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.telegraf:Fetched 15.6 MB in 3s (6,028 kB/s)
+INFO:kolla.common.utils.telegraf:Reading package lists...
+INFO:kolla.common.utils.telegraf:Reading package lists...
+INFO:kolla.common.utils.telegraf:Building dependency tree...
+INFO:kolla.common.utils.telegraf:Reading state information...
+INFO:kolla.common.utils.telegraf:[91mE: Unable to locate package telegraf
+INFO:kolla.common.utils.telegraf:[0m
+INFO:kolla.common.utils.telegraf:Removing intermediate container a017e3e3f2e5
+ERROR:kolla.common.utils.telegraf:Error'd with the following message
+ERROR:kolla.common.utils.telegraf:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends chrony net-tools telegraf collectd-core python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

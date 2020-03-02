@@ -1,0 +1,37 @@
+INFO:kolla.common.utils.nova-compute-ironic:Building started at 2020-03-02 21:27:33.605240
+INFO:kolla.common.utils.nova-compute-ironic:Step 1/5 : FROM s390x/debian-binary-nova-base:9.1.0
+INFO:kolla.common.utils.nova-compute-ironic: ---> 5bbc1e433571
+INFO:kolla.common.utils.nova-compute-ironic:Step 2/5 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="nova-compute-ironic" build-date="20200302"
+INFO:kolla.common.utils.nova-compute-ironic: ---> Running in c2f8173f8958
+INFO:kolla.common.utils.nova-compute-ironic:Removing intermediate container c2f8173f8958
+INFO:kolla.common.utils.nova-compute-ironic: ---> b9de1d7d0780
+INFO:kolla.common.utils.nova-compute-ironic:Step 3/5 : RUN apt-get update && apt-get -y install --no-install-recommends genisoimage nova-compute && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.nova-compute-ironic: ---> Running in eeba9a1f67f2
+INFO:kolla.common.utils.nova-compute-ironic:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.nova-compute-ironic:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.nova-compute-ironic:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.nova-compute-ironic:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.nova-compute-ironic:Get:5 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.nova-compute-ironic:Get:6 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.nova-compute-ironic:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.nova-compute-ironic:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.nova-compute-ironic:Fetched 8,235 kB in 2s (4,630 kB/s)
+INFO:kolla.common.utils.nova-compute-ironic:Reading package lists...
+INFO:kolla.common.utils.nova-compute-ironic:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.nova-compute-ironic:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.nova-compute-ironic:[0m
+INFO:kolla.common.utils.nova-compute-ironic:Reading package lists...
+INFO:kolla.common.utils.nova-compute-ironic:Building dependency tree...
+INFO:kolla.common.utils.nova-compute-ironic:Reading state information...
+INFO:kolla.common.utils.nova-compute-ironic:Some packages could not be installed. This may mean that you have
+INFO:kolla.common.utils.nova-compute-ironic:requested an impossible situation or if you are using the unstable
+INFO:kolla.common.utils.nova-compute-ironic:distribution that some required packages have not yet been created
+INFO:kolla.common.utils.nova-compute-ironic:or been moved out of Incoming.
+INFO:kolla.common.utils.nova-compute-ironic:The following information may help to resolve the situation:
+INFO:kolla.common.utils.nova-compute-ironic:The following packages have unmet dependencies:
+INFO:kolla.common.utils.nova-compute-ironic: nova-compute : Depends: dmidecode but it is not installable
+INFO:kolla.common.utils.nova-compute-ironic:[91mE: Unable to correct problems, you have held broken packages.
+INFO:kolla.common.utils.nova-compute-ironic:[0m
+INFO:kolla.common.utils.nova-compute-ironic:Removing intermediate container eeba9a1f67f2
+ERROR:kolla.common.utils.nova-compute-ironic:Error'd with the following message
+ERROR:kolla.common.utils.nova-compute-ironic:The command '/bin/sh -c apt-get update && apt-get -y install --no-install-recommends genisoimage nova-compute && apt-get clean && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100

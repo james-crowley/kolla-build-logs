@@ -1,0 +1,56 @@
+INFO:kolla.common.utils.neutron-sriov-agent:Building started at 2020-03-02 21:28:44.402002
+INFO:kolla.common.utils.neutron-sriov-agent:Step 1/4 : FROM s390x/debian-binary-neutron-base:9.1.0
+INFO:kolla.common.utils.neutron-sriov-agent: ---> c27b5a2440a1
+INFO:kolla.common.utils.neutron-sriov-agent:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="neutron-sriov-agent" build-date="20200302"
+INFO:kolla.common.utils.neutron-sriov-agent: ---> Running in d753e2a96693
+INFO:kolla.common.utils.neutron-sriov-agent:Removing intermediate container d753e2a96693
+INFO:kolla.common.utils.neutron-sriov-agent: ---> 3266ade870e6
+INFO:kolla.common.utils.neutron-sriov-agent:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends neutron-sriov-agent && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.neutron-sriov-agent: ---> Running in 430db1ff6f7e
+INFO:kolla.common.utils.neutron-sriov-agent:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.neutron-sriov-agent:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.neutron-sriov-agent:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.neutron-sriov-agent:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.neutron-sriov-agent:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.neutron-sriov-agent:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.neutron-sriov-agent:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.neutron-sriov-agent:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.neutron-sriov-agent:Fetched 8,235 kB in 2s (4,824 kB/s)
+INFO:kolla.common.utils.neutron-sriov-agent:Reading package lists...
+INFO:kolla.common.utils.neutron-sriov-agent:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.neutron-sriov-agent:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.neutron-sriov-agent:[0m
+INFO:kolla.common.utils.neutron-sriov-agent:Reading package lists...
+INFO:kolla.common.utils.neutron-sriov-agent:Building dependency tree...
+INFO:kolla.common.utils.neutron-sriov-agent:Reading state information...
+INFO:kolla.common.utils.neutron-sriov-agent:The following NEW packages will be installed:
+INFO:kolla.common.utils.neutron-sriov-agent:  neutron-sriov-agent
+INFO:kolla.common.utils.neutron-sriov-agent:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.neutron-sriov-agent:Need to get 15.1 kB of archives.
+INFO:kolla.common.utils.neutron-sriov-agent:After this operation, 36.9 kB of additional disk space will be used.
+INFO:kolla.common.utils.neutron-sriov-agent:Get:1 http://deb.debian.org/debian buster/main s390x neutron-sriov-agent all 2:13.0.2-15 [15.1 kB]
+INFO:kolla.common.utils.neutron-sriov-agent:Fetched 15.1 kB in 0s (81.5 kB/s)
+INFO:kolla.common.utils.neutron-sriov-agent:Selecting previously unselected package neutron-sriov-agent.
+INFO:kolla.common.utils.neutron-sriov-agent:(Reading database ... 
+INFO:kolla.common.utils.neutron-sriov-agent:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.neutron-sriov-agent:(Reading database ... 70%
+INFO:kolla.common.utils.neutron-sriov-agent:(Reading database ... 75%
+INFO:kolla.common.utils.neutron-sriov-agent:(Reading database ... 80%
+INFO:kolla.common.utils.neutron-sriov-agent:(Reading database ... 85%
+INFO:kolla.common.utils.neutron-sriov-agent:(Reading database ... 90%
+INFO:kolla.common.utils.neutron-sriov-agent:(Reading database ... 95%
+INFO:kolla.common.utils.neutron-sriov-agent:(Reading database ... 100%(Reading database ... 31839 files and directories currently installed.)
+INFO:kolla.common.utils.neutron-sriov-agent:Preparing to unpack .../neutron-sriov-agent_2%3a13.0.2-15_all.deb ...
+INFO:kolla.common.utils.neutron-sriov-agent:Unpacking neutron-sriov-agent (2:13.0.2-15) ...
+INFO:kolla.common.utils.neutron-sriov-agent:Setting up neutron-sriov-agent (2:13.0.2-15) ...
+INFO:kolla.common.utils.neutron-sriov-agent:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.neutron-sriov-agent:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.neutron-sriov-agent:Removing intermediate container 430db1ff6f7e
+INFO:kolla.common.utils.neutron-sriov-agent: ---> 003b3522a296
+INFO:kolla.common.utils.neutron-sriov-agent:Step 4/4 : USER neutron
+INFO:kolla.common.utils.neutron-sriov-agent: ---> Running in 1d9a98c541f1
+INFO:kolla.common.utils.neutron-sriov-agent:Removing intermediate container 1d9a98c541f1
+INFO:kolla.common.utils.neutron-sriov-agent: ---> fe1e3e778bf1
+INFO:kolla.common.utils.neutron-sriov-agent:Successfully built fe1e3e778bf1
+INFO:kolla.common.utils.neutron-sriov-agent:Successfully tagged s390x/debian-binary-neutron-sriov-agent:9.1.0
+INFO:kolla.common.utils.neutron-sriov-agent:Built at 2020-03-02 21:28:51.465016 (took 0:00:07.063014)

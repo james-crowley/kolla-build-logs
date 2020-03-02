@@ -1,0 +1,56 @@
+INFO:kolla.common.utils.mistral-executor:Building started at 2020-03-02 21:29:10.679610
+INFO:kolla.common.utils.mistral-executor:Step 1/4 : FROM s390x/debian-binary-mistral-base:9.1.0
+INFO:kolla.common.utils.mistral-executor: ---> 79fc02827c40
+INFO:kolla.common.utils.mistral-executor:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="mistral-executor" build-date="20200302"
+INFO:kolla.common.utils.mistral-executor: ---> Running in 721755bbba99
+INFO:kolla.common.utils.mistral-executor:Removing intermediate container 721755bbba99
+INFO:kolla.common.utils.mistral-executor: ---> b2fe55be6b3b
+INFO:kolla.common.utils.mistral-executor:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends mistral-executor && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.mistral-executor: ---> Running in 8726d66a88ab
+INFO:kolla.common.utils.mistral-executor:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.mistral-executor:Get:3 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.mistral-executor:Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.mistral-executor:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.mistral-executor:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.mistral-executor:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.mistral-executor:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.mistral-executor:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.mistral-executor:Fetched 8,235 kB in 2s (5,350 kB/s)
+INFO:kolla.common.utils.mistral-executor:Reading package lists...
+INFO:kolla.common.utils.mistral-executor:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.mistral-executor:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.mistral-executor:[0m
+INFO:kolla.common.utils.mistral-executor:Reading package lists...
+INFO:kolla.common.utils.mistral-executor:Building dependency tree...
+INFO:kolla.common.utils.mistral-executor:Reading state information...
+INFO:kolla.common.utils.mistral-executor:The following NEW packages will be installed:
+INFO:kolla.common.utils.mistral-executor:  mistral-executor
+INFO:kolla.common.utils.mistral-executor:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.mistral-executor:Need to get 7,284 B of archives.
+INFO:kolla.common.utils.mistral-executor:After this operation, 28.7 kB of additional disk space will be used.
+INFO:kolla.common.utils.mistral-executor:Get:1 http://deb.debian.org/debian buster/main s390x mistral-executor all 7.0.0-2 [7,284 B]
+INFO:kolla.common.utils.mistral-executor:Fetched 7,284 B in 0s (234 kB/s)
+INFO:kolla.common.utils.mistral-executor:Selecting previously unselected package mistral-executor.
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 70%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 75%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 80%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 85%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 90%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 95%
+INFO:kolla.common.utils.mistral-executor:(Reading database ... 100%(Reading database ... 27186 files and directories currently installed.)
+INFO:kolla.common.utils.mistral-executor:Preparing to unpack .../mistral-executor_7.0.0-2_all.deb ...
+INFO:kolla.common.utils.mistral-executor:Unpacking mistral-executor (7.0.0-2) ...
+INFO:kolla.common.utils.mistral-executor:Setting up mistral-executor (7.0.0-2) ...
+INFO:kolla.common.utils.mistral-executor:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.mistral-executor:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.mistral-executor:Removing intermediate container 8726d66a88ab
+INFO:kolla.common.utils.mistral-executor: ---> fae76e761fce
+INFO:kolla.common.utils.mistral-executor:Step 4/4 : USER mistral
+INFO:kolla.common.utils.mistral-executor: ---> Running in bac72da30063
+INFO:kolla.common.utils.mistral-executor:Removing intermediate container bac72da30063
+INFO:kolla.common.utils.mistral-executor: ---> fd4f6bdb8901
+INFO:kolla.common.utils.mistral-executor:Successfully built fd4f6bdb8901
+INFO:kolla.common.utils.mistral-executor:Successfully tagged s390x/debian-binary-mistral-executor:9.1.0
+INFO:kolla.common.utils.mistral-executor:Built at 2020-03-02 21:29:17.360616 (took 0:00:06.681006)

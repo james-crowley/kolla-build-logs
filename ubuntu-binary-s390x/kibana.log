@@ -1,0 +1,113 @@
+INFO:kolla.common.utils.kibana:Building started at 2020-03-02 21:37:59.735838
+INFO:kolla.common.utils.kibana:Step 1/8 : FROM s390x/ubuntu-binary-base:9.1.0
+INFO:kolla.common.utils.kibana: ---> 682558ff6b31
+INFO:kolla.common.utils.kibana:Step 2/8 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="kibana" build-date="20200302"
+INFO:kolla.common.utils.kibana: ---> Running in b91f5d415e6d
+INFO:kolla.common.utils.kibana:Removing intermediate container b91f5d415e6d
+INFO:kolla.common.utils.kibana: ---> e8b1040e52f5
+INFO:kolla.common.utils.kibana:Step 3/8 : RUN echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" >/etc/apt/sources.list.d/kibana.list
+INFO:kolla.common.utils.kibana: ---> Running in 13fb535d8f08
+INFO:kolla.common.utils.kibana:Removing intermediate container 13fb535d8f08
+INFO:kolla.common.utils.kibana: ---> 2449e6522fef
+INFO:kolla.common.utils.kibana:Step 4/8 : RUN usermod --append --home /var/lib/kibana --groups kolla kibana     && mkdir -p /var/lib/kibana     && chown -R 42426:42426 /var/lib/kibana
+INFO:kolla.common.utils.kibana: ---> Running in f63f41f16f1e
+INFO:kolla.common.utils.kibana:Removing intermediate container f63f41f16f1e
+INFO:kolla.common.utils.kibana: ---> 657844c004b5
+INFO:kolla.common.utils.kibana:Step 5/8 : RUN apt-get update && apt-get -y install --no-install-recommends nodejs && apt-get clean && rm -rf /var/lib/apt/lists/* && curl --location http://obs.linaro.org/home:/marcin.juszkiewicz/debian-buster/all/kibana_5.6.16-0linaro1_all.deb -o kibana_5.6.16-0linaro1_all.deb && dpkg -i kibana_5.6.16-0linaro1_all.deb && rm -rf kibana_5.6.16-0linaro1_all.deb
+INFO:kolla.common.utils.kibana: ---> Running in 4baf09d102cc
+INFO:kolla.common.utils.kibana:Ign:1 https://artifacts.elastic.co/packages/5.x/apt stable InRelease
+INFO:kolla.common.utils.kibana:Get:2 https://artifacts.elastic.co/packages/5.x/apt stable Release [5,116 B]
+INFO:kolla.common.utils.kibana:Get:3 https://artifacts.elastic.co/packages/5.x/apt stable Release.gpg [473 B]
+INFO:kolla.common.utils.kibana:Ign:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.kibana:Get:5 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.kibana:Get:6 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.kibana:Get:7 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.kibana:Get:8 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.kibana:Get:9 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.kibana:Get:10 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.kibana:Get:11 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.kibana:Get:12 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.kibana:Get:13 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.kibana:Get:14 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.kibana:Get:15 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.kibana:Get:16 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.kibana:Get:17 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.kibana:Get:18 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.kibana:Get:19 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.kibana:Fetched 15.6 MB in 3s (6,057 kB/s)
+INFO:kolla.common.utils.kibana:Reading package lists...
+INFO:kolla.common.utils.kibana:Reading package lists...
+INFO:kolla.common.utils.kibana:Building dependency tree...
+INFO:kolla.common.utils.kibana:Reading state information...
+INFO:kolla.common.utils.kibana:The following additional packages will be installed:
+INFO:kolla.common.utils.kibana:  libc-ares2 libhttp-parser2.7.1 libicu60 libssl1.0.0 libuv1
+INFO:kolla.common.utils.kibana:Recommended packages:
+INFO:kolla.common.utils.kibana:  nodejs-doc
+INFO:kolla.common.utils.kibana:The following NEW packages will be installed:
+INFO:kolla.common.utils.kibana:  libc-ares2 libhttp-parser2.7.1 libicu60 libssl1.0.0 libuv1 nodejs
+INFO:kolla.common.utils.kibana:0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.kibana:Need to get 13.3 MB of archives.
+INFO:kolla.common.utils.kibana:After this operation, 56.1 MB of additional disk space will be used.
+INFO:kolla.common.utils.kibana:Get:1 http://ports.ubuntu.com bionic/main s390x libicu60 s390x 60.2-3ubuntu3 [7,837 kB]
+INFO:kolla.common.utils.kibana:Get:2 http://ports.ubuntu.com bionic-updates/main s390x libssl1.0.0 s390x 1.0.2n-1ubuntu5.3 [779 kB]
+INFO:kolla.common.utils.kibana:Get:3 http://ports.ubuntu.com bionic/main s390x libuv1 s390x 1.18.0-3 [60.4 kB]
+INFO:kolla.common.utils.kibana:Get:4 http://ports.ubuntu.com bionic/main s390x libc-ares2 s390x 1.14.0-1 [35.1 kB]
+INFO:kolla.common.utils.kibana:Get:5 http://ports.ubuntu.com bionic/main s390x libhttp-parser2.7.1 s390x 2.7.1-2 [21.1 kB]
+INFO:kolla.common.utils.kibana:Get:6 http://ports.ubuntu.com bionic-updates/universe s390x nodejs s390x 8.10.0~dfsg-2ubuntu0.4 [4,526 kB]
+INFO:kolla.common.utils.kibana:Preconfiguring packages ...
+INFO:kolla.common.utils.kibana:Fetched 13.3 MB in 0s (32.8 MB/s)
+INFO:kolla.common.utils.kibana:Selecting previously unselected package libicu60:s390x.
+INFO:kolla.common.utils.kibana:(Reading database ... 
+INFO:kolla.common.utils.kibana:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.kibana:(Reading database ... 75%(Reading database ... 80%
+INFO:kolla.common.utils.kibana:(Reading database ... 85%
+INFO:kolla.common.utils.kibana:(Reading database ... 90%
+INFO:kolla.common.utils.kibana:(Reading database ... 95%
+INFO:kolla.common.utils.kibana:(Reading database ... 100%(Reading database ... 9244 files and directories currently installed.)
+INFO:kolla.common.utils.kibana:Preparing to unpack .../0-libicu60_60.2-3ubuntu3_s390x.deb ...
+INFO:kolla.common.utils.kibana:Unpacking libicu60:s390x (60.2-3ubuntu3) ...
+INFO:kolla.common.utils.kibana:Selecting previously unselected package libssl1.0.0:s390x.
+INFO:kolla.common.utils.kibana:Preparing to unpack .../1-libssl1.0.0_1.0.2n-1ubuntu5.3_s390x.deb ...
+INFO:kolla.common.utils.kibana:Unpacking libssl1.0.0:s390x (1.0.2n-1ubuntu5.3) ...
+INFO:kolla.common.utils.kibana:Selecting previously unselected package libuv1:s390x.
+INFO:kolla.common.utils.kibana:Preparing to unpack .../2-libuv1_1.18.0-3_s390x.deb ...
+INFO:kolla.common.utils.kibana:Unpacking libuv1:s390x (1.18.0-3) ...
+INFO:kolla.common.utils.kibana:Selecting previously unselected package libc-ares2:s390x.
+INFO:kolla.common.utils.kibana:Preparing to unpack .../3-libc-ares2_1.14.0-1_s390x.deb ...
+INFO:kolla.common.utils.kibana:Unpacking libc-ares2:s390x (1.14.0-1) ...
+INFO:kolla.common.utils.kibana:Selecting previously unselected package libhttp-parser2.7.1:s390x.
+INFO:kolla.common.utils.kibana:Preparing to unpack .../4-libhttp-parser2.7.1_2.7.1-2_s390x.deb ...
+INFO:kolla.common.utils.kibana:Unpacking libhttp-parser2.7.1:s390x (2.7.1-2) ...
+INFO:kolla.common.utils.kibana:Selecting previously unselected package nodejs.
+INFO:kolla.common.utils.kibana:Preparing to unpack .../5-nodejs_8.10.0~dfsg-2ubuntu0.4_s390x.deb ...
+INFO:kolla.common.utils.kibana:Unpacking nodejs (8.10.0~dfsg-2ubuntu0.4) ...
+INFO:kolla.common.utils.kibana:Setting up libhttp-parser2.7.1:s390x (2.7.1-2) ...
+INFO:kolla.common.utils.kibana:Setting up libicu60:s390x (60.2-3ubuntu3) ...
+INFO:kolla.common.utils.kibana:Setting up libssl1.0.0:s390x (1.0.2n-1ubuntu5.3) ...
+INFO:kolla.common.utils.kibana:Setting up libuv1:s390x (1.18.0-3) ...
+INFO:kolla.common.utils.kibana:Setting up libc-ares2:s390x (1.14.0-1) ...
+INFO:kolla.common.utils.kibana:Setting up nodejs (8.10.0~dfsg-2ubuntu0.4) ...
+INFO:kolla.common.utils.kibana:update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
+INFO:kolla.common.utils.kibana:update-alternatives: warning: skip creation of /usr/share/man/man1/js.1.gz because associated file /usr/share/man/man1/nodejs.1.gz (of link group js) doesn't exist
+INFO:kolla.common.utils.kibana:Processing triggers for libc-bin (2.27-3ubuntu1) ...
+INFO:kolla.common.utils.kibana:curl (http://obs.linaro.org/home:/marcin.juszkiewicz/debian-buster/all/kibana_5.6.16-0linaro1_all.deb): response: 200, time: 0.522438, size: 29303036
+INFO:kolla.common.utils.kibana:Selecting previously unselected package kibana.
+INFO:kolla.common.utils.kibana:(Reading database ... 9308 files and directories currently installed.)
+INFO:kolla.common.utils.kibana:Preparing to unpack kibana_5.6.16-0linaro1_all.deb ...
+INFO:kolla.common.utils.kibana:Unpacking kibana (5.6.16-0linaro1) ...
+INFO:kolla.common.utils.kibana:Setting up kibana (5.6.16-0linaro1) ...
+INFO:kolla.common.utils.kibana:Removing intermediate container 4baf09d102cc
+INFO:kolla.common.utils.kibana: ---> e4e2c249376e
+INFO:kolla.common.utils.kibana:Step 6/8 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.kibana: ---> d1d3064ba3d0
+INFO:kolla.common.utils.kibana:Step 7/8 : RUN chmod 755 /usr/local/bin/kolla_extend_start
+INFO:kolla.common.utils.kibana: ---> Running in 7e76be9b4e7f
+INFO:kolla.common.utils.kibana:Removing intermediate container 7e76be9b4e7f
+INFO:kolla.common.utils.kibana: ---> 4b241cb6accf
+INFO:kolla.common.utils.kibana:Step 8/8 : USER kibana
+INFO:kolla.common.utils.kibana: ---> Running in 8c8bf295db3f
+INFO:kolla.common.utils.kibana:Removing intermediate container 8c8bf295db3f
+INFO:kolla.common.utils.kibana: ---> 9f7d4377131d
+INFO:kolla.common.utils.kibana:Successfully built 9f7d4377131d
+INFO:kolla.common.utils.kibana:Successfully tagged s390x/ubuntu-binary-kibana:9.1.0
+INFO:kolla.common.utils.kibana:Built at 2020-03-02 21:38:50.206309 (took 0:00:50.470471)

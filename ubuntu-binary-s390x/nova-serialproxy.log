@@ -1,0 +1,59 @@
+INFO:kolla.common.utils.nova-serialproxy:Building started at 2020-03-02 21:44:28.300353
+INFO:kolla.common.utils.nova-serialproxy:Step 1/4 : FROM s390x/ubuntu-binary-nova-base:9.1.0
+INFO:kolla.common.utils.nova-serialproxy: ---> 635ef465de63
+INFO:kolla.common.utils.nova-serialproxy:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="nova-serialproxy" build-date="20200302"
+INFO:kolla.common.utils.nova-serialproxy: ---> Running in 90139f654e0f
+INFO:kolla.common.utils.nova-serialproxy:Removing intermediate container 90139f654e0f
+INFO:kolla.common.utils.nova-serialproxy: ---> 9d6493c67747
+INFO:kolla.common.utils.nova-serialproxy:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends nova-serialproxy && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.nova-serialproxy: ---> Running in b21950ac2455
+INFO:kolla.common.utils.nova-serialproxy:Ign:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri InRelease
+INFO:kolla.common.utils.nova-serialproxy:Get:2 http://ports.ubuntu.com bionic InRelease [242 kB]
+INFO:kolla.common.utils.nova-serialproxy:Get:3 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release [7,884 B]
+INFO:kolla.common.utils.nova-serialproxy:Get:4 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri Release.gpg [543 B]
+INFO:kolla.common.utils.nova-serialproxy:Get:5 http://ports.ubuntu.com bionic-updates InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-serialproxy:Get:6 http://ports.ubuntu.com bionic-security InRelease [88.7 kB]
+INFO:kolla.common.utils.nova-serialproxy:Get:7 http://ports.ubuntu.com bionic-backports InRelease [74.6 kB]
+INFO:kolla.common.utils.nova-serialproxy:Get:8 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x Packages [145 kB]
+INFO:kolla.common.utils.nova-serialproxy:Get:9 http://ports.ubuntu.com bionic/universe s390x Packages [10.8 MB]
+INFO:kolla.common.utils.nova-serialproxy:Get:10 http://ports.ubuntu.com bionic/main s390x Packages [1,244 kB]
+INFO:kolla.common.utils.nova-serialproxy:Get:11 http://ports.ubuntu.com bionic-updates/universe s390x Packages [1,075 kB]
+INFO:kolla.common.utils.nova-serialproxy:Get:12 http://ports.ubuntu.com bionic-updates/main s390x Packages [730 kB]
+INFO:kolla.common.utils.nova-serialproxy:Get:13 http://ports.ubuntu.com bionic-security/main s390x Packages [467 kB]
+INFO:kolla.common.utils.nova-serialproxy:Get:14 http://ports.ubuntu.com bionic-security/universe s390x Packages [625 kB]
+INFO:kolla.common.utils.nova-serialproxy:Get:15 http://ports.ubuntu.com bionic-backports/universe s390x Packages [4,242 B]
+INFO:kolla.common.utils.nova-serialproxy:Get:16 http://ports.ubuntu.com bionic-backports/main s390x Packages [2,494 B]
+INFO:kolla.common.utils.nova-serialproxy:Fetched 15.6 MB in 3s (4,943 kB/s)
+INFO:kolla.common.utils.nova-serialproxy:Reading package lists...
+INFO:kolla.common.utils.nova-serialproxy:Reading package lists...
+INFO:kolla.common.utils.nova-serialproxy:Building dependency tree...
+INFO:kolla.common.utils.nova-serialproxy:Reading state information...
+INFO:kolla.common.utils.nova-serialproxy:The following NEW packages will be installed:
+INFO:kolla.common.utils.nova-serialproxy:  nova-serialproxy
+INFO:kolla.common.utils.nova-serialproxy:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.nova-serialproxy:Need to get 36.7 kB of archives.
+INFO:kolla.common.utils.nova-serialproxy:After this operation, 60.4 kB of additional disk space will be used.
+INFO:kolla.common.utils.nova-serialproxy:Get:1 http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/ussuri/main s390x nova-serialproxy all 2:20.0.0-0ubuntu1~cloud0 [36.7 kB]
+INFO:kolla.common.utils.nova-serialproxy:Fetched 36.7 kB in 0s (626 kB/s)
+INFO:kolla.common.utils.nova-serialproxy:Selecting previously unselected package nova-serialproxy.
+INFO:kolla.common.utils.nova-serialproxy:(Reading database ... 
+INFO:kolla.common.utils.nova-serialproxy:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+INFO:kolla.common.utils.nova-serialproxy:(Reading database ... 65%
+INFO:kolla.common.utils.nova-serialproxy:(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%
+INFO:kolla.common.utils.nova-serialproxy:(Reading database ... 90%
+INFO:kolla.common.utils.nova-serialproxy:(Reading database ... 95%
+INFO:kolla.common.utils.nova-serialproxy:(Reading database ... 100%(Reading database ... 32742 files and directories currently installed.)
+INFO:kolla.common.utils.nova-serialproxy:Preparing to unpack .../nova-serialproxy_2%3a20.0.0-0ubuntu1~cloud0_all.deb ...
+INFO:kolla.common.utils.nova-serialproxy:Unpacking nova-serialproxy (2:20.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-serialproxy:Setting up nova-serialproxy (2:20.0.0-0ubuntu1~cloud0) ...
+INFO:kolla.common.utils.nova-serialproxy:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.nova-serialproxy:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.nova-serialproxy:Removing intermediate container b21950ac2455
+INFO:kolla.common.utils.nova-serialproxy: ---> b4b1873a9196
+INFO:kolla.common.utils.nova-serialproxy:Step 4/4 : USER nova
+INFO:kolla.common.utils.nova-serialproxy: ---> Running in 9d5e0e206389
+INFO:kolla.common.utils.nova-serialproxy:Removing intermediate container 9d5e0e206389
+INFO:kolla.common.utils.nova-serialproxy: ---> 66dc6c403603
+INFO:kolla.common.utils.nova-serialproxy:Successfully built 66dc6c403603
+INFO:kolla.common.utils.nova-serialproxy:Successfully tagged s390x/ubuntu-binary-nova-serialproxy:9.1.0
+INFO:kolla.common.utils.nova-serialproxy:Built at 2020-03-02 21:44:38.001057 (took 0:00:09.700704)

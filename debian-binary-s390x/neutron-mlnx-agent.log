@@ -1,0 +1,95 @@
+INFO:kolla.common.utils.neutron-mlnx-agent:Building started at 2020-03-02 21:28:46.676452
+INFO:kolla.common.utils.neutron-mlnx-agent:Step 1/4 : FROM s390x/debian-binary-neutron-base:9.1.0
+INFO:kolla.common.utils.neutron-mlnx-agent: ---> c27b5a2440a1
+INFO:kolla.common.utils.neutron-mlnx-agent:Step 2/4 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="neutron-mlnx-agent" build-date="20200302"
+INFO:kolla.common.utils.neutron-mlnx-agent: ---> Running in f338eeef8bcd
+INFO:kolla.common.utils.neutron-mlnx-agent:Removing intermediate container f338eeef8bcd
+INFO:kolla.common.utils.neutron-mlnx-agent: ---> bd196ccb5842
+INFO:kolla.common.utils.neutron-mlnx-agent:Step 3/4 : RUN apt-get update && apt-get -y install --no-install-recommends python3-libvirt python3-ethtool python3-networking-mlnx && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.neutron-mlnx-agent: ---> Running in 964ce123a8b8
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:4 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:5 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Fetched 8,235 kB in 2s (4,774 kB/s)
+INFO:kolla.common.utils.neutron-mlnx-agent:Reading package lists...
+INFO:kolla.common.utils.neutron-mlnx-agent:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.neutron-mlnx-agent:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.neutron-mlnx-agent:[0m
+INFO:kolla.common.utils.neutron-mlnx-agent:Reading package lists...
+INFO:kolla.common.utils.neutron-mlnx-agent:Building dependency tree...
+INFO:kolla.common.utils.neutron-mlnx-agent:Reading state information...
+INFO:kolla.common.utils.neutron-mlnx-agent:python3-networking-mlnx is already the newest version (1:13.1.0-2).
+INFO:kolla.common.utils.neutron-mlnx-agent:python3-ethtool is already the newest version (0.14-1).
+INFO:kolla.common.utils.neutron-mlnx-agent:python3-ethtool set to manually installed.
+INFO:kolla.common.utils.neutron-mlnx-agent:The following additional packages will be installed:
+INFO:kolla.common.utils.neutron-mlnx-agent:  libavahi-client3 libavahi-common-data libavahi-common3 libcurl3-gnutls
+INFO:kolla.common.utils.neutron-mlnx-agent:  libvirt0 libyajl2
+INFO:kolla.common.utils.neutron-mlnx-agent:Recommended packages:
+INFO:kolla.common.utils.neutron-mlnx-agent:  libvirt-daemon
+INFO:kolla.common.utils.neutron-mlnx-agent:The following NEW packages will be installed:
+INFO:kolla.common.utils.neutron-mlnx-agent:  libavahi-client3 libavahi-common-data libavahi-common3 libcurl3-gnutls
+INFO:kolla.common.utils.neutron-mlnx-agent:  libvirt0 libyajl2 python3-libvirt
+INFO:kolla.common.utils.neutron-mlnx-agent:0 upgraded, 7 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.neutron-mlnx-agent:Need to get 5,640 kB of archives.
+INFO:kolla.common.utils.neutron-mlnx-agent:After this operation, 11.6 MB of additional disk space will be used.
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:1 http://deb.debian.org/debian buster/main s390x libavahi-common-data s390x 0.7-4+b1 [122 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:2 http://deb.debian.org/debian buster/main s390x libavahi-common3 s390x 0.7-4+b1 [52.7 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:3 http://deb.debian.org/debian buster/main s390x libavahi-client3 s390x 0.7-4+b1 [55.5 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:4 http://deb.debian.org/debian buster/main s390x libyajl2 s390x 2.1.0-3 [22.5 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:5 http://deb.debian.org/debian buster/main s390x libvirt0 s390x 5.0.0-4+deb10u1 [4,871 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:6 http://security-cdn.debian.org/debian-security buster/updates/main s390x libcurl3-gnutls s390x 7.64.0-4+deb10u1 [307 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Get:7 http://deb.debian.org/debian buster/main s390x python3-libvirt s390x 5.0.0-1 [208 kB]
+INFO:kolla.common.utils.neutron-mlnx-agent:Fetched 5,640 kB in 0s (42.4 MB/s)
+INFO:kolla.common.utils.neutron-mlnx-agent:Selecting previously unselected package libavahi-common-data:s390x.
+INFO:kolla.common.utils.neutron-mlnx-agent:(Reading database ... 
+INFO:kolla.common.utils.neutron-mlnx-agent:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%
+INFO:kolla.common.utils.neutron-mlnx-agent:(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+INFO:kolla.common.utils.neutron-mlnx-agent:(Reading database ... 70%
+INFO:kolla.common.utils.neutron-mlnx-agent:(Reading database ... 75%
+INFO:kolla.common.utils.neutron-mlnx-agent:(Reading database ... 80%
+INFO:kolla.common.utils.neutron-mlnx-agent:(Reading database ... 85%
+INFO:kolla.common.utils.neutron-mlnx-agent:(Reading database ... 90%
+INFO:kolla.common.utils.neutron-mlnx-agent:(Reading database ... 95%
+INFO:kolla.common.utils.neutron-mlnx-agent:(Reading database ... 100%(Reading database ... 31839 files and directories currently installed.)
+INFO:kolla.common.utils.neutron-mlnx-agent:Preparing to unpack .../0-libavahi-common-data_0.7-4+b1_s390x.deb ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Unpacking libavahi-common-data:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Selecting previously unselected package libavahi-common3:s390x.
+INFO:kolla.common.utils.neutron-mlnx-agent:Preparing to unpack .../1-libavahi-common3_0.7-4+b1_s390x.deb ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Unpacking libavahi-common3:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Selecting previously unselected package libavahi-client3:s390x.
+INFO:kolla.common.utils.neutron-mlnx-agent:Preparing to unpack .../2-libavahi-client3_0.7-4+b1_s390x.deb ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Unpacking libavahi-client3:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Selecting previously unselected package libcurl3-gnutls:s390x.
+INFO:kolla.common.utils.neutron-mlnx-agent:Preparing to unpack .../3-libcurl3-gnutls_7.64.0-4+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Unpacking libcurl3-gnutls:s390x (7.64.0-4+deb10u1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Selecting previously unselected package libyajl2:s390x.
+INFO:kolla.common.utils.neutron-mlnx-agent:Preparing to unpack .../4-libyajl2_2.1.0-3_s390x.deb ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Unpacking libyajl2:s390x (2.1.0-3) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Selecting previously unselected package libvirt0:s390x.
+INFO:kolla.common.utils.neutron-mlnx-agent:Preparing to unpack .../5-libvirt0_5.0.0-4+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Unpacking libvirt0:s390x (5.0.0-4+deb10u1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Selecting previously unselected package python3-libvirt.
+INFO:kolla.common.utils.neutron-mlnx-agent:Preparing to unpack .../6-python3-libvirt_5.0.0-1_s390x.deb ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Unpacking python3-libvirt (5.0.0-1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Setting up libyajl2:s390x (2.1.0-3) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Setting up libcurl3-gnutls:s390x (7.64.0-4+deb10u1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Setting up libavahi-common-data:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Setting up libavahi-common3:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Setting up libavahi-client3:s390x (0.7-4+b1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Setting up libvirt0:s390x (5.0.0-4+deb10u1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Setting up python3-libvirt (5.0.0-1) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Processing triggers for libc-bin (2.28-10) ...
+INFO:kolla.common.utils.neutron-mlnx-agent:Removing intermediate container 964ce123a8b8
+INFO:kolla.common.utils.neutron-mlnx-agent: ---> e1d2d65e2ed4
+INFO:kolla.common.utils.neutron-mlnx-agent:Step 4/4 : USER neutron
+INFO:kolla.common.utils.neutron-mlnx-agent: ---> Running in 80aefd6dbd12
+INFO:kolla.common.utils.neutron-mlnx-agent:Removing intermediate container 80aefd6dbd12
+INFO:kolla.common.utils.neutron-mlnx-agent: ---> 9952d9b817f3
+INFO:kolla.common.utils.neutron-mlnx-agent:Successfully built 9952d9b817f3
+INFO:kolla.common.utils.neutron-mlnx-agent:Successfully tagged s390x/debian-binary-neutron-mlnx-agent:9.1.0
+INFO:kolla.common.utils.neutron-mlnx-agent:Built at 2020-03-02 21:28:54.432455 (took 0:00:07.756003)

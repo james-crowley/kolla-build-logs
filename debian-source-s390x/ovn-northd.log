@@ -1,0 +1,50 @@
+INFO:kolla.common.utils.ovn-northd:Building started at 2020-03-02 21:33:38.850854
+INFO:kolla.common.utils.ovn-northd:Step 1/3 : FROM s390x/debian-source-ovn-base:9.1.0
+INFO:kolla.common.utils.ovn-northd: ---> 36f29e489983
+INFO:kolla.common.utils.ovn-northd:Step 2/3 : LABEL maintainer="Kolla Project (https://launchpad.net/kolla)" name="ovn-northd" build-date="20200302"
+INFO:kolla.common.utils.ovn-northd: ---> Running in 4fa31adbece7
+INFO:kolla.common.utils.ovn-northd:Removing intermediate container 4fa31adbece7
+INFO:kolla.common.utils.ovn-northd: ---> 2acc8953ceba
+INFO:kolla.common.utils.ovn-northd:Step 3/3 : RUN apt-get update && apt-get -y install --no-install-recommends ovn-central && apt-get clean && rm -rf /var/lib/apt/lists/*
+INFO:kolla.common.utils.ovn-northd: ---> Running in 02cd0847ce05
+INFO:kolla.common.utils.ovn-northd:Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+INFO:kolla.common.utils.ovn-northd:Get:2 http://deb.debian.org/debian buster-backports InRelease [46.7 kB]
+INFO:kolla.common.utils.ovn-northd:Get:3 http://security-cdn.debian.org/debian-security buster/updates InRelease [65.4 kB]
+INFO:kolla.common.utils.ovn-northd:Get:4 http://deb.debian.org/debian buster/main s390x Packages [7,624 kB]
+INFO:kolla.common.utils.ovn-northd:Get:5 http://buster-train.debian.net/debian buster-train-backports InRelease [3,660 B]
+INFO:kolla.common.utils.ovn-northd:Get:6 http://buster-train.debian.net/debian buster-train-backports-nochange InRelease [3,669 B]
+INFO:kolla.common.utils.ovn-northd:Get:7 http://deb.debian.org/debian buster-backports/main s390x Packages [209 kB]
+INFO:kolla.common.utils.ovn-northd:Get:8 http://security-cdn.debian.org/debian-security buster/updates/main s390x Packages [161 kB]
+INFO:kolla.common.utils.ovn-northd:Fetched 8,235 kB in 2s (4,704 kB/s)
+INFO:kolla.common.utils.ovn-northd:Reading package lists...
+INFO:kolla.common.utils.ovn-northd:[91mW: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.ovn-northd:W: Skipping acquire of configured file 'main/binary-s390x/Packages' as repository 'http://buster-train.debian.net/debian buster-train-backports-nochange InRelease' does not seem to provide it (sources.list entry misspelt?)
+INFO:kolla.common.utils.ovn-northd:[0m
+INFO:kolla.common.utils.ovn-northd:Reading package lists...
+INFO:kolla.common.utils.ovn-northd:Building dependency tree...
+INFO:kolla.common.utils.ovn-northd:Reading state information...
+INFO:kolla.common.utils.ovn-northd:The following NEW packages will be installed:
+INFO:kolla.common.utils.ovn-northd:  ovn-central
+INFO:kolla.common.utils.ovn-northd:0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+INFO:kolla.common.utils.ovn-northd:Need to get 38.7 kB of archives.
+INFO:kolla.common.utils.ovn-northd:After this operation, 116 kB of additional disk space will be used.
+INFO:kolla.common.utils.ovn-northd:Get:1 http://deb.debian.org/debian buster/main s390x ovn-central s390x 2.10.0+2018.08.28+git.8ca7c82b7d+ds1-12+deb10u1 [38.7 kB]
+INFO:kolla.common.utils.ovn-northd:Fetched 38.7 kB in 0s (1,198 kB/s)
+INFO:kolla.common.utils.ovn-northd:Selecting previously unselected package ovn-central.
+INFO:kolla.common.utils.ovn-northd:(Reading database ... 
+INFO:kolla.common.utils.ovn-northd:(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+INFO:kolla.common.utils.ovn-northd:(Reading database ... 75%
+INFO:kolla.common.utils.ovn-northd:(Reading database ... 80%
+INFO:kolla.common.utils.ovn-northd:(Reading database ... 85%
+INFO:kolla.common.utils.ovn-northd:(Reading database ... 90%(Reading database ... 95%
+INFO:kolla.common.utils.ovn-northd:(Reading database ... 100%(Reading database ... 13084 files and directories currently installed.)
+INFO:kolla.common.utils.ovn-northd:Preparing to unpack .../ovn-central_2.10.0+2018.08.28+git.8ca7c82b7d+ds1-12+deb10u1_s390x.deb ...
+INFO:kolla.common.utils.ovn-northd:Unpacking ovn-central (2.10.0+2018.08.28+git.8ca7c82b7d+ds1-12+deb10u1) ...
+INFO:kolla.common.utils.ovn-northd:Setting up ovn-central (2.10.0+2018.08.28+git.8ca7c82b7d+ds1-12+deb10u1) ...
+INFO:kolla.common.utils.ovn-northd:invoke-rc.d: could not determine current runlevel
+INFO:kolla.common.utils.ovn-northd:invoke-rc.d: policy-rc.d denied execution of start.
+INFO:kolla.common.utils.ovn-northd:Removing intermediate container 02cd0847ce05
+INFO:kolla.common.utils.ovn-northd: ---> 6e63862ae743
+INFO:kolla.common.utils.ovn-northd:Successfully built 6e63862ae743
+INFO:kolla.common.utils.ovn-northd:Successfully tagged s390x/debian-source-ovn-northd:9.1.0
+INFO:kolla.common.utils.ovn-northd:Built at 2020-03-02 21:33:45.346859 (took 0:00:06.496005)
